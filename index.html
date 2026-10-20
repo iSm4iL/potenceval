@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>potenceval — игры для друзей</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="genie/style.css">
+<style>
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:34px}
+.game{position:relative;display:block;padding:24px;border-radius:24px;text-decoration:none;color:var(--text);background:linear-gradient(160deg,#2c2160,#1a1333);border:1px solid rgba(124,92,255,.5);box-shadow:0 20px 50px -24px rgba(124,92,255,.9);transition:transform .25s var(--spring)}
+.game:hover{transform:translateY(-6px) rotate(-1deg)}
+.game .ic{font-size:44px}
+.game h2{font-size:26px;margin-top:12px}
+.game p{color:var(--muted);line-height:1.45;margin:8px 0 0}
+.game .go{display:inline-block;margin-top:16px;color:var(--gold);font-weight:700}
+.soon{display:grid;place-items:center;padding:24px;border-radius:24px;border:2px dashed var(--line);color:var(--muted);min-height:180px}
+.intro{margin-top:40px}
+.intro h1{font-size:clamp(34px,7vw,64px)}
+</style>
+</head>
+<body>
+<div class="blobs"><i></i><i></i><i></i></div>
+<div class="wrap">
+  <header class="top"><a class="logo" href="./"><b>potenceval</b><span>games</span></a></header>
+  <section class="intro">
+    <span class="kicker">Игры для друзей в дискорде</span>
+    <h1>Сидим, ржём, играем</h1>
+    <p class="sub">Без регистрации. Создаёшь лобби, кидаешь код — и погнали. Можно даже вдвоём.</p>
+  </section>
+  <div class="games">
+    <a class="game" href="genie/"><div class="ic">✦</div><h2>Джинн</h2><p>Один получает суперсилу. Остальные придумывают, в чём подвох. 2–8 игроков.</p><span class="go">Играть →</span></a>
+    <div class="soon">Скоро новые игры</div>
+  </div>
+</div>
+</body>
+</html>

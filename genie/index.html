@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Джинн — potenceval</title>
+<meta name="description" content="Игра для друзей: один получает суперсилу, остальные придумывают, в чём подвох.">
+<meta property="og:title" content="Джинн — суперсила с подвохом">
+<meta property="og:description" content="Заходи по коду лобби. Один загадывает суперсилу, остальные придумывают подвох.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blobs"><i></i><i></i><i></i></div>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="../"><b>potenceval</b><span>games</span></a>
+    <div class="top-right">
+      <span class="room" id="room" hidden>КОД <b id="roomCode"></b></span>
+      <button class="exit" id="exitBtn" hidden>Выйти</button>
+    </div>
+  </header>
+  <div class="players" id="players" hidden></div>
+  <div id="gamebar" hidden>
+    <ol class="steps" id="steps"><span class="pill" id="pill"></span><li>1 · Сила</li><li>2 · Подвохи</li><li>3 · Раскрытие</li><li>4 · Разгон</li><li>5 · Вердикт</li><li>6 · Карточка</li></ol>
+    <div class="hint"><span class="who-now">Сейчас</span><span id="hintTxt"></span><button class="qbtn" data-rules>Как играть?</button></div>
+  </div>
+  <main class="stage" id="stage"></main>
+  <div class="controls" id="controls"></div>
+</div>
+
+<div class="modal" id="rules" hidden><div class="sheet">
+  <span class="kicker">Правила за 20 секунд</span>
+  <h2>Как играть в «Джинна»</h2>
+  <p class="sub">Загадываете по очереди. Один получает суперсилу, остальные придумывают, в чём подвох.</p>
+  <div class="rgrid">
+    <div class="rc"><span class="rn">1</span><div class="re">🌀</div><b>Сила</b><p>Загадывающий тянет суперсилу из колоды или пишет свою.</p></div>
+    <div class="rc"><span class="rn">2</span><div class="re">😈</div><b>Подвох</b><p>Остальные тайно пишут подвох. Джинн тоже пишет: он всегда в игре.</p></div>
+    <div class="rc"><span class="rn">3</span><div class="re">🔥</div><b>Раскрытие и разгон</b><p>Открываете по одному, ржёте и докручиваете лучшие подвохи.</p></div>
+    <div class="rc"><span class="rn">4</span><div class="re">⚖️</div><b>Вердикт</b><p>Загадывающий выбирает самый жёсткий и решает: берёт силу или нет.</p></div>
+  </div>
+  <div class="score-rule">Отказался от силы — очко автору подвоха. Взял — очко загадывающему.</div>
+  <button class="btn primary" id="rulesOk">Понятно, погнали</button>
+</div></div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
