@@ -32,15 +32,17 @@
   <section class="intro" style="margin-top:30px">
     <span class="kicker">Тест генератора</span>
     <h1 style="font-size:clamp(30px,6vw,52px)">Биты из формул</h1>
-    <p class="sub">Каждый бит собран из синусов и шума прямо в браузере, без файлов: свои инструменты, барабаны, бас, мелодия и вход. 9 рэп-стилей. Послушай в наушниках.</p>
+    <p class="sub">Хард, дарк, дрилл, мелодик, трэп и восточный. Мелодии — живые инструменты, 808 и барабаны собираются прямо в браузере. У каждого бита свой состав и свой вход. Послушай в наушниках.</p>
   </section>
   <div class="row" style="justify-content:flex-start"><button class="btn primary" id="more">Ещё 5 битов</button></div>
   <div class="beats" id="beats"></div>
+  <p class="note" id="credits" style="border:0;margin-top:10px"></p>
   <p class="note">Это проверка звука. Сама игра (выбор бита, запись, таймлайн, прослушка всех треков) будет на этой же странице.</p>
 </div>
 <script type="module" src="../shared/menu.js"></script>
 <script type="module">
-import { describe, renderBeat, toWav, STYLES } from './beats.js';
+import { describe, renderBeat, toWav, MAIN_STYLES, CREDITS } from './beats.js';
+document.getElementById('credits').textContent = CREDITS;
 const box = document.getElementById('beats');
 let ac, playing = null;
 const audio = () => (ac ||= new AudioContext());
@@ -77,7 +79,7 @@ function play(card, buf, from = 0) {
 function addBeats() {
   stop();
   box.replaceChildren();
-  const styles = Object.keys(STYLES).sort(() => Math.random() - .5);
+  const styles = [...MAIN_STYLES].sort(() => Math.random() - .5);
   return Promise.all(styles.slice(0, 5).map(async (style, i) => {
     const info = describe(Math.floor(Math.random() * 2 ** 31), style);
     const card = document.createElement('div');
