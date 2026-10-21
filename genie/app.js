@@ -10,7 +10,10 @@ const still = () => reduceMotion || document.hidden;
 // поэтому в скрытой вкладке их можно просто пропустить и ничего не зависнет.
 const A = (el, kf, o = {}) => {
   if (!el || still()) return Promise.resolve();
-  return el.animate(kf, { duration: 500, easing: EASE, fill: 'backwards', ...o }).finished.catch(() => {});
+  const opts = { duration: 500, easing: EASE, fill: 'backwards', ...o };
+  const anim = el.animate(kf, opts);
+  // Браузер может поставить анимации на паузу (окно свёрнуто или перекрыто) — очередь отрисовки их не ждёт.
+  return Promise.race([anim.finished.catch(() => {}), new Promise(r => setTimeout(r, opts.duration + (opts.delay || 0) + 150))]);
 };
 const $ = (sel, root = document) => root.querySelector(sel);
 const h = html => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild; };
