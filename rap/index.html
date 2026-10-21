@@ -15,7 +15,8 @@
 .beat .tags{display:flex;flex-wrap:wrap;gap:6px;font-size:12px}
 .beat .tags span{padding:3px 9px;border-radius:99px;background:rgba(255,255,255,.07);color:var(--muted)}
 .beat .tags .st{background:var(--violet);color:#fff}
-.beat h3{font-family:'Unbounded';font-size:17px;margin:12px 0 10px}
+.beat h3{font-family:'Unbounded';font-size:17px;margin:12px 0 4px}
+.beat .inst{margin:0 0 10px;font-size:13px;color:var(--gold)}
 .beat canvas{display:block;width:100%;height:56px;border-radius:10px;background:rgba(0,0,0,.25);cursor:pointer}
 .beat .row2{display:flex;gap:8px;margin-top:12px}
 .beat .row2 .btn{padding:10px 14px;font-size:14px}
@@ -31,7 +32,7 @@
   <section class="intro" style="margin-top:30px">
     <span class="kicker">Тест генератора</span>
     <h1 style="font-size:clamp(30px,6vw,52px)">Биты из формул</h1>
-    <p class="sub">Каждый бит собран из синусов и шума прямо в браузере, без файлов. Послушай в наушниках и скажи, годится ли под рэп.</p>
+    <p class="sub">Каждый бит собран из синусов и шума прямо в браузере, без файлов: свои инструменты, барабаны, бас, мелодия и вход. 9 рэп-стилей. Послушай в наушниках.</p>
   </section>
   <div class="row" style="justify-content:flex-start"><button class="btn primary" id="more">Ещё 5 битов</button></div>
   <div class="beats" id="beats"></div>
@@ -72,19 +73,21 @@ function play(card, buf, from = 0) {
   src.onended = stop;
 }
 
-async function addBeats() {
+// Пять битов разных стилей собираются параллельно; каждая карточка оживает, как только её бит готов.
+function addBeats() {
   stop();
   box.replaceChildren();
   const styles = Object.keys(STYLES).sort(() => Math.random() - .5);
-  for (let i = 0; i < 5; i++) {
-    const info = describe(Math.floor(Math.random() * 2 ** 31), styles[i % styles.length]);
+  return Promise.all(styles.slice(0, 5).map(async (style, i) => {
+    const info = describe(Math.floor(Math.random() * 2 ** 31), style);
     const card = document.createElement('div');
     card.className = 'beat loading';
     card.innerHTML = `<div class="tags"><span class="st">${info.label}</span><span>${info.bpm} BPM</span><span>${info.keyName}</span><span>${Math.round(info.duration)} с</span></div>
-      <h3>«${info.name}»</h3><canvas></canvas><div class="row2"><button class="btn primary play" disabled>собираю…</button><a class="btn ghost dl" hidden>WAV</a></div>`;
+      <h3>«${info.name}»</h3><p class="inst">${info.tags.join(' · ')}</p><canvas></canvas><div class="row2"><button class="btn primary play" disabled>собираю…</button><a class="btn ghost dl" hidden>WAV</a></div>`;
     box.append(card);
     card.animate([{ opacity: 0, transform: 'translateY(20px) scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: i * 80, easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards' });
     const buf = await renderBeat(info);
+    if (!card.isConnected) return;
     card.classList.remove('loading');
     drawWave(card.querySelector('canvas'), buf);
     const btn = card.querySelector('.play');
@@ -93,8 +96,7 @@ async function addBeats() {
     card.querySelector('canvas').onclick = e => play(card, buf, e.offsetX / e.target.clientWidth);
     const dl = card.querySelector('.dl');
     dl.href = URL.createObjectURL(toWav(buf)); dl.download = `${info.name} (${info.label}, ${info.bpm}).wav`; dl.hidden = false;
-    window.__beats = [...(window.__beats || []), { info, buf }];
-  }
+  }));
 }
 document.getElementById('more').onclick = addBeats;
 addBeats();
