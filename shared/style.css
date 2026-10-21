@@ -247,3 +247,25 @@ input{font:inherit}
 .pt{position:fixed;pointer-events:none;z-index:60;font-size:20px;left:0;top:0}
 .cf-bit{position:fixed;pointer-events:none;z-index:60;width:8px;height:12px;border-radius:2px;left:0;top:0}
 @media (prefers-reduced-motion:reduce){.blobs i,.poster::after,.btn.ready,.dots i,.fan .mini{animation:none}}
+
+/* Burger menu */
+.top>.logo{margin-right:auto}
+.burger{position:relative;z-index:46;width:42px;height:42px;flex:none;border-radius:12px;background:var(--surface);border:1px solid var(--line);display:grid;place-content:center;gap:5px;transition:background .2s,transform .16s var(--ease)}
+.burger:hover{background:#241a45}
+.burger:active{transform:scale(.92)}
+.burger span{display:block;width:18px;height:2px;border-radius:2px;background:var(--text);transition:transform .4s var(--spring),opacity .25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;z-index:45}
+.drawer-bg{position:absolute;inset:0;background:rgba(8,5,18,.6);backdrop-filter:blur(4px)}
+.drawer-panel{position:absolute;left:0;top:0;bottom:0;width:min(330px,86vw);padding:74px 14px 20px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#1d1540,#120c26);border-right:1px solid var(--line);box-shadow:30px 0 60px -30px #000;overflow:auto}
+.drawer-head{padding:0 6px 10px}
+.dlabel{margin:14px 8px 2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dlink{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;color:var(--text);text-decoration:none;border:1px solid transparent;transition:background .2s,border-color .2s,transform .2s var(--spring)}
+.dlink:hover{background:rgba(255,255,255,.06);transform:translateX(4px)}
+.dlink.on{background:rgba(124,92,255,.18);border-color:rgba(124,92,255,.5)}
+.dlink .ic{width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.06);font-size:20px}
+.dlink b{display:block;font-family:'Unbounded';font-size:14px}
+.dlink small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.dsoon{margin-top:8px;padding:14px;border-radius:14px;border:2px dashed var(--line);color:var(--muted);font-size:13px;text-align:center}

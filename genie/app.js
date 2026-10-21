@@ -1,244 +1,22 @@
 import { createState, reduce, publicView, humans, GENIE_ID } from './game.js';
+import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, nudge, smoke, enter, flyIn, flip,
+  toast, setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js';
+import { createNet } from '../shared/net.js';
 
-/* ---------- helpers ---------- */
-const PREFIX = 'potenceval-genie-';
 const STEP = ['power', 'write', 'reveal', 'hype', 'verdict', 'share'];
-const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const EASE = 'cubic-bezier(.2,.8,.2,1)', SPRING = 'cubic-bezier(.34,1.56,.64,1)';
-const still = () => reduceMotion || document.hidden;
-// Анимации только декоративные: итоговое состояние всегда задаётся классами/стилями,
-// поэтому в скрытой вкладке их можно просто пропустить и ничего не зависнет.
-const A = (el, kf, o = {}) => {
-  if (!el || still()) return Promise.resolve();
-  const opts = { duration: 500, easing: EASE, fill: 'backwards', ...o };
-  const anim = el.animate(kf, opts);
-  // Браузер может поставить анимации на паузу (окно свёрнуто или перекрыто) — очередь отрисовки их не ждёт.
-  return Promise.race([anim.finished.catch(() => {}), new Promise(r => setTimeout(r, opts.duration + (opts.delay || 0) + 150))]);
-};
-const $ = (sel, root = document) => root.querySelector(sel);
-const h = html => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild; };
-const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const first = name => (Array.from(name || '?')[0] || '?').toUpperCase();
-const nameOf = (s, id) => s.players.find(p => p.id === id)?.name || '???';
-const isHostOf = s => s.hostId === me.pid;
 const canDrive = s => isHostOf(s) || s.wisher === me.pid;
-const center = el => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
-
-const LS = {
-  get(k) { try { return JSON.parse(localStorage.getItem('pv.' + k)); } catch { return null; } },
-  set(k, v) { try { localStorage.setItem('pv.' + k, JSON.stringify(v)); } catch {} },
-  del(k) { try { localStorage.removeItem('pv.' + k); } catch {} },
-};
-const me = LS.get('me') || { pid: Math.random().toString(36).slice(2, 12), name: '' };
-LS.set('me', me);
-
 const stage = $('#stage');
 const steps = [...document.querySelectorAll('#steps li')];
 
-/* ---------- effects ---------- */
-function burst(x, y, { chars = ['🔥'], n = 8, spread = 70, up = 130 } = {}) {
-  if (still()) return;
-  for (let i = 0; i < n; i++) {
-    const s = document.createElement('span');
-    s.className = 'pt'; s.textContent = chars[i % chars.length]; document.body.append(s);
-    const dx = (Math.random() - .5) * spread * 2, dy = -(up * .5 + Math.random() * up), r = (Math.random() - .5) * 120;
-    s.animate([
-      { transform: `translate(${x}px,${y}px) translate(-50%,-50%) scale(.3)`, opacity: 0 },
-      { transform: `translate(${x + dx * .4}px,${y + dy * .4}px) translate(-50%,-50%) scale(1.25)`, opacity: 1, offset: .25 },
-      { transform: `translate(${x + dx}px,${y + dy}px) translate(-50%,-50%) rotate(${r}deg) scale(.7)`, opacity: 0 },
-    ], { duration: 900 + Math.random() * 400, easing: 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' }).finished.finally(() => s.remove());
-  }
-}
-const burstAt = (el, o) => { if (el) { const [x, y] = center(el); burst(x, y, o); } };
-function confetti(el, n = 70) {
-  if (still() || !el) return;
-  const [x, y] = center(el);
-  const cols = ['#ff4d6d', '#ffc94a', '#7c5cff', '#8ff0b5', '#ffffff'];
-  for (let i = 0; i < n; i++) {
-    const s = document.createElement('span');
-    s.className = 'cf-bit'; s.style.background = cols[i % cols.length]; document.body.append(s);
-    const a = Math.random() * Math.PI * 2, v = 120 + Math.random() * 260, dx = Math.cos(a) * v, dy = Math.sin(a) * v - 160, r = Math.random() * 720 - 360;
-    s.animate([
-      { transform: `translate(${x}px,${y}px)`, opacity: 1 },
-      { transform: `translate(${x + dx}px,${y + dy}px) rotate(${r / 2}deg)`, opacity: 1, offset: .45 },
-      { transform: `translate(${x + dx * 1.2}px,${y + dy + 380}px) rotate(${r}deg)`, opacity: 0 },
-    ], { duration: 1500 + Math.random() * 700, easing: 'cubic-bezier(.15,.6,.4,1)', fill: 'forwards' }).finished.finally(() => s.remove());
-  }
-}
-const shake = (el = stage) => A(el, [{ transform: 'translate(0)' }, { transform: 'translate(-7px,2px)' }, { transform: 'translate(6px,-2px)' }, { transform: 'translate(-3px,1px)' }, { transform: 'translate(0)' }], { duration: 380 });
-const nudge = el => A(el, [{ transform: 'translateX(0)' }, { transform: 'translateX(-8px)' }, { transform: 'translateX(7px)' }, { transform: 'translateX(-4px)' }, { transform: 'translateX(0)' }], { duration: 360 });
-function smoke(host) {
-  if (still()) return;
-  for (let i = 0; i < 6; i++) {
-    const s = document.createElement('span');
-    const sz = 60 + Math.random() * 80;
-    s.className = 'smoke';
-    Object.assign(s.style, { width: sz + 'px', height: sz + 'px', left: (20 + Math.random() * 60) + '%', top: (20 + Math.random() * 60) + '%', background: i % 2 ? 'rgba(255,201,74,.55)' : 'rgba(124,92,255,.6)' });
-    host.append(s);
-    s.animate([{ transform: 'translate(-50%,-50%) scale(.2)', opacity: .9 }, { transform: `translate(calc(-50% + ${(Math.random() - .5) * 160}px),calc(-50% + ${-40 - Math.random() * 90}px)) scale(2.2)`, opacity: 0 }],
-      { duration: 1400 + i * 120, easing: EASE, fill: 'forwards' }).finished.finally(() => s.remove());
-  }
-}
-const enter = (root = stage) => [...root.querySelectorAll('[data-in]')].forEach((el, k) =>
-  A(el, [{ opacity: 0, transform: 'translateY(20px)', filter: 'blur(8px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: 650, delay: 60 + k * 80 }));
-const flyIn = el => A(el, [{ transform: 'translateY(160px) rotate(-14deg) scale(.6)', opacity: 0 }, { transform: 'translateY(-10px) rotate(2deg) scale(1.04)', opacity: 1, offset: .72 }, { transform: 'none', opacity: 1 }], { duration: 720 });
-const flip = inner => A(inner, [{ transform: 'rotateY(0) scale(1)' }, { transform: 'rotateY(-8deg) scale(.94)', offset: .15 }, { transform: 'rotateY(195deg) scale(1.07)', offset: .72 }, { transform: 'rotateY(180deg) scale(1)' }], { duration: 900 });
-
-let toastT;
-function toast(msg, ms) {
-  const t = $('#toast');
-  clearTimeout(toastT);
-  const wasHidden = t.hidden;
-  t.textContent = msg; t.hidden = false;
-  if (wasHidden) A(t, [{ opacity: 0, transform: 'translate(-50%,16px)' }, { opacity: 1, transform: 'translate(-50%,0)' }], { duration: 350, easing: SPRING });
-  if (ms) toastT = setTimeout(hideToast, ms);
-}
-const hideToast = () => { clearTimeout(toastT); $('#toast').hidden = true; };
-
-function openRules() {
-  const m = $('#rules'); m.hidden = false;
-  A(m, [{ opacity: 0 }, { opacity: 1 }], { duration: 250 });
-  A($('.sheet', m), [{ opacity: 0, transform: 'translateY(26px) scale(.95)', filter: 'blur(8px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: 650, easing: SPRING });
-  [...m.querySelectorAll('.rc,.score-rule,#rulesOk')].forEach((c, k) => A(c, [{ opacity: 0, transform: 'translateY(18px) rotate(-2deg)' }, { opacity: 1, transform: 'none' }], { duration: 560, delay: 220 + k * 110, easing: SPRING }));
-}
-async function closeRules() {
-  await A($('#rules'), [{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: 'forwards' });
-  $('#rules').hidden = true;
-}
-
-/* ---------- network: host держит состояние, остальные шлют действия ---------- */
-// ponytail: P2P через публичный сервер PeerJS — без своего бэкенда; если хост закрыл вкладку,
-// игра ждёт его возвращения. Нужен свой сервер (Durable Objects), если это станет мешать.
-let peer = null, conn = null, isHost = false, hostState = null, hostTimer = null, retryT = null, retries = 0, everConnected = false;
-const conns = new Map();
-const newCode = () => Array.from({ length: 5 }, () => 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random() * 32)]).join('');
-
-function peerReady() {
-  if (typeof Peer !== 'undefined') return true;
-  toast('Не загрузился модуль связи. Обнови страницу.', 4000);
-  return false;
-}
-function closePeer() {
-  clearTimeout(retryT); clearInterval(hostTimer);
-  const p = peer; peer = null; conn = null; conns.clear();
-  if (p && !p.destroyed) p.destroy();
-}
-
-function hostStart(code, restored, tries = 0) {
-  if (!peerReady()) return;
-  closePeer(); isHost = true;
-  toast(restored ? 'Восстанавливаю лобби…' : 'Создаю лобби…');
-  const p = peer = new Peer(PREFIX + code);
-  p.on('open', () => {
-    hideToast();
-    let s = restored || createState(me.pid, code);
-    if (restored) s = { ...s, players: s.players.map(x => (x.genie || x.id === me.pid ? x : { ...x, online: false })) };
-    hostState = reduce(s, { type: 'join', name: me.name }, me.pid);
-    LS.set('session', { code, host: true });
-    commit();
-    hostTimer = setInterval(() => {
-      if (hostState?.phase === 'write' && Date.now() >= hostState.deadline) apply({ type: 'timeout' }, me.pid);
-    }, 500);
-  });
-  p.on('connection', c => {
-    c.on('data', m => onHostMsg(c, m));
-    c.on('close', () => {
-      if (peer === p && c.pid && conns.get(c.pid) === c) { conns.delete(c.pid); apply({ type: 'online', id: c.pid, on: false }, me.pid); }
-    });
-  });
-  p.on('disconnected', () => { if (peer === p && !p.destroyed) p.reconnect(); });
-  p.on('error', e => {
-    if (peer !== p) return;
-    if (e.type === 'unavailable-id') {
-      if (!restored) return hostStart(newCode(), null);
-      // старый id ещё держится на сервере после вылета — подождём
-      if (tries < 20) { retryT = setTimeout(() => hostStart(code, restored, tries + 1), 3000); return; }
-      toast('Не получилось восстановить лобби', 4000); leave();
-    } else if (['network', 'server-error', 'socket-error'].includes(e.type)) toast('Нет связи с сервером, пробую ещё…', 3000);
-  });
-}
-
-function onHostMsg(c, m) {
-  if (!m || typeof m !== 'object' || !hostState) return;
-  if (m.t === 'hello' && typeof m.pid === 'string') {
-    const pid = m.pid.slice(0, 24);
-    if (pid === me.pid || pid === GENIE_ID) return c.close();
-    c.pid = pid;
-    const old = conns.get(pid);
-    if (old && old !== c) old.close();
-    conns.set(pid, c);
-    const next = reduce(hostState, { type: 'join', name: m.name }, pid);
-    if (next === hostState) { c.send({ t: 'full' }); return; }
-    hostState = next; commit();
-  } else if (m.t === 'act' && c.pid) apply(m.a, c.pid);
-}
-function apply(a, from) {
-  if (!hostState) return;
-  const next = reduce(hostState, a, from);
-  if (next === hostState) return;
-  hostState = next; commit();
-}
-function commit() {
-  LS.set('hostState', hostState);
-  const now = Date.now();
-  for (const [pid, c] of conns) if (c.open) c.send({ t: 'state', s: publicView(hostState, pid), now });
-  onState(publicView(hostState, me.pid), now);
-}
-
-function joinLobby(code, rejoin = false) {
-  if (!peerReady()) return;
-  closePeer(); isHost = false;
-  if (!rejoin) { everConnected = false; retries = 0; }
-  toast('Подключаюсь…');
-  const p = peer = new Peer();
-  p.on('open', () => connect(code));
-  p.on('disconnected', () => { if (peer === p && !p.destroyed) p.reconnect(); });
-  p.on('error', e => {
-    if (peer !== p) return;
-    if (e.type === 'peer-unavailable' && !everConnected) { toast('Лобби с таким кодом не найдено', 3500); LS.del('session'); leave(true); }
-    else retry(code);
-  });
-}
-function connect(code) {
-  const p = peer, c = p.connect(PREFIX + code, { reliable: true });
-  c.on('open', () => {
-    conn = c; everConnected = true; retries = 0;
-    LS.set('session', { code, host: false });
-    c.send({ t: 'hello', pid: me.pid, name: me.name });
-    hideToast();
-  });
-  c.on('data', m => {
-    if (m?.t === 'state') onState(m.s, m.now);
-    else if (m?.t === 'full') { toast('Лобби заполнено', 3500); leave(true); }
-    else if (m?.t === 'bye') { toast('Хост закрыл лобби', 3500); leave(true); }
-  });
-  c.on('close', () => { if (conn === c && peer === p) { conn = null; retry(code); } });
-}
-function retry(code) {
-  if (++retries > 40) { toast('Хост не отвечает. Игра закончилась?', 4000); leave(true); return; }
-  toast('Связь с хостом потеряна, переподключаюсь…');
-  clearTimeout(retryT);
-  retryT = setTimeout(() => (peer && !peer.destroyed && peer.open ? connect(code) : joinLobby(code, true)), 2500);
-}
-
-function send(a) {
-  if (isHost) apply(a, me.pid);
-  else if (conn?.open) conn.send({ t: 'act', a });
-  else toast('Нет связи с хостом…', 2000);
-}
-function leave(keepToast = false) {
-  if (isHost) for (const c of conns.values()) if (c.open) c.send({ t: 'bye' });
-  LS.del('session'); LS.del('hostState');
-  // даём «bye» уйти, потом рвём соединения
-  const p = peer; peer = null; conn = null; conns.clear(); clearTimeout(retryT); clearInterval(hostTimer);
-  setTimeout(() => p && !p.destroyed && p.destroy(), 300);
-  hostState = null; isHost = false;
-  if (!keepToast) hideToast();
-  showHome();
-}
+const net = createNet({
+  game: 'genie', createState, reduce, publicView, reserved: [GENIE_ID],
+  tick: (s, apply) => { if (s.phase === 'write' && Date.now() >= s.deadline) apply({ type: 'timeout' }, s.hostId); },
+  onState, onLeave: showHome,
+});
+const send = net.send;
 
 /* ---------- render ---------- */
-let view = null, rendered = null, shownKey = null, gen = 0, skew = 0, ctrlSig = null, chain = Promise.resolve();
+let view = null, rendered = null, shownKey = null, gen = 0, skew = 0, chain = Promise.resolve();
 function onState(s, hostNow) {
   skew = Date.now() - hostNow; view = s;
   chain = chain.then(() => renderState(s)).catch(e => console.error(e));
@@ -257,7 +35,7 @@ async function renderState(s) {
     await Promise.all(old.map((el, k) => A(el, [{ opacity: 1, transform: 'none', filter: 'blur(0)' }, { opacity: 0, transform: 'translateY(-14px) scale(.98)', filter: 'blur(6px)' }], { duration: 240, delay: k * 25, easing: 'ease-in', fill: 'forwards' })));
     stage.replaceChildren(); gen++;
     BUILD[s ? s.phase : 'home'](s);
-    enter();
+    enter(stage);
     if (s) window.scrollTo({ top: 0, behavior: still() ? 'auto' : 'smooth' });
   } else if (s) PATCH[s.phase]?.(p, s);
   controls(s);
@@ -325,12 +103,7 @@ function controls(s) {
   else if (s?.phase === 'verdict' && drv && s.took !== null) b.push(next('Дальше →'));
   else if (s?.phase === 'share' && drv) b.push(next(s.round + 1 >= s.order.length ? 'Итоги →' : 'Следующий раунд →'));
   else if (s?.phase === 'final' && isHostOf(s)) b.push(['again', 'Ещё партию', 'primary ready', () => send({ type: 'start' })], ['lobby', 'В лобби', 'ghost', () => send({ type: 'lobby' })]);
-  const sig = b.map(x => x[0] + x[1]).join('|');
-  if (sig === ctrlSig) return;
-  ctrlSig = sig;
-  const box = $('#controls');
-  box.replaceChildren(...b.map(([, label, cls, fn]) => { const el = h(`<button class="btn ${cls}">${label}</button>`); el.onclick = fn; return el; }));
-  [...box.children].forEach((el, k) => A(el, [{ opacity: 0, transform: 'translateY(12px) scale(.95)' }, { opacity: 1, transform: 'none' }], { duration: 450, delay: k * 60, easing: SPRING }));
+  setControls(b);
 }
 
 /* ---------- cards ---------- */
@@ -372,91 +145,28 @@ const title = (kicker, h1, sub = '') => stage.append(h(`<div class="phase-title"
 /* ---------- screens ---------- */
 const BUILD = {}, PATCH = {};
 
-BUILD.home = () => {
-  const code = (new URLSearchParams(location.search).get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 5);
-  stage.append(h(`<section class="home">
-    <div class="hero" data-in><span class="kicker">Игра для друзей · 2–8 человек</span>
-      <h1 id="heroTitle">${[...'Джинн'].map(c => `<span>${c}</span>`).join('')}</h1>
-      <p class="sub">Один получает суперсилу. Остальные придумывают, в чём подвох. Джинн тоже придумывает — и он подлый.</p>
-      <div class="fan">
-        <div class="mini m1"><b>СИЛА</b><br>🌀 Телепортация куда угодно. Тело и одежда — в целости.</div>
-        <div class="mini m2"><b>НО</b><br>С каждым телепортом ты в два раза тупее. <i>…и умнеешь, только если идёшь пешком.</i></div>
-        <div class="mini m3"><b>ДЖИНН</b><br>Тело и одежда в целости, как и просил. Про волосы уговора не было.</div>
-      </div>
+BUILD.home = () => buildHome(stage, net, `
+  <div class="hero" data-in><span class="kicker">Игра для друзей · 2–8 человек</span>
+    <h1 id="heroTitle">Джинн</h1>
+    <p class="sub">Один получает суперсилу. Остальные придумывают, в чём подвох. Джинн тоже придумывает — и он подлый.</p>
+    <div class="fan">
+      <div class="mini m1"><b>СИЛА</b><br>🌀 Телепортация куда угодно. Тело и одежда — в целости.</div>
+      <div class="mini m2"><b>НО</b><br>С каждым телепортом ты в два раза тупее. <i>…и умнеешь, только если идёшь пешком.</i></div>
+      <div class="mini m3"><b>ДЖИНН</b><br>Тело и одежда в целости, как и просил. Про волосы уговора не было.</div>
     </div>
-    <div class="panel" data-in>
-      <label for="nameIn">Твоё имя</label><input class="field" id="nameIn" maxlength="20" placeholder="Как тебя звать?" value="${esc(me.name)}">
-      <button class="btn primary big" id="createBtn">Создать лобби</button>
-      <div class="or">или войди к друзьям</div>
-      <div class="joinrow"><input class="field" id="codeIn" maxlength="5" placeholder="КОД" autocomplete="off" value="${esc(code)}"><button class="btn ghost" id="joinBtn">Войти</button></div>
-      <button class="linkbtn" data-rules>Как играть?</button>
-    </div></section>`));
-  [...$('#heroTitle').children].forEach((sp, k) => A(sp, [{ opacity: 0, transform: 'translateY(40px) rotate(8deg)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 200 + k * 70, easing: SPRING }));
-  const takeName = () => {
-    const v = $('#nameIn').value.replace(/\s+/g, ' ').trim().slice(0, 20);
-    if (!v) { nudge($('#nameIn')); $('#nameIn').focus(); return false; }
-    me.name = v; LS.set('me', me); return true;
-  };
-  const join = () => {
-    const c = $('#codeIn').value.trim().toUpperCase();
-    if (c.length !== 5) { nudge($('#codeIn')); $('#codeIn').focus(); return; }
-    if (takeName()) joinLobby(c);
-  };
-  $('#createBtn').onclick = () => { if (takeName()) hostStart(newCode(), null); };
-  $('#joinBtn').onclick = join;
-  $('#codeIn').onkeydown = e => { if (e.key === 'Enter') join(); };
-  $('#codeIn').oninput = e => { e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); };
-  $('#nameIn').onkeydown = e => { if (e.key === 'Enter') (code ? join() : $('#createBtn').click()); };
-  if (code) $('#nameIn').focus();
-};
+  </div>`);
 
-const seg = (k, label, opts, val, suf, on) => `<div class="set">${label}<div class="seg" data-seg="${k}"><span class="pill"></span>${opts.map(o => `<button data-k="${k}" data-v="${o}" class="${o === val ? 'on' : ''}" ${on ? '' : 'disabled'}>${o}${suf}</button>`).join('')}</div></div>`;
-function placeSegPills() {
-  stage.querySelectorAll('.seg').forEach(sg => {
-    const on = sg.querySelector('button.on'), p = sg.querySelector('.pill');
-    if (on) { p.style.left = on.offsetLeft + 'px'; p.style.width = on.offsetWidth + 'px'; }
-  });
-}
-function renderPlist(s) {
-  const box = $('#plist');
-  if (!box) return;
-  const ids = new Set(s.players.map(x => x.id));
-  box.querySelectorAll('[data-id]').forEach(el => {
-    if (!ids.has(el.dataset.id)) A(el, [{ opacity: 1 }, { opacity: 0, transform: 'scale(.8)' }], { duration: 250, fill: 'forwards' }).then(() => el.remove());
-  });
-  for (const pl of s.players) {
-    let el = box.querySelector(`[data-id="${CSS.escape(pl.id)}"]`);
-    const html = `<span class="av" style="background:${esc(pl.color)}">${pl.genie ? '✦' : esc(first(pl.name))}</span><span>${esc(pl.name)}${pl.id === me.pid ? ' (ты)' : ''}<small>${pl.genie ? 'бот-подлец, играет всегда' : pl.id === s.hostId ? 'хост' : pl.online ? 'в лобби' : 'отключился'}</small></span>`;
-    if (!el) {
-      el = h(`<div class="pcard-l" data-id="${esc(pl.id)}"></div>`);
-      const g = box.querySelector(`[data-id="${GENIE_ID}"]`);
-      if (pl.genie || !g) box.append(el); else box.insertBefore(el, g);
-      A(el, [{ opacity: 0, transform: 'translateY(20px) scale(.8)' }, { opacity: 1, transform: 'none' }], { duration: 550, easing: SPRING });
-    }
-    el.innerHTML = html;
-    el.classList.toggle('genie', !!pl.genie); el.classList.toggle('off', !pl.online);
-  }
-}
+const lobbyTag = (pl, s) => (pl.genie ? 'бот-подлец, играет всегда' : pl.id === s.hostId ? 'хост' : pl.online ? 'в лобби' : 'отключился');
 BUILD.lobby = s => {
   const host = isHostOf(s);
-  title('Лобби', 'Зови друзей', 'Продиктуй код или кинь ссылку. Можно играть даже вдвоём: Джинн всегда в деле.');
-  const code = h(`<div class="code" data-in>${[...s.code].map(c => `<span>${c}</span>`).join('')}</div>`);
-  stage.append(code);
-  [...code.children].forEach((sp, k) => A(sp, [{ opacity: 0, transform: 'translateY(-30px) rotateX(90deg)' }, { opacity: 1, transform: 'none' }], { duration: 600, delay: 250 + k * 80, easing: SPRING }));
-  stage.append(h(`<div class="row" data-in><button class="btn ghost" id="copyBtn">Скопировать ссылку</button></div>`));
-  $('#copyBtn').onclick = async () => {
-    const url = location.origin + location.pathname + '?c=' + s.code;
-    try { await navigator.clipboard.writeText(url); toast('Ссылка скопирована — кидай друзьям', 1800); } catch { prompt('Скопируй ссылку:', url); }
-  };
-  stage.append(h(`<div class="plist" id="plist" data-in></div>`));
-  renderPlist(s);
+  buildLobby(stage, s, 'Продиктуй код или кинь ссылку. Можно играть даже вдвоём: Джинн всегда в деле.', lobbyTag);
   stage.append(h(`<div class="settings" data-in>${seg('laps', 'Кругов', [1, 2, 3], s.settings.laps, '', host)}${seg('sec', 'Время на подвох', [45, 60, 90], s.settings.sec, ' с', host)}</div>`));
   stage.querySelectorAll('.seg button').forEach(b => { b.onclick = () => send({ type: 'settings', [b.dataset.k]: +b.dataset.v }); });
   if (!host) stage.append(h(`<p class="wait" data-in>Ждём, пока <b>${esc(nameOf(s, s.hostId))}</b> начнёт <span class="dots"><i></i><i></i><i></i></span></p>`));
   requestAnimationFrame(placeSegPills);
 };
 PATCH.lobby = (p, s) => {
-  renderPlist(s);
+  renderPlist(s, lobbyTag);
   stage.querySelectorAll('.seg').forEach(sg => sg.querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.v === s.settings[sg.dataset.seg])));
   placeSegPills();
 };
@@ -807,15 +517,6 @@ BUILD.final = s => {
 };
 
 /* ---------- boot ---------- */
-document.addEventListener('click', e => { if (e.target.closest('[data-rules]')) openRules(); });
-$('#rulesOk').onclick = closeRules;
-$('#rules').onclick = e => { if (e.target.id === 'rules') closeRules(); };
-$('#exitBtn').onclick = () => { if (confirm(isHost ? 'Выйти? Лобби закроется для всех.' : 'Выйти из игры?')) leave(); };
+initPage('genie', net);
 addEventListener('resize', () => { placePill(); placeSegPills(); });
-
-const sess = LS.get('session');
-const saved = LS.get('hostState');
-if (sess?.code && sess.host && saved?.code === sess.code) hostStart(sess.code, saved);
-else if (sess?.code && !sess.host && me.name) joinLobby(sess.code);
-else { LS.del('session'); showHome(); }
-if (!LS.get('seenRules')) { LS.set('seenRules', 1); setTimeout(openRules, 700); }
+if (!net.resume()) showHome();

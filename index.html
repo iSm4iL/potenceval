@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="genie/style.css">
+<link rel="stylesheet" href="shared/style.css">
 <style>
 .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:34px}
 .game{position:relative;display:block;padding:24px;border-radius:24px;text-decoration:none;color:var(--text);background:linear-gradient(160deg,#2c2160,#1a1333);border:1px solid rgba(124,92,255,.5);box-shadow:0 20px 50px -24px rgba(124,92,255,.9);transition:transform .25s var(--spring)}
@@ -31,10 +31,14 @@
     <h1>Сидим, ржём, играем</h1>
     <p class="sub">Без регистрации. Создаёшь лобби, кидаешь код — и погнали. Можно даже вдвоём.</p>
   </section>
-  <div class="games">
-    <a class="game" href="genie/"><div class="ic">✦</div><h2>Джинн</h2><p>Один получает суперсилу. Остальные придумывают, в чём подвох. 2–8 игроков.</p><span class="go">Играть →</span></a>
-    <div class="soon">Скоро новые игры</div>
-  </div>
+  <div class="games" id="games"></div>
 </div>
+<script type="module">
+import { GAMES } from './shared/menu.js';
+const box = document.getElementById('games');
+box.innerHTML = GAMES.map(g => `<a class="game" href="${g.path}"><div class="ic">${g.icon}</div><h2>${g.name}</h2><p>${g.desc}</p><span class="go">Играть →</span></a>`).join('') + '<div class="soon">Скоро новые игры</div>';
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) [...box.children].forEach((el, k) =>
+  el.animate([{ opacity: 0, transform: 'translateY(30px) rotate(-2deg)' }, { opacity: 1, transform: 'none' }], { duration: 650, delay: 150 + k * 110, easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards' }));
+</script>
 </body>
 </html>
