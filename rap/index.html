@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Биты — potenceval</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/style.css">
+<style>
+.beats{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:26px}
+.beat{position:relative;padding:16px;border-radius:20px;background:linear-gradient(160deg,#241a48,#16102c);border:1px solid var(--line);overflow:hidden}
+.beat .tags{display:flex;flex-wrap:wrap;gap:6px;font-size:12px}
+.beat .tags span{padding:3px 9px;border-radius:99px;background:rgba(255,255,255,.07);color:var(--muted)}
+.beat .tags .st{background:var(--violet);color:#fff}
+.beat h3{font-family:'Unbounded';font-size:17px;margin:12px 0 10px}
+.beat canvas{display:block;width:100%;height:56px;border-radius:10px;background:rgba(0,0,0,.25);cursor:pointer}
+.beat .row2{display:flex;gap:8px;margin-top:12px}
+.beat .row2 .btn{padding:10px 14px;font-size:14px}
+.beat.loading canvas{animation:pulse2 1s ease-in-out infinite alternate}
+@keyframes pulse2{to{opacity:.35}}
+.note{max-width:640px;margin:26px auto 0;padding:12px 16px;border-radius:12px;border:1px dashed var(--line);color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="blobs"><i></i><i></i><i></i></div>
+<div class="wrap">
+  <header class="top"><a class="logo" href="../"><b>potenceval</b><span>games</span></a></header>
+  <section class="intro" style="margin-top:30px">
+    <span class="kicker">Тест генератора</span>
+    <h1 style="font-size:clamp(30px,6vw,52px)">Биты из формул</h1>
+    <p class="sub">Каждый бит собран из синусов и шума прямо в браузере, без файлов. Послушай в наушниках и скажи, годится ли под рэп.</p>
+  </section>
+  <div class="row" style="justify-content:flex-start"><button class="btn primary" id="more">Ещё 5 битов</button></div>
+  <div class="beats" id="beats"></div>
+  <p class="note">Это проверка звука. Сама игра (выбор бита, запись, таймлайн, прослушка всех треков) будет на этой же странице.</p>
+</div>
+<script type="module" src="../shared/menu.js"></script>
+<script type="module">
+import { describe, renderBeat, toWav, STYLES } from './beats.js';
+const box = document.getElementById('beats');
+let ac, playing = null;
+const audio = () => (ac ||= new AudioContext());
+
+function drawWave(canvas, buf, progress = 0) {
+  const w = canvas.width = canvas.clientWidth * devicePixelRatio, h = canvas.height = canvas.clientHeight * devicePixelRatio;
+  const g = canvas.getContext('2d'), d = buf.getChannelData(0), step = Math.floor(d.length / w);
+  for (let x = 0; x < w; x++) {
+    let m = 0;
+    for (let i = x * step; i < (x + 1) * step; i += 16) m = Math.max(m, Math.abs(d[i]));
+    g.fillStyle = x / w < progress ? '#ff4d6d' : 'rgba(205,189,255,.55)';
+    g.fillRect(x, h / 2 - m * h / 2, 1, Math.max(1, m * h));
+  }
+}
+function stop() {
+  if (!playing) return;
+  playing.src.onended = null; playing.src.stop(); cancelAnimationFrame(playing.raf);
+  playing.btn.textContent = '▶ Слушать'; drawWave(playing.canvas, playing.buf);
+  playing = null;
+}
+function play(card, buf, from = 0) {
+  stop();
+  const ctx = audio(), src = ctx.createBufferSource();
+  src.buffer = buf; src.connect(ctx.destination); src.start(0, from * buf.duration);
+  const t0 = ctx.currentTime - from * buf.duration, canvas = card.querySelector('canvas'), btn = card.querySelector('.play');
+  playing = { src, buf, canvas, btn };
+  btn.textContent = '■ Стоп';
+  const tick = () => { drawWave(canvas, buf, (ctx.currentTime - t0) / buf.duration); playing.raf = requestAnimationFrame(tick); };
+  tick();
+  src.onended = stop;
+}
+
+async function addBeats() {
+  stop();
+  box.replaceChildren();
+  const styles = Object.keys(STYLES).sort(() => Math.random() - .5);
+  for (let i = 0; i < 5; i++) {
+    const info = describe(Math.floor(Math.random() * 2 ** 31), styles[i % styles.length]);
+    const card = document.createElement('div');
+    card.className = 'beat loading';
+    card.innerHTML = `<div class="tags"><span class="st">${info.label}</span><span>${info.bpm} BPM</span><span>${info.keyName}</span><span>${Math.round(info.duration)} с</span></div>
+      <h3>«${info.name}»</h3><canvas></canvas><div class="row2"><button class="btn primary play" disabled>собираю…</button><a class="btn ghost dl" hidden>WAV</a></div>`;
+    box.append(card);
+    card.animate([{ opacity: 0, transform: 'translateY(20px) scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: i * 80, easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards' });
+    const buf = await renderBeat(info);
+    card.classList.remove('loading');
+    drawWave(card.querySelector('canvas'), buf);
+    const btn = card.querySelector('.play');
+    btn.disabled = false; btn.textContent = '▶ Слушать';
+    btn.onclick = () => (playing?.btn === btn ? stop() : play(card, buf));
+    card.querySelector('canvas').onclick = e => play(card, buf, e.offsetX / e.target.clientWidth);
+    const dl = card.querySelector('.dl');
+    dl.href = URL.createObjectURL(toWav(buf)); dl.download = `${info.name} (${info.label}, ${info.bpm}).wav`; dl.hidden = false;
+    window.__beats = [...(window.__beats || []), { info, buf }];
+  }
+}
+document.getElementById('more').onclick = addBeats;
+addBeats();
+</script>
+</body>
+</html>
