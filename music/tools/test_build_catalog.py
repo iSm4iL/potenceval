@@ -1,0 +1,377 @@
+"""Offline contract tests. Run: python -m unittest discover -s music/tools -v."""
+from contextlib import contextmanager
+from datetime import datetime, timezone
+from email.message import Message
+import io
+import json
+from pathlib import Path
+import shutil
+import threading
+import unittest
+from unittest.mock import patch
+from urllib.error import HTTPError, URLError
+from uuid import uuid4
+
+try:
+    import build_catalog as b
+except ImportError:
+    b = None
+try:
+    import serve
+except ImportError:
+    serve = None
+
+
+@contextmanager
+def workspace_temp():
+    # Inherit workspace ACLs; Windows sandbox cannot reopen mode-0700 temp dirs.
+    parent = Path(__file__).resolve().parent
+    directory = parent / ("test-tmp-" + uuid4().hex)
+    directory.mkdir()
+    try:
+        yield directory
+    finally:
+        assert directory.resolve().parent == parent
+        shutil.rmtree(directory)
+
+
+def raw(track_id=10, title="Sultans of Swing", artist="Dire Straits", artist_id=176, **extra):
+    value = {"id": track_id, "title": title, "title_short": title, "duration": 345,
+             "artist": {"id": artist_id, "name": artist},
+             "contributors": [{"id": artist_id, "name": artist}],
+             "preview": "https://cdn-preview-a.dzcdn.net/stream/test.mp3",
+             "album": {"cover_medium": "https://cdn-images.dzcdn.net/images/cover/test.jpg"},
+             "isrc": "GBABC7700001", "readable": True}
+    value.update(extra)
+    return value
+
+
+class FakeClient:
+    def __init__(self, tracks=None, pages=None):
+        self.tracks = tracks or [raw()]
+        self.pages = pages or {}
+        self.calls = []
+
+    def get(self, url):
+        self.calls.append(url)
+        if "/artist/" in url:
+            raise AssertionError("Artist endpoints are forbidden")
+        if url.startswith("https://api.deezer.com/search?"):
+            return {"data": self.tracks}
+        if url.startswith("https://api.deezer.com/track/"):
+            ident = int(url.rsplit("/", 1)[1])
+            return next(t for t in self.tracks if t["id"] == ident)
+        result = self.pages.get(url, OSError("source unavailable"))
+        if isinstance(result, Exception):
+            raise result
+        return result
+
+
+class BuilderTests(unittest.TestCase):
+    def setUp(self):
+        self.assertIsNotNone(b, "build_catalog implementation must exist")
+        self.output = patch("builtins.print")
+        self.output.start()
+        self.addCleanup(self.output.stop)
+
+    def test_playlist_jsonld_graph_track_wrappers_and_metadata(self):
+        html = '''<script type="application/ld+json">{"@graph":[{"@type":"MusicPlaylist",
+        "track":[{"@type":"ListItem","position":2,"item":{"@type":"MusicRecording",
+        "name":"Sultans of Swing","byArtist":{"name":"Dire Straits"},
+        "datePublished":"1977-01-01","duration":"PT5M45S","genre":["Rock"]}}]}]}</script>'''
+        rows = b.parse_playlist(html)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["artists"], ["Dire Straits"])
+        self.assertEqual(rows[0]["position"], 2)
+        self.assertEqual(rows[0]["year"], 1977)
+        self.assertEqual(rows[0]["rawGenres"], ["Rock"])
+
+    def test_chart_uses_feed_metadata_and_keeps_band_names_unsplit(self):
+        rows = b.parse_chart({"feed": {"results": [{"name": "Song", "artistName": "Earth, Wind & Fire",
+                 "genres": [{"name": "Pop"}], "releaseDate": "1981-02-03", "id": "12"}]}})
+        self.assertEqual(rows[0]["artists"], ["Earth, Wind & Fire"])
+        self.assertEqual(rows[0]["position"], 1)
+        self.assertEqual(rows[0]["year"], 1981)
+
+    def test_playlist_serialized_server_data_supplies_missing_jsonld_artists(self):
+        item = {"id": "track-lockup - pl.ID - 1006607505", "title": "Поворот", "artistName": "Машина Времени",
+                "duration": 195800, "contentDescriptor": {"kind": "song", "identifiers": {"storeAdamID": "1006607505"},
+                "url": "https://music.apple.com/us/album/song/1006607505"}, "subtitleLinks": [{"title": "Машина Времени"}]}
+        html = '<script type="application/ld+json">{"@type":"MusicPlaylist","track":[{"name":"Поворот","datePublished":"1979","duration":"PT3M15S"}]}</script>'
+        html += '<script type="application/json" id="serialized-server-data">' + json.dumps({"data": [{"data": {"sections": [{"itemKind": "trackLockup", "items": [item, item]}]}}]}) + '</script>'
+        rows = b.parse_playlist(html)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["artists"], ["Машина Времени"])
+        self.assertEqual(rows[0]["year"], 1979)
+        self.assertEqual(rows[0]["position"], 1)
+
+    def test_planet_visible_text_ignores_script_style_and_applies_bounds(self):
+        html = '<script>1) Fake - Nope (1970)</script><style>2) Bad - Nope (1970)</style><h2>79) Dire Straits - Sultans of Swing (1977)</h2><p>80) New Band – Song (2025)</p>'
+        rows = b.source_rows({"kind": "planet-rock", "genres": ["classics"], "maxYear": 1989, "maxPosition": 79}, html)
+        self.assertEqual([(r["title"], r["position"]) for r in rows], [("Sultans of Swing", 79)])
+
+    def test_genres_require_chart_rap_for_new_wave_and_russian_hints(self):
+        config = {"newWaveArtists": ["OG Buda"], "russianArtists": ["OG Buda"]}
+        source = {"kind": "apple-chart", "country": "ru", "genres": []}
+        self.assertEqual(b.row_genres(source, {"artists": ["OG Buda"], "rawGenres": ["Hip-Hop/Rap"]}, config), ["ru-rap", "new-wave"])
+        self.assertEqual(b.row_genres(source, {"artists": ["OG Buda"], "rawGenres": ["Pop"]}, config), ["ru-pop"])
+        self.assertEqual(b.row_genres(source, {"artists": ["Eminem"], "rawGenres": ["Hip-Hop/Rap"]}, config), ["western-rap"])
+        self.assertEqual(b.row_genres({"kind": "verified-tracks", "genres": ["classics"]}, {"artists": ["OG Buda"], "genres": ["ru-rap"]}, config), ["classics", "ru-rap", "new-wave"])
+
+    def test_exact_identity_rejects_wrong_artist_and_unrequested_versions(self):
+        row = {"title": "Sultans of Swing", "artists": ["Dire Straits"]}
+        for candidate in [raw(artist="Dire Straits Tribute"), raw(title="Sultans of Swing (Live)"),
+                          raw(title="Sultans of Swing - Remix"), raw(title="Sultans of Swing (Karaoke)"),
+                          raw(title="Sultans of Swing (Sped Up)"), raw(title="Sultans of Swing (Instrumental)"),
+                          raw(title="Sultans of Swing (Cover)"), raw(duration=12), raw(preview=""),
+                          raw(title="Sultans of Swing Again"), raw(title_version="Live")]:
+            with self.subTest(candidate=candidate):
+                self.assertFalse(b.match_track(row, candidate)[0])
+        self.assertTrue(b.match_track(row, raw(title="Sultans of Swing (2005 Remaster)", title_short="Sultans of Swing"))[0])
+        self.assertTrue(b.match_track({"title": "Sultans of Swing (Live)", "artists": ["Dire Straits"]}, raw(title="Sultans of Swing (Live)"))[0])
+
+    def test_credit_split_requires_exact_contributors(self):
+        duet = raw(title="Song", artist="Alice", contributors=[{"id": 176, "name": "Alice"}, {"id": 9, "name": "Bob"}])
+        self.assertTrue(b.match_track({"title": "Song", "artists": ["Alice & Bob"]}, duet)[0])
+        self.assertFalse(b.match_track({"title": "Song", "artists": ["Alice & Bobby"]}, duet)[0])
+        self.assertTrue(b.match_track({"title": "Song", "artists": ["Earth, Wind & Fire"]}, raw(title="Song", artist="Earth, Wind & Fire"))[0])
+
+    def setup_build(self, directory, sources):
+        path = Path(directory) / "sources.json"
+        path.write_text(json.dumps({"version": 1, "sources": sources}), encoding="utf-8")
+        return path, Path(directory) / "catalog.json"
+
+    def source(self, ident="rock", **extra):
+        value = {"id": ident, "kind": "verified-tracks", "title": ident,
+                 "url": "https://example.org/historical-chart", "genres": ["classics"],
+                 "tracks": [{"title": "Sultans of Swing", "artists": ["Dire Straits"], "position": 79}]}
+        value.update(extra)
+        return value
+
+    def test_build_merges_isrc_and_work_provenance_never_saves_preview(self):
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"], current=True)])
+            client = FakeClient()
+            self.assertTrue(b.build(src, out, client=client))
+            catalog = json.loads(out.read_text())
+            self.assertEqual(len(catalog["tracks"]), 1)
+            track = catalog["tracks"][0]
+            self.assertEqual(track["id"], "dz-10")
+            self.assertEqual(track["answerKey"], "176|sultans of swing")
+            self.assertEqual(track["genres"], ["classics", "pop-rnb"])
+            self.assertEqual(track["currentGenres"], ["pop-rnb"])
+            self.assertEqual([s["id"] for s in track["sources"]], ["rock", "pop"])
+            self.assertNotIn("preview", out.read_text())
+            self.assertTrue(any("/track/10" in call for call in client.calls))
+
+    def test_dedup_different_ids_uses_both_isrc_and_canonical_work(self):
+        first = b.public_track(raw(), {"title": "Sultans of Swing", "artists": ["Dire Straits"]})
+        second = b.public_track(raw(11), {"title": "Sultans of Swing", "artists": ["Dire Straits"]})
+        third = b.public_track(raw(12, isrc="OTHER"), {"title": "Sultans of Swing", "artists": ["Dire Straits"]})
+        for track, genre in zip([first, second, third], ["classics", "alt-rock", "pop-rnb"]):
+            track.update(genres=[genre], currentGenres=[], sources=[], lookupKeys=[genre])
+        merged = b.merge_tracks([first, second, third])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0]["genres"], ["classics", "alt-rock", "pop-rnb"])
+
+    def test_failed_source_preserves_old_provenance_but_success_refreshes(self):
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"])])
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            config = json.loads(src.read_text())
+            config["sources"][0].update(kind="apple-playlist", url="https://example.org/down")
+            src.write_text(json.dumps(config))
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            catalog = json.loads(out.read_text())
+            self.assertEqual(catalog["sources"][0]["status"], "stale")
+            self.assertEqual(len(catalog["tracks"][0]["sources"]), 2)
+
+    def test_all_sources_failed_and_zero_valid_do_not_replace_old_bytes(self):
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source()])
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            original = out.read_bytes()
+            src.write_text(json.dumps({"version": 1, "sources": [self.source(kind="apple-playlist")]}))
+            self.assertFalse(b.build(src, out, client=FakeClient()))
+            self.assertEqual(out.read_bytes(), original)
+            src.write_text(json.dumps({"version": 1, "sources": [self.source(tracks=[{"title": "Unmatched", "artists": ["Wrong"]}])]}))
+            self.assertFalse(b.build(src, out, client=FakeClient()))
+            self.assertEqual(out.read_bytes(), original)
+            review = json.loads(out.with_name("review.json").read_text())
+            self.assertEqual(review["counts"]["unmatched"], 1)
+            self.assertTrue(review["unmatched"][0]["reason"])
+
+    def test_recent_cache_refreshes_sources_but_avoids_deezer_requests(self):
+        with workspace_temp() as directory:
+            source = self.source(kind="apple-chart", current=True)
+            src, out = self.setup_build(directory, [source])
+            page = {"feed": {"results": [{"name": "Sultans of Swing", "artistName": "Dire Straits", "genres": [{"name": "Rock"}]}]}}
+            self.assertTrue(b.build(src, out, client=FakeClient(pages={source["url"]: page})))
+            second = FakeClient(pages={source["url"]: page})
+            self.assertTrue(b.build(src, out, client=second))
+            self.assertEqual(second.calls, [source["url"]])
+
+    def test_empty_playlist_is_a_failed_source(self):
+        with self.assertRaises(ValueError):
+            b.source_rows({"kind": "apple-playlist"}, "<html>consent required</html>")
+
+    def test_stale_source_does_not_reintroduce_removed_fresh_source_genres(self):
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"])])
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            src.write_text(json.dumps({"version": 1, "sources": [self.source(kind="apple-playlist"), self.source("pop", genres=["electronic"])]}))
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            track = json.loads(out.read_text())["tracks"][0]
+            self.assertEqual(set(track["genres"]), {"classics", "electronic"})
+
+    def test_cache_hits_do_not_extend_original_verification_date(self):
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source()])
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            review_path = out.with_name("review.json")
+            review = json.loads(review_path.read_text())
+            first_date = next(iter(review["matchCache"].values()))["verifiedAt"]
+            with patch.object(b, "stamp", return_value="2090-01-01T00:00:00Z"):
+                self.assertTrue(b.build(src, out, client=FakeClient()))
+            review = json.loads(review_path.read_text())
+            self.assertEqual(next(iter(review["matchCache"].values()))["verifiedAt"], first_date)
+            for entry in review["matchCache"].values():
+                entry["verifiedAt"] = "2000-01-01T00:00:00Z"
+            review_path.write_text(json.dumps(review))
+            client = FakeClient()
+            self.assertTrue(b.build(src, out, client=client))
+            self.assertTrue(any("/search?" in call for call in client.calls))
+
+    def test_detail_validation_rejects_search_result_with_wrong_detail_id(self):
+        class WrongDetail(FakeClient):
+            def get(self, url):
+                return raw(999) if "/track/" in url else super().get(url)
+        track, failure = b.resolve({"title": "Sultans of Swing", "artists": ["Dire Straits"]}, WrongDetail())
+        self.assertIsNone(track)
+        self.assertIn("detail ID mismatch", failure["reason"])
+
+    def test_partial_api_failure_retains_previous_source_recordings(self):
+        class FailedDetail(FakeClient):
+            def get(self, url):
+                if "/search?" in url:
+                    raise OSError("rate limited")
+                return super().get(url)
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"])])
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            config = json.loads(src.read_text())
+            config["sources"][0]["tracks"].append({"title": "New Song", "artists": ["Dire Straits"]})
+            src.write_text(json.dumps(config))
+            self.assertTrue(b.build(src, out, client=FailedDetail()))
+            catalog = json.loads(out.read_text())
+            self.assertEqual(catalog["sources"][0]["status"], "stale")
+            self.assertEqual(catalog["tracks"][0]["id"], "dz-10")
+
+    def test_atomic_replace_failure_preserves_existing_catalog(self):
+        with workspace_temp() as directory:
+            output = directory / "catalog.json"
+            output.write_text('{"old":true}')
+            with patch.object(b.os, "replace", side_effect=OSError("busy")):
+                with self.assertRaises(OSError):
+                    b.atomic_json(output, {"new": True})
+            self.assertEqual(output.read_text(), '{"old":true}')
+            self.assertEqual([p.name for p in directory.iterdir()], ["catalog.json"])
+
+    def test_builder_bounds_rows_and_workers(self):
+        rows = [{"title": "Song " + str(i), "artists": ["Band"]} for i in range(600)]
+        source = self.source(tracks=rows, limit=800)
+        self.assertEqual(len(b.source_rows(source)), 500)
+        self.assertEqual(len(b.source_rows(source, limit_per_source=3)), 3)
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source()])
+            original = b.ThreadPoolExecutor
+            sizes = []
+            def executor(**kwargs):
+                sizes.append(kwargs["max_workers"])
+                return original(**kwargs)
+            with patch.object(b, "ThreadPoolExecutor", side_effect=executor):
+                self.assertTrue(b.build(src, out, workers=40, client=FakeClient()))
+            self.assertEqual(sizes, [4])
+
+    def test_public_client_retries_timeouts_and_rate_limits(self):
+        class Response(io.BytesIO):
+            headers = Message()
+        class Opener:
+            attempts = 0
+            def open(self, request, timeout):
+                self.attempts += 1
+                if self.attempts == 1:
+                    raise URLError("timed out")
+                if self.attempts == 2:
+                    raise HTTPError(request.full_url, 429, "slow down", {"Retry-After": "1"}, io.BytesIO())
+                return Response(b'{"data":[]}')
+        client = b.Client()
+        client.opener = Opener()
+        with patch.object(b.time, "sleep") as sleep:
+            self.assertEqual(client.get("https://api.deezer.com/search?q=test"), {"data": []})
+        self.assertEqual(client.opener.attempts, 3)
+        self.assertTrue(sleep.called)
+
+    def test_chart_collaboration_uses_only_verified_contributors_for_taxonomy(self):
+        source = self.source(kind="apple-chart", country="ru", current=True)
+        row = {"title": "Song", "artists": ["OG Buda & Friend"], "rawGenres": ["Hip-Hop/Rap"]}
+        config = {"russianArtists": ["OG Buda"], "newWaveArtists": ["OG Buda"]}
+        self.assertEqual(b.row_genres(source, row, config, verified_names=["OG Buda", "Friend"]), ["ru-rap", "new-wave"])
+
+    def test_russian_origin_is_independent_of_chart_country(self):
+        config = {"russianArtists": ["OG Buda"], "newWaveArtists": ["OG Buda"]}
+        row = {"artists": ["OG Buda"], "rawGenres": ["Hip-Hop/Rap"]}
+        self.assertEqual(b.row_genres({"kind": "apple-chart", "country": "us"}, row, config), ["ru-rap", "new-wave"])
+        self.assertEqual(b.row_genres({"kind": "apple-playlist", "genres": ["ru-rap"]}, row, config), ["ru-rap", "new-wave"])
+
+    def test_chart_provenance_has_row_genres_and_upstream_date(self):
+        with workspace_temp() as directory:
+            source = self.source(kind="apple-chart", current=True)
+            src, out = self.setup_build(directory, [source])
+            feed = {"feed": {"updated": "2026-01-02T12:30:00Z", "results": [{"name": "Sultans of Swing", "artistName": "Dire Straits", "genres": [{"name": "Rock"}]}]}}
+            self.assertTrue(b.build(src, out, client=FakeClient(pages={source["url"]: feed})))
+            data = json.loads(out.read_text())
+            self.assertEqual(data["sources"][0]["updatedAt"], "2026-01-02T12:30:00Z")
+            self.assertEqual(data["tracks"][0]["sources"][0]["genres"], ["alt-rock"])
+
+    def test_localized_chart_genres(self):
+        config = {"russianArtists": ["madk1d"], "newWaveArtists": ["madk1d"]}
+        source = {"kind": "apple-chart", "country": "ru"}
+        for raw_genre, expected in [("Хип-хоп/рэп", ["ru-rap", "new-wave"]), ("Поп", ["ru-pop"]),
+                                    ("Рок", ["ru-rock"]), ("Альтернатива", ["ru-rock"]),
+                                    ("Танцевальная", ["electronic"]), ("Электроника", ["electronic"])]:
+            with self.subTest(genre=raw_genre):
+                self.assertEqual(b.row_genres(source, {"artists": ["madk1d"], "rawGenres": [raw_genre]}, config), expected)
+
+    def test_chart_rfc_date_is_kept_as_upstream_time(self):
+        self.assertEqual(b.upstream_date({"feed": {"updated": "Thu, 22 Oct 2026 01:15:14 +0000"}}, "fallback"), "2026-10-22T01:15:14Z")
+
+
+class ServeTests(unittest.TestCase):
+    def setUp(self):
+        self.assertIsNotNone(serve, "serve implementation must exist")
+
+    def test_server_refreshes_old_catalog_but_keeps_recent_file(self):
+        with workspace_temp() as directory:
+            catalog = directory / "catalog.json"
+            catalog.write_text(json.dumps({"generatedAt": b.stamp()}))
+            with patch.object(serve, "build", return_value=True) as builder:
+                self.assertFalse(serve.refresh_if_due(directory / "sources.json", catalog))
+                builder.assert_not_called()
+                catalog.write_text('{"generatedAt":"2000-01-01T00:00:00Z"}')
+                self.assertTrue(serve.refresh_if_due(directory / "sources.json", catalog))
+                self.assertEqual(builder.call_count, 1)
+
+    def test_one_background_loop_runs_once_until_next_hour(self):
+        stop = threading.Event()
+        calls = []
+        def refresh(*args):
+            calls.append(args)
+            stop.set()
+        with patch.object(serve, "refresh_if_due", side_effect=refresh):
+            serve.refresh_loop(Path("sources.json"), Path("catalog.json"), stop)
+        self.assertEqual(len(calls), 1)
+
+
+if __name__ == "__main__":
+    unittest.main()

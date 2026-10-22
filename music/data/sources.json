@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "newWaveArtists": [
+    "madk1d",
+    "тёмный принц",
+    "VILLIAN",
+    "OG Buda",
+    "BUSHIDO ZHO",
+    "Big Baby Tape",
+    "SODA LUV",
+    "Платина",
+    "MAYOT",
+    "SEEMEE",
+    "LOVV66",
+    "unki",
+    "FRIENDLY THUG 52 NGG",
+    "ALBLAK 52",
+    "Aarne",
+    "Whole Lotta Swag",
+    "OBLADAET",
+    "SALUKI",
+    "Boulevard Depo",
+    "kizaru",
+    "9mice",
+    "Kai Angel",
+    "fakemink",
+    "ICEGERGERT",
+    "Voskresenskii",
+    "utkay",
+    "Toxi$",
+    "GONE.Fludd"
+  ],
+  "russianArtists": [
+    "madk1d",
+    "VILLIAN",
+    "OG Buda",
+    "BUSHIDO ZHO",
+    "Big Baby Tape",
+    "MAYOT",
+    "SEEMEE",
+    "SODA LUV",
+    "Miyagi",
+    "Andy Panda",
+    "Miyagi & Andy Panda",
+    "JONY",
+    "Zivert",
+    "MONA",
+    "NAVAI",
+    "ANNA ASTI",
+    "Aarne",
+    "SALUKI",
+    "PHARAOH",
+    "Boulevard Depo",
+    "Loqiemean",
+    "Noize MC",
+    "Thomas Mraz",
+    "JEEMBO",
+    "kizaru",
+    "OBLADAET",
+    "FRIENDLY THUG 52 NGG",
+    "ALBLAK 52",
+    "unki",
+    "9mice",
+    "Kai Angel",
+    "bearWOLF",
+    "Voskresenskii",
+    "HOLLYFLAME",
+    "Sayan",
+    "Mia Boyka",
+    "Jakone",
+    "Kiliana",
+    "Iowa",
+    "Xolidayboy",
+    "Artik & Asti",
+    "Akmal'",
+    "GAYAZOV$ BROTHER$",
+    "ICEGERGERT",
+    "SKY RAE",
+    "utkay",
+    "Toxi$",
+    "GONE.Fludd",
+    "HammAli",
+    "HammAli & Navai",
+    "Jah Khalib",
+    "Allj",
+    "Markul",
+    "Slava Marlow"
+  ],
+  "sources": [
+    {
+      "id": "apple-ru-chart",
+      "kind": "apple-chart",
+      "title": "Apple Music — топ-100 России",
+      "url": "https://rss.marketingtools.apple.com/api/v2/ru/music/most-played/100/songs.json",
+      "country": "ru",
+      "current": true,
+      "limit": 100
+    },
+    {
+      "id": "apple-us-chart",
+      "kind": "apple-chart",
+      "title": "Apple Music — топ-100 США",
+      "url": "https://rss.marketingtools.apple.com/api/v2/us/music/most-played/100/songs.json",
+      "country": "us",
+      "current": true,
+      "limit": 100
+    },
+    {
+      "id": "ru-hiphop-essentials",
+      "kind": "apple-playlist",
+      "title": "Apple Music — Хип-хоп на русском: главное",
+      "url": "https://music.apple.com/us/playlist/pl.747bb66704964a70a51e1ec1ab4f649d?l=ru",
+      "genres": [
+        "ru-rap"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "ru-rap-supergame",
+      "kind": "apple-playlist",
+      "title": "Apple Music — Суперигра",
+      "url": "https://music.apple.com/us/playlist/pl.d7f7d6f889974685a6fb7b687215c57f?l=ru",
+      "genres": [
+        "ru-rap"
+      ],
+      "limit": 100
+    },
+    {
+      "id": "ru-pop-essentials",
+      "kind": "apple-playlist",
+      "title": "Apple Music — Поп на русском: главное",
+      "url": "https://music.apple.com/us/playlist/pl.a497b4695ffb4dfe93b40b9f8a5c74e0?l=ru",
+      "genres": [
+        "ru-pop"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "ru-rock-essentials",
+      "kind": "apple-playlist",
+      "title": "Apple Music — Рок на русском: главное",
+      "url": "https://music.apple.com/us/playlist/pl.bd9dd079143b4b659efc48e2c01e3a11?l=ru",
+      "genres": [
+        "ru-rock"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "alternative-2000s",
+      "kind": "apple-playlist",
+      "title": "Apple Music — 2000s Alternative Essentials",
+      "url": "https://music.apple.com/us/playlist/pl.7f3a307b0f2e49b1b521b4d4d5c21c7c",
+      "genres": [
+        "alt-rock"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "alternative-2010s",
+      "kind": "apple-playlist",
+      "title": "Apple Music — 2010s Alternative Essentials",
+      "url": "https://music.apple.com/us/playlist/pl.4334377900f740a89dd4c75ce5a1ccfb",
+      "genres": [
+        "alt-rock"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "indie-2010s",
+      "kind": "apple-playlist",
+      "title": "Apple Music — 2010s Indie Essentials",
+      "url": "https://music.apple.com/us/playlist/pl.20a9e31e756d4752a9a022f94c222247",
+      "genres": [
+        "indie"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "western-hiphop-2010s",
+      "kind": "apple-playlist",
+      "title": "Apple Music — 2010s Hip-Hop Essentials",
+      "url": "https://music.apple.com/us/playlist/pl.af758ba03e6d44548184717eebb38f9b",
+      "genres": [
+        "western-rap"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "pop-2010s",
+      "kind": "apple-playlist",
+      "title": "Apple Music — 2010s Hits Essentials",
+      "url": "https://music.apple.com/us/playlist/pl.6b1b5dfda067443481265436811002f1",
+      "genres": [
+        "pop-rnb"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "edm-essentials",
+      "kind": "apple-playlist",
+      "title": "Apple Music — EDM Essentials",
+      "url": "https://music.apple.com/us/playlist/pl.733395f7caac4866b61dc281ac50bb2d",
+      "genres": [
+        "electronic"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "club-hits-2010s",
+      "kind": "apple-playlist",
+      "title": "Apple Music — 2010s Club Hits Essentials",
+      "url": "https://music.apple.com/us/playlist/pl.cc13740af0374560ac1c659ca2a89dd8",
+      "genres": [
+        "electronic"
+      ],
+      "limit": 120
+    },
+    {
+      "id": "big-beat-essentials",
+      "kind": "apple-playlist",
+      "title": "Apple Music — Big Beat Essentials",
+      "url": "https://music.apple.com/us/playlist/pl.78e98b7f1ea842dc807bd646ab37083e",
+      "genres": [
+        "electronic"
+      ],
+      "limit": 60
+    },
+    {
+      "id": "planet-rock-500",
+      "kind": "planet-rock",
+      "title": "Planet Rock — 500 Greatest Rock Songs (первые 200, до 1990 года)",
+      "url": "https://www.hellorayo.co.uk/planet-rock/news/rock-news/the-500-greatest-rock-songs-of-all-time",
+      "genres": [
+        "classics"
+      ],
+      "maxPosition": 200,
+      "maxYear": 1989,
+      "limit": 150
+    },
+    {
+      "id": "barns-gold",
+      "kind": "verified-tracks",
+      "title": "Official Charts — Glitter & Gold, Singles Sales",
+      "url": "https://www.officialcharts.com/songs/barns-courtney-glitter-gold/",
+      "genres": [
+        "alt-rock"
+      ],
+      "tracks": [
+        {
+          "title": "Glitter & Gold",
+          "artists": [
+            "Barns Courtney"
+          ],
+          "position": 59,
+          "period": "UK Singles Sales"
+        }
+      ]
+    }
+  ]
+}
