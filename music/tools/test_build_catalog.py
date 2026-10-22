@@ -148,6 +148,33 @@ class BuilderTests(unittest.TestCase):
         value.update(extra)
         return value
 
+    def test_artist_top_source_takes_popular_originals_and_tags_new_wave(self):
+        hit = raw(20, "Династия", "madk1d", 501, isrc="RUA000000001")
+        remix = raw(21, "Династия (Sped Up)", "madk1d", 501, isrc="RUA000000002")
+        other = raw(22, "Свет", "madk1d", 501, isrc="RUA000000003")
+
+        class ArtistClient(FakeClient):
+            def get(self, url):
+                self.calls.append(url)
+                if url.startswith("https://api.deezer.com/search/artist?"):
+                    return {"data": [{"id": 9, "name": "madk1d (tribute)", "nb_fan": 9999}, {"id": 501, "name": "madk1d", "nb_fan": 10}]} if "madk1d" in url else {"data": []}
+                if url.startswith("https://api.deezer.com/artist/501/top"):
+                    return {"data": [remix, hit, other]}
+                return super().get(url)
+
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [{"id": "ru-top", "kind": "deezer-artist-top", "title": "Deezer", "url": "https://www.deezer.com/",
+                                                     "genres": ["ru-rap"], "perArtist": 2, "artists": ["madk1d", "Нет такого"]}])
+            config = json.loads(src.read_text(encoding="utf-8"))
+            config["newWaveArtists"] = ["madk1d"]
+            src.write_text(json.dumps(config), encoding="utf-8")
+            client = ArtistClient(tracks=[hit, remix, other])
+            self.assertTrue(b.build(src, out, client=client))
+            tracks = json.loads(out.read_text(encoding="utf-8"))["tracks"]
+            self.assertEqual(sorted(t["title"] for t in tracks), ["Династия", "Свет"], "remixes and sped-up versions are skipped")
+            self.assertTrue(all(t["genres"] == ["ru-rap", "new-wave"] for t in tracks))
+            self.assertEqual(tracks[0]["sources"][0]["period"], "популярное у madk1d")
+
     def test_build_merges_isrc_and_work_provenance_never_saves_preview(self):
         with workspace_temp() as directory:
             src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"], current=True)])
@@ -178,7 +205,7 @@ class BuilderTests(unittest.TestCase):
         with workspace_temp() as directory:
             src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"])])
             self.assertTrue(b.build(src, out, client=FakeClient()))
-            config = json.loads(src.read_text())
+            config = json.loads(src.read_text(encoding="utf-8"))
             config["sources"][0].update(kind="apple-playlist", url="https://example.org/down")
             src.write_text(json.dumps(config))
             self.assertTrue(b.build(src, out, client=FakeClient()))
@@ -259,7 +286,7 @@ class BuilderTests(unittest.TestCase):
         with workspace_temp() as directory:
             src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"])])
             self.assertTrue(b.build(src, out, client=FakeClient()))
-            config = json.loads(src.read_text())
+            config = json.loads(src.read_text(encoding="utf-8"))
             config["sources"][0]["tracks"].append({"title": "New Song", "artists": ["Dire Straits"]})
             src.write_text(json.dumps(config))
             self.assertTrue(b.build(src, out, client=FailedDetail()))

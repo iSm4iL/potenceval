@@ -229,9 +229,48 @@ def parse_planet(html):
             for m in pattern.finditer("".join(page.visible))]
 
 
+def artist_top_rows(source, client):
+    """Самые популярные песни исполнителей из списка (Deezer /artist/{id}/top), без live/remix/sped up.
+
+    Исполнитель находится по точному имени; при тёзках берём того, у кого больше подписчиков.
+    Сбой одного исполнителя не роняет весь источник.
+    """
+    per = max(1, min(10, int(source.get("perArtist", 5))))
+    rows = []
+    for name in source.get("artists", []):
+        try:
+            found = client.get("https://api.deezer.com/search/artist?" + urlencode({"q": name, "limit": 10}))
+            exact = [a for a in (found.get("data") or []) if isinstance(a, dict) and isinstance(a.get("id"), int) and normalize(a.get("name")) == normalize(name)]
+            if not exact:
+                continue
+            artist = max(exact, key=lambda a: a.get("nb_fan") or 0)
+            top = client.get("https://api.deezer.com/artist/" + str(artist["id"]) + "/top?" + urlencode({"limit": per * 3}))
+        except (OSError, ValueError, TypeError, AttributeError):
+            continue
+        taken, titles = 0, set()
+        items = top.get("data") if isinstance(top, dict) else None
+        for item in items or []:
+            title = item.get("title") if isinstance(item, dict) else None
+            if not isinstance(title, str) or not title.strip() or canonical_title(title) in titles:
+                continue
+            if VERSION_WORDS.search(title + " " + str(item.get("title_version", ""))):
+                continue
+            if normalize(name) not in {normalize(p["name"]) for p in contributors(item)}:
+                continue
+            titles.add(canonical_title(title))
+            taken += 1
+            rows.append({"title": title, "artists": [name], "position": taken, "period": "популярное у " + name,
+                         "url": "https://www.deezer.com/artist/" + str(artist["id"])})
+            if taken >= per:
+                break
+    return rows
+
+
 def source_rows(source, payload=None, limit_per_source=None):
     kind = source["kind"]
-    if kind == "apple-playlist":
+    if kind == "deezer-artist-top":
+        rows = copy.deepcopy(payload or [])
+    elif kind == "apple-playlist":
         rows = parse_playlist(payload)
     elif kind == "apple-chart":
         rows = parse_chart(payload)
@@ -519,7 +558,10 @@ def build(sources_path, output_path, workers=4, limit_per_source=None, client=No
             meta.update(updatedAt=now, retrievedAt=now, status="fresh", count=0)
             source_report = {"id": ident, "rows": 0, "matched": 0, "unmatched": 0}
             try:
-                payload = None if source["kind"] == "verified-tracks" else client.get(source["url"])
+                if source["kind"] == "deezer-artist-top":
+                    payload = artist_top_rows(source, client)
+                else:
+                    payload = None if source["kind"] == "verified-tracks" else client.get(source["url"])
                 if source["kind"] == "apple-chart":
                     meta["updatedAt"] = upstream_date(payload, now)
                 rows = source_rows(source, payload, limit_per_source)

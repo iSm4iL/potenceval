@@ -12,7 +12,8 @@ const settings = { mode: stored.mode === 'current' ? 'current' : 'hits', pack: P
 player.setVolume(settings.volume);
 let customPack = null, state = null, savedGame = restoreGame(LS.get('music.online.session'));
 let availableRounds = [], genreCounts = {}, pool = [], packInfo = null, packLoading = false, packError = '', packVersion = 0, packController;
-let screenVersion = 0, audioVersion = 0, audioController, busy = false, ready = false, heard = false;
+// busy — грузим превью; playing — отрывок звучит (в это время можно писать ответ и остановить звук)
+let screenVersion = 0, audioVersion = 0, audioController, busy = false, ready = false, heard = false, playing = false;
 let renderedRoundKey = null;
 let selectedTrack = null, matches = [], highlighted = -1, searchVersion = 0, searchTimer, searchController, artistTimer, artistController;
 const cache = new Map();
@@ -102,7 +103,7 @@ function setAvailableRounds() {
 function renderGame(focusAnswer = false) {
   const key = `${state.index}:${state.queue[state.index]}`, sameRound = key === renderedRoundKey;
   screenVersion++; audioController?.abort(); player.stop(); closeSuggestions();
-  busy = false; ready = false; heard = heard && sameRound; selectedTrack = null; matches = []; highlighted = -1;
+  busy = false; ready = false; playing = false; heard = heard && sameRound; selectedTrack = null; matches = []; highlighted = -1;
   renderedRoundKey = key;
   $('#exitBtn').hidden = false;
   if (state.phase === 'summary') { renderSummary(); stage.scrollIntoView({ block: 'start' }); return; }
@@ -131,7 +132,7 @@ function roundHeader() {
 
 function attemptFeedbackHTML() {
   const last = state.attempts.at(-1);
-  return last ? `<div class="round-feedback ${last.status}" id="roundFeedback" role="status"><b>${last.status === 'artist' ? 'Исполнитель тот самый! Песня другая.' : 'Не та песня. Попробуйте ещё.'}</b><span>${esc(last.artist)} — ${esc(last.title)}</span></div>` : '<p class="answer-hint">Выбери песню из списка. Enter — выбрать, ещё раз Enter — ответить.</p>';
+  return last ? `<div class="round-feedback ${last.status}" id="roundFeedback" role="status"><b>${last.status === 'artist' ? 'Исполнитель тот самый! Песня другая.' : 'Не та песня. Попробуйте ещё.'}</b><span>${esc(last.artist)} — ${esc(last.title)}</span></div>` : '<p class="answer-hint">Пиши ответ прямо во время прослушивания. Enter — выбрать песню, ещё раз Enter — ответить. Пробел — играть/стоп.</p>';
 }
 
 function bindPlayer() {
@@ -164,8 +165,11 @@ function renderRound() {
 
 function updateControls() {
   if (!state || state.phase === 'summary') return;
-  $('#playBtn').disabled = busy || !ready;
-  $('#playBtn').setAttribute('aria-label', `Слушать отрывок: ${length(state.phase === 'reveal' ? 15 : LENGTHS[state.step])} с`);
+  const play = $('#playBtn');
+  play.disabled = busy || !ready;
+  play.classList.toggle('stop', playing);
+  play.querySelector('.record-symbol').textContent = playing ? '■' : '▶';
+  play.setAttribute('aria-label', playing ? 'Остановить отрывок' : `Слушать отрывок: ${length(state.phase === 'reveal' ? 15 : LENGTHS[state.step])} с`);
   if (state.phase !== 'round') return;
   $('#answerInput').disabled = busy || !ready; $('#guessBtn').disabled = busy || !ready || !heard || !selectedTrack;
   $('#skipBtn').disabled = busy || !ready; $('#surrenderBtn').disabled = busy || !ready;
@@ -195,18 +199,21 @@ async function prepareAudio(track, version, focusAnswer = false) {
   }
 }
 
+// Повторное нажатие останавливает звук. Пока отрывок играет, поле ответа и кнопки работают.
 async function listen() {
+  if (playing) { player.stop(); return; }
   if (busy || !ready) return;
   const version = screenVersion, seconds = state.phase === 'reveal' ? 15 : LENGTHS[state.step];
-  busy = true; closeSuggestions(); updateControls(); $('#listenCard').classList.add('is-playing'); $('#playStatus').textContent = 'Слушаем…';
+  playing = true; heard = true; updateControls(); $('#listenCard').classList.add('is-playing');
+  $('#playStatus').textContent = state.phase === 'round' ? 'Слушаем… Можно сразу писать ответ.' : 'Слушаем…';
+  if (state.phase === 'round' && matchMedia('(pointer: fine)').matches) $('#answerInput').focus({ preventScroll: true });
   const meter = $('#playMeter');
-  if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; requestAnimationFrame(() => { if (version === screenVersion && busy) { meter.style.transition = `width ${seconds}s linear`; meter.style.width = '100%'; } }); }
+  if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; requestAnimationFrame(() => { if (version === screenVersion && playing) { meter.style.transition = `width ${seconds}s linear`; meter.style.width = '100%'; } }); }
   try {
     const complete = await player.play(seconds); if (version !== screenVersion) return;
-    if (complete) heard = true;
-    $('#playStatus').textContent = complete ? 'Выберите песню. Повтор отрывка — бесплатно.' : 'Отрывок остановлен. Можно включить ещё раз.';
+    $('#playStatus').textContent = complete ? 'Выберите песню. Повтор отрывка — бесплатно.' : 'Остановлено. Можно включить ещё раз.';
   } catch (error) { if (version === screenVersion) { $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; } }
-  finally { if (version === screenVersion) { busy = false; $('#listenCard').classList.remove('is-playing'); if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; } updateControls(); } }
+  finally { if (version === screenVersion) { playing = false; $('#listenCard').classList.remove('is-playing'); if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; } updateControls(); } }
 }
 
 function closeSuggestions() {
@@ -276,7 +283,7 @@ function renderReveal(track) {
 function evidenceHTML(track) {
   const safe = (track.evidence || []).filter(e => { try { const u = new URL(e.url); return u.protocol === 'https:' && !u.username && !u.password; } catch { return false; } });
   if (!safe.length) return '';
-  return `<details class="track-evidence"><summary>Откуда эта песня в подборке?</summary><ul>${safe.map(e => `<li><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title)}</a>${e.kind !== 'apple-playlist' && Number.isInteger(e.position) ? ` · №${e.position}` : ''}${e.period ? ` · ${esc(e.period)}` : ''}<small>${e.kind === 'apple-playlist' ? 'Редакторская подборка' : e.kind === 'apple-chart' ? 'Чарт' : 'Рейтинг'}${e.date ? ` · проверено ${new Date(e.date).toLocaleDateString('ru-RU')}` : ''}${e.stale ? ' · сохранённая версия' : ''}</small></li>`).join('')}</ul></details>`;
+  return `<details class="track-evidence"><summary>Откуда эта песня в подборке?</summary><ul>${safe.map(e => `<li><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title)}</a>${e.kind !== 'apple-playlist' && Number.isInteger(e.position) ? ` · №${e.position}` : ''}${e.period ? ` · ${esc(e.period)}` : ''}<small>${{ 'apple-playlist': 'Редакторская подборка', 'apple-chart': 'Чарт', 'deezer-artist-top': 'Популярное у исполнителя на Deezer' }[e.kind] || 'Рейтинг'}${e.date ? ` · проверено ${new Date(e.date).toLocaleDateString('ru-RU')}` : ''}${e.stale ? ' · сохранённая версия' : ''}</small></li>`).join('')}</ul></details>`;
 }
 
 function renderSummary() {
@@ -305,6 +312,11 @@ $('#artistDialog').addEventListener('close', () => { clearTimeout(artistTimer); 
 $('#rulesOpen').onclick = () => $('#rulesDialog').showModal(); $('#exitBtn').onclick = leave;
 document.querySelectorAll('[data-close]').forEach(button => button.onclick = () => $(`#${button.dataset.close}`).close());
 document.addEventListener('visibilitychange', () => { if (document.hidden) player.pause(); });
+// Пробел вне поля ввода — играть / остановить отрывок
+addEventListener('keydown', e => {
+  if (e.code !== 'Space' || e.repeat || !state || state.phase === 'summary' || (e.target instanceof Element && e.target.closest('input, textarea, button, select, dialog'))) return;
+  e.preventDefault(); listen();
+});
 addEventListener('pagehide', () => { audioController?.abort(); player.stop(); });
 addEventListener('pageshow', event => { if (event.persisted && state) renderGame(); });
 renderSetup(); enter(stage); selectPack(currentPack());

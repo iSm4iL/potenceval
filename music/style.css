@@ -183,3 +183,5 @@
 .track-evidence{border-top:1px solid var(--line);margin-top:16px;padding-top:13px;font-size:12px;color:var(--muted)}
 .track-evidence summary{cursor:pointer;padding:5px 0}.track-evidence ul{padding-left:18px;line-height:1.6}.track-evidence li+li{margin-top:10px}.track-evidence a{color:var(--text)}.track-evidence small{display:block;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){.is-playing .vinyl,.celebrate{animation:none!important}.music-wrap *,.music-dialog *{scroll-behavior:auto!important;transition:none!important}}
+.record-button.stop .record-symbol{padding-left:0;font-size:26px}
+.record-button.stop .vinyl::after{background:#2b2341;border-color:var(--pink)}
