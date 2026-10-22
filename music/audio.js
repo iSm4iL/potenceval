@@ -56,6 +56,21 @@ export class AudioPlayer {
     } finally { clearTimeout(timer); if (this.controller === controller) this.controller = null; }
   }
 
+  // Фоновая подгрузка следующей песни: только скачать и раскодировать, текущий звук не трогаем.
+  async fetchBuffer(track, signal) {
+    if (!isPreviewUrl(track?.preview)) throw new Error('Нет доступного онлайн-превью для этого трека.');
+    const response = await this.fetchAudio(track.preview, { signal, mode: 'cors', credentials: 'omit', cache: 'no-store' });
+    if (!response.ok) throw new Error('Превью недоступно в этом регионе или ссылка устарела.');
+    const buffer = await this.getContext().decodeAudioData(await response.arrayBuffer());
+    if (!Number.isFinite(buffer.duration) || buffer.duration < 15) throw new Error('В превью меньше 15 секунд звука.');
+    return buffer;
+  }
+
+  useBuffer(track, buffer) {
+    this.stop();
+    this.track = { ...track, start: 0 }; this.buffer = buffer;
+  }
+
   async play(seconds) {
     this.stop();
     const version = this.version, buffer = this.buffer, track = this.track;

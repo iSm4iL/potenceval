@@ -17,6 +17,7 @@ let screenVersion = 0, audioVersion = 0, audioController, busy = false, ready = 
 let renderedRoundKey = null;
 let selectedTrack = null, matches = [], highlighted = -1, searchVersion = 0, searchTimer, searchController, artistTimer, artistController;
 const cache = new Map();
+const preloaded = new Map(); // id трека → Promise<{ full, buffer }>: следующая песня грузится, пока угадываете текущую
 const number = n => n.toLocaleString('ru-RU');
 const trackPlural = new Intl.PluralRules('ru');
 const trackCount = n => `${number(n)} ${{ one: 'трек', few: 'трека', many: 'треков', other: 'треков' }[trackPlural.select(n)]}`;
@@ -181,13 +182,20 @@ async function prepareAudio(track, version, focusAnswer = false) {
   busy = true; ready = false; $('#audioError').hidden = true; $('#playStatus').textContent = 'Готовим онлайн-превью…'; updateControls();
   try {
     if (player.track?.id !== track.id || !player.buffer) {
-      const full = await service.track(track.deezerId, { signal: controller.signal });
+      const pre = preloaded.get(track.id);
+      preloaded.delete(track.id);
+      let full, buffer;
+      if (pre) { try { ({ full, buffer } = await pre); } catch { /* не догрузилась — грузим как обычно */ } }
+      if (!full) full = await service.track(track.deezerId, { signal: controller.signal });
       if (version !== screenVersion || request !== audioVersion) return;
       if (state.phase === 'round' && !state.attempts.length) { state = { ...state, tracks: state.tracks.map(t => t.id === full.id ? { ...t, ...snapshotTrack(full) } : t) }; persistGame(); }
-      const loaded = await player.load(full);
-      if (!loaded || version !== screenVersion || request !== audioVersion) return;
+      if (buffer) player.useBuffer(full, buffer);
+      else {
+        const loaded = await player.load(full);
+        if (!loaded || version !== screenVersion || request !== audioVersion) return;
+      }
     }
-    ready = true; $('#playStatus').textContent = state.phase === 'reveal' ? 'Нажми на пластинку — сыграют 15 секунд.' : 'Нажми на пластинку и прислушайся.';
+    ready = true; preload(trackById(state.queue[state.index + 1])); $('#playStatus').textContent = state.phase === 'reveal' ? 'Нажми на пластинку — сыграют 15 секунд.' : 'Нажми на пластинку и прислушайся.';
   } catch (error) {
     if (version !== screenVersion || request !== audioVersion) return;
     $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; $('#playStatus').textContent = 'Не удалось получить превью.';
@@ -197,6 +205,14 @@ async function prepareAudio(track, version, focusAnswer = false) {
       if (focusAnswer && ready && state.phase === 'round' && !document.hidden) $('#answerInput').focus({ preventScroll: true });
     }
   }
+}
+
+function preload(track) {
+  if (!track || preloaded.has(track.id) || player.track?.id === track.id) return;
+  preloaded.clear(); // в памяти держим только одну следующую песню
+  const job = service.track(track.deezerId).then(async full => ({ full, buffer: await player.fetchBuffer(full) }));
+  job.catch(() => { if (preloaded.get(track.id) === job) preloaded.delete(track.id); });
+  preloaded.set(track.id, job);
 }
 
 // Повторное нажатие останавливает звук. Пока отрывок играет, поле ответа и кнопки работают.

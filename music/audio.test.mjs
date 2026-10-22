@@ -58,3 +58,18 @@ test('unavailable previews, unsafe sources and short audio fail clearly', async 
   const ctx = context(); ctx.decodeAudioData = async () => ({ duration: 10 });
   await assert.rejects(make(ctx).load(track), /15/);
 });
+
+test('background preload does not interrupt current playback and is reused without refetching', async () => {
+  const ctx = context(), calls = [];
+  const player = make(ctx, async (...args) => { calls.push(args); return response(); });
+  await player.load(track);
+  const playing = player.play(15); await tick();
+  const next = { ...track, id: 'dz-2', preview: 'https://cdnt-preview.dzcdn.net/next.mp3' };
+  const buffer = await player.fetchBuffer(next);
+  assert.equal(player.track.id, 'dz-1', 'current track is untouched while preloading');
+  assert.equal(calls.at(-1)[1].cache, 'no-store');
+  player.useBuffer(next, buffer);
+  assert.equal(await playing, false, 'switching to the preloaded song stops the old snippet');
+  assert.equal(player.track.id, 'dz-2'); assert.equal(player.buffer, buffer); assert.equal(calls.length, 2);
+  await assert.rejects(player.fetchBuffer({ ...next, preview: 'https://untrusted.example/a.mp3' }), /превью/i);
+});
