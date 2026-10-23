@@ -1,7 +1,7 @@
 import { createState, reduce, publicView, humans, GENIE_ID } from './game.js';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, nudge, smoke, enter, flyIn, flip,
-  toast, setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js';
-import { createNet } from '../shared/net.js?v=net-3';
+  toast, setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js?v=kick-1';
+import { createNet } from '../shared/net.js?v=kick-1';
 
 const STEP = ['power', 'write', 'reveal', 'hype', 'verdict', 'share'];
 const canDrive = s => isHostOf(s) || s.wisher === me.pid;
@@ -58,7 +58,7 @@ function chrome(p, s) {
 function renderChips(p, s) {
   const box = $('#players');
   box.innerHTML = s.players.map(pl => `<div class="chip ${pl.id === s.wisher ? 'wisher' : ''} ${pl.genie ? 'genie' : ''} ${pl.online ? '' : 'off'}" data-id="${esc(pl.id)}">
-    <span class="av" style="background:${esc(pl.color)}">${pl.genie ? '✦' : esc(first(pl.name))}</span>${esc(pl.name)}
+    <span class="av" style="background:${esc(pl.color)}">${pl.genie ? '✦' : esc(first(pl.name))}</span>${pl.id === s.hostId ? '👑 ' : ''}${esc(pl.name)}
     ${pl.id === me.pid ? '<small>ты</small>' : ''}${pl.id === s.wisher && s.phase !== 'final' ? '<small>загадывает</small>' : ''}<span class="sc">${pl.score}</span></div>`).join('');
   if (!p) return;
   for (const pl of s.players) {
@@ -159,7 +159,7 @@ BUILD.home = () => buildHome(stage, net, `
 const lobbyTag = (pl, s) => (pl.genie ? 'бот-подлец, играет всегда' : pl.id === s.hostId ? 'хост' : pl.online ? 'в лобби' : 'отключился');
 BUILD.lobby = s => {
   const host = isHostOf(s);
-  buildLobby(stage, s, 'Продиктуй код или кинь ссылку. Можно играть даже вдвоём: Джинн всегда в деле.', lobbyTag);
+  buildLobby(stage, s, 'Продиктуй код или кинь ссылку. Можно играть даже вдвоём: Джинн всегда в деле.', lobbyTag, id => send({ type: 'kick', id }));
   stage.append(h(`<div class="settings" data-in>${seg('laps', 'Кругов', [1, 2, 3], s.settings.laps, '', host)}${seg('sec', 'Время на подвох', [45, 60, 90], s.settings.sec, ' с', host)}</div>`));
   stage.querySelectorAll('.seg button').forEach(b => { b.onclick = () => send({ type: 'settings', [b.dataset.k]: +b.dataset.v }); });
   if (!host) stage.append(h(`<p class="wait" data-in>Ждём, пока <b>${esc(nameOf(s, s.hostId))}</b> начнёт <span class="dots"><i></i><i></i><i></i></span></p>`));

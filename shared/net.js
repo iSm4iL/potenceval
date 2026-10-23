@@ -3,7 +3,7 @@
 // устройствами не нужно, поэтому работает и с телефона на мобильном интернете.
 // ponytail: публичные брокеры без гарантий и без шифрования содержимого; если станет мало —
 // свой брокер или Durable Objects.
-import { LS, me, toast, hideToast } from './kit.js';
+import { LS, me, toast, hideToast } from './kit.js?v=kick-1';
 
 const BROKERS = ['wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt'];
 const BEAT = 4000, LOST = 15000;
@@ -87,9 +87,12 @@ export function createNet({ game, createState, reduce, publicView = s => s, rese
     if (next === hostState) return;
     hostState = next; commit();
   }
+  let present = new Set();
   function commit() {
     LS.set(key('hostState'), hostState);
-    const now = Date.now();
+    const now = Date.now(), ids = new Set(hostState.players.map(p => p.id));
+    for (const id of present) if (!ids.has(id)) publish(topic(code, 'down/' + id), { t: 'kicked' }); // выгнанным — уведомление
+    present = ids;
     for (const p of hostState.players) if (p.id !== me.pid && !p.bot && !p.genie) publish(topic(code, 'down/' + p.id), { t: 'state', s: publicView(hostState, p.id), now });
     onState(publicView(hostState, me.pid), now);
   }
@@ -121,6 +124,7 @@ export function createNet({ game, createState, reduce, publicView = s => s, rese
         onState(m.s, m.now);
       } else if (m.t === 'full') { toast('Лобби заполнено', 3500); leave(true); }
       else if (m.t === 'bye') { toast('Хост закрыл лобби', 3500); leave(true); }
+      else if (m.t === 'kicked') { toast('Хост выгнал тебя из лобби', 4000); leave(true); }
     });
     const say = t => publish(topic(c, 'up'), { t, pid: me.pid, name: me.name });
     say('hello');

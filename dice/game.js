@@ -15,6 +15,13 @@ export const opponent = (s, id) => s.duel.find(x => x !== id);
 const roll = rnd => 1 + Math.floor(rnd() * 6);
 const clean = (v, max) => (typeof v === 'string' ? v.replace(/\s+/g, ' ').trim().slice(0, max) : '');
 
+function finish(t, forced) {
+  const [x, y] = t.duel, sx = total(t.boards[x]), sy = total(t.boards[y]);
+  t.winner = forced ?? (sx === sy ? 'draw' : sx > sy ? x : y);
+  if (t.winner !== 'draw') t.wins[t.winner] = (t.wins[t.winner] || 0) + 1;
+  Object.assign(t, { phase: 'over', die: null, turn: null, lastCall: false });
+}
+
 export function createState(hostId, code) {
   return { code, hostId, phase: 'lobby', rev: 0, players: [], duel: [], boards: {}, turn: null, die: null, turnAt: 0, starter: 0, match: 0, last: null, winner: null, wins: {} };
 }
@@ -41,7 +48,7 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
 
   switch (a.type) {
     case 'join': {
-      if (from === BOT_ID) return s;
+      if (from === BOT_ID || t.banned?.includes(from)) return s;
       const name = clean(a.name, 20) || 'Игрок';
       if (me) { me.name = name; me.online = true; break; }
       if (humans(t).length >= MAX_PLAYERS) return s;
@@ -68,7 +75,7 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
       if (String(t.duel) !== String(duel)) { t.wins = {}; t.starter = 0; } // другая пара — новая серия
       Object.assign(t, {
         duel, boards: { [duel[0]]: [[], [], []], [duel[1]]: [[], [], []] },
-        turn: duel[t.starter % 2], die: roll(rnd), turnAt: now, last: null, winner: null, phase: 'play',
+        turn: duel[t.starter % 2], die: roll(rnd), turnAt: now, last: null, winner: null, phase: 'play', moves: {}, lastCall: false,
       });
       t.starter++; t.match++;
       break;
@@ -83,12 +90,19 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
       const before = t.boards[opp][col].length;
       t.boards[opp][col] = t.boards[opp][col].filter(x => x !== v);
       t.last = { seq: (t.last?.seq || 0) + 1, by: from, col, value: v, destroyed: before - t.boards[opp][col].length };
-      if (mine.every(c => c.length === 3)) {
-        const [x, y] = t.duel, sx = total(t.boards[x]), sy = total(t.boards[y]);
-        t.winner = sx === sy ? 'draw' : sx > sy ? x : y;
-        if (t.winner !== 'draw') t.wins[t.winner] = (t.wins[t.winner] || 0) + 1;
-        Object.assign(t, { phase: 'over', die: null, turn: null });
-      } else Object.assign(t, { turn: opp, die: roll(rnd), turnAt: now });
+      t.moves = { ...t.moves, [from]: (t.moves?.[from] || 0) + 1 };
+      const oppHasRoom = t.boards[opp].some(c => c.length < 3);
+      // поле заполнено: если соперник сделал на ход меньше (ходил вторым), у него есть последний ход
+      if (t.lastCall || (mine.every(c => c.length === 3) && !((t.moves[opp] || 0) < t.moves[from] && oppHasRoom))) finish(t);
+      else Object.assign(t, { turn: opp, die: roll(rnd), turnAt: now, lastCall: mine.every(c => c.length === 3) });
+      break;
+    }
+    case 'kick': { // хост выгоняет игрока; зайти по коду снова он уже не сможет
+      const p = t.players.find(x => x.id === a.id);
+      if (!isHost || !p || p.bot || p.id === t.hostId) return s;
+      t.players = t.players.filter(x => x.id !== a.id);
+      t.banned = [...(t.banned || []), a.id];
+      if (t.phase === 'play' && t.duel.includes(a.id)) finish(t, opponent(t, a.id)); // выгнали посреди партии — победа второму
       break;
     }
     case 'lobby': {

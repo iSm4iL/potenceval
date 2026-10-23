@@ -104,7 +104,13 @@ export function initPage(game, net) {
   document.addEventListener('click', e => { if (e.target.closest('[data-rules]')) openRules(); });
   $('#rulesOk').onclick = closeRules;
   $('#rules').onclick = e => { if (e.target.id === 'rules') closeRules(); };
-  $('#exitBtn').onclick = () => { if (confirm(net.isHost ? 'Выйти? Лобби закроется для всех.' : 'Выйти из игры?')) net.leave(); };
+  // подтверждение прямо на кнопке: системный confirm браузер может молча заблокировать
+  const exit = $('#exitBtn'); let armed = null;
+  exit.onclick = () => {
+    if (armed) { clearTimeout(armed); armed = null; exit.textContent = 'Выйти'; net.leave(); return; }
+    exit.textContent = net.isHost ? 'Закрыть лобби?' : 'Точно выйти?';
+    armed = setTimeout(() => { armed = null; exit.textContent = 'Выйти'; }, 3000);
+  };
   if (!LS.get(game + '.seenRules')) { LS.set(game + '.seenRules', 1); setTimeout(openRules, 700); }
 }
 
@@ -155,7 +161,8 @@ export function buildHome(stage, net, hero) {
 }
 
 // Код комнаты, ссылка, список игроков. tag(player, state) — подпись под именем.
-export function buildLobby(stage, s, sub, tag) {
+// onKick(id) — если передан, хост видит у игроков кнопку «выгнать»
+export function buildLobby(stage, s, sub, tag, onKick) {
   stage.append(h(`<div class="phase-title" data-in><span class="kicker">Лобби</span><h1>Зови друзей</h1><p class="sub">${sub}</p></div>`));
   const code = h(`<div class="code" data-in>${[...s.code].map(c => `<span>${c}</span>`).join('')}</div>`);
   stage.append(code);
@@ -167,6 +174,12 @@ export function buildLobby(stage, s, sub, tag) {
   };
   stage.append(h(`<div class="plist" id="plist" data-in></div>`));
   renderPlist(s, tag);
+  if (onKick) $('#plist').addEventListener('click', e => {
+    const b = e.target.closest('[data-kick]');
+    if (!b) return;
+    if (b.dataset.armed) onKick(b.dataset.kick);
+    else { b.dataset.armed = 1; b.textContent = 'Выгнать?'; setTimeout(() => { if (b.isConnected) { delete b.dataset.armed; b.textContent = '✕'; } }, 3000); }
+  });
 }
 export function renderPlist(s, tag) {
   const box = $('#plist');
@@ -183,7 +196,8 @@ export function renderPlist(s, tag) {
       if (bot && !pl.genie && !pl.bot) box.insertBefore(el, bot); else box.append(el);
       A(el, [{ opacity: 0, transform: 'translateY(20px) scale(.8)' }, { opacity: 1, transform: 'none' }], { duration: 550, easing: SPRING });
     }
-    el.innerHTML = `<span class="av" style="background:${esc(pl.color)}">${pl.genie ? '✦' : pl.bot ? '💀' : esc(first(pl.name))}</span><span>${esc(pl.name)}${pl.id === me.pid ? ' (ты)' : ''}<small>${tag(pl, s)}</small></span>`;
+    const kick = isHostOf(s) && pl.id !== me.pid && !pl.genie && !pl.bot ? `<button class="kick" data-kick="${esc(pl.id)}" title="Выгнать из лобби">✕</button>` : '';
+    el.innerHTML = `<span class="av" style="background:${esc(pl.color)}">${pl.genie ? '✦' : pl.bot ? '💀' : esc(first(pl.name))}</span><span>${pl.id === s.hostId ? '👑 ' : ''}${esc(pl.name)}${pl.id === me.pid ? ' (ты)' : ''}<small>${tag(pl, s)}</small></span>${kick}`;
     el.classList.toggle('genie', !!(pl.genie || pl.bot)); el.classList.toggle('off', !pl.online);
   }
 }

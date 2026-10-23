@@ -51,11 +51,20 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
 
   switch (a.type) {
     case 'join': {
+      if (t.banned?.includes(from)) return s;
       const name = clean(a.name, 20) || 'Игрок';
       if (me) { me.name = name; me.online = true; break; }
       if (humans(t).length >= MAX_PLAYERS) return s;
       t.players.splice(t.players.length - 1, 0, { id: from, name, color: COLORS[humans(t).length % COLORS.length], score: 0, online: true });
       if (t.phase !== 'lobby' && t.phase !== 'final') t.order.push(from); // зашёл посреди игры — тоже загадает
+      break;
+    }
+    case 'kick': { // хост выгоняет игрока; зайти по коду снова он уже не сможет
+      const p = t.players.find(x => x.id === a.id);
+      if (!isHost || !p || p.genie || p.id === t.hostId) return s;
+      t.players = t.players.filter(x => x.id !== a.id);
+      t.banned = [...(t.banned || []), a.id];
+      t.order = t.order.filter((id, i) => i <= t.round || id !== a.id); // в следующих раундах больше не загадывает
       break;
     }
     case 'online': {

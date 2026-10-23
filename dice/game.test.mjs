@@ -45,10 +45,21 @@ s = structuredClone(s);
 s.boards.A = [[6, 6, 6], [6, 6, 6], [6, 6]];
 s.boards.B = [[1], [], []];
 s.turn = 'A'; s.die = 5;
+s.moves = { A: 8, B: 7 };
 act({ type: 'place', col: 2 }, 'A');
+assert.equal(s.phase, 'play', 'A ходил первым — у B есть последний ход');
+assert.equal(s.turn, 'B'); assert.equal(s.lastCall, true);
+act({ type: 'place', col: 1 }, 'B');
 assert.equal(s.phase, 'over');
 assert.equal(s.winner, 'A');
 assert.equal(s.wins.A, 1);
+
+// кто ходил вторым и заполнил поле — партия кончается сразу
+let fair = structuredClone(s);
+Object.assign(fair, { phase: 'play', turn: 'B', die: 5, lastCall: false, moves: { A: 8, B: 7 }, wins: {} });
+fair.boards = { A: [[1], [], []], B: [[6, 6, 6], [6, 6, 6], [6, 6]] };
+fair = reduce(fair, { type: 'place', col: 2 }, 'B', 0, rnd);
+assert.equal(fair.phase, 'over'); assert.equal(fair.winner, 'B');
 
 // царь горы: проигравший (B) уступает место третьему (C)
 act({ type: 'start' }, 'A');
@@ -71,7 +82,16 @@ solo = structuredClone(solo);
 solo.boards.A = [[6, 6, 6], [6, 6, 6], [6, 6]];
 solo.die = 6;
 solo = reduce(solo, { type: 'place', col: 2 }, 'A', 0, () => 0.5);
+solo = reduce(solo, { type: 'place', col: botMove(solo, () => 0) }, BOT_ID, 0, () => 0.5); // последний ход бота
 assert.equal(solo.winner, 'A');
+
+// кик: хост выгоняет игрока, вернуться по коду нельзя; посреди партии — победа второму
+let k = reduce(reduce(reduce(createState('A', 'K'), { type: 'join', name: 'A' }, 'A', 0), { type: 'join', name: 'B' }, 'B', 0), { type: 'start' }, 'A', 0, () => 0.5);
+assert.equal(reduce(k, { type: 'kick', id: 'A' }, 'B', 0), k, 'only host kicks, host cannot be kicked');
+k = reduce(k, { type: 'kick', id: 'B' }, 'A', 0);
+assert.equal(k.phase, 'over'); assert.equal(k.winner, 'A');
+assert.ok(!k.players.some(p => p.id === 'B'));
+assert.equal(reduce(k, { type: 'join', name: 'B' }, 'B', 0), k, 'kicked player cannot rejoin');
 solo = reduce(solo, { type: 'start' }, 'A', 0, () => 0.5);
 assert.equal(solo.turn, BOT_ID, 'starter alternates');
 assert.equal(solo.wins.A, 1, 'series kept for the same pair');

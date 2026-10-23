@@ -1,7 +1,7 @@
 import { createState, reduce, colScore, total, humans, botMove, BOT_ID } from './game.js';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, enter,
-  setControls, initPage, buildHome, buildLobby, renderPlist } from '../shared/kit.js';
-import { createNet } from '../shared/net.js?v=net-3';
+  setControls, initPage, buildHome, buildLobby, renderPlist } from '../shared/kit.js?v=kick-1';
+import { createNet } from '../shared/net.js?v=kick-1';
 
 const stage = $('#stage');
 const net = createNet({
@@ -55,12 +55,47 @@ function buildHomeScreen() {
   buildHome(stage, net, `<div class="hero" data-in><span class="kicker">Как в Cult of the Lamb · 1–2 игрока</span>
     <h1 id="heroTitle">Костяшки</h1>
     <p class="sub">Кидай кость в один из трёх столбцов. Одинаковые кости в столбце умножаются, а твоя кость сносит такие же у соперника.</p>
+    <div class="dice-field" aria-hidden="true"></div>
     <div class="ritual" aria-label="Пример партии: белые против чёрных">
       <div class="mini-board" data-side="black">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
       <div class="mini-mid"><span class="mini-tray"></span><span class="mini-turn"></span></div>
       <div class="mini-board" data-side="white">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
     </div></div>`);
   demoTable($('.ritual'));
+  diceField($('.dice-field'));
+}
+
+// Россыпь костей на фоне: разлетаются от курсора, от клика — катятся
+function diceField(root) {
+  if (!root) return;
+  const n = innerWidth < 700 ? 14 : 26, dice = [];
+  for (let i = 0; i < n; i++) {
+    const el = h(dieHTML(1 + Math.floor(Math.random() * 6), Math.random() < .5 ? 'black' : ''));
+    const d = { el, x: Math.random() * 100, y: Math.random() * 100, r: Math.random() * 360, dx: 0, dy: 0, spin: 0 };
+    el.style.left = d.x + '%'; el.style.top = d.y + '%';
+    root.append(el); dice.push(d);
+  }
+  const place = d => { d.el.style.transform = `translate(${d.dx}px,${d.dy}px) rotate(${d.r + d.spin}deg)`; };
+  dice.forEach(place);
+  const onMove = e => {
+    if (!root.isConnected) return removeEventListener('pointermove', onMove);
+    for (const d of dice) {
+      const b = d.el.getBoundingClientRect(), cx = b.left + b.width / 2 - d.dx, cy = b.top + b.height / 2 - d.dy;
+      const vx = cx - e.clientX, vy = cy - e.clientY, dist = Math.hypot(vx, vy) || 1;
+      const push = dist < 140 ? (140 - dist) * .55 : 0; // ближе к курсору — сильнее отталкиваем
+      d.dx = vx / dist * push; d.dy = vy / dist * push; d.spin = push * 1.4; place(d);
+    }
+  };
+  const onClick = e => {
+    if (!root.isConnected) return removeEventListener('click', onClick);
+    if (e.target.closest('button, input, a, .panel')) return;
+    for (const d of dice) {
+      const b = d.el.getBoundingClientRect();
+      if (Math.hypot(b.left + b.width / 2 - e.clientX, b.top + b.height / 2 - e.clientY) > 220) continue;
+      d.r += 180 + Math.random() * 360; d.el.dataset.v = 1 + Math.floor(Math.random() * 6); place(d);
+    }
+  };
+  if (!still()) { addEventListener('pointermove', onMove); addEventListener('click', onClick); }
 }
 
 // Живая мини-партия на главной: кости сами бросаются, умножаются и сносят чужие.
@@ -100,7 +135,7 @@ async function demoTable(root) {
     if (hit) root.querySelectorAll(`[data-side="${other}"] .mini-col`)[c].querySelectorAll(`.die[data-v="${v}"]`).forEach(x => x.classList.add('doomed'));
     draw();
     const n = mine[c].length - 1, placed = root.querySelectorAll(`[data-side="${side}"] .mini-col`)[c].children[side === 'black' ? 2 - n : n]?.firstElementChild;
-    A(placed, [{ transform: `translateY(${side === 'black' ? 30 : -30}px) scale(1.3)`, opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 420, easing: SPRING });
+    A(placed, [{ transform: `translateX(${side === 'black' ? -30 : 30}px) scale(1.3)`, opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 420, easing: SPRING });
     if (hit) {
       await wait(450);
       root.querySelectorAll(`[data-side="${other}"] .mini-col`)[c].querySelectorAll(`.die[data-v="${v}"]`).forEach(x => burstAt(x, { chars: ['💥', '🦴'], n: 5, spread: 40, up: 50 }));
@@ -120,7 +155,7 @@ const lobbyTag = (pl, s) => {
   return (pl.id === s.hostId ? 'хост · ' : '') + (i < 2 ? 'играет' : `в очереди #${i - 1}`);
 };
 function buildLobbyScreen(s) {
-  buildLobby(stage, s, 'Играют двое: хост и первый, кто зайдёт. Если вас больше — проигравший уступает место следующему. Один — сыграешь со Скелетом.', lobbyTag);
+  buildLobby(stage, s, 'Играют двое: хост и первый, кто зайдёт. Если вас больше — проигравший уступает место следующему. Один — сыграешь со Скелетом.', lobbyTag, id => send({ type: 'kick', id }));
   if (!isHostOf(s)) stage.append(h(`<p class="wait" data-in>Ждём, пока <b>${esc(nameOf(s, s.hostId))}</b> начнёт <span class="dots"><i></i><i></i><i></i></span></p>`));
 }
 
@@ -133,7 +168,7 @@ const colEl = (id, c) => sideEl(id)?.querySelector(`.col[data-col="${c}"]`);
 function sideHTML(s, id, pos) {
   const pl = s.players.find(p => p.id === id) || { name: '???', color: '#555' };
   const head = `<div class="head"><span class="av" style="background:${esc(pl.color)}">${pl.bot ? '💀' : esc(first(pl.name))}</span>
-    <span class="nm">${esc(pl.name)}${id === me.pid ? ' (ты)' : ''}<small>${pl.bot ? 'бот · ' : pos === 'up' ? 'соперник · ' : ''}${colorOf(s, id) ? 'чёрные кости' : 'белые кости'}</small></span><span class="tot" data-tot>0</span></div>`;
+    <span class="nm">${id === s.hostId ? '👑 ' : ''}${esc(pl.name)}${id === me.pid ? ' (ты)' : ''}<small>${pl.bot ? 'бот · ' : pos === 'up' ? 'соперник · ' : ''}${colorOf(s, id) ? 'чёрные кости' : 'белые кости'}</small></span><span class="tot" data-tot>0</span></div>`;
   const board = `<div class="board">${[0, 1, 2].map(c => `<div class="col" data-col="${c}" role="button" aria-label="Столбец ${c + 1}">${'<div class="cell"></div>'.repeat(3)}</div>`).join('')}</div>`;
   const scores = `<div class="scores" data-scores><span>0</span><span>0</span><span>0</span></div>`;
   return `<div class="side ${pos}" data-side="${esc(id)}">${pos === 'up' ? head + board + scores : scores + board + head}</div>`;
@@ -218,6 +253,7 @@ function renderMid(s, anim) {
   t.innerHTML = s.turn === me.pid
     ? '<span class="arrow">▼</span> <b>Твой ход.</b><br>Выбери столбец'
     : `<span class="arrow">${s.turn === top ? '▲' : '▼'}</span> Ходит <b>${esc(nameOf(s, s.turn))}</b>${s.turn === BOT_ID ? '<br>трясёт кость…' : ''}`;
+  if (s.lastCall) t.innerHTML += '<br><b class="last-call">Последний ход!</b>'; // соперник уже заполнил поле
   if (!anim) return;
   rollAnim($('.die', tray), s.die);
   A(t, [{ opacity: 0, transform: 'translateX(-8px)' }, { opacity: 1, transform: 'none' }], { duration: 400 });
