@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка связи — potenceval</title>
+<style>
+body{margin:0;padding:24px 16px;background:#0e0a1c;color:#f4efff;font:16px/1.5 system-ui,sans-serif}
+h1{font-size:22px;margin:0 0 6px}
+p{color:#a59cc4;margin:0 0 18px}
+li{padding:12px 14px;margin:8px 0;border-radius:12px;background:#1a1333;list-style:none}
+b.ok{color:#8ff0b5}b.bad{color:#ff4d6d}b.wait{color:#ffc94a}
+</style>
+</head>
+<body>
+<h1>Проверка связи для лобби</h1>
+<p>Открой эту страницу на устройстве, которое не может подключиться, и пришли скриншот.</p>
+<ul id="list"></ul>
+<script src="https://cdn.jsdelivr.net/npm/mqtt@5.10.1/dist/mqtt.min.js"></script>
+<script>
+const brokers = ['wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt'];
+const list = document.getElementById('list');
+const row = (label, html) => { const li = document.createElement('li'); li.innerHTML = `${label}: ${html}`; list.append(li); return li; };
+row('Модуль связи', typeof mqtt !== 'undefined' ? '<b class="ok">загружен</b>' : '<b class="bad">не загрузился</b>');
+fetch('dice/index.html', { cache: 'no-store' }).then(r => r.text()).then(t => row('Версия «Костяшек»', /mqtt/.test(t) ? '<b class="ok">новая связь</b>' : '<b class="bad">старая (PeerJS)</b>'));
+for (const url of brokers) {
+  const li = row(new URL(url).host, '<b class="wait">проверяю…</b>');
+  if (typeof mqtt === 'undefined') continue;
+  const t0 = performance.now(), c = mqtt.connect(url, { connectTimeout: 8000, reconnectPeriod: 0 });
+  const done = (ok, why) => { li.innerHTML = `${new URL(url).host}: ${ok ? `<b class="ok">работает (${Math.round(performance.now() - t0)} мс)</b>` : `<b class="bad">недоступен</b> ${why || ''}`}`; c.end(true); };
+  c.once('connect', () => done(true));
+  c.once('error', e => done(false, e?.message || ''));
+  setTimeout(() => { if (li.textContent.includes('проверяю')) done(false, '(нет ответа 9 с)'); }, 9000);
+}
+</script>
+</body>
+</html>
