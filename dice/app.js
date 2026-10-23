@@ -55,7 +55,64 @@ function buildHomeScreen() {
   buildHome(stage, net, `<div class="hero" data-in><span class="kicker">Как в Cult of the Lamb · 1–2 игрока</span>
     <h1 id="heroTitle">Костяшки</h1>
     <p class="sub">Кидай кость в один из трёх столбцов. Одинаковые кости в столбце умножаются, а твоя кость сносит такие же у соперника.</p>
-    <div class="dicefan">${dieHTML(6, 'x3')}${dieHTML(4, 'x2')}${dieHTML(1)}</div></div>`);
+    <div class="ritual" aria-label="Пример партии: белые против чёрных">
+      <div class="mini-board" data-side="black">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
+      <div class="mini-mid"><span class="mini-tray"></span><span class="mini-turn"></span></div>
+      <div class="mini-board" data-side="white">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
+    </div></div>`);
+  demoTable($('.ritual'));
+}
+
+// Живая мини-партия на главной: кости сами бросаются, умножаются и сносят чужие.
+async function demoTable(root) {
+  const boards = { white: [[], [], []], black: [[], [], []] };
+  const mult = (col, v) => ({ 2: 'x2', 3: 'x3' })[col.filter(x => x === v).length] || '';
+  const draw = () => {
+    for (const side of ['white', 'black']) root.querySelectorAll(`[data-side="${side}"] .mini-col`).forEach((el, c) => {
+      const col = boards[side][c];
+      // у чёрных кости растут от центра вверх, у белых — от центра вниз
+      [...el.children].forEach((cell, i) => {
+        const v = col[side === 'black' ? 2 - i : i];
+        const want = v ? v + mult(col, v) : '';
+        if (cell.dataset.k !== want) { cell.dataset.k = want; cell.innerHTML = v ? dieHTML(v, `${mult(col, v)} ${side === 'black' ? 'black' : ''}`) : ''; }
+      });
+    });
+  };
+  const tray = $('.mini-tray', root), turnEl = $('.mini-turn', root), wait = ms => new Promise(r => setTimeout(r, still() ? 0 : ms));
+  for (let turn = 0; root.isConnected; turn++) {
+    const side = turn % 2 ? 'black' : 'white', other = side === 'white' ? 'black' : 'white';
+    const v = 1 + Math.floor(Math.random() * 6), mine = boards[side], theirs = boards[other];
+    turnEl.textContent = side === 'white' ? 'ход белых' : 'ход чёрных';
+    tray.innerHTML = dieHTML(v, side === 'black' ? 'black' : '');
+    const d = $('.die', tray);
+    if (!still()) {
+      A(d, [{ transform: 'translateY(-26px) rotate(-200deg) scale(.5)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 600, easing: SPRING });
+      for (let k = 0; k < 6; k++) { d.dataset.v = 1 + Math.floor(Math.random() * 6); await wait(70); }
+      d.dataset.v = v;
+    }
+    await wait(500);
+    // ход «с умом»: сначала снести чужие такие же, потом собрать пару, иначе куда есть место
+    const free = [0, 1, 2].filter(c => mine[c].length < 3);
+    const c = free.find(i => theirs[i].includes(v)) ?? free.find(i => mine[i].includes(v)) ?? free[Math.floor(Math.random() * free.length)];
+    mine[c].push(v);
+    tray.innerHTML = '';
+    const hit = theirs[c].includes(v);
+    if (hit) root.querySelectorAll(`[data-side="${other}"] .mini-col`)[c].querySelectorAll(`.die[data-v="${v}"]`).forEach(x => x.classList.add('doomed'));
+    draw();
+    const n = mine[c].length - 1, placed = root.querySelectorAll(`[data-side="${side}"] .mini-col`)[c].children[side === 'black' ? 2 - n : n]?.firstElementChild;
+    A(placed, [{ transform: `translateY(${side === 'black' ? 30 : -30}px) scale(1.3)`, opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 420, easing: SPRING });
+    if (hit) {
+      await wait(450);
+      root.querySelectorAll(`[data-side="${other}"] .mini-col`)[c].querySelectorAll(`.die[data-v="${v}"]`).forEach(x => burstAt(x, { chars: ['💥', '🦴'], n: 5, spread: 40, up: 50 }));
+      boards[other][c] = theirs[c].filter(x => x !== v);
+      draw();
+    }
+    await wait(900);
+    if (mine.every(col => col.length === 3)) { // поле заполнено — новая партия
+      await wait(800);
+      boards.white = [[], [], []]; boards.black = [[], [], []]; draw();
+    }
+  }
 }
 const lobbyTag = (pl, s) => {
   if (!pl.online) return 'отключился';
