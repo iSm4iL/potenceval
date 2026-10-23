@@ -48,6 +48,8 @@ function controls(s) {
 }
 
 /* ---------- home & lobby ---------- */
+// у первого игрока кости белые, у второго — чёрные: сразу видно, чьи они
+const colorOf = (s, id) => (id === s.duel[1] ? 'black' : '');
 const dieHTML = (v, cls = '') => `<div class="die ${cls}" data-v="${v}">${'<i></i>'.repeat(9)}</div>`;
 function buildHomeScreen() {
   buildHome(stage, net, `<div class="hero" data-in><span class="kicker">Как в Cult of the Lamb · 1–2 игрока</span>
@@ -74,7 +76,7 @@ const colEl = (id, c) => sideEl(id)?.querySelector(`.col[data-col="${c}"]`);
 function sideHTML(s, id, pos) {
   const pl = s.players.find(p => p.id === id) || { name: '???', color: '#555' };
   const head = `<div class="head"><span class="av" style="background:${esc(pl.color)}">${pl.bot ? '💀' : esc(first(pl.name))}</span>
-    <span class="nm">${esc(pl.name)}${id === me.pid ? ' (ты)' : ''}<small>${pl.bot ? 'бот, жадный до костей' : pos === 'up' ? 'соперник' : ''}</small></span><span class="tot" data-tot>0</span></div>`;
+    <span class="nm">${esc(pl.name)}${id === me.pid ? ' (ты)' : ''}<small>${pl.bot ? 'бот · ' : pos === 'up' ? 'соперник · ' : ''}${colorOf(s, id) ? 'чёрные кости' : 'белые кости'}</small></span><span class="tot" data-tot>0</span></div>`;
   const board = `<div class="board">${[0, 1, 2].map(c => `<div class="col" data-col="${c}" role="button" aria-label="Столбец ${c + 1}">${'<div class="cell"></div>'.repeat(3)}</div>`).join('')}</div>`;
   const scores = `<div class="scores" data-scores><span>0</span><span>0</span><span>0</span></div>`;
   return `<div class="side ${pos}" data-side="${esc(id)}">${pos === 'up' ? head + board + scores : scores + board + head}</div>`;
@@ -110,7 +112,7 @@ function preview(c) {
   if (!canPlace(s, c)) return;
   const [, top] = seats(s);
   const cell = colEl(me.pid, c).children[s.boards[me.pid][c].length];
-  cell.innerHTML = dieHTML(s.die, 'ghost');
+  cell.innerHTML = dieHTML(s.die, 'ghost ' + colorOf(s, me.pid));
   colEl(top, c).querySelectorAll('.die').forEach(d => { if (+d.dataset.v === s.die) d.classList.add('doomed'); });
 }
 function clearPreview() {
@@ -133,7 +135,7 @@ function renderBoards(s, bump, nums = true) {
       const el = colEl(id, c);
       [...el.children].forEach((cell, i) => {
         const v = col[i], k = v ? v + mult(col, v) : '';
-        if (cell.dataset.k !== k) { cell.dataset.k = k; cell.innerHTML = v ? dieHTML(v, mult(col, v)) : ''; }
+        if (cell.dataset.k !== k) { cell.dataset.k = k; cell.innerHTML = v ? dieHTML(v, mult(col, v) + ' ' + colorOf(s, id)) : ''; }
       });
       const can = id === me.pid && myTurn && col.length < 3;
       el.classList.toggle('can', can);
@@ -155,7 +157,7 @@ function renderMid(s, anim) {
   if (!tray) return;
   if (s.phase !== 'play') { tray.replaceChildren(); t.innerHTML = ''; return; }
   const [, top] = seats(s);
-  tray.innerHTML = dieHTML(s.die);
+  tray.innerHTML = dieHTML(s.die, colorOf(s, s.turn));
   t.innerHTML = s.turn === me.pid
     ? '<span class="arrow">▼</span> <b>Твой ход.</b><br>Выбери столбец'
     : `<span class="arrow">${s.turn === top ? '▲' : '▼'}</span> Ходит <b>${esc(nameOf(s, s.turn))}</b>${s.turn === BOT_ID ? '<br>трясёт кость…' : ''}`;
