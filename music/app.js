@@ -1,6 +1,6 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
 import { LENGTHS, POINTS, createGame, guess, skip, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
-import { PACKS, combineSuggestions, snapshotTrack } from './catalog.js';
+import { PACKS, combineSuggestions, snapshotTrack } from './catalog.js?v=packs-20261023';
 import { createDeezerClient } from './service.js';
 import { AudioPlayer } from './audio.js';
 import { resultPresentation } from './feedback.js';
