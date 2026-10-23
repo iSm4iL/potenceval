@@ -288,3 +288,68 @@
 .lineup-button:disabled{opacity:.4;cursor:wait}
 .lineup-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:22px 0 0}
 .lineup-list li{padding:8px 11px;border:1px solid var(--line);border-radius:9px;background:rgba(124,92,255,.1);font-size:14px;overflow-wrap:anywhere}
+
+/* D — музыкальный автомат */
+.jukebox{position:relative;padding:14px 16px 16px;border-radius:26px 26px 18px 18px;background:linear-gradient(180deg,#17120f,#0c0907);border:1px solid #6b5333;box-shadow:inset 0 0 0 4px #120d0a,inset 0 0 0 5px rgba(214,170,98,.35),0 30px 60px -30px #000}
+.jb-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 4px 10px}
+.jb-sign{font-family:'Pacifico',cursive;font-size:24px;color:#f6e7c8;text-shadow:0 0 18px rgba(255,201,74,.35)}
+.jb-dome{padding:6px 6px 0;border-radius:999px 999px 10px 10px/220px 220px 10px 10px;background:linear-gradient(90deg,#7a5a2e,#e8c27a 30%,#9b7340 55%,#f1d494 80%,#7a5a2e)}
+.jb-glass{position:relative;height:clamp(190px,30vw,240px);border-radius:999px 999px 6px 6px/214px 214px 6px 6px;overflow:hidden;background:radial-gradient(ellipse at 50% 110%,#3a2615,#0b0806 70%)}
+.jb-glass::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.07) 38%,transparent 46%),linear-gradient(65deg,transparent 60%,rgba(255,255,255,.05) 66%,transparent 72%)}
+.jb-marquee{position:absolute;z-index:2;top:16%;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:99px;background:#140e0a;border:1px solid rgba(214,170,98,.5);color:#e8c27a;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.jb-marquee b{color:#ffdf8a;font-size:13px}
+.jb-record{position:absolute;left:50%;bottom:0;width:min(88%,520px);aspect-ratio:1;transform:translate(-50%,50%);border-radius:50%;background:repeating-radial-gradient(circle,#0d0b10 0 2px,#26222c 3px,#0d0b10 5px,#0d0b10 8px);box-shadow:0 0 0 3px #2c2522,0 -10px 40px rgba(0,0,0,.6)}
+.jb-record::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 20deg,transparent 0 10%,rgba(255,255,255,.1) 15%,transparent 22% 58%,rgba(255,255,255,.08) 64%,transparent 72%)}
+.jb-record::after{content:'';position:absolute;inset:36%;border-radius:50%;background:var(--pink);border:8px solid #ba395a}
+.is-playing .jb-record{animation:jb-spin 1.8s linear infinite}
+@keyframes jb-spin{from{transform:translate(-50%,50%)}to{transform:translate(-50%,50%) rotate(360deg)}}
+.jb-play{position:absolute;z-index:3;left:50%;bottom:24%;transform:translateX(-50%);width:clamp(84px,13vw,104px);aspect-ratio:1;border-radius:50%;padding:0;color:var(--ink);background:radial-gradient(circle at 35% 30%,#fff1c2,#ffc94a 45%,#d98e1f);box-shadow:0 0 0 5px #140e0a,0 0 0 7px rgba(232,194,122,.6),0 14px 30px -8px rgba(255,201,74,.6);transition:transform .2s var(--spring)}
+.jb-play::before{content:'';position:absolute;inset:-12px;border-radius:50%;background:conic-gradient(var(--pink) calc(var(--p)*1%),transparent 0);-webkit-mask:radial-gradient(closest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(closest-side,transparent calc(100% - 4px),#000 calc(100% - 3px))}
+.jb-play:hover{transform:translateX(-50%) scale(1.06)}
+.jb-play:active{transform:translateX(-50%) scale(.94)}
+.jb-play .record-symbol{font-size:clamp(30px,4.5vw,40px);padding-left:6px;color:var(--ink)}
+.is-playing .jb-play .record-symbol{padding-left:0}
+.jukebox:not(.is-playing) .jb-play{animation:jb-call 2.2s ease-in-out infinite}
+@keyframes jb-call{0%,100%{box-shadow:0 0 0 5px #140e0a,0 0 0 7px rgba(232,194,122,.6),0 0 0 7px rgba(255,201,74,.35)}50%{box-shadow:0 0 0 5px #140e0a,0 0 0 7px rgba(232,194,122,.6),0 0 0 22px rgba(255,201,74,0)}}
+.jb-cap{position:absolute;z-index:3;left:0;right:0;bottom:6%;display:flex;justify-content:center;gap:8px;align-items:baseline;color:#f6e7c8;font-size:12px;text-shadow:0 1px 6px #000}
+.jb-cap b{font-family:'Unbounded';font-size:15px;color:#ffdf8a}
+.jb-keys{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:12px;padding:8px 8px 12px;border-radius:12px;background:linear-gradient(180deg,#2a2018,#120d0a);border:1px solid rgba(214,170,98,.35)}
+.jb-key{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 2px 9px;border-radius:7px 7px 10px 10px;background:linear-gradient(180deg,#f3e6c9,#cdb98f);color:#2a1d14;font-weight:700;font-size:13px;box-shadow:0 5px 0 #6e5a3c,0 7px 10px rgba(0,0,0,.5);transition:transform .12s,box-shadow .12s}
+.jb-key small{font-size:10px;font-weight:500;opacity:.7}
+.jb-key i{width:7px;height:7px;border-radius:50%;background:#5a4a35;margin-bottom:2px}
+.jb-key:hover{transform:translateY(2px);box-shadow:0 3px 0 #6e5a3c,0 4px 8px rgba(0,0,0,.5)}
+.jb-key.opened i{background:#8ff0b5;box-shadow:0 0 6px #8ff0b5}
+.jb-key.current{transform:translateY(4px);box-shadow:0 1px 0 #6e5a3c;background:linear-gradient(180deg,#ffe48f,#ffc94a)}
+.jb-key.current i{background:var(--pink);box-shadow:0 0 8px var(--pink)}
+.jb-key.locked{background:linear-gradient(180deg,#5b5040,#3b3227);color:#cbb895;box-shadow:0 5px 0 #231b14,0 7px 10px rgba(0,0,0,.5)}
+.jb-key.locked i{background:none;width:auto;height:auto;font-style:normal}
+.jb-key.locked i::before{content:'🔒';font-size:9px}
+.jb-key.ask::after{content:attr(data-ask);position:absolute;inset:0;display:grid;place-items:center;padding:3px;border-radius:inherit;background:var(--pink);color:#fff;font-size:10px;line-height:1.2;white-space:pre-line;text-align:center;animation:unlock .35s var(--spring)}
+.jb-more{display:block;width:100%;margin-top:14px;padding:12px 14px;border-radius:12px;background:transparent;border:1px solid rgba(214,170,98,.45);color:#f6e7c8;font-size:14px;font-weight:700}
+.jb-more small{font-weight:500;color:#cbb895}
+.jb-more:hover{background:rgba(214,170,98,.1)}
+.jukebox .help-btn{background:rgba(214,170,98,.1);border-color:rgba(214,170,98,.35);color:#e8c27a}
+@media(max-width:560px){.jukebox{padding:12px}.jb-sign{font-size:20px}.jb-key{font-size:11px;padding:9px 1px 8px}.jb-marquee{font-size:9px;top:12%}.jb-marquee b{font-size:11px}}
+@property --p{syntax:'<number>';inherits:true;initial-value:0}
+.answer-row{grid-template-columns:minmax(0,1fr) auto}
+.give-up{display:inline-block;margin-top:10px;background:none;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px;padding:0}
+.give-up:disabled{opacity:.4;cursor:default}
+.jb-tools{display:flex;align-items:center;gap:10px}
+.jukebox .volume{color:#cbb895;font-size:11px}
+.jukebox .volume input{accent-color:#e8c27a}
+.jb-status{margin:10px 4px 0;min-height:18px;text-align:center;color:#cbb895;font-size:12px}
+.jb-play:disabled{cursor:wait;filter:saturate(.6) brightness(.8)}
+.jb-more:disabled,.jb-key:disabled{opacity:.5;cursor:default}
+.coach{position:relative;display:flex;gap:10px;align-items:center;margin:12px 0 0;padding:10px 12px;border-radius:12px;background:var(--paper);color:var(--ink);font-size:13px;line-height:1.4;animation:pop .4s var(--spring) both}
+.coach::before{content:'';position:absolute;top:-6px;left:28px;width:12px;height:12px;background:var(--paper);transform:rotate(45deg)}
+.coach b{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--pink);color:#fff;font-size:13px}
+.coach-x{margin-left:auto;flex:none;width:26px;height:26px;border-radius:50%;background:rgba(29,20,48,.08);color:var(--ink);font-size:12px}
+.coach-x:hover{background:rgba(29,20,48,.18)}
+.coach.bye{animation:bye .35s var(--ease) forwards}
+.help-btn{padding:5px 10px;border-radius:99px;background:rgba(214,170,98,.1);border:1px solid rgba(214,170,98,.35);color:#e8c27a;font-size:12px;animation:pop .35s var(--spring)}
+.help-btn:hover{border-color:var(--gold);color:var(--text)}
+.just{animation:unlock .55s var(--spring) both}
+@keyframes pop{from{transform:scale(.96);opacity:0}}
+@keyframes bye{to{opacity:0;transform:translateY(-6px) scale(.96);margin-top:-48px}}
+@keyframes unlock{0%{transform:scale(.85)}60%{transform:scale(1.08)}100%{transform:none}}
+@media(prefers-reduced-motion:reduce){.is-playing .jb-record,.jukebox .jb-play,.coach,.just{animation:none!important}}

@@ -102,6 +102,11 @@ export function skip(s) {
   return s.step === LENGTHS.length - 1 ? finish(s, false) : { ...s, step: s.step + 1 };
 }
 
+// Сразу открыть отрывок подлиннее: очки как за этот шаг, попытки не тратятся.
+export function openStep(s, k) {
+  return s.phase === 'round' && Number.isInteger(k) && k > s.step && k < LENGTHS.length ? { ...s, step: k } : s;
+}
+
 export function guess(s, track) {
   if (s.phase !== 'round' || !validTrack(track) || s.attempts.some(a => a.id === track.id)) return s;
   const target = s.tracks.find(t => t.id === s.queue[s.index]);

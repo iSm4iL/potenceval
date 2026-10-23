@@ -1,5 +1,5 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
-import { LENGTHS, POINTS, createGame, guess, skip, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
+import { LENGTHS, POINTS, createGame, guess, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=jukebox-1';
 import { PACKS, combineSuggestions, snapshotTrack } from './catalog.js?v=family-20261023';
 import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=audio-20261023';
@@ -15,6 +15,10 @@ let availableRounds = [], genreCounts = {}, pool = [], packInfo = null, packLoad
 // busy — грузим превью; playing — отрывок звучит (в это время можно писать ответ и остановить звук)
 let screenVersion = 0, audioVersion = 0, audioController, busy = false, ready = false, heard = false, playing = false;
 let renderedRoundKey = null;
+// Подсказки новичку: каждая уходит, когда сделал её шаг; прошёл все — больше не показываем.
+let coach = new Set(LS.get('music.online.coach') ? [] : [1, 2, 3]);
+// ask — клавиша, ждущая второго нажатия; autoPlay — сыграть сразу после открытия длинного отрывка.
+let ask = -1, askTimer, autoPlay = false, keyStep = { key: null, step: 0 };
 let selectedTrack = null, matches = [], highlighted = -1, searchVersion = 0, searchTimer, searchController, artistTimer, artistController;
 const cache = new Map();
 const preloaded = new Map(); // id трека → Promise<{ full, buffer }>: следующая песня грузится, пока угадываете текущую
@@ -120,7 +124,51 @@ function renderGame(focusAnswer = false) {
   prepareAudio(track, screenVersion, focusAnswer);
 }
 
+const coachHTML = (n, text) => coach.has(n) ? `<div class="coach" data-coach="${n}"><b>${n}</b><span>${text}</span><button type="button" class="coach-x" aria-label="Скрыть подсказку">✕</button></div>` : '';
+function coachDone(n) {
+  if (!coach.delete(n)) return;
+  const el = $(`[data-coach="${n}"]`); if (el) { el.classList.add('bye'); setTimeout(() => el.remove(), 350); }
+  if (!coach.size) LS.set('music.online.coach', true);
+  const help = $('#helpBtn'); if (help) help.hidden = coach.size > 0;
+}
+
+// Раунд — музыкальный автомат: купол с пластинкой, большая кнопка, клавиши длин.
+function jukeboxHTML() {
+  const s = state.step, fresh = keyStep.key === renderedRoundKey ? keyStep.step : s;
+  keyStep = { key: renderedRoundKey, step: s };
+  return `<div class="jukebox" id="listenCard">
+    <div class="jb-top"><span class="jb-sign">Полсекунды</span><div class="jb-tools"><button type="button" class="help-btn" id="helpBtn" ${coach.size ? 'hidden' : ''}>? Подсказки</button><label class="volume"><span>Звук</span><input id="volume" type="range" min="0" max="1" step="0.05" value="${settings.volume}" aria-label="Громкость"></label></div></div>
+    <div class="jb-dome"><div class="jb-glass">
+      <div class="jb-marquee">★ за ответ сейчас <b>${POINTS[s]}</b> очков ★</div>
+      <div class="jb-record" aria-hidden="true"></div>
+      <button class="jb-play" id="playBtn" aria-label="Слушать отрывок" disabled><span class="record-symbol" aria-hidden="true">▶</span></button>
+      <div class="jb-cap"><b>${length(LENGTHS[s])} с</b>музыки</div>
+    </div></div>
+    <div class="jb-status play-status" id="playStatus" role="status">Готовим онлайн-превью…</div>
+    ${coachHTML(1, 'Жми большую кнопку — сыграет кусочек песни. Повторять можно сколько угодно.')}
+    <div class="jb-keys" id="jbKeys" role="group" aria-label="Длина отрывка">${LENGTHS.map((n, i) => `<button type="button" class="jb-key ${i === s ? 'current' : i < s ? 'opened' : 'locked'}${i > fresh && i <= s ? ' just' : ''}" data-step="${i}" ${i === s ? 'aria-current="step"' : ''}><i></i>${length(n)} с<small>${POINTS[i]}</small></button>`).join('')}</div>
+    <button type="button" class="jb-more" id="skipBtn" disabled>${s === LENGTHS.length - 1 ? 'Не узнал — показать ответ' : `Не узнал? Слушать ${length(LENGTHS[s + 1])} с <small>· за ответ станет ${POINTS[s + 1]}</small>`}</button>
+    ${coachHTML(2, 'Не узнал — жми «Слушать дольше» или сразу любую клавишу. Чем длиннее кусок, тем меньше очков.')}
+  </div><div class="audio-error" id="audioError" role="alert" hidden><p id="audioErrorText"></p><button class="btn ghost" id="retryAudio">Попробовать ещё раз</button><button class="btn ghost" id="replaceTrack">Заменить без штрафа</button></div>`;
+}
+
+// Закрытая клавиша открывается вторым нажатием: случайный тап не сжигает очки.
+function markAsk() {
+  document.querySelectorAll('.jb-key').forEach(b => {
+    const i = Number(b.dataset.step), on = i === ask;
+    b.classList.toggle('ask', on);
+    if (on) b.dataset.ask = `Ещё раз\n−${POINTS[state.step] - POINTS[i]}`;
+  });
+}
+function pressKey(i) {
+  if (busy || !ready) return;
+  if (i <= state.step) return listen();
+  if (ask !== i) { ask = i; clearTimeout(askTimer); askTimer = setTimeout(() => { ask = -1; markAsk(); }, 3000); return markAsk(); }
+  coachDone(2); autoPlay = heard; apply(openStep(state, i));
+}
+
 function playerHTML(reveal = false) {
+  if (!reveal) return jukeboxHTML();
   return `<div class="listen-card ${reveal ? 'result-player' : ''}" id="listenCard">
     <div class="listen-top"><span>${reveal ? 'Онлайн-превью · Deezer' : `За ответ сейчас: ${POINTS[state.step]} очков`}</span><label class="volume"><span>Звук</span><input id="volume" type="range" min="0" max="1" step="0.05" value="${settings.volume}" aria-label="Громкость"></label></div>
     <div class="player-body"><button class="record-button" id="playBtn" aria-label="Слушать отрывок" disabled><span class="vinyl" aria-hidden="true"></span><span class="record-symbol" aria-hidden="true">▶</span></button><div class="player-copy"><div class="duration-line"><b>${reveal ? 15 : length(LENGTHS[state.step])}</b>с музыки</div><div class="play-status" id="playStatus" role="status">Готовим онлайн-превью…</div>${!reveal ? '<div class="meter" aria-hidden="true"><span id="playMeter"></span></div>' : ''}</div></div>
@@ -151,7 +199,7 @@ function bindPlayer() {
 
 function renderRound() {
   stage.innerHTML = `<section class="game-shell">${roundHeader()}<div class="round-layout"><div class="round-main">${playerHTML()}
-    <form class="guess-form" id="guessForm" autocomplete="off"><label for="answerInput">Название песни или исполнитель</label><div class="answer-row"><div class="search-wrap"><input class="field" id="answerInput" placeholder="Кажется, я знаю…" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" spellcheck="false" maxlength="180" disabled><ul class="suggestions" id="suggestions" role="listbox" aria-label="Песни" hidden></ul></div><button class="btn primary" id="guessBtn" type="submit" disabled>Ответить</button><button class="btn ghost" id="skipBtn" type="button" disabled>${state.step === 5 ? 'Ответ' : `Ещё ${length(LENGTHS[state.step + 1])} с`}</button><button class="btn surrender" id="surrenderBtn" type="button" disabled>Сдаться</button></div></form>${attemptFeedbackHTML()}</div>${historyHTML()}</div></section>`;
+    <form class="guess-form" id="guessForm" autocomplete="off"><label for="answerInput">Название песни или исполнитель</label><div class="answer-row"><div class="search-wrap"><input class="field" id="answerInput" placeholder="Кажется, я знаю…" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" spellcheck="false" maxlength="180" disabled><ul class="suggestions" id="suggestions" role="listbox" aria-label="Песни" hidden></ul></div><button class="btn primary" id="guessBtn" type="submit" disabled>Ответить</button></div>${coachHTML(3, 'Узнал — пиши название или исполнителя и выбери песню из списка.')}<button class="give-up" id="surrenderBtn" type="button" disabled>Сдаться и посмотреть ответ</button></form>${attemptFeedbackHTML()}</div>${historyHTML()}</div></section>`;
   bindPlayer();
   $('#answerInput').oninput = () => { selectedTrack = null; updateSuggestions(); updateControls(); };
   $('#answerInput').onkeydown = handleSearchKey;
@@ -166,7 +214,13 @@ function renderRound() {
     apply(next, true);
     if (status === 'correct') { $('#resultHead').classList.add('celebrate'); confetti($('#resultHead'), resultPresentation(next.results.at(-1)).particles); }
   };
-  $('#skipBtn').onclick = () => { if (!busy && ready) apply(skip(state)); };
+  $('#skipBtn').onclick = () => { if (busy || !ready) return; coachDone(2); autoPlay = heard && state.step < LENGTHS.length - 1; apply(skip(state)); };
+  $('#jbKeys').onclick = e => { const key = e.target.closest('[data-step]'); if (key) pressKey(Number(key.dataset.step)); };
+  $('#playBtn').addEventListener('click', () => coachDone(1));
+  $('#answerInput').addEventListener('input', () => coachDone(3));
+  stage.querySelectorAll('.coach-x').forEach(x => x.onclick = () => coachDone(Number(x.parentElement.dataset.coach)));
+  $('#helpBtn').onclick = () => { coach = new Set([1, 2, 3]); LS.set('music.online.coach', false); renderGame(); };
+  ask = -1;
   $('#surrenderBtn').onclick = () => { if (!busy && ready) apply(surrender(state)); };
 }
 
@@ -201,13 +255,14 @@ async function prepareAudio(track, version, focusAnswer = false) {
         if (!loaded || version !== screenVersion || request !== audioVersion) return;
       }
     }
-    ready = true; preload(trackById(state.queue[state.index + 1])); $('#playStatus').textContent = state.phase === 'reveal' ? 'Нажми на пластинку — сыграют 15 секунд.' : 'Нажми на пластинку и прислушайся.';
+    ready = true; preload(trackById(state.queue[state.index + 1])); $('#playStatus').textContent = state.phase === 'reveal' ? 'Нажми на пластинку — сыграют 15 секунд.' : 'Жми ▶ и прислушайся.';
   } catch (error) {
     if (version !== screenVersion || request !== audioVersion) return;
     $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; $('#playStatus').textContent = 'Не удалось получить превью.';
   } finally {
     if (version === screenVersion && request === audioVersion) {
       busy = false; updateControls();
+      if (autoPlay) { autoPlay = false; if (ready && state.phase === 'round') listen(); }
       if (focusAnswer && ready && state.phase === 'round' && !document.hidden) $('#answerInput').focus({ preventScroll: true });
     }
   }
@@ -229,17 +284,17 @@ async function listen() {
   playing = true; updateControls(); $('#audioError').hidden = true;
   $('#playStatus').textContent = 'Включаем звук в браузере…';
   if (state.phase === 'round' && matchMedia('(pointer: fine)').matches) $('#answerInput').focus({ preventScroll: true });
-  const meter = $('#playMeter');
+  const ring = state.phase === 'round' ? $('#playBtn') : null; // прогресс — кольцо вокруг кнопки автомата
   try {
     const complete = await player.play(seconds, { onStart: () => {
       if (version !== screenVersion) return;
       heard = true; updateControls(); $('#listenCard').classList.add('is-playing');
       $('#playStatus').textContent = state.phase === 'round' ? 'Слушаем… Можно сразу писать ответ.' : 'Слушаем…';
-      if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; requestAnimationFrame(() => { if (version === screenVersion && playing) { meter.style.transition = `width ${seconds}s linear`; meter.style.width = '100%'; } }); }
+      if (ring) { ring.style.transition = 'none'; ring.style.setProperty('--p', 0); requestAnimationFrame(() => { if (version === screenVersion && playing) { ring.style.transition = `--p ${seconds}s linear, transform .2s`; ring.style.setProperty('--p', 100); } }); }
     } }); if (version !== screenVersion) return;
     $('#playStatus').textContent = complete ? 'Выберите песню. Повтор отрывка — бесплатно.' : 'Остановлено. Можно включить ещё раз.';
   } catch (error) { if (version === screenVersion) { $('#playStatus').textContent = 'Звук не запустился.'; $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; } }
-  finally { if (version === screenVersion) { playing = false; $('#listenCard').classList.remove('is-playing'); if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; } updateControls(); } }
+  finally { if (version === screenVersion) { playing = false; $('#listenCard').classList.remove('is-playing'); if (ring) { ring.style.transition = ''; ring.style.setProperty('--p', 0); } updateControls(); } }
 }
 
 function closeSuggestions() {

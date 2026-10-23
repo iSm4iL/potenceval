@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LENGTHS, POINTS, createGame, guess, skip, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
+import { LENGTHS, POINTS, createGame, guess, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
 import { normalizeDeezer, searchTracks, sameArtist, snapshotTrack, combineSuggestions } from './catalog.js';
 
 const song = (n, artist = 'a') => ({ id: `dz-${n}`, deezerId: n, title: `Song ${n}`, artist: `Artist ${artist}`, artistIds: [artist], artistNames: [`Artist ${artist}`], answerKey: `${artist}|song ${n}`, preview: 'https://cdnt-preview.dzcdn.net/example.mp3', kind: 'online', start: 0 });
@@ -292,4 +292,12 @@ test('duplicate pool and saved tracks cannot occupy the autocomplete result limi
   assert.equal(result.length, 8);
   assert.equal(new Set(result.map(t => t.id)).size, 8);
   assert.deepEqual(result.map(t => t.id), searchTracks(local, 'Artist').map(t => t.id));
+});
+
+test('openStep jumps straight to a longer snippet and scores like that step', () => {
+  const s = openStep(game(), 4);
+  assert.equal(s.step, 4);
+  assert.equal(openStep(s, 2), s);
+  assert.equal(openStep(s, 6), s);
+  assert.equal(guess(s, tracks[0]).score, POINTS[4]);
 });
