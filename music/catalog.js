@@ -1,14 +1,12 @@
 export const PACKS = [
-  { id: 'new-wave', title: 'Новая школа', icon: '🔥', description: 'Свежий звук и новое поколение рэпа' },
+  { id: 'new-wave', title: 'Новая школа', icon: '🔥', description: 'madk1d, VILLIAN, MORGENSHTERN, OG Buda и новое поколение' },
   { id: 'ru-rap', title: 'Русский рэп', icon: '🎤', description: 'Знаковые треки разных поколений' },
-  { id: 'western-rap', title: 'Западный хип-хоп', icon: '🌎', description: 'Рэп-хиты и большие припевы' },
-  { id: 'ru-pop', title: 'Русская поп-музыка', icon: '💗', description: 'Песни, которые хочется подпевать' },
-  { id: 'pop-rnb', title: 'Поп и R&B', icon: '🪩', description: 'Мировые хиты и запоминающиеся мелодии' },
-  { id: 'alt-rock', title: 'Поп-рок и альтернатива', icon: '🎧', description: 'От стадионных гимнов до альтернативных хитов' },
-  { id: 'classics', title: 'Классический рок', icon: '🎸', description: 'Большие гитарные песни до 1990 года' },
-  { id: 'ru-rock', title: 'Русский рок', icon: '🤘', description: 'Гитары, знакомые не одному поколению' },
-  { id: 'electronic', title: 'Электроника', icon: '⚡', description: 'Танцевальные хиты и узнаваемые дропы' },
-  { id: 'indie', title: 'Инди', icon: '✨', description: 'Независимый звук и песни на повторе' },
+  { id: 'nostalgia', title: 'Ностальгия 2010-х', icon: '📼', description: 'Культовые хиты, под которые взрослели' },
+  { id: 'kpop', title: 'K-pop', icon: '💜', description: 'BTS, BLACKPINK, TWICE, Stray Kids и другие' },
+  { id: 'modern-pop', title: 'Мировой поп', icon: '🌍', description: 'The Weeknd, Imagine Dragons, Barns Courtney…' },
+  { id: 'mom-pop', title: 'Для мамы', icon: '💐', description: 'Zivert, LOBODA, Ёлка и позитивный поп' },
+  { id: 'dad-rock', title: 'Батин рок', icon: '🎸', description: 'Led Zeppelin, Pink Floyd, Deep Purple, The Beatles' },
+  { id: 'metal', title: 'Рок и метал', icon: '🤘', description: 'Metallica, Slipknot, Rammstein, System Of A Down' },
 ].map(pack => ({ ...pack, curated: true }));
 
 export const normalize = value => String(value || '').toLocaleLowerCase('ru').replace(/ё/g, 'е').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();

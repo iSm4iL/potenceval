@@ -122,7 +122,24 @@
     "pyrokinesis",
     "Макс Корж",
     "Каспийский Груз",
-    "Кравц"
+    "Кравц",
+    "MONATIK",
+    "Время и Стекло",
+    "Грибы",
+    "Ёлка",
+    "Полина Гагарина",
+    "Нюша",
+    "LOBODA",
+    "Мари Краймбрери",
+    "Монеточка",
+    "Клава Кока",
+    "Ани Лорак",
+    "Вера Брежнева",
+    "Земфира",
+    "Кино",
+    "Король и Шут",
+    "Ария",
+    "Кипелов"
   ],
   "sources": [
     {
@@ -235,133 +252,608 @@
       ]
     },
     {
-      "id": "ru-pop-essentials",
-      "kind": "apple-playlist",
-      "title": "Apple Music — Поп на русском: главное",
-      "url": "https://music.apple.com/us/playlist/pl.a497b4695ffb4dfe93b40b9f8a5c74e0?l=ru",
+      "id": "kpop-top",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни K-pop групп и артистов",
+      "url": "https://www.deezer.com/",
       "genres": [
-        "ru-pop"
+        "kpop"
       ],
-      "limit": 120
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        "BTS",
+        "BLACKPINK",
+        "TWICE",
+        "EXO",
+        "Stray Kids",
+        "NewJeans",
+        "aespa",
+        "IVE",
+        "LE SSERAFIM",
+        "SEVENTEEN",
+        "Red Velvet",
+        "BIGBANG",
+        "(G)I-DLE",
+        "ITZY",
+        "NCT 127",
+        "ENHYPEN",
+        "TOMORROW X TOGETHER",
+        "PSY",
+        "Girls' Generation",
+        "2NE1",
+        "SHINee",
+        "MAMAMOO",
+        "ATEEZ",
+        "Jung Kook",
+        "JENNIE",
+        "ROSÉ",
+        "LISA",
+        "Jimin",
+        "ILLIT",
+        "BABYMONSTER"
+      ]
     },
     {
-      "id": "ru-rock-essentials",
-      "kind": "apple-playlist",
-      "title": "Apple Music — Рок на русском: главное",
-      "url": "https://music.apple.com/us/playlist/pl.bd9dd079143b4b659efc48e2c01e3a11?l=ru",
+      "id": "metal-top",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни рока и метала",
+      "url": "https://www.deezer.com/",
       "genres": [
-        "ru-rock"
+        "metal"
       ],
-      "limit": 120
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        "Metallica",
+        "Slipknot",
+        "System Of A Down",
+        "Linkin Park",
+        "Rammstein",
+        "Megadeth",
+        "Slayer",
+        "Pantera",
+        "Black Sabbath",
+        "Judas Priest",
+        "Korn",
+        "Disturbed",
+        "Avenged Sevenfold",
+        "Bring Me The Horizon",
+        "Five Finger Death Punch",
+        "Motörhead",
+        "Sabaton",
+        "Ария",
+        "Кипелов",
+        "Limp Bizkit",
+        "Papa Roach",
+        "Evanescence",
+        "Ghost",
+        "Gojira"
+      ]
     },
     {
-      "id": "alternative-2000s",
-      "kind": "apple-playlist",
-      "title": "Apple Music — 2000s Alternative Essentials",
-      "url": "https://music.apple.com/us/playlist/pl.7f3a307b0f2e49b1b521b4d4d5c21c7c",
+      "id": "dad-rock-top",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни классического рока",
+      "url": "https://www.deezer.com/",
       "genres": [
-        "alt-rock"
+        "dad-rock"
       ],
-      "limit": 120
+      "perArtist": 6,
+      "limit": 500,
+      "artists": [
+        "Led Zeppelin",
+        "Iron Maiden",
+        "Pink Floyd",
+        "Deep Purple",
+        "The Beatles",
+        "Red Hot Chili Peppers",
+        "Queen",
+        "The Rolling Stones",
+        "AC/DC",
+        "Aerosmith",
+        "Scorpions",
+        "Dire Straits",
+        "Eagles",
+        "Nirvana",
+        "Guns N' Roses",
+        "Bon Jovi",
+        "The Doors",
+        "Creedence Clearwater Revival",
+        "Кино",
+        "Король и Шут",
+        "Наутилус Помпилиус",
+        "ДДТ"
+      ]
     },
     {
-      "id": "alternative-2010s",
-      "kind": "apple-playlist",
-      "title": "Apple Music — 2010s Alternative Essentials",
-      "url": "https://music.apple.com/us/playlist/pl.4334377900f740a89dd4c75ce5a1ccfb",
+      "id": "mom-pop-top",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни русской женской поп-музыки",
+      "url": "https://www.deezer.com/",
       "genres": [
-        "alt-rock"
+        "mom-pop"
       ],
-      "limit": 120
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        "Zivert",
+        "LOBODA",
+        "Ёлка",
+        "Полина Гагарина",
+        "ANNA ASTI",
+        "Мари Краймбрери",
+        "Монеточка",
+        "MONA",
+        "Клава Кока",
+        "Нюша",
+        "Валерия",
+        "Глюк'oZa",
+        "Земфира",
+        "Вера Брежнева",
+        "Ани Лорак",
+        "Пелагея",
+        "Artik & Asti",
+        "Мот"
+      ]
     },
     {
-      "id": "indie-2010s",
-      "kind": "apple-playlist",
-      "title": "Apple Music — 2010s Indie Essentials",
-      "url": "https://music.apple.com/us/playlist/pl.20a9e31e756d4752a9a022f94c222247",
+      "id": "modern-pop-top",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни мирового попа и поп-рока",
+      "url": "https://www.deezer.com/",
       "genres": [
-        "indie"
+        "modern-pop"
       ],
-      "limit": 120
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        "The Weeknd",
+        "Imagine Dragons",
+        "Barns Courtney",
+        "Dua Lipa",
+        "Billie Eilish",
+        "Harry Styles",
+        "Ed Sheeran",
+        "Coldplay",
+        "OneRepublic",
+        "Twenty One Pilots",
+        "Maroon 5",
+        "Post Malone",
+        "Arctic Monkeys",
+        "Lana Del Rey",
+        "Hozier",
+        "Glass Animals",
+        "Sia",
+        "Halsey",
+        "Bruno Mars",
+        "Panic! At The Disco",
+        "Kaleo",
+        "The Neighbourhood"
+      ]
     },
     {
-      "id": "western-hiphop-2010s",
-      "kind": "apple-playlist",
-      "title": "Apple Music — 2010s Hip-Hop Essentials",
-      "url": "https://music.apple.com/us/playlist/pl.af758ba03e6d44548184717eebb38f9b",
-      "genres": [
-        "western-rap"
-      ],
-      "limit": 120
-    },
-    {
-      "id": "pop-2010s",
-      "kind": "apple-playlist",
-      "title": "Apple Music — 2010s Hits Essentials",
-      "url": "https://music.apple.com/us/playlist/pl.6b1b5dfda067443481265436811002f1",
-      "genres": [
-        "pop-rnb"
-      ],
-      "limit": 120
-    },
-    {
-      "id": "edm-essentials",
-      "kind": "apple-playlist",
-      "title": "Apple Music — EDM Essentials",
-      "url": "https://music.apple.com/us/playlist/pl.733395f7caac4866b61dc281ac50bb2d",
-      "genres": [
-        "electronic"
-      ],
-      "limit": 120
-    },
-    {
-      "id": "club-hits-2010s",
-      "kind": "apple-playlist",
-      "title": "Apple Music — 2010s Club Hits Essentials",
-      "url": "https://music.apple.com/us/playlist/pl.cc13740af0374560ac1c659ca2a89dd8",
-      "genres": [
-        "electronic"
-      ],
-      "limit": 120
-    },
-    {
-      "id": "big-beat-essentials",
-      "kind": "apple-playlist",
-      "title": "Apple Music — Big Beat Essentials",
-      "url": "https://music.apple.com/us/playlist/pl.78e98b7f1ea842dc807bd646ab37083e",
-      "genres": [
-        "electronic"
-      ],
-      "limit": 60
-    },
-    {
-      "id": "planet-rock-500",
-      "kind": "planet-rock",
-      "title": "Planet Rock — 500 Greatest Rock Songs (первые 200, до 1990 года)",
-      "url": "https://www.hellorayo.co.uk/planet-rock/news/rock-news/the-500-greatest-rock-songs-of-all-time",
-      "genres": [
-        "classics"
-      ],
-      "maxPosition": 200,
-      "maxYear": 1989,
-      "limit": 150
-    },
-    {
-      "id": "barns-gold",
+      "id": "nostalgia-2010s",
       "kind": "verified-tracks",
-      "title": "Official Charts — Glitter & Gold, Singles Sales",
-      "url": "https://www.officialcharts.com/songs/barns-courtney-glitter-gold/",
+      "title": "Подборка культовых хитов 2010-х",
+      "url": "https://www.deezer.com/",
       "genres": [
-        "alt-rock"
+        "nostalgia"
       ],
       "tracks": [
         {
-          "title": "Glitter & Gold",
+          "title": "Gangnam Style (강남스타일)",
           "artists": [
-            "Barns Courtney"
-          ],
-          "position": 59,
-          "period": "UK Singles Sales"
+            "Psy"
+          ]
+        },
+        {
+          "title": "Somebody That I Used To Know",
+          "artists": [
+            "Gotye"
+          ]
+        },
+        {
+          "title": "Call Me Maybe",
+          "artists": [
+            "Carly Rae Jepsen"
+          ]
+        },
+        {
+          "title": "Party Rock Anthem (Radio Edit)",
+          "artists": [
+            "LMFAO"
+          ]
+        },
+        {
+          "title": "Happy (From \"Despicable Me 2\")",
+          "artists": [
+            "Pharrell Williams"
+          ]
+        },
+        {
+          "title": "Wake Me Up",
+          "artists": [
+            "Avicii"
+          ]
+        },
+        {
+          "title": "Radioactive",
+          "artists": [
+            "Imagine Dragons"
+          ]
+        },
+        {
+          "title": "Royals",
+          "artists": [
+            "Lorde"
+          ]
+        },
+        {
+          "title": "Uptown Funk (feat. Bruno Mars)",
+          "artists": [
+            "Mark Ronson"
+          ]
+        },
+        {
+          "title": "Rolling in the Deep",
+          "artists": [
+            "Adele"
+          ]
+        },
+        {
+          "title": "Shape of You",
+          "artists": [
+            "Ed Sheeran"
+          ]
+        },
+        {
+          "title": "Despacito",
+          "artists": [
+            "Luis Fonsi"
+          ]
+        },
+        {
+          "title": "Closer",
+          "artists": [
+            "The Chainsmokers"
+          ]
+        },
+        {
+          "title": "Lean On",
+          "artists": [
+            "Major Lazer"
+          ]
+        },
+        {
+          "title": "Thrift Shop (feat. Wanz)",
+          "artists": [
+            "Macklemore & Ryan Lewis"
+          ]
+        },
+        {
+          "title": "Get Lucky (Radio Edit - feat. Pharrell Williams and Nile Rodgers)",
+          "artists": [
+            "Daft Punk"
+          ]
+        },
+        {
+          "title": "Summer",
+          "artists": [
+            "Calvin Harris"
+          ]
+        },
+        {
+          "title": "Chandelier",
+          "artists": [
+            "Sia"
+          ]
+        },
+        {
+          "title": "Cheerleader",
+          "artists": [
+            "OMI"
+          ]
+        },
+        {
+          "title": "Stressed Out",
+          "artists": [
+            "Twenty One Pilots"
+          ]
+        },
+        {
+          "title": "Faded",
+          "artists": [
+            "Alan Walker"
+          ]
+        },
+        {
+          "title": "7 Years",
+          "artists": [
+            "Lukas Graham"
+          ]
+        },
+        {
+          "title": "Diamonds",
+          "artists": [
+            "Rihanna"
+          ]
+        },
+        {
+          "title": "Roar",
+          "artists": [
+            "Katy Perry"
+          ]
+        },
+        {
+          "title": "Moves Like Jagger",
+          "artists": [
+            "Maroon 5"
+          ]
+        },
+        {
+          "title": "TiK ToK",
+          "artists": [
+            "Ke$ha"
+          ]
+        },
+        {
+          "title": "Animals",
+          "artists": [
+            "Martin Garrix"
+          ]
+        },
+        {
+          "title": "Take Me To Church",
+          "artists": [
+            "Hozier"
+          ]
+        },
+        {
+          "title": "See You Again (feat. Charlie Puth)",
+          "artists": [
+            "Wiz Khalifa"
+          ]
+        },
+        {
+          "title": "Levels (Radio Edit)",
+          "artists": [
+            "Avicii"
+          ]
+        },
+        {
+          "title": "Summertime Sadness",
+          "artists": [
+            "Lana Del Rey"
+          ]
+        },
+        {
+          "title": "Do I Wanna Know?",
+          "artists": [
+            "Arctic Monkeys"
+          ]
+        },
+        {
+          "title": "Viva La Vida",
+          "artists": [
+            "Coldplay"
+          ]
+        },
+        {
+          "title": "Grenade",
+          "artists": [
+            "Bruno Mars"
+          ]
+        },
+        {
+          "title": "Sorry",
+          "artists": [
+            "Justin Bieber"
+          ]
+        },
+        {
+          "title": "Treat You Better",
+          "artists": [
+            "Shawn Mendes"
+          ]
+        },
+        {
+          "title": "Firestone",
+          "artists": [
+            "Kygo"
+          ]
+        },
+        {
+          "title": "Sugar (feat. Francesco Yates)",
+          "artists": [
+            "Robin Schulz"
+          ]
+        },
+        {
+          "title": "Believer",
+          "artists": [
+            "Imagine Dragons"
+          ]
+        },
+        {
+          "title": "Небо поможет нам",
+          "artists": [
+            "Макс Корж"
+          ]
+        },
+        {
+          "title": "Сансара",
+          "artists": [
+            "Баста"
+          ]
+        },
+        {
+          "title": "Вечеринка",
+          "artists": [
+            "Скриптонит"
+          ]
+        },
+        {
+          "title": "Розовое вино",
+          "artists": [
+            "Элджей"
+          ]
+        },
+        {
+          "title": "Имя 505",
+          "artists": [
+            "Время и Стекло"
+          ]
+        },
+        {
+          "title": "Тает лёд",
+          "artists": [
+            "Грибы"
+          ]
+        },
+        {
+          "title": "Хайповая",
+          "artists": [
+            "Feduk"
+          ]
+        },
+        {
+          "title": "Будильник",
+          "artists": [
+            "Егор Крид"
+          ]
+        },
+        {
+          "title": "Капкан",
+          "artists": [
+            "Мот"
+          ]
+        },
+        {
+          "title": "Выбирать чудо",
+          "artists": [
+            "NYUSHA"
+          ]
+        },
+        {
+          "title": "Кукушка",
+          "artists": [
+            "Полина Гагарина"
+          ]
+        },
+        {
+          "title": "Кружит",
+          "artists": [
+            "MONATIK"
+          ]
+        },
+        {
+          "title": "Неделимы",
+          "artists": [
+            "Artik & Asti"
+          ]
+        },
+        {
+          "title": "Твои глаза",
+          "artists": [
+            "LOBODA"
+          ]
+        },
+        {
+          "title": "Экспонат",
+          "artists": [
+            "Ленинград"
+          ]
+        },
+        {
+          "title": "Навернопотомучто",
+          "artists": [
+            "Время и Стекло"
+          ]
+        },
+        {
+          "title": "Лондон",
+          "artists": [
+            "Тимати"
+          ]
+        },
+        {
+          "title": "I Got Love",
+          "artists": [
+            "MiyaGi & Эндшпиль"
+          ]
+        },
+        {
+          "title": "Дико, например",
+          "artists": [
+            "Pharaoh"
+          ]
+        },
+        {
+          "title": "Мотылёк",
+          "artists": [
+            "Макс Корж"
+          ]
+        },
+        {
+          "title": "Соло",
+          "artists": [
+            "Мот"
+          ]
+        },
+        {
+          "title": "Прованс",
+          "artists": [
+            "Ёлка"
+          ]
+        },
+        {
+          "title": "Районы-кварталы",
+          "artists": [
+            "Звери"
+          ]
+        },
+        {
+          "title": "На белом",
+          "artists": [
+            "Каспийский Груз"
+          ]
+        },
+        {
+          "title": "Если чё, я Баха",
+          "artists": [
+            "Jah Khalib"
+          ]
+        },
+        {
+          "title": "Океан",
+          "artists": [
+            "L'One"
+          ]
+        },
+        {
+          "title": "Самая самая",
+          "artists": [
+            "Егор Крид"
+          ]
+        },
+        {
+          "title": "Грустный Дэнс",
+          "artists": [
+            "LUNA"
+          ]
+        },
+        {
+          "title": "Перекрёстки",
+          "artists": [
+            "Мари Краймбрери"
+          ]
+        },
+        {
+          "title": "Птичка",
+          "artists": [
+            "HammAli & Navai"
+          ]
         }
       ]
     }
