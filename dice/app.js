@@ -65,37 +65,27 @@ function buildHomeScreen() {
   diceField($('.dice-field'));
 }
 
-// Россыпь костей на фоне: разлетаются от курсора, от клика — катятся
+// Куча костей у нижнего края: иногда одна подпрыгивает и падает на другую грань
 function diceField(root) {
   if (!root) return;
-  const n = innerWidth < 700 ? 14 : 26, dice = [];
+  const n = innerWidth < 700 ? 16 : 34, dice = [];
   for (let i = 0; i < n; i++) {
     const el = h(dieHTML(1 + Math.floor(Math.random() * 6), Math.random() < .5 ? 'black' : ''));
-    const d = { el, x: Math.random() * 100, y: Math.random() * 100, r: Math.random() * 360, dx: 0, dy: 0, spin: 0 };
-    el.style.left = d.x + '%'; el.style.top = d.y + '%';
-    root.append(el); dice.push(d);
+    const lift = Math.random() ** 2 * 26; // гуще у самого низа
+    Object.assign(el.style, { left: (Math.random() * 98) + '%', bottom: (lift - 3) + '%', transform: `rotate(${Math.random() * 360}deg)` });
+    root.append(el); dice.push(el);
   }
-  const place = d => { d.el.style.transform = `translate(${d.dx}px,${d.dy}px) rotate(${d.r + d.spin}deg)`; };
-  dice.forEach(place);
-  const onMove = e => {
-    if (!root.isConnected) return removeEventListener('pointermove', onMove);
-    for (const d of dice) {
-      const b = d.el.getBoundingClientRect(), cx = b.left + b.width / 2 - d.dx, cy = b.top + b.height / 2 - d.dy;
-      const vx = cx - e.clientX, vy = cy - e.clientY, dist = Math.hypot(vx, vy) || 1;
-      const push = dist < 140 ? (140 - dist) * .55 : 0; // ближе к курсору — сильнее отталкиваем
-      d.dx = vx / dist * push; d.dy = vy / dist * push; d.spin = push * 1.4; place(d);
-    }
+  if (still()) return;
+  const hop = () => {
+    if (!root.isConnected) return;
+    const el = dice[Math.floor(Math.random() * dice.length)], r = parseFloat(el.style.transform.slice(7)) || 0, to = r + 90 + Math.random() * 270;
+    el.animate([{ transform: `rotate(${r}deg)` }, { transform: `translateY(-60px) rotate(${(r + to) / 2}deg)`, offset: .45 }, { transform: `translateY(0) rotate(${to}deg)` }],
+      { duration: 900, easing: 'cubic-bezier(.3,.7,.4,1)' });
+    setTimeout(() => { el.dataset.v = 1 + Math.floor(Math.random() * 6); }, 400);
+    el.style.transform = `rotate(${to}deg)`;
+    setTimeout(hop, 500 + Math.random() * 900);
   };
-  const onClick = e => {
-    if (!root.isConnected) return removeEventListener('click', onClick);
-    if (e.target.closest('button, input, a, .panel')) return;
-    for (const d of dice) {
-      const b = d.el.getBoundingClientRect();
-      if (Math.hypot(b.left + b.width / 2 - e.clientX, b.top + b.height / 2 - e.clientY) > 220) continue;
-      d.r += 180 + Math.random() * 360; d.el.dataset.v = 1 + Math.floor(Math.random() * 6); place(d);
-    }
-  };
-  if (!still()) { addEventListener('pointermove', onMove); addEventListener('click', onClick); }
+  hop();
 }
 
 // Живая мини-партия на главной: кости сами бросаются, умножаются и сносят чужие.
