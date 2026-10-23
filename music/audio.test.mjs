@@ -22,7 +22,9 @@ test('online preview is fetched with no persistent cache and plays all exact sni
   assert.equal(calls[0][1].cache, 'no-store');
   assert.equal(calls[0][1].credentials, 'omit');
   for (const seconds of [0.5, 1, 2, 5, 10, 15]) {
-    const ended = player.play(seconds); await tick();
+    let started = false;
+    const ended = player.play(seconds, { onStart: () => { started = true; } }); await tick();
+    assert.equal(started, true);
     const source = ctx.sources.at(-1);
     assert.equal(source.args[1], 0); assert.equal(source.args[2], seconds);
     source.onended(); assert.equal(await ended, true);
@@ -72,4 +74,61 @@ test('background preload does not interrupt current playback and is reused witho
   assert.equal(await playing, false, 'switching to the preloaded song stops the old snippet');
   assert.equal(player.track.id, 'dz-2'); assert.equal(player.buffer, buffer); assert.equal(calls.length, 2);
   await assert.rejects(player.fetchBuffer({ ...next, preview: 'https://untrusted.example/a.mp3' }), /превью/i);
+});
+
+test('background download has a deadline even when the network never settles', { timeout: 1000 }, async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const player = make(context(), () => new Promise(() => {}));
+  const result = player.fetchBuffer(track);
+  const rejected = assert.rejects(result, /загруз|соединени/i);
+  t.mock.timers.tick(15000);
+  await rejected;
+});
+
+test('decoding has a deadline and cannot replace the current buffer after timeout', { timeout: 1000 }, async t => {
+  const ctx = context(); let decode;
+  ctx.decodeAudioData = () => new Promise(resolve => { decode = resolve; });
+  const player = make(ctx);
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const result = player.load(track);
+  await tick();
+  const rejected = assert.rejects(result, /подготов|прочитать|декод/i);
+  t.mock.timers.tick(15000);
+  await rejected;
+  decode({ duration: 30 }); await tick();
+  assert.equal(player.buffer, null);
+});
+
+test('a browser that never enables sound reports an error and allows a retry', { timeout: 1000 }, async t => {
+  const ctx = context(), player = make(ctx);
+  await player.load(track);
+  ctx.resume = () => new Promise(() => {});
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const result = player.play(0.5);
+  const rejected = assert.rejects(result, /браузер|звук/i);
+  t.mock.timers.tick(5000);
+  await rejected;
+  assert.equal(ctx.sources.length, 0);
+  ctx.resume = async () => {};
+  const retry = player.play(0.5); await tick();
+  ctx.sources.at(-1).onended();
+  assert.equal(await retry, true);
+});
+
+test('loading reports download and decode separately', async () => {
+  const stages = [];
+  await make().load(track, { onStatus: status => stages.push(status) });
+  assert.equal(stages.length, 2);
+  assert.match(stages[0], /загружа/i);
+  assert.match(stages[1], /подгот/i);
+});
+
+test('a stalled audio device cannot leave playback spinning forever', { timeout: 1000 }, async t => {
+  const player = make(); await player.load(track);
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const result = player.play(0.5); await tick();
+  const rejected = assert.rejects(result, /звук|воспроизвед/i);
+  t.mock.timers.tick(4000);
+  await rejected;
+  assert.equal(player.source, null);
 });

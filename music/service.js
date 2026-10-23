@@ -53,8 +53,8 @@ export function deezerRequest(path, params = {}, { signal } = {}) {
     };
     script.async = true;
     script.src = url.href;
-    script.onerror = () => finish(new Error('Не удалось загрузить данные Deezer. Проверь соединение и доступность сервиса в своём регионе.'));
-    timer = setTimeout(() => finish(new Error('Вышло время ожидания Deezer. Попробуй обновить подборку.')), 12000);
+    script.onerror = () => finish(new Error('Не удалось загрузить данные Deezer. Проверьте подключение к интернету и блокировщики в браузере.'));
+    timer = setTimeout(() => finish(new Error('Вышло время ожидания: Deezer не ответил за 12 секунд. Попробуйте ещё раз или проверьте игру через другое подключение к интернету.')), 12000);
     signal?.addEventListener('abort', onAbort, { once: true });
     if (signal?.aborted) {
       onAbort();

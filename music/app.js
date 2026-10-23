@@ -1,8 +1,8 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
 import { LENGTHS, POINTS, createGame, guess, skip, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
 import { PACKS, combineSuggestions, snapshotTrack } from './catalog.js?v=packs-20261023';
-import { createDeezerClient } from './service.js';
-import { AudioPlayer } from './audio.js';
+import { createDeezerClient } from './service.js?v=audio-20261023';
+import { AudioPlayer } from './audio.js?v=audio-20261023';
 import { resultPresentation } from './feedback.js';
 import { createCatalogClient } from './collection.js';
 
@@ -179,19 +179,19 @@ function updateControls() {
 async function prepareAudio(track, version, focusAnswer = false) {
   audioController?.abort();
   const controller = audioController = new AbortController(), request = ++audioVersion;
-  busy = true; ready = false; $('#audioError').hidden = true; $('#playStatus').textContent = 'Готовим онлайн-превью…'; updateControls();
+  busy = true; ready = false; $('#audioError').hidden = true; $('#playStatus').textContent = 'Получаем ссылку на песню из Deezer…'; updateControls();
   try {
     if (player.track?.id !== track.id || !player.buffer) {
       const pre = preloaded.get(track.id);
       preloaded.delete(track.id);
       let full, buffer;
-      if (pre) { try { ({ full, buffer } = await pre); } catch { /* не догрузилась — грузим как обычно */ } }
+      if (pre) { $('#playStatus').textContent = 'Ожидаем загрузку следующей песни…'; try { ({ full, buffer } = await pre); } catch { /* не догрузилась — грузим как обычно */ } }
       if (!full) full = await service.track(track.deezerId, { signal: controller.signal });
       if (version !== screenVersion || request !== audioVersion) return;
       if (state.phase === 'round' && !state.attempts.length) { state = { ...state, tracks: state.tracks.map(t => t.id === full.id ? { ...t, ...snapshotTrack(full) } : t) }; persistGame(); }
       if (buffer) player.useBuffer(full, buffer);
       else {
-        const loaded = await player.load(full);
+        const loaded = await player.load(full, { onStatus: status => { if (version === screenVersion && request === audioVersion) $('#playStatus').textContent = status; } });
         if (!loaded || version !== screenVersion || request !== audioVersion) return;
       }
     }
@@ -220,15 +220,19 @@ async function listen() {
   if (playing) { player.stop(); return; }
   if (busy || !ready) return;
   const version = screenVersion, seconds = state.phase === 'reveal' ? 15 : LENGTHS[state.step];
-  playing = true; heard = true; updateControls(); $('#listenCard').classList.add('is-playing');
-  $('#playStatus').textContent = state.phase === 'round' ? 'Слушаем… Можно сразу писать ответ.' : 'Слушаем…';
+  playing = true; updateControls(); $('#audioError').hidden = true;
+  $('#playStatus').textContent = 'Включаем звук в браузере…';
   if (state.phase === 'round' && matchMedia('(pointer: fine)').matches) $('#answerInput').focus({ preventScroll: true });
   const meter = $('#playMeter');
-  if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; requestAnimationFrame(() => { if (version === screenVersion && playing) { meter.style.transition = `width ${seconds}s linear`; meter.style.width = '100%'; } }); }
   try {
-    const complete = await player.play(seconds); if (version !== screenVersion) return;
+    const complete = await player.play(seconds, { onStart: () => {
+      if (version !== screenVersion) return;
+      heard = true; updateControls(); $('#listenCard').classList.add('is-playing');
+      $('#playStatus').textContent = state.phase === 'round' ? 'Слушаем… Можно сразу писать ответ.' : 'Слушаем…';
+      if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; requestAnimationFrame(() => { if (version === screenVersion && playing) { meter.style.transition = `width ${seconds}s linear`; meter.style.width = '100%'; } }); }
+    } }); if (version !== screenVersion) return;
     $('#playStatus').textContent = complete ? 'Выберите песню. Повтор отрывка — бесплатно.' : 'Остановлено. Можно включить ещё раз.';
-  } catch (error) { if (version === screenVersion) { $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; } }
+  } catch (error) { if (version === screenVersion) { $('#playStatus').textContent = 'Звук не запустился.'; $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; } }
   finally { if (version === screenVersion) { playing = false; $('#listenCard').classList.remove('is-playing'); if (meter) { meter.style.transition = 'none'; meter.style.width = '0'; } updateControls(); } }
 }
 
