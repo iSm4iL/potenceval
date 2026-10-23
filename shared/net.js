@@ -1,72 +1,85 @@
 // Лобби по коду: хост держит состояние у себя в браузере, остальные шлют ему действия.
-// ponytail: P2P через публичный сервер PeerJS — без своего бэкенда; если хост закрыл вкладку,
-// игра ждёт его возвращения. Нужен свой сервер (Durable Objects), если это станет мешать.
+// Сообщения идут через публичный MQTT-сервер по WebSocket — прямое соединение между
+// устройствами не нужно, поэтому работает и с телефона на мобильном интернете.
+// ponytail: публичные брокеры без гарантий и без шифрования содержимого; если станет мало —
+// свой брокер или Durable Objects.
 import { LS, me, toast, hideToast } from './kit.js';
+
+const BROKERS = ['wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt'];
+const BEAT = 4000, LOST = 15000;
 
 // tick(state, apply) — хост вызывает каждые полсекунды (таймеры, ходы бота).
 export function createNet({ game, createState, reduce, publicView = s => s, reserved = [], tick, onState, onLeave }) {
-  const PREFIX = `potenceval-${game}-`;
   const key = k => game + '.' + k;
-  let peer = null, conn = null, isHost = false, hostState = null, hostTimer = null, retryT = null, retries = 0, everConnected = false;
-  const conns = new Map();
+  const topic = (code, part) => `potenceval/v1/${game}/${code}/${part}`;
+  let links = [], timers = [], isHost = false, hostState = null, code = null, everConnected = false, hostSeen = 0, lostShown = false;
+  const seen = new Map(); // pid → когда игрок последний раз выходил на связь (для хоста)
   const newCode = () => Array.from({ length: 5 }, () => 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random() * 32)]).join('');
 
-  function peerReady() {
-    if (typeof Peer !== 'undefined') return true;
+  function ready() {
+    if (typeof mqtt !== 'undefined') return true;
     toast('Не загрузился модуль связи. Обнови страницу.', 4000);
     return false;
   }
-  function closePeer() {
-    clearTimeout(retryT); clearInterval(hostTimer);
-    const p = peer; peer = null; conn = null; conns.clear();
-    if (p && !p.destroyed) p.destroy();
+  function connect(url) {
+    return new Promise(resolve => {
+      const client = mqtt.connect(url, { clientId: `pv_${me.pid}_${Math.random().toString(36).slice(2, 7)}`, connectTimeout: 6000, reconnectPeriod: 2000, clean: true });
+      const fail = setTimeout(() => { client.end(true); resolve(null); }, 7000);
+      client.once('connect', () => { clearTimeout(fail); resolve(client); });
+    });
   }
+  function close() {
+    timers.forEach(clearInterval); timers.forEach(clearTimeout); timers = [];
+    const old = links; links = []; seen.clear();
+    old.forEach(l => l.end(true));
+  }
+  const publish = (t, msg, retain = false) => links.forEach(l => l.publish(t, JSON.stringify(msg), { qos: 0, retain }));
+  const parse = raw => { try { const m = JSON.parse(String(raw)); return m && typeof m === 'object' ? m : null; } catch { return null; } };
 
-  function host(code = newCode(), restored = null, tries = 0) {
-    if (!peerReady()) return;
-    closePeer(); isHost = true;
+  async function host(c = newCode(), restored = null) {
+    if (!ready()) return;
+    close(); isHost = true; code = c;
     toast(restored ? 'Восстанавливаю лобби…' : 'Создаю лобби…');
-    const p = peer = new Peer(PREFIX + code);
-    p.on('open', () => {
-      hideToast();
-      let s = restored || createState(me.pid, code);
-      if (restored) s = { ...s, players: s.players.map(x => (x.genie || x.bot || x.id === me.pid ? x : { ...x, online: false })) };
-      hostState = reduce(s, { type: 'join', name: me.name }, me.pid);
-      LS.set(key('session'), { code, host: true });
-      commit();
-      hostTimer = setInterval(() => { if (hostState) tick?.(hostState, apply); }, 500);
-    });
-    p.on('connection', c => {
-      c.on('data', m => onHostMsg(c, m));
-      c.on('close', () => {
-        if (peer === p && c.pid && conns.get(c.pid) === c) { conns.delete(c.pid); apply({ type: 'online', id: c.pid, on: false }, me.pid); }
-      });
-    });
-    p.on('disconnected', () => { if (peer === p && !p.destroyed) p.reconnect(); });
-    p.on('error', e => {
-      if (peer !== p) return;
-      if (e.type === 'unavailable-id') {
-        if (!restored) return host();
-        // старый id ещё держится на сервере после вылета — подождём
-        if (tries < 20) { retryT = setTimeout(() => host(code, restored, tries + 1), 3000); return; }
-        toast('Не получилось восстановить лобби', 4000); leave(true);
-      } else if (['network', 'server-error', 'socket-error'].includes(e.type)) toast('Нет связи с сервером, пробую ещё…', 3000);
-    });
+    // хост сидит на всех доступных серверах — друг подключится через тот, что открывается у него.
+    // Стартуем с первого ответившего, остальные цепляем по мере подключения; ни одного — пробуем ещё раз.
+    const attach = l => { l.subscribe(topic(c, 'up')); l.on('message', (_, raw) => onHostMsg(parse(raw))); links.push(l); };
+    let first = null;
+    for (let attempt = 0; attempt < 2 && !first; attempt++) {
+      const pending = BROKERS.map(connect);
+      first = await Promise.any(pending.map(p => p.then(l => l || Promise.reject()))).catch(() => null);
+      pending.forEach(p => p.then(l => {
+        if (!l || l === first) return;
+        if (code === c && isHost && first) { attach(l); if (hostState) commit(); } else l.end(true);
+      }));
+    }
+    if (code !== c || !isHost) { first?.end(true); return; }
+    if (!first) { isHost = false; toast('Нет связи с сервером. Проверь интернет или выключи/включи VPN.', 5000); return; }
+    attach(first); hideToast();
+    let s = restored || createState(me.pid, c);
+    if (restored) s = { ...s, players: s.players.map(x => (x.genie || x.bot || x.id === me.pid ? x : { ...x, online: false })) };
+    hostState = reduce(s, { type: 'join', name: me.name }, me.pid);
+    LS.set(key('session'), { code: c, host: true });
+    commit();
+    publish(topic(c, 'host'), { ts: Date.now() }, true);
+    timers.push(setInterval(() => { if (hostState) tick?.(hostState, apply); }, 500));
+    timers.push(setInterval(() => {
+      if (!hostState) return;
+      publish(topic(c, 'host'), { ts: Date.now() }, true);
+      for (const [pid, at] of seen) if (Date.now() - at > LOST) { seen.delete(pid); apply({ type: 'online', id: pid, on: false }, me.pid); }
+    }, BEAT));
   }
 
-  function onHostMsg(c, m) {
-    if (!m || typeof m !== 'object' || !hostState) return;
-    if (m.t === 'hello' && typeof m.pid === 'string') {
-      const pid = m.pid.slice(0, 24);
-      if (pid === me.pid || reserved.includes(pid)) return c.close();
-      c.pid = pid;
-      const old = conns.get(pid);
-      if (old && old !== c) old.close();
-      conns.set(pid, c);
+  function onHostMsg(m) {
+    if (!m || !hostState || typeof m.pid !== 'string') return;
+    const pid = m.pid.slice(0, 24);
+    if (pid === me.pid || reserved.includes(pid)) return;
+    const known = hostState.players.find(p => p.id === pid);
+    seen.set(pid, Date.now());
+    if (m.t === 'hello' || (m.t === 'ping' && (!known || !known.online))) {
       const next = reduce(hostState, { type: 'join', name: m.name }, pid);
-      if (next === hostState) { c.send({ t: 'full' }); return; }
+      if (next === hostState) { publish(topic(code, 'down/' + pid), { t: 'full' }); return; }
       hostState = next; commit();
-    } else if (m.t === 'act' && c.pid) apply(m.a, c.pid);
+    } else if (m.t === 'act' && known) apply(m.a, pid);
   }
   function apply(a, from) {
     if (!hostState) return;
@@ -77,58 +90,61 @@ export function createNet({ game, createState, reduce, publicView = s => s, rese
   function commit() {
     LS.set(key('hostState'), hostState);
     const now = Date.now();
-    for (const [pid, c] of conns) if (c.open) c.send({ t: 'state', s: publicView(hostState, pid), now });
+    for (const p of hostState.players) if (p.id !== me.pid && !p.bot && !p.genie) publish(topic(code, 'down/' + p.id), { t: 'state', s: publicView(hostState, p.id), now });
     onState(publicView(hostState, me.pid), now);
   }
 
-  function join(code, rejoin = false) {
-    if (!peerReady()) return;
-    closePeer(); isHost = false;
-    if (!rejoin) { everConnected = false; retries = 0; }
+  async function join(c, rejoin = false) {
+    if (!ready()) return;
+    close(); isHost = false; code = c;
+    if (!rejoin) everConnected = false;
     toast('Подключаюсь…');
-    const p = peer = new Peer();
-    p.on('open', () => connect(code));
-    p.on('disconnected', () => { if (peer === p && !p.destroyed) p.reconnect(); });
-    p.on('error', e => {
-      if (peer !== p) return;
-      if (e.type === 'peer-unavailable' && !everConnected) { toast('Лобби с таким кодом не найдено', 3500); leave(true); }
-      else retry(code);
+    let link = null;
+    for (const url of [...BROKERS, ...BROKERS]) { link = await connect(url); if (link || code !== c) break; } // по кругу два раза
+    if (code !== c || isHost) { link?.end(true); return; }
+    if (!link) { toast('Нет связи с сервером. Проверь интернет или выключи/включи VPN.', 5000); return; }
+    links = [link];
+    link.subscribe([topic(c, 'host'), topic(c, 'down/' + me.pid)]);
+    link.on('message', (t, raw) => {
+      const m = parse(raw);
+      if (!m || code !== c) return;
+      if (t.endsWith('/host')) {
+        if (m.closed && everConnected) { toast('Хост закрыл лобби', 3500); leave(true); }
+        else if (m.ts) hostSeen = Date.now();
+        return;
+      }
+      if (m.t === 'state') {
+        hostSeen = Date.now();
+        if (!everConnected || lostShown) hideToast();
+        everConnected = true; lostShown = false;
+        LS.set(key('session'), { code: c, host: false });
+        onState(m.s, m.now);
+      } else if (m.t === 'full') { toast('Лобби заполнено', 3500); leave(true); }
+      else if (m.t === 'bye') { toast('Хост закрыл лобби', 3500); leave(true); }
     });
-  }
-  function connect(code) {
-    const p = peer, c = p.connect(PREFIX + code, { reliable: true });
-    c.on('open', () => {
-      conn = c; everConnected = true; retries = 0;
-      LS.set(key('session'), { code, host: false });
-      c.send({ t: 'hello', pid: me.pid, name: me.name });
-      hideToast();
-    });
-    c.on('data', m => {
-      if (m?.t === 'state') onState(m.s, m.now);
-      else if (m?.t === 'full') { toast('Лобби заполнено', 3500); leave(true); }
-      else if (m?.t === 'bye') { toast('Хост закрыл лобби', 3500); leave(true); }
-    });
-    c.on('close', () => { if (conn === c && peer === p) { conn = null; retry(code); } });
-  }
-  function retry(code) {
-    if (++retries > 40) { toast('Хост не отвечает. Игра закончилась?', 4000); leave(true); return; }
-    toast('Связь с хостом потеряна, переподключаюсь…');
-    clearTimeout(retryT);
-    retryT = setTimeout(() => (peer && !peer.destroyed && peer.open ? connect(code) : join(code, true)), 2500);
+    const say = t => publish(topic(c, 'up'), { t, pid: me.pid, name: me.name });
+    say('hello');
+    timers.push(setInterval(() => {
+      say(everConnected ? 'ping' : 'hello');
+      if (everConnected && Date.now() - hostSeen > LOST && !lostShown) { lostShown = true; toast('Связь с хостом пропала, ждём его…'); }
+    }, BEAT));
+    timers.push(setTimeout(() => { if (!everConnected && code === c) { toast('Лобби с таким кодом не найдено', 3500); leave(true); } }, 12000));
   }
 
   function send(a) {
     if (isHost) apply(a, me.pid);
-    else if (conn?.open) conn.send({ t: 'act', a });
+    else if (links.length) publish(topic(code, 'up'), { t: 'act', pid: me.pid, a });
     else toast('Нет связи с хостом…', 2000);
   }
   function leave(keepToast = false) {
-    if (isHost) for (const c of conns.values()) if (c.open) c.send({ t: 'bye' });
+    if (isHost && code) {
+      publish(topic(code, 'host'), { closed: true, ts: Date.now() }, true);
+      for (const p of hostState?.players || []) if (p.id !== me.pid) publish(topic(code, 'down/' + p.id), { t: 'bye' });
+    }
     LS.del(key('session')); LS.del(key('hostState'));
-    // даём «bye» уйти, потом рвём соединения
-    const p = peer; peer = null; conn = null; conns.clear(); clearTimeout(retryT); clearInterval(hostTimer);
-    setTimeout(() => p && !p.destroyed && p.destroy(), 300);
-    hostState = null; isHost = false;
+    const old = links; links = [];
+    setTimeout(() => old.forEach(l => l.end(true)), 300); // даём «bye» уйти
+    close(); hostState = null; isHost = false; code = null;
     if (!keepToast) hideToast();
     onLeave();
   }

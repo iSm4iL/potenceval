@@ -1,7 +1,7 @@
 import { createState, reduce, publicView, humans, GENIE_ID } from './game.js';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, nudge, smoke, enter, flyIn, flip,
   toast, setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js';
-import { createNet } from '../shared/net.js';
+import { createNet } from '../shared/net.js?v=net-3';
 
 const STEP = ['power', 'write', 'reveal', 'hype', 'verdict', 'share'];
 const canDrive = s => isHostOf(s) || s.wisher === me.pid;
