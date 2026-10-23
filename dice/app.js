@@ -65,14 +65,13 @@ function buildHomeScreen() {
   diceField($('.dice-field'));
 }
 
-// Куча костей у нижнего края: иногда одна подпрыгивает и падает на другую грань
+// Россыпь костей по экрану: каждая на своём месте иногда подпрыгивает и падает на другую грань
 function diceField(root) {
   if (!root) return;
-  const n = innerWidth < 700 ? 16 : 34, dice = [];
+  const n = innerWidth < 700 ? 14 : 26, dice = [];
   for (let i = 0; i < n; i++) {
     const el = h(dieHTML(1 + Math.floor(Math.random() * 6), Math.random() < .5 ? 'black' : ''));
-    const lift = Math.random() ** 2 * 26; // гуще у самого низа
-    Object.assign(el.style, { left: (Math.random() * 98) + '%', bottom: (lift - 3) + '%', transform: `rotate(${Math.random() * 360}deg)` });
+    Object.assign(el.style, { left: (Math.random() * 96) + '%', top: (Math.random() * 94) + '%', transform: `rotate(${Math.random() * 360}deg)` });
     root.append(el); dice.push(el);
   }
   if (still()) return;
