@@ -1,6 +1,10 @@
 // Cabinet presentation preserves the game controls and their event handlers.
 const stage = document.querySelector('#stage');
 const colors = ['#d66b46', '#799e9e', '#c5a25b', '#b58aa7', '#6f9aaa', '#c08a7c', '#9baf87', '#b65c4b'];
+// Свой цвет у каждой подборки: им горят лампочка клавиши, яблоко пластинки и подсветка стекла.
+const packColors = { 'new-wave': '#ff6a3d', 'ru-rap': '#f2b632', nostalgia: '#39c2d0', kpop: '#b874ff', 'modern-pop': '#4b9bff', 'mom-pop': '#ff7eb3', 'dad-rock': '#8cc152', metal: '#e04848' };
+const colorOf = (card, index) => packColors[card.dataset.pack] || colors[index % colors.length];
+const bulbs = n => `<span class="bulbs" aria-hidden="true">${'<i></i>'.repeat(n)}</span>`;
 const speaker = () => '<div class="cabinet-speaker" aria-hidden="true"><span>♪</span></div>';
 const pageSize = 8;
 let collectionPage = 0, lastSelection = null, playOnEntry = false, arrivalStarted = -Infinity;
@@ -19,9 +23,9 @@ function decorateHome(home) {
   const resume = home.querySelector('.resume-card');
   const cabinet = document.createElement('div');
   cabinet.className = 'cabinet';
-  cabinet.innerHTML = `<div class="cabinet-crown"><span class="crown-line"></span><div><h1>Полсекунды</h1><p>Музыку выбираете вы</p></div><span class="crown-line"></span></div>
-    <div class="cabinet-glass-frame"><div class="cabinet-glass"><div class="selection-side left"></div>
-      <div class="record-scene"><div class="scene-caption">Ваша пластинка</div><button type="button" class="turntable"><span class="platter" aria-hidden="true"></span><span class="scene-vinyl"><span class="scene-label"><span>полсекунды</span><b class="record-title"></b><small>▶ Играть</small></span></span><span class="tonearm" aria-hidden="true"><i></i></span></button><div class="selected-ticket" role="status"><span class="ticket-code"></span><strong class="ticket-title"></strong><small class="ticket-note"></small></div></div>
+  cabinet.innerHTML = `<div class="cabinet-crown">${bulbs(9)}<div><h1>Полсекунды</h1><p>Выбери пластинку — и угадывай с полсекунды</p></div>${bulbs(9)}</div>
+    <div class="cabinet-glass-frame"><span class="tube left" aria-hidden="true"></span><span class="tube right" aria-hidden="true"></span><div class="cabinet-glass"><div class="selection-side left"></div>
+      <div class="record-scene"><div class="scene-caption">Ваша пластинка</div><button type="button" class="turntable"><span class="platter" aria-hidden="true"></span><span class="scene-vinyl"><span class="vinyl-spin"><svg class="label-ring" viewBox="0 0 100 100" aria-hidden="true"><path id="labelRing" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" fill="none"/><text><textPath href="#labelRing">ПОЛСЕКУНДЫ ★ УГАДАЙ С ПОЛСЕКУНДЫ ★ ПОЛСЕКУНДЫ ★ УГАДАЙ С ПОЛСЕКУНДЫ ★</textPath></text></svg><span class="scene-label"></span></span><span class="label-face"><i class="record-icon"></i><b class="record-title"></b></span></span><span class="tonearm" aria-hidden="true"><i></i></span></button><button type="button" class="scene-play"><span class="scene-play-icon">▶</span><span><b class="ticket-title"></b><small class="ticket-note"></small></span><span class="ticket-code"></span></button></div>
       <div class="selection-side right"></div></div><nav class="collection-pages" aria-label="Страницы подборок" hidden><button type="button" class="page-back" aria-label="Предыдущие подборки">‹</button><span class="page-position" aria-live="polite"></span><button type="button" class="page-next" aria-label="Следующие подборки">›</button></nav><div class="glass-instruction"><span class="status-lamp"></span>Выберите название, затем нажмите на пластинку</div></div>
     <div class="cabinet-console"><div class="console-banks"><div class="control-bank catalog-bank"><span class="bank-label">Какие песни?</span></div><div class="control-bank answer-bank"></div><div class="control-bank rounds-bank"></div></div><div class="console-start"><div class="console-status"><span class="console-ready">Пластинка выбрана</span></div><div class="ignition"></div></div><div class="console-footer"><div class="collection-tools"></div><span>Один экран. Вся компания.</span></div></div>${speaker()}`;
   const selected = cards.find(card => card.getAttribute('aria-pressed') === 'true') || cards[0];
@@ -32,11 +36,16 @@ function decorateHome(home) {
   lastSelection = selected.dataset.pack;
   cards.forEach((card, index) => {
     card.dataset.selection = `${index % pageSize < 4 ? 'A' : 'B'}${Math.floor(index / pageSize) * 4 + index % 4 + 1}`;
-    card.style.setProperty('--record-label', colors[index % colors.length]);
+    card.style.setProperty('--c', colorOf(card, index));
     const code = document.createElement('span');
-    code.className = 'selection-key'; code.textContent = card.dataset.selection;
-    card.prepend(code);
-    card.querySelector('.pack-meta small')?.remove();
+    code.className = 'selection-key'; code.innerHTML = `<i></i>${card.dataset.selection}`;
+    const icon = document.createElement('span');
+    icon.className = 'strip-icon'; icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = card.querySelector('.pack-art-icon')?.textContent || '♫';
+    card.prepend(code, icon);
+    const small = card.querySelector('.pack-meta small');
+    if (small) small.textContent = small.textContent.replace(/,\s*/g, ' · ');
+    card.insertAdjacentHTML('beforeend', '<span class="strip-eq" aria-hidden="true"><i></i><i></i><i></i></span>');
   });
   function showPage(page) {
     collectionPage = Math.max(0, Math.min(page, Math.ceil(cards.length / pageSize) - 1));
@@ -52,24 +61,29 @@ function decorateHome(home) {
   cabinet.querySelector('.page-next').onclick = () => showPage(collectionPage + 1);
   showPage(collectionPage);
   const title = selected.querySelector('.pack-meta b').textContent;
-  scene.style.setProperty('--record-label', colors[cards.indexOf(selected) % colors.length]);
+  const color = colorOf(selected, cards.indexOf(selected));
+  cabinet.style.setProperty('--sel', color); scene.style.setProperty('--record-label', color);
+  cabinet.querySelector('.record-icon').textContent = selected.querySelector('.strip-icon').textContent;
   cabinet.querySelector('.ticket-code').textContent = selected.dataset.selection;
   cabinet.querySelector('.ticket-title').textContent = title;
   cabinet.querySelector('.record-title').textContent = title;
-  cabinet.querySelector('.ticket-note').textContent = start.disabled ? status.classList.contains('failed') ? 'Выберите другую подборку или обновите эту' : 'Готовим подборку…' : 'Нажмите на пластинку, чтобы играть';
+  cabinet.querySelector('.ticket-note').textContent = start.disabled ? status.classList.contains('failed') ? 'Выберите другую подборку или обновите эту' : 'Готовим подборку…' : 'Нажми, чтобы начать';
   record.disabled = start.disabled;
   record.setAttribute('aria-label', `Начать игру: ${title}`);
   if (changed) arrivalStarted = performance.now();
   const arrivalElapsed = performance.now() - arrivalStarted;
-  if (arrivalElapsed < 700) {
+  if (arrivalElapsed < 900) {
     scene.classList.add('record-arriving');
-    scene.querySelector('.scene-vinyl').style.animationDelay = `-${arrivalElapsed}ms`;
+    scene.querySelectorAll('.scene-vinyl,.tonearm,.scene-play').forEach(el => el.style.animationDelay = `-${arrivalElapsed}ms`);
   }
   record.onclick = () => {
     playOnEntry = true;
     start.click();
     if (stage.contains(home)) playOnEntry = false;
   };
+  const play = cabinet.querySelector('.scene-play');
+  play.disabled = start.disabled; play.onclick = record.onclick;
+  if (changed) cabinet.classList.add('just-picked');
   cabinet.querySelector('.catalog-bank').append(catalogModes);
   cabinet.querySelector('.answer-bank').append(answerModes);
   cabinet.querySelector('.rounds-bank').append(rounds);
