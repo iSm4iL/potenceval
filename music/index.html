@@ -12,8 +12,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@600;800&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared/style.css">
 <link rel="stylesheet" href="style.css?v=answers-20261023">
+<link rel="stylesheet" href="cabinet.css?v=cabinet-20261023">
 </head>
-<body>
+<body class="music-cabinet">
 <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="wrap music-wrap">
   <header class="top">
@@ -42,7 +43,7 @@
 </dialog>
 
 <dialog class="music-dialog" id="artistDialog" aria-labelledby="artistTitle">
-  <div class="dialog-head"><div><h2 id="artistTitle">Кого будем угадывать?</h2><p class="sub">Найди исполнителя и выбери до 10 его верхних треков. Подписка не нужна.</p></div><button class="dialog-close" data-close="artistDialog" aria-label="Закрыть поиск исполнителя">×</button></div>
+  <div class="dialog-head"><div><h2 id="artistTitle">Кого будем угадывать?</h2><p class="sub">Найди исполнителя, чтобы собрать подборку его песен.</p></div><button class="dialog-close" data-close="artistDialog" aria-label="Закрыть поиск исполнителя">×</button></div>
   <label class="setting-label" for="artistInput">Имя исполнителя<input class="field" id="artistInput" type="search" placeholder="madk1d, тёмный принц, Скриптонит…" maxlength="100" autocomplete="off"></label>
   <div class="artist-results" id="artistResults" role="status" aria-live="polite"></div>
 </dialog>
@@ -53,6 +54,6 @@
   <ul class="lineup-list" id="lineupList"></ul>
 </dialog>
 <script type="module" src="../shared/menu.js"></script>
-<script type="module" src="app.js?v=answers-20261023"></script>
+<script type="module" src="cabinet.js?v=cabinet-20261023"></script>
 </body>
 </html>
