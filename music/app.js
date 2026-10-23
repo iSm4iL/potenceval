@@ -1,6 +1,6 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
-import { LENGTHS, POINTS, createGame, guess, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=jukebox-1';
-import { PACKS, combineSuggestions, snapshotTrack } from './catalog.js?v=family-20261023';
+import { LENGTHS, POINTS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=answers-20261023';
+import { PACKS, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack } from './catalog.js?v=answers-20261023';
 import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=audio-20261023';
 import { resultPresentation } from './feedback.js';
@@ -8,7 +8,7 @@ import { createCatalogClient } from './collection.js';
 
 const stage = $('#stage'), player = new AudioPlayer(), service = createDeezerClient(), catalog = createCatalogClient();
 const stored = LS.get('music.online.settings') || {};
-const settings = { mode: stored.mode === 'current' ? 'current' : 'hits', pack: PACKS.some(p => p.id === stored.pack) ? stored.pack : PACKS[0].id, rounds: [5, 10, 20].includes(stored.rounds) ? stored.rounds : 10, volume: Number.isFinite(stored.volume) && stored.volume >= 0 && stored.volume <= 1 ? stored.volume : 0.7 };
+const settings = { mode: stored.mode === 'current' ? 'current' : 'hits', answerMode: stored.answerMode === 'artist' ? 'artist' : 'track', pack: PACKS.some(p => p.id === stored.pack) ? stored.pack : PACKS[0].id, rounds: [5, 10, 20].includes(stored.rounds) ? stored.rounds : 10, volume: Number.isFinite(stored.volume) && stored.volume >= 0 && stored.volume <= 1 ? stored.volume : 0.7 };
 player.setVolume(settings.volume);
 let customPack = null, state = null, savedGame = restoreGame(LS.get('music.online.session'));
 let availableRounds = [], genreCounts = {}, pool = [], packInfo = null, packLoading = false, packError = '', packVersion = 0, packController;
@@ -28,6 +28,7 @@ const trackCount = n => `${number(n)} ${{ one: 'трек', few: 'трека', ma
 const length = n => String(n).replace('.', ',');
 const trackById = id => state?.tracks.find(t => t.id === id) || pool.find(t => t.id === id);
 const currentPack = () => PACKS.find(p => p.id === settings.pack) || customPack || PACKS[0];
+const artistMode = () => state?.answerMode === 'artist';
 const emptyPackMessage = pack => settings.mode === 'current' && pack.curated ? 'Сейчас в свежем топ-100 нет подходящих песен этого жанра. Выбери «Знакомые хиты» или другой жанр.' : 'В этой подборке сейчас нет доступных песен. Выбери другую.';
 const persistSettings = () => LS.set('music.online.settings', settings);
 const persistGame = () => { savedGame = state; LS.set('music.online.session', state); };
@@ -64,12 +65,14 @@ function renderSetup() {
     ${savedGame && savedGame.phase !== 'summary' ? `<div class="resume-card"><p>Незаконченная партия: ${esc(savedGame.packTitle || 'Музыка')}. Счёт: ${number(savedGame.score)}.</p><button class="btn gold" id="resumeBtn">Продолжить игру</button></div>` : ''}
     <div class="crate-heading"><div><h2>Выбери свою пластинку</h2><p>Какую музыку сегодня угадываем?</p></div><div class="catalog-modes" aria-label="Тип подборки"><button data-mode="hits" class="${settings.mode === 'hits' ? 'selected' : ''}" aria-pressed="${settings.mode === 'hits'}">Знакомые хиты</button><button data-mode="current" class="${settings.mode === 'current' ? 'selected' : ''}" aria-pressed="${settings.mode === 'current'}">Сейчас в чартах</button></div></div>
     <div class="pack-list">${cards(packs)}</div>
+    <div class="answer-mode-picker"><span>Что угадываем?</span><div class="catalog-modes" role="group" aria-label="Режим ответа"><button data-answer-mode="track" class="${settings.answerMode === 'track' ? 'selected' : ''}" aria-pressed="${settings.answerMode === 'track'}">Песню</button><button data-answer-mode="artist" class="${settings.answerMode === 'artist' ? 'selected' : ''}" aria-pressed="${settings.answerMode === 'artist'}">Исполнителя / группу</button></div><small>${settings.answerMode === 'artist' ? 'Достаточно назвать артиста или группу. Название песни знать не нужно.' : 'Нужно выбрать песню. Угаданный исполнитель даст подсказку.'}</small></div>
     <div class="setup-panel"><div class="setup-choice"><div><span class="choice-label">Твой выбор</span><h3>${esc(pack.title)}</h3><p>${pack.curated ? 'Разные исполнители. До двух песен каждого за партию.' : 'Популярные песни одного исполнителя.'}</p><button class="lineup-button" id="lineupBtn" aria-haspopup="dialog" ${packLoading || !pool.length ? 'disabled' : ''}><span aria-hidden="true">ⓘ</span> Исполнители</button><p class="pack-status ${packError ? 'failed' : ''}" id="packStatus" role="status">${packLoading ? 'Собираем треки…' : packError ? esc(packError) : `${trackCount(pool.length)} в подборке`}</p></div><button class="artist-picker" id="artistPicker">＋ Свой исполнитель</button></div>
       <div class="setup-actions"><div class="setting-label">Сколько треков сыграем?<div class="round-options">${choices.map(n => `<button class="round-choice ${settings.rounds === n ? 'selected' : ''}" data-rounds="${n}" aria-pressed="${settings.rounds === n}" ${packLoading || !availableRounds.includes(n) ? 'disabled' : ''}>${n}</button>`).join('')}</div></div><button class="btn primary big" id="startBtn" ${packLoading || packError || !availableRounds.includes(settings.rounds) ? 'disabled' : ''}>${packLoading ? 'Собираем треки…' : 'Начать игру'}</button></div>
       <div class="setup-footer"><span>Короткие онлайн-превью Deezer, без подписки.</span><button class="library-btn" id="refreshPack">${packError ? 'Попробовать ещё раз' : 'Обновить подборку'}</button></div>${packInfo?.failures?.length ? `<p class="source-note">Не удалось получить: ${esc(packInfo.failures.join(', '))}. Остальные исполнители доступны.</p>` : ''}</div></section>`;
   stage.querySelectorAll('[data-mode]').forEach(button => button.onclick = () => { settings.mode = button.dataset.mode; genreCounts = {}; selectPack(currentPack()); });
   stage.querySelectorAll('[data-pack]').forEach(button => button.onclick = () => selectPack(packs.find(p => p.id === button.dataset.pack)));
   stage.querySelectorAll('[data-rounds]').forEach(button => button.onclick = () => { settings.rounds = Number(button.dataset.rounds); persistSettings(); renderSetup(); });
+  stage.querySelectorAll('[data-answer-mode]').forEach(button => button.onclick = () => { settings.answerMode = button.dataset.answerMode; persistSettings(); renderSetup(); });
   $('#startBtn').onclick = startGame; $('#refreshPack').onclick = () => selectPack(currentPack(), true);
   $('#artistPicker').onclick = () => { $('#artistDialog').showModal(); $('#artistInput').focus(); };
   $('#lineupBtn').onclick = () => {
@@ -85,7 +88,7 @@ function startGame() {
   if (packLoading || packError || !pool.length) return;
   const recent = LS.get('music.online.recent');
   try {
-    state = createGame(pool, { rounds: settings.rounds, maxPerArtist: currentPack().curated ? 2 : Infinity, recent: Array.isArray(recent) ? recent : [] });
+    state = createGame(pool, { rounds: settings.rounds, answerMode: settings.answerMode, maxPerArtist: currentPack().curated ? 2 : Infinity, recent: Array.isArray(recent) ? recent : [] });
     state.packTitle = currentPack().title + (currentPack().curated && settings.mode === 'current' ? ' · Сейчас в чартах' : ''); state.packId = settings.pack;
     persistSettings(); persistGame(); renderGame();
   } catch (error) { toast(error.message, 5000); }
@@ -178,16 +181,16 @@ function playerHTML(reveal = false) {
 
 const statusLabel = { wrong: 'Не та песня', artist: 'Исполнитель угадан', correct: 'Точно!' };
 function historyHTML() {
-  return `<section class="attempt-history" aria-labelledby="attemptTitle"><div class="history-heading"><h2 id="attemptTitle">Ваши попытки <small>${state.attempts.length}/6</small></h2><span><i class="legend-dot wrong"></i>Мимо <i class="legend-dot artist"></i>Исполнитель <i class="legend-dot correct"></i>Точно</span></div>${state.attempts.length ? `<ol aria-label="Последняя попытка сверху">${[...state.attempts].reverse().map(a => `<li class="attempt ${a.status}"><span class="attempt-symbol" aria-hidden="true">${a.status === 'correct' ? '✓' : a.status === 'artist' ? '≈' : '×'}</span><div><b>${esc(a.title)}</b><small>${esc(a.artist)}</small><span class="attempt-verdict">${statusLabel[a.status]} · ${length(LENGTHS[a.step])} с</span></div></li>`).join('')}</ol>` : '<p class="history-empty">Здесь появятся ваши ответы.<br>Последняя попытка всегда сверху.</p>'}</section>`;
+  return `<section class="attempt-history" aria-labelledby="attemptTitle"><div class="history-heading"><h2 id="attemptTitle">Ваши попытки <small>${state.attempts.length}/6</small></h2><span><i class="legend-dot wrong"></i>Мимо ${artistMode() ? '' : '<i class="legend-dot artist"></i>Исполнитель'} <i class="legend-dot correct"></i>Точно</span></div>${state.attempts.length ? `<ol aria-label="Последняя попытка сверху">${[...state.attempts].reverse().map(a => `<li class="attempt ${a.status}"><span class="attempt-symbol" aria-hidden="true">${a.status === 'correct' ? '✓' : a.status === 'artist' ? '≈' : '×'}</span><div><b>${esc(a.kind === 'artist' ? a.name : a.title)}</b>${a.kind === 'artist' ? '' : `<small>${esc(a.artist)}</small>`}<span class="attempt-verdict">${artistMode() && a.status === 'wrong' ? 'Другой исполнитель' : statusLabel[a.status]} · ${length(LENGTHS[a.step])} с</span></div></li>`).join('')}</ol>` : '<p class="history-empty">Здесь появятся ваши ответы.<br>Последняя попытка всегда сверху.</p>'}</section>`;
 }
 
 function roundHeader() {
-  return `<div class="round-top"><div><h1>${state.phase === 'reveal' ? 'Ответ на раунд' : 'Угадай этот трек'}</h1><p>Раунд ${state.index + 1} из ${state.queue.length} · ${esc(state.packTitle || 'Музыка')}</p></div><div class="total-score"><b>${number(state.score)}</b> очков</div></div>`;
+  return `<div class="round-top"><div><h1>${state.phase === 'reveal' ? 'Ответ на раунд' : artistMode() ? 'Кто исполняет этот трек?' : 'Угадай этот трек'}</h1><p>Раунд ${state.index + 1} из ${state.queue.length} · ${esc(state.packTitle || 'Музыка')} · ${artistMode() ? 'Угадываем исполнителя' : 'Угадываем песню'}</p></div><div class="total-score"><b>${number(state.score)}</b> очков</div></div>`;
 }
 
 function attemptFeedbackHTML() {
   const last = state.attempts.at(-1);
-  return last ? `<div class="round-feedback ${last.status}" id="roundFeedback" role="status"><b>${last.status === 'artist' ? 'Исполнитель тот самый! Песня другая.' : 'Не та песня. Попробуйте ещё.'}</b><span>${esc(last.artist)} — ${esc(last.title)}</span></div>` : '<p class="answer-hint">Пиши ответ прямо во время прослушивания. Enter — выбрать песню, ещё раз Enter — ответить. Пробел — играть/стоп.</p>';
+  return last ? `<div class="round-feedback ${last.status}" id="roundFeedback" role="status"><b>${artistMode() ? 'Другой исполнитель. Попробуйте ещё.' : last.status === 'artist' ? 'Исполнитель тот самый! Песня другая.' : 'Не та песня. Попробуйте ещё.'}</b><span>${last.kind === 'artist' ? esc(last.name) : `${esc(last.artist)} — ${esc(last.title)}`}</span></div>` : `<p class="answer-hint">Можно писать с опечатками и русскими буквами. Enter — выбрать ${artistMode() ? 'исполнителя' : 'песню'}, ещё раз Enter — ответить. Пробел — играть/стоп.</p>`;
 }
 
 function bindPlayer() {
@@ -199,7 +202,7 @@ function bindPlayer() {
 
 function renderRound() {
   stage.innerHTML = `<section class="game-shell">${roundHeader()}<div class="round-layout"><div class="round-main">${playerHTML()}
-    <form class="guess-form" id="guessForm" autocomplete="off"><label for="answerInput">Название песни или исполнитель</label><div class="answer-row"><div class="search-wrap"><input class="field" id="answerInput" placeholder="Кажется, я знаю…" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" spellcheck="false" maxlength="180" disabled><ul class="suggestions" id="suggestions" role="listbox" aria-label="Песни" hidden></ul></div><button class="btn primary" id="guessBtn" type="submit" disabled>Ответить</button></div>${coachHTML(3, 'Узнал — пиши название или исполнителя и выбери песню из списка.')}<button class="give-up" id="surrenderBtn" type="button" disabled>Сдаться и посмотреть ответ</button></form>${attemptFeedbackHTML()}</div>${historyHTML()}</div></section>`;
+    <form class="guess-form" id="guessForm" autocomplete="off"><label for="answerInput">${artistMode() ? 'Группа или исполнитель' : 'Название песни или исполнитель'}</label><div class="answer-row"><div class="search-wrap"><input class="field" id="answerInput" placeholder="${artistMode() ? 'Например, Металлика…' : 'Кажется, я знаю…'}" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" spellcheck="false" maxlength="180" disabled><ul class="suggestions" id="suggestions" role="listbox" aria-label="${artistMode() ? 'Исполнители' : 'Песни'}" hidden></ul></div><button class="btn primary" id="guessBtn" type="submit" disabled>Ответить</button></div>${coachHTML(3, artistMode() ? 'Узнал — пиши имя артиста или группы и выбери исполнителя из списка. Название песни не нужно.' : 'Узнал — пиши название или исполнителя и выбери песню из списка.')}<button class="give-up" id="surrenderBtn" type="button" disabled>Сдаться и посмотреть ответ</button></form>${attemptFeedbackHTML()}</div>${historyHTML()}</div></section>`;
   bindPlayer();
   $('#answerInput').oninput = () => { selectedTrack = null; updateSuggestions(); updateControls(); };
   $('#answerInput').onkeydown = handleSearchKey;
@@ -209,7 +212,7 @@ function renderRound() {
   $('#suggestions').onclick = e => { const option = e.target.closest('[data-option]'); if (option) selectAnswer(Number(option.dataset.option)); };
   $('#guessForm').onsubmit = e => {
     e.preventDefault(); if (busy || !ready || !heard || !selectedTrack) return;
-    const next = guess(state, selectedTrack); if (next === state) return;
+    const next = artistMode() ? guessArtist(state, selectedTrack) : guess(state, selectedTrack); if (next === state) return;
     const status = next.attempts.at(-1).status;
     apply(next, true);
     if (status === 'correct') { $('#resultHead').classList.add('celebrate'); confetti($('#resultHead'), resultPresentation(next.results.at(-1)).particles); }
@@ -292,7 +295,7 @@ async function listen() {
       $('#playStatus').textContent = state.phase === 'round' ? 'Слушаем… Можно сразу писать ответ.' : 'Слушаем…';
       if (ring) { ring.style.transition = 'none'; ring.style.setProperty('--p', 0); requestAnimationFrame(() => { if (version === screenVersion && playing) { ring.style.transition = `--p ${seconds}s linear, transform .2s`; ring.style.setProperty('--p', 100); } }); }
     } }); if (version !== screenVersion) return;
-    $('#playStatus').textContent = complete ? 'Выберите песню. Повтор отрывка — бесплатно.' : 'Остановлено. Можно включить ещё раз.';
+    $('#playStatus').textContent = complete ? artistMode() ? 'Выберите исполнителя. Повтор отрывка — бесплатно.' : 'Выберите песню. Повтор отрывка — бесплатно.' : 'Остановлено. Можно включить ещё раз.';
   } catch (error) { if (version === screenVersion) { $('#playStatus').textContent = 'Звук не запустился.'; $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; } }
   finally { if (version === screenVersion) { playing = false; $('#listenCard').classList.remove('is-playing'); if (ring) { ring.style.transition = ''; ring.style.setProperty('--p', 0); } updateControls(); } }
 }
@@ -309,7 +312,7 @@ function showSuggestions(tracks, emptyMessage) {
   matches = tracks;
   highlighted = activeId ? matches.findIndex(t => t.id === activeId) : -1;
   const list = $('#suggestions');
-  list.innerHTML = matches.length ? matches.map((t, i) => `<li id="answer-option-${i}" role="option" aria-selected="${i === highlighted}" data-option="${i}"><b>${esc(t.title)}</b><small>${esc(t.artist)}</small></li>`).join('') : `<li class="search-empty" role="presentation">${esc(emptyMessage)}</li>`;
+  list.innerHTML = matches.length ? matches.map((t, i) => `<li id="answer-option-${i}" role="option" aria-selected="${i === highlighted}" data-option="${i}"><b>${esc(t.kind === 'artist' ? t.name : t.title)}</b>${t.kind === 'artist' ? '' : `<small>${esc(t.artist)}</small>`}</li>`).join('') : `<li class="search-empty" role="presentation">${esc(emptyMessage)}</li>`;
   list.hidden = false; $('#answerInput').setAttribute('aria-expanded', 'true');
   if (highlighted >= 0) $('#answerInput').setAttribute('aria-activedescendant', `answer-option-${highlighted}`);
   else $('#answerInput').removeAttribute('aria-activedescendant');
@@ -319,23 +322,24 @@ function updateSuggestions() {
   clearTimeout(searchTimer); searchController?.abort(); const token = ++searchVersion;
   const query = $('#answerInput').value.trim();
   if (!query) { closeSuggestions(); return; }
-  const local = [...state.tracks, ...pool];
+  const artistsOnly = artistMode(), local = artistsOnly ? artistOptions([...state.tracks, ...pool]) : [...state.tracks, ...pool];
+  const combine = artistsOnly ? combineArtistSuggestions : combineSuggestions;
   const tried = state.attempts.map(a => a.id);
-  showSuggestions(combineSuggestions(local, [], query, tried), query.length < 2 ? 'Введи хотя бы две буквы.' : 'Ищем песни в Deezer…');
+  showSuggestions(combine(local, [], query, tried), query.length < 2 ? 'Введи хотя бы две буквы.' : artistsOnly ? 'Ищем исполнителей…' : 'Ищем песни в Deezer…');
   if (query.length < 2) return;
   searchTimer = setTimeout(async () => {
     const controller = searchController = new AbortController();
     try {
-      const remote = await service.searchTracks(query, { signal: controller.signal });
+      const remote = artistsOnly ? (await service.searchArtists(query, { signal: controller.signal })).map(a => ({ kind: 'artist', id: `artist-${a.id}`, artistId: String(a.id), name: a.name })) : await service.searchTracks(query, { signal: controller.signal });
       if (token !== searchVersion || selectedTrack || !state || state.phase !== 'round') return;
-      showSuggestions(combineSuggestions(local, remote, query, tried), 'Песня не найдена. Попробуй другое название или исполнителя.');
-    } catch (error) { if (token === searchVersion && error.name !== 'AbortError') showSuggestions(combineSuggestions(local, [], query, tried), 'Онлайн-поиск недоступен. Попробуй ещё раз.'); }
+      showSuggestions(combine(local, remote, query, tried), artistsOnly ? 'Исполнитель не найден. Попробуй написать имя иначе.' : 'Песня не найдена. Попробуй другое название или исполнителя.');
+    } catch (error) { if (token === searchVersion && error.name !== 'AbortError') showSuggestions(combine(local, [], query, tried), 'Онлайн-поиск недоступен. Попробуй ещё раз.'); }
   }, 300);
 }
 
 function selectAnswer(index) {
   const track = matches[index]; if (!track || busy) return;
-  selectedTrack = track; $('#answerInput').value = `${track.artist} — ${track.title}`;
+  selectedTrack = track; $('#answerInput').value = track.kind === 'artist' ? track.name : `${track.artist} — ${track.title}`;
   closeSuggestions(); updateControls(); $('#answerInput').focus();
 }
 

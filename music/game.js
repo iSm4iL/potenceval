@@ -3,6 +3,8 @@ export const LENGTHS = Object.freeze([0.5, 1, 2, 5, 10, 15]);
 export const POINTS = Object.freeze([1000, 800, 600, 400, 200, 100]);
 const validTrack = t => t && typeof t.id === 'string' && t.id.length > 0 && Number.isSafeInteger(t.deezerId) && t.deezerId > 0 && typeof t.title === 'string' && t.title.length > 0 && typeof t.artist === 'string' && t.artist.length > 0 && Array.isArray(t.artistIds) && t.artistIds.every(id => typeof id === 'string') && Array.isArray(t.artistNames) && t.artistNames.every(name => typeof name === 'string') && typeof t.answerKey === 'string';
 const classify = (target, track) => target.id === track.id || (target.answerKey && target.answerKey === track.answerKey && sameArtist(target, track)) ? 'correct' : sameArtist(target, track) ? 'artist' : 'wrong';
+const validArtist = a => a?.kind === 'artist' && typeof a.artistId === 'string' && a.artistId.length > 0 && a.id === `artist-${a.artistId}` && typeof a.name === 'string' && a.name.trim().length > 0;
+const classifyArtist = (target, a) => target.artistIds.includes(a.artistId) ? 'correct' : 'wrong';
 
 const validCap = cap => Number.isSafeInteger(cap) && cap > 0;
 const artists = t => [...new Set(t.artistIds)];
@@ -72,7 +74,8 @@ function selectParty(pool, count, cap, recent) {
   return null;
 }
 
-export function createGame(tracks, { rounds = 10, random = Math.random, maxPerArtist = Infinity, recent = [] } = {}) {
+export function createGame(tracks, { rounds = 10, random = Math.random, maxPerArtist = Infinity, recent = [], answerMode = 'track' } = {}) {
+  if (!['track', 'artist'].includes(answerMode)) throw new Error('Неизвестный режим ответа.');
   if (maxPerArtist !== Infinity && !validCap(maxPerArtist)) throw new Error('Лимит песен одного исполнителя должен быть положительным целым числом.');
   const unique = [...new Map(tracks.filter(validTrack).map(t => [t.id, { ...snapshotTrack(t), ...(t.workKey ? { workKey: t.workKey } : {}) }])).values()];
   if (!Number.isInteger(rounds) || rounds < 1 || rounds > unique.length) throw new Error('В подборке недостаточно песен для такой партии.');
@@ -89,7 +92,7 @@ export function createGame(tracks, { rounds = 10, random = Math.random, maxPerAr
   const heard = id => recentWorks.some(t => sameWork(t, byId.get(id)));
   // Replacements consume the end of the reserve, so unheard works go last.
   const reserve = ids.filter(id => !selectedIds.has(id)).sort((a, b) => Number(heard(b)) - Number(heard(a)));
-  return { version: 2, phase: 'round', tracks: unique, queue, reserve, index: 0, step: 0, attempts: [], results: [], score: 0, ...(Number.isFinite(maxPerArtist) ? { maxPerArtist } : {}) };
+  return { version: 2, answerMode, phase: 'round', tracks: unique, queue, reserve, index: 0, step: 0, attempts: [], results: [], score: 0, ...(Number.isFinite(maxPerArtist) ? { maxPerArtist } : {}) };
 }
 
 function finish(s, won) {
@@ -108,10 +111,18 @@ export function openStep(s, k) {
 }
 
 export function guess(s, track) {
-  if (s.phase !== 'round' || !validTrack(track) || s.attempts.some(a => a.id === track.id)) return s;
+  if (s.answerMode === 'artist' || s.phase !== 'round' || !validTrack(track) || s.attempts.some(a => a.id === track.id)) return s;
   const target = s.tracks.find(t => t.id === s.queue[s.index]);
   const status = classify(target, track);
   const next = { ...s, attempts: [...s.attempts, { ...snapshotTrack(track), status, step: s.step }] };
+  return status === 'correct' ? finish(next, true) : skip(next);
+}
+
+export function guessArtist(s, artist) {
+  if (s.answerMode !== 'artist' || s.phase !== 'round' || !validArtist(artist) || s.attempts.some(a => a.id === artist.id)) return s;
+  const target = s.tracks.find(t => t.id === s.queue[s.index]);
+  const status = classifyArtist(target, artist);
+  const next = { ...s, attempts: [...s.attempts, { kind: 'artist', id: artist.id, artistId: artist.artistId, name: artist.name, status, step: s.step }] };
   return status === 'correct' ? finish(next, true) : skip(next);
 }
 
@@ -133,11 +144,12 @@ export function replaceBroken(s) {
   return { ...s, queue, reserve, step: 0, attempts: [], phase: queue.length > s.results.length ? 'round' : 'summary', index: queue.length > s.results.length ? s.index : Math.max(0, queue.length - 1) };
 }
 
-function validAttempts(attempts, target, step, won) {
+function validAttempts(attempts, target, step, won, answerMode) {
   if (!Array.isArray(attempts) || attempts.length > 6 || new Set(attempts.map(a => a?.id)).size !== attempts.length) return false;
   let previous = -1;
   return attempts.every((a, i) => {
-    if (!validTrack(a) || !Number.isInteger(a.step) || a.step <= previous || a.step > step || a.status !== classify(target, a)) return false;
+    const valid = answerMode === 'artist' ? validArtist(a) : validTrack(a);
+    if (!valid || !Number.isInteger(a.step) || a.step <= previous || a.step > step || a.status !== (answerMode === 'artist' ? classifyArtist(target, a) : classify(target, a))) return false;
     previous = a.step;
     return a.status !== 'correct' || (won && i === attempts.length - 1 && a.step === step);
   }) && (!won || attempts.at(-1)?.status === 'correct');
@@ -145,6 +157,7 @@ function validAttempts(attempts, target, step, won) {
 
 export function restoreGame(s) {
   if (!s || s.version !== 2 || !['round', 'reveal', 'summary'].includes(s.phase)) return null;
+  if (s.answerMode !== undefined && !['track', 'artist'].includes(s.answerMode)) return null;
   if (!['tracks', 'queue', 'reserve', 'attempts', 'results'].every(k => Array.isArray(s[k])) || !s.tracks.every(validTrack)) return null;
   const tracks = new Map(s.tracks.map(t => [t.id, t]));
   if (tracks.size !== s.tracks.length || ![...s.queue, ...s.reserve].every(id => tracks.has(id))) return null;
@@ -163,9 +176,9 @@ export function restoreGame(s) {
   if (s.phase === 'round' && (s.index !== s.results.length || !s.queue.length)) return null;
   if (s.phase === 'reveal' && s.results.length !== s.index + 1) return null;
   if (s.phase === 'summary' && s.results.length !== s.queue.length) return null;
-  if (!s.results.every((r, i) => r && r.id === s.queue[i] && typeof r.won === 'boolean' && Number.isInteger(r.step) && r.step >= 0 && r.step <= 5 && r.points === (r.won ? POINTS[r.step] : 0) && validAttempts(r.attempts, tracks.get(r.id), r.step, r.won))) return null;
+  if (!s.results.every((r, i) => r && r.id === s.queue[i] && typeof r.won === 'boolean' && Number.isInteger(r.step) && r.step >= 0 && r.step <= 5 && r.points === (r.won ? POINTS[r.step] : 0) && validAttempts(r.attempts, tracks.get(r.id), r.step, r.won, s.answerMode))) return null;
   const target = tracks.get(s.queue[s.index]);
-  if (target && !validAttempts(s.attempts, target, s.step, s.phase !== 'round' && s.results.at(-1)?.won)) return null;
+  if (target && !validAttempts(s.attempts, target, s.step, s.phase !== 'round' && s.results.at(-1)?.won, s.answerMode)) return null;
   if (s.score !== s.results.reduce((sum, r) => sum + r.points, 0)) return null;
   return s;
 }

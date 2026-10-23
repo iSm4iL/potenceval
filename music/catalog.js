@@ -42,15 +42,81 @@ export function sameArtist(a, b) {
   return (b.artistNames || [b.artist]).some(name => names.has(normalize(name)));
 }
 
+const translit = { а:'a', б:'b', в:'v', г:'g', д:'d', е:'e', ж:'zh', з:'z', и:'i', й:'y', к:'k', л:'l', м:'m', н:'n', о:'o', п:'p', р:'r', с:'s', т:'t', у:'u', ф:'f', х:'h', ц:'ts', ч:'ch', ш:'sh', щ:'shch', ъ:'', ы:'y', ь:'', э:'e', ю:'yu', я:'ya' };
+const soundKey = text => normalize(text).replace(/[а-я]/g, c => translit[c]).normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+  .replace(/ph/g, 'f').replace(/qu/g, 'kv').replace(/ee|ea/g, 'i').replace(/oo|ou/g, 'u')
+  .replace(/th/g, 't').replace(/ck/g, 'k').replace(/c(?=[eiy])/g, 's').replace(/c/g, 'k').replace(/w/g, 'v').replace(/y/g, 'i').replace(/([a-z])\1+/g, '$1');
+const artistAliases = {
+  'the beatles': ['битлз', 'битлс'], queen: ['квин', 'куин'],
+  'deep purple': ['дип пёрпл', 'дип перпл'], 'guns n roses': ['ганз энд роузес'],
+  'the rolling stones': ['роллинг стоунз'], 'red hot chili peppers': ['ред хот чили пепперс'],
+  'ac dc': ['эй си ди си', 'эйсидиси'], eagles: ['иглз'], 'the doors': ['дорз'],
+  'creedence clearwater revival': ['криденс'], 'bon jovi': ['бон джови'],
+};
+const aliasesFor = name => artistAliases[normalize(name)] || [];
+
+// Bounded Damerau distance also accepts adjacent swapped letters, e.g. «птциа».
+function closeWord(a, b) {
+  if (a === b) return true;
+  if (a.length < 4) return false;
+  const limit = a.length >= 7 ? 2 : 1;
+  if (Math.abs(a.length - b.length) > limit) return false;
+  let older, previous = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    const row = [i];
+    for (let j = 1; j <= b.length; j++) {
+      row[j] = Math.min(row[j - 1] + 1, previous[j] + 1, previous[j - 1] + Number(a[i - 1] !== b[j - 1]));
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) row[j] = Math.min(row[j], older[j - 2] + 1);
+    }
+    if (Math.min(...row) > limit) return false;
+    older = previous; previous = row;
+  }
+  return previous[b.length] <= limit;
+}
+
+function matchRank(title, artist, aliases, query) {
+  const words = query.split(' '), text = normalize([title, artist, ...aliases].join(' '));
+  const name = normalize(title), performer = normalize(artist);
+  if (words.every(word => text.includes(word))) {
+    return name === query || `${performer} ${name}` === query || `${name} ${performer}` === query ? 0 : name.startsWith(query) ? 1 : performer.startsWith(query) ? 2 : 3;
+  }
+  const phonetic = soundKey(text), queryKey = soundKey(query);
+  if (!queryKey.trim()) return Infinity;
+  const parts = phonetic.split(' ').filter(Boolean), wanted = queryKey.split(' ').filter(Boolean);
+  if (wanted.every(word => parts.some(part => part.includes(word))) || phonetic.replaceAll(' ', '').includes(queryKey.replaceAll(' ', ''))) return 4;
+  if (words.every(word => text.split(' ').some(part => part.includes(word) || closeWord(word, part))) || wanted.every(word => parts.some(part => part.includes(word) || closeWord(word, part))) || [title, artist, ...aliases].some(label => closeWord(queryKey.replaceAll(' ', ''), soundKey(label).replaceAll(' ', '')))) return 5;
+  return Infinity;
+}
+
 export function searchTracks(tracks, query) {
-  const words = normalize(query).split(' ').filter(Boolean);
-  if (!words.length) return [];
-  return tracks.map(track => {
-    const title = normalize(track.title), text = normalize([track.title, track.artist, ...(track.artistNames || []), ...(track.aliases || [])].join(' '));
-    const query = words.join(' '), artist = normalize(track.artist);
-    const exact = title === query || `${artist} ${title}` === query || `${title} ${artist}` === query;
-    return { track, rank: exact ? 0 : title.startsWith(query) ? 1 : artist.startsWith(query) ? 2 : 3, match: words.every(word => text.includes(word)) };
-  }).filter(x => x.match).sort((a, b) => a.rank - b.rank || a.track.title.localeCompare(b.track.title, 'ru')).slice(0, 8).map(x => x.track);
+  query = normalize(query);
+  if (!query) return [];
+  return tracks.map(track => ({ track, rank: matchRank(track.title, track.artist, [...(track.artistNames || []), ...(track.artistNames || [track.artist]).flatMap(aliasesFor), ...(track.aliases || [])], query) }))
+    .filter(x => Number.isFinite(x.rank)).sort((a, b) => a.rank - b.rank || a.track.title.localeCompare(b.track.title, 'ru')).slice(0, 8).map(x => x.track);
+}
+
+export function artistOptions(tracks) {
+  const options = new Map();
+  for (const track of tracks) for (const [i, artistId] of track.artistIds.entries()) {
+    const name = track.artistNames[i];
+    if (name && !options.has(artistId)) options.set(artistId, { kind: 'artist', id: `artist-${artistId}`, artistId, name });
+  }
+  return [...options.values()];
+}
+
+export function searchArtistOptions(options, query) {
+  query = normalize(query);
+  if (!query) return [];
+  return options.map(artist => ({ artist, rank: matchRank(artist.name, '', aliasesFor(artist.name), query) }))
+    .filter(x => Number.isFinite(x.rank)).sort((a, b) => a.rank - b.rank || a.artist.name.localeCompare(b.artist.name, 'ru')).slice(0, 8).map(x => x.artist);
+}
+
+export function combineArtistSuggestions(local, remote, query, excludedIds = []) {
+  const seen = new Set(excludedIds);
+  return [...searchArtistOptions(local.filter(a => !seen.has(a.id)), query), ...searchArtistOptions(remote.filter(a => !seen.has(a.id)), query)].filter(a => {
+    if (seen.has(a.id)) return false;
+    seen.add(a.id); return true;
+  }).slice(0, 8);
 }
 
 // Keep visible pack answers in place when a slower online search arrives.

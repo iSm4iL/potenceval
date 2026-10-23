@@ -353,3 +353,7 @@
 @keyframes bye{to{opacity:0;transform:translateY(-6px) scale(.96);margin-top:-48px}}
 @keyframes unlock{0%{transform:scale(.85)}60%{transform:scale(1.08)}100%{transform:none}}
 @media(prefers-reduced-motion:reduce){.is-playing .jb-record,.jukebox .jb-play,.coach,.just{animation:none!important}}
+.answer-mode-picker{display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap;margin:22px 0 0;padding:15px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}
+.answer-mode-picker>span{font-size:14px;font-weight:700}
+.answer-mode-picker small{flex:1;min-width:190px;color:var(--muted);font-size:12px;line-height:1.5}
+@media(max-width:560px){.answer-mode-picker{padding:12px}.answer-mode-picker .catalog-modes{width:100%}.answer-mode-picker .catalog-modes button{white-space:normal;padding:9px 12px}}

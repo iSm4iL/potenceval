@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LENGTHS, POINTS, createGame, guess, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
+import { LENGTHS, POINTS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
 import { normalizeDeezer, searchTracks, sameArtist, snapshotTrack, combineSuggestions } from './catalog.js';
 
 const song = (n, artist = 'a') => ({ id: `dz-${n}`, deezerId: n, title: `Song ${n}`, artist: `Artist ${artist}`, artistIds: [artist], artistNames: [`Artist ${artist}`], answerKey: `${artist}|song ${n}`, preview: 'https://cdnt-preview.dzcdn.net/example.mp3', kind: 'online', start: 0 });
@@ -10,6 +10,34 @@ const game = (rounds = 5) => createGame(tracks, { rounds, random: () => 0.999 })
 const party = (pool, options = {}) => createGame(pool, { rounds: 3, maxPerArtist: 2, random: () => 0.999, ...options });
 const queued = s => s.queue.map(id => s.tracks.find(t => t.id === id));
 const collab = (n, artists) => ({ ...song(n, artists[0]), artistIds: artists });
+
+const artistAnswer = id => ({ kind: 'artist', id: `artist-${id}`, artistId: id, name: `Artist ${id}` });
+test('artist mode accepts the performer without a song title and preserves score on restore', () => {
+  let s = createGame([song(1, 'a'), song(2, 'b')], { rounds: 1, random: () => .999, answerMode: 'artist' });
+  s = guessArtist(s, artistAnswer('b'));
+  assert.equal(s.phase, 'round'); assert.equal(s.step, 1);
+  assert.equal(guessArtist(s, artistAnswer('b')), s, 'repeated performers do not consume attempts');
+  s = guessArtist(s, artistAnswer('a'));
+  assert.equal(s.phase, 'reveal'); assert.equal(s.score, POINTS[1]);
+  assert.equal(s.attempts.at(-1).title, undefined);
+  assert.deepEqual(restoreGame(JSON.parse(JSON.stringify(s))), s);
+  assert.ok(restoreGame(nextRound(s)));
+  assert.equal(restoreGame({ ...s, score: 99999 }), null);
+  assert.equal(restoreGame({ ...s, answerMode: 'track' }), null);
+  assert.equal(restoreGame({ ...s, attempts: [{ ...s.attempts[0], kind: 'track' }] }), null);
+});
+
+test('artist mode accepts a duet participant by ID and never credits a namesake', () => {
+  const s = createGame([collab(1, ['a', 'b'])], { rounds: 1, answerMode: 'artist' });
+  assert.equal(guessArtist(s, artistAnswer('b')).results[0].won, true);
+  assert.equal(guessArtist(s, { ...artistAnswer('other'), name: 'Artist a' }).phase, 'round');
+  assert.equal(guess(s, s.tracks[0]), s);
+  assert.equal(guessArtist(game(), artistAnswer('a')).phase, 'round');
+  assert.throws(() => createGame(tracks, { answerMode: 'other' }), /режим/i);
+  assert.equal(restoreGame({ ...game(), answerMode: 'other' }), null);
+  const { answerMode, ...legacy } = game();
+  assert.deepEqual(restoreGame(legacy), legacy, 'old saves without a mode remain playable');
+});
 
 test('artist quota counts every collaborator once and retains unused reserves', () => {
   const pool = [collab(1, ['a', 'b', 'b']), song(2, 'a'), song(3, 'b'), song(4, 'b'), song(5, 'c')];
