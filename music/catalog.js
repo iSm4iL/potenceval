@@ -4,7 +4,7 @@ export const PACKS = [
   { id: 'nostalgia', title: 'Ностальгия 2010-х', icon: '📼', description: 'Культовые хиты, под которые взрослели' },
   { id: 'kpop', title: 'K-pop', icon: '💜', description: 'BTS, BLACKPINK, TWICE, Stray Kids и другие' },
   { id: 'modern-pop', title: 'Мировой поп', icon: '🌍', description: 'The Weeknd, Imagine Dragons, Barns Courtney…' },
-  { id: 'mom-pop', title: 'Для мамы', icon: '💐', description: 'Zivert, LOBODA, Ёлка и позитивный поп' },
+  { id: 'mom-pop', title: 'Для мамы', icon: '💐', description: 'LOBODA, Ани Лорак, Emin, Пресняков, Орбакайте, Zivert' },
   { id: 'dad-rock', title: 'Батин рок', icon: '🎸', description: 'Led Zeppelin, Pink Floyd, Deep Purple, The Beatles' },
   { id: 'metal', title: 'Рок и метал', icon: '🤘', description: 'Metallica, Slipknot, Rammstein, System Of A Down' },
 ].map(pack => ({ ...pack, curated: true }));

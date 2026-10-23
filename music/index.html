@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared/style.css">
-<link rel="stylesheet" href="style.css?v=packs-20261023">
+<link rel="stylesheet" href="style.css?v=family-20261023">
 </head>
 <body>
 <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -47,7 +47,12 @@
   <div class="artist-results" id="artistResults" role="status" aria-live="polite"></div>
 </dialog>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<dialog class="music-dialog" id="lineupDialog" aria-labelledby="lineupTitle">
+  <div class="dialog-head"><h2 id="lineupTitle">Исполнители подборки</h2><button class="dialog-close" data-close="lineupDialog" aria-label="Закрыть список исполнителей">×</button></div>
+  <p class="sub">Состав всей подборки, включая дуэты. Не все исполнители встретятся в одной партии.</p>
+  <ul class="lineup-list" id="lineupList"></ul>
+</dialog>
 <script type="module" src="../shared/menu.js"></script>
-<script type="module" src="app.js?v=audio-20261023"></script>
+<script type="module" src="app.js?v=family-20261023"></script>
 </body>
 </html>

@@ -368,33 +368,360 @@
     },
     {
       "id": "mom-pop-top",
-      "kind": "deezer-artist-top",
-      "title": "Deezer — самые популярные песни русской женской поп-музыки",
+      "kind": "verified-tracks",
+      "title": "Для мамы — семейный список знакомых хитов",
       "url": "https://www.deezer.com/",
       "genres": [
         "mom-pop"
       ],
-      "perArtist": 5,
-      "limit": 500,
-      "artists": [
-        "Zivert",
-        "LOBODA",
-        "Ёлка",
-        "Полина Гагарина",
-        "ANNA ASTI",
-        "Мари Краймбрери",
-        "Монеточка",
-        "MONA",
-        "Клава Кока",
-        "Нюша",
-        "Валерия",
-        "Глюк'oZa",
-        "Земфира",
-        "Вера Брежнева",
-        "Ани Лорак",
-        "Пелагея",
-        "Artik & Asti",
-        "Мот"
+      "tracks": [
+        {
+          "title": "Твои глаза",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/track/1972390977",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "К чёрту любовь",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/track/1974135447",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "случайная",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/track/1977651227",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Солнце",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/2125988397",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Обними меня",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/2125987987",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Новый бывший",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/3052993521",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Зеркала",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/375105171",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Я тебя не отпущу",
+          "artists": [
+            "Emin"
+          ],
+          "url": "https://www.deezer.com/track/3572511131",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Невероятная",
+          "artists": [
+            "Emin"
+          ],
+          "url": "https://www.deezer.com/track/3570619491",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Нежная",
+          "artists": [
+            "Emin"
+          ],
+          "url": "https://www.deezer.com/track/3566302651",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Зови меня",
+          "artists": [
+            "Emin",
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/3570708511",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Замок из дождя",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/122173778",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Странник",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/133232168",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Зурбаган",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/65252608",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Аэропорты",
+          "artists": [
+            "Леонид Агутин",
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/3681701562",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Перелетная птица",
+          "artists": [
+            "Кристина Орбакайте"
+          ],
+          "url": "https://www.deezer.com/track/122177372",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Мой мир",
+          "artists": [
+            "Кристина Орбакайте"
+          ],
+          "url": "https://www.deezer.com/track/129940444",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Опять метель",
+          "artists": [
+            "Кристина Орбакайте",
+            "Alla Pugacheva"
+          ],
+          "url": "https://www.deezer.com/track/413109752",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Пьяная вишня",
+          "artists": [
+            "Кристина Орбакайте"
+          ],
+          "url": "https://www.deezer.com/track/504482482",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Life",
+          "artists": [
+            "Zivert"
+          ],
+          "url": "https://www.deezer.com/track/592088522",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Credo",
+          "artists": [
+            "Zivert"
+          ],
+          "url": "https://www.deezer.com/track/739241052",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Зелёные волны",
+          "artists": [
+            "Zivert"
+          ],
+          "url": "https://www.deezer.com/track/476533932",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Beverly Hills",
+          "artists": [
+            "Zivert"
+          ],
+          "url": "https://www.deezer.com/track/739241032",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Часики",
+          "artists": [
+            "Valeriya"
+          ],
+          "url": "https://www.deezer.com/track/102337408",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Мы вместе",
+          "artists": [
+            "Valeriya"
+          ],
+          "url": "https://www.deezer.com/track/102212030",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Салют, Вера!",
+          "artists": [
+            "Валерий Меладзе"
+          ],
+          "url": "https://www.deezer.com/track/80319376",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Красиво",
+          "artists": [
+            "Валерий Меладзе"
+          ],
+          "url": "https://www.deezer.com/track/80319422",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Небеса",
+          "artists": [
+            "Валерий Меладзе"
+          ],
+          "url": "https://www.deezer.com/track/100977896",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Океан и три реки",
+          "artists": [
+            "Валерий Меладзе"
+          ],
+          "url": "https://www.deezer.com/track/80319542",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Босоногий мальчик",
+          "artists": [
+            "Леонид Агутин"
+          ],
+          "url": "https://www.deezer.com/track/65252918",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "На сиреневой луне",
+          "artists": [
+            "Леонид Агутин"
+          ],
+          "url": "https://www.deezer.com/track/65252939",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Городок",
+          "artists": [
+            "Анжелика Варум"
+          ],
+          "url": "https://www.deezer.com/track/69898208",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Зимняя вишня",
+          "artists": [
+            "Анжелика Варум"
+          ],
+          "url": "https://www.deezer.com/track/3034763071",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "La-La-Fa",
+          "artists": [
+            "Анжелика Варум"
+          ],
+          "url": "https://www.deezer.com/track/66282527",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Одиночество-сука",
+          "artists": [
+            "Слава"
+          ],
+          "url": "https://www.deezer.com/track/122158186",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Расскажи мне мама",
+          "artists": [
+            "Слава"
+          ],
+          "url": "https://www.deezer.com/track/122158166",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "На Титанике",
+          "artists": [
+            "LOLITA"
+          ],
+          "url": "https://www.deezer.com/track/2195812757",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Ориентация Север",
+          "artists": [
+            "LOLITA"
+          ],
+          "url": "https://www.deezer.com/track/2195808097",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Зимний сон",
+          "artists": [
+            "АЛСУ"
+          ],
+          "url": "https://www.deezer.com/track/66434349",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Иногда",
+          "artists": [
+            "АЛСУ"
+          ],
+          "url": "https://www.deezer.com/track/66434355",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Прованс",
+          "artists": [
+            "Ёлка"
+          ],
+          "url": "https://www.deezer.com/track/770836972",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "На большом воздушном шаре",
+          "artists": [
+            "Ёлка"
+          ],
+          "url": "https://www.deezer.com/track/770837002",
+          "period": "Семейный список знакомых хитов"
+        },
+        {
+          "title": "Около тебя",
+          "artists": [
+            "Ёлка"
+          ],
+          "url": "https://www.deezer.com/track/770837052",
+          "period": "Семейный список знакомых хитов"
+        }
       ]
     },
     {

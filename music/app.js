@@ -1,6 +1,6 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
 import { LENGTHS, POINTS, createGame, guess, skip, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
-import { PACKS, combineSuggestions, snapshotTrack } from './catalog.js?v=packs-20261023';
+import { PACKS, combineSuggestions, snapshotTrack } from './catalog.js?v=family-20261023';
 import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=audio-20261023';
 import { resultPresentation } from './feedback.js';
@@ -60,7 +60,7 @@ function renderSetup() {
     ${savedGame && savedGame.phase !== 'summary' ? `<div class="resume-card"><p>Незаконченная партия: ${esc(savedGame.packTitle || 'Музыка')}. Счёт: ${number(savedGame.score)}.</p><button class="btn gold" id="resumeBtn">Продолжить игру</button></div>` : ''}
     <div class="crate-heading"><div><h2>Выбери свою пластинку</h2><p>Какую музыку сегодня угадываем?</p></div><div class="catalog-modes" aria-label="Тип подборки"><button data-mode="hits" class="${settings.mode === 'hits' ? 'selected' : ''}" aria-pressed="${settings.mode === 'hits'}">Знакомые хиты</button><button data-mode="current" class="${settings.mode === 'current' ? 'selected' : ''}" aria-pressed="${settings.mode === 'current'}">Сейчас в чартах</button></div></div>
     <div class="pack-list">${cards(packs)}</div>
-    <div class="setup-panel"><div class="setup-choice"><div><span class="choice-label">Твой выбор</span><h3>${esc(pack.title)}</h3><p>${pack.curated ? 'Разные исполнители. До двух песен каждого за партию.' : 'Популярные песни одного исполнителя.'}</p><p class="pack-status ${packError ? 'failed' : ''}" id="packStatus" role="status">${packLoading ? 'Собираем треки…' : packError ? esc(packError) : `${trackCount(pool.length)} в подборке`}</p></div><button class="artist-picker" id="artistPicker">＋ Свой исполнитель</button></div>
+    <div class="setup-panel"><div class="setup-choice"><div><span class="choice-label">Твой выбор</span><h3>${esc(pack.title)}</h3><p>${pack.curated ? 'Разные исполнители. До двух песен каждого за партию.' : 'Популярные песни одного исполнителя.'}</p><button class="lineup-button" id="lineupBtn" aria-haspopup="dialog" ${packLoading || !pool.length ? 'disabled' : ''}><span aria-hidden="true">ⓘ</span> Исполнители</button><p class="pack-status ${packError ? 'failed' : ''}" id="packStatus" role="status">${packLoading ? 'Собираем треки…' : packError ? esc(packError) : `${trackCount(pool.length)} в подборке`}</p></div><button class="artist-picker" id="artistPicker">＋ Свой исполнитель</button></div>
       <div class="setup-actions"><div class="setting-label">Сколько треков сыграем?<div class="round-options">${choices.map(n => `<button class="round-choice ${settings.rounds === n ? 'selected' : ''}" data-rounds="${n}" aria-pressed="${settings.rounds === n}" ${packLoading || !availableRounds.includes(n) ? 'disabled' : ''}>${n}</button>`).join('')}</div></div><button class="btn primary big" id="startBtn" ${packLoading || packError || !availableRounds.includes(settings.rounds) ? 'disabled' : ''}>${packLoading ? 'Собираем треки…' : 'Начать игру'}</button></div>
       <div class="setup-footer"><span>Короткие онлайн-превью Deezer, без подписки.</span><button class="library-btn" id="refreshPack">${packError ? 'Попробовать ещё раз' : 'Обновить подборку'}</button></div>${packInfo?.failures?.length ? `<p class="source-note">Не удалось получить: ${esc(packInfo.failures.join(', '))}. Остальные исполнители доступны.</p>` : ''}</div></section>`;
   stage.querySelectorAll('[data-mode]').forEach(button => button.onclick = () => { settings.mode = button.dataset.mode; genreCounts = {}; selectPack(currentPack()); });
@@ -68,6 +68,12 @@ function renderSetup() {
   stage.querySelectorAll('[data-rounds]').forEach(button => button.onclick = () => { settings.rounds = Number(button.dataset.rounds); persistSettings(); renderSetup(); });
   $('#startBtn').onclick = startGame; $('#refreshPack').onclick = () => selectPack(currentPack(), true);
   $('#artistPicker').onclick = () => { $('#artistDialog').showModal(); $('#artistInput').focus(); };
+  $('#lineupBtn').onclick = () => {
+    $('#lineupTitle').textContent = `Исполнители: ${pack.title}`;
+    const names = [...new Set(pool.flatMap(track => track.artistNames || [track.artist]))].sort((a, b) => a.localeCompare(b, 'ru'));
+    $('#lineupList').innerHTML = names.map(name => `<li>${esc(name)}</li>`).join('');
+    $('#lineupDialog').showModal();
+  };
   $('#resumeBtn')?.addEventListener('click', () => { state = savedGame; renderGame(); });
 }
 
