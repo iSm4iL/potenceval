@@ -369,19 +369,19 @@
     {
       "id": "mom-pop-top",
       "kind": "verified-tracks",
-      "title": "Для мамы — семейный список знакомых хитов",
+      "title": "Для мамы — семейный список знакомых песен",
       "url": "https://www.deezer.com/",
       "genres": [
         "mom-pop"
       ],
       "tracks": [
         {
-          "title": "Твои глаза",
+          "title": "Невероятная",
           "artists": [
-            "Loboda"
+            "Emin"
           ],
-          "url": "https://www.deezer.com/track/1972390977",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/3570619491",
+          "period": "Из списка мамы"
         },
         {
           "title": "К чёрту любовь",
@@ -389,7 +389,15 @@
             "Loboda"
           ],
           "url": "https://www.deezer.com/track/1974135447",
-          "period": "Семейный список знакомых хитов"
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Твои глаза",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/track/1972390977",
+          "period": "Из списка мамы"
         },
         {
           "title": "случайная",
@@ -397,88 +405,7 @@
             "Loboda"
           ],
           "url": "https://www.deezer.com/track/1977651227",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Солнце",
-          "artists": [
-            "Ани Лорак"
-          ],
-          "url": "https://www.deezer.com/track/2125988397",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Обними меня",
-          "artists": [
-            "Ани Лорак"
-          ],
-          "url": "https://www.deezer.com/track/2125987987",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Новый бывший",
-          "artists": [
-            "Ани Лорак"
-          ],
-          "url": "https://www.deezer.com/track/3052993521",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Зеркала",
-          "artists": [
-            "Ани Лорак"
-          ],
-          "url": "https://www.deezer.com/track/375105171",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Я тебя не отпущу",
-          "artists": [
-            "Emin"
-          ],
-          "url": "https://www.deezer.com/track/3572511131",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Невероятная",
-          "artists": [
-            "Emin"
-          ],
-          "url": "https://www.deezer.com/track/3570619491",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Нежная",
-          "artists": [
-            "Emin"
-          ],
-          "url": "https://www.deezer.com/track/3566302651",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Зови меня",
-          "artists": [
-            "Emin",
-            "Ани Лорак"
-          ],
-          "url": "https://www.deezer.com/track/3570708511",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Замок из дождя",
-          "artists": [
-            "Владимир Пресняков"
-          ],
-          "url": "https://www.deezer.com/track/122173778",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Странник",
-          "artists": [
-            "Владимир Пресняков"
-          ],
-          "url": "https://www.deezer.com/track/133232168",
-          "period": "Семейный список знакомых хитов"
+          "period": "Из списка мамы"
         },
         {
           "title": "Зурбаган",
@@ -486,7 +413,115 @@
             "Владимир Пресняков"
           ],
           "url": "https://www.deezer.com/track/65252608",
-          "period": "Семейный список знакомых хитов"
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Не люби меня",
+          "artists": [
+            "CHEPIKK",
+            "ХОЛЛА"
+          ],
+          "url": "https://www.deezer.com/track/3183089921",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Проститься",
+          "artists": [
+            "Emin",
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/3585223041",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "SuperSTAR",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/track/1975386547",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "moLOko",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/track/1975628007",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Родной",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/track/1974179877",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Я не старею, я дорожаю",
+          "artists": [
+            "Александра Чистякова"
+          ],
+          "url": "https://www.deezer.com/track/4200733762",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Вселенная",
+          "artists": [
+            "Анна Семенович",
+            "Татьяна Буланова"
+          ],
+          "url": "https://www.deezer.com/track/4289047662",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Белый снег",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/122173774",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Странная",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/1025470022",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Стюардесса по имени Жанна",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/131492466",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Ты у меня одна",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/771976362",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "У тебя есть я",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/1630036962",
+          "period": "Из списка мамы"
+        },
+        {
+          "title": "Между нами",
+          "artists": [
+            "Владимир Пресняков",
+            "Наталья Подольская"
+          ],
+          "url": "https://www.deezer.com/track/3541755381",
+          "period": "Из списка мамы"
         },
         {
           "title": "Аэропорты",
@@ -495,80 +530,51 @@
             "Владимир Пресняков"
           ],
           "url": "https://www.deezer.com/track/3681701562",
-          "period": "Семейный список знакомых хитов"
+          "period": "Из списка мамы"
         },
         {
-          "title": "Перелетная птица",
+          "title": "Возраст - это просто пин-код",
           "artists": [
-            "Кристина Орбакайте"
+            "Марго Нуар",
+            "Лилия Вайн",
+            "Александра Чистякова"
           ],
-          "url": "https://www.deezer.com/track/122177372",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Мой мир",
-          "artists": [
-            "Кристина Орбакайте"
-          ],
-          "url": "https://www.deezer.com/track/129940444",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/4173006372",
+          "period": "Из списка мамы"
         },
         {
           "title": "Опять метель",
           "artists": [
-            "Кристина Орбакайте",
-            "Alla Pugacheva"
-          ],
-          "url": "https://www.deezer.com/track/413109752",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Пьяная вишня",
-          "artists": [
+            "Alla Pugacheva",
             "Кристина Орбакайте"
           ],
-          "url": "https://www.deezer.com/track/504482482",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/699809142",
+          "period": "Похожие знакомые песни"
         },
         {
-          "title": "Life",
+          "title": "Нежная",
           "artists": [
-            "Zivert"
+            "Emin"
           ],
-          "url": "https://www.deezer.com/track/592088522",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/3566302651",
+          "period": "Похожие знакомые песни"
         },
         {
-          "title": "Credo",
+          "title": "Я тебя не отпущу",
           "artists": [
-            "Zivert"
+            "Emin"
           ],
-          "url": "https://www.deezer.com/track/739241052",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/3570708501",
+          "period": "Похожие знакомые песни"
         },
         {
-          "title": "Зелёные волны",
+          "title": "Зови меня",
           "artists": [
-            "Zivert"
+            "Emin",
+            "Ани Лорак"
           ],
-          "url": "https://www.deezer.com/track/476533932",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Beverly Hills",
-          "artists": [
-            "Zivert"
-          ],
-          "url": "https://www.deezer.com/track/739241032",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Часики",
-          "artists": [
-            "Valeriya"
-          ],
-          "url": "https://www.deezer.com/track/102337408",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/3570708511",
+          "period": "Похожие знакомые песни"
         },
         {
           "title": "Мы вместе",
@@ -576,135 +582,47 @@
             "Valeriya"
           ],
           "url": "https://www.deezer.com/track/102212030",
-          "period": "Семейный список знакомых хитов"
+          "period": "Похожие знакомые песни"
         },
         {
-          "title": "Салют, Вера!",
+          "title": "Часики",
           "artists": [
-            "Валерий Меладзе"
+            "Valeriya"
           ],
-          "url": "https://www.deezer.com/track/80319376",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/102337408",
+          "period": "Похожие знакомые песни"
         },
         {
-          "title": "Красиво",
+          "title": "Beverly Hills",
           "artists": [
-            "Валерий Меладзе"
+            "Zivert"
           ],
-          "url": "https://www.deezer.com/track/80319422",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/739241032",
+          "period": "Похожие знакомые песни"
         },
         {
-          "title": "Небеса",
+          "title": "Credo",
           "artists": [
-            "Валерий Меладзе"
+            "Zivert"
           ],
-          "url": "https://www.deezer.com/track/100977896",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/739241052",
+          "period": "Похожие знакомые песни"
         },
         {
-          "title": "Океан и три реки",
+          "title": "Life",
           "artists": [
-            "Валерий Меладзе"
+            "Zivert"
           ],
-          "url": "https://www.deezer.com/track/80319542",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/592088522",
+          "period": "Похожие знакомые песни"
         },
         {
-          "title": "Босоногий мальчик",
+          "title": "Зелёные волны",
           "artists": [
-            "Леонид Агутин"
+            "Zivert"
           ],
-          "url": "https://www.deezer.com/track/65252918",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "На сиреневой луне",
-          "artists": [
-            "Леонид Агутин"
-          ],
-          "url": "https://www.deezer.com/track/65252939",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Городок",
-          "artists": [
-            "Анжелика Варум"
-          ],
-          "url": "https://www.deezer.com/track/69898208",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Зимняя вишня",
-          "artists": [
-            "Анжелика Варум"
-          ],
-          "url": "https://www.deezer.com/track/3034763071",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "La-La-Fa",
-          "artists": [
-            "Анжелика Варум"
-          ],
-          "url": "https://www.deezer.com/track/66282527",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Одиночество-сука",
-          "artists": [
-            "Слава"
-          ],
-          "url": "https://www.deezer.com/track/122158186",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Расскажи мне мама",
-          "artists": [
-            "Слава"
-          ],
-          "url": "https://www.deezer.com/track/122158166",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "На Титанике",
-          "artists": [
-            "LOLITA"
-          ],
-          "url": "https://www.deezer.com/track/2195812757",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Ориентация Север",
-          "artists": [
-            "LOLITA"
-          ],
-          "url": "https://www.deezer.com/track/2195808097",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Зимний сон",
-          "artists": [
-            "АЛСУ"
-          ],
-          "url": "https://www.deezer.com/track/66434349",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Иногда",
-          "artists": [
-            "АЛСУ"
-          ],
-          "url": "https://www.deezer.com/track/66434355",
-          "period": "Семейный список знакомых хитов"
-        },
-        {
-          "title": "Прованс",
-          "artists": [
-            "Ёлка"
-          ],
-          "url": "https://www.deezer.com/track/770836972",
-          "period": "Семейный список знакомых хитов"
+          "url": "https://www.deezer.com/track/476533932",
+          "period": "Похожие знакомые песни"
         },
         {
           "title": "На большом воздушном шаре",
@@ -712,7 +630,7 @@
             "Ёлка"
           ],
           "url": "https://www.deezer.com/track/770837002",
-          "period": "Семейный список знакомых хитов"
+          "period": "Похожие знакомые песни"
         },
         {
           "title": "Около тебя",
@@ -720,7 +638,255 @@
             "Ёлка"
           ],
           "url": "https://www.deezer.com/track/770837052",
-          "period": "Семейный список знакомых хитов"
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Прованс",
+          "artists": [
+            "Ёлка"
+          ],
+          "url": "https://www.deezer.com/track/770836972",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Зимний сон",
+          "artists": [
+            "АЛСУ"
+          ],
+          "url": "https://www.deezer.com/track/66434349",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Иногда",
+          "artists": [
+            "АЛСУ"
+          ],
+          "url": "https://www.deezer.com/track/66434355",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "La-La-Fa",
+          "artists": [
+            "Анжелика Варум"
+          ],
+          "url": "https://www.deezer.com/track/66282527",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Городок",
+          "artists": [
+            "Анжелика Варум"
+          ],
+          "url": "https://www.deezer.com/track/69898208",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Зимняя вишня",
+          "artists": [
+            "Анжелика Варум"
+          ],
+          "url": "https://www.deezer.com/track/3034763071",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Зеркала",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/375105171",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Новый бывший",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/3052993521",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Обними меня",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/2125987987",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Солнце",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/2125988397",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Красиво",
+          "artists": [
+            "Валерий Меладзе"
+          ],
+          "url": "https://www.deezer.com/track/80319422",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Небеса",
+          "artists": [
+            "Валерий Меладзе"
+          ],
+          "url": "https://www.deezer.com/track/100977896",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Океан и три реки",
+          "artists": [
+            "Валерий Меладзе"
+          ],
+          "url": "https://www.deezer.com/track/80319542",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Салют, Вера!",
+          "artists": [
+            "Валерий Меладзе"
+          ],
+          "url": "https://www.deezer.com/track/80319376",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Замок из дождя",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/122173778",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Странник",
+          "artists": [
+            "Владимир Пресняков"
+          ],
+          "url": "https://www.deezer.com/track/133232168",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Мой мир",
+          "artists": [
+            "Кристина Орбакайте"
+          ],
+          "url": "https://www.deezer.com/track/129940444",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Перелетная птица",
+          "artists": [
+            "Кристина Орбакайте"
+          ],
+          "url": "https://www.deezer.com/track/122177372",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Пьяная вишня",
+          "artists": [
+            "Кристина Орбакайте"
+          ],
+          "url": "https://www.deezer.com/track/504482482",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Босоногий мальчик",
+          "artists": [
+            "Леонид Агутин"
+          ],
+          "url": "https://www.deezer.com/track/65252918",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "На сиреневой луне",
+          "artists": [
+            "Леонид Агутин"
+          ],
+          "url": "https://www.deezer.com/track/65252939",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "На Титанике",
+          "artists": [
+            "Лолита"
+          ],
+          "url": "https://www.deezer.com/track/2195812757",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Ориентация Север",
+          "artists": [
+            "Лолита"
+          ],
+          "url": "https://www.deezer.com/track/2195808097",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Одиночество-сука",
+          "artists": [
+            "Слава"
+          ],
+          "url": "https://www.deezer.com/track/122158186",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Расскажи мне мама",
+          "artists": [
+            "Слава"
+          ],
+          "url": "https://www.deezer.com/track/122158166",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Парень",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/track/1974137537",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Забирай рай",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/3037018741",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Удержи моё сердце",
+          "artists": [
+            "Ани Лорак"
+          ],
+          "url": "https://www.deezer.com/track/3037018631",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Мой ненаглядный",
+          "artists": [
+            "Татьяна Буланова"
+          ],
+          "url": "https://www.deezer.com/track/509132622",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Ясный мой свет",
+          "artists": [
+            "Татьяна Буланова"
+          ],
+          "url": "https://www.deezer.com/track/509530642",
+          "period": "Похожие знакомые песни"
+        },
+        {
+          "title": "Пора домой",
+          "artists": [
+            "Loboda"
+          ],
+          "url": "https://www.deezer.com/artist/819827",
+          "period": "Из списка мамы"
         }
       ]
     },
@@ -1181,6 +1347,908 @@
           "artists": [
             "HammAli & Navai"
           ]
+        }
+      ]
+    },
+    {
+      "id": "nostalgia-school-2017",
+      "kind": "verified-tracks",
+      "title": "Школьные хиты второй половины 2010-х",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "nostalgia"
+      ],
+      "tracks": [
+        {
+          "title": "Gimme The Loot",
+          "artists": [
+            "Big Baby Tape"
+          ],
+          "url": "https://www.deezer.com/track/585683922",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Безумие",
+          "artists": [
+            "Breezey Montana",
+            "ЛСП"
+          ],
+          "url": "https://www.deezer.com/track/609773952",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "По волнам",
+          "artists": [
+            "Burito"
+          ],
+          "url": "https://www.deezer.com/track/140334365",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Блокеры",
+          "artists": [
+            "Dzharakhov"
+          ],
+          "url": "https://www.deezer.com/track/3700844612",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Rozovoye vino",
+          "artists": [
+            "Eldzhey",
+            "FEDUK"
+          ],
+          "url": "https://www.deezer.com/track/1031372352",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "КУБИК ЛЬДА",
+          "artists": [
+            "GONE.Fludd"
+          ],
+          "url": "https://www.deezer.com/track/1975775997",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "МАМБЛ",
+          "artists": [
+            "GONE.Fludd"
+          ],
+          "url": "https://www.deezer.com/track/1972437417",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Medina",
+          "artists": [
+            "Jah Khalib"
+          ],
+          "url": "https://www.deezer.com/track/469261822",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Leyla (feat. Makvin)",
+          "artists": [
+            "Jah Khalib",
+            "Makvin"
+          ],
+          "url": "https://www.deezer.com/track/134043546",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Telo",
+          "artists": [
+            "LSP"
+          ],
+          "url": "https://www.deezer.com/track/1460790412",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Медуза",
+          "artists": [
+            "MATRANG"
+          ],
+          "url": "https://www.deezer.com/track/455410872",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Black Siemens",
+          "artists": [
+            "Pharaoh"
+          ],
+          "url": "https://www.deezer.com/track/3892414581",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Дико, например",
+          "artists": [
+            "Pharaoh"
+          ],
+          "url": "https://www.deezer.com/track/367431961",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "5 минут назад",
+          "artists": [
+            "Pharaoh",
+            "BOULEVARD DEPO"
+          ],
+          "url": "https://www.deezer.com/track/127709375",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Не забывай",
+          "artists": [
+            "T-Fest"
+          ],
+          "url": "https://www.deezer.com/track/145061632",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Улети",
+          "artists": [
+            "T-Fest"
+          ],
+          "url": "https://www.deezer.com/track/385026441",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Ламбада",
+          "artists": [
+            "T-Fest",
+            "Скриптонит"
+          ],
+          "url": "https://www.deezer.com/track/143572242",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Велик",
+          "artists": [
+            "Грибы",
+            "Sимптом"
+          ],
+          "url": "https://www.deezer.com/track/136103362",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Интро",
+          "artists": [
+            "Грибы",
+            "Sимптом"
+          ],
+          "url": "https://www.deezer.com/track/136103374",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Копы",
+          "artists": [
+            "Грибы",
+            "Sимптом"
+          ],
+          "url": "https://www.deezer.com/track/132281706",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Малый повзрослел",
+          "artists": [
+            "Макс Корж"
+          ],
+          "url": "https://www.deezer.com/track/630344072",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Оптимист",
+          "artists": [
+            "Макс Корж"
+          ],
+          "url": "https://www.deezer.com/track/630340922",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Эндорфин",
+          "artists": [
+            "Макс Корж"
+          ],
+          "url": "https://www.deezer.com/track/630343682",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Патимэйкер",
+          "artists": [
+            "Пика",
+            "Ploty"
+          ],
+          "url": "https://www.deezer.com/track/123191414",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Любимая песня твоей сестры",
+          "artists": [
+            "Пошлая Молли"
+          ],
+          "url": "https://www.deezer.com/track/3949282011",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Нон стоп",
+          "artists": [
+            "Пошлая Молли"
+          ],
+          "url": "https://www.deezer.com/track/3949282031",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Монетка",
+          "artists": [
+            "СД",
+            "ЛСП",
+            "Booker",
+            "Вири Альди"
+          ],
+          "url": "https://www.deezer.com/track/3568829331",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Плачу на техно",
+          "artists": [
+            "ХЛЕБ"
+          ],
+          "url": "https://www.deezer.com/track/1477197162",
+          "period": "Школьная ностальгия"
+        },
+        {
+          "title": "Минимал",
+          "artists": [
+            "Элджей"
+          ],
+          "url": "https://www.deezer.com/track/3032502771",
+          "period": "Школьная ностальгия"
+        }
+      ]
+    },
+    {
+      "id": "us-hiphop-hits",
+      "kind": "verified-tracks",
+      "title": "US Hip-Hop — редакторская подборка знакомых песен",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "us-hiphop"
+      ],
+      "tracks": [
+        {
+          "title": "Bank Account",
+          "artists": [
+            "21 Savage"
+          ],
+          "url": "https://www.deezer.com/track/380536131",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "a lot",
+          "artists": [
+            "21 Savage"
+          ],
+          "url": "https://www.deezer.com/track/607697962",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "F**kin' Problems (feat. Drake, 2 Chainz & Kendrick Lamar)",
+          "artists": [
+            "A$AP Rocky",
+            "Drake",
+            "Kendrick Lamar",
+            "2 Chainz"
+          ],
+          "url": "https://www.deezer.com/track/623422582",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Praise The Lord (Da Shine) (feat. Skepta)",
+          "artists": [
+            "A$AP Rocky",
+            "Skepta"
+          ],
+          "url": "https://www.deezer.com/track/503169162",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Panda",
+          "artists": [
+            "Desiigner"
+          ],
+          "url": "https://www.deezer.com/track/120026876",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "God's Plan",
+          "artists": [
+            "Drake"
+          ],
+          "url": "https://www.deezer.com/track/533609232",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Hotline Bling",
+          "artists": [
+            "Drake"
+          ],
+          "url": "https://www.deezer.com/track/124603286",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Mask Off",
+          "artists": [
+            "Future"
+          ],
+          "url": "https://www.deezer.com/track/142337683",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Life Is Good (feat. Drake)",
+          "artists": [
+            "Future",
+            "Drake"
+          ],
+          "url": "https://www.deezer.com/track/847699482",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Bound 2",
+          "artists": [
+            "Kanye West"
+          ],
+          "url": "https://www.deezer.com/track/68350113",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Heartless",
+          "artists": [
+            "Kanye West"
+          ],
+          "url": "https://www.deezer.com/track/130412300",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "POWER",
+          "artists": [
+            "Kanye West"
+          ],
+          "url": "https://www.deezer.com/track/7667059",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Stronger",
+          "artists": [
+            "Kanye West"
+          ],
+          "url": "https://www.deezer.com/track/1178682",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Flashing Lights",
+          "artists": [
+            "Kanye West",
+            "Dwele"
+          ],
+          "url": "https://www.deezer.com/track/630827302",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Gold Digger",
+          "artists": [
+            "Kanye West",
+            "Jamie Foxx"
+          ],
+          "url": "https://www.deezer.com/track/1184309",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "DNA.",
+          "artists": [
+            "Kendrick Lamar"
+          ],
+          "url": "https://www.deezer.com/track/350171251",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "HUMBLE.",
+          "artists": [
+            "Kendrick Lamar"
+          ],
+          "url": "https://www.deezer.com/track/350171311",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Money Trees",
+          "artists": [
+            "Kendrick Lamar",
+            "Jay Rock"
+          ],
+          "url": "https://www.deezer.com/track/67929157",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "MONTERO (Call Me By Your Name)",
+          "artists": [
+            "Lil Nas X"
+          ],
+          "url": "https://www.deezer.com/track/1283264142",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Old Town Road",
+          "artists": [
+            "Lil Nas X"
+          ],
+          "url": "https://www.deezer.com/track/699056262",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "INDUSTRY BABY",
+          "artists": [
+            "Lil Nas X",
+            "Jack Harlow"
+          ],
+          "url": "https://www.deezer.com/track/1439691952",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Am I Dreaming",
+          "artists": [
+            "Metro Boomin",
+            "A$AP Rocky",
+            "Roisee"
+          ],
+          "url": "https://www.deezer.com/track/2309928755",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Superhero (Heroes & Villains)",
+          "artists": [
+            "Metro Boomin",
+            "Future",
+            "Chris Brown"
+          ],
+          "url": "https://www.deezer.com/track/2047662397",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Too Many Nights",
+          "artists": [
+            "Metro Boomin",
+            "Future",
+            "Don Toliver"
+          ],
+          "url": "https://www.deezer.com/track/2047662407",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Creepin'",
+          "artists": [
+            "Metro Boomin",
+            "The Weeknd",
+            "21 Savage"
+          ],
+          "url": "https://www.deezer.com/track/2047662477",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Walk It Talk It",
+          "artists": [
+            "Migos",
+            "Drake"
+          ],
+          "url": "https://www.deezer.com/track/453844292",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Bad and Boujee",
+          "artists": [
+            "Migos",
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/1693337757",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Camelot",
+          "artists": [
+            "NLE Choppa"
+          ],
+          "url": "https://www.deezer.com/track/745210272",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Shotta Flow",
+          "artists": [
+            "NLE Choppa"
+          ],
+          "url": "https://www.deezer.com/track/2628285692",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Walk Em Down (feat. Roddy Ricch)",
+          "artists": [
+            "NLE Choppa",
+            "Roddy Ricch"
+          ],
+          "url": "https://www.deezer.com/track/904180872",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Dior",
+          "artists": [
+            "Pop Smoke"
+          ],
+          "url": "https://www.deezer.com/track/3529770711",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "For The Night",
+          "artists": [
+            "Pop Smoke",
+            "Lil Baby",
+            "DaBaby"
+          ],
+          "url": "https://www.deezer.com/track/3529770231",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "rockstar",
+          "artists": [
+            "Post Malone",
+            "21 Savage"
+          ],
+          "url": "https://www.deezer.com/track/491446942",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Congratulations",
+          "artists": [
+            "Post Malone",
+            "Quavo"
+          ],
+          "url": "https://www.deezer.com/track/137726987",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Antidote",
+          "artists": [
+            "Travis Scott"
+          ],
+          "url": "https://www.deezer.com/track/106713886",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "BUTTERFLY EFFECT",
+          "artists": [
+            "Travis Scott"
+          ],
+          "url": "https://www.deezer.com/track/536421122",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "HIGHEST IN THE ROOM",
+          "artists": [
+            "Travis Scott"
+          ],
+          "url": "https://www.deezer.com/track/767583072",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "SICKO MODE",
+          "artists": [
+            "Travis Scott"
+          ],
+          "url": "https://www.deezer.com/track/536421002",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "goosebumps",
+          "artists": [
+            "Travis Scott"
+          ],
+          "url": "https://www.deezer.com/track/132201196",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "FE!N (feat. Playboi Carti)",
+          "artists": [
+            "Travis Scott",
+            "Playboi Carti"
+          ],
+          "url": "https://www.deezer.com/track/2386586085",
+          "period": "Знакомые песни для компании"
+        }
+      ]
+    },
+    {
+      "id": "soundcloud-hits",
+      "kind": "verified-tracks",
+      "title": "SoundCloud Hits — редакторская подборка знакомых песен",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "soundcloud"
+      ],
+      "tracks": [
+        {
+          "title": "Mood (feat. iann dior)",
+          "artists": [
+            "24kgoldn",
+            "Iann Dior"
+          ],
+          "url": "https://www.deezer.com/track/1283264632",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "emotions",
+          "artists": [
+            "Iann Dior"
+          ],
+          "url": "https://www.deezer.com/track/2493713371",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "gone girl (feat. Trippie Redd)",
+          "artists": [
+            "Iann Dior",
+            "Trippie Redd"
+          ],
+          "url": "https://www.deezer.com/track/2493716331",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "All Girls Are The Same",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/601837412",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Lucid Dreams",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/601837422",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Robbery",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/1634179012",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Wishing Well",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/1016968532",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Come & Go",
+          "artists": [
+            "Juice Wrld",
+            "Marshmello"
+          ],
+          "url": "https://www.deezer.com/track/1016968502",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Awful Things",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478514151",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Benz Truck (гелик)",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478510591",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Save That Shit",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478514141",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Star Shopping",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478544551",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "D Rose",
+          "artists": [
+            "Lil Pump"
+          ],
+          "url": "https://www.deezer.com/track/413807792",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Gucci Gang",
+          "artists": [
+            "Lil Pump"
+          ],
+          "url": "https://www.deezer.com/track/399023232",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Nowadays (feat. Landon Cube)",
+          "artists": [
+            "Lil Skies",
+            "Landon Cube"
+          ],
+          "url": "https://www.deezer.com/track/442693212",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Red Roses (feat. Landon Cube)",
+          "artists": [
+            "Lil Skies",
+            "Landon Cube"
+          ],
+          "url": "https://www.deezer.com/track/414870102",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "20 Min",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/428537532",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Just Wanna Rock",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/1965920237",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Money Longer",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/125536814",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "XO Tour Llif3",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/144949268",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "The Way Life Goes (feat. Oh Wonder)",
+          "artists": [
+            "Lil Uzi Vert",
+            "Oh Wonder"
+          ],
+          "url": "https://www.deezer.com/track/397571872",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "One Night",
+          "artists": [
+            "Lil Yachty"
+          ],
+          "url": "https://www.deezer.com/track/127880605",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "WITHOUT YOU",
+          "artists": [
+            "The Kid Laroi"
+          ],
+          "url": "https://www.deezer.com/track/1445417732",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "STAY",
+          "artists": [
+            "The Kid Laroi",
+            "Justin Bieber"
+          ],
+          "url": "https://www.deezer.com/track/1425844092",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Love Scars",
+          "artists": [
+            "Trippie Redd"
+          ],
+          "url": "https://www.deezer.com/track/2495298691",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Taking A Walk",
+          "artists": [
+            "Trippie Redd"
+          ],
+          "url": "https://www.deezer.com/track/2495308671",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Dark Knight Dummo (feat. Travis Scott)",
+          "artists": [
+            "Trippie Redd",
+            "Travis Scott"
+          ],
+          "url": "https://www.deezer.com/track/2495349031",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Hope",
+          "artists": [
+            "XXXTentacion"
+          ],
+          "url": "https://www.deezer.com/track/472992722",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Jocelyn Flores",
+          "artists": [
+            "XXXTentacion"
+          ],
+          "url": "https://www.deezer.com/track/398055682",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Look At Me!",
+          "artists": [
+            "XXXTentacion"
+          ],
+          "url": "https://www.deezer.com/track/142594564",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Moonlight",
+          "artists": [
+            "XXXTentacion"
+          ],
+          "url": "https://www.deezer.com/track/472992592",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "SAD!",
+          "artists": [
+            "XXXTentacion"
+          ],
+          "url": "https://www.deezer.com/track/472992602",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "changes",
+          "artists": [
+            "XXXTentacion"
+          ],
+          "url": "https://www.deezer.com/track/472992712",
+          "period": "Знакомые песни для компании"
+        },
+        {
+          "title": "Murder on My Mind",
+          "artists": [
+            "YNW Melly"
+          ],
+          "url": "https://www.deezer.com/track/505197202",
+          "period": "Знакомые песни для компании"
         }
       ]
     }

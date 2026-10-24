@@ -136,6 +136,40 @@ class BuilderTests(unittest.TestCase):
         self.assertFalse(b.match_track({"title": "Song", "artists": ["Alice & Bobby"]}, duet)[0])
         self.assertTrue(b.match_track({"title": "Song", "artists": ["Earth, Wind & Fire"]}, raw(title="Song", artist="Earth, Wind & Fire"))[0])
 
+    def test_verified_deezer_link_resolves_a_track_missing_from_search(self):
+        class MissingFromSearch(FakeClient):
+            def get(self, url):
+                if "/search?" in url:
+                    self.calls.append(url)
+                    return {"data": []}
+                return super().get(url)
+
+        client = MissingFromSearch()
+        row = {"title": "Sultans of Swing", "artists": ["Dire Straits"], "url": "https://www.deezer.com/track/10"}
+        track, failure = b.resolve(row, client)
+        self.assertIsNotNone(track)
+        self.assertEqual(track["deezerId"], 10)
+        self.assertIsNone(failure)
+        self.assertEqual(client.calls, ["https://api.deezer.com/track/10"])
+
+    def test_pinned_link_still_checks_identity_version_and_playability(self):
+        row = {"title": "Sultans of Swing", "artists": ["Dire Straits"], "url": "https://www.deezer.com/track/11"}
+        for wrong in [raw(11, artist="Tribute Band"), raw(11, title="Sultans of Swing (Live)"), raw(11, preview="")]:
+            with self.subTest(wrong=wrong):
+                client = FakeClient(tracks=[wrong, raw()])
+                track, failure = b.resolve(row, client)
+                self.assertEqual(track["deezerId"], 10)
+                self.assertIsNone(failure)
+                self.assertEqual(client.calls[0], "https://api.deezer.com/track/11")
+
+    def test_source_link_cannot_select_a_different_host_or_protocol(self):
+        for url in ["https://www.deezer.com.evil.test/track/10", "http://www.deezer.com/track/10", "https://user@www.deezer.com/track/10", "https://www.deezer.com/track/0"]:
+            with self.subTest(url=url):
+                client = FakeClient()
+                track, _ = b.resolve({"title": "Sultans of Swing", "artists": ["Dire Straits"], "url": url}, client)
+                self.assertEqual(track["deezerId"], 10)
+                self.assertIn("/search?", client.calls[0])
+
     def setup_build(self, directory, sources):
         path = Path(directory) / "sources.json"
         path.write_text(json.dumps({"version": 1, "sources": sources}), encoding="utf-8")

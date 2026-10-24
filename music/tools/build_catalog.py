@@ -395,6 +395,15 @@ def public_track(raw, row):
 
 
 def resolve(row, client):
+    # Exact editorial links also cover releases absent from Deezer's search index.
+    pinned = re.fullmatch(r"https://(?:www\.)?deezer\.com/track/([1-9]\d*)/?(?:[?#].*)?", str(row.get("url", "")))
+    if pinned:
+        try:
+            detail = client.get("https://api.deezer.com/track/" + pinned[1])
+        except (OSError, ValueError, TypeError):
+            detail = None
+        if isinstance(detail, dict) and detail.get("id") == int(pinned[1]) and match_track(row, detail)[0]:
+            return public_track(detail, row), None
     query = " ".join(row["artists"]) + " " + row["title"]
     result = client.get("https://api.deezer.com/search?" + urlencode({"q": query, "limit": 25}))
     if not isinstance(result, dict) or not isinstance(result.get("data"), list):

@@ -2,7 +2,7 @@
 const stage = document.querySelector('#stage');
 const colors = ['#d66b46', '#799e9e', '#c5a25b', '#b58aa7', '#6f9aaa', '#c08a7c', '#9baf87', '#b65c4b'];
 // Свой цвет у каждой подборки: им горят лампочка клавиши, яблоко пластинки и подсветка стекла.
-const packColors = { 'new-wave': '#ff6a3d', 'ru-rap': '#f2b632', nostalgia: '#39c2d0', kpop: '#b874ff', 'modern-pop': '#4b9bff', 'mom-pop': '#ff7eb3', 'dad-rock': '#8cc152', metal: '#e04848' };
+const packColors = { 'new-wave': '#ff6a3d', 'ru-rap': '#f2b632', nostalgia: '#39c2d0', kpop: '#b874ff', 'modern-pop': '#4b9bff', 'mom-pop': '#ff7eb3', 'dad-rock': '#8cc152', metal: '#e04848', 'us-hiphop': '#f5a65b', soundcloud: '#58c4a5' };
 const colorOf = (card, index) => packColors[card.dataset.pack] || colors[index % colors.length];
 const bulbs = n => `<span class="bulbs" aria-hidden="true">${'<i></i>'.repeat(n)}</span>`;
 // Динамик — только украшение: вместо круглой «кнопки» эквалайзер, который пляшет, пока играет музыка.
@@ -36,7 +36,9 @@ function decorateHome(home) {
   if (lastSelection !== selected.dataset.pack) collectionPage = Math.floor(cards.indexOf(selected) / pageSize);
   lastSelection = selected.dataset.pack;
   cards.forEach((card, index) => {
-    card.dataset.selection = `${index % pageSize < 4 ? 'A' : 'B'}${Math.floor(index / pageSize) * 4 + index % 4 + 1}`;
+    const page = Math.floor(index / pageSize), position = index % pageSize;
+    const half = Math.ceil(Math.min(pageSize, cards.length - page * pageSize) / 2);
+    card.dataset.selection = `${position < half ? 'A' : 'B'}${page * 4 + (position < half ? position : position - half) + 1}`;
     card.style.setProperty('--c', colorOf(card, index));
     const code = document.createElement('span');
     code.className = 'selection-key'; code.innerHTML = `<i></i>${card.dataset.selection}`;
@@ -51,8 +53,13 @@ function decorateHome(home) {
   function showPage(page) {
     collectionPage = Math.max(0, Math.min(page, Math.ceil(cards.length / pageSize) - 1));
     const first = collectionPage * pageSize;
-    cabinet.querySelector('.selection-side.left').replaceChildren(...cards.slice(first, first + 4));
-    cabinet.querySelector('.selection-side.right').replaceChildren(...cards.slice(first + 4, first + pageSize));
+    const pageCards = cards.slice(first, first + pageSize), half = Math.ceil(pageCards.length / 2);
+    for (const [selector, items] of [['.selection-side.left', pageCards.slice(0, half)], ['.selection-side.right', pageCards.slice(half)]]) {
+      const side = cabinet.querySelector(selector);
+      side.replaceChildren(...items);
+      side.style.gridTemplateRows = items.length && pageCards.length < pageSize ? `repeat(${items.length}, max-content)` : '';
+      side.style.alignContent = pageCards.length < pageSize ? 'center' : '';
+    }
     cabinet.querySelector('.collection-pages').hidden = cards.length <= pageSize;
     cabinet.querySelector('.page-position').textContent = `Страница ${collectionPage + 1} из ${Math.ceil(cards.length / pageSize)}`;
     cabinet.querySelector('.page-back').disabled = collectionPage === 0;
@@ -167,5 +174,5 @@ function spinFrame(now) {
 requestAnimationFrame(spinFrame);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=bonus-1');
+await import('./app.js?v=collections-20261024');
 decorate();

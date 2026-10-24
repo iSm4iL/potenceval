@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T11:54:22Z",
+  "generatedAt": "2026-10-24T12:56:17Z",
   "published": true,
   "counts": {
-    "rows": 1269,
-    "matched": 1112,
-    "unmatched": 157,
-    "cached": 1057,
-    "tracks": 1031,
+    "rows": 1392,
+    "matched": 1234,
+    "unmatched": 158,
+    "cached": 1069,
+    "tracks": 1140,
     "failedSources": 0
   },
   "unmatched": [
@@ -2677,6 +2677,15 @@
       "url": "https://www.deezer.com/",
       "reason": "title mismatch",
       "samples": []
+    },
+    {
+      "sourceId": "mom-pop-top",
+      "title": "Пора домой",
+      "artists": [
+        "Loboda"
+      ],
+      "reason": "No playable original found; only live/remix versions available",
+      "samples": []
     }
   ],
   "sources": [
@@ -2729,12 +2738,6 @@
       "unmatched": 17
     },
     {
-      "id": "mom-pop-top",
-      "rows": 43,
-      "matched": 43,
-      "unmatched": 0
-    },
-    {
       "id": "modern-pop-top",
       "rows": 110,
       "matched": 95,
@@ -2745,6 +2748,30 @@
       "rows": 69,
       "matched": 54,
       "unmatched": 15
+    },
+    {
+      "id": "mom-pop-top",
+      "rows": 63,
+      "matched": 62,
+      "unmatched": 1
+    },
+    {
+      "id": "nostalgia-school-2017",
+      "rows": 29,
+      "matched": 29,
+      "unmatched": 0
+    },
+    {
+      "id": "us-hiphop-hits",
+      "rows": 40,
+      "matched": 40,
+      "unmatched": 0
+    },
+    {
+      "id": "soundcloud-hits",
+      "rows": 34,
+      "matched": 34,
+      "unmatched": 0
     }
   ],
   "warnings": [],
@@ -2854,7 +2881,7 @@
       "trackId": "dz-4232751432"
     },
     "zivert|beverly hills": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:29Z",
       "trackId": "dz-739241032"
     },
     "баста|на заре": {
@@ -2874,7 +2901,7 @@
       "trackId": "dz-4044406651"
     },
     "zivert|credo": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:29Z",
       "trackId": "dz-739241052"
     },
     "женя трофимов комната культуры|поезда": {
@@ -2898,7 +2925,7 @@
       "trackId": "dz-3572837931"
     },
     "zivert|зеленые волны": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:29Z",
       "trackId": "dz-476533932"
     },
     "anna asti|царица": {
@@ -3330,7 +3357,7 @@
       "trackId": "dz-953097"
     },
     "drake|god s plan": {
-      "verifiedAt": "2026-10-22T01:03:16Z",
+      "verifiedAt": "2026-10-24T12:34:11Z",
       "trackId": "dz-533609232"
     },
     "michael jackson|thriller 7 special edit": {
@@ -3406,7 +3433,7 @@
       "trackId": "dz-1378342612"
     },
     "travis scott|goosebumps": {
-      "verifiedAt": "2026-10-22T01:03:16Z",
+      "verifiedAt": "2026-10-24T12:34:01Z",
       "trackId": "dz-132201196"
     },
     "kodak black|no flockin": {
@@ -3426,7 +3453,7 @@
       "trackId": "dz-2223234447"
     },
     "boulevard depo,pharaoh|5 минут назад": {
-      "verifiedAt": "2026-10-22T01:03:16Z",
+      "verifiedAt": "2026-10-24T12:41:00Z",
       "trackId": "dz-127709375"
     },
     "хаски|иуда": {
@@ -3482,7 +3509,7 @@
       "trackId": "dz-70147258"
     },
     "pharaoh|дико например": {
-      "verifiedAt": "2026-10-22T01:03:16Z",
+      "verifiedAt": "2026-10-24T12:33:50Z",
       "trackId": "dz-367431961"
     },
     "каспийский груз|табор уходит в небо": {
@@ -3494,7 +3521,7 @@
       "trackId": "dz-794950092"
     },
     "gone fludd|кубик льда": {
-      "verifiedAt": "2026-10-22T01:03:16Z",
+      "verifiedAt": "2026-10-24T12:33:57Z",
       "trackId": "dz-1975775997"
     },
     "макулатура|вся вселенная": {
@@ -3538,7 +3565,7 @@
       "trackId": "dz-411754462"
     },
     "пика|патимэйкер": {
-      "verifiedAt": "2026-10-22T01:13:12Z",
+      "verifiedAt": "2026-10-24T12:41:01Z",
       "trackId": "dz-123191414"
     },
     "atl|танцуйте": {
@@ -3546,11 +3573,11 @@
       "trackId": "dz-2465062445"
     },
     "t fest,скриптонит|ламбада": {
-      "verifiedAt": "2026-10-22T01:13:12Z",
+      "verifiedAt": "2026-10-24T12:33:52Z",
       "trackId": "dz-143572242"
     },
     "макс корж|малый повзрослел": {
-      "verifiedAt": "2026-10-22T01:13:12Z",
+      "verifiedAt": "2026-10-24T12:33:56Z",
       "trackId": "dz-630344072"
     },
     "элджей|растворитель": {
@@ -3582,7 +3609,7 @@
       "trackId": "dz-143980210"
     },
     "pharaoh|black siemens": {
-      "verifiedAt": "2026-10-22T01:03:16Z",
+      "verifiedAt": "2026-10-24T12:33:50Z",
       "trackId": "dz-3892414581"
     },
     "масло черного тмина|что для тебя красота": {
@@ -3606,7 +3633,7 @@
       "trackId": "dz-420315772"
     },
     "лсп|монетка": {
-      "verifiedAt": "2026-10-22T01:13:12Z",
+      "verifiedAt": "2026-10-24T12:33:52Z",
       "trackId": "dz-3568829331"
     },
     "obladaet|kenny": {
@@ -4794,7 +4821,7 @@
       "trackId": "dz-630340952"
     },
     "макс корж|эндорфин": {
-      "verifiedAt": "2026-10-22T19:42:44Z",
+      "verifiedAt": "2026-10-24T12:33:56Z",
       "trackId": "dz-630343682"
     },
     "каспийский груз|любовь hd1080": {
@@ -6302,15 +6329,15 @@
       "trackId": "dz-1037814852"
     },
     "zivert|life": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:29Z",
       "trackId": "dz-592088522"
     },
     "loboda|случайная": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:33:46Z",
       "trackId": "dz-1977651227"
     },
     "loboda|твои глаза": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:33:44Z",
       "trackId": "dz-1972390977"
     },
     "loboda|boom boom": {
@@ -6318,11 +6345,11 @@
       "trackId": "dz-1975387147"
     },
     "елка|около тебя": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:36Z",
       "trackId": "dz-770837052"
     },
     "елка|прованс": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:36Z",
       "trackId": "dz-770836972"
     },
     "мот|капкан": {
@@ -6526,7 +6553,7 @@
       "trackId": "dz-2780753191"
     },
     "post malone|rockstar": {
-      "verifiedAt": "2026-10-23T00:35:14Z",
+      "verifiedAt": "2026-10-24T12:34:12Z",
       "trackId": "dz-491446942"
     },
     "post malone|circles": {
@@ -6858,144 +6885,752 @@
       "trackId": "dz-871531192"
     },
     "loboda|к черту любовь": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:33:45Z",
       "trackId": "dz-1974135447"
     },
     "ани лорак|солнце": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:24Z",
       "trackId": "dz-2125988397"
     },
     "ани лорак|обними меня": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:24Z",
       "trackId": "dz-2125987987"
     },
     "ани лорак|новый бывший": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:25Z",
       "trackId": "dz-3052993521"
     },
     "ани лорак|зеркала": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:25Z",
       "trackId": "dz-375105171"
     },
     "emin|я тебя не отпущу": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
-      "trackId": "dz-3572511131"
+      "verifiedAt": "2026-10-24T12:34:25Z",
+      "trackId": "dz-3570708501"
     },
     "emin|невероятная": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:33:47Z",
       "trackId": "dz-3570619491"
     },
     "emin|нежная": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:26Z",
       "trackId": "dz-3566302651"
     },
     "emin,ани лорак|зови меня": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:26Z",
       "trackId": "dz-3570708511"
     },
     "владимир пресняков|замок из дождя": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:27Z",
       "trackId": "dz-122173778"
     },
     "владимир пресняков|странник": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:27Z",
       "trackId": "dz-133232168"
     },
     "владимир пресняков|зурбаган": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:33:44Z",
       "trackId": "dz-65252608"
     },
     "владимир пресняков,леонид агутин|аэропорты": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:33:42Z",
       "trackId": "dz-3681701562"
     },
     "кристина орбакайте|перелетная птица": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:27Z",
       "trackId": "dz-122177372"
     },
     "кристина орбакайте|мой мир": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:28Z",
       "trackId": "dz-129940444"
     },
     "alla pugacheva,кристина орбакайте|опять метель": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
-      "trackId": "dz-413109752"
+      "verifiedAt": "2026-10-24T12:34:28Z",
+      "trackId": "dz-699809142"
     },
     "кристина орбакайте|пьяная вишня": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:28Z",
       "trackId": "dz-504482482"
     },
     "valeriya|часики": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:30Z",
       "trackId": "dz-102337408"
     },
     "valeriya|мы вместе": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:30Z",
       "trackId": "dz-102212030"
     },
     "валерий меладзе|салют вера": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:31Z",
       "trackId": "dz-80319376"
     },
     "валерий меладзе|красиво": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:31Z",
       "trackId": "dz-80319422"
     },
     "валерий меладзе|небеса": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:31Z",
       "trackId": "dz-100977896"
     },
     "валерий меладзе|океан и три реки": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:32Z",
       "trackId": "dz-80319542"
     },
     "леонид агутин|босоногий мальчик": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:32Z",
       "trackId": "dz-65252918"
     },
     "леонид агутин|на сиреневой луне": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:33Z",
       "trackId": "dz-65252939"
     },
     "анжелика варум|городок": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:33Z",
       "trackId": "dz-69898208"
     },
     "анжелика варум|зимняя вишня": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:33Z",
       "trackId": "dz-3034763071"
     },
     "анжелика варум|la la fa": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:33Z",
       "trackId": "dz-66282527"
     },
     "слава|одиночество сука": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:34Z",
       "trackId": "dz-122158186"
     },
     "слава|расскажи мне мама": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:34Z",
       "trackId": "dz-122158166"
     },
-    "lolita|на титанике": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
-      "trackId": "dz-2195812757"
-    },
-    "lolita|ориентация север": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
-      "trackId": "dz-2195808097"
-    },
     "алсу|зимний сон": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:35Z",
       "trackId": "dz-66434349"
     },
     "алсу|иногда": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:35Z",
       "trackId": "dz-66434355"
     },
     "елка|на большом воздушном шаре": {
-      "verifiedAt": "2026-10-23T11:54:22Z",
+      "verifiedAt": "2026-10-24T12:34:36Z",
       "trackId": "dz-770837002"
+    },
+    "chepikk|не люби меня": {
+      "verifiedAt": "2026-10-24T12:41:00Z",
+      "trackId": "dz-3183089921"
+    },
+    "chepikk,холла|не люби меня": {
+      "verifiedAt": "2026-10-24T12:41:00Z",
+      "trackId": "dz-3183089921"
+    },
+    "emin|проститься": {
+      "verifiedAt": "2026-10-24T12:33:47Z",
+      "trackId": "dz-3585223041"
+    },
+    "emin,ани лорак|проститься": {
+      "verifiedAt": "2026-10-24T12:33:47Z",
+      "trackId": "dz-3585223041"
+    },
+    "loboda|superstar": {
+      "verifiedAt": "2026-10-24T12:33:45Z",
+      "trackId": "dz-1975386547"
+    },
+    "loboda|moloko": {
+      "verifiedAt": "2026-10-24T12:40:58Z",
+      "trackId": "dz-1975628007"
+    },
+    "loboda|родной": {
+      "verifiedAt": "2026-10-24T12:33:45Z",
+      "trackId": "dz-1974179877"
+    },
+    "александра чистякова|я не старею я дорожаю": {
+      "verifiedAt": "2026-10-24T12:40:59Z",
+      "trackId": "dz-4200733762"
+    },
+    "анна семенович|вселенная": {
+      "verifiedAt": "2026-10-24T12:33:48Z",
+      "trackId": "dz-4289047662"
+    },
+    "анна семенович,татьяна буланова|вселенная": {
+      "verifiedAt": "2026-10-24T12:33:48Z",
+      "trackId": "dz-4289047662"
+    },
+    "владимир пресняков|белый снег": {
+      "verifiedAt": "2026-10-24T12:33:42Z",
+      "trackId": "dz-122173774"
+    },
+    "владимир пресняков|странная": {
+      "verifiedAt": "2026-10-24T12:33:42Z",
+      "trackId": "dz-1025470022"
+    },
+    "владимир пресняков|стюардесса по имени жанна": {
+      "verifiedAt": "2026-10-24T12:33:43Z",
+      "trackId": "dz-131492466"
+    },
+    "владимир пресняков|ты у меня одна": {
+      "verifiedAt": "2026-10-24T12:33:42Z",
+      "trackId": "dz-771976362"
+    },
+    "владимир пресняков|у тебя есть я": {
+      "verifiedAt": "2026-10-24T12:33:44Z",
+      "trackId": "dz-1630036962"
+    },
+    "владимир пресняков|между нами": {
+      "verifiedAt": "2026-10-24T12:33:43Z",
+      "trackId": "dz-3541755381"
+    },
+    "владимир пресняков,наталья подольская|между нами": {
+      "verifiedAt": "2026-10-24T12:33:43Z",
+      "trackId": "dz-3541755381"
+    },
+    "владимир пресняков|аэропорты": {
+      "verifiedAt": "2026-10-24T12:33:42Z",
+      "trackId": "dz-3681701562"
+    },
+    "марго нуар|возраст это просто пин код": {
+      "verifiedAt": "2026-10-24T12:40:59Z",
+      "trackId": "dz-4173006372"
+    },
+    "александра чистякова,лилия вайн,марго нуар|возраст это просто пин код": {
+      "verifiedAt": "2026-10-24T12:40:59Z",
+      "trackId": "dz-4173006372"
+    },
+    "лолита|на титанике": {
+      "verifiedAt": "2026-10-24T12:41:10Z",
+      "trackId": "dz-2195812757"
+    },
+    "лолита|ориентация север": {
+      "verifiedAt": "2026-10-24T12:41:10Z",
+      "trackId": "dz-2195808097"
+    },
+    "loboda|парень": {
+      "verifiedAt": "2026-10-24T12:33:50Z",
+      "trackId": "dz-1974137537"
+    },
+    "ани лорак|забирай рай": {
+      "verifiedAt": "2026-10-24T12:33:49Z",
+      "trackId": "dz-3037018741"
+    },
+    "ани лорак|удержи мое сердце": {
+      "verifiedAt": "2026-10-24T12:33:48Z",
+      "trackId": "dz-3037018631"
+    },
+    "татьяна буланова|мой ненаглядный": {
+      "verifiedAt": "2026-10-24T12:33:49Z",
+      "trackId": "dz-509132622"
+    },
+    "татьяна буланова|ясный мой свет": {
+      "verifiedAt": "2026-10-24T12:33:49Z",
+      "trackId": "dz-509530642"
+    },
+    "big baby tape|gimme the loot": {
+      "verifiedAt": "2026-10-24T12:33:57Z",
+      "trackId": "dz-585683922"
+    },
+    "лсп|безумие": {
+      "verifiedAt": "2026-10-24T12:33:54Z",
+      "trackId": "dz-609773952"
+    },
+    "breezey montana,лсп|безумие": {
+      "verifiedAt": "2026-10-24T12:33:54Z",
+      "trackId": "dz-609773952"
+    },
+    "burito|по волнам": {
+      "verifiedAt": "2026-10-24T12:33:59Z",
+      "trackId": "dz-140334365"
+    },
+    "dzharakhov|блокеры": {
+      "verifiedAt": "2026-10-24T12:41:03Z",
+      "trackId": "dz-3700844612"
+    },
+    "eldzhey|rozovoye vino": {
+      "verifiedAt": "2026-10-24T12:43:10Z",
+      "trackId": "dz-1031372352"
+    },
+    "eldzhey,feduk|rozovoye vino": {
+      "verifiedAt": "2026-10-24T12:43:10Z",
+      "trackId": "dz-1031372352"
+    },
+    "gone fludd|мамбл": {
+      "verifiedAt": "2026-10-24T12:33:57Z",
+      "trackId": "dz-1972437417"
+    },
+    "jah khalib|medina": {
+      "verifiedAt": "2026-10-24T12:41:03Z",
+      "trackId": "dz-469261822"
+    },
+    "jah khalib|leyla feat makvin": {
+      "verifiedAt": "2026-10-24T12:41:02Z",
+      "trackId": "dz-134043546"
+    },
+    "jah khalib,makvin|leyla feat makvin": {
+      "verifiedAt": "2026-10-24T12:41:02Z",
+      "trackId": "dz-134043546"
+    },
+    "lsp|telo": {
+      "verifiedAt": "2026-10-24T12:41:02Z",
+      "trackId": "dz-1460790412"
+    },
+    "matrang|медуза": {
+      "verifiedAt": "2026-10-24T12:33:59Z",
+      "trackId": "dz-455410872"
+    },
+    "pharaoh|5 минут назад": {
+      "verifiedAt": "2026-10-24T12:41:00Z",
+      "trackId": "dz-127709375"
+    },
+    "t fest|не забывай": {
+      "verifiedAt": "2026-10-24T12:33:52Z",
+      "trackId": "dz-145061632"
+    },
+    "t fest|улети": {
+      "verifiedAt": "2026-10-24T12:33:52Z",
+      "trackId": "dz-385026441"
+    },
+    "t fest|ламбада": {
+      "verifiedAt": "2026-10-24T12:33:52Z",
+      "trackId": "dz-143572242"
+    },
+    "грибы|велик": {
+      "verifiedAt": "2026-10-24T12:33:59Z",
+      "trackId": "dz-136103362"
+    },
+    "sимптом,грибы|велик": {
+      "verifiedAt": "2026-10-24T12:33:59Z",
+      "trackId": "dz-136103362"
+    },
+    "грибы|интро": {
+      "verifiedAt": "2026-10-24T12:33:54Z",
+      "trackId": "dz-136103374"
+    },
+    "sимптом,грибы|интро": {
+      "verifiedAt": "2026-10-24T12:33:54Z",
+      "trackId": "dz-136103374"
+    },
+    "грибы|копы": {
+      "verifiedAt": "2026-10-24T12:33:55Z",
+      "trackId": "dz-132281706"
+    },
+    "sимптом,грибы|копы": {
+      "verifiedAt": "2026-10-24T12:33:55Z",
+      "trackId": "dz-132281706"
+    },
+    "макс корж|оптимист": {
+      "verifiedAt": "2026-10-24T12:33:56Z",
+      "trackId": "dz-630340922"
+    },
+    "ploty,пика|патимэйкер": {
+      "verifiedAt": "2026-10-24T12:41:01Z",
+      "trackId": "dz-123191414"
+    },
+    "пошлая молли|любимая песня твоей сестры": {
+      "verifiedAt": "2026-10-24T12:33:58Z",
+      "trackId": "dz-3949282011"
+    },
+    "пошлая молли|нон стоп": {
+      "verifiedAt": "2026-10-24T12:33:58Z",
+      "trackId": "dz-3949282031"
+    },
+    "booker,вири альди,лсп,сд|монетка": {
+      "verifiedAt": "2026-10-24T12:33:52Z",
+      "trackId": "dz-3568829331"
+    },
+    "хлеб|плачу на техно": {
+      "verifiedAt": "2026-10-24T12:33:54Z",
+      "trackId": "dz-1477197162"
+    },
+    "элджей|минимал": {
+      "verifiedAt": "2026-10-24T12:33:51Z",
+      "trackId": "dz-3032502771"
+    },
+    "21 savage|bank account": {
+      "verifiedAt": "2026-10-24T12:34:08Z",
+      "trackId": "dz-380536131"
+    },
+    "21 savage|a lot": {
+      "verifiedAt": "2026-10-24T12:34:07Z",
+      "trackId": "dz-607697962"
+    },
+    "a ap rocky|f kin problems feat drake 2 chainz kendrick lamar": {
+      "verifiedAt": "2026-10-24T12:41:05Z",
+      "trackId": "dz-623422582"
+    },
+    "2 chainz,a ap rocky,drake,kendrick lamar|f kin problems feat drake 2 chainz kendrick lamar": {
+      "verifiedAt": "2026-10-24T12:41:05Z",
+      "trackId": "dz-623422582"
+    },
+    "a ap rocky|praise the lord da shine feat skepta": {
+      "verifiedAt": "2026-10-24T12:41:04Z",
+      "trackId": "dz-503169162"
+    },
+    "a ap rocky,skepta|praise the lord da shine feat skepta": {
+      "verifiedAt": "2026-10-24T12:41:04Z",
+      "trackId": "dz-503169162"
+    },
+    "desiigner|panda": {
+      "verifiedAt": "2026-10-24T12:34:13Z",
+      "trackId": "dz-120026876"
+    },
+    "drake|hotline bling": {
+      "verifiedAt": "2026-10-24T12:34:12Z",
+      "trackId": "dz-124603286"
+    },
+    "future|mask off": {
+      "verifiedAt": "2026-10-24T12:34:07Z",
+      "trackId": "dz-142337683"
+    },
+    "future|life is good feat drake": {
+      "verifiedAt": "2026-10-24T12:41:05Z",
+      "trackId": "dz-847699482"
+    },
+    "drake,future|life is good feat drake": {
+      "verifiedAt": "2026-10-24T12:41:05Z",
+      "trackId": "dz-847699482"
+    },
+    "kanye west|bound 2": {
+      "verifiedAt": "2026-10-24T12:34:04Z",
+      "trackId": "dz-68350113"
+    },
+    "kanye west|heartless": {
+      "verifiedAt": "2026-10-24T12:34:03Z",
+      "trackId": "dz-130412300"
+    },
+    "kanye west|power": {
+      "verifiedAt": "2026-10-24T12:34:04Z",
+      "trackId": "dz-7667059"
+    },
+    "kanye west|stronger": {
+      "verifiedAt": "2026-10-24T12:34:03Z",
+      "trackId": "dz-1178682"
+    },
+    "kanye west|flashing lights": {
+      "verifiedAt": "2026-10-24T12:34:04Z",
+      "trackId": "dz-630827302"
+    },
+    "dwele,kanye west|flashing lights": {
+      "verifiedAt": "2026-10-24T12:34:04Z",
+      "trackId": "dz-630827302"
+    },
+    "kanye west|gold digger": {
+      "verifiedAt": "2026-10-24T12:34:04Z",
+      "trackId": "dz-1184309"
+    },
+    "jamie foxx,kanye west|gold digger": {
+      "verifiedAt": "2026-10-24T12:34:04Z",
+      "trackId": "dz-1184309"
+    },
+    "kendrick lamar|dna": {
+      "verifiedAt": "2026-10-24T12:34:10Z",
+      "trackId": "dz-350171251"
+    },
+    "kendrick lamar|humble": {
+      "verifiedAt": "2026-10-24T12:34:11Z",
+      "trackId": "dz-350171311"
+    },
+    "kendrick lamar|money trees": {
+      "verifiedAt": "2026-10-24T12:34:11Z",
+      "trackId": "dz-67929157"
+    },
+    "jay rock,kendrick lamar|money trees": {
+      "verifiedAt": "2026-10-24T12:34:11Z",
+      "trackId": "dz-67929157"
+    },
+    "lil nas x|montero call me by your name": {
+      "verifiedAt": "2026-10-24T12:34:05Z",
+      "trackId": "dz-1283264142"
+    },
+    "lil nas x|old town road": {
+      "verifiedAt": "2026-10-24T12:34:05Z",
+      "trackId": "dz-699056262"
+    },
+    "lil nas x|industry baby": {
+      "verifiedAt": "2026-10-24T12:34:05Z",
+      "trackId": "dz-1439691952"
+    },
+    "jack harlow,lil nas x|industry baby": {
+      "verifiedAt": "2026-10-24T12:34:05Z",
+      "trackId": "dz-1439691952"
+    },
+    "metro boomin|am i dreaming": {
+      "verifiedAt": "2026-10-24T12:34:00Z",
+      "trackId": "dz-2309928755"
+    },
+    "a ap rocky,metro boomin,roisee|am i dreaming": {
+      "verifiedAt": "2026-10-24T12:34:00Z",
+      "trackId": "dz-2309928755"
+    },
+    "metro boomin|superhero heroes villains": {
+      "verifiedAt": "2026-10-24T12:34:00Z",
+      "trackId": "dz-2047662397"
+    },
+    "chris brown,future,metro boomin|superhero heroes villains": {
+      "verifiedAt": "2026-10-24T12:34:00Z",
+      "trackId": "dz-2047662397"
+    },
+    "metro boomin|too many nights": {
+      "verifiedAt": "2026-10-24T12:34:00Z",
+      "trackId": "dz-2047662407"
+    },
+    "don toliver,future,metro boomin|too many nights": {
+      "verifiedAt": "2026-10-24T12:34:00Z",
+      "trackId": "dz-2047662407"
+    },
+    "metro boomin|creepin": {
+      "verifiedAt": "2026-10-24T12:34:00Z",
+      "trackId": "dz-2047662477"
+    },
+    "21 savage,metro boomin,the weeknd|creepin": {
+      "verifiedAt": "2026-10-24T12:34:00Z",
+      "trackId": "dz-2047662477"
+    },
+    "migos|walk it talk it": {
+      "verifiedAt": "2026-10-24T12:34:09Z",
+      "trackId": "dz-453844292"
+    },
+    "drake,migos|walk it talk it": {
+      "verifiedAt": "2026-10-24T12:34:09Z",
+      "trackId": "dz-453844292"
+    },
+    "migos|bad and boujee": {
+      "verifiedAt": "2026-10-24T12:34:09Z",
+      "trackId": "dz-1693337757"
+    },
+    "lil uzi vert,migos|bad and boujee": {
+      "verifiedAt": "2026-10-24T12:34:09Z",
+      "trackId": "dz-1693337757"
+    },
+    "nle choppa|camelot": {
+      "verifiedAt": "2026-10-24T12:34:06Z",
+      "trackId": "dz-745210272"
+    },
+    "nle choppa|shotta flow": {
+      "verifiedAt": "2026-10-24T12:34:06Z",
+      "trackId": "dz-2628285692"
+    },
+    "nle choppa|walk em down feat roddy ricch": {
+      "verifiedAt": "2026-10-24T12:41:04Z",
+      "trackId": "dz-904180872"
+    },
+    "nle choppa,roddy ricch|walk em down feat roddy ricch": {
+      "verifiedAt": "2026-10-24T12:41:04Z",
+      "trackId": "dz-904180872"
+    },
+    "pop smoke|dior": {
+      "verifiedAt": "2026-10-24T12:34:12Z",
+      "trackId": "dz-3529770711"
+    },
+    "pop smoke|for the night": {
+      "verifiedAt": "2026-10-24T12:34:12Z",
+      "trackId": "dz-3529770231"
+    },
+    "dababy,lil baby,pop smoke|for the night": {
+      "verifiedAt": "2026-10-24T12:34:12Z",
+      "trackId": "dz-3529770231"
+    },
+    "21 savage,post malone|rockstar": {
+      "verifiedAt": "2026-10-24T12:34:12Z",
+      "trackId": "dz-491446942"
+    },
+    "post malone|congratulations": {
+      "verifiedAt": "2026-10-24T12:34:13Z",
+      "trackId": "dz-137726987"
+    },
+    "post malone,quavo|congratulations": {
+      "verifiedAt": "2026-10-24T12:34:13Z",
+      "trackId": "dz-137726987"
+    },
+    "travis scott|antidote": {
+      "verifiedAt": "2026-10-24T12:34:02Z",
+      "trackId": "dz-106713886"
+    },
+    "travis scott|butterfly effect": {
+      "verifiedAt": "2026-10-24T12:34:03Z",
+      "trackId": "dz-536421122"
+    },
+    "travis scott|highest in the room": {
+      "verifiedAt": "2026-10-24T12:34:02Z",
+      "trackId": "dz-767583072"
+    },
+    "travis scott|sicko mode": {
+      "verifiedAt": "2026-10-24T12:34:01Z",
+      "trackId": "dz-536421002"
+    },
+    "travis scott|fe n feat playboi carti": {
+      "verifiedAt": "2026-10-24T12:41:04Z",
+      "trackId": "dz-2386586085"
+    },
+    "playboi carti,travis scott|fe n feat playboi carti": {
+      "verifiedAt": "2026-10-24T12:41:04Z",
+      "trackId": "dz-2386586085"
+    },
+    "24kgoldn|mood feat iann dior": {
+      "verifiedAt": "2026-10-24T12:41:09Z",
+      "trackId": "dz-1283264632"
+    },
+    "24kgoldn,iann dior|mood feat iann dior": {
+      "verifiedAt": "2026-10-24T12:41:09Z",
+      "trackId": "dz-1283264632"
+    },
+    "iann dior|emotions": {
+      "verifiedAt": "2026-10-24T12:34:23Z",
+      "trackId": "dz-2493713371"
+    },
+    "iann dior|gone girl feat trippie redd": {
+      "verifiedAt": "2026-10-24T12:41:09Z",
+      "trackId": "dz-2493716331"
+    },
+    "iann dior,trippie redd|gone girl feat trippie redd": {
+      "verifiedAt": "2026-10-24T12:41:09Z",
+      "trackId": "dz-2493716331"
+    },
+    "juice wrld|all girls are the same": {
+      "verifiedAt": "2026-10-24T12:34:17Z",
+      "trackId": "dz-601837412"
+    },
+    "juice wrld|lucid dreams": {
+      "verifiedAt": "2026-10-24T12:34:17Z",
+      "trackId": "dz-601837422"
+    },
+    "juice wrld|robbery": {
+      "verifiedAt": "2026-10-24T12:34:17Z",
+      "trackId": "dz-1634179012"
+    },
+    "juice wrld|wishing well": {
+      "verifiedAt": "2026-10-24T12:34:18Z",
+      "trackId": "dz-1016968532"
+    },
+    "juice wrld|come go": {
+      "verifiedAt": "2026-10-24T12:34:18Z",
+      "trackId": "dz-1016968502"
+    },
+    "juice wrld,marshmello|come go": {
+      "verifiedAt": "2026-10-24T12:34:18Z",
+      "trackId": "dz-1016968502"
+    },
+    "lil peep|awful things": {
+      "verifiedAt": "2026-10-24T12:34:19Z",
+      "trackId": "dz-2478514151"
+    },
+    "lil peep|benz truck гелик": {
+      "verifiedAt": "2026-10-24T12:34:20Z",
+      "trackId": "dz-2478510591"
+    },
+    "lil peep|save that shit": {
+      "verifiedAt": "2026-10-24T12:34:19Z",
+      "trackId": "dz-2478514141"
+    },
+    "lil peep|star shopping": {
+      "verifiedAt": "2026-10-24T12:34:19Z",
+      "trackId": "dz-2478544551"
+    },
+    "lil pump|d rose": {
+      "verifiedAt": "2026-10-24T12:34:22Z",
+      "trackId": "dz-413807792"
+    },
+    "lil pump|gucci gang": {
+      "verifiedAt": "2026-10-24T12:34:21Z",
+      "trackId": "dz-399023232"
+    },
+    "lil skies|nowadays feat landon cube": {
+      "verifiedAt": "2026-10-24T12:41:07Z",
+      "trackId": "dz-442693212"
+    },
+    "landon cube,lil skies|nowadays feat landon cube": {
+      "verifiedAt": "2026-10-24T12:41:07Z",
+      "trackId": "dz-442693212"
+    },
+    "lil skies|red roses feat landon cube": {
+      "verifiedAt": "2026-10-24T12:41:07Z",
+      "trackId": "dz-414870102"
+    },
+    "landon cube,lil skies|red roses feat landon cube": {
+      "verifiedAt": "2026-10-24T12:41:07Z",
+      "trackId": "dz-414870102"
+    },
+    "lil uzi vert|20 min": {
+      "verifiedAt": "2026-10-24T12:34:16Z",
+      "trackId": "dz-428537532"
+    },
+    "lil uzi vert|just wanna rock": {
+      "verifiedAt": "2026-10-24T12:34:16Z",
+      "trackId": "dz-1965920237"
+    },
+    "lil uzi vert|money longer": {
+      "verifiedAt": "2026-10-24T12:34:16Z",
+      "trackId": "dz-125536814"
+    },
+    "lil uzi vert|xo tour llif3": {
+      "verifiedAt": "2026-10-24T12:34:15Z",
+      "trackId": "dz-144949268"
+    },
+    "lil uzi vert|the way life goes feat oh wonder": {
+      "verifiedAt": "2026-10-24T12:41:06Z",
+      "trackId": "dz-397571872"
+    },
+    "lil uzi vert,oh wonder|the way life goes feat oh wonder": {
+      "verifiedAt": "2026-10-24T12:41:06Z",
+      "trackId": "dz-397571872"
+    },
+    "lil yachty|one night": {
+      "verifiedAt": "2026-10-24T12:34:22Z",
+      "trackId": "dz-127880605"
+    },
+    "the kid laroi|without you": {
+      "verifiedAt": "2026-10-24T12:34:24Z",
+      "trackId": "dz-1445417732"
+    },
+    "the kid laroi|stay": {
+      "verifiedAt": "2026-10-24T12:34:24Z",
+      "trackId": "dz-1425844092"
+    },
+    "justin bieber,the kid laroi|stay": {
+      "verifiedAt": "2026-10-24T12:34:24Z",
+      "trackId": "dz-1425844092"
+    },
+    "trippie redd|love scars": {
+      "verifiedAt": "2026-10-24T12:34:20Z",
+      "trackId": "dz-2495298691"
+    },
+    "trippie redd|taking a walk": {
+      "verifiedAt": "2026-10-24T12:34:20Z",
+      "trackId": "dz-2495308671"
+    },
+    "trippie redd|dark knight dummo feat travis scott": {
+      "verifiedAt": "2026-10-24T12:41:06Z",
+      "trackId": "dz-2495349031"
+    },
+    "travis scott,trippie redd|dark knight dummo feat travis scott": {
+      "verifiedAt": "2026-10-24T12:41:06Z",
+      "trackId": "dz-2495349031"
+    },
+    "xxxtentacion|hope": {
+      "verifiedAt": "2026-10-24T12:34:15Z",
+      "trackId": "dz-472992722"
+    },
+    "xxxtentacion|jocelyn flores": {
+      "verifiedAt": "2026-10-24T12:34:14Z",
+      "trackId": "dz-398055682"
+    },
+    "xxxtentacion|look at me": {
+      "verifiedAt": "2026-10-24T12:34:15Z",
+      "trackId": "dz-142594564"
+    },
+    "xxxtentacion|moonlight": {
+      "verifiedAt": "2026-10-24T12:34:14Z",
+      "trackId": "dz-472992592"
+    },
+    "xxxtentacion|sad": {
+      "verifiedAt": "2026-10-24T12:34:13Z",
+      "trackId": "dz-472992602"
+    },
+    "xxxtentacion|changes": {
+      "verifiedAt": "2026-10-24T12:34:14Z",
+      "trackId": "dz-472992712"
+    },
+    "ynw melly|murder on my mind": {
+      "verifiedAt": "2026-10-24T12:34:22Z",
+      "trackId": "dz-505197202"
     }
   },
   "recordings": {
@@ -7463,7 +8098,9 @@
       "isrcs": []
     },
     "dz-533609232": {
-      "isrcs": []
+      "isrcs": [
+        "USCM51800004"
+      ]
     },
     "dz-2015880757": {
       "isrcs": []
@@ -7526,7 +8163,9 @@
       "isrcs": []
     },
     "dz-132201196": {
-      "isrcs": []
+      "isrcs": [
+        "USSM11607555"
+      ]
     },
     "dz-111851362": {
       "isrcs": []
@@ -7541,7 +8180,9 @@
       "isrcs": []
     },
     "dz-127709375": {
-      "isrcs": []
+      "isrcs": [
+        "FR59R1610940"
+      ]
     },
     "dz-488186592": {
       "isrcs": [
@@ -7599,7 +8240,9 @@
       ]
     },
     "dz-367431961": {
-      "isrcs": []
+      "isrcs": [
+        "FR59R1732411"
+      ]
     },
     "dz-1178474052": {
       "isrcs": [
@@ -7610,7 +8253,9 @@
       "isrcs": []
     },
     "dz-1975775997": {
-      "isrcs": []
+      "isrcs": [
+        "RUA011800120"
+      ]
     },
     "dz-3056721471": {
       "isrcs": [
@@ -7690,7 +8335,9 @@
       ]
     },
     "dz-3892414581": {
-      "isrcs": []
+      "isrcs": [
+        "FR59R1610916"
+      ]
     },
     "dz-2211742907": {
       "isrcs": [
@@ -11412,6 +12059,11 @@
         "FR96X1640352"
       ]
     },
+    "dz-3570619491": {
+      "isrcs": [
+        "FR2X41893433"
+      ]
+    },
     "dz-1974135447": {
       "isrcs": [
         "FR10S1612642"
@@ -11422,59 +12074,74 @@
         "RUA011700029"
       ]
     },
-    "dz-2125988397": {
-      "isrcs": [
-        "RUB731428336"
-      ]
-    },
-    "dz-2125987987": {
-      "isrcs": [
-        "RUB731428332"
-      ]
-    },
-    "dz-3052993521": {
-      "isrcs": [
-        "RUB731549903"
-      ]
-    },
-    "dz-375105171": {
-      "isrcs": [
-        "QM6MZ1715009"
-      ]
-    },
-    "dz-3572511131": {
-      "isrcs": [
-        "RUB731434864"
-      ]
-    },
-    "dz-3570619491": {
-      "isrcs": [
-        "FR2X41893433"
-      ]
-    },
-    "dz-3566302651": {
-      "isrcs": [
-        "FR2X41987732"
-      ]
-    },
-    "dz-3570708511": {
-      "isrcs": [
-        "RUB731434866"
-      ]
-    },
-    "dz-122173778": {
-      "isrcs": [
-        "RUB421201523"
-      ]
-    },
-    "dz-133232168": {
-      "isrcs": [
-        "RUB421601168"
-      ]
-    },
     "dz-65252608": {
       "isrcs": [
         "FR6V81536174"
+      ]
+    },
+    "dz-3183089921": {
+      "isrcs": [
+        "RUAH62428483"
+      ]
+    },
+    "dz-3585223041": {
+      "isrcs": [
+        "RUB731520030"
+      ]
+    },
+    "dz-1975386547": {
+      "isrcs": [
+        "RUA011800153"
+      ]
+    },
+    "dz-1975628007": {
+      "isrcs": [
+        "RUA012000883"
+      ]
+    },
+    "dz-1974179877": {
+      "isrcs": [
+        "RUA012100168"
+      ]
+    },
+    "dz-4200733762": {
+      "isrcs": [
+        "RUA1H2663778"
+      ]
+    },
+    "dz-4289047662": {
+      "isrcs": [
+        "QT9662618384"
+      ]
+    },
+    "dz-122173774": {
+      "isrcs": [
+        "RUB421201522"
+      ]
+    },
+    "dz-1025470022": {
+      "isrcs": [
+        "RUB422001503"
+      ]
+    },
+    "dz-131492466": {
+      "isrcs": [
+        "RUB421601122"
+      ]
+    },
+    "dz-771976362": {
+      "isrcs": [
+        "RUA591801780"
+      ]
+    },
+    "dz-1630036962": {
+      "isrcs": [
+        "RUB422104398"
+      ]
+    },
+    "dz-3541755381": {
+      "isrcs": [
+        "RUB422503420"
       ]
     },
     "dz-3681701562": {
@@ -11482,34 +12149,29 @@
         "QMPU51502661"
       ]
     },
-    "dz-122177372": {
+    "dz-4173006372": {
       "isrcs": [
-        "RUB421200869"
+        "RUA1H2688820"
       ]
     },
-    "dz-129940444": {
+    "dz-699809142": {
       "isrcs": [
-        "RUB421201989"
+        "RUB421901094"
       ]
     },
-    "dz-413109752": {
+    "dz-3566302651": {
       "isrcs": [
-        "RUB421202048"
+        "FR2X41987732"
       ]
     },
-    "dz-504482482": {
+    "dz-3570708501": {
       "isrcs": [
-        "RUB421800658"
+        "RUB731434864"
       ]
     },
-    "dz-592088522": {
+    "dz-3570708511": {
       "isrcs": [
-        "RUB421801513"
-      ]
-    },
-    "dz-102337408": {
-      "isrcs": [
-        "FRX451593946"
+        "RUB731434866"
       ]
     },
     "dz-102212030": {
@@ -11517,9 +12179,69 @@
         "FRX451585476"
       ]
     },
-    "dz-80319376": {
+    "dz-102337408": {
       "isrcs": [
-        "RUB421200429"
+        "FRX451593946"
+      ]
+    },
+    "dz-592088522": {
+      "isrcs": [
+        "RUB421801513"
+      ]
+    },
+    "dz-770837002": {
+      "isrcs": [
+        "RUB421401571"
+      ]
+    },
+    "dz-770837052": {
+      "isrcs": [
+        "RUB421401569"
+      ]
+    },
+    "dz-66434349": {
+      "isrcs": [
+        "UAMU11300001"
+      ]
+    },
+    "dz-66434355": {
+      "isrcs": [
+        "UAMU11300007"
+      ]
+    },
+    "dz-66282527": {
+      "isrcs": [
+        "RUB731300063"
+      ]
+    },
+    "dz-69898208": {
+      "isrcs": [
+        "RUB731300065"
+      ]
+    },
+    "dz-3034763071": {
+      "isrcs": [
+        "QMDA61344300"
+      ]
+    },
+    "dz-375105171": {
+      "isrcs": [
+        "QM6MZ1715009"
+      ]
+    },
+    "dz-3052993521": {
+      "isrcs": [
+        "RUB731549903"
+      ]
+    },
+    "dz-2125987987": {
+      "isrcs": [
+        "RUB731428332"
+      ]
+    },
+    "dz-2125988397": {
+      "isrcs": [
+        "RUB731428336"
       ]
     },
     "dz-80319422": {
@@ -11537,6 +12259,36 @@
         "RUB421400733"
       ]
     },
+    "dz-80319376": {
+      "isrcs": [
+        "RUB421200429"
+      ]
+    },
+    "dz-122173778": {
+      "isrcs": [
+        "RUB421201523"
+      ]
+    },
+    "dz-133232168": {
+      "isrcs": [
+        "RUB421601168"
+      ]
+    },
+    "dz-129940444": {
+      "isrcs": [
+        "RUB421201989"
+      ]
+    },
+    "dz-122177372": {
+      "isrcs": [
+        "RUB421200869"
+      ]
+    },
+    "dz-504482482": {
+      "isrcs": [
+        "RUB421800658"
+      ]
+    },
     "dz-65252918": {
       "isrcs": [
         "FR6V81554817"
@@ -11545,31 +12297,6 @@
     "dz-65252939": {
       "isrcs": [
         "FR6V81559166"
-      ]
-    },
-    "dz-69898208": {
-      "isrcs": [
-        "RUB731300065"
-      ]
-    },
-    "dz-3034763071": {
-      "isrcs": [
-        "QMDA61344300"
-      ]
-    },
-    "dz-66282527": {
-      "isrcs": [
-        "RUB731300063"
-      ]
-    },
-    "dz-122158186": {
-      "isrcs": [
-        "RUB421304964"
-      ]
-    },
-    "dz-122158166": {
-      "isrcs": [
-        "RUB421303382"
       ]
     },
     "dz-2195812757": {
@@ -11582,28 +12309,496 @@
         "RUUM71900760"
       ]
     },
-    "dz-66434349": {
+    "dz-122158186": {
       "isrcs": [
-        "UAMU11300001"
+        "RUB421304964"
       ]
     },
-    "dz-66434355": {
+    "dz-122158166": {
       "isrcs": [
-        "UAMU11300007"
+        "RUB421303382"
       ]
     },
-    "dz-770837002": {
+    "dz-1974137537": {
       "isrcs": [
-        "RUB421401571"
+        "RUA011700113"
       ]
     },
-    "dz-770837052": {
+    "dz-3037018741": {
       "isrcs": [
-        "RUB421401569"
+        "FR6V81985299"
+      ]
+    },
+    "dz-3037018631": {
+      "isrcs": [
+        "RUB731511713"
+      ]
+    },
+    "dz-509132622": {
+      "isrcs": [
+        "US6R21206004"
+      ]
+    },
+    "dz-509530642": {
+      "isrcs": [
+        "US6R21205982"
+      ]
+    },
+    "dz-585683922": {
+      "isrcs": [
+        "RUA591801644"
+      ]
+    },
+    "dz-609773952": {
+      "isrcs": [
+        "SMRUS0057702"
+      ]
+    },
+    "dz-140334365": {
+      "isrcs": [
+        "RUB421700050"
+      ]
+    },
+    "dz-3700844612": {
+      "isrcs": [
+        "FR2X41781374"
+      ]
+    },
+    "dz-1972437417": {
+      "isrcs": [
+        "RUA011700155"
+      ]
+    },
+    "dz-469261822": {
+      "isrcs": [
+        "RUA591800269"
+      ]
+    },
+    "dz-134043546": {
+      "isrcs": [
+        "RUA591600547"
+      ]
+    },
+    "dz-1460790412": {
+      "isrcs": [
+        "RUA1D1706325"
+      ]
+    },
+    "dz-455410872": {
+      "isrcs": [
+        "FR10S1824588"
+      ]
+    },
+    "dz-145061632": {
+      "isrcs": [
+        "FR2X41736461"
+      ]
+    },
+    "dz-385026441": {
+      "isrcs": [
+        "FR96X1706691"
+      ]
+    },
+    "dz-136103362": {
+      "isrcs": [
+        "FR96X1692277"
+      ]
+    },
+    "dz-136103374": {
+      "isrcs": [
+        "FR96X1692283"
+      ]
+    },
+    "dz-132281706": {
+      "isrcs": [
+        "FR59R1695617"
+      ]
+    },
+    "dz-630340922": {
+      "isrcs": [
+        "TCADH1794492"
+      ]
+    },
+    "dz-3949282011": {
+      "isrcs": [
+        "FR59R2697891"
+      ]
+    },
+    "dz-3949282031": {
+      "isrcs": [
+        "FR59R2697893"
+      ]
+    },
+    "dz-1477197162": {
+      "isrcs": [
+        "RUA1D1714845"
+      ]
+    },
+    "dz-3032502771": {
+      "isrcs": [
+        "FRX201793171"
+      ]
+    },
+    "dz-380536131": {
+      "isrcs": [
+        "USSM11705546"
+      ]
+    },
+    "dz-607697962": {
+      "isrcs": [
+        "QZ45A1700126"
+      ]
+    },
+    "dz-623422582": {
+      "isrcs": [
+        "USRC11201220"
+      ]
+    },
+    "dz-503169162": {
+      "isrcs": [
+        "USRC11800930"
+      ]
+    },
+    "dz-120026876": {
+      "isrcs": [
+        "USUM71601094"
+      ]
+    },
+    "dz-124603286": {
+      "isrcs": [
+        "USCM51500238"
+      ]
+    },
+    "dz-142337683": {
+      "isrcs": [
+        "USSM11701444"
+      ]
+    },
+    "dz-847699482": {
+      "isrcs": [
+        "USSM11914962"
+      ]
+    },
+    "dz-68350113": {
+      "isrcs": [
+        "USUM71307523"
+      ]
+    },
+    "dz-130412300": {
+      "isrcs": [
+        "USUM70840511"
+      ]
+    },
+    "dz-7667059": {
+      "isrcs": [
+        "USUM71018220"
+      ]
+    },
+    "dz-1178682": {
+      "isrcs": [
+        "USUM70741299"
+      ]
+    },
+    "dz-630827302": {
+      "isrcs": [
+        "USUM70749095"
+      ]
+    },
+    "dz-1184309": {
+      "isrcs": [
+        "USUM70500143"
+      ]
+    },
+    "dz-350171251": {
+      "isrcs": [
+        "USUM71703079"
+      ]
+    },
+    "dz-350171311": {
+      "isrcs": [
+        "USUM71703085"
+      ]
+    },
+    "dz-67929157": {
+      "isrcs": [
+        "USUM71210785"
+      ]
+    },
+    "dz-1283264142": {
+      "isrcs": [
+        "USSM12100531"
+      ]
+    },
+    "dz-699056262": {
+      "isrcs": [
+        "USSM11901941"
+      ]
+    },
+    "dz-1439691952": {
+      "isrcs": [
+        "USSM12104539"
+      ]
+    },
+    "dz-2309928755": {
+      "isrcs": [
+        "USUM72308540"
+      ]
+    },
+    "dz-2047662397": {
+      "isrcs": [
+        "USUG12208783"
+      ]
+    },
+    "dz-2047662407": {
+      "isrcs": [
+        "USUG12208784"
+      ]
+    },
+    "dz-2047662477": {
+      "isrcs": [
+        "USUG12208791"
+      ]
+    },
+    "dz-453844292": {
+      "isrcs": [
+        "USUM71800983"
+      ]
+    },
+    "dz-1693337757": {
+      "isrcs": [
+        "QMCE31600796"
+      ]
+    },
+    "dz-745210272": {
+      "isrcs": [
+        "USWB11901876"
+      ]
+    },
+    "dz-2628285692": {
+      "isrcs": [
+        "QZ85M1903991"
+      ]
+    },
+    "dz-904180872": {
+      "isrcs": [
+        "USWB12000247"
+      ]
+    },
+    "dz-3529770711": {
+      "isrcs": [
+        "USUM71914275"
+      ]
+    },
+    "dz-3529770231": {
+      "isrcs": [
+        "USUM72013355"
+      ]
+    },
+    "dz-137726987": {
+      "isrcs": [
+        "USUM71614484"
+      ]
+    },
+    "dz-106713886": {
+      "isrcs": [
+        "USSM11505661"
+      ]
+    },
+    "dz-536421122": {
+      "isrcs": [
+        "USSM11704799"
+      ]
+    },
+    "dz-767583072": {
+      "isrcs": [
+        "USSM11904276"
+      ]
+    },
+    "dz-536421002": {
+      "isrcs": [
+        "USSM11806660"
+      ]
+    },
+    "dz-2386586085": {
+      "isrcs": [
+        "USSM12305010"
+      ]
+    },
+    "dz-1283264632": {
+      "isrcs": [
+        "USQX92003025"
+      ]
+    },
+    "dz-2493713371": {
+      "isrcs": [
+        "QMEU31903781"
+      ]
+    },
+    "dz-2493716331": {
+      "isrcs": [
+        "QMEU31911872"
+      ]
+    },
+    "dz-601837412": {
+      "isrcs": [
+        "USUG11800651"
+      ]
+    },
+    "dz-601837422": {
+      "isrcs": [
+        "USUG11800685"
+      ]
+    },
+    "dz-1634179012": {
+      "isrcs": [
+        "USUG11900302"
+      ]
+    },
+    "dz-1016968532": {
+      "isrcs": [
+        "USUG12001905"
+      ]
+    },
+    "dz-1016968502": {
+      "isrcs": [
+        "USUG12001904"
+      ]
+    },
+    "dz-2478514151": {
+      "isrcs": [
+        "UKELY1700053"
+      ]
+    },
+    "dz-2478510591": {
+      "isrcs": [
+        "UKELY1700026"
+      ]
+    },
+    "dz-2478514141": {
+      "isrcs": [
+        "UKELY1700052"
+      ]
+    },
+    "dz-2478544551": {
+      "isrcs": [
+        "UKELY1800203"
+      ]
+    },
+    "dz-413807792": {
+      "isrcs": [
+        "USWB11701030"
+      ]
+    },
+    "dz-399023232": {
+      "isrcs": [
+        "USWB11701486"
+      ]
+    },
+    "dz-442693212": {
+      "isrcs": [
+        "USAT21705314"
+      ]
+    },
+    "dz-414870102": {
+      "isrcs": [
+        "USAT21704162"
+      ]
+    },
+    "dz-428537532": {
+      "isrcs": [
+        "USAT21704166"
+      ]
+    },
+    "dz-1965920237": {
+      "isrcs": [
+        "USAT22219211"
+      ]
+    },
+    "dz-125536814": {
+      "isrcs": [
+        "USAT21600660"
+      ]
+    },
+    "dz-144949268": {
+      "isrcs": [
+        "USAT21700684"
+      ]
+    },
+    "dz-397571872": {
+      "isrcs": [
+        "USAT21703395"
+      ]
+    },
+    "dz-127880605": {
+      "isrcs": [
+        "QM8DG1600318"
+      ]
+    },
+    "dz-1445417732": {
+      "isrcs": [
+        "USSM12006586"
+      ]
+    },
+    "dz-1425844092": {
+      "isrcs": [
+        "USSM12103949"
+      ]
+    },
+    "dz-2495298691": {
+      "isrcs": [
+        "QMEU31704830"
+      ]
+    },
+    "dz-2495308671": {
+      "isrcs": [
+        "QMEU31814796"
+      ]
+    },
+    "dz-2495349031": {
+      "isrcs": [
+        "QMEU31724288"
+      ]
+    },
+    "dz-472992722": {
+      "isrcs": [
+        "USUG11800447"
+      ]
+    },
+    "dz-398055682": {
+      "isrcs": [
+        "USUYG1156892"
+      ]
+    },
+    "dz-142594564": {
+      "isrcs": [
+        "USUYG1131080"
+      ]
+    },
+    "dz-472992592": {
+      "isrcs": [
+        "USUG11800209"
+      ]
+    },
+    "dz-472992602": {
+      "isrcs": [
+        "USUG11800208"
+      ]
+    },
+    "dz-472992712": {
+      "isrcs": [
+        "USUG11800211"
+      ]
+    },
+    "dz-505197202": {
+      "isrcs": [
+        "QMCE31801827"
       ]
     }
   },
   "refreshedSources": [
-    "mom-pop-top"
+    "mom-pop-top",
+    "nostalgia-school-2017",
+    "soundcloud-hits",
+    "us-hiphop-hits"
   ]
 }

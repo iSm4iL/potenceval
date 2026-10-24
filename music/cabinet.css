@@ -207,3 +207,4 @@
 @media(max-width:760px){.scene-play{grid-column:2;margin:0}.tube{display:none}.bulbs{gap:7px}.bulbs i:nth-child(n+6){display:none}}
 @media(max-width:450px){.cabinet .pack-card{grid-template-columns:22px 28px minmax(0,1fr);padding:9px 6px 7px 5px;gap:5px}.strip-icon{width:28px;height:28px;font-size:15px;border-radius:7px}.strip-eq{display:none}.cabinet .pack-meta b{font-size:12px}.cabinet .pack-meta small{font-size:9px}.scene-play{grid-template-columns:34px minmax(0,1fr);padding:7px}.scene-play-icon{width:34px;height:34px;font-size:14px}.scene-play .ticket-code{display:none}.scene-play b{font-size:13px}.bulbs i:nth-child(n+4){display:none}}
 @media(prefers-reduced-motion:reduce){.bulbs i,.tube,.tube::after,.vinyl-spin,.strip-eq i,.scene-play,.cabinet #startBtn::after,.cabinet-crown h1,.record-arriving .scene-vinyl,.record-arriving .tonearm,.selected .strip-icon{animation:none!important}}
+.cabinet-glass{overflow:hidden}
