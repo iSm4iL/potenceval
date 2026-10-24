@@ -5,7 +5,8 @@ const colors = ['#d66b46', '#799e9e', '#c5a25b', '#b58aa7', '#6f9aaa', '#c08a7c'
 const packColors = { 'new-wave': '#ff6a3d', 'ru-rap': '#f2b632', nostalgia: '#39c2d0', kpop: '#b874ff', 'modern-pop': '#4b9bff', 'mom-pop': '#ff7eb3', 'dad-rock': '#8cc152', metal: '#e04848' };
 const colorOf = (card, index) => packColors[card.dataset.pack] || colors[index % colors.length];
 const bulbs = n => `<span class="bulbs" aria-hidden="true">${'<i></i>'.repeat(n)}</span>`;
-const speaker = () => '<div class="cabinet-speaker" aria-hidden="true"><span>♪</span></div>';
+// Динамик — только украшение: вместо круглой «кнопки» эквалайзер, который пляшет, пока играет музыка.
+const speaker = () => `<div class="cabinet-speaker" aria-hidden="true"><span class="speaker-eq">${'<i></i>'.repeat(28)}</span></div>`;
 const pageSize = 8;
 let collectionPage = 0, lastSelection = null, playOnEntry = false, arrivalStarted = -Infinity;
 
@@ -139,6 +140,32 @@ function decorate() {
   }
 }
 
+// Пластинки крутятся по инерции: разгоняются, плавно тормозят и не прыгают обратно в исходное положение.
+const stillMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const spinners = [
+  { selector: '.vinyl-spin', base: '', angle: 0, speed: el => el.closest('.turntable:hover:not(:disabled)') ? 170 : 40, kick: el => el.closest('.record-arriving') ? 520 : 0 },
+  { selector: '.cabinet-round .jb-record', base: 'translate(-50%, -50%) ', angle: 0, speed: el => el.closest('.is-playing') ? 170 : 0, kick: el => el.closest('.arriving') ? 380 : 0 },
+  { selector: '.result-player .vinyl', base: '', angle: -22, speed: el => el.closest('.is-playing') ? 120 : 0, kick: () => 0 },
+].map(s => ({ ...s, velocity: 0, el: null }));
+let spinClock = performance.now();
+function spinFrame(now) {
+  const dt = Math.min(0.1, (now - spinClock) / 1000);
+  spinClock = now;
+  for (const s of spinners) {
+    const el = document.querySelector(s.selector);
+    if (!el) { s.el = null; continue; }
+    if (el !== s.el) { s.el = el; if (!stillMotion.matches) s.velocity = Math.max(s.velocity, s.kick(el)); }
+    const target = stillMotion.matches ? 0 : s.speed(el);
+    // разгон быстрый, торможение мягкое — как у настоящего диска
+    s.velocity += (target - s.velocity) * Math.min(1, dt * (target > s.velocity ? 5 : 1.4));
+    if (target === 0 && s.velocity < 1) s.velocity = 0;
+    s.angle = (s.angle + s.velocity * dt) % 360;
+    el.style.transform = `${s.base}rotate(${s.angle.toFixed(2)}deg)`;
+  }
+  requestAnimationFrame(spinFrame);
+}
+requestAnimationFrame(spinFrame);
+
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=answers-20261023');
+await import('./app.js?v=bonus-1');
 decorate();

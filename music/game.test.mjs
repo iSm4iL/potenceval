@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LENGTHS, POINTS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
+import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
 import { normalizeDeezer, searchTracks, sameArtist, snapshotTrack, combineSuggestions } from './catalog.js';
 
 const song = (n, artist = 'a') => ({ id: `dz-${n}`, deezerId: n, title: `Song ${n}`, artist: `Artist ${artist}`, artistIds: [artist], artistNames: [`Artist ${artist}`], answerKey: `${artist}|song ${n}`, preview: 'https://cdnt-preview.dzcdn.net/example.mp3', kind: 'online', start: 0 });
@@ -328,4 +328,14 @@ test('openStep jumps straight to a longer snippet and scores like that step', ()
   assert.equal(openStep(s, 2), s);
   assert.equal(openStep(s, 6), s);
   assert.equal(guess(s, tracks[0]).score, POINTS[4]);
+});
+
+test('naming only the artist earns a consolation bonus that survives a reload', () => {
+  let s = surrender(guess(game(), tracks[1]));
+  assert.equal(s.attempts[0].status, 'artist');
+  assert.equal(s.results[0].won, false);
+  assert.equal(s.results[0].points, ARTIST_BONUS);
+  assert.equal(s.score, ARTIST_BONUS);
+  assert.equal(restoreGame(structuredClone(s))?.score, ARTIST_BONUS);
+  assert.equal(surrender(guess(game(), tracks[2])).score, 0);
 });

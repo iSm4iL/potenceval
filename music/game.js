@@ -1,6 +1,9 @@
 import { sameArtist, snapshotTrack } from './catalog.js';
 export const LENGTHS = Object.freeze([0.5, 1, 2, 5, 10, 15]);
 export const POINTS = Object.freeze([1000, 800, 600, 400, 200, 100]);
+// Песню не угадали, но исполнителя назвали — утешительные очки.
+export const ARTIST_BONUS = 100;
+const roundPoints = (won, step, attempts, answerMode) => won ? POINTS[step] : answerMode !== 'artist' && attempts.some(a => a.status === 'artist') ? ARTIST_BONUS : 0;
 const validTrack = t => t && typeof t.id === 'string' && t.id.length > 0 && Number.isSafeInteger(t.deezerId) && t.deezerId > 0 && typeof t.title === 'string' && t.title.length > 0 && typeof t.artist === 'string' && t.artist.length > 0 && Array.isArray(t.artistIds) && t.artistIds.every(id => typeof id === 'string') && Array.isArray(t.artistNames) && t.artistNames.every(name => typeof name === 'string') && typeof t.answerKey === 'string';
 const classify = (target, track) => target.id === track.id || (target.answerKey && target.answerKey === track.answerKey && sameArtist(target, track)) ? 'correct' : sameArtist(target, track) ? 'artist' : 'wrong';
 const validArtist = a => a?.kind === 'artist' && typeof a.artistId === 'string' && a.artistId.length > 0 && a.id === `artist-${a.artistId}` && typeof a.name === 'string' && a.name.trim().length > 0;
@@ -96,7 +99,7 @@ export function createGame(tracks, { rounds = 10, random = Math.random, maxPerAr
 }
 
 function finish(s, won) {
-  const points = won ? POINTS[s.step] : 0;
+  const points = roundPoints(won, s.step, s.attempts, s.answerMode);
   return { ...s, phase: 'reveal', score: s.score + points, results: [...s.results, { id: s.queue[s.index], points, step: s.step, won, attempts: s.attempts }] };
 }
 
@@ -176,7 +179,7 @@ export function restoreGame(s) {
   if (s.phase === 'round' && (s.index !== s.results.length || !s.queue.length)) return null;
   if (s.phase === 'reveal' && s.results.length !== s.index + 1) return null;
   if (s.phase === 'summary' && s.results.length !== s.queue.length) return null;
-  if (!s.results.every((r, i) => r && r.id === s.queue[i] && typeof r.won === 'boolean' && Number.isInteger(r.step) && r.step >= 0 && r.step <= 5 && r.points === (r.won ? POINTS[r.step] : 0) && validAttempts(r.attempts, tracks.get(r.id), r.step, r.won, s.answerMode))) return null;
+  if (!s.results.every((r, i) => r && r.id === s.queue[i] && typeof r.won === 'boolean' && Number.isInteger(r.step) && r.step >= 0 && r.step <= 5 && (r.points === roundPoints(r.won, r.step, r.attempts, s.answerMode) || (!r.won && r.points === 0)) && validAttempts(r.attempts, tracks.get(r.id), r.step, r.won, s.answerMode))) return null;
   const target = tracks.get(s.queue[s.index]);
   if (target && !validAttempts(s.attempts, target, s.step, s.phase !== 'round' && s.results.at(-1)?.won, s.answerMode)) return null;
   if (s.score !== s.results.reduce((sum, r) => sum + r.points, 0)) return null;

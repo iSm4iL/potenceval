@@ -1,9 +1,9 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
-import { LENGTHS, POINTS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=answers-20261023';
+import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=bonus-1';
 import { PACKS, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack } from './catalog.js?v=answers-20261023';
 import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=audio-20261023';
-import { resultPresentation } from './feedback.js';
+import { resultPresentation } from './feedback.js?v=bonus-1';
 import { createCatalogClient } from './collection.js';
 
 const stage = $('#stage'), player = new AudioPlayer(), service = createDeezerClient(), catalog = createCatalogClient();
@@ -135,11 +135,32 @@ function coachDone(n) {
   const help = $('#helpBtn'); if (help) help.hidden = coach.size > 0;
 }
 
+// Полоска проигрывания: заполняется и считает секунды, пока звучит отрывок.
+const progressHTML = seconds => `<div class="play-line" aria-hidden="true"><span class="pl-time" id="plTime">0,0</span><div class="pl-track"><span class="pl-fill" id="plFill"></span></div><span class="pl-total">${length(seconds)} с</span></div>`;
+let progressFrame = 0;
+function runProgress(seconds, version) {
+  cancelAnimationFrame(progressFrame);
+  const fill = $('#plFill'), time = $('#plTime'), started = performance.now();
+  if (!fill) return;
+  const tick = now => {
+    if (version !== screenVersion || !playing) return;
+    const elapsed = Math.min(seconds, (now - started) / 1000);
+    fill.style.width = `${elapsed / seconds * 100}%`; time.textContent = elapsed.toFixed(1).replace('.', ',');
+    if (elapsed < seconds) progressFrame = requestAnimationFrame(tick);
+  };
+  progressFrame = requestAnimationFrame(tick);
+}
+function resetProgress() {
+  cancelAnimationFrame(progressFrame);
+  const fill = $('#plFill'); if (!fill) return;
+  fill.style.width = '0'; $('#plTime').textContent = '0,0';
+}
+
 // Раунд — музыкальный автомат: купол с пластинкой, большая кнопка, клавиши длин.
 function jukeboxHTML() {
-  const s = state.step, fresh = keyStep.key === renderedRoundKey ? keyStep.step : s;
+  const s = state.step, newRound = keyStep.key !== renderedRoundKey, fresh = newRound ? s : keyStep.step;
   keyStep = { key: renderedRoundKey, step: s };
-  return `<div class="jukebox" id="listenCard">
+  return `<div class="jukebox${newRound ? ' arriving' : ''}" id="listenCard">
     <div class="jb-top"><span class="jb-sign">Полсекунды</span><div class="jb-tools"><button type="button" class="help-btn" id="helpBtn" ${coach.size ? 'hidden' : ''}>? Подсказки</button><label class="volume"><span>Звук</span><input id="volume" type="range" min="0" max="1" step="0.05" value="${settings.volume}" aria-label="Громкость"></label></div></div>
     <div class="jb-dome"><div class="jb-glass">
       <div class="jb-marquee">★ за ответ сейчас <b>${POINTS[s]}</b> очков ★</div>
@@ -147,6 +168,7 @@ function jukeboxHTML() {
       <button class="jb-play" id="playBtn" aria-label="Слушать отрывок" disabled><span class="record-symbol" aria-hidden="true">▶</span></button>
       <div class="jb-cap"><b>${length(LENGTHS[s])} с</b>музыки</div>
     </div></div>
+    ${progressHTML(LENGTHS[s])}
     <div class="jb-status play-status" id="playStatus" role="status">Готовим онлайн-превью…</div>
     ${coachHTML(1, 'Жми большую кнопку — сыграет кусочек песни. Повторять можно сколько угодно.')}
     <div class="jb-keys" id="jbKeys" role="group" aria-label="Длина отрывка">${LENGTHS.map((n, i) => `<button type="button" class="jb-key ${i === s ? 'current' : i < s ? 'opened' : 'locked'}${i > fresh && i <= s ? ' just' : ''}" data-step="${i}" ${i === s ? 'aria-current="step"' : ''}><i></i>${length(n)} с<small>${POINTS[i]}</small></button>`).join('')}</div>
@@ -174,7 +196,7 @@ function playerHTML(reveal = false) {
   if (!reveal) return jukeboxHTML();
   return `<div class="listen-card ${reveal ? 'result-player' : ''}" id="listenCard">
     <div class="listen-top"><span>${reveal ? 'Онлайн-превью · Deezer' : `За ответ сейчас: ${POINTS[state.step]} очков`}</span><label class="volume"><span>Звук</span><input id="volume" type="range" min="0" max="1" step="0.05" value="${settings.volume}" aria-label="Громкость"></label></div>
-    <div class="player-body"><button class="record-button" id="playBtn" aria-label="Слушать отрывок" disabled><span class="vinyl" aria-hidden="true"></span><span class="record-symbol" aria-hidden="true">▶</span></button><div class="player-copy"><div class="duration-line"><b>${reveal ? 15 : length(LENGTHS[state.step])}</b>с музыки</div><div class="play-status" id="playStatus" role="status">Готовим онлайн-превью…</div>${!reveal ? '<div class="meter" aria-hidden="true"><span id="playMeter"></span></div>' : ''}</div></div>
+    <div class="player-body"><button class="record-button" id="playBtn" aria-label="Слушать отрывок" disabled><span class="vinyl" aria-hidden="true"></span><span class="record-symbol" aria-hidden="true">▶</span></button><div class="player-copy"><div class="duration-line"><b>${reveal ? 15 : length(LENGTHS[state.step])}</b>с музыки</div><div class="play-status" id="playStatus" role="status">Готовим онлайн-превью…</div></div></div>${progressHTML(15)}
     ${!reveal ? `<ol class="length-steps" aria-label="Открытые отрывки">${LENGTHS.map((n, i) => `<li class="${i === state.step ? 'current' : i < state.step ? 'opened' : ''}" ${i === state.step ? 'aria-current="step"' : ''}>${length(n)} с<small>${POINTS[i]} очков</small></li>`).join('')}</ol>` : ''}
     </div><div class="audio-error" id="audioError" role="alert" hidden><p id="audioErrorText"></p><button class="btn ghost" id="retryAudio">Попробовать ещё раз</button>${reveal ? '' : '<button class="btn ghost" id="replaceTrack">Заменить без штрафа</button>'}</div>`;
 }
@@ -190,7 +212,7 @@ function roundHeader() {
 
 function attemptFeedbackHTML() {
   const last = state.attempts.at(-1);
-  return last ? `<div class="round-feedback ${last.status}" id="roundFeedback" role="status"><b>${artistMode() ? 'Другой исполнитель. Попробуйте ещё.' : last.status === 'artist' ? 'Исполнитель тот самый! Песня другая.' : 'Не та песня. Попробуйте ещё.'}</b><span>${last.kind === 'artist' ? esc(last.name) : `${esc(last.artist)} — ${esc(last.title)}`}</span></div>` : `<p class="answer-hint">Можно писать с опечатками и русскими буквами. Enter — выбрать ${artistMode() ? 'исполнителя' : 'песню'}, ещё раз Enter — ответить. Пробел — играть/стоп.</p>`;
+  return last ? `<div class="round-feedback ${last.status}" id="roundFeedback" role="status"><b>${artistMode() ? 'Другой исполнитель. Попробуйте ещё.' : last.status === 'artist' ? `Исполнитель тот самый — +${ARTIST_BONUS} уже ваши. Угадаете песню — будет больше.` : 'Не та песня. Попробуйте ещё.'}</b><span>${last.kind === 'artist' ? esc(last.name) : `${esc(last.artist)} — ${esc(last.title)}`}</span></div>` : `<p class="answer-hint">Можно писать с опечатками и русскими буквами. Enter — выбрать ${artistMode() ? 'исполнителя' : 'песню'}, ещё раз Enter — ответить. Пробел — играть/стоп.</p>`;
 }
 
 function bindPlayer() {
@@ -287,17 +309,17 @@ async function listen() {
   playing = true; updateControls(); $('#audioError').hidden = true;
   $('#playStatus').textContent = 'Включаем звук в браузере…';
   if (state.phase === 'round' && matchMedia('(pointer: fine)').matches) $('#answerInput').focus({ preventScroll: true });
-  const ring = state.phase === 'round' ? $('#playBtn') : null; // прогресс — кольцо вокруг кнопки автомата
   try {
     const complete = await player.play(seconds, { onStart: () => {
       if (version !== screenVersion) return;
-      heard = true; updateControls(); $('#listenCard').classList.add('is-playing');
+      heard = true; updateControls(); $('#listenCard').classList.add('is-playing'); document.body.classList.add('music-on');
       $('#playStatus').textContent = state.phase === 'round' ? 'Слушаем… Можно сразу писать ответ.' : 'Слушаем…';
-      if (ring) { ring.style.transition = 'none'; ring.style.setProperty('--p', 0); requestAnimationFrame(() => { if (version === screenVersion && playing) { ring.style.transition = `--p ${seconds}s linear, transform .2s`; ring.style.setProperty('--p', 100); } }); }
+      runProgress(seconds, version);
     } }); if (version !== screenVersion) return;
+    if (!complete) resetProgress();
     $('#playStatus').textContent = complete ? artistMode() ? 'Выберите исполнителя. Повтор отрывка — бесплатно.' : 'Выберите песню. Повтор отрывка — бесплатно.' : 'Остановлено. Можно включить ещё раз.';
   } catch (error) { if (version === screenVersion) { $('#playStatus').textContent = 'Звук не запустился.'; $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; } }
-  finally { if (version === screenVersion) { playing = false; $('#listenCard').classList.remove('is-playing'); if (ring) { ring.style.transition = ''; ring.style.setProperty('--p', 0); } updateControls(); } }
+  finally { document.body.classList.remove('music-on'); if (version === screenVersion) { playing = false; $('#listenCard').classList.remove('is-playing'); updateControls(); } }
 }
 
 function closeSuggestions() {
@@ -357,8 +379,8 @@ function handleSearchKey(e) {
 function renderReveal(track) {
   const result = state.results.at(-1), query = encodeURIComponent(`${track.artist} ${track.title}`), feedback = resultPresentation(result);
   stage.innerHTML = `<section class="game-shell result-screen">${roundHeader()}<div class="round-layout"><div class="round-main">
-    <div class="result-head ${feedback.tier}" id="resultHead" role="status"><div class="result-verdict"><span class="result-icon" aria-hidden="true">${result.won ? '✓' : '♫'}</span><strong>${feedback.label}</strong><b class="result-points">${result.won ? `+${number(result.points)}` : '0 очков'}</b></div>
-    <div class="track-reveal"><div class="cover-art"><span aria-hidden="true">♫</span>${track.cover ? `<img id="coverArt" src="${esc(track.cover)}" alt="Обложка альбома" width="112" height="112">` : ''}</div><div class="track-info"><h2 id="trackTitle">${esc(track.title)}</h2><p class="artist">${esc(track.artist)}</p><p class="result-detail">${result.won ? `Угадали за ${length(LENGTHS[result.step])} с` : 'Послушайте и запомните на следующий раз'}</p></div></div></div>
+    <div class="result-head ${feedback.tier}" id="resultHead" role="status"><div class="result-verdict"><span class="result-icon" aria-hidden="true">${result.won ? '✓' : '♫'}</span><strong>${feedback.label}</strong><b class="result-points">${result.points ? `+${number(result.points)}` : '0 очков'}</b></div>
+    <div class="track-reveal"><div class="cover-art"><span aria-hidden="true">♫</span>${track.cover ? `<img id="coverArt" src="${esc(track.cover)}" alt="Обложка альбома" width="112" height="112">` : ''}</div><div class="track-info"><h2 id="trackTitle">${esc(track.title)}</h2><p class="artist">${esc(track.artist)}</p><p class="result-detail">${result.won ? `Угадали за ${length(LENGTHS[result.step])} с` : result.points ? `+${ARTIST_BONUS} за исполнителя. Послушайте песню целиком` : 'Послушайте и запомните на следующий раз'}</p></div></div></div>
     <div class="reveal-actions"><span>${result.won ? 'Точный ответ. Очки ваши!' : 'Ответ раскрыт. Играем дальше?'}</span><button class="btn primary" id="nextBtn">${state.results.length >= state.queue.length ? 'Результаты' : 'Следующий трек'}</button></div>
     ${playerHTML(true)}<nav class="external-links" aria-label="Послушать песню"><a href="https://www.deezer.com/track/${track.deezerId}" target="_blank" rel="noopener noreferrer">Deezer</a><a href="https://music.yandex.ru/search?text=${query}" target="_blank" rel="noopener noreferrer">Яндекс Музыка</a><a href="https://open.spotify.com/search/${query}" target="_blank" rel="noopener noreferrer">Spotify</a></nav>${evidenceHTML(track)}</div>${historyHTML()}</div></section>`;
   $('#coverArt')?.addEventListener('error', event => { event.target.hidden = true; });
@@ -374,7 +396,7 @@ function evidenceHTML(track) {
 function renderSummary() {
   const won = state.results.filter(r => r.won), instant = won.filter(r => r.step === 0);
   rememberPlayed();
-  stage.innerHTML = `<section class="game-shell"><div class="summary-head"><span class="kicker">${esc(state.packTitle || 'Музыка онлайн')}</span><h1>${won.length === state.results.length && won.length ? 'Все песни ваши!' : 'Вот это послушали'}</h1><div class="final-score">${number(state.score)}</div><p class="sub">очков на вашу компанию</p><div class="summary-stats"><span>Угадали <b>${won.length} из ${state.results.length}</b></span><span>С полсекунды <b>${instant.length}</b></span></div></div><div class="result-list">${state.results.map((r, i) => { const t = trackById(r.id); return `<div class="result-row ${r.won ? 'won' : ''}"><span class="result-no">${i + 1}</span><div><b>${esc(t.title)}</b><small>${esc(t.artist)}</small></div><div class="result-value">${r.points ? `+${r.points}` : '—'}<small>${r.won ? `${length(LENGTHS[r.step])} с` : 'Не угадали'}</small></div></div>`; }).join('') || '<p class="sub">Превью оказались недоступны. Выбери другую подборку.</p>'}</div><div class="summary-buttons"><button class="btn primary" id="againBtn">Новая партия</button></div></section>`;
+  stage.innerHTML = `<section class="game-shell"><div class="summary-head"><span class="kicker">${esc(state.packTitle || 'Музыка онлайн')}</span><h1>${won.length === state.results.length && won.length ? 'Все песни ваши!' : 'Вот это послушали'}</h1><div class="final-score">${number(state.score)}</div><p class="sub">очков на вашу компанию</p><div class="summary-stats"><span>Угадали <b>${won.length} из ${state.results.length}</b></span><span>С полсекунды <b>${instant.length}</b></span></div></div><div class="result-list">${state.results.map((r, i) => { const t = trackById(r.id); return `<div class="result-row ${r.won ? 'won' : ''}"><span class="result-no">${i + 1}</span><div><b>${esc(t.title)}</b><small>${esc(t.artist)}</small></div><div class="result-value">${r.points ? `+${r.points}` : '—'}<small>${r.won ? `${length(LENGTHS[r.step])} с` : r.points ? 'Исполнитель' : 'Не угадали'}</small></div></div>`; }).join('') || '<p class="sub">Превью оказались недоступны. Выбери другую подборку.</p>'}</div><div class="summary-buttons"><button class="btn primary" id="againBtn">Новая партия</button></div></section>`;
   $('#againBtn').onclick = leave;
 }
 
