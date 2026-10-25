@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { PACKS } from './catalog.js';
 import { shelfPage, selectionPage, recordArt } from './record-store-model.js';
 
-test('shelf arrows expose all ten collections without wrapping past either end', () => {
+test('shelf arrows expose every collection without wrapping past either end', () => {
   const first = shelfPage(PACKS, -1);
   assert.deepEqual(first.items.map(p => p.id), PACKS.slice(0, 8).map(p => p.id));
   assert.equal(first.previous, false);
@@ -11,7 +11,7 @@ test('shelf arrows expose all ten collections without wrapping past either end',
   const last = shelfPage(PACKS, 99);
   assert.equal(last.page, 1);
   assert.equal(last.pages, 2);
-  assert.deepEqual(last.items.map(p => p.id), ['us-hiphop', 'soundcloud']);
+  assert.deepEqual(last.items.map(p => p.id), ['us-hiphop', 'soundcloud', 'dead-inside']);
   assert.equal(last.previous, true);
   assert.equal(last.next, false);
 });
