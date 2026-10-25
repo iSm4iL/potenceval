@@ -1,5 +1,7 @@
-// Only images whose reuse terms were checked on their individual file pages.
-// Every other title uses an original, locally rendered clue illustration.
+import { POSTERS } from './posters.js?v=posters-20261025';
+
+// Постер из Википедии (tools/posters.mjs) — главная картинка раунда. Если постера нет, берём свободное
+// фото с Wikimedia Commons, а если нет и его — рисуем иллюстрацию-подсказку.
 const freeImages = {
   'movie-597': {
     file: 'RMS Titanic 3.jpg',
@@ -57,14 +59,21 @@ const defaults = {
   cartoon: ['☼', '#40645a', '#d9c77d']
 };
 
+// Страница файла в Википедии, откуда взят постер: туда ведёт подпись под картинкой.
+const filePage = url => {
+  const [, lang, name] = url.match(/wikipedia\/(\w+)\/[\w]\/[\w]{2}\/([^/]+)$/) || [];
+  return lang ? `https://${lang}.wikipedia.org/wiki/File:${name}` : url;
+};
+
 export function visualFor(title) {
   const [glyph, dark, light] = art[title.id] || defaults[title.category] || defaults.film;
-  const image = freeImages[title.id];
+  const poster = POSTERS[title.id], image = freeImages[title.id];
+  if (poster) return { glyph, dark, light, image: poster, source: filePage(poster), caption: 'Постер · Википедия' };
   return {
     glyph, dark, light,
     ...(image && {
       image: `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(image.file)}?width=500`,
-      source: image.source, license: image.license, credit: image.credit
+      source: image.source, caption: `${image.credit} · Wikimedia Commons · ${image.license}`
     })
   };
 }

@@ -1,8 +1,7 @@
 import { TITLES as SEED_TITLES, OPTIONS } from './catalog.js';
 import { EXTRA_TITLES } from './catalog.extra.js';
-import { START_TILE, tileCost } from './poster.js';
-import { revealPaidClue } from './round.js';
-import { visualFor } from './visuals.js';
+import { revealPaidClue, BLUR, SHARPEN } from './round.js?v=posters-20261025';
+import { visualFor } from './visuals.js?v=posters-20261025';
 
 const stage = document.querySelector('#stage');
 const exitBtn = document.querySelector('#exitBtn');
@@ -46,7 +45,7 @@ function home() {
   const blanks = side => `<span class="blank-bank blank-bank-${side}" aria-hidden="true">${Array.from({ length: 24 }, (_, i) => `<span class="blank-case blank-tone-${i % 4}"><i></i></span>`).join('')}</span>`;
   const chosen = modes.find(m => m.id === selectedMode);
   const chosenCount = TITLES.filter(t => inMode(t, selectedMode)).length;
-  stage.innerHTML = `<section class="launch"><div class="launch-intro"><div class="cabinet-stamp">Видеопрокат · potenceval</div><div class="cabinet-plaque"><p class="eyebrow">Угадай до финальных титров</p><h1>До титров</h1><p class="hero-copy">Выбери кассету с полки. Узнавай кино, сериал, аниме или мультфильм по картинке и подсказкам.</p><div class="launch-facts"><span>1 угол картинки</span><span>100 очков</span><span>Подсказки за баллы</span></div></div><div class="cabinet-hinge hinge-one" aria-hidden="true"></div><div class="cabinet-hinge hinge-two" aria-hidden="true"></div></div>
+  stage.innerHTML = `<section class="launch"><div class="launch-intro"><div class="cabinet-stamp">Видеопрокат · potenceval</div><div class="cabinet-plaque"><p class="eyebrow">Угадай до финальных титров</p><h1>До титров</h1><p class="hero-copy">Выбери кассету с полки. Узнавай кино, сериал, аниме или мультфильм по постеру и подсказкам.</p><div class="launch-facts"><span>Размытый постер</span><span>100 очков</span><span>Подсказки за баллы</span></div></div><div class="cabinet-hinge hinge-one" aria-hidden="true"></div><div class="cabinet-hinge hinge-two" aria-hidden="true"></div></div>
   <div class="launch-panel"><div class="launch-panel-head"><span>Полка с историями</span><small>Нажми на кассету</small></div><div class="shelf-cabinet"><div class="shelf shelf-top" aria-label="Кино, сериалы, аниме и мультфильмы">${blanks('left')}${modes.slice(0, 4).map(cassette).join('')}${blanks('right')}</div><div class="shelf shelf-bottom" aria-label="Подборки Мама, Папа и смешанная">${blanks('left')}${modes.slice(4).map(cassette).join('')}${blanks('right')}</div></div><div class="selected-summary" aria-live="polite"><span>Выбрана кассета · ${chosenCount} ${puzzlesWord(chosenCount)}</span><strong id="selectedTitle">${chosen.name}</strong><small id="selectedDesc">${chosen.desc}</small></div><div class="round-picker"><span>Сколько угадываем?</span><div id="roundChoices" class="round-choices" role="group" aria-label="Количество загадок"></div></div><button id="startBtn" class="btn primary launch-start">Играть: ${chosen.name} <span>↗</span></button><p class="launch-note">В коллекции ${TITLES.length} ${worksWord(TITLES.length)}. «Мама» и «Папа» собирают знакомые истории разных лет и форматов.</p></div></section>`;
   const renderRoundChoices = () => {
     const count = TITLES.filter(t => inMode(t, selectedMode)).length;
@@ -94,19 +93,10 @@ function start(selected) {
 
 function next() {
   if (!deck.length) return finish();
-  round = { title: deck.pop(), score: 100, opened: new Set(), openTiles: new Set([START_TILE]), openActors: new Set(), attempts: new Set(), done: false };
+  round = { title: deck.pop(), score: 100, opened: new Set(), sharp: new Set(), shownBlur: BLUR[0], openActors: new Set(), attempts: new Set(), done: false };
   played += 1;
   exitBtn.hidden = false;
   renderRound();
-}
-
-function posterMask() {
-  return Array.from({ length: 24 }, (_, i) => {
-    if (round.openTiles.has(i) || round.done) return '<span class="poster-tile revealed" aria-hidden="true"></span>';
-    const cost = tileCost(i);
-    const place = cost === 20 ? 'центр' : cost === 6 ? 'угол' : 'край';
-    return `<button type="button" class="poster-tile" data-tile="${i}" aria-label="Открыть фрагмент: ${place}, ${cost} очков" title="${place}: −${cost}" ${round.score < cost ? 'disabled' : ''}><span>${cost}</span></button>`;
-  }).join('');
 }
 
 function renderRound() {
@@ -117,13 +107,15 @@ function renderRound() {
   const actors = (t.cast || '').split(', ').filter(Boolean).slice(0, 3);
   const castLabel = t.category === 'anime' || t.category === 'cartoon' ? 'Актёры озвучивания' : 'В главных ролях';
   const actorCosts = [10, 14, 18];
+  const level = round.sharp.size, blur = round.done ? 0 : BLUR[level];
   stage.innerHTML = `<div class="round-head"><div><p class="eyebrow">${esc(modes.find(m => m.id === mode).name)} · ${played} из ${played + deck.length}</p><h1>Что это?</h1></div><div class="score"><strong>${round.score}</strong><span>очков в раунде</span></div></div>
-  <div class="round-layout"><div class="poster-column"><div class="poster-frame">${art}${visual.image ? `<img class="clue-photo" src="${esc(visual.image)}" alt="" referrerpolicy="no-referrer">` : ''}<div class="poster-mask" aria-label="Частично скрытая иллюстрация-подсказка">${posterMask()}</div></div><p class="poster-caption">${round.done ? 'Картинка открыта' : 'Нажми на квадрат, чтобы открыть часть картинки'}</p><div class="poster-prices"><span>Угол <b>−6</b></span><span>Край <b>−12</b></span><span>Центр <b>−20</b></span></div></div>
+  <div class="round-layout"><div class="poster-column"><div class="poster-frame" style="--blur:${round.shownBlur}px">${art}${visual.image ? `<img class="clue-photo" src="${esc(visual.image)}" alt="Размытый постер" referrerpolicy="no-referrer">` : ''}</div>
+  <div class="sharpen"><div class="sharp-steps" aria-label="Чёткость ${level + 1} из ${BLUR.length}">${BLUR.map((_, i) => `<i class="${i <= level ? 'on' : ''}"></i>`).join('')}</div>${round.done || level >= SHARPEN.length ? `<p class="poster-caption">${round.done ? 'Постер открыт' : 'Чётче уже некуда'}</p>` : `<button class="btn sharpen-btn" id="sharpBtn" ${round.score < SHARPEN[level] ? 'disabled' : ''}>Сделать чётче <b>−${SHARPEN[level]}</b></button>`}</div></div>
   <div class="facts-column"><div class="answer-area"><label for="guess">Название</label><div class="guess-row"><input id="guess" type="search" placeholder="Начни писать название…" autocomplete="off" ${round.done ? 'disabled' : ''}><button id="guessBtn" class="btn primary" ${round.done ? 'disabled' : ''}>Ответить</button></div><div id="suggestions" class="suggestions" hidden></div><p id="feedback" class="feedback" role="status" aria-live="polite">Выбери название из списка или напиши его целиком.</p></div>
   <div class="facts-head"><h2>Досье</h2><span>Выбирай, что узнать дальше</span></div><div class="free-facts"><span><small>Год</small><b>${esc(t.year)}</b></span><span><small>Страна</small><b>${esc(t.country)}</b></span><span><small>Длительность</small><b>${esc(t.runtime)}</b></span><span><small>Жанр</small><b>${esc(t.genres[0])}</b></span></div>
   ${actors.length ? `<section class="actor-section"><div class="clue-head"><h3>${castLabel}</h3><span>Открывай по одному имени</span></div><div class="actor-list">${actors.map((name, i) => `<div class="actor-row"><span class="actor-num">${String(i + 1).padStart(2, '0')}</span>${round.openActors.has(i) || round.done ? `<b>${esc(name)}</b>` : `<span class="actor-hidden">Имя скрыто</span><button data-actor="${i}" ${round.score < actorCosts[i] ? 'disabled' : ''}>Открыть <b>−${actorCosts[i]}</b></button>`}</div>`).join('')}</div></section>` : ''}
   <section class="clue-section"><div class="clue-head"><h3>Другие зацепки</h3><span>Цена указана на каждой карточке</span></div><div class="clue-grid">${available.map(h => `<div class="clue-card${round.opened.has(h.key) || round.done ? ' open' : ''}"><span>${esc(h.label)}</span>${round.opened.has(h.key) || round.done ? `<strong>${esc(h.get(t))}</strong>` : `<button data-hint="${h.key}" ${round.score < h.cost ? 'disabled' : ''}>Открыть <b>−${h.cost}</b></button>`}</div>`).join('')}</div></section>
-  <div class="round-foot"><button class="skip" id="skipBtn">Пропустить раунд</button><span>${visual.image ? `<a href="${esc(visual.source)}" target="_blank" rel="noopener noreferrer">${esc(visual.credit)} · Wikimedia Commons · ${esc(visual.license)}</a>` : 'Оригинальная иллюстрация-подсказка'}</span></div></div></div>`;
+  <div class="round-foot"><button class="skip" id="skipBtn">Пропустить раунд</button><span>${visual.image ? `<a href="${esc(visual.source)}" target="_blank" rel="noopener noreferrer">${esc(visual.caption)}</a>` : 'Оригинальная иллюстрация-подсказка'}</span></div></div></div>`;
   const photo = stage.querySelector('.clue-photo');
   if (photo) {
     const visualCredit = stage.querySelector('.round-foot span');
@@ -134,7 +126,12 @@ function renderRound() {
     photo.addEventListener('error', showIllustration, { once: true });
     if (photo.complete && !photo.naturalWidth) showIllustration();
   }
-  stage.querySelectorAll('[data-tile]').forEach(b => b.addEventListener('click', () => { const i = Number(b.dataset.tile); if (revealPaidClue(round, round.openTiles, i, tileCost(i))) renderRound(); }));
+  // Постер плавно становится чётче: кадр рисуется с прошлым размытием и сразу переходит к новому.
+  const frame = stage.querySelector('.poster-frame');
+  void frame.offsetWidth; // зафиксировать прошлое размытие, чтобы сработал плавный переход
+  frame.style.setProperty('--blur', `${blur}px`);
+  round.shownBlur = blur;
+  stage.querySelector('#sharpBtn')?.addEventListener('click', () => { if (revealPaidClue(round, round.sharp, level, SHARPEN[level])) renderRound(); });
   stage.querySelectorAll('[data-actor]').forEach(b => b.addEventListener('click', () => { const i = Number(b.dataset.actor); if (revealPaidClue(round, round.openActors, i, actorCosts[i])) renderRound(); }));
   stage.querySelectorAll('[data-hint]').forEach(b => b.addEventListener('click', () => { const key = b.dataset.hint; if (revealPaidClue(round, round.opened, key, hintDefs.find(h => h.key === key).cost)) renderRound(); }));
   stage.querySelector('#skipBtn').addEventListener('click', () => resolve(false));

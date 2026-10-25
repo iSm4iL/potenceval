@@ -133,18 +133,7 @@ body[data-game="screen"] .poster-frame {
   border:7px solid #251a10; border-radius:2px; background:#211a13;
   box-shadow:0 0 0 1px #b0854e9c,0 12px 18px #0b0409b3;
 }
-body[data-game="screen"] .poster-tile {
-  background:#251d15; box-shadow:0 0 0 1px #4d3b25; color:#b99b70;
-  background-image:linear-gradient(145deg,#ffffff04,transparent 55%,#0002);
-}
-body[data-game="screen"] .poster-tile span { opacity:.72; font:600 10px 'Unbounded',sans-serif; }
-body[data-game="screen"] button.poster-tile:hover,
-body[data-game="screen"] button.poster-tile:focus-visible { background:#694a29; color:#ffe3ad; box-shadow:inset 0 0 0 2px #edb965; }
-body[data-game="screen"] button.poster-tile:disabled:hover { background:#251d15; box-shadow:0 0 0 1px #4d3b25; }
 body[data-game="screen"] .poster-caption { color:#dec4a0; font-size:12px; line-height:1.45; }
-body[data-game="screen"] .poster-prices { gap:4px; color:#b49a78; font-size:10px; }
-body[data-game="screen"] .poster-prices span { padding:6px; border-color:#b187574d; border-radius:2px; }
-body[data-game="screen"] .poster-prices b { color:#edc58a; }
 body[data-game="screen"] .facts-column {
   min-width:0; padding:28px; border:1px solid #c8ab7e; border-radius:3px;
   color:var(--cinema-ink); background:linear-gradient(110deg,#fff4d32b,transparent 35%),var(--cinema-paper);
@@ -315,3 +304,14 @@ body[data-game="screen"] .facts-column :is(button,a,input):focus-visible { outli
 @media(prefers-reduced-motion:reduce) {
   body[data-game="screen"] *,body[data-game="screen"] *::before,body[data-game="screen"] *::after { animation:none!important; transition:none!important; }
 }
+
+/* Постер размыт целиком; «Сделать чётче» снимает размытие по шагам. Увеличение прячет мутные края. */
+body[data-game="screen"] .poster-frame .clue-photo,
+body[data-game="screen"] .poster-frame .clue-illustration { filter:blur(var(--blur,0px)); transform:scale(1.1); transition:filter .9s cubic-bezier(.2,.8,.2,1); }
+body[data-game="screen"] .sharpen { display:grid; gap:10px; margin-top:12px; }
+body[data-game="screen"] .sharp-steps { display:flex; gap:5px; }
+body[data-game="screen"] .sharp-steps i { flex:1; height:6px; border-radius:3px; background:#4d3b25; }
+body[data-game="screen"] .sharp-steps i.on { background:linear-gradient(90deg,#edb965,#ffe3ad); box-shadow:0 0 8px #edb96580; }
+body[data-game="screen"] .sharpen-btn { width:100%; padding:12px; border-radius:4px; color:#2b1d10; background:linear-gradient(135deg,#f3d08c,#d9a85a); font-size:14px; }
+body[data-game="screen"] .sharpen-btn b { margin-left:4px; color:#7a2a1a; }
+@media (prefers-reduced-motion:reduce) { body[data-game="screen"] .poster-frame .clue-photo { transition:none; } }

@@ -1,1 +1,4 @@
 .superpowers/
+screen/tools/build_catalog.py
+screen/tools/__pycache__/
+screen/catalog.generated.json
