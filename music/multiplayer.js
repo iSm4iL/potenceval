@@ -10,7 +10,7 @@ function loadTransport() {
   if (globalThis.mqtt) return Promise.resolve();
   return mqttLoad ||= new Promise((resolve, reject) => {
     const script = document.createElement('script');
-    script.src = new URL('../shared/vendor/mqtt.min.js', import.meta.url).href;
+    script.src = new URL('../shared/vendor/mqtt.min.js?v=5.10.1', import.meta.url).href;
     script.onload = resolve;
     script.onerror = () => { script.remove(); mqttLoad = null; reject(new Error('Не удалось загрузить связь. Попробуй ещё раз.')); };
     document.head.append(script);
