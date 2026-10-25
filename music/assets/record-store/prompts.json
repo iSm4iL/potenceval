@@ -1,0 +1,72 @@
+[
+  {
+    "name": "store-background",
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural. Asset type: wide 16:10 website background plate for the approved dark cozy record-store game. Create ONE atmospheric realistic vintage vinyl shop interior, warm amber practical lights, dark charcoal near-black back wall, walnut wood, subtle film grain. Straight-on view. Center 80 percent of image is a very dark quiet empty wall with no sign, no text, no furnishings, reserved for live UI overlaid later. Far left edge: blurred stacked vinyl and small plant, one warm table lamp. Far right edge: a hanging brass pendant lamp and blurred records. Bottom edge: subtle dark walnut countertop, no objects in center. Restrained out-of-focus atmosphere, amber cinematic highlights at edges only, center stays graphite #0d0c14. No vinyl crate, no turntable, no signage, no letters, no interface. Wide landscape."
+  },
+  {
+    "name": "walnut",
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural. Asset type: square wood texture for a vintage record shop crate. Perfectly straight-on flat close-up of beautiful warm aged dark walnut wooden board. Fine horizontal flowing grain, honey amber highlights and deep chestnut pores, matte worn satin finish, subtle scratches and natural patina. Even soft lighting, no perspective, no vignette, no objects, no text, no border. Photorealistic premium walnut texture fills entire image."
+  },
+  {
+    "name": "turntable-body",
+    "transparent": true,
+    "prompt": "Use case: product-mockup. Asset type: isolated 2D compositing layer of a vintage suitcase turntable, strictly overhead top-down view. ONE rectangular elegant vintage walnut suitcase record player viewed exactly from above, no perspective distortion. Warm honey walnut wooden frame, deep brown leather trim, rounded small corners, brass corner hardware, dark textured leather deck. Empty round black platter well on the LEFT at x44% y51%, circular diameter 76% of image height, WITHOUT vinyl record, WITHOUT center label, WITHOUT tonearm, WITHOUT any arm. At upper right around x85% y18% a small round brass socket for a separately composited tonearm. On lower right a small brass volume dial, tiny red indicator and two understated speed ticks, no legible text. Suitcase latch centered on bottom outer edge. No lid, no background, no shadows outside object. Warm soft realistic studio light from upper left. Square composition object fills 96% of image width, object height 84% of image. Transparent background, polished realistic tactile product asset, absolutely no records or tonearm."
+  },
+  {
+    "name": "tonearm",
+    "transparent": true,
+    "prompt": "Use case: product-mockup. Asset type: isolated compositing layer, a vintage turntable tonearm viewed EXACTLY overhead, top down with NO perspective. One slim curved polished warm-silver metal tonearm with small round brass pivot assembly at TOP CENTER, thin silver shaft traveling DOWN, gently bends toward lower LEFT, ending in a small black cartridge with a tiny red stylus. Overall silhouette narrow and tall, occupies middle 35 percent of width and 85 percent of height, single complete object. Warm light from upper left. No turntable, no disc, no text, no extra objects. Entirely transparent background."
+  },
+  {
+    "name": "cover-new-wave",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. Fiery orange and red urban dusk, a mysterious young hooded rapper in silhouette with a microphone amid painted flames, strong contemporary underground energy.",
+    "transparent": false
+  },
+  {
+    "name": "cover-ru-rap",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A beautiful vintage chrome handheld microphone and black cable in the foreground, moody graphite concrete city apartments behind, bronze and warm silver, Russian hip-hop aesthetic.",
+    "transparent": false
+  },
+  {
+    "name": "cover-nostalgia",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A vivid pink and turquoise transparent cassette tape surrounded by soft violet-blue nostalgic nighttime neon, retro 2010s youthful mixtape energy.",
+    "transparent": false
+  },
+  {
+    "name": "cover-kpop",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A faceted violet and pink glass heart glowing against a dreamy indigo sky with small starbursts, elegant Korean-pop concert lightstick atmosphere.",
+    "transparent": false
+  },
+  {
+    "name": "cover-modern-pop",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A spectacular blue Earth globe surrounded by golden orbiting musical light trails and small stars, rich midnight teal and royal blue, uplifting world pop.",
+    "transparent": false
+  },
+  {
+    "name": "cover-mom-pop",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. An abundant elegant bouquet of pink peonies, creamy roses and small daisies on warm worn ivory paper with subtle faded botanical leaves, warm sentimental vintage beauty.",
+    "transparent": false
+  },
+  {
+    "name": "cover-dad-rock",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A beautiful wine-red sunburst electric guitar diagonally across a deep charcoal background, golden lightning and warm stage light, classic 1970s rock vinyl atmosphere.",
+    "transparent": false
+  },
+  {
+    "name": "cover-metal",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. An expressive raised hand with metal horns gesture, black leather cuff, moody charcoal and crimson concert smoke, beautifully illustrated heavy rock atmosphere.",
+    "transparent": false
+  },
+  {
+    "name": "cover-us-hiphop",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A vintage chrome studio microphone in a golden twilight American city, cinematic brown and burnt orange, gritty premium hip-hop vinyl artwork.",
+    "transparent": false
+  },
+  {
+    "name": "cover-soundcloud",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A luminous peach-orange cloud over a dreamy purple night city, stars, faint musical wave shapes, emotional late-night alternative rap mixtape, violet and coral.",
+    "transparent": false
+  }
+]

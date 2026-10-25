@@ -5,6 +5,7 @@ import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=audio-20261023';
 import { resultPresentation } from './feedback.js?v=bonus-1';
 import { createCatalogClient } from './collection.js';
+import { createMultiplayer } from './multiplayer.js?v=friends-20261025';
 
 const stage = $('#stage'), player = new AudioPlayer(), service = createDeezerClient(), catalog = createCatalogClient();
 const stored = LS.get('music.online.settings') || {};
@@ -31,9 +32,10 @@ const currentPack = () => PACKS.find(p => p.id === settings.pack) || customPack 
 const artistMode = () => state?.answerMode === 'artist';
 const emptyPackMessage = pack => settings.mode === 'current' && pack.curated ? 'Сейчас в свежем топ-100 нет подходящих песен этого жанра. Выбери «Знакомые хиты» или другой жанр.' : 'В этой подборке сейчас нет доступных песен. Выбери другую.';
 const persistSettings = () => LS.set('music.online.settings', settings);
-const persistGame = () => { savedGame = state; LS.set('music.online.session', state); };
+const persistGame = () => { if (!multiplayer.active) { savedGame = state; LS.set('music.online.session', state); } };
 
 function leave() {
+  if (multiplayer.active) { multiplayer.leave(); return; }
   screenVersion++; audioController?.abort(); player.stop(); closeSuggestions(); state = null; renderedRoundKey = null; renderSetup();
 }
 
@@ -56,11 +58,12 @@ async function selectPack(pack, refresh = false) {
 }
 
 function renderSetup() {
-  if (state) return;
+  if (state || multiplayer.active) return;
   $('#exitBtn').hidden = true;
   const pack = currentPack(), packs = [...PACKS, ...(customPack ? [customPack] : [])];
   const cards = items => items.map((p, index) => `<button class="pack-card ${settings.pack === p.id ? 'selected' : ''}" data-pack="${esc(p.id)}" aria-pressed="${settings.pack === p.id}" style="--sleeve:${index + 1}"><span class="pack-art" aria-hidden="true"><span class="pack-disc"><span class="pack-disc-label"></span></span><span class="pack-sleeve"><span class="pack-art-icon">${p.icon || '♫'}</span><span class="pack-art-title">${esc(p.title)}</span><span class="pack-art-mark">полсекунды</span></span></span><span class="pack-meta"><b>${esc(p.title)}</b><small>${esc(p.description || 'Популярные треки исполнителя')}</small></span>${p.curated && !packLoading && packInfo ? `<span class="pack-count">${trackCount(genreCounts[p.id] || 0)}</span>` : ''}<span class="pack-selected" aria-hidden="true">✓</span></button>`).join('');
   const choices = [...new Set([...availableRounds.filter(n => n < 5), 5, 10, 20])];
+  stage.dispatchEvent(new Event('music:before-setup'));
   stage.innerHTML = `<section class="music-home"><div class="music-intro"><div><span class="kicker">Музыкальная угадайка для друзей</span><h1>Полсекунды<i>.</i></h1><p class="sub">Выбирай пластинку. Узнавай трек с первых нот.</p></div><div class="intro-side"><span class="intro-pulse" aria-hidden="true">♫</span><p>От 0,5 секунды до полного ответа.<br>Один экран для всей компании.</p></div></div>
     ${savedGame && savedGame.phase !== 'summary' ? `<div class="resume-card"><p>Незаконченная партия: ${esc(savedGame.packTitle || 'Музыка')}. Счёт: ${number(savedGame.score)}.</p><button class="btn gold" id="resumeBtn">Продолжить игру</button></div>` : ''}
     <div class="crate-heading"><div><h2>Выбери свою пластинку</h2><p>Какую музыку сегодня угадываем?</p></div><div class="catalog-modes" aria-label="Тип подборки"><button data-mode="hits" class="${settings.mode === 'hits' ? 'selected' : ''}" aria-pressed="${settings.mode === 'hits'}">Знакомые хиты</button><button data-mode="current" class="${settings.mode === 'current' ? 'selected' : ''}" aria-pressed="${settings.mode === 'current'}">Сейчас в чартах</button></div></div>
@@ -73,6 +76,8 @@ function renderSetup() {
   stage.querySelectorAll('[data-pack]').forEach(button => button.onclick = () => selectPack(packs.find(p => p.id === button.dataset.pack)));
   stage.querySelectorAll('[data-rounds]').forEach(button => button.onclick = () => { settings.rounds = Number(button.dataset.rounds); persistSettings(); renderSetup(); });
   stage.querySelectorAll('[data-answer-mode]').forEach(button => button.onclick = () => { settings.answerMode = button.dataset.answerMode; persistSettings(); renderSetup(); });
+  const friends = document.createElement('button'); friends.id = 'friendsBtn'; friends.className = 'btn gold big'; friends.textContent = '♬  Играть с друзьями'; friends.onclick = () => multiplayer.open();
+  $('#startBtn').after(friends);
   $('#startBtn').onclick = startGame; $('#refreshPack').onclick = () => selectPack(currentPack(), true);
   $('#artistPicker').onclick = () => { $('#artistDialog').showModal(); $('#artistInput').focus(); };
   $('#lineupBtn').onclick = () => {
@@ -92,6 +97,11 @@ function startGame() {
     state.packTitle = currentPack().title + (currentPack().curated && settings.mode === 'current' ? ' · Сейчас в чартах' : ''); state.packId = settings.pack;
     persistSettings(); persistGame(); renderGame();
   } catch (error) { toast(error.message, 5000); }
+}
+
+function makeFriendMatch() {
+  if (packLoading || packError || !pool.length) throw new Error('Подборка ещё не готова. Дождись загрузки или выбери другую пластинку.');
+  return { ...createGame(pool, { rounds: settings.rounds, answerMode: settings.answerMode, maxPerArtist: currentPack().curated ? 2 : Infinity }), packTitle: currentPack().title + (currentPack().curated && settings.mode === 'current' ? ' · Сейчас в чартах' : ''), packId: settings.pack };
 }
 
 function apply(next, focusAnswer = false) { state = next; if (state.phase === 'reveal') rememberPlayed(); persistGame(); renderGame(focusAnswer); }
@@ -120,11 +130,12 @@ function renderGame(focusAnswer = false) {
   busy = false; ready = false; playing = false; heard = heard && sameRound; selectedTrack = null; matches = []; highlighted = -1;
   renderedRoundKey = key;
   $('#exitBtn').hidden = false;
-  if (state.phase === 'summary') { renderSummary(); stage.scrollIntoView({ block: 'start' }); return; }
+  if (state.phase === 'summary') { renderSummary(); if (multiplayer.active) multiplayer.decorate(); stage.scrollIntoView({ block: 'start' }); return; }
   const track = trackById(state.queue[state.index]);
   if (state.phase === 'reveal') renderReveal(track); else renderRound();
   stage.scrollIntoView({ block: 'start' });
   prepareAudio(track, screenVersion, focusAnswer);
+  if (multiplayer.active) multiplayer.decorate();
 }
 
 const coachHTML = (n, text) => coach.has(n) ? `<div class="coach" data-coach="${n}"><b>${n}</b><span>${text}</span><button type="button" class="coach-x" aria-label="Скрыть подсказку">✕</button></div>` : '';
@@ -189,7 +200,7 @@ function pressKey(i) {
   if (busy || !ready) return;
   if (i <= state.step) return listen();
   if (ask !== i) { ask = i; clearTimeout(askTimer); askTimer = setTimeout(() => { ask = -1; markAsk(); }, 3000); return markAsk(); }
-  coachDone(2); autoPlay = heard; apply(openStep(state, i));
+  coachDone(2); autoPlay = heard; if (multiplayer.active) multiplayer.send('open', { index: i }); else apply(openStep(state, i));
 }
 
 function playerHTML(reveal = false) {
@@ -207,7 +218,7 @@ function historyHTML() {
 }
 
 function roundHeader() {
-  return `<div class="round-top"><div><h1>${state.phase === 'reveal' ? 'Ответ на раунд' : artistMode() ? 'Кто исполняет этот трек?' : 'Угадай этот трек'}</h1><p>Раунд ${state.index + 1} из ${state.queue.length} · ${esc(state.packTitle || 'Музыка')} · ${artistMode() ? 'Угадываем исполнителя' : 'Угадываем песню'}</p></div><div class="total-score"><b>${number(state.score)}</b> очков</div></div>`;
+  return `<div class="round-top" data-pack-id="${esc(state.packId || '')}" data-pack-title="${esc(state.packTitle || '')}"><div><h1>${state.phase === 'reveal' ? 'Ответ на раунд' : artistMode() ? 'Кто исполняет этот трек?' : 'Угадай этот трек'}</h1><p>Раунд ${state.index + 1} из ${state.queue.length} · ${esc(state.packTitle || 'Музыка')} · ${artistMode() ? 'Угадываем исполнителя' : 'Угадываем песню'}</p></div><div class="total-score"><b>${number(state.score)}</b> очков</div></div>`;
 }
 
 function attemptFeedbackHTML() {
@@ -219,7 +230,7 @@ function bindPlayer() {
   $('#playBtn').onclick = listen;
   $('#volume').oninput = e => { settings.volume = Number(e.target.value); player.setVolume(settings.volume); persistSettings(); };
   $('#retryAudio').onclick = () => prepareAudio(trackById(state.queue[state.index]), screenVersion);
-  $('#replaceTrack')?.addEventListener('click', () => { toast('Песня заменена без штрафа.', 3000); apply(replaceBroken(state)); });
+  $('#replaceTrack')?.addEventListener('click', () => { if (multiplayer.active) return; toast('Песня заменена без штрафа.', 3000); apply(replaceBroken(state)); });
 }
 
 function renderRound() {
@@ -234,31 +245,32 @@ function renderRound() {
   $('#suggestions').onclick = e => { const option = e.target.closest('[data-option]'); if (option) selectAnswer(Number(option.dataset.option)); };
   $('#guessForm').onsubmit = e => {
     e.preventDefault(); if (busy || !ready || !heard || !selectedTrack) return;
+    if (multiplayer.active) { multiplayer.send('guess', { answer: selectedTrack }); return; }
     const next = artistMode() ? guessArtist(state, selectedTrack) : guess(state, selectedTrack); if (next === state) return;
     const status = next.attempts.at(-1).status;
     apply(next, true);
     if (status === 'correct') { $('#resultHead').classList.add('celebrate'); confetti($('#resultHead'), resultPresentation(next.results.at(-1)).particles); }
   };
-  $('#skipBtn').onclick = () => { if (busy || !ready) return; coachDone(2); autoPlay = heard && state.step < LENGTHS.length - 1; apply(skip(state)); };
+  $('#skipBtn').onclick = () => { if (busy || !ready || multiplayer.loading) return; coachDone(2); autoPlay = heard && state.step < LENGTHS.length - 1; if (multiplayer.active) multiplayer.send('skip'); else apply(skip(state)); };
   $('#jbKeys').onclick = e => { const key = e.target.closest('[data-step]'); if (key) pressKey(Number(key.dataset.step)); };
   $('#playBtn').addEventListener('click', () => coachDone(1));
   $('#answerInput').addEventListener('input', () => coachDone(3));
   stage.querySelectorAll('.coach-x').forEach(x => x.onclick = () => coachDone(Number(x.parentElement.dataset.coach)));
   $('#helpBtn').onclick = () => { coach = new Set([1, 2, 3]); LS.set('music.online.coach', false); renderGame(); };
   ask = -1;
-  $('#surrenderBtn').onclick = () => { if (!busy && ready) apply(surrender(state)); };
+  $('#surrenderBtn').onclick = () => { if (!multiplayer.loading && (!busy && ready || multiplayer.active)) { if (multiplayer.active) multiplayer.send('surrender'); else apply(surrender(state)); } };
 }
 
 function updateControls() {
   if (!state || state.phase === 'summary') return;
   const play = $('#playBtn');
-  play.disabled = busy || !ready;
+  play.disabled = busy || !ready || multiplayer.loading;
   play.classList.toggle('stop', playing);
   play.querySelector('.record-symbol').textContent = playing ? '■' : '▶';
   play.setAttribute('aria-label', playing ? 'Остановить отрывок' : `Слушать отрывок: ${length(state.phase === 'reveal' ? 15 : LENGTHS[state.step])} с`);
   if (state.phase !== 'round') return;
-  $('#answerInput').disabled = busy || !ready; $('#guessBtn').disabled = busy || !ready || !heard || !selectedTrack;
-  $('#skipBtn').disabled = busy || !ready; $('#surrenderBtn').disabled = busy || !ready;
+  $('#answerInput').disabled = busy || !ready || multiplayer.loading; $('#guessBtn').disabled = busy || !ready || !heard || !selectedTrack || multiplayer.loading;
+  $('#skipBtn').disabled = busy || !ready || multiplayer.loading; $('#surrenderBtn').disabled = multiplayer.loading || (!multiplayer.active && (busy || !ready));
 }
 
 async function prepareAudio(track, version, focusAnswer = false) {
@@ -273,7 +285,7 @@ async function prepareAudio(track, version, focusAnswer = false) {
       if (pre) { $('#playStatus').textContent = 'Ожидаем загрузку следующей песни…'; try { ({ full, buffer } = await pre); } catch { /* не догрузилась — грузим как обычно */ } }
       if (!full) full = await service.track(track.deezerId, { signal: controller.signal });
       if (version !== screenVersion || request !== audioVersion) return;
-      if (state.phase === 'round' && !state.attempts.length) { state = { ...state, tracks: state.tracks.map(t => t.id === full.id ? { ...t, ...snapshotTrack(full) } : t) }; persistGame(); }
+      if (!multiplayer.active && state.phase === 'round' && !state.attempts.length) { state = { ...state, tracks: state.tracks.map(t => t.id === full.id ? { ...t, ...snapshotTrack(full) } : t) }; persistGame(); }
       if (buffer) player.useBuffer(full, buffer);
       else {
         const loaded = await player.load(full, { onStatus: status => { if (version === screenVersion && request === audioVersion) $('#playStatus').textContent = status; } });
@@ -284,9 +296,11 @@ async function prepareAudio(track, version, focusAnswer = false) {
   } catch (error) {
     if (version !== screenVersion || request !== audioVersion) return;
     $('#audioErrorText').textContent = error.message; $('#audioError').hidden = false; $('#playStatus').textContent = 'Не удалось получить превью.';
+    if (multiplayer.active) multiplayer.audioError();
   } finally {
     if (version === screenVersion && request === audioVersion) {
       busy = false; updateControls();
+      if (ready && multiplayer.active) multiplayer.ready();
       if (autoPlay) { autoPlay = false; if (ready && state.phase === 'round') listen(); }
       if (focusAnswer && ready && state.phase === 'round' && !document.hidden) $('#answerInput').focus({ preventScroll: true });
     }
@@ -294,6 +308,7 @@ async function prepareAudio(track, version, focusAnswer = false) {
 }
 
 function preload(track) {
+  if (multiplayer.active) return;
   if (!track || preloaded.has(track.id) || player.track?.id === track.id) return;
   preloaded.clear(); // в памяти держим только одну следующую песню
   const job = service.track(track.deezerId).then(async full => ({ full, buffer: await player.fetchBuffer(full) }));
@@ -304,7 +319,7 @@ function preload(track) {
 // Повторное нажатие останавливает звук. Пока отрывок играет, поле ответа и кнопки работают.
 async function listen() {
   if (playing) { player.stop(); return; }
-  if (busy || !ready) return;
+  if (busy || !ready || multiplayer.loading) return;
   const version = screenVersion, seconds = state.phase === 'reveal' ? 15 : LENGTHS[state.step];
   playing = true; updateControls(); $('#audioError').hidden = true;
   $('#playStatus').textContent = 'Включаем звук в браузере…';
@@ -334,7 +349,7 @@ function showSuggestions(tracks, emptyMessage) {
   matches = tracks;
   highlighted = activeId ? matches.findIndex(t => t.id === activeId) : -1;
   const list = $('#suggestions');
-  list.innerHTML = matches.length ? matches.map((t, i) => `<li id="answer-option-${i}" role="option" aria-selected="${i === highlighted}" data-option="${i}"><b>${esc(t.kind === 'artist' ? t.name : t.title)}</b>${t.kind === 'artist' ? '' : `<small>${esc(t.artist)}</small>`}</li>`).join('') : `<li class="search-empty" role="presentation">${esc(emptyMessage)}</li>`;
+  list.innerHTML = matches.length ? matches.map((t, i) => `<li id="answer-option-${i}" role="option" aria-selected="${i === highlighted}" data-option="${i}">${t.kind !== 'artist' && /^https:\/\/cdn-images\.dzcdn\.net\//.test(t.cover || '') ? `<img class="suggestion-cover" src="${esc(t.cover)}" alt="" loading="lazy">` : ''}<b>${esc(t.kind === 'artist' ? t.name : t.title)}</b>${t.kind === 'artist' ? '' : `<small>${esc(t.artist)}</small>`}</li>`).join('') : `<li class="search-empty" role="presentation">${esc(emptyMessage)}</li>`;
   list.hidden = false; $('#answerInput').setAttribute('aria-expanded', 'true');
   if (highlighted >= 0) $('#answerInput').setAttribute('aria-activedescendant', `answer-option-${highlighted}`);
   else $('#answerInput').removeAttribute('aria-activedescendant');
@@ -426,4 +441,12 @@ addEventListener('keydown', e => {
 });
 addEventListener('pagehide', () => { audioController?.abort(); player.stop(); });
 addEventListener('pageshow', event => { if (event.persisted && state) renderGame(); });
+const multiplayer = createMultiplayer({
+  getMatch: makeFriendMatch,
+  getSettings: () => ({ packTitle: currentPack().title, rounds: settings.rounds, answerMode: settings.answerMode }),
+  verifyTrack: id => service.track(id),
+  showGame: game => { const focusAnswer = state?.phase === 'round' && game.phase === 'round' && state.attempts.length !== game.attempts.length; state = game; renderGame(focusAnswer); },
+  stopGame: () => { screenVersion++; audioController?.abort(); player.stop(); closeSuggestions(); autoPlay = false; state = null; renderedRoundKey = null; },
+  showHome: renderSetup,
+});
 renderSetup(); enter(stage); selectPack(currentPack());

@@ -7,15 +7,13 @@
 <meta name="description" content="Угадай музыку за полсекунды: рок, рэп, электроника, инди и новая школа. Жанровые подборки для компании, история ответов и музыка онлайн.">
 <meta property="og:title" content="Полсекунды — угадай музыку с друзьями">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@600;800&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/fonts/fonts.css">
 <link rel="stylesheet" href="../shared/style.css">
 <link rel="stylesheet" href="style.css?v=answers-20261023">
-<link rel="stylesheet" href="cabinet.css?v=collections-20261024">
-<link rel="stylesheet" href="theme.css?v=theme-1">
+<link rel="stylesheet" href="record-store.css?v=store-align-20261025">
+<link rel="stylesheet" href="multiplayer.css?v=friends-20261025">
 </head>
-<body class="music-cabinet">
+<body class="record-store">
 <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="wrap music-wrap">
   <header class="top">
@@ -25,13 +23,14 @@
       <button class="exit" id="exitBtn" hidden>К подборкам</button>
     </div>
   </header>
+  <section id="musicRoom" class="friend-room" aria-label="Лобби и счёт игроков" hidden></section>
   <main id="stage"><p class="sub boot-message">Собираем подборку…</p></main>
-  <footer class="music-footer"><span>Один экран. Любая компания.</span><span>В Discord включите передачу звука.</span></footer>
+  <footer class="music-footer"><span>Один экран или лобби с друзьями.</span><span>Играете с одного экрана? Передайте звук в Discord.</span></footer>
 </div>
 
 <dialog class="music-dialog" id="rulesDialog" aria-labelledby="rulesTitle">
   <div class="dialog-head"><h2 id="rulesTitle">Узнаешь с полсекунды?</h2><button class="dialog-close" data-close="rulesDialog" aria-label="Закрыть правила">×</button></div>
-  <p class="sub">Играйте вместе с одного экрана. На обсуждение времени сколько угодно.</p>
+  <p class="sub">Играйте с одного экрана или создайте лобби: каждый друг сможет отвечать со своего устройства. Без таймера.</p>
   <ol class="rules-list">
     <li><b>Слушайте.</b> Сначала — только 0,5 секунды онлайн-превью песни. Нажмите на пластинку ещё раз или пробел — звук остановится.</li>
     <li><b>Угадывайте.</b> В режиме «Песню» выберите песню из подсказок. В режиме «Исполнителя / группу» достаточно выбрать имя артиста или группы. Поиск понимает опечатки и транслит.</li>
@@ -40,6 +39,7 @@
     <li><b>Смотрите подсказки.</b> Красный ответ — не та песня, жёлтый — угадан исполнитель, зелёный — точное попадание. Все попытки остаются рядом с полем ответа.</li>
   </ol>
   <div class="score-rule">Повторять открытый отрывок можно бесплатно. Каждый раз он начинается с того же места.</div>
+  <div class="score-rule">В лобби очки за песню умножаются на место среди правильных ответов: ×1,5 → ×1,25 → ×1 → ×0,75 → ×0,5. С пятого места — ×0,5. Ответ открывается после завершения раунда всеми игроками; следующий раунд включает ведущий.</div>
   <button class="btn primary big" data-close="rulesDialog">Понятно, погнали</button>
 </dialog>
 
@@ -55,6 +55,6 @@
   <ul class="lineup-list" id="lineupList"></ul>
 </dialog>
 <script type="module" src="../shared/menu.js"></script>
-<script type="module" src="cabinet.js?v=collections-20261024"></script>
+<script type="module" src="record-store.js?v=friends-20261025"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="vinyl" cx=".35" cy=".25" r=".8">
+      <stop stop-color="#302c28"/>
+      <stop offset=".6" stop-color="#141313"/>
+      <stop offset="1" stop-color="#090909"/>
+    </radialGradient>
+    <linearGradient id="label" x1="23" y1="22" x2="42" y2="43" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe0a1"/>
+      <stop offset="1" stop-color="#c68837"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30.5" fill="url(#vinyl)" stroke="#73604a"/>
+  <g stroke="#585049" stroke-width=".7" opacity=".6">
+    <circle cx="32" cy="32" r="26.5"/>
+    <circle cx="32" cy="32" r="23.5"/>
+    <circle cx="32" cy="32" r="20.5"/>
+    <circle cx="32" cy="32" r="17.5"/>
+    <circle cx="32" cy="32" r="14.5"/>
+  </g>
+  <g stroke="#e4d6bf" stroke-linecap="round">
+    <path d="M9 21a25.5 25.5 0 0 1 13-12" opacity=".55"/>
+    <path d="M13 22a21.5 21.5 0 0 1 10-10" opacity=".3"/>
+    <path d="M43 55a25.5 25.5 0 0 0 12-12" opacity=".25"/>
+  </g>
+  <circle cx="32" cy="32" r="10.5" fill="url(#label)" stroke="#ffe6ae" stroke-width=".6"/>
+  <path d="M28 27.5h8M29.5 36.5h5" stroke="#7b4d22" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="2.3" fill="#141313"/>
+</svg>
