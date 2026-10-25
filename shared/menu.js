@@ -4,8 +4,11 @@ const ROOT = new URL('../', import.meta.url);
 export const GAMES = [
   { path: 'genie/', icon: '✦', name: 'Джинн', desc: 'Суперсила с подвохом · 2–8 игроков' },
   { path: 'dice/', icon: '🎲', name: 'Костяшки', desc: 'Кости как в Cult of the Lamb · 1–2 игрока' },
-  { path: 'music/', icon: '🎧', name: 'Полсекунды', desc: 'Популярные треки онлайн · один экран на всех' },
+  { path: 'music/', icon: '🎧', name: 'Полсекунды', desc: 'Угадай музыку · один экран или лобби' },
+  { path: 'geo/', icon: '🕵️', name: 'Угадай страну', desc: 'Детективная доска с уликами · 1–4 игрока' },
   { path: 'where/', icon: '📍', name: 'Где я?', desc: 'Как GeoGuessr · один или с друзьями' },
+  { path: 'screen/', icon: '🎬', name: 'До титров', desc: 'Угадай кино, сериал, аниме или мультфильм' },
+  { path: 'rap/', icon: '🎙', name: 'Биты', desc: 'Звуковая мастерская · слушать и сохранять' },
 ];
 const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches || document.hidden;
 const anim = (el, kf, o) => (still() ? null : el.animate(kf, { easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards', ...o }));

@@ -1,0 +1,94 @@
+/* A brass lamp shop: walnut counter, old paper and a little teal magic. */
+body.club-theme[data-game="genie"] {
+  --genie-paper:linear-gradient(120deg,#f4e5c9,#e4cda7);
+}
+.club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1.5fr) minmax(290px,.85fr); gap:48px; align-items:center; }
+.club-theme[data-game="genie"] .hero { min-width:0; }
+.club-theme[data-game="genie"] .hero h1 { font:400 clamp(76px,9vw,112px)/.95 'Marck Script',cursive; color:#edb965; text-shadow:0 2px 0 #52301c,0 0 24px #c9934228; }
+.club-theme[data-game="genie"] .hero h1 span:last-child { color:inherit; text-shadow:none; }
+.club-theme[data-game="genie"] .hero .sub { max-width:540px; font-size:17px; line-height:1.55; color:#cbb99e; }
+.genie-scene { position:relative; margin:22px 0 0; padding:6px; background:#4b3320; border:1px solid #bb8a4c80; border-radius:5px; box-shadow:0 14px 27px #0006,inset 0 0 0 2px #24170c; }
+.genie-scene::after { content:''; position:absolute; inset:11px; border:1px solid #d9b47445; pointer-events:none; }
+.genie-scene img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:1px; }
+.club-theme[data-game="genie"] .fan { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; height:auto; margin:17px 2px 0; }
+.club-theme[data-game="genie"] .fan .mini { position:relative; left:auto; right:auto; top:auto; width:auto; padding:12px; border-radius:2px; font-size:12px; line-height:1.4; color:#443324; background:var(--genie-paper); border:1px solid #d0b58b; transform:rotate(-2deg); animation:none; box-shadow:0 5px 8px #0004; }
+.club-theme[data-game="genie"] .fan .m2 { transform:rotate(1deg); }
+.club-theme[data-game="genie"] .fan .m3 { transform:rotate(-1deg); background:#29443b; color:#ead7b5; border-color:#9a8754; }
+.club-theme[data-game="genie"] .fan .mini b { padding:0 0 4px; border-radius:0; font-family:'Onest',sans-serif; font-size:11px; letter-spacing:.06em; color:#6c4c27; background:none; border-bottom:1px solid #886a4045; }
+.club-theme[data-game="genie"] .fan .m2 b { color:#873e34; }
+.club-theme[data-game="genie"] .fan .m3 b { color:#edb965; border-color:#bc995c55; }
+.club-theme[data-game="genie"] .chip.wisher { border-color:#edb965a6; box-shadow:0 0 0 2px #edb9651a; }
+.club-theme[data-game="genie"] .steps li.done { color:#d0c0a8; }
+.club-theme[data-game="genie"] .steps li.on { color:#2d2115; font-weight:700; }
+.club-theme[data-game="genie"] .steps .pill { background:linear-gradient(#f1c77e,#ca9650); }
+.club-theme[data-game="genie"] .hint b { color:#f4dfba; }
+.club-theme[data-game="genie"] .pcard { border-radius:9px; }
+.club-theme[data-game="genie"] .pcard.b2 { background:#40564a; border-color:#ad8951; }
+.club-theme[data-game="genie"] .pcard.b3 { background:#573a28; border-color:#ad8951; }
+.club-theme[data-game="genie"] .pc-back { border-radius:9px; color:#ead7b5; background:radial-gradient(ellipse at 50% 25%,#476359,#293d34 65%,#1c2c25); border:2px solid #b79358; box-shadow:inset 0 0 0 5px #243b32,inset 0 0 0 6px #cfa56577; }
+.club-theme[data-game="genie"] .pc-back::before { inset:15px; border:1px solid #c5a36a8c; border-radius:2px; }
+.club-theme[data-game="genie"] .pc-back .logo2 { color:#edb965; text-shadow:0 2px 6px #0007; }
+.club-theme[data-game="genie"] .pc-back span { font-family:'Onest',sans-serif; font-size:12px; letter-spacing:.14em; }
+.club-theme[data-game="genie"] .pc-front { border-radius:9px; background:var(--genie-paper); color:#443324; border:1px solid #bc9a61; box-shadow:inset 0 0 0 7px #f7e7c733,inset 0 0 0 8px #8e673426; }
+.club-theme[data-game="genie"] .pc-front .tag { color:#f0dfbd; background:#344a3b; border-radius:3px; }
+.club-theme[data-game="genie"] .pc-front h2 { font-family:'Onest',sans-serif; font-weight:800; font-size:25px; }
+.club-theme[data-game="genie"] .pc-front.long h2 { font-size:20px; }
+.club-theme[data-game="genie"] .pc-foot { color:#786143; }
+.club-theme[data-game="genie"] .strip { border-radius:7px; background:#293d32; border-color:#9f86506b; box-shadow:inset 0 1px #edc99012; }
+.club-theme[data-game="genie"] .strip div { color:#d9ccb1; }
+.club-theme[data-game="genie"] .strip b { font-family:'Onest',sans-serif; font-size:17px; color:#f1dbb6; }
+.club-theme[data-game="genie"] .timer .tr { stroke:#d1b7832e; }
+.club-theme[data-game="genie"] .slot { border-color:#b592574f; border-radius:7px; background:#271e1438; }
+.club-theme[data-game="genie"] .slot.filled { background:none; }
+.club-theme[data-game="genie"] .ccard { border-radius:7px; }
+.club-theme[data-game="genie"] .cb { position:relative; min-height:220px; border-radius:7px; background:repeating-linear-gradient(45deg,#7d3d31 0 8px,#763a30 8px 16px); color:#e8cca0; border:2px solid #c49b5f; box-shadow:inset 0 0 0 6px #663124,inset 0 0 0 7px #c49b5f80,0 8px 14px #0003; }
+.club-theme[data-game="genie"] .cb.g { background:radial-gradient(ellipse at 50% 30%,#446255,#253a30); color:#edb965; border-color:#c49b5f; }
+.club-theme[data-game="genie"] .cb span { font-family:'Onest',sans-serif; letter-spacing:.12em; }
+.club-theme[data-game="genie"] .cf { border-radius:7px; background:var(--genie-paper); border:1px solid #b79b6d; color:#443324; box-shadow:0 8px 16px #0003,inset 0 0 22px #a17e3414; }
+.club-theme[data-game="genie"] .cf .no { background:#873e34; color:#fff0ce; border-radius:3px; font-family:'Onest',sans-serif; font-weight:700; }
+.club-theme[data-game="genie"] .cf .add { background:#d8bea083; border-color:#9a5e44; border-radius:3px; }
+.club-theme[data-game="genie"] .cf .ft { color:#756044; flex-wrap:wrap; }
+.club-theme[data-game="genie"] .fire { background:#f6e9cd; border-color:#bfa57c; color:#443324; border-radius:5px; }
+.club-theme[data-game="genie"] .more { border-radius:5px; background:#5b4933; color:#f8e6c4; }
+.club-theme[data-game="genie"] .cf.g { background:linear-gradient(140deg,#385247,#233b30); color:#f0ddb6; border-color:#ba9558; box-shadow:0 8px 16px #0004,inset 0 0 0 4px #dfb66a0c; }
+.club-theme[data-game="genie"] .cf.g .no { background:#edb965; color:#443324; }
+.club-theme[data-game="genie"] .cf.g .ft { color:#d4bc8f; }
+.club-theme[data-game="genie"] .cf.g .add { background:#ceb36b1f; color:#ead7b5; border-color:#bd9a58; }
+.club-theme[data-game="genie"] .mini-in input { border-radius:4px; border-color:#b99c6c; background:#fff2d6; color:#443324; }
+.club-theme[data-game="genie"] .mini-in button { border-radius:4px; background:#873e34; color:#fff0cf; }
+.club-theme[data-game="genie"] .ccard.chosen { box-shadow:0 0 0 3px #edb965,0 10px 24px #0006; }
+.club-theme[data-game="genie"] .pick .ccard:hover { outline:2px solid #edb965a1; outline-offset:3px; }
+.club-theme[data-game="genie"] .poster { border-radius:7px; background:var(--genie-paper); border:1px solid #b58f55; color:#443324; box-shadow:0 0 0 7px #4b3423,0 0 0 8px #ad875650,0 18px 35px #0006; }
+.club-theme[data-game="genie"] .poster::after { display:none; }
+.club-theme[data-game="genie"] .poster .brand { color:#756044; }
+.club-theme[data-game="genie"] .poster .brand b { color:#735326; }
+.club-theme[data-game="genie"] .poster .lab { border-radius:3px; color:#f6e7c9; }
+.club-theme[data-game="genie"] .poster .l1 { background:#344a3b; }
+.club-theme[data-game="genie"] .poster .l2 { background:#873e34; }
+.club-theme[data-game="genie"] .poster .padd { color:#854b35; }
+.club-theme[data-game="genie"] .poster .pft { color:#786044; border-color:#8e6d3c4d; }
+.club-theme[data-game="genie"] .pod .bar { background:linear-gradient(#52705b,#314637); border:1px solid #9c8751; color:#ead7b5; border-radius:6px 6px 2px 2px; }
+.club-theme[data-game="genie"] .pod.p1 .bar { background:linear-gradient(#e5b971,#b98a45); border-color:#edc47d; color:#443324; }
+.club-theme[data-game="genie"] .custom-row { align-items:stretch; }
+.club-theme[data-game="genie"] .custom-row .field { min-width:0; }
+@media (max-width:900px) {
+  .club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1fr) minmax(265px,.8fr); gap:28px; }
+  .club-theme[data-game="genie"] .fan { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .club-theme[data-game="genie"] .fan .m3 { display:none; }
+}
+@media (max-width:700px) {
+  .club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1fr); gap:26px; }
+  .club-theme[data-game="genie"] .hero h1 { font-size:82px; }
+  .club-theme[data-game="genie"] .hero .sub { font-size:16px; }
+  .club-theme[data-game="genie"] .fan { display:none; }
+  .club-theme[data-game="genie"] .hint { flex-wrap:wrap; }
+  .club-theme[data-game="genie"] .hint #hintTxt { flex-basis:calc(100% - 65px); }
+  .club-theme[data-game="genie"] .hint .qbtn { margin-left:auto; }
+  .club-theme[data-game="genie"] .compose { gap:8px; }
+  .club-theme[data-game="genie"] .compose .btn { padding-inline:16px; }
+  .club-theme[data-game="genie"] .custom-row { flex-wrap:wrap; }
+  .club-theme[data-game="genie"] .custom-row .field { flex:1 1 220px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .club-theme[data-game="genie"] :is(.steps .pill,.ccard,.poster) { transition:none; }
+}

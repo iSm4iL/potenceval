@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>До титров — potenceval</title>
+<meta name="description" content="Угадай кино, сериал, аниме или мультфильм по подсказкам и частям картинки.">
+<link rel="stylesheet" href="../shared/fonts/fonts.css">
+<link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../shared/club.css?v=club-20261025">
+<link rel="stylesheet" href="club.css?v=club-20261025">
+</head>
+<body class="club-theme" data-game="screen">
+<div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap screen-wrap">
+  <header class="top">
+    <a class="logo" href="../"><b>potenceval</b><span>games</span></a>
+    <div class="top-right"><button class="qbtn" id="rulesBtn">Как играть</button><button class="exit" id="exitBtn" hidden>К выбору</button></div>
+  </header>
+  <main id="stage"></main>
+  <footer class="screen-footer"><span>Данные: собственная подборка. Свободные изображения: Wikimedia Commons; источники указаны в раундах.</span></footer>
+</div>
+<dialog id="rulesDialog" aria-labelledby="rulesTitle">
+  <h2 id="rulesTitle">Как играть</h2>
+  <p>Выбери подборку и угадай название. В начале открыты один угол картинки, год, страна, длительность и один жанр.</p>
+  <p>Нажимай на закрытые квадраты картинки или открывай актёров и другие зацепки. Угол стоит 6 очков, край — 12, центр — 20. Каждый актёр открывается отдельно.</p>
+  <p>Раунд начинается со 100 очков. Подсказки и ошибочные ответы уменьшают счёт. Верное название приносит оставшиеся очки.</p>
+  <button class="btn primary" id="rulesClose">Понятно</button>
+</dialog>
+<script type="module" src="../shared/menu.js?v=club-20261025"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

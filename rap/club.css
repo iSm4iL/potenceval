@@ -1,0 +1,18 @@
+body[data-game="rap"] .rap-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:35px;align-items:center;margin:28px 0 30px}
+body[data-game="rap"] .rap-hero h1{font:400 clamp(62px,7vw,92px)/1 'Marck Script',cursive;color:#f8dba3;text-shadow:0 0 18px #d19b4259}
+body[data-game="rap"] .rap-hero .sub{max-width:48ch;font-size:16px}
+.studio-scene{margin:0;border:8px solid #49301e;border-radius:8px;box-shadow:inset 0 0 0 1px #bd945c,0 18px 35px #0005;overflow:hidden;transform:rotate(1deg)}
+.studio-scene img{display:block;width:100%;height:280px;object-fit:cover;object-position:70% 50%}
+body[data-game="rap"] .beats{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:24px}
+body[data-game="rap"] .beat{padding:20px;background:linear-gradient(120deg,#3b2a1c,#20170f);border:1px solid #96703d;border-radius:10px;box-shadow:inset 0 0 0 4px #2d2015,0 14px 25px #0004}
+body[data-game="rap"] .beat::before{content:'';position:absolute;top:8px;left:8px;width:4px;height:4px;background:#9f7c45;border-radius:50%;box-shadow:0 1px #e2c692}
+body[data-game="rap"] .beat .tags span{color:#c5ae8a;background:#f5d6a012;border-radius:4px;border:1px solid #8c6b423d}
+body[data-game="rap"] .beat .tags .st{background:#d7b271;color:#352515;border-color:#c7a165}
+body[data-game="rap"] .beat h3{font:400 36px/1.1 'Marck Script',cursive;color:#f3dfbc;margin:19px 0 6px}
+body[data-game="rap"] .beat .inst{font-size:12px;line-height:1.5;min-height:36px;color:#bca37c}
+body[data-game="rap"] .beat canvas{border:1px solid #6d5030;background:#140f0a;border-radius:4px;height:66px}
+body[data-game="rap"] .beat .row2{justify-content:space-between;margin-top:17px}
+body[data-game="rap"] .beat .row2 .btn{padding:10px 13px}
+body[data-game="rap"] .note{color:#b69b77;border-color:#8f6b3c70;border-radius:5px}
+@media(max-width:1000px){body[data-game="rap"] .beats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){body[data-game="rap"] .rap-hero{grid-template-columns:1fr;gap:22px}.studio-scene img{height:210px}body[data-game="rap"] .beats{grid-template-columns:1fr}body[data-game="rap"] .rap-hero h1{font-size:66px}}

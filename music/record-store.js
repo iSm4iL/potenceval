@@ -1,5 +1,5 @@
 import { esc } from '../shared/kit.js';
-import { recordArt, shelfPage, selectionPage } from './record-store-model.js';
+import { recordArt, shelfPage, selectionPage } from './record-store-model.js?v=dead-cover-20261025';
 
 const stage = document.querySelector('#stage');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');

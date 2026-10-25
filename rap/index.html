@@ -22,22 +22,25 @@
 @keyframes pulse2{to{opacity:.35}}
 .note{max-width:640px;margin:26px auto 0;padding:12px 16px;border-radius:12px;border:1px dashed var(--line);color:var(--muted);font-size:13px;text-align:center}
 </style>
+<link rel="stylesheet" href="../shared/club.css?v=club-20261025">
+<link rel="stylesheet" href="club.css?v=club-20261025">
 </head>
-<body>
+<body class="club-theme" data-game="rap">
 <div class="blobs"><i></i><i></i><i></i></div>
 <div class="wrap">
   <header class="top"><a class="logo" href="../"><b>potenceval</b><span>games</span></a></header>
-  <section class="intro" style="margin-top:30px">
-    <span class="kicker">Тест генератора</span>
-    <h1 style="font-size:clamp(30px,6vw,52px)">Биты из формул</h1>
-    <p class="sub">Хард, дарк, дрилл, мелодик, трэп и восточный. Мелодии — живые инструменты, 808 и барабаны собираются прямо в браузере. У каждого бита свой состав и свой вход. Послушай в наушниках.</p>
+  <section class="intro rap-hero">
+    <div class="studio-copy"><span class="kicker">Под настроение и в наушниках</span>
+    <h1>Своя студия</h1>
+    <p class="sub">Хард, дарк, дрилл, мелодик, трэп и восточный. Слушай новые сочетания живых инструментов, баса и барабанов. Понравился бит — забирай WAV.</p></div>
+    <figure class="studio-scene"><img src="../shared/assets/club/rap.webp" alt="" width="768" height="512"></figure>
   </section>
   <div class="row" style="justify-content:flex-start"><button class="btn primary" id="more">Ещё 5 битов</button></div>
   <div class="beats" id="beats"></div>
   <p class="note" id="credits" style="border:0;margin-top:10px"></p>
-  <p class="note">Это проверка звука. Сама игра (выбор бита, запись, таймлайн, прослушка всех треков) будет на этой же странице.</p>
+  <p class="note">Пять битов каждый раз звучат по-новому. Можно слушать, перематывать волну и сохранять WAV. Записи голоса здесь пока нет.</p>
 </div>
-<script type="module" src="../shared/menu.js"></script>
+<script type="module" src="../shared/menu.js?v=club-20261025"></script>
 <script type="module">
 import { describe, renderBeat, toWav, MAIN_STYLES, CREDITS } from './beats.js';
 document.getElementById('credits').textContent = CREDITS;
@@ -51,7 +54,7 @@ function drawWave(canvas, buf, progress = 0) {
   for (let x = 0; x < w; x++) {
     let m = 0;
     for (let i = x * step; i < (x + 1) * step; i += 16) m = Math.max(m, Math.abs(d[i]));
-    g.fillStyle = x / w < progress ? '#ff4d6d' : 'rgba(205,189,255,.55)';
+    g.fillStyle = x / w < progress ? '#edb965' : 'rgba(226,203,162,.6)';
     g.fillRect(x, h / 2 - m * h / 2, 1, Math.max(1, m * h));
   }
 }
@@ -85,7 +88,7 @@ function addBeats() {
     card.innerHTML = `<div class="tags"><span class="st">${info.label}</span><span>${info.bpm} BPM</span><span>${info.keyName}</span><span>${Math.round(info.duration)} с</span></div>
       <h3>«${info.name}»</h3><p class="inst">${info.tags.join(' · ')}</p><canvas></canvas><div class="row2"><button class="btn primary play" disabled>собираю…</button><a class="btn ghost dl" hidden>WAV</a></div>`;
     box.append(card);
-    card.animate([{ opacity: 0, transform: 'translateY(20px) scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: i * 80, easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards' });
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) card.animate([{ opacity: 0, transform: 'translateY(20px) scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: i * 80, easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards' });
     const buf = await renderBeat(info);
     if (!card.isConnected) return;
     card.classList.remove('loading');

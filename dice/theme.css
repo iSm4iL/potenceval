@@ -1,0 +1,83 @@
+/* The tavern table: carved walnut, green felt and ivory dice. */
+body.club-theme[data-game="dice"] {
+  --bone:#f4e9cd; --bone2:#d8c39e; --pip:#39291c; --blood:#a2503f;
+  --dice-wood:linear-gradient(#3c241665,#1f120b9c),url('../music/assets/record-store/walnut.webp') center/cover;
+  --dice-felt:radial-gradient(ellipse at 50% 25%,#3c5843,#293e2f 75%);
+}
+.club-theme[data-game="dice"] .home { grid-template-columns:minmax(0,1.5fr) minmax(290px,.85fr); align-items:center; gap:48px; }
+.club-theme[data-game="dice"] .hero { min-width:0; }
+.club-theme[data-game="dice"] .hero h1 { white-space:normal; font:400 clamp(66px,7.5vw,100px)/1 'Marck Script',cursive; color:#edb965; text-shadow:0 2px 0 #52301c,0 0 24px #c9934228; }
+.club-theme[data-game="dice"] .hero h1 span:last-child { color:inherit; text-shadow:none; }
+.club-theme[data-game="dice"] .hero .sub { font-size:17px; line-height:1.55; max-width:560px; color:#cbb99e; }
+.dice-scene { position:relative; margin:22px 0 0; padding:6px; background:var(--dice-wood); border:1px solid #bd8b4a80; border-radius:5px; box-shadow:0 14px 27px #0006,inset 0 0 0 2px #24170c; }
+.dice-scene img { display:block; width:100%; height:auto; aspect-ratio:2/1; object-fit:cover; border-radius:1px; }
+.club-theme[data-game="dice"] .ritual { display:flex; width:100%; gap:14px; margin-top:18px; padding:18px 14px; --d:clamp(25px,3vw,35px); border-radius:7px; border:6px solid #67472b; outline:1px solid #a67d4499; background:var(--dice-felt); box-shadow:inset 0 0 0 2px #be955640,inset 0 0 24px #122217,0 8px 18px #0004; }
+.club-theme[data-game="dice"] .ritual::before { inset:6px; border:1px solid #cfba8a38; border-radius:2px; }
+.club-theme[data-game="dice"] .mini-board { gap:5px; }
+.club-theme[data-game="dice"] .mini-col { gap:5px; }
+.club-theme[data-game="dice"] .mini-col span { border-color:#dbd1a82e; background:#16291b1c; }
+.club-theme[data-game="dice"] .mini-mid { min-width:64px; }
+.club-theme[data-game="dice"] .mini-tray { background:#24190f; border-color:#b3945a80; border-radius:7px; box-shadow:inset 0 3px 8px #0007; }
+.club-theme[data-game="dice"] .mini-turn { font-size:10px; line-height:1.4; letter-spacing:0; text-transform:none; color:#dfc58c; }
+.club-theme[data-game="dice"] .die { background:linear-gradient(145deg,#fcf2dc,#d8c39e); box-shadow:inset 0 -3px 0 #76572b35,inset 0 2px 0 #fff9,0 5px 9px #0007; }
+.club-theme[data-game="dice"] .die i { background:#39291c; box-shadow:inset 0 1px 1px #0a08075c; }
+.club-theme[data-game="dice"] .die.black { background:linear-gradient(145deg,#514439,#211b15); box-shadow:inset 0 -3px 0 #100d0980,inset 0 2px 0 #c3ab8e30,0 5px 9px #0007; }
+.club-theme[data-game="dice"] .die.black i { background:#ecddbd; }
+.club-theme[data-game="dice"] .die.x2 { background:linear-gradient(145deg,#ffe3a0,#c39342); box-shadow:inset 0 -3px 0 #8e632833,0 0 0 2px #edb965a3,0 4px 9px #0007; }
+.club-theme[data-game="dice"] .die.x3 { background:linear-gradient(145deg,#fff0c6,#bda06e); box-shadow:inset 0 -3px 0 #8e632833,0 0 0 2px #eed9a5,0 0 12px #edb96575; }
+.club-theme[data-game="dice"] .die.black.x2 { background:linear-gradient(145deg,#806437,#382814); }
+.club-theme[data-game="dice"] .die.black.x3 { background:linear-gradient(145deg,#6e5540,#35281d); }
+.club-theme[data-game="dice"] .die.black:is(.x2,.x3) i { background:#ffe3a0; }
+.club-theme[data-game="dice"] .die:is(.x2,.x3)::after { content:'×2'; position:absolute; bottom:-4px; right:-4px; border:1px solid #a77d3e; border-radius:3px; padding:1px 3px; font:700 9px/1.2 'Onest',sans-serif; background:#f3cd83; color:#443324; }
+.club-theme[data-game="dice"] .die.x3::after { content:'×3'; background:#f7e9cb; }
+.club-theme[data-game="dice"] .die.ghost { opacity:.45; box-shadow:0 0 0 2px #edb965; }
+.club-theme[data-game="dice"] .die.doomed { box-shadow:0 0 0 3px #b7654e,0 0 17px #a74e3e75; }
+.club-theme[data-game="dice"] .duel { max-width:530px; gap:12px; padding:4px; }
+.club-theme[data-game="dice"] .series { color:#c3ae8d; font-size:12px; letter-spacing:0; }
+.club-theme[data-game="dice"] .series b { color:#edb965; }
+.club-theme[data-game="dice"] .side { border:7px solid #50341f; outline:1px solid #a37d4b80; border-radius:9px; padding:10px; gap:8px; background:var(--dice-wood); box-shadow:inset 0 0 0 1px #c6a76e44,0 6px 15px #0004; }
+.club-theme[data-game="dice"] .side.active { border-color:#76552f; outline:2px solid #d9ae69; background:var(--dice-wood); box-shadow:inset 0 0 0 1px #e5c18370,0 0 0 5px #edb9650f,0 8px 22px #0006; }
+.club-theme[data-game="dice"] .head { gap:9px; min-width:0; padding:0 3px; }
+.club-theme[data-game="dice"] .head .av { border-radius:6px; box-shadow:0 2px 4px #0005; }
+.club-theme[data-game="dice"] .head .nm { color:#ecd8b9; font-size:15px; }
+.club-theme[data-game="dice"] .head small { color:#c1ab8a; font-size:11px; }
+.club-theme[data-game="dice"] .head .tot { font-size:clamp(24px,5.5vw,32px); color:#dfc9a6; text-shadow:0 2px 2px #0007; }
+.club-theme[data-game="dice"] .side.active .tot { color:#f0c47b; }
+.club-theme[data-game="dice"] .board { gap:5px; padding:7px; border-radius:5px; border:1px solid #a3804c80; background:var(--dice-felt); box-shadow:inset 0 4px 12px #0c190f9c,0 1px #e1bd791f; }
+.club-theme[data-game="dice"] .col { border-radius:4px; padding:7px 0; border:1px solid #b6bb8c17; background:#182d1c29; }
+.club-theme[data-game="dice"] .cell { border:1px dashed #c3c59a35; background:#1a2d1d30; }
+.club-theme[data-game="dice"] .cell:has(.die:not(.ghost)) { background:none; border-color:transparent; }
+.club-theme[data-game="dice"] .col.can { background:#78975a12; border:1px dashed #edc88680; box-shadow:inset 0 0 0 1px #edb9650c; }
+.club-theme[data-game="dice"] .col.can:hover { background:#c2a75a2e; border-color:#f4cf8c; box-shadow:inset 0 0 0 1px #edb9658c; }
+.club-theme[data-game="dice"] .col.can:focus-visible { background:#c2a75a2e; outline:3px solid #ffdc94; outline-offset:2px; box-shadow:none; }
+.club-theme[data-game="dice"] .scores { color:#e7c993; font-size:15px; }
+.club-theme[data-game="dice"] .mid { gap:17px; min-height:calc(var(--d) + 38px); padding:0 10px; }
+.club-theme[data-game="dice"] .tray { border-radius:9px; background:radial-gradient(ellipse at 50% 25%,#3a2a19,#1a120d); border:3px solid #735330; outline:1px solid #b28c4b8c; box-shadow:inset 0 4px 12px #0009,0 3px 8px #0006; }
+.club-theme[data-game="dice"] .turn { font-size:15px; color:#c9b493; }
+.club-theme[data-game="dice"] .turn b { color:#f1d7a6; }
+.club-theme[data-game="dice"] .turn .arrow { color:#edb965; }
+.club-theme[data-game="dice"] .last-call { color:#f1bc80; }
+.club-theme[data-game="dice"] .result h2 { font:400 clamp(40px,7vw,54px)/1.05 'Marck Script',cursive; color:#edb965; }
+.club-theme[data-game="dice"] .result p { font-size:14px; color:#cbb796; }
+@media (max-width:900px) {
+  .club-theme[data-game="dice"] .home { grid-template-columns:minmax(0,1fr) minmax(265px,.8fr); gap:28px; }
+  .club-theme[data-game="dice"] .ritual { --d:clamp(20px,2.8vw,29px); gap:9px; padding-inline:8px; }
+  .club-theme[data-game="dice"] .mini-mid { min-width:52px; }
+}
+@media (max-width:700px) {
+  .club-theme[data-game="dice"] .home { grid-template-columns:minmax(0,1fr); gap:26px; }
+  .club-theme[data-game="dice"] .hero h1 { font-size:clamp(58px,13vw,78px); }
+  .club-theme[data-game="dice"] .hero .sub { font-size:16px; }
+  .club-theme[data-game="dice"] .ritual { --d:clamp(25px,5.5vw,35px); gap:12px; margin-top:15px; }
+  .club-theme[data-game="dice"] .mini-mid { min-width:50px; }
+  .club-theme[data-game="dice"] .duel { padding:3px; gap:10px; }
+  .club-theme[data-game="dice"] .side { padding:8px; border-width:5px; }
+  .club-theme[data-game="dice"] .head .nm { font-size:14px; }
+  .club-theme[data-game="dice"] .head small { font-size:10px; }
+  .club-theme[data-game="dice"] .board { padding:5px; gap:4px; }
+  .club-theme[data-game="dice"] .col { gap:5px; padding-block:6px; }
+  .club-theme[data-game="dice"] .mid { gap:14px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .club-theme[data-game="dice"] :is(.die,.col,.side) { animation:none; transition:none; }
+}

@@ -1,0 +1,62 @@
+/* Common room materials. Individual games keep their own objects and interactions. */
+body.club-theme{--bg:#15100c;--surface:#261c14;--line:#70533580;--text:#f2e4cb;--muted:#bba78a;--gold:#edb965;--paper:#ead7b5;--ink:#443324;--violet:#ad8649;--pink:#cd8159;--ok:#a9c294;--club-scene:url('assets/club/lounge.webp');background:linear-gradient(90deg,#100d0af2,#100d0ad4 58%,#100d0aae),var(--club-scene) center top / cover fixed;color:var(--text)}
+body.club-theme[data-game="genie"]{--club-scene:url('assets/club/genie.webp')}
+body.club-theme[data-game="dice"]{--club-scene:url('assets/club/dice.webp')}
+body.club-theme[data-game="screen"]{--club-scene:url('assets/club/screen.webp')}
+body.club-theme[data-game="geo"]{--club-scene:url('assets/club/geo.webp')}
+body.club-theme[data-game="rap"]{--club-scene:url('assets/club/rap.webp')}
+.club-theme .blobs{display:none}
+.club-theme .wrap{max-width:1240px;padding:24px 28px 50px}
+.club-theme .top{gap:12px;min-height:48px;padding-bottom:19px;border-bottom:1px solid #9d794d40}
+.club-theme .logo{align-items:center;gap:8px;font-size:19px;letter-spacing:-.04em}
+.club-theme .logo::before{content:'';width:43px;height:43px;flex:none;background:url('assets/club/club-mark.svg') center / contain no-repeat;margin-right:3px}
+.club-theme .logo b{color:#f3e5cc}.club-theme .logo span{color:#d5ac69;font-size:13px;letter-spacing:0}
+.club-theme h1,.club-theme h2{letter-spacing:0}
+.club-theme .phase-title h1{font:400 clamp(36px,5vw,54px)/1.08 'Marck Script',cursive;color:#f3dfbd}
+.club-theme .kicker{text-transform:none;letter-spacing:.03em;font-size:13px;color:#d7b174}
+.club-theme .sub{line-height:1.6}
+.club-theme .btn{border-radius:8px;min-height:44px;padding:13px 20px;text-decoration:none;box-shadow:none}
+.club-theme .btn.primary,.club-theme .btn.gold{background:linear-gradient(#f4cf8b,#dfab5b);color:#342317;box-shadow:inset 0 1px #fff4cf,0 5px 16px #0003;border:1px solid #b88742}
+.club-theme .btn.primary:hover,.club-theme .btn.gold:hover{background:linear-gradient(#ffdf9e,#eaba6a)}
+.club-theme .btn.ghost{background:#251a12b8;color:#efdbbb;border-color:#a37a457d}
+.club-theme .btn:disabled{opacity:.5}
+.club-theme .field{border-radius:7px;background:#f2e6cc;border:1px solid #af956d;color:#443324;box-shadow:inset 0 2px 5px #30200b12}
+.club-theme .field::placeholder{color:#8c785c;opacity:1}
+.club-theme .field:focus{border-color:#d7a75f;box-shadow:0 0 0 3px #f4c47535}
+.club-theme :is(button,a,input,textarea,select):focus-visible{outline:2px solid #ffda94;outline-offset:4px}
+.club-theme .panel{background:linear-gradient(120deg,#f0dfbd,#dfc79f);border:8px solid #5d4027;border-radius:10px;color:#493624;box-shadow:inset 0 0 0 1px #ba935b,0 16px 34px #0004;padding:28px}
+.club-theme .panel label,.club-theme .panel .sub,.club-theme .panel .linkbtn,.club-theme .panel .or{color:#756046}
+.club-theme .panel .or::before,.club-theme .panel .or::after{background:#b99c7280}
+.club-theme .panel .btn.ghost{color:#584127;background:#f8edda;border-color:#b89c73}
+.club-theme .room,.club-theme .exit,.club-theme .qbtn{color:#e5cfaf;border-color:#8c6a4266;border-radius:99px;background:#1b140fd6}
+.club-theme .room b{color:#f5cb80}
+.club-theme .players{gap:9px;margin:18px 0 0}
+.club-theme .chip,.club-theme .pcard-l{background:#271c13e8;border-color:#8c683c6e;border-radius:9px;color:#edddc3}
+.club-theme .chip.wisher{border-color:#d4ac68;box-shadow:0 0 0 2px #c5944d24}
+.club-theme .steps,.club-theme .seg{background:#21180fed;border-color:#805e3770}
+.club-theme .steps .pill,.club-theme .seg .pill{background:linear-gradient(110deg,#d3a65f,#eed19b)}
+.club-theme .steps li.on,.club-theme .seg button.on{color:#37271b;font-weight:700}
+.club-theme .steps li.done{color:#dac9ac}
+.club-theme .hint{background:#2a1e14e8;border-color:#a47b4555}.club-theme .hint b{color:#f6d59b}
+.club-theme .code span{background:linear-gradient(#382a1c,#20170f);border-color:#9f7b46;box-shadow:inset 0 1px #9d7c4650,0 10px 20px #0005;border-radius:8px;color:#f1ca83}
+.club-theme .sheet,.club-theme dialog{color:#eaddc6;background:linear-gradient(120deg,#312219,#1b140f);border:1px solid #95703d;border-radius:12px}
+.club-theme .sheet h2{font:400 clamp(32px,5vw,46px)/1.1 'Marck Script',cursive}
+.club-theme .rc{background:#ead8b6;color:#493624;border-color:#a88a5e;border-radius:7px}
+.club-theme .rc p,.club-theme .rn{color:#786044}.club-theme .rc b{font-family:Onest,sans-serif}
+.club-theme .score-rule{background:#b78b4121;color:#e9c28a}
+.club-theme .toast{background:#312216;color:#f0ddba;border-color:#98733e}
+.club-theme .pod .bar{background:linear-gradient(#8d6841,#43301d);border-color:#ac8654}
+.club-theme .pod.p1 .bar{background:linear-gradient(#edc67c,#b28a4b)}
+.club-theme .rest div{background:#2b1f15}
+.club-theme .consent{background:#2b2017;border-color:#8d6c41}.club-theme .consent .yes{background:#8b6939;border-color:#b08c52}
+.club-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:25px 0 0;margin-top:36px;border-top:1px solid #99734642;font-size:12px;color:#ab9576}
+.club-footer a{color:#d7b579;text-decoration:none}
+.drawer .drawer-panel{background:linear-gradient(110deg,#342417,#17100b);border-color:#8e673a66}
+.drawer .dlink{border-radius:8px}.drawer .dlink:hover{background:#d4a65c12}.drawer .dlink.on{background:#d4a65c1f;border-color:#b88f4e80}
+.drawer .dlink .ic{background:#f0c57810;border:1px solid #af82483d;border-radius:7px}
+.drawer .dlink b{color:#efdfc5;font:700 15px Onest,sans-serif}
+.drawer .dlink small,.drawer .dlabel,.drawer .dlegal a{color:#baa383}
+.drawer .dsoon{color:#baa383;border-color:#a87e4c52;border-radius:7px}
+.club-theme .burger{background:#291f17;border-color:#82613b70;border-radius:11px}.club-theme .burger:hover{background:#3b2b1d}.club-theme .burger span{background:#eadac0}
+@media(max-width:650px){.club-theme .wrap{padding:16px 16px 36px}.club-theme .top{gap:8px;padding-bottom:14px}.club-theme .logo{font-size:15px;gap:6px}.club-theme .logo::before{width:34px;height:34px;margin-right:0}.club-theme .logo span{font-size:11px}.club-theme .top-right{gap:7px}.club-theme .qbtn,.club-theme .exit{padding:8px 10px;font-size:12px}.club-theme .panel{padding:22px 18px;border-width:6px}.club-theme .btn{padding:12px 16px}.club-theme .phase-title{margin-bottom:20px}}
+@media(prefers-reduced-motion:reduce){.club-theme *,.club-theme *::before,.club-theme *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Угадай страну — potenceval</title>
+<meta name="description" content="Детективная доска: собирай улики — факты из истории, язык, еду, прогулку по улицам, валюту — и угадай страну.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕵️</text></svg>">
+<link rel="stylesheet" href="../shared/fonts/fonts.css">
+<link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../shared/club.css?v=club-20261025">
+<link rel="stylesheet" href="club.css?v=clues-20261025">
+</head>
+<body class="club-theme" data-game="geo">
+<div class="wrap geo-wrap">
+  <header class="top">
+    <a class="logo" href="../"><b>potenceval</b><span>games</span></a>
+    <div class="case-progress" id="progress" hidden><span id="progressText"></span><i><b id="progressBar"></b></i></div>
+    <div class="top-right">
+      <button class="qbtn" id="rulesBtn">Как играть</button>
+      <button class="exit" id="exitBtn" hidden>Закрыть дело</button>
+    </div>
+  </header>
+  <main id="stage"></main>
+</div>
+
+<section class="walk" id="walk" aria-label="Прогулка по улицам" hidden>
+  <header class="walk-bar">
+    <b>👣 Прогулка</b>
+    <span class="walk-hint">Тащи, чтобы осмотреться. Стрелки на дороге — идти дальше.</span>
+    <button class="walk-btn" id="walkOther">↻ Другое место</button>
+    <button class="walk-btn fold" id="walkFold">Свернуть ▾</button>
+  </header>
+  <div class="walk-view">
+    <iframe id="walkFrame" title="Панорама улицы"></iframe>
+    <span class="walk-cover">📍 Где-то в этой стране…</span>
+  </div>
+</section>
+<button class="walk-dock" id="walkDock" hidden>👣 Вернуться на прогулку ▴</button>
+
+<dialog class="geo-dialog" id="rulesDialog" aria-labelledby="rulesTitle">
+  <h2 id="rulesTitle">Как вести дело</h2>
+  <ol class="rules-list">
+    <li>На доске загадана страна. Один лист из архива открыт сразу.</li>
+    <li>Переворачивай улики: ещё факт, язык, кухню, прогулку по настоящим улицам, валюту и знаменитость. Каждая стоит очков — ценник на обороте.</li>
+    <li>Форма страны — последняя улика. Конверт вскрывается, когда на доске всё остальное.</li>
+    <li>Ошибся — минус 50 очков, зато блокнот покажет, сколько километров до нужной страны и в какую сторону.</li>
+    <li>Играешь с друзьями — кто первым назвал страну, тому и очки.</li>
+  </ol>
+  <button class="btn primary big" data-close>Понятно</button>
+</dialog>
+
+<dialog class="geo-dialog viewer" id="viewer" aria-label="Улика крупно">
+  <button class="viewer-close" data-close aria-label="Закрыть">×</button>
+  <div class="viewer-body" id="viewerBody"></div>
+  <p class="viewer-note" id="viewerNote"></p>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script type="module" src="../shared/menu.js?v=club-20261025"></script>
+<script type="module" src="app.js?v=clues-20261025"></script>
+</body>
+</html>

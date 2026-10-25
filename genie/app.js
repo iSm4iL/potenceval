@@ -149,6 +149,7 @@ BUILD.home = () => buildHome(stage, net, `
   <div class="hero" data-in><span class="kicker">Игра для друзей · 2–8 человек</span>
     <h1 id="heroTitle">Джинн</h1>
     <p class="sub">Один получает суперсилу. Остальные придумывают, в чём подвох. Джинн тоже придумывает — и он подлый.</p>
+    <figure class="genie-scene"><img src="../shared/assets/club/genie.webp" alt="Латунная лампа с бирюзовым дымом на прилавке антикварной лавки" width="1200" height="800" fetchpriority="high"></figure>
     <div class="fan">
       <div class="mini m1"><b>СИЛА</b><br>🌀 Телепортация куда угодно. Тело и одежда — в целости.</div>
       <div class="mini m2"><b>НО</b><br>С каждым телепортом ты в два раза тупее. <i>…и умнеешь, только если идёшь пешком.</i></div>
@@ -417,24 +418,24 @@ async function posterBlob(s, c) {
   };
   const F = { title: '800 58px Unbounded', ptext: '400 34px Onest', catch: '500 48px Onest', add: '400 34px Onest' };
   const blocks = [
-    ['pill', 'СИЛА', '#7c5cff'],
-    ['text', wrap(`${s.power.icon} ${s.power.title}`, F.title), F.title, 70, '#ffffff'],
-    ...(s.power.text ? [['text', wrap(s.power.text, F.ptext), F.ptext, 46, '#d9d1f5']] : []),
-    ['gap', 30], ['pill', 'НО', '#ff4d6d'],
-    ['text', wrap(c.text, F.catch), F.catch, 62, '#ffffff'],
-    ...c.adds.map(a => ['text', wrap('+ ' + a.text, F.add), F.add, 46, '#ffc1cc']),
+    ['pill', 'СИЛА', '#344a3b'],
+    ['text', wrap(`${s.power.icon} ${s.power.title}`, F.title), F.title, 70, '#443324'],
+    ...(s.power.text ? [['text', wrap(s.power.text, F.ptext), F.ptext, 46, '#786044']] : []),
+    ['gap', 30], ['pill', 'НО', '#873e34'],
+    ['text', wrap(c.text, F.catch), F.catch, 62, '#443324'],
+    ...c.adds.map(a => ['text', wrap('+ ' + a.text, F.add), F.add, 46, '#854b35']),
   ];
   const height = blocks.reduce((y, b) => y + (b[0] === 'pill' ? 84 : b[0] === 'gap' ? b[1] : b[1].length * b[3] + 14), P + 90) + 150;
   cv.width = Wd; cv.height = height;
   const g = ctx.createLinearGradient(0, 0, Wd * .4, height);
-  g.addColorStop(0, '#2a1d55'); g.addColorStop(.7, '#140e29');
+  g.addColorStop(0, '#f2e2c2'); g.addColorStop(.7, '#dfc59e');
   ctx.fillStyle = g; ctx.fillRect(0, 0, Wd, height);
   const glow = ctx.createRadialGradient(Wd * .85, 120, 0, Wd * .85, 120, 500);
-  glow.addColorStop(0, 'rgba(255,77,109,.35)'); glow.addColorStop(1, 'rgba(255,77,109,0)');
+  glow.addColorStop(0, 'rgba(237,185,101,.18)'); glow.addColorStop(1, 'rgba(237,185,101,0)');
   ctx.fillStyle = glow; ctx.fillRect(0, 0, Wd, height);
   ctx.textBaseline = 'top';
-  ctx.font = '800 32px Unbounded'; ctx.fillStyle = '#ffc94a'; ctx.fillText('potenceval', P, P);
-  ctx.font = '400 28px Onest'; ctx.fillStyle = '#a59cc4'; ctx.textAlign = 'right'; ctx.fillText(`✦ Джинн · раунд ${s.round + 1}`, Wd - P, P + 4); ctx.textAlign = 'left';
+  ctx.font = '800 32px Unbounded'; ctx.fillStyle = '#735326'; ctx.fillText('potenceval', P, P);
+  ctx.font = '400 28px Onest'; ctx.fillStyle = '#786044'; ctx.textAlign = 'right'; ctx.fillText(`✦ Джинн · раунд ${s.round + 1}`, Wd - P, P + 4); ctx.textAlign = 'left';
   let y = P + 90;
   for (const b of blocks) {
     if (b[0] === 'gap') { y += b[1]; continue; }
@@ -442,7 +443,7 @@ async function posterBlob(s, c) {
       ctx.font = '600 24px Unbounded';
       const w = ctx.measureText(b[1]).width + 44;
       ctx.fillStyle = b[2]; ctx.beginPath(); ctx.roundRect(P, y, w, 48, 24); ctx.fill();
-      ctx.fillStyle = '#fff'; ctx.fillText(b[1], P + 22, y + 11);
+      ctx.fillStyle = '#f7e8cc'; ctx.fillText(b[1], P + 22, y + 11);
       y += 84; continue;
     }
     ctx.font = b[2]; ctx.fillStyle = b[4];
@@ -450,9 +451,9 @@ async function posterBlob(s, c) {
     y += 14;
   }
   y += 40;
-  ctx.fillStyle = 'rgba(255,255,255,.12)'; ctx.fillRect(P, y, maxW, 2);
+  ctx.fillStyle = 'rgba(142,109,60,.3)'; ctx.fillRect(P, y, maxW, 2);
   y += 34;
-  ctx.font = '400 30px Onest'; ctx.fillStyle = '#a59cc4';
+  ctx.font = '400 30px Onest'; ctx.fillStyle = '#786044';
   ctx.fillText('придумал' + (c.by === GENIE_ID ? ' ✦ Джинн' : ': ' + nameOf(s, c.by)), P, y);
   ctx.textAlign = 'right'; ctx.fillText('🔥 ' + c.fire, Wd - P, y); ctx.textAlign = 'left';
   return new Promise(r => cv.toBlob(r, 'image/png'));
