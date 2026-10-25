@@ -83,7 +83,6 @@ body.record-store { background:#0d0c14; }
 .deck-trigger:hover span,.deck-trigger:focus-visible span { opacity:1; }.deck-trigger:disabled{cursor:default}
 .selected-record { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:6px 8px; margin:-24px 0 14px; color:#e8d3b6; font-size:13px; }
 .selected-dot { flex:none; width:5px; height:5px; border-radius:50%; background:var(--gold); box-shadow:0 0 6px #f2b85b; }
-.selected-lineup { min-height:0; padding:4px 11px; border:1px solid #d8b17b66; border-radius:99px; background:#211a14; color:#e8d3b6; font-size:12px; }.selected-lineup:not(:disabled):hover{border-color:var(--gold);color:var(--gold)}.selected-lineup:disabled{opacity:.4}
 .record-changed .disc-label { animation:label-arrive .5s var(--ease); }@keyframes label-arrive{from{opacity:.2;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
 .record-store .store-start .btn { width:100%; min-height:53px; padding:12px; border-radius:12px; background:linear-gradient(180deg,#ff8370,#f36453); border:1px solid #ffad8477; color:#fff9ef; font-size:22px; box-shadow:0 6px 24px #ff62552b,inset 0 1px #ffd3a84d; }
 .record-store .store-start .btn:disabled { opacity:.65; font-size:16px; cursor:wait; }
@@ -99,8 +98,8 @@ body.record-store { background:#0d0c14; }
 .record-store .round-choice.selected { background:#f2bd69; color:#30200d; border-color:#ffd995; }.record-store .round-choice:disabled{opacity:.4}
 .store-status .pack-status { margin:11px 0 0; min-height:15px; font-size:11px; text-align:center; color:#bda587; }.store-status .pack-status.failed{color:#ffb29d}
 .store-tools { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:5px 13px; margin-top:8px; }
-.record-store .store-tools button { margin:0; border:0; padding:5px 0; min-height:0; background:none; color:#b5a18a; font-size:10px; text-decoration:underline; text-underline-offset:3px; }
-.store-tools #lineupBtn { display:none; }
+.record-store .store-tools button { margin:0; padding:6px 12px; min-height:0; border:1px solid #d8b17b4d; border-radius:99px; background:#1b1510; color:#e2cfb1; font-size:12px; text-decoration:none; }
+.record-store .store-tools button:not(:disabled):hover { border-color:var(--gold); color:var(--gold); }.record-store .store-tools button:disabled{opacity:.45}
 .record-store .resume-card { margin:20px 0 0; border-color:#d8aa654d; background:#201b17; }.record-store .resume-card p{color:var(--muted)}
 .record-store .music-footer { border-top:1px solid #e0bf8b1c; color:#9c8977; margin-top:20px; padding-top:13px; font-size:10px; }
 .record-store .game-shell { margin:22px auto 0; max-width:1048px; }

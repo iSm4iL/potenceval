@@ -49,6 +49,10 @@ body.club-theme[data-game="rap"]{--club-scene:url('assets/club/rap.webp')}
 .club-theme .pod.p1 .bar{background:linear-gradient(#edc67c,#b28a4b)}
 .club-theme .rest div{background:#2b1f15}
 .club-theme .consent{background:#2b2017;border-color:#8d6c41}.club-theme .consent .yes{background:#8b6939;border-color:#b08c52}
+/* В играх шапка низкая: только меню и название, остальное — в меню. */
+.club-theme:not([data-game="lounge"]) .wrap{padding-top:12px}
+.club-theme:not([data-game="lounge"]) .top{min-height:42px;padding-bottom:10px}
+.club-theme:not([data-game="lounge"]) .logo::before{width:34px;height:34px}
 .club-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:25px 0 0;margin-top:36px;border-top:1px solid #99734642;font-size:12px;color:#ab9576}
 .club-footer a{color:#d7b579;text-decoration:none}
 .drawer .drawer-panel{background:linear-gradient(110deg,#342417,#17100b);border-color:#8e673a66}

@@ -6,7 +6,7 @@
 <title>Биты — potenceval</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
 <link rel="stylesheet" href="../shared/fonts/fonts.css">
-<link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="../shared/style.css?v=menu-20261025">
 <style>
 .beats{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:26px}
 .beat{position:relative;padding:16px;border-radius:20px;background:linear-gradient(160deg,#241a48,#16102c);border:1px solid var(--line);overflow:hidden}
@@ -22,7 +22,7 @@
 @keyframes pulse2{to{opacity:.35}}
 .note{max-width:640px;margin:26px auto 0;padding:12px 16px;border-radius:12px;border:1px dashed var(--line);color:var(--muted);font-size:13px;text-align:center}
 </style>
-<link rel="stylesheet" href="../shared/club.css?v=club-20261025">
+<link rel="stylesheet" href="../shared/club.css?v=menu-20261025">
 <link rel="stylesheet" href="club.css?v=club-20261025">
 </head>
 <body class="club-theme" data-game="rap">
@@ -40,7 +40,7 @@
   <p class="note" id="credits" style="border:0;margin-top:10px"></p>
   <p class="note">Пять битов каждый раз звучат по-новому. Можно слушать, перематывать волну и сохранять WAV. Записи голоса здесь пока нет.</p>
 </div>
-<script type="module" src="../shared/menu.js?v=club-20261025"></script>
+<script type="module" src="../shared/menu.js?v=menu-20261025"></script>
 <script type="module">
 import { describe, renderBeat, toWav, MAIN_STYLES, CREDITS } from './beats.js';
 document.getElementById('credits').textContent = CREDITS;
