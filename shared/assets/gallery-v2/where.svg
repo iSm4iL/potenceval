@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+  <!-- Заглушка карточки «Где я?»: указатель с булавкой. Промпт для настоящей картинки — prompts.json, where.webp. -->
+  <defs>
+    <linearGradient id="post" x1="0" x2="1"><stop offset="0" stop-color="#3b2416"/><stop offset=".35" stop-color="#8a5a36"/><stop offset=".6" stop-color="#a26c43"/><stop offset="1" stop-color="#4a2c19"/></linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6ead0"/><stop offset=".55" stop-color="#e6d3ad"/><stop offset="1" stop-color="#c9b083"/></linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9675a"/><stop offset=".6" stop-color="#b2443a"/><stop offset="1" stop-color="#7f2a23"/></linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6c9a92"/><stop offset=".6" stop-color="#4b766f"/><stop offset="1" stop-color="#2f5049"/></linearGradient>
+    <radialGradient id="pin" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#ff9a8c"/><stop offset=".35" stop-color="#e2463a"/><stop offset="1" stop-color="#7a1a14"/></radialGradient>
+    <linearGradient id="paper" x1="0" x2="1"><stop offset="0" stop-color="#efe3c4"/><stop offset=".5" stop-color="#fbf3dd"/><stop offset="1" stop-color="#dccaa0"/></linearGradient>
+    <linearGradient id="soil" x1="0" x2="1"><stop offset="0" stop-color="#3e2a1a"/><stop offset=".5" stop-color="#6b4a2c"/><stop offset="1" stop-color="#3a2618"/></linearGradient>
+  </defs>
+  <!-- основание -->
+  <ellipse cx="430" cy="800" rx="210" ry="40" fill="#0004"/>
+  <path d="M250 790c10-34 90-50 180-50s170 16 180 50c-20 26-90 38-180 38s-160-12-180-38z" fill="url(#soil)"/>
+  <path d="M300 770c40-14 90-18 130-18s100 6 130 18" fill="none" stroke="#8a6440" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  <!-- столб -->
+  <path d="M404 250h52v540h-52z" fill="url(#post)"/>
+  <path d="M410 300v460M448 280v490" stroke="#2b190e" stroke-opacity=".35" stroke-width="3"/>
+  <!-- стрелки -->
+  <g stroke="#3a2618" stroke-width="5" stroke-linejoin="round">
+    <path d="M440 300h290l58 50-58 50H440z" fill="url(#cream)"/>
+    <path d="M420 430H150l-56 46 56 46h270z" fill="url(#red)"/>
+    <path d="M440 560h230l50 42-50 42H440z" fill="url(#teal)"/>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <path d="M470 330h230M470 370h180" stroke="#9c855e" stroke-width="7" opacity=".55"/>
+    <path d="M160 462h230M200 494h190" stroke="#f3c8b8" stroke-width="7" opacity=".45"/>
+    <path d="M470 588h180M470 618h140" stroke="#cfe2da" stroke-width="7" opacity=".45"/>
+  </g>
+  <!-- гвозди -->
+  <g fill="#2b2b2b"><circle cx="455" cy="350" r="6"/><circle cx="405" cy="476" r="6"/><circle cx="455" cy="602" r="6"/></g>
+  <!-- сложенная карта у подножия -->
+  <g transform="rotate(-10 560 740)">
+    <path d="M500 690l70-14 70 14 70-14v104l-70 14-70-14-70 14z" fill="url(#paper)" stroke="#8c7550" stroke-width="3"/>
+    <path d="M570 676v104M640 690v104" stroke="#a89068" stroke-width="3"/>
+    <path d="M512 742c30-20 60 10 90-8s40-30 80-12 20 30 20 30" fill="none" stroke="#c0574b" stroke-width="5" stroke-dasharray="10 8"/>
+    <circle cx="650" cy="716" r="7" fill="#c0574b"/>
+  </g>
+  <!-- булавка -->
+  <ellipse cx="438" cy="252" rx="24" ry="7" fill="#0005"/>
+  <path d="M432 250L452 150" stroke="#cfcfcf" stroke-width="8" stroke-linecap="round"/>
+  <path d="M432 250L452 150" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="462" cy="112" r="62" fill="url(#pin)"/>
+  <ellipse cx="440" cy="88" rx="20" ry="13" fill="#fff" fill-opacity=".6" transform="rotate(-30 440 88)"/>
+</svg>

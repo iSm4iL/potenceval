@@ -5,6 +5,7 @@ export const GAMES = [
   { path: 'dice/', icon: '🎲', name: 'Костяшки', desc: 'Кости как в Cult of the Lamb · 1–2 игрока' },
   { path: 'music/', icon: '🎧', name: 'Полсекунды', desc: 'Угадай музыку · один экран или лобби' },
   { path: 'geo/', icon: '🕵️', name: 'Угадай страну', desc: 'Детективная доска с уликами · 1–4 игрока' },
+  { path: 'where/', icon: '📍', name: 'Где я?', desc: 'Как GeoGuessr · один или с друзьями' },
   { path: 'screen/', icon: '🎬', name: 'До титров', desc: 'Угадай кино, сериал, аниме или мультфильм' },
   { path: 'rap/', icon: '🎙', name: 'Биты', desc: 'Звуковая мастерская · слушать и сохранять' },
 ];

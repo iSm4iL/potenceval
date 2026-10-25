@@ -35,6 +35,12 @@
       "file": "rap.webp",
       "sourceFile": "exec-22783371-147f-46dc-bcfa-9765842d1fee.png",
       "subjectPrompt": "Subject: one large chrome vintage broadcast microphone with a ribbed capsule and compact stand, three-quarter product view, gleaming aged chrome. A red coiled audio cable curves around the base and a pair of dark charcoal padded studio headphones rests beside it. Microphone is dominant, full cable and headphones neatly grouped inside the safe margin. Distinct microphone silhouette, no projector, no reels, no tape recorder, no record player."
+    },
+    {
+      "file": "where.webp",
+      "sourceFile": null,
+      "note": "Ещё не сгенерировано: пока карточка берёт where.svg (shared/gallery.js). После генерации убрать третий элемент у where в details.",
+      "subjectPrompt": "Subject: one weathered vintage wooden road signpost on a short post with three blank painted direction arrow boards pointing different ways, cream and faded red paint with chipped edges, no lettering. A large glossy red map pin is stuck into the top of the post. A small folded paper road map with blank printed roads leans against the base. Signpost, pin and map as a single isolated cutout."
     }
   ]
 }
