@@ -1,0 +1,20 @@
+body.club-theme[data-game="geo"]{--paper:#f0e2c5;--ink:#3f2b1c;--sticky:#eacb8d;--pen:#934c37;--thread:#9e3d2c;--manila:#d8b884}
+body[data-game="geo"] .geo-wrap{max-width:1440px}
+body[data-game="geo"] .desk{padding-top:28px}
+body[data-game="geo"] .folder{background:var(--noise),linear-gradient(110deg,#ebd6b0,#d5b482);border:1px solid #bd9969;box-shadow:0 26px 45px #0006,inset 0 0 24px #80603935}
+body[data-game="geo"] .folder-page h1{font:400 clamp(52px,5.8vw,78px)/.95 'Marck Script',cursive;max-width:8ch}
+body[data-game="geo"] .folder-page h2{font:400 30px 'Marck Script',cursive;color:#684a2c}
+body[data-game="geo"] .lead{font-size:15px;color:#735735;line-height:1.65}
+body[data-game="geo"] .stamp-secret{color:#87503b;border-color:#87503b;font:700 11px Onest,sans-serif;letter-spacing:.04em;border-width:2px;border-radius:3px}
+.detective-scene{margin:25px 0 0;padding:8px 8px 0;background:#f0e4ce;border:1px solid #bca17b;box-shadow:0 12px 25px #6d451a40;transform:rotate(-2deg)}
+.detective-scene img{display:block;width:100%;height:240px;object-fit:cover;object-position:70% 50%;border:1px solid #6a4d2e66}
+.detective-scene figcaption{font:400 26px/1.15 'Marck Script',cursive;color:#7c5431;text-align:center;padding:10px 5px 8px}
+body[data-game="geo"] .folder-right .btn.ghost{color:#65482c;background:#eee0c3;border-color:#ad8753}
+body[data-game="geo"] .board{background-image:var(--noise),url('../music/assets/record-store/walnut.webp');background-size:auto,800px;border-color:#6b4729}
+body[data-game="geo"] .case-progress{color:#e8bc79}
+body[data-game="geo"] .case-progress i{background:#271c13}
+body[data-game="geo"] .case-progress b{background:linear-gradient(90deg,#d39f55,#f1cf8d)}
+body[data-game="geo"] .notebook{border:1px solid #c2a678}
+body[data-game="geo"] .walk-bar{background:#291f17;color:#e7d7ba;border-color:#8f6b3e}
+body[data-game="geo"] .walk-btn,body[data-game="geo"] .walk-dock{background:#503b26;color:#f0d4a2;border-color:#a4804b}
+@media(max-width:700px){.detective-scene{margin-top:20px}.detective-scene img{height:170px}.detective-scene figcaption{font-size:24px}body[data-game="geo"] .folder-page h1{font-size:58px}body[data-game="geo"] .desk{padding-top:20px}}

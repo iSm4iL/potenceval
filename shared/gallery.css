@@ -1,0 +1,22 @@
+.club-gallery .wrap{max-width:1320px}
+.club-intro{position:relative;padding:42px 0 38px;max-width:760px}
+.club-intro h1{font:400 clamp(54px,7.3vw,91px)/1.02 'Marck Script',cursive;color:#ffe1a1;text-shadow:0 0 2px #fff4d5,0 0 13px #e4a94388,0 0 42px #ad6c2045;margin:0}
+.club-intro p{max-width:570px;margin:20px 0 0;color:#d0bda1;font-size:17px;line-height:1.65}
+.club-intro .welcome{display:block;color:#c7a779;margin-bottom:13px;font-size:14px}
+.club-games{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+.club-card{display:block;min-width:0;color:#f0dfc4;text-decoration:none;position:relative;background:#302116 url('../music/assets/record-store/walnut.webp') center / 550px;border:1px solid #a07a46;border-radius:10px;padding:10px;box-shadow:inset 0 0 0 3px #3d2b1d,0 16px 30px #0004;transition:transform .2s,border-color .2s}
+.club-card:hover{transform:translateY(-4px);border-color:#f2c67d}
+.club-card figure{position:relative;margin:0;aspect-ratio:1.72;overflow:hidden;border:1px solid #bd95613d;border-radius:4px;background:#19120d}
+.club-card img{width:100%;height:100%;object-fit:cover;object-position:68% 50%;display:block;transition:transform .4s}
+.club-card:hover img{transform:scale(1.035)}
+.club-card figure::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 62%,#20150b77);pointer-events:none}
+.club-card-copy{position:relative;margin:10px 1px 0;padding:16px 18px 13px;min-height:165px;color:#443324;background:linear-gradient(115deg,#ead7b2,#dfc69e);border:1px solid #ae8b5c;border-radius:3px;box-shadow:0 2px 5px #0004}
+.club-card-copy::before,.club-card-copy::after{content:'';width:4px;height:4px;border-radius:50%;position:absolute;top:9px;background:#8b6b43;box-shadow:0 1px #f4e3c7}
+.club-card-copy::before{left:9px}.club-card-copy::after{right:9px}
+.club-card h2{font:400 clamp(34px,3.2vw,44px)/1.06 'Marck Script',cursive;margin:0 0 6px}
+.club-card p{font-size:13px;line-height:1.5;margin:0 0 17px;color:#725c41}
+.club-card-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:7px 12px;font-size:12px}
+.club-card-bottom small{color:#7c6548;font-size:11px}.club-card-bottom b{font-weight:700;border-bottom:1px solid #86674266;padding-bottom:2px}
+.club-note{max-width:620px;margin:28px auto 0;color:#b9a181;font-size:13px;line-height:1.6;text-align:center}
+@media(max-width:1000px){.club-games{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+@media(max-width:580px){.club-intro{padding:28px 2px 30px}.club-intro h1{font-size:58px}.club-intro p{font-size:15px;margin-top:16px}.club-games{grid-template-columns:1fr;gap:24px}.club-card-copy{min-height:0}.club-card h2{font-size:39px}.club-card figure{aspect-ratio:1.85}}

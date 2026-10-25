@@ -55,36 +55,13 @@ function buildHomeScreen() {
   buildHome(stage, net, `<div class="hero" data-in><span class="kicker">Как в Cult of the Lamb · 1–2 игрока</span>
     <h1 id="heroTitle">Костяшки</h1>
     <p class="sub">Кидай кость в один из трёх столбцов. Одинаковые кости в столбце умножаются, а твоя кость сносит такие же у соперника.</p>
-    <div class="dice-field" aria-hidden="true"></div>
+    <figure class="dice-scene"><img src="../shared/assets/club/dice.webp" alt="Костяные кубики в ореховом лотке на зелёном сукне" width="1200" height="800" fetchpriority="high"></figure>
     <div class="ritual" aria-label="Пример партии: белые против чёрных">
       <div class="mini-board" data-side="black">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
       <div class="mini-mid"><span class="mini-tray"></span><span class="mini-turn"></span></div>
       <div class="mini-board" data-side="white">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
     </div></div>`);
   demoTable($('.ritual'));
-  diceField($('.dice-field'));
-}
-
-// Россыпь костей по экрану: каждая на своём месте иногда подпрыгивает и падает на другую грань
-function diceField(root) {
-  if (!root) return;
-  const n = innerWidth < 700 ? 14 : 26, dice = [];
-  for (let i = 0; i < n; i++) {
-    const el = h(dieHTML(1 + Math.floor(Math.random() * 6), Math.random() < .5 ? 'black' : ''));
-    Object.assign(el.style, { left: (Math.random() * 96) + '%', top: (Math.random() * 94) + '%', transform: `rotate(${Math.random() * 360}deg)` });
-    root.append(el); dice.push(el);
-  }
-  if (still()) return;
-  const hop = () => {
-    if (!root.isConnected) return;
-    const el = dice[Math.floor(Math.random() * dice.length)], r = parseFloat(el.style.transform.slice(7)) || 0, to = r + 90 + Math.random() * 270;
-    el.animate([{ transform: `rotate(${r}deg)` }, { transform: `translateY(-60px) rotate(${(r + to) / 2}deg)`, offset: .45 }, { transform: `translateY(0) rotate(${to}deg)` }],
-      { duration: 900, easing: 'cubic-bezier(.3,.7,.4,1)' });
-    setTimeout(() => { el.dataset.v = 1 + Math.floor(Math.random() * 6); }, 400);
-    el.style.transform = `rotate(${to}deg)`;
-    setTimeout(hop, 500 + Math.random() * 900);
-  };
-  hop();
 }
 
 // Живая мини-партия на главной: кости сами бросаются, умножаются и сносят чужие.
@@ -102,7 +79,12 @@ async function demoTable(root) {
       });
     });
   };
-  const tray = $('.mini-tray', root), turnEl = $('.mini-turn', root), wait = ms => new Promise(r => setTimeout(r, still() ? 0 : ms));
+  const tray = $('.mini-tray', root), turnEl = $('.mini-turn', root), wait = ms => new Promise(r => setTimeout(r, ms));
+  if (still()) {
+    boards.white = [[4, 4], [2], [6]]; boards.black = [[1], [5, 5], [3]];
+    draw(); tray.innerHTML = dieHTML(3); turnEl.textContent = 'пример партии';
+    return;
+  }
   for (let turn = 0; root.isConnected; turn++) {
     const side = turn % 2 ? 'black' : 'white', other = side === 'white' ? 'black' : 'white';
     const v = 1 + Math.floor(Math.random() * 6), mine = boards[side], theirs = boards[other];
