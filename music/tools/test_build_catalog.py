@@ -209,6 +209,19 @@ class BuilderTests(unittest.TestCase):
             self.assertTrue(all(t["genres"] == ["ru-rap", "new-wave"] for t in tracks))
             self.assertEqual(tracks[0]["sources"][0]["period"], "популярное у madk1d")
 
+    def test_stop_list_drops_banned_artists_and_broken_recordings(self):
+        guest = raw(30, "Сосед", "Каспийский Груз", 7, isrc="RUA000000030", contributors=[{"id": 7, "name": "Каспийский Груз"}, {"id": 8, "name": "Гера Джио"}])
+        broken = raw(31, "Новая эра", "LOVV66", 9, isrc="RUA000000031")
+        kept = raw(32, "Кукла колдуна", "Король и Шут", 11, isrc="RUA000000032")
+        rows = [{"title": t["title"], "artists": [t["artist"]["name"]]} for t in (guest, broken, kept)]
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source(tracks=rows)])
+            config = json.loads(src.read_text(encoding="utf-8"))
+            config.update(excludeArtists=["каспийский груз"], excludeTracks=[31])
+            src.write_text(json.dumps(config), encoding="utf-8")
+            self.assertTrue(b.build(src, out, client=FakeClient(tracks=[guest, broken, kept])))
+            self.assertEqual([t["title"] for t in json.loads(out.read_text(encoding="utf-8"))["tracks"]], ["Кукла колдуна"])
+
     def test_build_merges_isrc_and_work_provenance_never_saves_preview(self):
         with workspace_temp() as directory:
             src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"], current=True)])

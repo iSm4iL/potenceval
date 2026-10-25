@@ -68,5 +68,10 @@
     "name": "cover-soundcloud",
     "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A luminous peach-orange cloud over a dreamy purple night city, stars, faint musical wave shapes, emotional late-night alternative rap mixtape, violet and coral.",
     "transparent": false
+  },
+  {
+    "name": "cover-dead-inside",
+    "prompt": "Use case: illustration-story. Asset type: individual square vinyl album sleeve artwork for a tactile vintage record-store music game. ONE square image, edge-to-edge flat artwork, not a photographed sleeve or mockup; perfectly front-facing. Rich cinematic hand-painted editorial illustration with vintage print grain, subtle paper distress, beautiful detailed lighting, warm cream highlights, dark richly colored shadows. Make this image part of one coherent collectible sleeve series. No words, no letters, no numbers, no logos, no typography, no border. Reserve a calm darker upper third so real HTML lettering can be overlaid. Large clear central subject. A lonely teenager in a hoodie with headphones sitting on a grey Soviet apartment block rooftop at night, cigarette-thin wisps of fog, a cracked black heart-shaped balloon drifting away, cold lilac and ash-grey palette with one pale pink streetlight, melancholic Russian emo and indie mood.",
+    "transparent": false
   }
 ]

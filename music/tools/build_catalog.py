@@ -520,6 +520,8 @@ def upstream_date(payload, fallback):
 def validate_config(config):
     if not isinstance(config, dict) or config.get("version") != 1 or not isinstance(config.get("sources"), list) or not 1 <= len(config["sources"]) <= 100:
         raise ValueError("Expected version 1 and 1..100 sources")
+    if not all(isinstance(a, str) for a in config.get("excludeArtists", [])) or not all(type(i) is int for i in config.get("excludeTracks", [])):
+        raise ValueError("excludeArtists must be names, excludeTracks must be Deezer track IDs")
     ids = set()
     for source in config["sources"]:
         if not isinstance(source, dict) or not all(isinstance(source.get(k), str) and source[k].strip() for k in ("id", "kind", "title", "url")):
@@ -646,6 +648,10 @@ def build(sources_path, output_path, workers=4, limit_per_source=None, client=No
             for key in track.get("lookupKeys", []):
                 report["matchCache"].setdefault(key, old_matches.get(key, {"verifiedAt": prior.get("generatedAt"), "trackId": track["id"]}))
     tracks = merge_tracks(resolved)
+    # Стоп-лист: исполнители не в тему подборок и записи, чьё превью не играет в браузере.
+    banned_artists = {normalize(a) for a in config.get("excludeArtists", [])}
+    banned_tracks = set(config.get("excludeTracks", []))
+    tracks = [t for t in tracks if t["deezerId"] not in banned_tracks and not banned_artists & {normalize(n) for n in t["artistNames"]}]
     for track in tracks:
         report["recordings"][track["id"]] = {"isrcs": unique(track.get("_isrcs", []) + ([track["_isrc"]] if track.get("_isrc") else []))}
         track.pop("preview", None)
