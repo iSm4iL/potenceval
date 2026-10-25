@@ -1,0 +1,2 @@
+# Анонимным клиентам можно только темы игр сайта (см. topic() в shared/net.js).
+topic readwrite potenceval/v1/#

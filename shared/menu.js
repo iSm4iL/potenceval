@@ -1,4 +1,5 @@
 // Меню-бургер слева: список игр сайта. Подключается на каждой странице.
+import './consent.js';
 const ROOT = new URL('../', import.meta.url);
 export const GAMES = [
   { path: 'genie/', icon: '✦', name: 'Джинн', desc: 'Суперсила с подвохом · 2–8 игроков' },
@@ -26,7 +27,10 @@ drawer.innerHTML = `<div class="drawer-bg"></div><nav class="drawer-panel" aria-
   ${link('', '🏠', 'Главная', 'Все игры')}
   <div class="dlabel">Игры</div>
   ${GAMES.map(g => link(g.path, g.icon, g.name, g.desc)).join('')}
-  <div class="dsoon">Скоро новые игры</div></nav>`;
+  <div class="dsoon">Скоро новые игры</div>
+  <div class="dlegal"><a href="${new URL('legal/privacy.html', ROOT).href}">Конфиденциальность</a>
+  <a href="${new URL('legal/terms.html', ROOT).href}">Соглашение</a>
+  <a href="${new URL('legal/privacy.html#contacts', ROOT).href}">Контакты</a></div></nav>`;
 document.body.append(drawer);
 const panel = drawer.querySelector('.drawer-panel'), bg = drawer.querySelector('.drawer-bg');
 

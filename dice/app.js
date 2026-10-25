@@ -1,7 +1,7 @@
 import { createState, reduce, colScore, total, humans, botMove, BOT_ID } from './game.js';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, enter,
   setControls, initPage, buildHome, buildLobby, renderPlist } from '../shared/kit.js?v=kick-1';
-import { createNet } from '../shared/net.js?v=kick-1';
+import { createNet } from '../shared/net.js?v=own-1';
 
 const stage = $('#stage');
 const net = createNet({

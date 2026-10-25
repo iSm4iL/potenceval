@@ -16,7 +16,7 @@ b.ok{color:#8ff0b5}b.bad{color:#ff4d6d}b.wait{color:#ffc94a}
 <h1>Проверка связи для лобби</h1>
 <p>Открой эту страницу на устройстве, которое не может подключиться, и пришли скриншот.</p>
 <ul id="list"></ul>
-<script src="https://cdn.jsdelivr.net/npm/mqtt@5.10.1/dist/mqtt.min.js"></script>
+<script src="shared/vendor/mqtt.min.js"></script>
 <script>
 const brokers = ['wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt'];
 const list = document.getElementById('list');

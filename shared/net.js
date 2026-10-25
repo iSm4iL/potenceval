@@ -1,11 +1,12 @@
 // Лобби по коду: хост держит состояние у себя в браузере, остальные шлют ему действия.
 // Сообщения идут через публичный MQTT-сервер по WebSocket — прямое соединение между
 // устройствами не нужно, поэтому работает и с телефона на мобильном интернете.
-// ponytail: публичные брокеры без гарантий и без шифрования содержимого; если станет мало —
-// свой брокер или Durable Objects.
+// Свой брокер на российском сервере ставится из server/mqtt; пока OWN пустой — публичные
+// зарубежные брокеры без гарантий.
 import { LS, me, toast, hideToast } from './kit.js?v=kick-1';
 
-const BROKERS = ['wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt'];
+const OWN = ''; // 'wss://mqtt.<домен>/mqtt' после server/mqtt/setup.sh
+const BROKERS = OWN ? [OWN] : ['wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt'];
 const BEAT = 4000, LOST = 15000;
 
 // tick(state, apply) — хост вызывает каждые полсекунды (таймеры, ходы бота).
