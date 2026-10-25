@@ -81,9 +81,9 @@ body.record-store { background:#0d0c14; }
 .deck-trigger { position:absolute; left:13.5%; top:12.5%; width:59.5%; aspect-ratio:1; background:none; border-radius:50%; color:#fff1d2; }
 .deck-trigger span { display:grid; place-items:center; width:44px; height:44px; border-radius:50%; margin:auto; background:#150d06b8; border:1px solid #f2b85bbf; color:var(--gold); opacity:0; transition:opacity .2s; }
 .deck-trigger:hover span,.deck-trigger:focus-visible span { opacity:1; }.deck-trigger:disabled{cursor:default}
-.selected-record { display:flex; justify-content:center; align-items:center; gap:8px; margin:-24px 0 14px; color:#e8d3b6; font-size:13px; }
+.selected-record { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:6px 8px; margin:-24px 0 14px; color:#e8d3b6; font-size:13px; }
 .selected-dot { flex:none; width:5px; height:5px; border-radius:50%; background:var(--gold); box-shadow:0 0 6px #f2b85b; }
-.selected-lineup { background:none; color:#c0a887; padding:4px 6px; font-size:16px; }.selected-lineup:disabled{opacity:.4}
+.selected-lineup { min-height:0; padding:4px 11px; border:1px solid #d8b17b66; border-radius:99px; background:#211a14; color:#e8d3b6; font-size:12px; }.selected-lineup:not(:disabled):hover{border-color:var(--gold);color:var(--gold)}.selected-lineup:disabled{opacity:.4}
 .record-changed .disc-label { animation:label-arrive .5s var(--ease); }@keyframes label-arrive{from{opacity:.2;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
 .record-store .store-start .btn { width:100%; min-height:53px; padding:12px; border-radius:12px; background:linear-gradient(180deg,#ff8370,#f36453); border:1px solid #ffad8477; color:#fff9ef; font-size:22px; box-shadow:0 6px 24px #ff62552b,inset 0 1px #ffd3a84d; }
 .record-store .store-start .btn:disabled { opacity:.65; font-size:16px; cursor:wait; }
