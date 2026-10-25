@@ -4,3 +4,7 @@ export function revealPaidClue(round, opened, key, cost) {
   round.score -= cost;
   return true;
 }
+
+// Постер виден целиком, но размыт: каждая покупка делает его чётче. Размытие — в пикселях для кадра ~300px.
+export const BLUR = [18, 12, 7, 3, 0];
+export const SHARPEN = [10, 15, 20, 25];
