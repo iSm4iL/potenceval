@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Где я? — potenceval</title>
+<meta name="description" content="Как GeoGuessr: тебя высаживают на случайной улице где-то в мире. Осмотрись и поставь точку на карте — чем ближе, тем больше очков.">
+<meta property="og:title" content="Где я? — угадай место по панораме">
+<meta property="og:description" content="Случайная улица где-то в мире. Осмотрись и поставь точку на карте — одному или с друзьями по коду лобби.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📍</text></svg>">
+<link rel="stylesheet" href="../shared/fonts/fonts.css">
+<link rel="stylesheet" href="../shared/vendor/leaflet.css">
+<link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="../shared/club.css?v=club-20261025">
+<link rel="stylesheet" href="style.css?v=where-1">
+</head>
+<body class="club-theme" data-game="where">
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="../"><b>potenceval</b><span>games</span></a>
+    <div class="top-right">
+      <span class="room" id="room" hidden>КОД <b id="roomCode"></b></span>
+      <button class="qbtn" data-rules>Правила</button>
+      <button class="exit" id="exitBtn" hidden>Выйти</button>
+    </div>
+  </header>
+  <main class="stage" id="stage"></main>
+  <div class="controls" id="controls"></div>
+</div>
+
+<section class="arena" id="arena" hidden>
+  <div class="pano">
+    <iframe id="panoFrame" title="Панорама улицы"></iframe>
+    <span class="cover">📍 Где-то в мире…</span>
+  </div>
+  <div class="hud">
+    <span class="chip">Раунд <b id="round"></b></span>
+    <span class="chip clock" id="timer" hidden></span>
+    <span class="chip">Очки <b id="score"></b></span>
+    <span class="who" id="who"></span>
+    <button class="chip btnchip" id="restart" title="Вернуться туда, откуда начал">↻ К началу</button>
+  </div>
+  <div class="mapbox" id="mapbox">
+    <div id="map"></div>
+    <div class="maprow">
+      <button class="btn ghost" id="mapClose">← К панораме</button>
+      <button class="btn primary" id="guessBtn" disabled>Угадать</button>
+    </div>
+  </div>
+  <button class="btn primary map-toggle" id="mapToggle">🗺 Карта</button>
+</section>
+
+<div class="modal" id="rules" hidden><div class="sheet">
+  <span class="kicker">Правила за 20 секунд</span>
+  <h2>Как играть в «Где я?»</h2>
+  <p class="sub">Как GeoGuessr: случайное место, снятое машиной Google, где-то в мире.</p>
+  <div class="rgrid">
+    <div class="rc"><span class="rn">1</span><div class="re">👀</div><b>Осмотрись</b><p>Тащи панораму, иди по стрелкам. Ищи вывески, номера машин, разметку, природу.</p></div>
+    <div class="rc"><span class="rn">2</span><div class="re">🗺</div><b>Точка</b><p>Поставь точку на карте в углу и жми «Угадать».</p></div>
+    <div class="rc"><span class="rn">3</span><div class="re">🎯</div><b>Очки</b><p>В точку — 5000. За 1000 км — около 2500, через полмира — почти ноль.</p></div>
+    <div class="rc"><span class="rn">4</span><div class="re">⏱</div><b>Спешка</b><p>С друзьями: кто первым ответил, тот запускает 30 секунд для остальных.</p></div>
+  </div>
+  <div class="score-rule">Каждое место — из новой страны. Кто за партию набрал больше всех, тот и знает мир.</div>
+  <button class="btn primary" id="rulesOk">Понятно, поехали</button>
+</div></div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="../shared/vendor/mqtt.min.js"></script>
+<script src="../shared/vendor/leaflet.js"></script>
+<script type="module" src="../shared/menu.js?v=club-20261025"></script>
+<script type="module" src="app.js?v=where-1"></script>
+</body>
+</html>

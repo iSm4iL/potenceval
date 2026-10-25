@@ -5,6 +5,7 @@ export const GAMES = [
   { path: 'genie/', icon: '✦', name: 'Джинн', desc: 'Суперсила с подвохом · 2–8 игроков' },
   { path: 'dice/', icon: '🎲', name: 'Костяшки', desc: 'Кости как в Cult of the Lamb · 1–2 игрока' },
   { path: 'music/', icon: '🎧', name: 'Полсекунды', desc: 'Популярные треки онлайн · один экран на всех' },
+  { path: 'where/', icon: '📍', name: 'Где я?', desc: 'Как GeoGuessr · один или с друзьями' },
 ];
 const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches || document.hidden;
 const anim = (el, kf, o) => (still() ? null : el.animate(kf, { easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards', ...o }));
