@@ -1,6 +1,6 @@
 import { $, esc, LS, A, SPRING, toast, confetti, flip, nudge, shake, wait } from '../shared/kit.js';
-import { PACKS, COUNTRIES } from './countries.js';
-import { WORLD, SHAPES, PHOTOS } from './atlas.js';
+import { PACKS, COUNTRIES } from './countries.js?v=clues-20261025';
+import { WORLD, SHAPES, PHOTOS } from './atlas.js?v=clues-20261025';
 import { WALKS } from './walks.js';
 import { CLUES, START, WRONG, norm, nameIndex, matchCountry, canOpen, openClue, guess, surrender, createGame, award, nextRound } from './game.js';
 
@@ -16,6 +16,7 @@ const AVATARS = ['🕵️', '🦊', '🐱', '🦉'];
 const ICONS = { fact1: '🗂', fact2: '🗂', phrase: '💬', food: '🍲', walk: '👣', money: '💵', person: '📰', shape: '✉' };
 const TILT = { fact1: -3, walk: 2, person: 3, phrase: -4, fact2: 2.5, food: -2, shape: 1, money: -3 };
 const num = n => n.toLocaleString('ru-RU');
+const directionNames = { '↑': 'На север', '↗': 'На северо-восток', '→': 'На восток', '↘': 'На юго-восток', '↓': 'На юг', '↙': 'На юго-запад', '←': 'На запад', '↖': 'На северо-запад' };
 const cases = n => `${n} ${{ one: 'дело', few: 'дела', many: 'дел', other: 'дела' }[new Intl.PluralRules('ru').select(n)]}`;
 const shapeSvg = (id, cls = '') => `<svg class="${cls}" viewBox="-20 -20 1040 1040" aria-hidden="true"><path d="${SHAPES[id]}" pathLength="1"/></svg>`;
 
@@ -114,13 +115,16 @@ function front(c, key) {
   const img = t => (PHOTOS[t] ? `<img src="${esc(PHOTOS[t])}" alt="" referrerpolicy="no-referrer" data-zoom>` : '');
   switch (key) {
     case 'fact1': case 'fact2': return `<div class="archive"><span class="archive-head">Архив · лист ${key === 'fact1' ? 1 : 2}</span><p>${esc(c.facts[key === 'fact1' ? 0 : 1])}</p></div>`;
-    case 'phrase': return `<div class="sticky"><b>${esc(c.phrase[0])}</b><small>${esc(c.phrase[1])}</small></div>`;
+    case 'phrase': return `<div class="sticky"><b dir="auto">${esc(c.phrase[0])}</b><small>${esc(c.phrase[1])}</small></div>`;
     case 'food': return `<figure class="polaroid${PHOTOS[c.food[1]] ? '' : ' bare'}"><span class="tape" aria-hidden="true"></span>${img(c.food[1])}<figcaption>${esc(c.food[0])}</figcaption></figure>`;
     case 'walk': return spotsOf(c.id)
       ? `<div class="streetcard"><span class="street-pin" aria-hidden="true">📍</span><b>Прогулка</b><button class="walk-go" data-walk>👣 Гулять по улицам</button></div>`
       : `<div class="streetcard none"><b>Прогулки пока нет</b><small>Для этой страны ещё не подготовлены точки прогулки. Очки не списаны.</small></div>`;
     case 'money': return `<div class="banknote${PHOTOS[c.money[1]] ? '' : ' bare'}">${img(c.money[1])}<b>${esc(c.money[0])}</b></div>`;
-    case 'person': return `<div class="clipping"><span class="clip-head">Знаменитость</span><div class="clip-body">${img(c.person[2])}<p><b class="${c.person[0].length > 16 ? 'long' : ''}">${esc(c.person[0])}</b><small>${esc(c.person[1])}</small></p></div></div>`;
+    case 'person': {
+      const credit = c.personCredit;
+      return `<div class="clipping"><span class="clip-head">Знаменитость</span><div class="clip-body">${img(c.person[2])}<p><b class="${c.person[0].length > 16 ? 'long' : ''}">${esc(c.person[0])}</b><small>${esc(c.person[1])}</small></p></div>${credit ? `<small class="photo-credit"><a href="${esc(credit.source)}" target="_blank" rel="noopener noreferrer">${esc(credit.author)}</a> · <a href="${esc(credit.url)}" target="_blank" rel="noopener noreferrer">${esc(credit.license)}</a></small>` : ''}</div>`;
+    }
     case 'shape': return `<div class="outline">${shapeSvg(c.id)}</div>`;
   }
 }
@@ -223,7 +227,7 @@ function ranks() {
   const top = Math.max(...game.players.map(p => p.score));
   return `<ol class="ranks">${game.players.map((p, i) => ({ ...p, i })).sort((a, b) => b.score - a.score).map(p => `<li class="${p.score === top && top > 0 ? 'lead' : ''}"><span>${p.score === top && top > 0 ? '👑' : AVATARS[p.i]}</span><b>${esc(p.name)}</b><em>${num(p.score)}</em></li>`).join('')}</ol>`;
 }
-const missRow = m => `<li><s>${esc(nameOf(m.id))}</s><span>${num(m.km)} км <b>${m.dir}</b></span></li>`;
+const missRow = m => `<li><s>${esc(nameOf(m.id))}</s><span class="miss-guidance"><strong><b aria-hidden="true">${m.dir}</b> ${directionNames[m.dir]}</strong><small>около ${num(m.km)} км</small></span></li>`;
 
 function renderNotebook() {
   const r = game.round;
@@ -234,7 +238,8 @@ function renderNotebook() {
       <div class="sugg" id="sugg" role="listbox" hidden></div>
       <button class="btn primary big">Ответить</button>
     </form>
-    <ul class="misses" id="misses">${r.wrong.map(missRow).join('')}</ul>
+    <p class="direction-note" id="directionNote" ${r.wrong.length ? '' : 'hidden'}>Стрелка показывает направление от названной страны к загаданной. Километры — по условным центрам стран.</p>
+    <ul class="misses" id="misses" aria-live="polite">${r.wrong.map(missRow).join('')}</ul>
     <div class="round-score"><span>Очки за дело</span><strong id="score">${num(r.score)}</strong><small>ошибка −${WRONG} · подскажу, куда ближе</small></div>
     ${ranks()}
     <button class="give-up" id="giveUp">Сдаться и раскрыть</button>`;
@@ -270,6 +275,7 @@ function submit() {
   if (!res) return toast(`${nameOf(id)} уже проверяли`, 1800);
   if (res.correct) return finishRound();
   setScore();
+  $('#directionNote').hidden = false;
   $('#misses').insertAdjacentHTML('afterbegin', missRow(res));
   A($('#misses').firstElementChild, [{ opacity: 0, transform: 'translateX(-20px) rotate(-3deg)' }, { opacity: 1, transform: 'none' }], { duration: 450, easing: SPRING });
   shake($('#suspect'));

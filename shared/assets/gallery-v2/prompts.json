@@ -1,0 +1,40 @@
+{
+  "generator": "Built-in image_gen.imagegen",
+  "generatedDate": "2026-10-25",
+  "transparentBackground": true,
+  "processing": "Pillow RGBA resize to 900px maximum edge; WebP quality 88, method 6, exact alpha.",
+  "promptAssembly": "The exact prompt for each image is commonPrompt, one newline, then its subjectPrompt.",
+  "commonPrompt": "Use case: product-mockup\nAsset type: isolated hero-object cutout for a colored website gallery card, on a genuinely transparent background with alpha.\nStyle/medium: cohesive photoreal tactile vintage tabletop product photography/render. Beautiful material detail, realistic believable proportions and subtle patina, crisp readable silhouette.\nComposition/framing: one centered three-quarter hero-object arrangement, large, filling approximately 80 percent of the image, full object and all accessories visible with a safe transparent margin on every edge. Square frame. Object silhouette immediately readable at small card size.\nLighting/mood: controlled warm studio key light with soft neutral fill and restrained highlights, enough local contrast to separate materials. Object only, no floor plane or cast shadow extending into the background.\nConstraints: genuinely transparent background around the whole object, preserve transparent holes between parts; no room, no walls, no shelves, no wood background, no scenery, no environment, no people or hands, no letters, no numbers, no writing, no typography, no words, no logos, no watermark, no borders or interface. Do not show a checkerboard, colored backdrop or white background. No extra objects.",
+  "assets": [
+    {
+      "file": "genie.webp",
+      "sourceFile": "exec-4a13c81a-a32a-4a6b-9ed1-71dce5993ad3.png",
+      "subjectPrompt": "Subject: one ornate antique brass genie oil lamp in a readable three-quarter side view, long spout, curved handle and fitted lid, ornamental engraved patterns with no lettering. A vivid turquoise magical smoke plume curls high above the spout in several elegant visible ribbons, fully contained with safe margin, translucent wisps with soft luminous turquoise edges. Rich warm brass contrasted with saturated turquoise. Lamp and smoke as a single isolated cutout."
+    },
+    {
+      "file": "dice.webp",
+      "sourceFile": "exec-5549415a-c2fa-4506-bfe8-700479f118c5.png",
+      "subjectPrompt": "Subject: exactly three chunky ivory dice tumbling dynamically as an isolated arrangement, angled in three-quarter views with clear separated cube silhouettes. Each die has carved dark red circular pips, no numbers or symbols, and beautifully worn smooth ivory edges with tactile tiny scratches. One larger foreground die and two slightly smaller above/behind, all clearly recognizable as dice. Keep all three completely visible, no tray or table."
+    },
+    {
+      "file": "music.webp",
+      "sourceFile": "exec-9294cc9d-8d63-4c12-805a-4c0296de82d9.png",
+      "subjectPrompt": "Subject: one large black vinyl record with obvious concentric grooves and a plain orange paper center label without writing, leaning in front of a cream-colored aged paper record sleeve. The cream sleeve is partly behind and offset so the round black record silhouette remains the dominant focus, the sleeve blank with no letters, no artwork, no typography. Tactile satin vinyl highlights and subtle sleeve paper wear. Three-quarter product angle, entire record and sleeve visible."
+    },
+    {
+      "file": "geo.webp",
+      "sourceFile": "exec-76e408d7-67dd-4cfa-8a30-9df89cb1f62d.png",
+      "subjectPrompt": "Subject: a vintage blue-and-green globe on a compact antique brass meridian stand, turned in a strong readable three-quarter angle, with visibly rich blue oceans and muted green landmasses, no words, numbers or legends. A brass-rimmed magnifying glass leans across the lower side of the globe as a clear companion silhouette. The spherical blue globe is the dominant hero object. Beautiful tactile paper globe surface and warm metal patina, no maps or desk."
+    },
+    {
+      "file": "screen.webp",
+      "sourceFile": "exec-252909b9-5b5b-4517-a52e-21fca4f74aac.png",
+      "subjectPrompt": "Subject: one compact vintage dark charcoal mechanical film projector with two clearly visible large silver metal film reels, three-quarter product view, readable lens and mechanical body. A single blank dark red cinema ticket with notched sides sits in front at an angle; no writing or numbers on the ticket or equipment. Silver reels, dark projector and red ticket create a distinct isolated cinema silhouette, no microphone, no tape recorder."
+    },
+    {
+      "file": "rap.webp",
+      "sourceFile": "exec-22783371-147f-46dc-bcfa-9765842d1fee.png",
+      "subjectPrompt": "Subject: one large chrome vintage broadcast microphone with a ribbed capsule and compact stand, three-quarter product view, gleaming aged chrome. A red coiled audio cable curves around the base and a pair of dark charcoal padded studio headphones rests beside it. Microphone is dominant, full cable and headphones neatly grouped inside the safe margin. Distinct microphone silhouette, no projector, no reels, no tape recorder, no record player."
+    }
+  ]
+}

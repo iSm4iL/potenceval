@@ -15,6 +15,18 @@ body[data-game="geo"] .case-progress{color:#e8bc79}
 body[data-game="geo"] .case-progress i{background:#271c13}
 body[data-game="geo"] .case-progress b{background:linear-gradient(90deg,#d39f55,#f1cf8d)}
 body[data-game="geo"] .notebook{border:1px solid #c2a678}
+body[data-game="geo"] .sticky b{font:600 clamp(22px,2.5vw,28px)/1.35 Onest,Arial,sans-serif;font-synthesis:none;letter-spacing:0}
+body[data-game="geo"] .sticky small{font:400 16px/1.4 Onest,Arial,sans-serif}
+body[data-game="geo"] .direction-note{font:400 12px/1.6 Onest,Arial,sans-serif;color:#795f43;margin:16px 0 8px}
+body[data-game="geo"] .misses{gap:10px}
+body[data-game="geo"] .misses li{align-items:center;padding-bottom:8px;border-bottom:1px solid #ab8d6233}
+body[data-game="geo"] .misses s{min-width:0;overflow-wrap:anywhere}
+body[data-game="geo"] .miss-guidance{display:grid;gap:3px;max-width:60%;white-space:normal;text-align:right;font:500 12px/1.4 Onest,Arial,sans-serif}
+body[data-game="geo"] .miss-guidance strong{font-weight:600}
+body[data-game="geo"] .miss-guidance small{font-size:11px;color:#795f43}
+body[data-game="geo"] .miss-guidance b{font:700 19px/1 Arial,sans-serif;vertical-align:-1px}
+body[data-game="geo"] .photo-credit{display:block;font:400 9px/1.4 Onest,Arial,sans-serif;margin:8px 0 0;color:#735f49}
+body[data-game="geo"] .photo-credit a{color:inherit;text-decoration:underline}
 body[data-game="geo"] .walk-bar{background:#291f17;color:#e7d7ba;border-color:#8f6b3e}
 body[data-game="geo"] .walk-btn,body[data-game="geo"] .walk-dock{background:#503b26;color:#f0d4a2;border-color:#a4804b}
 @media(max-width:700px){.detective-scene{margin-top:20px}.detective-scene img{height:170px}.detective-scene figcaption{font-size:24px}body[data-game="geo"] .folder-page h1{font-size:58px}body[data-game="geo"] .desk{padding-top:20px}}
