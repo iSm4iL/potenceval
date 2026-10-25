@@ -3,7 +3,7 @@ import { recordArt, shelfPage, selectionPage } from './record-store-model.js';
 
 const stage = document.querySelector('#stage');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const colors = { 'new-wave': '#ef613b', 'ru-rap': '#b5a181', nostalgia: '#e287ce', kpop: '#b68aef', 'modern-pop': '#73b3de', 'mom-pop': '#ffd0ba', 'dad-rock': '#e6c68b', metal: '#df7067', 'us-hiphop': '#e4aa67', soundcloud: '#b8a3ef' };
+const colors = { 'new-wave': '#ef613b', 'ru-rap': '#b5a181', nostalgia: '#e287ce', kpop: '#b68aef', 'modern-pop': '#73b3de', 'mom-pop': '#ffd0ba', 'dad-rock': '#e6c68b', metal: '#df7067', 'us-hiphop': '#e4aa67', soundcloud: '#b8a3ef', 'dead-inside': '#c9c3d6' };
 let page = 0, selectedId = null, lastTitle = 'Новая школа', playOnEntry = false;
 let restoreFocus = null;
 

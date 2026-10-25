@@ -9,6 +9,8 @@ export const PACKS = [
   { id: 'metal', title: 'Рок и метал', icon: '🤘', description: 'Metallica, Slipknot, Rammstein, System Of A Down' },
   { id: 'us-hiphop', title: 'US Hip-Hop', icon: '🎙️', description: 'Metro Boomin, Travis Scott, Kanye West, Lil Nas X, NLE Choppa и другие' },
   { id: 'soundcloud', title: 'SoundCloud Hits', icon: '☁️', description: 'XXXTentacion, Lil Uzi Vert, Juice WRLD, Lil Peep и другие' },
+  // art — чья обложка, пока своей нет (assets/record-store/cover-<art>.webp)
+  { id: 'dead-inside', title: 'Дед инсайд', icon: '🖤', description: 'Пошлая Молли, Кишлак, АПФС, Монеточка, zhanulka, CUPSIZE, Lil Peep…', art: 'soundcloud' },
 ].map(pack => ({ ...pack, curated: true }));
 
 export const normalize = value => String(value || '').toLocaleLowerCase('ru').replace(/ё/g, 'е').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();

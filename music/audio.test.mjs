@@ -1,6 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { AudioPlayer } from './audio.js';
+import { AudioPlayer, audibleStart } from './audio.js';
+
+test('snippets skip a silent preview intro but always leave 15 seconds to play', () => {
+  const rate = 100, samples = new Float32Array(30 * rate);
+  samples.fill(0.3, 2 * rate);
+  const buffer = { duration: 30, sampleRate: rate, getChannelData: () => samples };
+  assert.ok(Math.abs(audibleStart(buffer) - 1.97) < 0.001);
+  assert.equal(audibleStart({ duration: 30, sampleRate: rate, getChannelData: () => new Float32Array(30 * rate) }), 0, 'silence everywhere keeps the start');
+  assert.equal(audibleStart({ duration: 30 }), 0);
+});
 
 function context() {
   const sources = [];

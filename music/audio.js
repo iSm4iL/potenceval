@@ -14,6 +14,16 @@ function abortable(operation, signal) {
   });
 }
 
+// Некоторые превью начинаются с тишины, и полсекунды тишины выглядят как «песня не играет».
+// Отрывок начинаем с первого слышимого звука, оставляя запас на 15 секунд.
+export function audibleStart(buffer, threshold = 0.01) {
+  if (typeof buffer?.getChannelData !== 'function') return 0;
+  const data = buffer.getChannelData(0), rate = buffer.sampleRate || 44100;
+  const limit = Math.min(data.length, Math.floor(Math.max(0, buffer.duration - 15) * rate));
+  for (let i = 0; i < limit; i++) if (Math.abs(data[i]) > threshold) return Math.max(0, i / rate - 0.03);
+  return 0;
+}
+
 export class AudioPlayer {
   constructor({ context = null, fetchAudio = (...args) => fetch(...args) } = {}) {
     this.context = context;
@@ -56,7 +66,7 @@ export class AudioPlayer {
     try {
       const buffer = await this.fetchBuffer(track, controller.signal, onStatus);
       if (version !== this.version) return false;
-      this.track = { ...track, start: 0 }; this.buffer = buffer;
+      this.track = { ...track, start: audibleStart(buffer) }; this.buffer = buffer;
       return true;
     } catch (error) {
       if (version !== this.version) return false;
@@ -94,7 +104,7 @@ export class AudioPlayer {
 
   useBuffer(track, buffer) {
     this.stop();
-    this.track = { ...track, start: 0 }; this.buffer = buffer;
+    this.track = { ...track, start: audibleStart(buffer) }; this.buffer = buffer;
   }
 
   async play(seconds, { onStart = () => {} } = {}) {

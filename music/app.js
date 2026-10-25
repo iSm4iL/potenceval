@@ -1,8 +1,8 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
-import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=bonus-1';
-import { PACKS, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack } from './catalog.js?v=collections-20261024';
+import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=covers-1';
+import { PACKS, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack, sameArtist } from './catalog.js?v=dead-inside-1';
 import { createDeezerClient } from './service.js?v=audio-20261023';
-import { AudioPlayer } from './audio.js?v=audio-20261023';
+import { AudioPlayer } from './audio.js?v=silence-1';
 import { resultPresentation } from './feedback.js?v=bonus-1';
 import { createCatalogClient } from './collection.js';
 import { createMultiplayer } from './multiplayer.js?v=friends-20261025-2';
@@ -395,7 +395,7 @@ function renderReveal(track) {
   const result = state.results.at(-1), query = encodeURIComponent(`${track.artist} ${track.title}`), feedback = resultPresentation(result);
   stage.innerHTML = `<section class="game-shell result-screen">${roundHeader()}<div class="round-layout"><div class="round-main">
     <div class="result-head ${feedback.tier}" id="resultHead" role="status"><div class="result-verdict"><span class="result-icon" aria-hidden="true">${result.won ? '✓' : '♫'}</span><strong>${feedback.label}</strong><b class="result-points">${result.points ? `+${number(result.points)}` : '0 очков'}</b></div>
-    <div class="track-reveal"><div class="cover-art"><span aria-hidden="true">♫</span>${track.cover ? `<img id="coverArt" src="${esc(track.cover)}" alt="Обложка альбома" width="112" height="112">` : ''}</div><div class="track-info"><h2 id="trackTitle">${esc(track.title)}</h2><p class="artist">${esc(track.artist)}</p><p class="result-detail">${result.won ? `Угадали за ${length(LENGTHS[result.step])} с` : result.points ? `+${ARTIST_BONUS} за исполнителя. Послушайте песню целиком` : 'Послушайте и запомните на следующий раз'}</p></div></div></div>
+    <div class="track-reveal"><div class="cover-art"><span aria-hidden="true">♫</span>${track.cover ? `<img id="coverArt" src="${esc(track.cover)}" alt="Обложка альбома" width="112" height="112">` : ''}</div><div class="track-info"><h2 id="trackTitle">${esc(track.title)}</h2><p class="artist">${esc(track.artist)}</p><p class="result-detail">${result.won ? `Угадали за ${length(LENGTHS[result.step])} с${result.attempts?.at(-1)?.title && !sameArtist(track, result.attempts.at(-1)) ? '. Засчитано: та же песня в другом исполнении' : ''}` : result.points ? `+${ARTIST_BONUS} за исполнителя. Послушайте песню целиком` : 'Послушайте и запомните на следующий раз'}</p></div></div></div>
     <div class="reveal-actions"><span>${result.won ? 'Точный ответ. Очки ваши!' : 'Ответ раскрыт. Играем дальше?'}</span><button class="btn primary" id="nextBtn">${state.results.length >= state.queue.length ? 'Результаты' : 'Следующий трек'}</button></div>
     ${playerHTML(true)}<nav class="external-links" aria-label="Послушать песню"><a href="https://www.deezer.com/track/${track.deezerId}" target="_blank" rel="noopener noreferrer">Deezer</a><a href="https://music.yandex.ru/search?text=${query}" target="_blank" rel="noopener noreferrer">Яндекс Музыка</a><a href="https://open.spotify.com/search/${query}" target="_blank" rel="noopener noreferrer">Spotify</a></nav>${evidenceHTML(track)}</div>${historyHTML()}</div></section>`;
   $('#coverArt')?.addEventListener('error', event => { event.target.hidden = true; });

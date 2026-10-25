@@ -5,7 +5,10 @@ export const POINTS = Object.freeze([1000, 800, 600, 400, 200, 100]);
 export const ARTIST_BONUS = 100;
 const roundPoints = (won, step, attempts, answerMode) => won ? POINTS[step] : answerMode !== 'artist' && attempts.some(a => a.status === 'artist') ? ARTIST_BONUS : 0;
 const validTrack = t => t && typeof t.id === 'string' && t.id.length > 0 && Number.isSafeInteger(t.deezerId) && t.deezerId > 0 && typeof t.title === 'string' && t.title.length > 0 && typeof t.artist === 'string' && t.artist.length > 0 && Array.isArray(t.artistIds) && t.artistIds.every(id => typeof id === 'string') && Array.isArray(t.artistNames) && t.artistNames.every(name => typeof name === 'string') && typeof t.answerKey === 'string';
-const classify = (target, track) => target.id === track.id || (target.answerKey && target.answerKey === track.answerKey && sameArtist(target, track)) ? 'correct' : sameArtist(target, track) ? 'artist' : 'wrong';
+// Каверы и перепевки: то же название у другого исполнителя тоже засчитываем, иначе оригинал считался бы ошибкой.
+const songTitle = t => typeof t.answerKey === 'string' ? t.answerKey.slice(t.answerKey.indexOf('|') + 1) : '';
+export const sameSong = (a, b) => songTitle(a).length > 0 && songTitle(a) === songTitle(b);
+const classify = (target, track) => target.id === track.id || sameSong(target, track) ? 'correct' : sameArtist(target, track) ? 'artist' : 'wrong';
 const validArtist = a => a?.kind === 'artist' && typeof a.artistId === 'string' && a.artistId.length > 0 && a.id === `artist-${a.artistId}` && typeof a.name === 'string' && a.name.trim().length > 0;
 const classifyArtist = (target, a) => target.artistIds.includes(a.artistId) ? 'correct' : 'wrong';
 

@@ -1,7 +1,7 @@
 import { PACKS } from './catalog.js';
 
-const artIds = new Set(PACKS.map(pack => pack.id));
-export const recordArt = id => `assets/record-store/cover-${artIds.has(id) ? id : 'new-wave'}.webp`;
+const art = new Map(PACKS.map(pack => [pack.id, pack.art || pack.id]));
+export const recordArt = id => `assets/record-store/cover-${art.get(id) || 'new-wave'}.webp`;
 
 export function shelfPage(items, page = 0) {
   const pages = Math.max(1, Math.ceil(items.length / 8));

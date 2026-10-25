@@ -330,6 +330,16 @@ test('openStep jumps straight to a longer snippet and scores like that step', ()
   assert.equal(guess(s, tracks[0]).score, POINTS[4]);
 });
 
+test('the same song by another artist (a cover or the original) counts as correct', () => {
+  const original = { ...song(50, 'c'), title: 'Whiskey in the Jar', answerKey: 'c|whiskey in the jar' };
+  const s = createGame([{ ...song(51, 'd'), title: 'Whiskey in the Jar', answerKey: 'd|whiskey in the jar' }], { rounds: 1 });
+  const won = guess(s, original);
+  assert.equal(won.attempts[0].status, 'correct');
+  assert.equal(won.score, POINTS[0]);
+  assert.equal(restoreGame(structuredClone(won))?.score, POINTS[0]);
+  assert.equal(guess(s, { ...song(52, 'c'), answerKey: 'c|whiskey' }).attempts[0].status, 'wrong');
+});
+
 test('naming only the artist earns a consolation bonus that survives a reload', () => {
   let s = surrender(guess(game(), tracks[1]));
   assert.equal(s.attempts[0].status, 'artist');
