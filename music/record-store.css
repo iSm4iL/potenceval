@@ -103,16 +103,16 @@ body.record-store { background:#0d0c14; }
 .store-tools #lineupBtn { display:none; }
 .record-store .resume-card { margin:20px 0 0; border-color:#d8aa654d; background:#201b17; }.record-store .resume-card p{color:var(--muted)}
 .record-store .music-footer { border-top:1px solid #e0bf8b1c; color:#9c8977; margin-top:20px; padding-top:13px; font-size:10px; }
-.record-store .game-shell { margin:22px 0 0; max-width:none; }
+.record-store .game-shell { margin:22px auto 0; max-width:1048px; }
 .record-store .round-top { border-bottom:1px solid #d8ae7526; padding-bottom:14px; }
 .record-store .round-top h1 { font-family:'Marck Script',cursive; font-size:34px; font-weight:400; }
 .record-store .round-top p { color:#bcab96; }.record-store .total-score{background:#241d17;border-color:#f2b85b4d;color:var(--gold)}
 .round-controls { display:flex; flex:none; flex-direction:column; align-items:flex-end; gap:10px; }
 .round-controls .jb-tools { justify-content:flex-end; flex-wrap:wrap; }
 .round-controls .volume { font-size:11px; }
-.record-store .round-layout { display:grid; grid-template-columns:minmax(0,1.13fr) minmax(0,1fr); gap:40px; margin-top:20px; align-items:start; }
+.record-store .round-layout { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1fr); gap:48px; margin-top:20px; align-items:start; }
 .record-store .round-main { min-width:0; }
-.record-store .jukebox { position:relative; width:100%; max-width:clamp(300px,calc(100dvh - 520px),470px); margin:0 auto; padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
+.record-store .jukebox { position:relative; width:100%; margin:0 auto; padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
 .record-store .jukebox::before,.record-store .jukebox::after { display:none; }
 .record-store .jb-top { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:0 0 8px; position:relative; z-index:2; }
 .player-caption { font-family:'Marck Script',cursive; font-size:25px; color:#ecd6b6; }
@@ -120,7 +120,7 @@ body.record-store { background:#0d0c14; }
 .record-store .jb-marquee b{font-size:12px;color:#f2b85b}
 .record-store .jb-tools .volume { color:#bca388; }.record-store .volume input{accent-color:var(--gold)}
 .record-store .help-btn { color:#c9b393; border-color:#e4bd7d40; background:#17130f; }
-.round-turntable { width:100%; margin:-12px 0 -18px; }
+.round-turntable { width:min(100%,max(280px,100dvh - 370px)); margin:-12px auto -18px; } /* 370 — всё, что в колонке кроме вертушки: влезаем в экран без прокрутки */
 .record-store .jb-play { left:43.25%; top:42.25%; bottom:auto; transform:translate(-50%,-50%); width:72px; box-shadow:0 0 0 3px #27180888,0 4px 16px #0006; background:radial-gradient(circle at 35% 25%,#ffe6a8,#f2b85b 60%,#cf8b35); }
 .record-store .jb-play:hover { transform:translate(-50%,-50%) scale(1.06); }.record-store .jb-play:active{transform:translate(-50%,-50%) scale(.97)}
 .record-store .jb-play::before { display:none; }.record-store .jb-play .record-symbol{font-size:29px;color:#38270f;padding-left:3px}
@@ -157,7 +157,8 @@ body.record-store { background:#0d0c14; }
 .record-store .suggestions small{color:#88735b}.record-store .suggestions .search-empty{color:#806b50;font-size:12px}
 .record-store .suggestions li:has(.suggestion-cover){display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:10px;align-items:center;min-height:53px}
 .record-store .suggestion-cover{width:36px;height:36px;object-fit:cover;border-radius:2px;grid-row:1 / 3;box-shadow:0 1px 3px #39230f33}
-.record-store .give-up{display:block;width:100%;margin:13px 0 0;color:#88735a;font-size:11px;text-decoration:underline;text-underline-offset:3px}
+.record-store .give-up{display:block;width:100%;min-height:43px;margin:11px 0 0;padding:10px 14px;border:1px solid #9e805380;border-radius:7px;background:#f4e6cc;color:#5e4733;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 2px 3px #69442d14;transition:background .15s}
+.record-store .give-up:not(:disabled):hover{background:#ecd9b5}
 .store-answer-panel .answer-hint{color:#826c52;font-size:10px;line-height:1.5;margin:12px 0}
 .record-store .store-answer-panel .attempt-history{margin-top:16px;padding:12px 0 0;border:0;border-top:1px solid #9e805342;border-radius:0;background:none;box-shadow:none;color:#493622}
 .store-answer-panel .history-heading{display:flex;flex-direction:column;align-items:stretch;gap:9px;margin-bottom:10px;padding-bottom:8px}
