@@ -135,7 +135,6 @@ body.record-store { background:#0d0c14; }
 .record-store .jb-key.current{background:linear-gradient(130deg,#ffe4a4,#efb455);color:#39250f;transform:translateY(-3px) rotate(-2deg);box-shadow:none}
 .record-store .jb-key.locked{background:linear-gradient(130deg,#d6c5a7,#b6a083);color:#66513b;box-shadow:none}
 .record-store .jb-key i{display:none}.record-store .jb-key small{font-size:11px;color:inherit}
-.record-store .jb-key small::before{content:'— ';}.record-store .jb-key small::after{content:' —';}
 .record-store .jb-more{border:1px solid #edc58475;border-radius:8px;background:#16120f9e;color:#f0d9b6;margin-top:15px;font-size:14px;padding:13px 8px}
 .record-store .jb-more small{display:none}
 .record-store .audio-error{position:relative;z-index:5;margin:12px 6px;padding:15px;background:#3a201af2;border:1px solid #d48e6a77;border-radius:9px;color:#ffe4c9;box-shadow:0 7px 15px #0005;font-size:12px}
