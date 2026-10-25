@@ -5,7 +5,7 @@ import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=audio-20261023';
 import { resultPresentation } from './feedback.js?v=bonus-1';
 import { createCatalogClient } from './collection.js';
-import { createMultiplayer } from './multiplayer.js?v=friends-20261025';
+import { createMultiplayer } from './multiplayer.js?v=friends-20261025-2';
 
 const stage = $('#stage'), player = new AudioPlayer(), service = createDeezerClient(), catalog = createCatalogClient();
 const stored = LS.get('music.online.settings') || {};
