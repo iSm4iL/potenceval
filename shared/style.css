@@ -268,6 +268,9 @@ input{font:inherit}
 .dlink .ic{width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.06);font-size:20px}
 .dlink b{display:block;font-family:'Unbounded';font-size:14px}
 .dlink small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.dtools{display:flex;flex-wrap:wrap;gap:8px;padding:6px 8px 4px}
+.dtools [hidden]{display:none}
+.dgame:not(:has(.dtools>:not([hidden]))){display:none} /* в игре пока нечего показать */
 .dsoon{margin-top:8px;padding:14px;border-radius:14px;border:2px dashed var(--line);color:var(--muted);font-size:13px;text-align:center}
 
 .pcard-l .kick{margin-left:6px;padding:4px 9px;border-radius:99px;background:rgba(255,77,109,.14);color:#ff8fa3;font-size:12px;font-weight:700;transition:background .2s}

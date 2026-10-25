@@ -1,4 +1,4 @@
-import { GAMES } from './menu.js?v=where-1';
+import { GAMES } from './menu.js?v=menu-20261025';
 const root = new URL('../', import.meta.url);
 const details = {
   genie:['Суперсила, о которой пожалеешь. Друзья придумают подвох.','2–8 игроков · лобби'],

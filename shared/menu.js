@@ -20,6 +20,11 @@ btn.setAttribute('aria-expanded', 'false');
 btn.innerHTML = '<span></span><span></span><span></span>';
 document.querySelector('.top')?.prepend(btn);
 
+// В игре шапка — только меню и название; кнопки игры (правила, выход, код комнаты) уезжают в меню.
+const game = GAMES.find(g => here(g.path)), tools = document.querySelector('.top .top-right');
+const label = document.querySelector('.top .logo span');
+if (game && label) label.textContent = game.name;
+
 const link = (path, icon, name, desc) => `<a class="dlink ${here(path) ? 'on' : ''}" href="${new URL(path, ROOT).href}">
   <span class="ic">${icon}</span><span><b>${name}</b><small>${desc}</small></span></a>`;
 const drawer = document.createElement('div');
@@ -27,12 +32,23 @@ drawer.className = 'drawer';
 drawer.hidden = true;
 drawer.innerHTML = `<div class="drawer-bg"></div><nav class="drawer-panel" aria-label="Игры">
   <div class="drawer-head"><span class="logo"><b>potenceval</b><span>games</span></span></div>
+  ${tools ? `<div class="dgame"><div class="dlabel">${game?.name || 'Эта игра'}</div><div class="dtools"></div></div>` : ''}
   ${link('', '🏠', 'Главная', 'Все игры')}
   <div class="dlabel">Игры</div>
   ${GAMES.map(g => link(g.path, g.icon, g.name, g.desc)).join('')}
   <div class="dsoon">Скоро новые игры</div></nav>`;
 document.body.append(drawer);
 const panel = drawer.querySelector('.drawer-panel'), bg = drawer.querySelector('.drawer-bg');
+if (tools) {
+  const box = drawer.querySelector('.dtools');
+  box.append(...tools.children);
+  tools.remove();
+  // нажал «Правила» — меню прячется; «Выйти» сначала переспрашивает («Точно выйти?») — тогда ждём второго нажатия
+  box.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setTimeout(() => { if (!b.textContent.trim().endsWith('?')) close(); });
+  });
+}
 
 function open() {
   drawer.hidden = false;

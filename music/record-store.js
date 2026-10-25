@@ -44,7 +44,7 @@ function decorateHome(home) {
       <div class="crate-back" aria-hidden="true"></div><div class="sleeve-grid"></div>
       <div class="crate-lip"><span class="crate-stamp">Музыка<br>объединяет</span><nav class="shelf-navigation" aria-label="Страницы подборок"><button type="button" class="shelf-prev" aria-label="Предыдущие подборки">←</button><span class="shelf-position" aria-live="polite" aria-atomic="true"></span><button type="button" class="shelf-next" aria-label="Следующие подборки">→</button></nav><span class="crate-note">Найди свою<br>пластинку ♡</span></div>
       <p class="shelf-caption">Выбери обложку, а потом нажми «Играть».</p></section>
-    <aside class="shop-counter"><div class="counter-player${changed ? ' record-changed' : ''}">${deck(title, id, true)}<div class="selected-record"><span class="selected-dot"></span><span class="selected-title">${esc(title)}</span><button type="button" class="selected-lineup" aria-label="Исполнители: ${esc(title)}">Исполнители</button></div></div>
+    <aside class="shop-counter"><div class="counter-player${changed ? ' record-changed' : ''}">${deck(title, id, true)}<div class="selected-record"><span class="selected-dot"></span><span class="selected-title">${esc(title)}</span></div></div>
       <div class="store-start"></div><div class="store-settings"><div class="store-catalog"><span class="store-setting-title">Какие песни?</span></div><div class="store-answer"></div><div class="store-rounds"></div></div>
       <div class="store-status"></div><div class="store-tools"></div></aside></div><div class="store-resume"></div>`;
   cards.forEach(card => {
@@ -92,8 +92,6 @@ function decorateHome(home) {
   const trigger = shop.querySelector('.deck-trigger');
   trigger.disabled = controls.start.disabled;
   trigger.onclick = () => controls.start.click();
-  shop.querySelector('.selected-lineup').disabled = controls.lineup.disabled;
-  shop.querySelector('.selected-lineup').onclick = () => controls.lineup.click();
   controls.start.addEventListener('click', () => { playOnEntry = true; }, { capture: true });
   home.replaceChildren(shop);
   showPage(page);
