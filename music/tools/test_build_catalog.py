@@ -209,6 +209,24 @@ class BuilderTests(unittest.TestCase):
             self.assertTrue(all(t["genres"] == ["ru-rap", "new-wave"] for t in tracks))
             self.assertEqual(tracks[0]["sources"][0]["period"], "популярное у madk1d")
 
+    def test_pinned_artist_id_skips_the_namesake_search(self):
+        song = raw(40, "Square Hammer", "Ghost", 8506054, isrc="SE0000000040")
+
+        class PinnedClient(FakeClient):
+            def get(self, url):
+                self.calls.append(url)
+                if url.startswith("https://api.deezer.com/search/artist?"):
+                    raise AssertionError("pinned artists must not be searched")
+                if url.startswith("https://api.deezer.com/artist/8506054/top"):
+                    return {"data": [song]}
+                return super().get(url)
+
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [{"id": "metal", "kind": "deezer-artist-top", "title": "Deezer", "url": "https://www.deezer.com/",
+                                                     "genres": ["metal"], "artists": [{"name": "Ghost", "id": 8506054}]}])
+            self.assertTrue(b.build(src, out, client=PinnedClient(tracks=[song])))
+            self.assertEqual([t["title"] for t in json.loads(out.read_text(encoding="utf-8"))["tracks"]], ["Square Hammer"])
+
     def test_stop_list_drops_banned_artists_and_broken_recordings(self):
         guest = raw(30, "Сосед", "Каспийский Груз", 7, isrc="RUA000000030", contributors=[{"id": 7, "name": "Каспийский Груз"}, {"id": 8, "name": "Гера Джио"}])
         broken = raw(31, "Новая эра", "LOVV66", 9, isrc="RUA000000031")

@@ -237,13 +237,18 @@ def artist_top_rows(source, client):
     """
     per = max(1, min(10, int(source.get("perArtist", 5))))
     rows = []
-    for name in source.get("artists", []):
+    for entry in source.get("artists", []):
+        # {"name", "id"} закрепляет исполнителя, когда у тёзки больше подписчиков (фонк-продюсер Ghost вместо группы).
+        name, pinned = (entry["name"], entry["id"]) if isinstance(entry, dict) else (entry, None)
         try:
-            found = client.get("https://api.deezer.com/search/artist?" + urlencode({"q": name, "limit": 10}))
-            exact = [a for a in (found.get("data") or []) if isinstance(a, dict) and isinstance(a.get("id"), int) and normalize(a.get("name")) == normalize(name)]
-            if not exact:
-                continue
-            artist = max(exact, key=lambda a: a.get("nb_fan") or 0)
+            if pinned:
+                artist = {"id": int(pinned)}
+            else:
+                found = client.get("https://api.deezer.com/search/artist?" + urlencode({"q": name, "limit": 10}))
+                exact = [a for a in (found.get("data") or []) if isinstance(a, dict) and isinstance(a.get("id"), int) and normalize(a.get("name")) == normalize(name)]
+                if not exact:
+                    continue
+                artist = max(exact, key=lambda a: a.get("nb_fan") or 0)
             top = client.get("https://api.deezer.com/artist/" + str(artist["id"]) + "/top?" + urlencode({"limit": per * 3}))
         except (OSError, ValueError, TypeError, AttributeError):
             continue
