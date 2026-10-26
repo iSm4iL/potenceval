@@ -49,13 +49,16 @@ async function send(t, form) {
 
 function decorate() {
   const head = stage.querySelector('.game-shell .round-top');
-  if (!head || head.querySelector('.report-flag') || !track()) return;
+  if (!head || !track()) return;
+  // рядом с очками и звуком, если магазин пластинок уже собрал эту строку
+  const host = head.querySelector('.round-controls') || head, old = head.querySelector('.report-flag');
+  if (old) { if (old.parentElement !== host) host.append(old); return; }
   const flag = document.createElement('button');
   flag.type = 'button'; flag.className = 'report-flag'; flag.textContent = '⚑ Проблема с треком';
   flag.title = 'Не играет или не подходит к подборке — сообщите нам';
   flag.onclick = open;
-  head.append(flag);
+  host.append(flag);
 }
 
-new MutationObserver(decorate).observe(stage, { childList: true });
+new MutationObserver(decorate).observe(stage, { childList: true, subtree: true });
 decorate();

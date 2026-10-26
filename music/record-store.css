@@ -200,3 +200,29 @@ body.record-store { background:#0d0c14; }
   .round-controls { width:100%; flex-direction:row; align-items:center; justify-content:space-between; }
   .round-controls .jb-tools { margin-left:auto; }
 }
+/* Раунд на компьютере — ровно один экран: шапка раунда одной строкой, две колонки одной высоты,
+   вертушка подстраивается под оставшуюся высоту, прокручивается только список попыток. */
+@media(min-width:821px){
+  body.record-store:has(.round-turntable) .music-footer { display:none; }
+  .record-store .game-shell:has(.round-turntable) { display:flex; flex-direction:column; height:calc(100dvh - var(--shell-top,100px) - 26px); min-height:560px; max-width:1180px; margin-top:6px; }
+  .game-shell:has(.round-turntable) .round-top { flex:none; display:flex; align-items:center; gap:20px; margin:0; padding:0 0 12px; }
+  .game-shell:has(.round-turntable) .round-top>div:first-child { display:flex; align-items:baseline; gap:16px; min-width:0; }
+  .record-store .game-shell:has(.round-turntable) .round-top h1 { font-size:30px; white-space:nowrap; }
+  .game-shell:has(.round-turntable) .round-top p { margin:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .game-shell:has(.round-turntable) .round-controls { margin-left:auto; flex-direction:row; align-items:center; gap:14px; }
+  .game-shell:has(.round-turntable) .round-controls .total-score { padding:7px 14px; }
+  .record-store .game-shell:has(.round-turntable) .round-layout { flex:1; min-height:0; margin-top:16px; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:40px; align-items:stretch; }
+  .game-shell:has(.round-turntable) .round-main, .game-shell:has(.round-turntable) .jukebox { display:flex; flex-direction:column; min-height:0; }
+  .game-shell:has(.round-turntable) .round-main { height:100%; }
+  .game-shell:has(.round-turntable) .jukebox { flex:1; }
+  .game-shell:has(.round-turntable) .jukebox>* { flex:none; }
+  .record-store .game-shell:has(.round-turntable) .round-turntable { flex:1 1 0; min-height:150px; width:auto; max-width:100%; aspect-ratio:1; align-self:center; margin:-4px auto -8px; }
+  .record-store .game-shell:has(.round-turntable) .jb-keys { margin-top:10px; }
+  .record-store .game-shell:has(.round-turntable) .jb-more { margin-top:12px; }
+  .game-shell:has(.round-turntable) .store-answer-panel { display:flex; flex-direction:column; min-height:0; max-height:none; overflow:hidden; margin:9px; }
+  .game-shell:has(.round-turntable) .store-answer-panel>h2 { flex:none; }
+  .record-store .game-shell:has(.round-turntable) .store-answer-panel .attempt-history { flex:1; min-height:0; display:flex; flex-direction:column; align-self:stretch; }
+  .game-shell:has(.round-turntable) .store-answer-panel .attempt-history>* { width:100%; }
+  .game-shell:has(.round-turntable) .store-answer-panel .attempt-history ol { flex:1; min-height:0; max-height:none; overflow:auto; }
+}
+.round-controls .report-flag { margin:0; }

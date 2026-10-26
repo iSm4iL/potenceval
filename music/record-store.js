@@ -154,6 +154,8 @@ function decorateGame(game) {
     if (feedback) form.after(feedback);
     game.querySelector('.round-layout').append(answer);
   }
+  // высота раунда = экран минус шапка сайта над ним (см. «Раунд на компьютере — ровно один экран» в CSS)
+  game.style.setProperty('--shell-top', `${Math.round(game.getBoundingClientRect().top + scrollY)}px`);
   if (restoreAnswerFocus) answerInput.focus({ preventScroll: true });
   if (playOnEntry) {
     playOnEntry = false;
@@ -194,5 +196,5 @@ function rotate(now) {
 requestAnimationFrame(rotate);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=report-1');
+await import('./app.js?v=layout-1');
 decorate();
