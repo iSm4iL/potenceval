@@ -1,14 +1,15 @@
 // Меню-бургер слева: список игр сайта. Подключается на каждой странице.
 import './consent.js';
 const ROOT = new URL('../', import.meta.url);
+// Порядок = порядок на главной: сначала три основные игры.
 export const GAMES = [
-  { path: 'genie/', icon: '✦', name: 'Джинн', desc: 'Суперсила с подвохом · 2–8 игроков' },
-  { path: 'dice/', icon: '🎲', name: 'Костяшки', desc: 'Кости как в Cult of the Lamb · 1–2 игрока' },
   { path: 'music/', icon: '🎧', name: 'Полсекунды', desc: 'Угадай музыку · один экран или лобби' },
-  { path: 'opening/', icon: '✷', name: 'Угадай опенинг', desc: 'Узнай аниме по музыке · 30 секунд, 4 постера' },
   { path: 'geo/', icon: '🕵️', name: 'Угадай страну', desc: 'Детективная доска с уликами · 1–4 игрока' },
+  { path: 'opening/', icon: '✷', name: 'Угадай опенинг', desc: 'Узнай аниме по музыке · 30 секунд, 4 постера' },
   { path: 'where/', icon: '📍', name: 'Где я?', desc: 'Как GeoGuessr · один или с друзьями' },
   { path: 'screen/', icon: '🎬', name: 'До титров', desc: 'Угадай кино, сериал, аниме или мультфильм' },
+  { path: 'genie/', icon: '✦', name: 'Джинн', desc: 'Суперсила с подвохом · 2–8 игроков' },
+  { path: 'dice/', icon: '🎲', name: 'Костяшки', desc: 'Кости как в Cult of the Lamb · 1–2 игрока' },
   { path: 'rap/', icon: '🎙', name: 'Биты', desc: 'Звуковая мастерская · слушать и сохранять' },
 ];
 const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches || document.hidden;

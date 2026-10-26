@@ -1,4 +1,4 @@
-:root{--d:clamp(36px,min(11vw,6.6vh),64px);--bone:#f6efdd;--bone2:#dccfae;--pip:#2a1d14;--blood:#e0393e}
+:root{--d:clamp(34px,min(11vw,5.2vh),64px);--bone:#f6efdd;--bone2:#dccfae;--pip:#2a1d14;--blood:#e0393e}
 
 /* Die */
 .die{position:relative;width:var(--d);height:var(--d);border-radius:24%;padding:calc(var(--d) * .15);display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);

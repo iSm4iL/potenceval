@@ -164,6 +164,8 @@ function finishRound(selectedId) {
   $('deezerLink').href = `https://www.deezer.com/track/${round.entry.trackId}`;
   $('nextButton').firstChild.textContent = queue.length ? 'Следующий раунд ' : 'Смотреть результат ';
   $('roundFoot').hidden = true; $('reveal').hidden = false;
+  // ответ и «Следующий раунд» появляются под постерами — подкручиваем ровно настолько, чтобы их было видно
+  $('reveal').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function startGame() {

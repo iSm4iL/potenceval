@@ -1,4 +1,4 @@
-import { GAMES } from './menu.js?v=opening-1';
+import { GAMES } from './menu.js?v=fit-1';
 const root = new URL('../', import.meta.url);
 const details = {
   genie:['Суперсила, о которой пожалеешь. Друзья придумают подвох.','2–8 игроков · лобби'],
@@ -10,8 +10,8 @@ const details = {
   where:['Случайная улица где-то в мире. Осмотрись и поставь точку на карте.','Один или до 8 друзей · лобби','where.svg'],
   rap:['Выбирай настроение, слушай и сохраняй собственные биты.','Звуковая мастерская'],
 };
-document.querySelector('#games').innerHTML = GAMES.map(game => {
+document.querySelector('#games').innerHTML = GAMES.map((game, k) => {
   const id = game.path.replaceAll('/',''), [description, players] = details[id];
   const art = `shared/assets/gallery-v2/${details[id][2] || id + '.webp'}`;
-  return `<a class="club-card club-card-${id}" href="${new URL(game.path,root)}"><figure><img src="${new URL(art,root)}" alt="" width="900" height="900" ${id === 'genie' || id === 'dice' ? 'fetchpriority="high"' : 'loading="lazy"'}></figure><div class="club-card-copy"><h2>${game.name}</h2><p>${description}</p><div class="club-card-bottom"><small>${players}</small><b>${id === 'rap' ? 'Послушать' : 'Играть'} ↗</b></div></div></a>`;
+  return `<a class="club-card club-card-${id}" href="${new URL(game.path,root)}"><figure><img src="${new URL(art,root)}" alt="" width="900" height="900" ${k < 3 ? 'fetchpriority="high"' : 'loading="lazy"'}></figure><div class="club-card-copy"><h2>${game.name}</h2><p>${description}</p><div class="club-card-bottom"><small>${players}</small><b>${id === 'rap' ? 'Послушать' : 'Играть'} ↗</b></div></div></a>`;
 }).join('');

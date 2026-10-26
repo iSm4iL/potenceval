@@ -95,6 +95,8 @@ function decorateHome(home) {
   controls.start.addEventListener('click', () => { playOnEntry = true; }, { capture: true });
   home.replaceChildren(shop);
   showPage(page);
+  // на телефоне обложки занимают весь экран: выбрал — сами съезжаем к вертушке и «Играть»
+  if (changed && matchMedia('(max-width:600px)').matches) shop.querySelector('.counter-player').scrollIntoView({ behavior: 'smooth', block: 'start' });
   if (restoreFocus) {
     const target = [...home.querySelectorAll('button')].find(button => !button.disabled && (restoreFocus.id ? button.id === restoreFocus.id : restoreFocus.shelf ? button.classList.contains(restoreFocus.shelf) : button.dataset[restoreFocus.key] === restoreFocus.value));
     if (!document.querySelector('dialog[open]')) target?.focus({ preventScroll: true });
@@ -154,6 +156,8 @@ function decorateGame(game) {
     if (feedback) form.after(feedback);
     game.querySelector('.round-layout').append(answer);
   }
+  // высота раунда = экран минус шапка сайта над ним (см. «Раунд на компьютере — ровно один экран» в CSS)
+  game.style.setProperty('--shell-top', `${Math.round(game.getBoundingClientRect().top + scrollY)}px`);
   if (restoreAnswerFocus) answerInput.focus({ preventScroll: true });
   if (playOnEntry) {
     playOnEntry = false;
@@ -194,5 +198,5 @@ function rotate(now) {
 requestAnimationFrame(rotate);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=friends-20261025-2');
+await import('./app.js?v=fit-1');
 decorate();

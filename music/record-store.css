@@ -119,7 +119,7 @@ body.record-store { background:#0d0c14; }
 .record-store .jb-marquee b{font-size:12px;color:#f2b85b}
 .record-store .jb-tools .volume { color:#bca388; }.record-store .volume input{accent-color:var(--gold)}
 .record-store .help-btn { color:#c9b393; border-color:#e4bd7d40; background:#17130f; }
-.round-turntable { width:min(100%,max(280px,100dvh - 370px)); margin:-12px auto -18px; } /* 370 — всё, что в колонке кроме вертушки: влезаем в экран без прокрутки */
+.round-turntable { width:min(100%,max(260px,100dvh - 430px)); margin:-12px auto -18px; } /* 430 — всё, что в колонке кроме вертушки (с подсказкой новичку): влезаем в экран без прокрутки */
 .record-store .jb-play { left:43.25%; top:42.25%; bottom:auto; transform:translate(-50%,-50%); width:72px; box-shadow:0 0 0 3px #27180888,0 4px 16px #0006; background:radial-gradient(circle at 35% 25%,#ffe6a8,#f2b85b 60%,#cf8b35); }
 .record-store .jb-play:hover { transform:translate(-50%,-50%) scale(1.06); }.record-store .jb-play:active{transform:translate(-50%,-50%) scale(.97)}
 .record-store .jb-play::before { display:none; }.record-store .jb-play .record-symbol{font-size:29px;color:#38270f;padding-left:3px}
@@ -200,3 +200,42 @@ body.record-store { background:#0d0c14; }
   .round-controls { width:100%; flex-direction:row; align-items:center; justify-content:space-between; }
   .round-controls .jb-tools { margin-left:auto; }
 }
+/* Телефон: вертушка, клавиши и поле ответа — на одном экране; ▶ у поля — переслушать, не листая к вертушке */
+.mini-play { display:none; }
+@media(max-width:600px){
+  .record-store .jb-top { display:none; }
+  .record-store .round-main .round-turntable { width:min(100%,31dvh); margin:-4px auto -14px; }
+  .record-store .round-layout { gap:14px; }
+  .store-answer-panel { padding:16px 15px; }
+  .store-answer-panel>h2 { font-size:27px; margin-bottom:10px; }
+  .record-store .answer-row { display:grid; grid-template-columns:47px 1fr; gap:8px; }
+  .record-store .search-wrap { grid-column:1/-1; }
+  .mini-play { display:block; min-height:47px; border:0; border-radius:7px; background:radial-gradient(circle at 35% 25%,#ffe6a8,#f2b85b 60%,#cf8b35); color:#38270f; font-size:18px; box-shadow:0 2px 3px #69442d26; }
+  .mini-play:disabled { opacity:.5; }
+}
+/* Раунд на компьютере — ровно один экран: шапка раунда одной строкой, две колонки одной высоты,
+   вертушка подстраивается под оставшуюся высоту, прокручивается только список попыток. */
+@media(min-width:821px){
+  body.record-store:has(.round-turntable) .music-footer { display:none; }
+  .record-store .game-shell:has(.round-turntable) { display:flex; flex-direction:column; height:calc(100dvh - var(--shell-top,100px) - 26px); min-height:560px; max-width:1180px; margin-top:6px; }
+  .game-shell:has(.round-turntable) .round-top { flex:none; display:flex; align-items:center; gap:20px; margin:0; padding:0 0 12px; }
+  .game-shell:has(.round-turntable) .round-top>div:first-child { display:flex; align-items:baseline; gap:16px; min-width:0; }
+  .record-store .game-shell:has(.round-turntable) .round-top h1 { font-size:30px; white-space:nowrap; }
+  .game-shell:has(.round-turntable) .round-top p { margin:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .game-shell:has(.round-turntable) .round-controls { margin-left:auto; flex-direction:row; align-items:center; gap:14px; }
+  .game-shell:has(.round-turntable) .round-controls .total-score { padding:7px 14px; }
+  .record-store .game-shell:has(.round-turntable) .round-layout { flex:1; min-height:0; margin-top:16px; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:40px; align-items:stretch; }
+  .game-shell:has(.round-turntable) .round-main, .game-shell:has(.round-turntable) .jukebox { display:flex; flex-direction:column; min-height:0; }
+  .game-shell:has(.round-turntable) .round-main { height:100%; }
+  .game-shell:has(.round-turntable) .jukebox { flex:1; }
+  .game-shell:has(.round-turntable) .jukebox>* { flex:none; }
+  .record-store .game-shell:has(.round-turntable) .round-turntable { flex:1 1 0; min-height:150px; width:auto; max-width:100%; aspect-ratio:1; align-self:center; margin:-4px auto -8px; }
+  .record-store .game-shell:has(.round-turntable) .jb-keys { margin-top:10px; }
+  .record-store .game-shell:has(.round-turntable) .jb-more { margin-top:12px; }
+  .game-shell:has(.round-turntable) .store-answer-panel { display:flex; flex-direction:column; min-height:0; max-height:none; overflow:hidden; margin:9px; }
+  .game-shell:has(.round-turntable) .store-answer-panel>h2 { flex:none; }
+  .record-store .game-shell:has(.round-turntable) .store-answer-panel .attempt-history { flex:1; min-height:0; display:flex; flex-direction:column; align-self:stretch; }
+  .game-shell:has(.round-turntable) .store-answer-panel .attempt-history>* { width:100%; }
+  .game-shell:has(.round-turntable) .store-answer-panel .attempt-history ol { flex:1; min-height:0; max-height:none; overflow:auto; }
+}
+.round-controls .report-flag { margin:0; }

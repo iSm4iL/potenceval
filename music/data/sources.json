@@ -5,7 +5,26 @@
     "Гио ПиКа",
     "ДДТ"
   ],
-  "excludeTracks": [],
+  "excludeTracks": [
+    2892414082,
+    66439560,
+    66439548,
+    753641722,
+    2536502991,
+    1056549262,
+    136408140,
+    2661514912,
+    1124841682,
+    1124841712,
+    3157972,
+    8086130,
+    8086135,
+    847699482,
+    1359118712,
+    2036010427,
+    2030090437,
+    2030090447
+  ],
   "newWaveArtists": [
     "madk1d",
     "тёмный принц",
@@ -279,7 +298,10 @@
         "SEVENTEEN",
         "Red Velvet",
         "BIGBANG",
-        "(G)I-DLE",
+        {
+          "name": "i-dle",
+          "id": 15065941
+        },
         "ITZY",
         "NCT 127",
         "ENHYPEN",
@@ -293,7 +315,10 @@
         "Jung Kook",
         "JENNIE",
         "ROSÉ",
-        "LISA",
+        {
+          "name": "LISA",
+          "id": 145068682
+        },
         "Jimin",
         "ILLIT",
         "BABYMONSTER"
@@ -320,7 +345,10 @@
         "Pantera",
         "Black Sabbath",
         "Judas Priest",
-        "Korn",
+        {
+          "name": "KoЯn",
+          "id": 1327
+        },
         "Disturbed",
         "Avenged Sevenfold",
         "Bring Me The Horizon",
@@ -332,7 +360,10 @@
         "Limp Bizkit",
         "Papa Roach",
         "Evanescence",
-        "Ghost",
+        {
+          "name": "Ghost",
+          "id": 8506054
+        },
         "Gojira"
       ]
     },

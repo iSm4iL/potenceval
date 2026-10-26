@@ -315,3 +315,7 @@ body[data-game="screen"] .sharp-steps i.on { background:linear-gradient(90deg,#e
 body[data-game="screen"] .sharpen-btn { width:100%; padding:12px; border-radius:4px; color:#2b1d10; background:linear-gradient(135deg,#f3d08c,#d9a85a); font-size:14px; }
 body[data-game="screen"] .sharpen-btn b { margin-left:4px; color:#7a2a1a; }
 @media (prefers-reduced-motion:reduce) { body[data-game="screen"] .poster-frame .clue-photo { transition:none; } }
+/* поле ответа не уезжает вверх, пока листаешь актёров и зацепки */
+body[data-game="screen"] .answer-area { position:sticky; top:-14px; z-index:5; margin:-23px -23px 0; padding:23px 23px 18px; background:var(--cinema-paper); }
+@media(max-width:1000px) { body[data-game="screen"] .answer-area { margin:-17px -17px 0; padding:17px 17px 16px; } }
+@media(max-width:540px) { body[data-game="screen"] .answer-area { margin:-16px -12px 0; padding:16px 12px 14px; } }

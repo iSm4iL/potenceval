@@ -5,6 +5,7 @@ import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=silence-1';
 import { resultPresentation } from './feedback.js?v=bonus-1';
 import { createCatalogClient } from './collection.js';
+import './report.js?v=report-1';
 import { createMultiplayer } from './multiplayer.js?v=friends-20261025-2';
 
 const stage = $('#stage'), player = new AudioPlayer(), service = createDeezerClient(), catalog = createCatalogClient();
@@ -126,14 +127,17 @@ function setAvailableRounds() {
 
 function renderGame(focusAnswer = false) {
   const key = `${state.index}:${state.queue[state.index]}`, sameRound = key === renderedRoundKey;
+  // внутри раунда (ошибка, «слушать дольше») не прыгаем к вертушке: поле ответа остаётся под пальцем
+  const keepScroll = sameRound && state.phase === 'round';
   screenVersion++; audioController?.abort(); player.stop(); closeSuggestions();
   busy = false; ready = false; playing = false; heard = heard && sameRound; selectedTrack = null; matches = []; highlighted = -1;
   renderedRoundKey = key;
   $('#exitBtn').hidden = false;
   if (state.phase === 'summary') { renderSummary(); if (multiplayer.active) multiplayer.decorate(); stage.scrollIntoView({ block: 'start' }); return; }
   const track = trackById(state.queue[state.index]);
+  stage.dataset.reportTrack = JSON.stringify({ id: track.deezerId, title: track.title, artist: track.artist, pack: state.packTitle || state.packId || '' }); // для флажка жалобы (report.js)
   if (state.phase === 'reveal') renderReveal(track); else renderRound();
-  stage.scrollIntoView({ block: 'start' });
+  if (!keepScroll) stage.scrollIntoView({ block: 'start' });
   prepareAudio(track, screenVersion, focusAnswer);
   if (multiplayer.active) multiplayer.decorate();
 }
@@ -235,7 +239,7 @@ function bindPlayer() {
 
 function renderRound() {
   stage.innerHTML = `<section class="game-shell">${roundHeader()}<div class="round-layout"><div class="round-main">${playerHTML()}
-    <form class="guess-form" id="guessForm" autocomplete="off"><label for="answerInput">${artistMode() ? 'Группа или исполнитель' : 'Название песни или исполнитель'}</label><div class="answer-row"><div class="search-wrap"><input class="field" id="answerInput" placeholder="${artistMode() ? 'Например, Металлика…' : 'Кажется, я знаю…'}" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" spellcheck="false" maxlength="180" disabled><ul class="suggestions" id="suggestions" role="listbox" aria-label="${artistMode() ? 'Исполнители' : 'Песни'}" hidden></ul></div><button class="btn primary" id="guessBtn" type="submit" disabled>Ответить</button></div>${coachHTML(3, artistMode() ? 'Узнал — пиши имя артиста или группы и выбери исполнителя из списка. Название песни не нужно.' : 'Узнал — пиши название или исполнителя и выбери песню из списка.')}<button class="give-up" id="surrenderBtn" type="button" disabled>Сдаться и посмотреть ответ</button></form>${attemptFeedbackHTML()}</div>${historyHTML()}</div></section>`;
+    <form class="guess-form" id="guessForm" autocomplete="off"><label for="answerInput">${artistMode() ? 'Группа или исполнитель' : 'Название песни или исполнитель'}</label><div class="answer-row"><div class="search-wrap"><input class="field" id="answerInput" placeholder="${artistMode() ? 'Например, Металлика…' : 'Кажется, я знаю…'}" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" spellcheck="false" maxlength="180" disabled><ul class="suggestions" id="suggestions" role="listbox" aria-label="${artistMode() ? 'Исполнители' : 'Песни'}" hidden></ul></div><button type="button" class="mini-play" id="miniPlay" disabled>▶</button><button class="btn primary" id="guessBtn" type="submit" disabled>Ответить</button></div>${coachHTML(3, artistMode() ? 'Узнал — пиши имя артиста или группы и выбери исполнителя из списка. Название песни не нужно.' : 'Узнал — пиши название или исполнителя и выбери песню из списка.')}<button class="give-up" id="surrenderBtn" type="button" disabled>Сдаться и посмотреть ответ</button></form>${attemptFeedbackHTML()}</div>${historyHTML()}</div></section>`;
   bindPlayer();
   $('#answerInput').oninput = () => { selectedTrack = null; updateSuggestions(); updateControls(); };
   $('#answerInput').onkeydown = handleSearchKey;
@@ -254,6 +258,9 @@ function renderRound() {
   $('#skipBtn').onclick = () => { if (busy || !ready || multiplayer.loading) return; coachDone(2); autoPlay = heard && state.step < LENGTHS.length - 1; if (multiplayer.active) multiplayer.send('skip'); else apply(skip(state)); };
   $('#jbKeys').onclick = e => { const key = e.target.closest('[data-step]'); if (key) pressKey(Number(key.dataset.step)); };
   $('#playBtn').addEventListener('click', () => coachDone(1));
+  // ▶ у поля ответа (на телефоне): переслушать, не листая к вертушке и не закрывая клавиатуру
+  $('#miniPlay').onmousedown = e => e.preventDefault();
+  $('#miniPlay').onclick = () => $('#playBtn').click();
   $('#answerInput').addEventListener('input', () => coachDone(3));
   stage.querySelectorAll('.coach-x').forEach(x => x.onclick = () => coachDone(Number(x.parentElement.dataset.coach)));
   $('#helpBtn').onclick = () => { coach = new Set([1, 2, 3]); LS.set('music.online.coach', false); renderGame(); };
@@ -269,6 +276,7 @@ function updateControls() {
   play.querySelector('.record-symbol').textContent = playing ? '■' : '▶';
   play.setAttribute('aria-label', playing ? 'Остановить отрывок' : `Слушать отрывок: ${length(state.phase === 'reveal' ? 15 : LENGTHS[state.step])} с`);
   if (state.phase !== 'round') return;
+  const mini = $('#miniPlay'); mini.disabled = play.disabled; mini.textContent = playing ? '■' : '▶'; mini.setAttribute('aria-label', play.getAttribute('aria-label'));
   $('#answerInput').disabled = busy || !ready || multiplayer.loading; $('#guessBtn').disabled = busy || !ready || !heard || !selectedTrack || multiplayer.loading;
   $('#skipBtn').disabled = busy || !ready || multiplayer.loading; $('#surrenderBtn').disabled = multiplayer.loading || (!multiplayer.active && (busy || !ready));
 }

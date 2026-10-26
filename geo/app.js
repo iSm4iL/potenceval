@@ -10,7 +10,7 @@ const world = new Map(WORLD.map(w => [w[0], w]));
 const at = id => world.get(id).slice(2);
 const names = nameIndex(WORLD, COUNTRIES);
 const nameOf = id => byId.get(id)?.name || world.get(id)?.[1] || id;
-const spotsOf = id => WALKS[id] || null; // координаты прогулки: tools/snap.mjs
+const spotsOf = id => (byId.get(id).walk && WALKS[id]) || null; // координаты прогулки: tools/snap.mjs
 const allNames = [...new Set([...COUNTRIES.flatMap(c => [c.name, ...c.aliases]), ...WORLD.map(w => w[1])])];
 const AVATARS = ['🕵️', '🦊', '🐱', '🦉'];
 const ICONS = { fact1: '🗂', fact2: '🗂', phrase: '💬', food: '🍲', walk: '👣', money: '💵', person: '📰', shape: '✉' };
@@ -179,7 +179,8 @@ function renderRound() {
   $('#board').querySelectorAll('img').forEach(im => im.addEventListener('error', () => im.remove(), { once: true }));
   requestAnimationFrame(() => drawThreads());
   [...stage.querySelectorAll('.clue, .suspect')].forEach((el, k) => A(el, [{ opacity: 0, transform: `translateY(-60px) rotate(${k % 2 ? 9 : -9}deg) scale(1.08)` }, { opacity: 1, transform: 'none' }], { duration: 620, delay: 60 + k * 70, easing: SPRING }));
-  A($('#notebook'), [{ opacity: 0, transform: 'translateX(40px) rotate(3deg)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 250, easing: SPRING });
+  // на узком экране поле ответа приколото к низу (position:fixed), а сдвиг блокнота утащил бы его за собой
+  if (!matchMedia('(max-width:1180px)').matches) A($('#notebook'), [{ opacity: 0, transform: 'translateX(40px) rotate(3deg)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 250, easing: SPRING });
 }
 
 async function onBoardClick(e) {
@@ -279,6 +280,8 @@ function submit() {
   $('#misses').insertAdjacentHTML('afterbegin', missRow(res));
   A($('#misses').firstElementChild, [{ opacity: 0, transform: 'translateX(-20px) rotate(-3deg)' }, { opacity: 1, transform: 'none' }], { duration: 450, easing: SPRING });
   shake($('#suspect'));
+  // на узком экране блокнот далеко под доской — «куда ближе» показываем прямо над полем ответа
+  if (matchMedia('(max-width:1180px)').matches) toast(`${nameOf(id)} — мимо. ${res.dir} ${directionNames[res.dir]}, около ${num(res.km)} км`, 3500);
 }
 
 let shown = START;
@@ -365,8 +368,9 @@ const panoUrl = ([[lat, lng], source]) => {
     : `https://www.google.com/maps/embed?pb=!6m7!1m6!2m2!1d${lat}!2d${lng}!3f${heading}!4f0!5f0.8`;
 };
 function openWalk() {
-  const steps = walkSteps(spotsOf(game.round.id));
-  if (!frameEl.src.startsWith('https://')) frameEl.src = panoUrl(steps[spot]);
+  const spots = spotsOf(game.round.id), steps = walkSteps(spots);
+  // Каждый раз высаживаемся у случайного знаменитого места страны.
+  if (!frameEl.src.startsWith('https://')) frameEl.src = panoUrl(steps[spot = Math.floor(Math.random() * spots.length)]);
   $('#walkOther').hidden = steps.length < 2;
   dockEl.hidden = true; walkEl.hidden = false;
   A(walkEl, [{ transform: 'translateY(105%)' }, { transform: 'none' }], { duration: 520, easing: SPRING });
