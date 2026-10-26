@@ -11,22 +11,25 @@ function shuffle(items, rng = Math.random) {
 
 export function buildChoices(entry, catalog, rng = Math.random) {
   const ids = new Set(entry.distractorIds);
-  const pool = catalog.filter(x => ids.has(x.animeId) && x.animeId !== entry.animeId && x.franchiseId !== entry.franchiseId && x.trackId !== entry.trackId);
+  const pool = catalog.filter(x => ids.has(x.animeId) && (x.category || 'anime') === (entry.category || 'anime') && x.animeId !== entry.animeId && x.franchiseId !== entry.franchiseId && x.trackId !== entry.trackId);
   const unique = [...new Map(pool.map(x => [x.animeId, x])).values()];
   if (unique.length < 3) throw new Error('Недостаточно похожих вариантов ответа.');
   return shuffle([entry, ...shuffle(unique, rng).slice(0, 3)], rng);
 }
 
-export function buildSession(catalog, count = 10, rng = Math.random) {
+export function buildSession(catalog, count = 10, rng = Math.random, { category, seenIds = [] } = {}) {
   const seen = new Set();
-  const eligible = catalog.filter(entry => {
+  const played = new Set(seenIds);
+  const ordered = [...shuffle(catalog.filter(x => !played.has(x.animeId)), rng), ...shuffle(catalog.filter(x => played.has(x.animeId)), rng)];
+  const eligible = ordered.filter(entry => {
+    if (category && (entry.category || 'anime') !== category) return false;
     if (seen.has(entry.franchiseId)) return false;
     try { buildChoices(entry, catalog, rng); } catch { return false; }
     seen.add(entry.franchiseId);
     return true;
   });
-  if (eligible.length < count) throw new Error('Недостаточно доступных аниме для партии.');
-  return shuffle(eligible, rng).slice(0, count);
+  if (eligible.length < count) throw new Error('Недостаточно доступных произведений для партии (аниме, кино или сериалы).');
+  return eligible.slice(0, count);
 }
 
 export function createRound(entry) {

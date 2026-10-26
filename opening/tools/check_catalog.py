@@ -10,11 +10,17 @@ FIELDS = ('animeId','titleRu','titleOriginal','franchiseId','genres','moodTags',
 def validate(catalog):
     errors = []
     entries = catalog.get('entries', [])
-    if len(entries) < 10: errors.append('need at least ten anime')
+    if len(entries) < 10: errors.append('need at least ten titles')
+    categories = ('anime', 'film', 'series', 'cartoon')
+    if catalog.get('version', 1) >= 2:
+        for category in categories:
+            count = len({x.get('franchiseId') for x in entries if x.get('category') == category})
+            if count < 10: errors.append(f'{category}: need ten distinct franchises')
     by_id = {x.get('animeId'):x for x in entries}
     seen_ids, seen_tracks = set(), set()
     for entry in entries:
         key = entry.get('animeId', '?')
+        if entry.get('category', 'anime') not in categories: errors.append(f'{key}: unknown category')
         for field in FIELDS:
             if not entry.get(field): errors.append(f'{key}: missing {field}')
         if key in seen_ids: errors.append(f'{key}: duplicate animeId')
@@ -23,14 +29,14 @@ def validate(catalog):
         if not isinstance(entry.get('trackId'), int) or entry['trackId'] <= 0:
             errors.append(f'{key}: invalid trackId')
         poster = urlparse(entry.get('poster', ''))
-        if poster.scheme != 'https' or poster.hostname != 's4.anilist.co':
+        if poster.scheme != 'https' or poster.hostname not in ('s4.anilist.co', 'upload.wikimedia.org', 'thumb.wikimedia.org', 'static.tvmaze.com', 'image.tmdb.org'):
             errors.append(f'{key}: invalid poster URL')
         distractors = set(entry.get('distractorIds', []))
         valid = []
         for other_id in distractors:
             other = by_id.get(other_id)
             if not other: errors.append(f'{key}: unknown distractor {other_id}')
-            elif other.get('franchiseId') != entry.get('franchiseId') and other.get('trackId') != entry.get('trackId'):
+            elif other.get('category', 'anime') == entry.get('category', 'anime') and other.get('franchiseId') != entry.get('franchiseId') and other.get('trackId') != entry.get('trackId'):
                 valid.append(other_id)
         if len(valid) < 3: errors.append(f'{key}: need three distractors from other franchises')
     return errors
@@ -41,7 +47,7 @@ def main():
     errors = validate(data)
     if errors:
         print('\n'.join(errors)); return 1
-    print(f'OK: {len(data["entries"])} anime, distinct originals, at least three curated distractors each.')
+    print(f'OK: {len(data["entries"])} titles, distinct originals, at least three compatible distractors each.')
     return 0
 
 if __name__ == '__main__': sys.exit(main())

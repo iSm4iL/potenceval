@@ -5,7 +5,7 @@ const ROOT = new URL('../', import.meta.url);
 export const GAMES = [
   { path: 'music/', icon: '🎧', name: 'Полсекунды', desc: 'Угадай музыку · один экран или лобби' },
   { path: 'geo/', icon: '🕵️', name: 'Угадай страну', desc: 'Детективная доска с уликами · 1–4 игрока' },
-  { path: 'opening/', icon: '✷', name: 'Угадай опенинг', desc: 'Узнай аниме по музыке · 30 секунд, 4 постера' },
+  { path: 'opening/', icon: '✷', name: 'Угадай опенинг', desc: 'Аниме, кино, сериалы и мультфильмы по музыке' },
   { path: 'where/', icon: '📍', name: 'Где я?', desc: 'Как GeoGuessr · один или с друзьями' },
   { path: 'screen/', icon: '🎬', name: 'До титров', desc: 'Угадай кино, сериал, аниме или мультфильм' },
   { path: 'genie/', icon: '✦', name: 'Джинн', desc: 'Суперсила с подвохом · 2–8 игроков' },

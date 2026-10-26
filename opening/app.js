@@ -1,4 +1,4 @@
-import { buildSession, buildChoices, createRound, startRound, answerRound, remainingTime, interruptRound } from './game.js';
+import { buildSession, buildChoices, createRound, startRound, answerRound, remainingTime, interruptRound } from './game.js?v=collections-20261026';
 import { deezerRequest } from '../music/service.js';
 import { AudioPlayer } from '../music/audio.js';
 
@@ -6,6 +6,14 @@ const $ = id => document.getElementById(id);
 const player = new AudioPlayer();
 let catalog = [], queue = [], reserves = [], history = [], round = null, choices = [];
 let interval = null, request = null, generation = 0, starting = false, failures = 0;
+let category = 'anime', playedByCategory = {};
+const categoryLabels = { anime:'аниме', film:'фильм', series:'сериал', cartoon:'мультфильм' };
+try {
+  const saved = JSON.parse(localStorage.getItem('opening-played-v1') || '{}');
+  for (const key of Object.keys(categoryLabels)) {
+    playedByCategory[key] = Array.isArray(saved[key]) ? saved[key].filter(id => typeof id === 'string').slice(-2000) : [];
+  }
+} catch { /* Private mode or unavailable storage: keep this visit's history in memory. */ }
 const fallback = new URL('assets/poster-fallback.svg', import.meta.url).href;
 const safeImage = image => { image.addEventListener('error', () => { if (image.src !== fallback) image.src = fallback; }); };
 const totalScore = () => history.reduce((sum, item) => sum + item.points, 0);
@@ -120,7 +128,7 @@ async function play() {
     startRound(round, performance.now());
     document.body.classList.add('is-playing');
     $('playLabel').textContent = 'Слушай. Это точно знакомо.';
-    $('roundStatus').textContent = 'Выбери аниме до конца отрывка.';
+    $('roundStatus').textContent = `Выбери ${categoryLabels[category]} до конца отрывка.`;
     $('listenButton').hidden = true;
     for (const button of $('choices').children) button.disabled = false;
     interval = setInterval(tick, 70); tick();
@@ -146,6 +154,9 @@ function finishRound(selectedId) {
   const timedOut = remainingTime(round, performance.now()) === 0;
   cancelPlayback();
   history.push(round); renderDots();
+  const played = playedByCategory[category] || [];
+  playedByCategory[category] = played.includes(round.entry.animeId) ? [round.entry.animeId] : [...played, round.entry.animeId];
+  try { localStorage.setItem('opening-played-v1', JSON.stringify(playedByCategory)); } catch { /* Memory history still works. */ }
   for (const [index, button] of [...$('choices').children].entries()) {
     button.disabled = true;
     const correct = choices[index].animeId === round.entry.animeId;
@@ -158,7 +169,7 @@ function finishRound(selectedId) {
   }
   $('playLabel').textContent = round.correct ? 'Попадание с первых нот!' : timedOut ? 'Время вышло' : 'Звучало похоже, но…';
   $('roundStatus').textContent = 'Правильный ответ уже открыт.';
-  $('verdict').textContent = round.correct ? `Верно! +${round.points} очков` : timedOut ? '30 секунд закончились. В этот раз — 0 очков.' : 'Не угадал. Следующий опенинг будет твоим.';
+  $('verdict').textContent = round.correct ? `Верно! +${round.points} очков` : timedOut ? '30 секунд закончились. В этот раз — 0 очков.' : 'Не угадал. Следующий саундтрек будет твоим.';
   $('answerTitle').textContent = round.entry.titleRu;
   $('answerSong').textContent = `${round.entry.trackTitle} — ${round.entry.artist}`;
   $('deezerLink').href = `https://www.deezer.com/track/${round.entry.trackId}`;
@@ -170,7 +181,11 @@ function finishRound(selectedId) {
 
 function startGame() {
   cancelPlayback(); history = []; failures = 0;
-  const all = buildSession(catalog, catalog.length);
+  const pool = catalog.filter(entry => (entry.category || 'anime') === category);
+  const count = new Set(pool.map(entry => entry.franchiseId)).size;
+  const all = buildSession(catalog, count, Math.random, { category, seenIds: playedByCategory[category] || [] });
+  if (all.length < 10) return;
+  $('roundTitle').textContent = `Из какого ${category === 'anime' ? 'аниме' : category === 'film' ? 'фильма' : category === 'series' ? 'сериала' : 'мультфильма'} эта музыка?`;
   queue = all.slice(0, 10); reserves = all.slice(10);
   prepareRound(queue.shift());
 }
@@ -181,7 +196,7 @@ function showResults() {
   $('resultsTitle').textContent = correct >= 8 ? 'Вот это наслушанность!' : correct >= 4 ? 'Узнаёшь своих с первых нот.' : 'Твой следующий плейлист готов.';
   $('resultCorrect').textContent = `${correct} / ${history.length}`;
   $('resultPoints').textContent = `${totalScore()} очков`;
-  $('resultNote').textContent = history.length < 10 ? `Доступные песни закончились. Сыграно ${history.length} из 10 раундов; технические замены не считаются ошибками.` : failures ? `Недоступных отрывков заменено: ${failures}. Без штрафа.` : 'Десять опенингов. Сколько захотелось переслушать?';
+  $('resultNote').textContent = history.length < 10 ? `Доступные песни закончились. Сыграно ${history.length} из 10 раундов; технические замены не считаются ошибками.` : failures ? `Недоступных отрывков заменено: ${failures}. Без штрафа.` : 'В следующей партии сначала прозвучат ещё не сыгранные произведения.';
   $('playlist').replaceChildren(...history.map((item, index) => {
     const li = document.createElement('li');
     const n = document.createElement('span'); n.className = 'playlist-number'; n.textContent = index + 1;
@@ -206,6 +221,20 @@ for (const id of ['exitButton', 'homeButton']) $(id).addEventListener('click', (
 $('volume').addEventListener('input', event => player.setVolume(event.target.value / 100));
 $('rulesButton').addEventListener('click', () => $('rules').showModal());
 $('closeRules').addEventListener('click', () => $('rules').close());
+function selectCategory(key) {
+  category = key;
+  const pool = catalog.filter(entry => (entry.category || 'anime') === key);
+  for (const button of document.querySelectorAll('[data-category]')) {
+    const active = button.dataset.category === key;
+    button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
+  }
+  $('catalogCount').textContent = `Произведений в подборке: ${pool.length}`;
+  $('posterFan').replaceChildren(...pool.slice(0, 3).map(entry => {
+    const image = document.createElement('img'); image.src = entry.poster; image.alt = ''; image.referrerPolicy = 'no-referrer'; safeImage(image); return image;
+  }));
+  $('startButton').disabled = pool.length < 10;
+}
+for (const button of document.querySelectorAll('[data-category]')) button.addEventListener('click', () => selectCategory(button.dataset.category));
 $('rules').addEventListener('click', event => { if (event.target === $('rules')) { const box = $('rules').getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) $('rules').close(); } });
 document.addEventListener('keydown', event => {
   if (event.repeat || event.ctrlKey || event.altKey || event.metaKey || $('rules').open || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
@@ -218,16 +247,15 @@ window.addEventListener('pageshow', event => {
 });
 
 try {
-  const response = await fetch(new URL('data/catalog.json', import.meta.url));
+  const response = await fetch(new URL('data/catalog.json?v=collections-20261026', import.meta.url));
   if (!response.ok) throw new Error('Каталог не загрузился. Обнови страницу, чтобы попробовать снова.');
   const data = await response.json();
   catalog = data.entries;
   buildSession(catalog, 10);
-  $('catalogCount').textContent = `${catalog.length} аниме в коллекции`;
-  for (const id of ['oshi', 'gurren', 'dandadan']) {
-    const entry = catalog.find(x => x.animeId === id);
-    if (!entry) continue;
-    const image = document.createElement('img'); image.src = entry.poster; image.alt = ''; image.referrerPolicy = 'no-referrer'; safeImage(image); $('posterFan').append(image);
+  for (const button of document.querySelectorAll('[data-category]')) {
+    const count = catalog.filter(entry => (entry.category || 'anime') === button.dataset.category).length;
+    button.querySelector('small').textContent = `В подборке: ${count}`;
+    button.disabled = count < 10;
   }
-  $('startButton').disabled = false;
+  selectCategory('anime');
 } catch (error) { $('homeStatus').textContent = error.message || 'Не удалось загрузить игру. Обнови страницу.'; $('catalogCount').textContent = 'Каталог недоступен'; }

@@ -10,3 +10,9 @@ body{--bg:#172a39;--text:#f5f1e2;--muted:#aec0c8;--gold:#ffd581;--line:#ffffff26
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 /* телефон: плеер и все четыре постера — на одном экране */
 @media(max-width:580px){.game-top{margin:12px 0 14px}.round-dots{margin-top:6px}.round-heading{margin-bottom:12px}.round-heading h1{font-size:17px}.choices{gap:12px 11px;margin-top:14px}.choice figure{aspect-ratio:1/.8}.choice-name{padding:8px 3px 9px}.round-foot{margin-top:14px}}
+
+/* Four playable collections retain the existing record-store layout. */
+.categories{grid-template-columns:repeat(4,minmax(0,1fr))}.category{padding:17px 14px;gap:10px}.category.active{padding:16px 13px}.category b{font-size:17px}.category-check{visibility:hidden;font-size:18px}.category.active .category-check{visibility:visible}.category small{font-size:11px}
+@media(max-width:850px){.categories{grid-template-columns:repeat(2,minmax(0,1fr))}.category{padding:17px}.category.active{padding:16px;grid-column:auto}}
+@media(max-width:580px){.category{padding:13px 10px!important;min-height:80px;gap:8px}.category.active{min-height:80px}.category b{font-size:14px}.category small{font-size:10px}.category-symbol{font-size:25px}.category-check{font-size:16px}}
+@media(max-width:580px){.category-check{display:none}}

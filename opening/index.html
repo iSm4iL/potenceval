@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#172a39">
   <title>Угадай опенинг — potenceval</title>
-  <meta name="description" content="Узнай аниме по опенингу: 30 секунд музыки, четыре постера и десять раундов. Играй один или компанией у одного экрана.">
+  <meta name="description" content="Узнай аниме, фильм, сериал или мультфильм по музыке: 30 секунд, четыре постера и десять раундов. Новые произведения в каждой партии.">
   <link rel="icon" href="../shared/assets/club/club-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../shared/fonts/fonts.css">
   <link rel="stylesheet" href="../shared/style.css">
-  <link rel="stylesheet" href="style.css?v=fit-1">
+  <link rel="stylesheet" href="style.css?v=merge-20261026">
 </head>
 <body data-game="opening">
 <div class="wrap">
@@ -17,14 +17,15 @@
   <main id="app">
     <section id="home" aria-labelledby="homeTitle">
       <div class="hero">
-        <div class="hero-copy"><span class="ticket">Музыкальный аниме-клуб</span><h1 id="homeTitle">Этот опенинг<br>ты точно <em>знаешь.</em></h1><p class="lead">С первых нот — в другой мир.<br>Узнай аниме по музыке и выбери его постер.</p><div class="hero-facts"><span><b>30</b> секунд</span><span><b>4</b> варианта</span><span><b>10</b> раундов</span></div></div>
+        <div class="hero-copy"><span class="ticket">Клуб знакомых саундтреков</span><h1 id="homeTitle">Эту музыку<br>ты точно <em>знаешь.</em></h1><p class="lead">Опенинги, песни и любимые саундтреки.<br>Узнай историю по музыке и выбери её постер.</p><div class="hero-facts"><span><b>30</b> секунд</span><span><b>4</b> варианта</span><span><b>10</b> раундов</span></div></div>
         <div class="hero-art" aria-hidden="true"><div class="art-orbit"></div><div class="hero-record"><span>音</span></div><div id="posterFan" class="poster-fan"></div><span class="art-note">♪</span><span class="art-sticker">Я ЭТО<br>ГДЕ-ТО СЛЫШАЛ!</span></div>
       </div>
       <div class="category-heading"><h2>Что угадываем?</h2><span id="catalogCount">Подбираем пластинки…</span></div>
       <div class="categories">
-        <button class="category active" id="categoryAnime" aria-pressed="true"><span class="category-symbol">✷</span><span><b>Аниме</b><small>Опенинги, которые на репите</small></span><span class="category-check">✓</span></button>
-        <button class="category" disabled><span class="category-symbol">▰</span><span><b>Фильмы</b><small>Скоро</small></span></button>
-        <button class="category" disabled><span class="category-symbol">▤</span><span><b>Сериалы</b><small>Скоро</small></span></button>
+        <button class="category active" data-category="anime" id="categoryAnime" aria-pressed="true"><span class="category-symbol">✷</span><span><b>Аниме</b><small>Загрузка…</small></span><span class="category-check">✓</span></button>
+        <button class="category" data-category="film" aria-pressed="false" disabled><span class="category-symbol">▰</span><span><b>Фильмы</b><small>Загрузка…</small></span><span class="category-check">✓</span></button>
+        <button class="category" data-category="series" aria-pressed="false" disabled><span class="category-symbol">▤</span><span><b>Сериалы</b><small>Загрузка…</small></span><span class="category-check">✓</span></button>
+        <button class="category" data-category="cartoon" aria-pressed="false" disabled><span class="category-symbol">☼</span><span><b>Мультфильмы</b><small>Загрузка…</small></span><span class="category-check">✓</span></button>
       </div>
       <div class="start-row"><button class="action" id="startButton" disabled>Начать игру <span>▶</span></button><p>Один или с друзьями у одного экрана.<br>Верный ответ — очки. Быстрый — ещё больше.</p></div>
       <p id="homeStatus" class="status" role="status"></p>
@@ -40,13 +41,13 @@
       <div class="reveal" id="reveal" hidden><div><p id="verdict"></p><h2 id="answerTitle"></h2><p id="answerSong"></p><a id="deezerLink" target="_blank" rel="noopener noreferrer">Слушать в Deezer ↗</a></div><button class="action" id="nextButton">Следующий раунд <span>↗</span></button></div>
     </section>
 
-    <section id="results" hidden aria-labelledby="resultsTitle"><div class="results-heading"><span class="ticket">Пластинка доиграла</span><h1 id="resultsTitle" tabindex="-1">Вот это наслушанность!</h1><div class="result-score"><b id="resultCorrect"></b><span>аниме угадано</span></div><p id="resultPoints"></p><p id="resultNote"></p><div class="result-actions"><button class="action" id="againButton">Ещё одну партию <span>▶</span></button><button class="small-button" id="homeButton">К категориям</button></div></div><h2 class="playlist-heading">Твой плейлист этой партии</h2><ol class="playlist" id="playlist"></ol></section>
+    <section id="results" hidden aria-labelledby="resultsTitle"><div class="results-heading"><span class="ticket">Пластинка доиграла</span><h1 id="resultsTitle" tabindex="-1">Вот это наслушанность!</h1><div class="result-score"><b id="resultCorrect"></b><span>произведений угадано</span></div><p id="resultPoints"></p><p id="resultNote"></p><div class="result-actions"><button class="action" id="againButton">Ещё одну партию <span>▶</span></button><button class="small-button" id="homeButton">К категориям</button></div></div><h2 class="playlist-heading">Твой плейлист этой партии</h2><ol class="playlist" id="playlist"></ol></section>
   </main>
   <footer class="opening-footer"><span>Музыка начинается — воспоминания включаются.</span><span>Превью Deezer · для личной некоммерческой игры</span></footer>
 </div>
-<dialog id="rules"><button class="small-button close-dialog" id="closeRules" aria-label="Закрыть правила">✕</button><span class="ticket">Как играть</span><h2>Слушай. Вспоминай. Выбирай.</h2><p>В партии 10 разных аниме. Запусти отрывок и выбери один из четырёх постеров за 30 секунд. На каждый раунд — одна попытка.</p><p>За правильный ответ — 100 очков и до 300 за скорость. Ошибка или истёкшее время — 0. После ответа откроются название песни и исполнитель.</p><p>Музыка не загрузилась? Замени её без штрафа. Для игры нужен интернет. Отрывок выбирает Deezer — это может быть любая часть опенинга.</p><p class="rules-credit">Постеры: AniList. Права принадлежат соответствующим правообладателям. Аудиопревью предоставлены Deezer для личного некоммерческого прослушивания.</p></dialog>
+<dialog id="rules"><button class="small-button close-dialog" id="closeRules" aria-label="Закрыть правила">✕</button><span class="ticket">Как играть</span><h2>Слушай. Вспоминай. Выбирай.</h2><p>Выбери аниме, фильмы, сериалы или мультфильмы. В партии 10 разных произведений. Запусти отрывок и выбери один из четырёх постеров за 30 секунд. На каждый раунд — одна попытка.</p><p>За правильный ответ — 100 очков и до 300 за скорость. Ошибка или истёкшее время — 0. После ответа откроются название песни и исполнитель.</p><p>Музыка не загрузилась? Замени её без штрафа. Для игры нужен интернет. Отрывок выбирает Deezer — это может быть любая часть композиции.</p><p class="rules-credit">Постеры: AniList, Википедия и TVMaze. Права принадлежат соответствующим правообладателям. Аудиопревью предоставлены Deezer для личного некоммерческого прослушивания.</p></dialog>
 <noscript><p class="no-script">Для игры включи JavaScript в браузере.</p></noscript>
-<script type="module" src="app.js?v=fit-1"></script>
-<script type="module" src="../shared/menu.js?v=fit-1"></script>
+<script type="module" src="app.js?v=merge-20261026"></script>
+<script type="module" src="../shared/menu.js?v=merge-20261026"></script>
 </body>
 </html>

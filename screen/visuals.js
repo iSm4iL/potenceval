@@ -1,4 +1,5 @@
 import { POSTERS } from './posters.js?v=posters-20261025';
+import { POSTER_OVERRIDES } from './poster-overrides.js?v=posters-20261026';
 
 // Постер из Википедии (tools/posters.mjs) — главная картинка раунда. Если постера нет, берём свободное
 // фото с Wikimedia Commons, а если нет и его — рисуем иллюстрацию-подсказку.
@@ -68,6 +69,8 @@ const filePage = url => {
 export function visualFor(title) {
   const [glyph, dark, light] = art[title.id] || defaults[title.category] || defaults.film;
   const poster = POSTERS[title.id], image = freeImages[title.id];
+  const override = POSTER_OVERRIDES[title.id];
+  if (override) return {glyph, dark, light, ...override, alternatives: poster && title.category !== 'anime' ? [{image:poster,source:filePage(poster),caption:'Постер · Википедия'}] : []};
   if (poster) return { glyph, dark, light, image: poster, source: filePage(poster), caption: 'Постер · Википедия' };
   return {
     glyph, dark, light,

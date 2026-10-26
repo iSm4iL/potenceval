@@ -1,0 +1,1326 @@
+[
+  {
+    "animeId": "film-8-mile",
+    "category": "film",
+    "titleRu": "Восьмая миля",
+    "titleOriginal": "8 Mile",
+    "franchiseId": "8-mile",
+    "genres": [
+      "drama",
+      "musical"
+    ],
+    "moodTags": [
+      "energetic",
+      "inspiring"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/1e/8_Mile_official_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/8_Mile_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 1109731,
+    "trackTitle": "Lose Yourself",
+    "artist": "Eminem",
+    "artistId": 13,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/8_Mile_(film)#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-amelie",
+    "category": "film",
+    "titleRu": "Амели",
+    "titleOriginal": "Amélie",
+    "franchiseId": "amelie",
+    "genres": [
+      "comedy",
+      "romance"
+    ],
+    "moodTags": [
+      "romantic",
+      "peaceful"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/53/Amelie_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Am%C3%A9lie",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 1412033732,
+    "trackTitle": "Comptine d'un autre été, l'après-midi",
+    "artist": "Yann Tiersen",
+    "artistId": 762,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/239166352",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-armageddon",
+    "category": "film",
+    "titleRu": "Армагеддон",
+    "titleOriginal": "Armageddon",
+    "franchiseId": "armageddon",
+    "genres": [
+      "scifi",
+      "action",
+      "romance"
+    ],
+    "moodTags": [
+      "romantic",
+      "epic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/f/fc/Armageddon-poster06.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Armageddon_(1998_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 624823,
+    "trackTitle": "I Don't Want To Miss A Thing",
+    "artist": "Aerosmith",
+    "artistId": 1005,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/78233",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-avatar",
+    "category": "film",
+    "titleRu": "Аватар",
+    "titleOriginal": "Avatar",
+    "franchiseId": "avatar",
+    "genres": [
+      "scifi",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "magical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/d/d6/Avatar_%282009_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Avatar_(2009_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 4828158,
+    "trackTitle": "Jake's first flight",
+    "artist": "James Horner",
+    "artistId": 184,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/443462",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-avengers",
+    "category": "film",
+    "titleRu": "Мстители",
+    "titleOriginal": "The Avengers",
+    "franchiseId": "avengers",
+    "genres": [
+      "scifi",
+      "action",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 17840804,
+    "trackTitle": "The Avengers",
+    "artist": "Alan Silvestri",
+    "artistId": 791,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/1674608",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-back-to-the-future",
+    "category": "film",
+    "titleRu": "Назад в будущее",
+    "titleOriginal": "Back to the Future",
+    "franchiseId": "back-to-the-future",
+    "genres": [
+      "scifi",
+      "adventure",
+      "comedy"
+    ],
+    "moodTags": [
+      "energetic",
+      "epic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 3116046,
+    "trackTitle": "The Power Of Love",
+    "artist": "Huey Lewis & The News",
+    "artistId": 248496042,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/Back_to_the_Future#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-batman",
+    "category": "film",
+    "titleRu": "Бэтмен",
+    "titleOriginal": "Batman",
+    "franchiseId": "batman",
+    "genres": [
+      "action",
+      "crime",
+      "fantasy"
+    ],
+    "moodTags": [
+      "dark",
+      "epic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/5a/Batman_%281989%29_theatrical_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Batman_(1989_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 722927,
+    "trackTitle": "The Batman Theme",
+    "artist": "Danny Elfman",
+    "artistId": 760,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/86285",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-beetlejuice",
+    "category": "film",
+    "titleRu": "Битлджус",
+    "titleOriginal": "Beetlejuice",
+    "franchiseId": "beetlejuice",
+    "genres": [
+      "comedy",
+      "fantasy",
+      "horror"
+    ],
+    "moodTags": [
+      "fun",
+      "dark"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/7/76/Beetlejuice_%281988_film_poster%29.png",
+    "posterSource": "https://en.wikipedia.org/wiki/Beetlejuice",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 84605675,
+    "trackTitle": "Main Titles (From \"Beetlejuice\" Soundtrack)",
+    "artist": "Danny Elfman",
+    "artistId": 760,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/8528675",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-beverly-hills-cop",
+    "category": "film",
+    "titleRu": "Полицейский из Беверли-Хиллз",
+    "titleOriginal": "Beverly Hills Cop",
+    "franchiseId": "beverly-hills-cop",
+    "genres": [
+      "action",
+      "comedy",
+      "crime"
+    ],
+    "moodTags": [
+      "energetic",
+      "fun"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/a/a2/Beverly_Hills_Cop.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Beverly_Hills_Cop",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 80538212,
+    "trackTitle": "Axel F (From \"Beverly Hills Cop\" Soundtrack)",
+    "artist": "Harold Faltermeyer",
+    "artistId": 8631,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/8044404",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-bodyguard",
+    "category": "film",
+    "titleRu": "Телохранитель",
+    "titleOriginal": "The Bodyguard",
+    "franchiseId": "bodyguard",
+    "genres": [
+      "romance",
+      "drama",
+      "thriller"
+    ],
+    "moodTags": [
+      "romantic",
+      "emotional"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/8f/The_Bodyguard_1992_Film_Poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Bodyguard_(1992_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 7675403,
+    "trackTitle": "I Will Always Love You",
+    "artist": "Whitney Houston",
+    "artistId": 174,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/708692",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-dune",
+    "category": "film",
+    "titleRu": "Дюна",
+    "titleOriginal": "Dune",
+    "franchiseId": "dune",
+    "genres": [
+      "scifi",
+      "adventure",
+      "drama"
+    ],
+    "moodTags": [
+      "epic",
+      "mysterious"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/8e/Dune_%282021_film%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Dune_(2021_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 1480164982,
+    "trackTitle": "Leaving Caladan",
+    "artist": "Hans Zimmer",
+    "artistId": 1935,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/255370592",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-fifth-element",
+    "category": "film",
+    "titleRu": "Пятый элемент",
+    "titleOriginal": "The Fifth Element",
+    "franchiseId": "fifth-element",
+    "genres": [
+      "scifi",
+      "action",
+      "adventure"
+    ],
+    "moodTags": [
+      "energetic",
+      "epic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/6/65/Fifth_element_poster_%281997%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Fifth_Element",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 707345202,
+    "trackTitle": "The Diva Dance",
+    "artist": "Eric Serra",
+    "artistId": 786,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/102512112",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-fifty-shades",
+    "category": "film",
+    "titleRu": "Пятьдесят оттенков серого",
+    "titleOriginal": "Fifty Shades of Grey",
+    "franchiseId": "fifty-shades",
+    "genres": [
+      "romance",
+      "drama"
+    ],
+    "moodTags": [
+      "romantic",
+      "emotional"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/7/73/Fifty_Shades_of_Grey_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Fifty_Shades_of_Grey_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 111780476,
+    "trackTitle": "Love Me Like You Do (From \"Fifty Shades Of Grey\")",
+    "artist": "Ellie Goulding",
+    "artistId": 311820,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/Fifty_Shades_of_Grey_(film)#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-fight-club",
+    "category": "film",
+    "titleRu": "Бойцовский клуб",
+    "titleOriginal": "Fight Club",
+    "franchiseId": "fight-club",
+    "genres": [
+      "drama",
+      "thriller"
+    ],
+    "moodTags": [
+      "dark",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Fight_Club",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 936899,
+    "trackTitle": "Where Is My Mind?",
+    "artist": "Pixies",
+    "artistId": 652,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/Fight_Club#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26",
+    "themeNote": "Original Pixies recording from 1988, licensed for the closing scene of Fight Club (1999); the song was not composed for the film."
+  },
+  {
+    "animeId": "film-forrest-gump",
+    "category": "film",
+    "titleRu": "Форрест Гамп",
+    "titleOriginal": "Forrest Gump",
+    "franchiseId": "forrest-gump",
+    "genres": [
+      "drama",
+      "romance"
+    ],
+    "moodTags": [
+      "emotional",
+      "peaceful"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Forrest_Gump",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 1014549,
+    "trackTitle": "I'm Forrest... Forrest Gump",
+    "artist": "Alan Silvestri",
+    "artistId": 791,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/111718",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-ghost",
+    "category": "film",
+    "titleRu": "Привидение",
+    "titleOriginal": "Ghost",
+    "franchiseId": "ghost",
+    "genres": [
+      "romance",
+      "fantasy",
+      "drama"
+    ],
+    "moodTags": [
+      "romantic",
+      "emotional"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/4/41/Ghost_%281990_movie_poster%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Ghost_(1990_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 885544,
+    "trackTitle": "Unchained Melody",
+    "artist": "The Righteous Brothers",
+    "artistId": 5852,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/Ghost_(1990_film)#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26",
+    "themeNote": "The Righteous Brothers original 1965 recording, licensed for the pottery scene in Ghost (1990); the song predates the film."
+  },
+  {
+    "animeId": "film-ghostbusters",
+    "category": "film",
+    "titleRu": "Охотники за привидениями",
+    "titleOriginal": "Ghostbusters",
+    "franchiseId": "ghostbusters",
+    "genres": [
+      "comedy",
+      "fantasy",
+      "action"
+    ],
+    "moodTags": [
+      "fun",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/2/2f/Ghostbusters_%281984%29_theatrical_poster.png",
+    "posterSource": "https://en.wikipedia.org/wiki/Ghostbusters",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 969252,
+    "trackTitle": "Ghostbusters (from the \"Ghostbusters\" Original Motion Picture Soundtrack)",
+    "artist": "Ray Parker Jr.",
+    "artistId": 3553,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/Ghostbusters#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-gladiator",
+    "category": "film",
+    "titleRu": "Гладиатор",
+    "titleOriginal": "Gladiator",
+    "franchiseId": "gladiator",
+    "genres": [
+      "action",
+      "adventure",
+      "drama"
+    ],
+    "moodTags": [
+      "epic",
+      "emotional"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/f/fb/Gladiator_%282000_film_poster%29.png",
+    "posterSource": "https://en.wikipedia.org/wiki/Gladiator_(2000_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 3055975,
+    "trackTitle": "Now We Are Free",
+    "artist": "Lisa Gerrard",
+    "artistId": 2816,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/296255",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-godfather",
+    "category": "film",
+    "titleRu": "Крёстный отец",
+    "titleOriginal": "The Godfather",
+    "franchiseId": "godfather",
+    "genres": [
+      "crime",
+      "drama"
+    ],
+    "moodTags": [
+      "dramatic",
+      "dark"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Godfather",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 3040782,
+    "trackTitle": "Love Theme From \"The Godfather\"",
+    "artist": "Nino Rota",
+    "artistId": 5741,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/294596",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-good-bad-ugly",
+    "category": "film",
+    "titleRu": "Хороший, плохой, злой",
+    "titleOriginal": "The Good, the Bad and the Ugly",
+    "franchiseId": "good-bad-ugly",
+    "genres": [
+      "western",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Good%2C_the_Bad_and_the_Ugly",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 3089012,
+    "trackTitle": "The Good, The Bad And The Ugly (2004 Remaster)",
+    "artist": "Ennio Morricone",
+    "artistId": 1536,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/299178",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-greatest-showman",
+    "category": "film",
+    "titleRu": "Величайший шоумен",
+    "titleOriginal": "The Greatest Showman",
+    "franchiseId": "greatest-showman",
+    "genres": [
+      "drama",
+      "musical"
+    ],
+    "moodTags": [
+      "energetic",
+      "inspiring"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/10/The_Greatest_Showman_poster.png",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Greatest_Showman",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 435175452,
+    "trackTitle": "The Greatest Show",
+    "artist": "Hugh Jackman",
+    "artistId": 169712,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/52562662",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-harry-potter",
+    "category": "film",
+    "titleRu": "Гарри Поттер и философский камень",
+    "titleOriginal": "Harry Potter and the Philosopher's Stone",
+    "franchiseId": "harry-potter",
+    "genres": [
+      "fantasy",
+      "adventure"
+    ],
+    "moodTags": [
+      "magical",
+      "epic"
+    ],
+    "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/7/7a/Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg/330px-Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher's_Stone_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 661779,
+    "trackTitle": "Hedwig's Theme",
+    "artist": "John Williams",
+    "artistId": 805,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/80310",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-home-alone",
+    "category": "film",
+    "titleRu": "Один дома",
+    "titleOriginal": "Home Alone",
+    "franchiseId": "home-alone",
+    "genres": [
+      "comedy",
+      "family"
+    ],
+    "moodTags": [
+      "fun",
+      "magical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/7/76/Home_alone_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Home_Alone",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 110148762,
+    "trackTitle": "Somewhere in My Memory (From \"Home Alone\" Soundtrack) (Chorus & Orchestra Version)",
+    "artist": "John Williams",
+    "artistId": 805,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/Home_Alone#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-inception",
+    "category": "film",
+    "titleRu": "Начало",
+    "titleOriginal": "Inception",
+    "franchiseId": "inception",
+    "genres": [
+      "scifi",
+      "action",
+      "thriller"
+    ],
+    "moodTags": [
+      "tense",
+      "epic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Inception",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 6524423,
+    "trackTitle": "Time",
+    "artist": "Hans Zimmer",
+    "artistId": 1935,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/601778",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-indiana-jones",
+    "category": "film",
+    "titleRu": "Индиана Джонс: В поисках утраченного ковчега",
+    "titleOriginal": "Raiders of the Lost Ark",
+    "franchiseId": "indiana-jones",
+    "genres": [
+      "action",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/4/4c/Raiders_of_the_Lost_Ark.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 518486042,
+    "trackTitle": "Washington Ending / Raiders March",
+    "artist": "John Williams",
+    "artistId": 805,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/66647842",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-interstellar",
+    "category": "film",
+    "titleRu": "Интерстеллар",
+    "titleOriginal": "Interstellar",
+    "franchiseId": "interstellar",
+    "genres": [
+      "scifi",
+      "adventure",
+      "drama"
+    ],
+    "moodTags": [
+      "epic",
+      "emotional"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Interstellar_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 1137370842,
+    "trackTitle": "Cornfield Chase",
+    "artist": "Hans Zimmer",
+    "artistId": 1935,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/185320622",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-it",
+    "category": "film",
+    "titleRu": "Оно",
+    "titleOriginal": "It",
+    "franchiseId": "it",
+    "genres": [
+      "horror",
+      "thriller"
+    ],
+    "moodTags": [
+      "dark",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/5a/It_%282017%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/It_(2017_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 647378082,
+    "trackTitle": "Every 27 Years",
+    "artist": "Benjamin Wallfisch",
+    "artistId": 511182,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/90123272",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-james-bond",
+    "category": "film",
+    "titleRu": "007: Координаты «Скайфолл»",
+    "titleOriginal": "Skyfall",
+    "franchiseId": "james-bond",
+    "genres": [
+      "action",
+      "thriller"
+    ],
+    "moodTags": [
+      "dramatic",
+      "tense"
+    ],
+    "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/a/a7/Skyfall_poster.jpg/330px-Skyfall_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Skyfall",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 82715364,
+    "trackTitle": "Skyfall",
+    "artist": "Adele",
+    "artistId": 75798,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/Skyfall#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-jaws",
+    "category": "film",
+    "titleRu": "Челюсти",
+    "titleOriginal": "Jaws",
+    "franchiseId": "jaws",
+    "genres": [
+      "thriller",
+      "horror",
+      "adventure"
+    ],
+    "moodTags": [
+      "tense",
+      "dark"
+    ],
+    "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Jaws_movie_poster.jpg/330px-Jaws_movie_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Jaws_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 93631710,
+    "trackTitle": "Main Title (Theme From Jaws) (From \"Jaws\")",
+    "artist": "John Williams",
+    "artistId": 805,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/9510822",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-jurassic-park",
+    "category": "film",
+    "titleRu": "Парк юрского периода",
+    "titleOriginal": "Jurassic Park",
+    "franchiseId": "jurassic-park",
+    "genres": [
+      "scifi",
+      "adventure",
+      "thriller"
+    ],
+    "moodTags": [
+      "epic",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Jurassic_Park",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 2296192,
+    "trackTitle": "Theme From Jurassic Park",
+    "artist": "John Williams",
+    "artistId": 805,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/228943",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-la-la-land",
+    "category": "film",
+    "titleRu": "Ла-Ла Ленд",
+    "titleOriginal": "La La Land",
+    "franchiseId": "la-la-land",
+    "genres": [
+      "romance",
+      "drama",
+      "musical"
+    ],
+    "moodTags": [
+      "romantic",
+      "emotional"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/a/ab/La_La_Land_%28film%29.png",
+    "posterSource": "https://en.wikipedia.org/wiki/La_La_Land",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 137727927,
+    "trackTitle": "City Of Stars (From \"La La Land\" Soundtrack)",
+    "artist": "Ryan Gosling",
+    "artistId": 8656514,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/14781199",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-lord-of-the-rings",
+    "category": "film",
+    "titleRu": "Властелин колец: Братство Кольца",
+    "titleOriginal": "The Lord of the Rings: The Fellowship of the Ring",
+    "franchiseId": "middle-earth",
+    "genres": [
+      "fantasy",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "peaceful"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/f/fb/Lord_Rings_Fellowship_Ring.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings%3A_The_Fellowship_of_the_Ring",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 14628816,
+    "trackTitle": "Concerning Hobbits",
+    "artist": "Howard Shore",
+    "artistId": 556,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/1346734",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-mission-impossible",
+    "category": "film",
+    "titleRu": "Миссия невыполнима",
+    "titleOriginal": "Mission: Impossible",
+    "franchiseId": "mission-impossible",
+    "genres": [
+      "action",
+      "thriller"
+    ],
+    "moodTags": [
+      "tense",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/e/e1/MissionImpossiblePoster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Mission%3A_Impossible_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 2436630,
+    "trackTitle": "Mission Impossible - Main Theme",
+    "artist": "Danny Elfman",
+    "artistId": 760,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/239997",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-narnia",
+    "category": "film",
+    "titleRu": "Хроники Нарнии: Лев, колдунья и волшебный шкаф",
+    "titleOriginal": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+    "franchiseId": "narnia",
+    "genres": [
+      "fantasy",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "magical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/10/The_Chronicles_of_Narnia_-_The_Lion%2C_the_Witch_and_the_Wardrobe.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Chronicles_of_Narnia%3A_The_Lion%2C_the_Witch_and_the_Wardrobe",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 11233271,
+    "trackTitle": "The Battle",
+    "artist": "Harry Gregson-Williams",
+    "artistId": 3170,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/1028336",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-oppenheimer",
+    "category": "film",
+    "titleRu": "Оппенгеймер",
+    "titleOriginal": "Oppenheimer",
+    "franchiseId": "oppenheimer",
+    "genres": [
+      "drama",
+      "history"
+    ],
+    "moodTags": [
+      "epic",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Oppenheimer_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 2364462315,
+    "trackTitle": "Can You Hear The Music",
+    "artist": "Ludwig Goransson",
+    "artistId": 4553724,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/463516585",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-pirates",
+    "category": "film",
+    "titleRu": "Пираты Карибского моря: Проклятие Чёрной жемчужины",
+    "titleOriginal": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "franchiseId": "pirates",
+    "genres": [
+      "adventure",
+      "fantasy",
+      "action"
+    ],
+    "moodTags": [
+      "epic",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/89/Pirates_of_the_Caribbean_-_The_Curse_of_the_Black_Pearl.png",
+    "posterSource": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean%3A_The_Curse_of_the_Black_Pearl",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 3117931,
+    "trackTitle": "He's a Pirate",
+    "artist": "Klaus Badelt",
+    "artistId": 2791,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/301013",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-pulp-fiction",
+    "category": "film",
+    "titleRu": "Криминальное чтиво",
+    "titleOriginal": "Pulp Fiction",
+    "franchiseId": "pulp-fiction",
+    "genres": [
+      "crime",
+      "thriller"
+    ],
+    "moodTags": [
+      "energetic",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Pulp_Fiction",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 1590117372,
+    "trackTitle": "Misirlou",
+    "artist": "Dick Dale and His Del-Tones",
+    "artistId": 2345,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/Pulp_Fiction#Music",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26",
+    "themeNote": "Dick Dale and His Del-Tones original surf recording from 1962, used over the opening titles of Pulp Fiction (1994); the recording predates the film."
+  },
+  {
+    "animeId": "film-requiem-for-a-dream",
+    "category": "film",
+    "titleRu": "Реквием по мечте",
+    "titleOriginal": "Requiem for a Dream",
+    "franchiseId": "requiem-for-a-dream",
+    "genres": [
+      "drama"
+    ],
+    "moodTags": [
+      "dark",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/9/92/Requiem_for_a_dream.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Requiem_for_a_Dream",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 5416678,
+    "trackTitle": "Lux Aeterna",
+    "artist": "Clint Mansell",
+    "artistId": 757,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/496099",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-rocky",
+    "category": "film",
+    "titleRu": "Рокки",
+    "titleOriginal": "Rocky",
+    "franchiseId": "rocky",
+    "genres": [
+      "drama"
+    ],
+    "moodTags": [
+      "inspiring",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/18/Rocky_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Rocky",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 99127208,
+    "trackTitle": "Gonna Fly Now (Theme From \"Rocky\")",
+    "artist": "Bill Conti",
+    "artistId": 4645,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/10145688",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-saw",
+    "category": "film",
+    "titleRu": "Пила: Игра на выживание",
+    "titleOriginal": "Saw",
+    "franchiseId": "saw",
+    "genres": [
+      "horror",
+      "thriller"
+    ],
+    "moodTags": [
+      "dark",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/56/Saw_official_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Saw_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 426966262,
+    "trackTitle": "Hello Zepp + Overture",
+    "artist": "Charlie Clouser",
+    "artistId": 6836,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/51386322",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-schindlers-list",
+    "category": "film",
+    "titleRu": "Список Шиндлера",
+    "titleOriginal": "Schindler's List",
+    "franchiseId": "schindlers-list",
+    "genres": [
+      "drama",
+      "history"
+    ],
+    "moodTags": [
+      "emotional",
+      "sad"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/38/Schindler%27s_List_movie.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Schindler's_List",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 6066638,
+    "trackTitle": "Theme From Schindler's List",
+    "artist": "John Williams",
+    "artistId": 805,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/241510",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-social-network",
+    "category": "film",
+    "titleRu": "Социальная сеть",
+    "titleOriginal": "The Social Network",
+    "franchiseId": "social-network",
+    "genres": [
+      "drama"
+    ],
+    "moodTags": [
+      "dark",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/8c/The_Social_Network_film_poster.png",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Social_Network",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 57428311,
+    "trackTitle": "Hand Covers Bruise",
+    "artist": "Trent Reznor and Atticus Ross",
+    "artistId": 1539961,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/5604281",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-spider-man",
+    "category": "film",
+    "titleRu": "Человек-паук",
+    "titleOriginal": "Spider-Man",
+    "franchiseId": "spider-man",
+    "genres": [
+      "action",
+      "scifi",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/6/6c/Spider-Man_%282002_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Spider-Man_(2002_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 15220573,
+    "trackTitle": "Main Title",
+    "artist": "Danny Elfman",
+    "artistId": 760,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/1401753",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-star-wars",
+    "category": "film",
+    "titleRu": "Звёздные войны: Новая надежда",
+    "titleOriginal": "Star Wars: A New Hope",
+    "franchiseId": "star-wars",
+    "genres": [
+      "scifi",
+      "adventure",
+      "action"
+    ],
+    "moodTags": [
+      "epic",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Star_Wars_(film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 193402301,
+    "trackTitle": "Episode IV - Main Title",
+    "artist": "John Williams",
+    "artistId": 805,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/20044821",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-superman",
+    "category": "film",
+    "titleRu": "Супермен",
+    "titleOriginal": "Superman",
+    "franchiseId": "superman",
+    "genres": [
+      "scifi",
+      "action",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "inspiring"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/b0/Superman_%281978_film_poster%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Superman_(1978_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 3579822,
+    "trackTitle": "Prelude and Main Title March",
+    "artist": "John Williams",
+    "artistId": 805,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/338388",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-terminator",
+    "category": "film",
+    "titleRu": "Терминатор 2: Судный день",
+    "titleOriginal": "Terminator 2: Judgment Day",
+    "franchiseId": "terminator",
+    "genres": [
+      "scifi",
+      "action",
+      "thriller"
+    ],
+    "moodTags": [
+      "tense",
+      "dark"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/5e/Terminator_2-Judgment_Day.png",
+    "posterSource": "https://en.wikipedia.org/wiki/Terminator_2%3A_Judgment_Day",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 142745594,
+    "trackTitle": "Main Title Terminator 2 Theme (Remastered 2017)",
+    "artist": "Brad Fiedel",
+    "artistId": 6140,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/15443706",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-the-dark-knight",
+    "category": "film",
+    "titleRu": "Тёмный рыцарь",
+    "titleOriginal": "The Dark Knight",
+    "franchiseId": "batman",
+    "genres": [
+      "action",
+      "crime",
+      "thriller"
+    ],
+    "moodTags": [
+      "dark",
+      "tense"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 904628,
+    "trackTitle": "Why so Serious?",
+    "artist": "Hans Zimmer",
+    "artistId": 1935,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/102197",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-the-hobbit",
+    "category": "film",
+    "titleRu": "Хоббит: Нежданное путешествие",
+    "titleOriginal": "The Hobbit: An Unexpected Journey",
+    "franchiseId": "middle-earth",
+    "genres": [
+      "fantasy",
+      "adventure"
+    ],
+    "moodTags": [
+      "epic",
+      "mysterious"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/b3/The_Hobbit-_An_Unexpected_Journey.jpeg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Hobbit%3A_An_Unexpected_Journey",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 647248372,
+    "trackTitle": "Misty Mountains",
+    "artist": "Richard Armitage",
+    "artistId": 3325491,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/90104592",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-titanic",
+    "category": "film",
+    "titleRu": "Титаник",
+    "titleOriginal": "Titanic",
+    "franchiseId": "titanic",
+    "genres": [
+      "romance",
+      "drama"
+    ],
+    "moodTags": [
+      "romantic",
+      "emotional"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png",
+    "posterSource": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 17000055,
+    "trackTitle": "My Heart Will Go On (Love Theme from \"Titanic\")",
+    "artist": "Céline Dion",
+    "artistId": 198,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/1589656",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "film-top-gun",
+    "category": "film",
+    "titleRu": "Лучший стрелок",
+    "titleOriginal": "Top Gun",
+    "franchiseId": "top-gun",
+    "genres": [
+      "action",
+      "romance",
+      "drama"
+    ],
+    "moodTags": [
+      "romantic",
+      "energetic"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/4/46/Top_Gun_Movie.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Top_Gun",
+    "posterCredit": "Wikipedia; film poster artwork belongs to the respective rights holders",
+    "trackId": 7675055,
+    "trackTitle": "Take My Breath Away (Love Theme from \"Top Gun\")",
+    "artist": "Berlin",
+    "artistId": 171,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/708670",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  }
+]

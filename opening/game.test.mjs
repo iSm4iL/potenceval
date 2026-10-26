@@ -71,3 +71,23 @@ test('interrupted playback or a restored page voids the round without awarding a
   assert.equal(interruptRound(answered), false);
   assert.equal(answered.points, 390);
 });
+test('each category plays its own titles and never offers another category as a distractor', () => {
+  const films = catalog.map(x => ({...x, animeId: 'film-'+x.animeId, franchiseId:'film-'+x.franchiseId, trackId:x.trackId+100,category:'film',distractorIds:x.distractorIds.map(id=>'film-'+id)}));
+  const pool = [...catalog, ...films];
+  assert.ok(buildSession(pool, 10, () => .3, {category:'film'}).every(x=>x.category==='film'));
+  const entry = {...films[0],distractorIds:['a1','film-a1','film-a2','film-a3','film-a4']};
+  assert.ok(buildChoices(entry, pool, () => .3).every(x=>x.category==='film'));
+});
+test('new parties use unplayed titles before repeating and can wrap a nearly exhausted collection', () => {
+  const seenIds = catalog.slice(0, 10).map(x=>x.animeId);
+  const next = buildSession(catalog, 10, () => .3, {category:'anime', seenIds});
+  assert.deepEqual(new Set(next.slice(0,2).map(x=>x.animeId)),new Set(['a10','a11']));
+  assert.equal(new Set(next.map(x=>x.animeId)).size,10);
+  assert.equal(buildSession(catalog,10,()=>.3,{category:'anime',seenIds:catalog.map(x=>x.animeId)}).length,10);
+});
+test('an unplayed sequel can replace a played title from the same franchise', () => {
+  const sequel={...catalog[0],animeId:'sequel',trackId:99};
+  const party=buildSession([...catalog,sequel],12,()=>.3,{seenIds:['a0']});
+  assert.ok(party.some(x=>x.animeId==='sequel'));
+  assert.ok(!party.some(x=>x.animeId==='a0'));
+});
