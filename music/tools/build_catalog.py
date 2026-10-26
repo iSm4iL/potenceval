@@ -382,6 +382,11 @@ def lookup_key(row):
     return ",".join(sorted(normalize(a) for a in row["artists"])) + "|" + canonical_title(row["title"])
 
 
+def collection_artists_allowed(source, track):
+    allowed = source.get("allowedArtistIds")
+    return allowed is None or bool(track.get("artistIds")) and set(track["artistIds"]).issubset({str(ident) for ident in allowed})
+
+
 def public_track(raw, row):
     people = contributors(raw)
     cover = raw.get("album", {}).get("cover_medium", "")
@@ -536,6 +541,9 @@ def validate_config(config):
         ids.add(source["id"])
         if not isinstance(source.get("genres", []), list):
             raise ValueError("Source genres must be an array")
+        allowed = source.get("allowedArtistIds")
+        if allowed is not None and (not isinstance(allowed, list) or not allowed or not all(type(ident) is int and ident > 0 for ident in allowed)):
+            raise ValueError("allowedArtistIds must be a nonempty array of positive integer IDs")
         if source.get("limit") is not None and (type(source["limit"]) is not int or source["limit"] < 1):
             raise ValueError("Source limit must be a positive integer")
 
@@ -601,6 +609,8 @@ def build(sources_path, output_path, workers=4, limit_per_source=None, client=No
                 for index, (row, (track, failure, validated_at, cached)) in enumerate(zip(rows, pool.map(lookup, rows)), 1):
                     if index == 1 or index % 10 == 0:
                         print("[" + ident + "] " + str(index) + "/" + str(len(rows)) + " checked", flush=True)
+                    if track is not None and not collection_artists_allowed(source, track):
+                        track, failure = None, {"reason": "performer outside this collection's approved artist IDs", "samples": []}
                     if track is None:
                         entry = {"sourceId": ident, "title": row["title"], "artists": row["artists"],
                                  "position": row.get("position"), "url": row.get("url") or source["url"], **failure}
@@ -637,8 +647,15 @@ def build(sources_path, output_path, workers=4, limit_per_source=None, client=No
             report["sources"].append(source_report)
             print("[" + ident + "] " + meta["status"] + ": " + str(source_report["matched"]) + " matched, " + str(source_report["unmatched"]) + " unmatched", flush=True)
     config_sources = {s["id"]: s for s in config["sources"]}
+    editorial_keys = {s["id"]: {lookup_key(row) for row in s.get("tracks", [])} for s in config["sources"] if s["kind"] == "verified-tracks"}
+    editorial_pruned = False
     for track in old_tracks:
-        refs = [r for r in track.get("sources", []) if r.get("id") in failed]
+        # An outage may retain current selections, never deleted songs or excluded guests.
+        current_refs = [r for r in track.get("sources", []) if r.get("id") in config_sources
+                and collection_artists_allowed(config_sources[r["id"]], track)
+                and (r["id"] not in editorial_keys or editorial_keys[r["id"]].intersection(track.get("lookupKeys", [])))]
+        editorial_pruned |= len(current_refs) != len(track.get("sources", []))
+        refs = [r for r in current_refs if r["id"] in failed]
         if refs:
             preserved = copy.deepcopy(track)
             preserved["sources"] = refs
@@ -653,6 +670,13 @@ def build(sources_path, output_path, workers=4, limit_per_source=None, client=No
             for key in track.get("lookupKeys", []):
                 report["matchCache"].setdefault(key, old_matches.get(key, {"verifiedAt": prior.get("generatedAt"), "trackId": track["id"]}))
     tracks = merge_tracks(resolved)
+    for track in tracks:
+        refs = [ref for ref in track["sources"] if collection_artists_allowed(config_sources[ref["id"]], track)]
+        editorial_pruned |= len(refs) != len(track["sources"])
+        track["sources"] = refs
+        track["genres"] = unique(g for ref in refs for g in ref["genres"])
+        track["currentGenres"] = unique(g for ref in refs if config_sources[ref["id"]].get("current", config_sources[ref["id"]]["kind"] == "apple-chart") for g in ref["genres"])
+    tracks = [track for track in tracks if track["sources"]]
     # Стоп-лист: исполнители не в тему подборок и записи, чьё превью не играет в браузере.
     banned_artists = {normalize(a) for a in config.get("excludeArtists", [])}
     banned_tracks = set(config.get("excludeTracks", []))
@@ -666,7 +690,8 @@ def build(sources_path, output_path, workers=4, limit_per_source=None, client=No
         meta["count"] = sum(any(ref["id"] == meta["id"] for ref in track["sources"]) for track in tracks)
     report["counts"]["tracks"] = len(tracks)
     report["counts"]["failedSources"] = len(failed)
-    if success and tracks:
+    # Explicit editorial removals also take effect offline, even if they empty a selection.
+    if (success and tracks) or (failed and editorial_pruned):
         catalog = {"version": 1, "generatedAt": now, "sources": metadata, "tracks": tracks, "warnings": report["warnings"]}
         atomic_json(output_path, catalog)
         report["published"] = True

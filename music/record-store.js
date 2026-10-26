@@ -198,5 +198,5 @@ function rotate(now) {
 requestAnimationFrame(rotate);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=merge-20261026');
+await import('./app.js?v=genres-20261026');
 decorate();

@@ -1,6 +1,6 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
 import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=covers-1';
-import { PACKS, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack, sameArtist } from './catalog.js?v=dead-inside-1';
+import { PACKS, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack, sameArtist } from './catalog.js?v=genres-20261026';
 import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=silence-1';
 import { resultPresentation } from './feedback.js?v=bonus-1';

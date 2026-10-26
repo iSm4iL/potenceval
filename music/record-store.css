@@ -76,8 +76,8 @@ body.record-store { background:#0d0c14; }
 .disc-label small { font-size:5px; margin-top:12%; color:#fff3d3; }
 .disc-reflection { position:absolute; inset:0; border-radius:50%; background:conic-gradient(from -35deg,transparent 0 5%,#fff2 12%,#ffffff06 18%,transparent 24% 49%,#fff1 60%,transparent 69%); pointer-events:none; }
 .disc-spindle { position:absolute; left:50%; top:50%; width:6px; height:6px; transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle at 30% 25%,#fff4da,#c7c6bf 30%,#5a5144 60%,#000); box-shadow:1px 2px 3px #000b; }
-.deck-arm { position:absolute; width:27%; height:66%; object-fit:fill; left:70.5%; top:11.5%; transform-origin:50% 16%; transform:rotate(-3deg); filter:drop-shadow(2px 3px 2px #0009); transition:transform .8s var(--ease); pointer-events:none; }
-.home-deck:hover .deck-arm,.is-playing .deck-arm { transform:rotate(15deg); }
+.deck-arm { position:absolute; width:27%; height:66%; object-fit:fill; left:70.5%; top:11.5%; transform-origin:50% 16%; transform:rotate(-3deg); filter:drop-shadow(2px 3px 2px #0009); transition:transform .22s var(--ease); pointer-events:none; }
+.home-deck:hover .deck-arm,.is-playing .deck-arm { transform:rotate(32deg); }
 .deck-trigger { position:absolute; left:13.5%; top:12.5%; width:59.5%; aspect-ratio:1; background:none; border-radius:50%; color:#fff1d2; }
 .deck-trigger span { display:grid; place-items:center; width:44px; height:44px; border-radius:50%; margin:auto; background:#150d06b8; border:1px solid #f2b85bbf; color:var(--gold); opacity:0; transition:opacity .2s; }
 .deck-trigger:hover span,.deck-trigger:focus-visible span { opacity:1; }.deck-trigger:disabled{cursor:default}

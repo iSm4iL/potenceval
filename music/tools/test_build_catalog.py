@@ -240,6 +240,82 @@ class BuilderTests(unittest.TestCase):
             self.assertTrue(b.build(src, out, client=FakeClient(tracks=[guest, broken, kept])))
             self.assertEqual([t["title"] for t in json.loads(out.read_text(encoding="utf-8"))["tracks"]], ["Кукла колдуна"])
 
+    def test_collection_artist_ids_reject_foreign_guests_even_from_recent_cache(self):
+        guest = raw(31, "Duet", "Dire Straits", 176, isrc="GBABC7700031",
+                    contributors=[{"id": 176, "name": "Dire Straits"}, {"id": 3, "name": "Snoop Dogg"}])
+        rows = [{"title": t["title"], "artists": ["Dire Straits"]} for t in (raw(), guest)]
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source(tracks=rows), self.source("other", genres=["other"], tracks=rows)])
+            self.assertTrue(b.build(src, out, client=FakeClient(tracks=[raw(), guest])))
+            config = json.loads(src.read_text(encoding="utf-8"))
+            config["sources"][0]["allowedArtistIds"] = [176]
+            src.write_text(json.dumps(config), encoding="utf-8")
+            self.assertTrue(b.build(src, out, client=FakeClient(tracks=[raw(), guest])))
+            tracks = json.loads(out.read_text(encoding="utf-8"))["tracks"]
+            self.assertEqual(next(t for t in tracks if t["deezerId"] == 31)["genres"], ["other"])
+            self.assertEqual(next(t for t in tracks if t["deezerId"] == 10)["genres"], ["classics", "other"])
+
+    def test_failed_editorial_source_cannot_restore_removed_songs_or_foreign_guests(self):
+        guest = raw(31, "Duet", "Dire Straits", 176, isrc="GBABC7700031",
+                    contributors=[{"id": 176, "name": "Dire Straits"}, {"id": 3, "name": "Snoop Dogg"}])
+        removed = raw(32, "Removed", isrc="GBABC7700032")
+        rows = [{"title": t["title"], "artists": ["Dire Straits"]} for t in (raw(), guest, removed)]
+        class FailedLookup(FakeClient):
+            def get(self, url):
+                if "/search?" in url:
+                    raise OSError("offline")
+                return super().get(url)
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source(tracks=rows), self.source("other", genres=["other"], tracks=rows)])
+            self.assertTrue(b.build(src, out, client=FakeClient(tracks=[raw(), guest, removed])))
+            config = json.loads(src.read_text(encoding="utf-8"))
+            config["sources"][0].update(allowedArtistIds=[176], tracks=rows[:2] + [{"title": "Unavailable", "artists": ["Dire Straits"]}])
+            src.write_text(json.dumps(config), encoding="utf-8")
+            self.assertTrue(b.build(src, out, client=FailedLookup(tracks=[raw(), guest, removed])))
+            tracks = json.loads(out.read_text(encoding="utf-8"))["tracks"]
+            self.assertEqual(next(t for t in tracks if t["deezerId"] == 10)["genres"], ["classics", "other"])
+            for ident in (31, 32):
+                self.assertEqual(next(t for t in tracks if t["deezerId"] == ident)["genres"], ["other"])
+
+    def test_collection_artist_ids_must_be_positive_integer_ids(self):
+        for value in ([True], ["176"], [0], [-1], []):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                b.validate_config({"version": 1, "sources": [self.source(allowedArtistIds=value)]})
+
+    def test_merging_another_release_cannot_lend_excluded_guests_a_genre(self):
+        guest = raw(31, contributors=[{"id": 176, "name": "Dire Straits"}, {"id": 3, "name": "Snoop Dogg"}])
+        row = {"title": "Sultans of Swing", "artists": ["Dire Straits"]}
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [
+                self.source("other", genres=["other"], tracks=[dict(row, url="https://www.deezer.com/track/31")]),
+                self.source(allowedArtistIds=[176], tracks=[dict(row, url="https://www.deezer.com/track/10")]),
+            ])
+            self.assertTrue(b.build(src, out, client=FakeClient(tracks=[raw(), guest])))
+            tracks = json.loads(out.read_text(encoding="utf-8"))["tracks"]
+            self.assertEqual(len(tracks), 1)
+            self.assertEqual(tracks[0]["genres"], ["other"])
+            self.assertEqual([r["id"] for r in tracks[0]["sources"]], ["other"])
+
+    def test_total_outage_applies_editorial_removals_to_saved_catalog(self):
+        guest = raw(31, "Duet", isrc="GBABC7700031",
+                    contributors=[{"id": 176, "name": "Dire Straits"}, {"id": 3, "name": "Snoop Dogg"}])
+        rows = [{"title": t["title"], "artists": ["Dire Straits"]} for t in (raw(), guest)]
+        class Offline(FakeClient):
+            def get(self, url):
+                raise OSError("offline")
+        for remove_all in [False, True]:
+            with self.subTest(remove_all=remove_all), workspace_temp() as directory:
+                src, out = self.setup_build(directory, [self.source(tracks=rows)])
+                self.assertTrue(b.build(src, out, client=FakeClient(tracks=[raw(), guest])))
+                config = json.loads(src.read_text(encoding="utf-8"))
+                config["sources"][0].update(allowedArtistIds=[176], tracks=[{"title": "Unavailable", "artists": ["Dire Straits"]}] if remove_all else rows[:1])
+                src.write_text(json.dumps(config), encoding="utf-8")
+                with patch.object(b, "recent", return_value=False):
+                    self.assertTrue(b.build(src, out, client=Offline()))
+                saved = json.loads(out.read_text(encoding="utf-8"))
+                self.assertEqual([t["deezerId"] for t in saved["tracks"]], [] if remove_all else [10])
+                self.assertEqual(saved["sources"][0]["status"], "stale")
+
     def test_build_merges_isrc_and_work_provenance_never_saves_preview(self):
         with workspace_temp() as directory:
             src, out = self.setup_build(directory, [self.source(), self.source("pop", genres=["pop-rnb"], current=True)])

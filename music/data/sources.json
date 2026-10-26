@@ -277,128 +277,1819 @@
     },
     {
       "id": "kpop-top",
-      "kind": "deezer-artist-top",
-      "title": "Deezer — самые популярные песни K-pop групп и артистов",
-      "url": "https://www.deezer.com/",
+      "kind": "verified-tracks",
+      "title": "Полсекунды — K-pop: редакторский список хитов",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
       "genres": [
         "kpop"
       ],
-      "perArtist": 5,
-      "limit": 500,
-      "artists": [
-        "BTS",
-        "BLACKPINK",
-        "TWICE",
-        "EXO",
-        "Stray Kids",
-        "NewJeans",
-        "aespa",
-        "IVE",
-        "LE SSERAFIM",
-        "SEVENTEEN",
-        "Red Velvet",
-        "BIGBANG",
+      "allowedArtistIds": [
+        65209,
+        88684,
+        161553,
+        240582,
+        338654,
+        398073,
+        1228100,
+        1310497,
+        1377613,
+        1492615,
+        3649631,
+        6982223,
+        7161880,
+        9172904,
+        10803980,
+        13923487,
+        15065941,
+        49280302,
+        60552072,
+        113547672,
+        113915572,
+        126335112,
+        145068682,
+        153042292,
+        168047437,
+        168158797,
+        178008437,
+        259645622
+      ],
+      "tracks": [
         {
-          "name": "i-dle",
-          "id": 15065941
+          "title": "Dynamite",
+          "artists": [
+            "BTS"
+          ],
+          "url": "https://www.deezer.com/track/1564465082",
+          "position": 1
         },
-        "ITZY",
-        "NCT 127",
-        "ENHYPEN",
-        "TOMORROW X TOGETHER",
-        "PSY",
-        "Girls' Generation",
-        "2NE1",
-        "SHINee",
-        "MAMAMOO",
-        "ATEEZ",
-        "Jung Kook",
-        "JENNIE",
-        "ROSÉ",
         {
-          "name": "LISA",
-          "id": 145068682
+          "title": "Butter",
+          "artists": [
+            "BTS"
+          ],
+          "url": "https://www.deezer.com/track/1576169062",
+          "position": 2
         },
-        "Jimin",
-        "ILLIT",
-        "BABYMONSTER"
+        {
+          "title": "DNA",
+          "artists": [
+            "BTS"
+          ],
+          "url": "https://www.deezer.com/track/1783253597",
+          "position": 3
+        },
+        {
+          "title": "IDOL",
+          "artists": [
+            "BTS"
+          ],
+          "url": "https://www.deezer.com/track/1783253617",
+          "position": 4
+        },
+        {
+          "title": "FAKE LOVE",
+          "artists": [
+            "BTS"
+          ],
+          "url": "https://www.deezer.com/track/1576170092",
+          "position": 5
+        },
+        {
+          "title": "DDU-DU DDU-DU",
+          "artists": [
+            "BLACKPINK"
+          ],
+          "url": "https://www.deezer.com/track/623470292",
+          "position": 6
+        },
+        {
+          "title": "Kill This Love",
+          "artists": [
+            "BLACKPINK"
+          ],
+          "url": "https://www.deezer.com/track/657797522",
+          "position": 7
+        },
+        {
+          "title": "How You Like That",
+          "artists": [
+            "BLACKPINK"
+          ],
+          "url": "https://www.deezer.com/track/1097366392",
+          "position": 8
+        },
+        {
+          "title": "BOOMBAYAH",
+          "artists": [
+            "BLACKPINK"
+          ],
+          "url": "https://www.deezer.com/track/2516649591",
+          "position": 9
+        },
+        {
+          "title": "What is Love?",
+          "artists": [
+            "TWICE"
+          ],
+          "url": "https://www.deezer.com/track/1255932992",
+          "position": 10
+        },
+        {
+          "title": "FANCY",
+          "artists": [
+            "TWICE"
+          ],
+          "url": "https://www.deezer.com/track/1255927852",
+          "position": 11
+        },
+        {
+          "title": "The Feels",
+          "artists": [
+            "TWICE"
+          ],
+          "url": "https://www.deezer.com/track/1533348982",
+          "position": 12
+        },
+        {
+          "title": "TT",
+          "artists": [
+            "TWICE"
+          ],
+          "url": "https://www.deezer.com/track/1256485422",
+          "position": 13
+        },
+        {
+          "title": "Love Shot",
+          "artists": [
+            "EXO"
+          ],
+          "url": "https://www.deezer.com/track/727835802",
+          "position": 14
+        },
+        {
+          "title": "Monster",
+          "artists": [
+            "EXO"
+          ],
+          "url": "https://www.deezer.com/track/728724572",
+          "position": 15
+        },
+        {
+          "title": "CALL ME BABY",
+          "artists": [
+            "EXO"
+          ],
+          "url": "https://www.deezer.com/track/728553232",
+          "position": 16
+        },
+        {
+          "title": "God’s Menu",
+          "artists": [
+            "Stray Kids"
+          ],
+          "url": "https://www.deezer.com/track/1642053412",
+          "position": 17
+        },
+        {
+          "title": "MANIAC",
+          "artists": [
+            "Stray Kids"
+          ],
+          "url": "https://www.deezer.com/track/1688660007",
+          "position": 18
+        },
+        {
+          "title": "Back Door",
+          "artists": [
+            "Stray Kids"
+          ],
+          "url": "https://www.deezer.com/track/1642053342",
+          "position": 19
+        },
+        {
+          "title": "Super Shy",
+          "artists": [
+            "NewJeans"
+          ],
+          "url": "https://www.deezer.com/track/2354707745",
+          "position": 20
+        },
+        {
+          "title": "Ditto",
+          "artists": [
+            "NewJeans"
+          ],
+          "url": "https://www.deezer.com/track/2071104987",
+          "position": 21
+        },
+        {
+          "title": "Hype Boy",
+          "artists": [
+            "NewJeans"
+          ],
+          "url": "https://www.deezer.com/track/1843514397",
+          "position": 22
+        },
+        {
+          "title": "OMG",
+          "artists": [
+            "NewJeans"
+          ],
+          "url": "https://www.deezer.com/track/2088671947",
+          "position": 23
+        },
+        {
+          "title": "Next Level",
+          "artists": [
+            "aespa"
+          ],
+          "url": "https://www.deezer.com/track/1371226732",
+          "position": 24
+        },
+        {
+          "title": "Drama",
+          "artists": [
+            "aespa"
+          ],
+          "url": "https://www.deezer.com/track/2526016461",
+          "position": 25
+        },
+        {
+          "title": "Supernova",
+          "artists": [
+            "aespa"
+          ],
+          "url": "https://www.deezer.com/track/2981668701",
+          "position": 26
+        },
+        {
+          "title": "LOVE DIVE",
+          "artists": [
+            "IVE"
+          ],
+          "url": "https://www.deezer.com/track/1708995887",
+          "position": 27
+        },
+        {
+          "title": "I AM",
+          "artists": [
+            "IVE"
+          ],
+          "url": "https://www.deezer.com/track/2227832217",
+          "position": 28
+        },
+        {
+          "title": "After LIKE",
+          "artists": [
+            "IVE"
+          ],
+          "url": "https://www.deezer.com/track/1863618717",
+          "position": 29
+        },
+        {
+          "title": "ANTIFRAGILE",
+          "artists": [
+            "LE SSERAFIM"
+          ],
+          "url": "https://www.deezer.com/track/1962896187",
+          "position": 30
+        },
+        {
+          "title": "FEARLESS",
+          "artists": [
+            "LE SSERAFIM"
+          ],
+          "url": "https://www.deezer.com/track/1737159087",
+          "position": 31
+        },
+        {
+          "title": "Super",
+          "artists": [
+            "SEVENTEEN"
+          ],
+          "url": "https://www.deezer.com/track/2247330887",
+          "position": 32
+        },
+        {
+          "title": "HOT",
+          "artists": [
+            "SEVENTEEN"
+          ],
+          "url": "https://www.deezer.com/track/1767163017",
+          "position": 33
+        },
+        {
+          "title": "VERY NICE",
+          "artists": [
+            "SEVENTEEN"
+          ],
+          "url": "https://www.deezer.com/track/1892629517",
+          "position": 34
+        },
+        {
+          "title": "Psycho",
+          "artists": [
+            "Red Velvet"
+          ],
+          "url": "https://www.deezer.com/track/835295992",
+          "position": 35
+        },
+        {
+          "title": "Bad Boy",
+          "artists": [
+            "Red Velvet"
+          ],
+          "url": "https://www.deezer.com/track/728143922",
+          "position": 36
+        },
+        {
+          "title": "러시안 룰렛 Russian Roulette",
+          "artists": [
+            "Red Velvet"
+          ],
+          "url": "https://www.deezer.com/track/728092462",
+          "position": 37
+        },
+        {
+          "title": "Fantastic Baby",
+          "artists": [
+            "BIGBANG"
+          ],
+          "url": "https://www.deezer.com/track/45616751",
+          "position": 38
+        },
+        {
+          "title": "Queencard",
+          "artists": [
+            "i-dle"
+          ],
+          "url": "https://www.deezer.com/track/3282147301",
+          "position": 39
+        },
+        {
+          "title": "Nxde",
+          "artists": [
+            "i-dle"
+          ],
+          "url": "https://www.deezer.com/track/3281013531",
+          "position": 40
+        },
+        {
+          "title": "TOMBOY",
+          "artists": [
+            "i-dle"
+          ],
+          "url": "https://www.deezer.com/track/3282147221",
+          "position": 41
+        },
+        {
+          "title": "WANNABE",
+          "artists": [
+            "ITZY"
+          ],
+          "url": "https://www.deezer.com/track/1642054622",
+          "position": 42
+        },
+        {
+          "title": "LOCO",
+          "artists": [
+            "ITZY"
+          ],
+          "url": "https://www.deezer.com/track/1642053592",
+          "position": 43
+        },
+        {
+          "title": "DALLA DALLA",
+          "artists": [
+            "ITZY"
+          ],
+          "url": "https://www.deezer.com/track/1642056352",
+          "position": 44
+        },
+        {
+          "title": "FEVER",
+          "artists": [
+            "ENHYPEN"
+          ],
+          "url": "https://www.deezer.com/track/1345071182",
+          "position": 45
+        },
+        {
+          "title": "Drunk-Dazed",
+          "artists": [
+            "ENHYPEN"
+          ],
+          "url": "https://www.deezer.com/track/1345071172",
+          "position": 46
+        },
+        {
+          "title": "Bite Me",
+          "artists": [
+            "ENHYPEN"
+          ],
+          "url": "https://www.deezer.com/track/2289924375",
+          "position": 47
+        },
+        {
+          "title": "Blue Hour",
+          "artists": [
+            "TOMORROW X TOGETHER"
+          ],
+          "url": "https://www.deezer.com/track/1114414982",
+          "position": 48
+        },
+        {
+          "title": "Deja Vu",
+          "artists": [
+            "TOMORROW X TOGETHER"
+          ],
+          "url": "https://www.deezer.com/track/2726775541",
+          "position": 49
+        },
+        {
+          "title": "LO$ER=LO♡ER",
+          "artists": [
+            "TOMORROW X TOGETHER"
+          ],
+          "url": "https://www.deezer.com/track/1463425352",
+          "position": 50
+        },
+        {
+          "title": "Gangnam Style (강남스타일)",
+          "artists": [
+            "Psy"
+          ],
+          "url": "https://www.deezer.com/track/60726278",
+          "position": 51
+        },
+        {
+          "title": "Gentleman",
+          "artists": [
+            "Psy"
+          ],
+          "url": "https://www.deezer.com/track/2124683037",
+          "position": 52
+        },
+        {
+          "title": "Gee",
+          "artists": [
+            "Girls' Generation"
+          ],
+          "url": "https://www.deezer.com/track/728406632",
+          "position": 53
+        },
+        {
+          "title": "The Boys",
+          "artists": [
+            "Girls' Generation"
+          ],
+          "url": "https://www.deezer.com/track/727830582",
+          "position": 54
+        },
+        {
+          "title": "소원을말해봐 Genie",
+          "artists": [
+            "Girls' Generation"
+          ],
+          "url": "https://www.deezer.com/track/728254022",
+          "position": 55
+        },
+        {
+          "title": "I Am The Best",
+          "artists": [
+            "2NE1"
+          ],
+          "url": "https://www.deezer.com/track/92731220",
+          "position": 56
+        },
+        {
+          "title": "FIRE",
+          "artists": [
+            "2NE1"
+          ],
+          "url": "https://www.deezer.com/track/3126226361",
+          "position": 57
+        },
+        {
+          "title": "Ring Ding Dong",
+          "artists": [
+            "SHINee"
+          ],
+          "url": "https://www.deezer.com/track/728728392",
+          "position": 58
+        },
+        {
+          "title": "Lucifer",
+          "artists": [
+            "SHINee"
+          ],
+          "url": "https://www.deezer.com/track/14458502",
+          "position": 59
+        },
+        {
+          "title": "누난 너무 예뻐 Replay",
+          "artists": [
+            "SHINee"
+          ],
+          "url": "https://www.deezer.com/track/728706292",
+          "position": 60
+        },
+        {
+          "title": "HIP",
+          "artists": [
+            "MAMAMOO"
+          ],
+          "url": "https://www.deezer.com/track/806276532",
+          "position": 61
+        },
+        {
+          "title": "Starry Night",
+          "artists": [
+            "MAMAMOO"
+          ],
+          "url": "https://www.deezer.com/track/2181629417",
+          "position": 62
+        },
+        {
+          "title": "BOUNCY (K-HOT CHILLI PEPPERS)",
+          "artists": [
+            "ATEEZ"
+          ],
+          "url": "https://www.deezer.com/track/2320139425",
+          "position": 63
+        },
+        {
+          "title": "Standing Next to You",
+          "artists": [
+            "Jungkook"
+          ],
+          "url": "https://www.deezer.com/track/2523324931",
+          "position": 64
+        },
+        {
+          "title": "SOLO",
+          "artists": [
+            "JENNIE"
+          ],
+          "url": "https://www.deezer.com/track/583712262",
+          "position": 65
+        },
+        {
+          "title": "like JENNIE",
+          "artists": [
+            "JENNIE"
+          ],
+          "url": "https://www.deezer.com/track/3262816591",
+          "position": 66
+        },
+        {
+          "title": "Mantra",
+          "artists": [
+            "JENNIE"
+          ],
+          "url": "https://www.deezer.com/track/3038395741",
+          "position": 67
+        },
+        {
+          "title": "On The Ground",
+          "artists": [
+            "ROSÉ"
+          ],
+          "url": "https://www.deezer.com/track/1272979642",
+          "position": 68
+        },
+        {
+          "title": "Gone",
+          "artists": [
+            "ROSÉ"
+          ],
+          "url": "https://www.deezer.com/track/1272979652",
+          "position": 69
+        },
+        {
+          "title": "MONEY",
+          "artists": [
+            "LISA"
+          ],
+          "url": "https://www.deezer.com/track/1490386732",
+          "position": 70
+        },
+        {
+          "title": "LALISA",
+          "artists": [
+            "LISA"
+          ],
+          "url": "https://www.deezer.com/track/1490386722",
+          "position": 71
+        },
+        {
+          "title": "Like Crazy",
+          "artists": [
+            "Jimin"
+          ],
+          "url": "https://www.deezer.com/track/2203061907",
+          "position": 72
+        },
+        {
+          "title": "Who",
+          "artists": [
+            "Jimin"
+          ],
+          "url": "https://www.deezer.com/track/2893833601",
+          "position": 73
+        },
+        {
+          "title": "Magnetic",
+          "artists": [
+            "ILLIT "
+          ],
+          "url": "https://www.deezer.com/track/2714845022",
+          "position": 74
+        }
       ]
     },
     {
       "id": "metal-top",
-      "kind": "deezer-artist-top",
-      "title": "Deezer — самые популярные песни рока и метала",
-      "url": "https://www.deezer.com/",
+      "kind": "verified-tracks",
+      "title": "Полсекунды — Рок и метал: редакторский список хитов",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
       "genres": [
         "metal"
       ],
-      "perArtist": 5,
-      "limit": 500,
-      "artists": [
-        "Metallica",
-        "Slipknot",
-        "System Of A Down",
-        "Linkin Park",
-        "Rammstein",
-        "Megadeth",
-        "Slayer",
-        "Pantera",
-        "Black Sabbath",
-        "Judas Priest",
+      "allowedArtistIds": [
+        89,
+        92,
+        93,
+        98,
+        117,
+        119,
+        406,
+        458,
+        464,
+        533,
+        647,
+        1327,
+        2127,
+        2969,
+        2993,
+        2996,
+        3048,
+        3487,
+        12022,
+        12874,
+        158710,
+        4237485,
+        7078873,
+        8506054
+      ],
+      "tracks": [
         {
-          "name": "KoЯn",
-          "id": 1327
+          "title": "Enter Sandman (Remastered 2021)",
+          "artists": [
+            "Metallica"
+          ],
+          "url": "https://www.deezer.com/track/1483825212",
+          "position": 1
         },
-        "Disturbed",
-        "Avenged Sevenfold",
-        "Bring Me The Horizon",
-        "Five Finger Death Punch",
-        "Motörhead",
-        "Sabaton",
-        "Ария",
-        "Кипелов",
-        "Limp Bizkit",
-        "Papa Roach",
-        "Evanescence",
         {
-          "name": "Ghost",
-          "id": 8506054
+          "title": "Nothing Else Matters (Remastered 2021)",
+          "artists": [
+            "Metallica"
+          ],
+          "url": "https://www.deezer.com/track/1483825282",
+          "position": 2
         },
-        "Gojira"
+        {
+          "title": "Master Of Puppets",
+          "artists": [
+            "Metallica"
+          ],
+          "url": "https://www.deezer.com/track/424565232",
+          "position": 3
+        },
+        {
+          "title": "The Unforgiven (Remastered 2021)",
+          "artists": [
+            "Metallica"
+          ],
+          "url": "https://www.deezer.com/track/1483825242",
+          "position": 4
+        },
+        {
+          "title": "Duality",
+          "artists": [
+            "Slipknot"
+          ],
+          "url": "https://www.deezer.com/track/3819908",
+          "position": 5
+        },
+        {
+          "title": "Psychosocial",
+          "artists": [
+            "Slipknot"
+          ],
+          "url": "https://www.deezer.com/track/1195560",
+          "position": 6
+        },
+        {
+          "title": "Before I Forget",
+          "artists": [
+            "Slipknot"
+          ],
+          "url": "https://www.deezer.com/track/3819914",
+          "position": 7
+        },
+        {
+          "title": "Snuff",
+          "artists": [
+            "Slipknot"
+          ],
+          "url": "https://www.deezer.com/track/1195567",
+          "position": 8
+        },
+        {
+          "title": "Chop Suey!",
+          "artists": [
+            "System of a Down"
+          ],
+          "url": "https://www.deezer.com/track/859699",
+          "position": 9
+        },
+        {
+          "title": "Toxicity",
+          "artists": [
+            "System of a Down"
+          ],
+          "url": "https://www.deezer.com/track/15523793",
+          "position": 10
+        },
+        {
+          "title": "Aerials",
+          "artists": [
+            "System of a Down"
+          ],
+          "url": "https://www.deezer.com/track/15523799",
+          "position": 11
+        },
+        {
+          "title": "B.Y.O.B.",
+          "artists": [
+            "System of a Down"
+          ],
+          "url": "https://www.deezer.com/track/559789",
+          "position": 12
+        },
+        {
+          "title": "Numb",
+          "artists": [
+            "Linkin Park"
+          ],
+          "url": "https://www.deezer.com/track/677232",
+          "position": 13
+        },
+        {
+          "title": "In the End",
+          "artists": [
+            "Linkin Park"
+          ],
+          "url": "https://www.deezer.com/track/676183",
+          "position": 14
+        },
+        {
+          "title": "Faint",
+          "artists": [
+            "Linkin Park"
+          ],
+          "url": "https://www.deezer.com/track/14628999",
+          "position": 15
+        },
+        {
+          "title": "What I've Done",
+          "artists": [
+            "Linkin Park"
+          ],
+          "url": "https://www.deezer.com/track/676847",
+          "position": 16
+        },
+        {
+          "title": "Sonne",
+          "artists": [
+            "Rammstein"
+          ],
+          "url": "https://www.deezer.com/track/14381638",
+          "position": 17
+        },
+        {
+          "title": "Du hast",
+          "artists": [
+            "Rammstein"
+          ],
+          "url": "https://www.deezer.com/track/630595142",
+          "position": 18
+        },
+        {
+          "title": "Deutschland",
+          "artists": [
+            "Rammstein"
+          ],
+          "url": "https://www.deezer.com/track/678687242",
+          "position": 19
+        },
+        {
+          "title": "Mein Herz brennt",
+          "artists": [
+            "Rammstein"
+          ],
+          "url": "https://www.deezer.com/track/14381636",
+          "position": 20
+        },
+        {
+          "title": "Symphony Of Destruction (Remastered 2012)",
+          "artists": [
+            "Megadeth"
+          ],
+          "url": "https://www.deezer.com/track/61382107",
+          "position": 21
+        },
+        {
+          "title": "A Tout Le Monde (Remastered 2004)",
+          "artists": [
+            "Megadeth"
+          ],
+          "url": "https://www.deezer.com/track/3088984",
+          "position": 22
+        },
+        {
+          "title": "Peace Sells (2004 Remaster)",
+          "artists": [
+            "Megadeth"
+          ],
+          "url": "https://www.deezer.com/track/3088971",
+          "position": 23
+        },
+        {
+          "title": "Raining Blood",
+          "artists": [
+            "Slayer"
+          ],
+          "url": "https://www.deezer.com/track/65690449",
+          "position": 24
+        },
+        {
+          "title": "Angel Of Death",
+          "artists": [
+            "Slayer"
+          ],
+          "url": "https://www.deezer.com/track/65690440",
+          "position": 25
+        },
+        {
+          "title": "Walk",
+          "artists": [
+            "Pantera"
+          ],
+          "url": "https://www.deezer.com/track/662879",
+          "position": 26
+        },
+        {
+          "title": "Cowboys from Hell",
+          "artists": [
+            "Pantera"
+          ],
+          "url": "https://www.deezer.com/track/714397",
+          "position": 27
+        },
+        {
+          "title": "Cemetery Gates (2010 Remaster)",
+          "artists": [
+            "Pantera"
+          ],
+          "url": "https://www.deezer.com/track/14637142",
+          "position": 28
+        },
+        {
+          "title": "Paranoid (Remastered 2009)",
+          "artists": [
+            "Black Sabbath"
+          ],
+          "url": "https://www.deezer.com/track/3788156052",
+          "position": 29
+        },
+        {
+          "title": "Iron Man (Remastered 2009)",
+          "artists": [
+            "Black Sabbath"
+          ],
+          "url": "https://www.deezer.com/track/3788156072",
+          "position": 30
+        },
+        {
+          "title": "War Pigs (Remastered 2009)",
+          "artists": [
+            "Black Sabbath"
+          ],
+          "url": "https://www.deezer.com/track/3788156042",
+          "position": 31
+        },
+        {
+          "title": "Breaking the Law",
+          "artists": [
+            "Judas Priest"
+          ],
+          "url": "https://www.deezer.com/track/557625",
+          "position": 32
+        },
+        {
+          "title": "Painkiller",
+          "artists": [
+            "Judas Priest"
+          ],
+          "url": "https://www.deezer.com/track/864761",
+          "position": 33
+        },
+        {
+          "title": "Freak On a Leash",
+          "artists": [
+            "KoЯn"
+          ],
+          "url": "https://www.deezer.com/track/134523750",
+          "position": 34
+        },
+        {
+          "title": "Falling Away from Me",
+          "artists": [
+            "KoЯn"
+          ],
+          "url": "https://www.deezer.com/track/15175502",
+          "position": 35
+        },
+        {
+          "title": "Coming Undone",
+          "artists": [
+            "KoЯn"
+          ],
+          "url": "https://www.deezer.com/track/1549660202",
+          "position": 36
+        },
+        {
+          "title": "Down with the Sickness",
+          "artists": [
+            "Disturbed"
+          ],
+          "url": "https://www.deezer.com/track/663984",
+          "position": 37
+        },
+        {
+          "title": "Stricken",
+          "artists": [
+            "Disturbed"
+          ],
+          "url": "https://www.deezer.com/track/788807",
+          "position": 38
+        },
+        {
+          "title": "The Sound of Silence",
+          "artists": [
+            "Disturbed"
+          ],
+          "url": "https://www.deezer.com/track/105765234",
+          "position": 39
+        },
+        {
+          "title": "Hail to the King",
+          "artists": [
+            "Avenged Sevenfold"
+          ],
+          "url": "https://www.deezer.com/track/70078209",
+          "position": 40
+        },
+        {
+          "title": "Nightmare",
+          "artists": [
+            "Avenged Sevenfold"
+          ],
+          "url": "https://www.deezer.com/track/6715839",
+          "position": 41
+        },
+        {
+          "title": "Afterlife",
+          "artists": [
+            "Avenged Sevenfold"
+          ],
+          "url": "https://www.deezer.com/track/6278220",
+          "position": 42
+        },
+        {
+          "title": "Can You Feel My Heart",
+          "artists": [
+            "Bring Me the Horizon"
+          ],
+          "url": "https://www.deezer.com/track/65245760",
+          "position": 43
+        },
+        {
+          "title": "Throne",
+          "artists": [
+            "Bring Me the Horizon"
+          ],
+          "url": "https://www.deezer.com/track/106746752",
+          "position": 44
+        },
+        {
+          "title": "Drown",
+          "artists": [
+            "Bring Me the Horizon"
+          ],
+          "url": "https://www.deezer.com/track/106746764",
+          "position": 45
+        },
+        {
+          "title": "Wrong Side of Heaven",
+          "artists": [
+            "Five Finger Death Punch"
+          ],
+          "url": "https://www.deezer.com/track/69443939",
+          "position": 46
+        },
+        {
+          "title": "Jekyll and Hyde",
+          "artists": [
+            "Five Finger Death Punch"
+          ],
+          "url": "https://www.deezer.com/track/106156874",
+          "position": 47
+        },
+        {
+          "title": "Wash It All Away",
+          "artists": [
+            "Five Finger Death Punch"
+          ],
+          "url": "https://www.deezer.com/track/106156876",
+          "position": 48
+        },
+        {
+          "title": "Ace of Spades",
+          "artists": [
+            "Motörhead"
+          ],
+          "url": "https://www.deezer.com/track/5169799",
+          "position": 49
+        },
+        {
+          "title": "Overkill",
+          "artists": [
+            "Motörhead"
+          ],
+          "url": "https://www.deezer.com/track/3801681162",
+          "position": 50
+        },
+        {
+          "title": "The Last Stand",
+          "artists": [
+            "Sabaton"
+          ],
+          "url": "https://www.deezer.com/track/679862562",
+          "position": 51
+        },
+        {
+          "title": "To Hell and Back",
+          "artists": [
+            "Sabaton"
+          ],
+          "url": "https://www.deezer.com/track/679630072",
+          "position": 52
+        },
+        {
+          "title": "Потерянный Рай",
+          "artists": [
+            "Ария"
+          ],
+          "url": "https://www.deezer.com/track/69041058",
+          "position": 53
+        },
+        {
+          "title": "Штиль",
+          "artists": [
+            "Ария"
+          ],
+          "url": "https://www.deezer.com/track/67248535",
+          "position": 54
+        },
+        {
+          "title": "Улица роз",
+          "artists": [
+            "Ария"
+          ],
+          "url": "https://www.deezer.com/track/67248681",
+          "position": 55
+        },
+        {
+          "title": "Я свободен",
+          "artists": [
+            "Кипелов"
+          ],
+          "url": "https://www.deezer.com/track/2745274851",
+          "position": 56
+        },
+        {
+          "title": "Rollin' (Air Raid Vehicle)",
+          "artists": [
+            "Limp Bizkit"
+          ],
+          "url": "https://www.deezer.com/track/104011168",
+          "position": 57
+        },
+        {
+          "title": "Break Stuff",
+          "artists": [
+            "Limp Bizkit"
+          ],
+          "url": "https://www.deezer.com/track/94613616",
+          "position": 58
+        },
+        {
+          "title": "Take A Look Around",
+          "artists": [
+            "Limp Bizkit"
+          ],
+          "url": "https://www.deezer.com/track/1143493",
+          "position": 59
+        },
+        {
+          "title": "Last Resort",
+          "artists": [
+            "Papa Roach"
+          ],
+          "url": "https://www.deezer.com/track/6435662",
+          "position": 60
+        },
+        {
+          "title": "Between Angels And Insects",
+          "artists": [
+            "Papa Roach"
+          ],
+          "url": "https://www.deezer.com/track/620289152",
+          "position": 61
+        },
+        {
+          "title": "Scars",
+          "artists": [
+            "Papa Roach"
+          ],
+          "url": "https://www.deezer.com/track/6435665",
+          "position": 62
+        },
+        {
+          "title": "Bring Me To Life",
+          "artists": [
+            "Evanescence"
+          ],
+          "url": "https://www.deezer.com/track/80274512",
+          "position": 63
+        },
+        {
+          "title": "Going Under",
+          "artists": [
+            "Evanescence"
+          ],
+          "url": "https://www.deezer.com/track/80274510",
+          "position": 64
+        },
+        {
+          "title": "My Immortal",
+          "artists": [
+            "Evanescence"
+          ],
+          "url": "https://www.deezer.com/track/80274516",
+          "position": 65
+        },
+        {
+          "title": "Mary On A Cross",
+          "artists": [
+            "Ghost"
+          ],
+          "url": "https://www.deezer.com/track/1881054427",
+          "position": 66
+        },
+        {
+          "title": "Square Hammer",
+          "artists": [
+            "Ghost"
+          ],
+          "url": "https://www.deezer.com/track/132196994",
+          "position": 67
+        },
+        {
+          "title": "Dance Macabre",
+          "artists": [
+            "Ghost"
+          ],
+          "url": "https://www.deezer.com/track/505508992",
+          "position": 68
+        },
+        {
+          "title": "Stranded",
+          "artists": [
+            "Gojira"
+          ],
+          "url": "https://www.deezer.com/track/126338367",
+          "position": 69
+        },
+        {
+          "title": "Silvera",
+          "artists": [
+            "Gojira"
+          ],
+          "url": "https://www.deezer.com/track/126338363",
+          "position": 70
+        },
+        {
+          "title": "Amazonia",
+          "artists": [
+            "Gojira"
+          ],
+          "url": "https://www.deezer.com/track/1331764082",
+          "position": 71
+        }
       ]
     },
     {
       "id": "dad-rock-top",
-      "kind": "deezer-artist-top",
-      "title": "Deezer — самые популярные песни классического рока",
-      "url": "https://www.deezer.com/",
+      "kind": "verified-tracks",
+      "title": "Полсекунды — Батин рок: редакторский список хитов",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
       "genres": [
         "dad-rock"
       ],
-      "perArtist": 6,
-      "limit": 500,
-      "artists": [
-        "Led Zeppelin",
-        "Iron Maiden",
-        "Pink Floyd",
-        "Deep Purple",
-        "The Beatles",
-        "Red Hot Chili Peppers",
-        "Queen",
-        "The Rolling Stones",
-        "AC/DC",
-        "Aerosmith",
-        "Scorpions",
-        "Dire Straits",
-        "Eagles",
-        "Nirvana",
-        "Guns N' Roses",
-        "Bon Jovi",
-        "The Doors",
-        "Creedence Clearwater Revival",
-        "Кино",
-        "Король и Шут",
-        "Наутилус Помпилиус"
+      "allowedArtistIds": [
+        1,
+        11,
+        115,
+        176,
+        182,
+        210,
+        412,
+        415,
+        637,
+        663,
+        847,
+        848,
+        860,
+        863,
+        864,
+        931,
+        1005,
+        2468,
+        4179069,
+        4237492,
+        4505880,
+        267273492
+      ],
+      "tracks": [
+        {
+          "title": "Stairway to Heaven (Remaster)",
+          "artists": [
+            "Led Zeppelin"
+          ],
+          "url": "https://www.deezer.com/track/111628786",
+          "position": 1
+        },
+        {
+          "title": "Whole Lotta Love (Remaster)",
+          "artists": [
+            "Led Zeppelin"
+          ],
+          "url": "https://www.deezer.com/track/78671026",
+          "position": 2
+        },
+        {
+          "title": "Immigrant Song (Remaster)",
+          "artists": [
+            "Led Zeppelin"
+          ],
+          "url": "https://www.deezer.com/track/78652582",
+          "position": 3
+        },
+        {
+          "title": "Kashmir (Remaster)",
+          "artists": [
+            "Led Zeppelin"
+          ],
+          "url": "https://www.deezer.com/track/95085780",
+          "position": 4
+        },
+        {
+          "title": "Wish You Were Here",
+          "artists": [
+            "Pink Floyd"
+          ],
+          "url": "https://www.deezer.com/track/116914042",
+          "position": 5
+        },
+        {
+          "title": "Another Brick in the Wall, Pt. 2",
+          "artists": [
+            "Pink Floyd"
+          ],
+          "url": "https://www.deezer.com/track/116914094",
+          "position": 6
+        },
+        {
+          "title": "Time",
+          "artists": [
+            "Pink Floyd"
+          ],
+          "url": "https://www.deezer.com/track/116914022",
+          "position": 7
+        },
+        {
+          "title": "Comfortably Numb",
+          "artists": [
+            "Pink Floyd"
+          ],
+          "url": "https://www.deezer.com/track/116914122",
+          "position": 8
+        },
+        {
+          "title": "Smoke On The Water",
+          "artists": [
+            "Deep Purple"
+          ],
+          "url": "https://www.deezer.com/track/3137049",
+          "position": 9
+        },
+        {
+          "title": "Highway Star (Remastered 2012)",
+          "artists": [
+            "Deep Purple"
+          ],
+          "url": "https://www.deezer.com/track/60840053",
+          "position": 10
+        },
+        {
+          "title": "Child in Time (1995 Remaster)",
+          "artists": [
+            "Deep Purple"
+          ],
+          "url": "https://www.deezer.com/track/3230170",
+          "position": 11
+        },
+        {
+          "title": "Let It Be (Remastered 2009)",
+          "artists": [
+            "The Beatles"
+          ],
+          "url": "https://www.deezer.com/track/116348134",
+          "position": 12
+        },
+        {
+          "title": "Yesterday (Remastered 2015)",
+          "artists": [
+            "The Beatles"
+          ],
+          "url": "https://www.deezer.com/track/116348612",
+          "position": 13
+        },
+        {
+          "title": "Come Together (Remastered 2009)",
+          "artists": [
+            "The Beatles"
+          ],
+          "url": "https://www.deezer.com/track/116348452",
+          "position": 14
+        },
+        {
+          "title": "Hey Jude (Remastered 2015)",
+          "artists": [
+            "The Beatles"
+          ],
+          "url": "https://www.deezer.com/track/116348632",
+          "position": 15
+        },
+        {
+          "title": "Bohemian Rhapsody",
+          "artists": [
+            "Queen"
+          ],
+          "url": "https://www.deezer.com/track/4091937401",
+          "position": 16
+        },
+        {
+          "title": "Don't Stop Me Now",
+          "artists": [
+            "Queen"
+          ],
+          "url": "https://www.deezer.com/track/4092329741",
+          "position": 17
+        },
+        {
+          "title": "The Show Must Go On",
+          "artists": [
+            "Queen"
+          ],
+          "url": "https://www.deezer.com/track/4092326741",
+          "position": 18
+        },
+        {
+          "title": "We Will Rock You",
+          "artists": [
+            "Queen"
+          ],
+          "url": "https://www.deezer.com/track/4092312801",
+          "position": 19
+        },
+        {
+          "title": "Thunderstruck",
+          "artists": [
+            "AC/DC"
+          ],
+          "url": "https://www.deezer.com/track/92720102",
+          "position": 20
+        },
+        {
+          "title": "Highway to Hell",
+          "artists": [
+            "AC/DC"
+          ],
+          "url": "https://www.deezer.com/track/92719900",
+          "position": 21
+        },
+        {
+          "title": "Back In Black",
+          "artists": [
+            "AC/DC"
+          ],
+          "url": "https://www.deezer.com/track/92720046",
+          "position": 22
+        },
+        {
+          "title": "Paint It Black",
+          "artists": [
+            "The Rolling Stones"
+          ],
+          "url": "https://www.deezer.com/track/2594482212",
+          "position": 23
+        },
+        {
+          "title": "(I Can't Get No) Satisfaction (Mono)",
+          "artists": [
+            "The Rolling Stones"
+          ],
+          "url": "https://www.deezer.com/track/7677778",
+          "position": 24
+        },
+        {
+          "title": "Sympathy For The Devil",
+          "artists": [
+            "The Rolling Stones"
+          ],
+          "url": "https://www.deezer.com/track/9956063",
+          "position": 25
+        },
+        {
+          "title": "Californication",
+          "artists": [
+            "Red Hot Chili Peppers"
+          ],
+          "url": "https://www.deezer.com/track/725274",
+          "position": 26
+        },
+        {
+          "title": "Can't Stop",
+          "artists": [
+            "Red Hot Chili Peppers"
+          ],
+          "url": "https://www.deezer.com/track/725971",
+          "position": 27
+        },
+        {
+          "title": "Otherside",
+          "artists": [
+            "Red Hot Chili Peppers"
+          ],
+          "url": "https://www.deezer.com/track/725261",
+          "position": 28
+        },
+        {
+          "title": "Dream on",
+          "artists": [
+            "Aerosmith"
+          ],
+          "url": "https://www.deezer.com/track/114295646",
+          "position": 29
+        },
+        {
+          "title": "I Don't Want To Miss A Thing",
+          "artists": [
+            "Aerosmith"
+          ],
+          "url": "https://www.deezer.com/track/624823",
+          "position": 30
+        },
+        {
+          "title": "Crazy",
+          "artists": [
+            "Aerosmith"
+          ],
+          "url": "https://www.deezer.com/track/1761381467",
+          "position": 31
+        },
+        {
+          "title": "Wind Of Change",
+          "artists": [
+            "Scorpions"
+          ],
+          "url": "https://www.deezer.com/track/927900",
+          "position": 32
+        },
+        {
+          "title": "Still Loving You",
+          "artists": [
+            "Scorpions"
+          ],
+          "url": "https://www.deezer.com/track/14299463",
+          "position": 33
+        },
+        {
+          "title": "Send Me An Angel",
+          "artists": [
+            "Scorpions"
+          ],
+          "url": "https://www.deezer.com/track/927907",
+          "position": 34
+        },
+        {
+          "title": "Sultans Of Swing",
+          "artists": [
+            "Dire Straits"
+          ],
+          "url": "https://www.deezer.com/track/2263033",
+          "position": 35
+        },
+        {
+          "title": "Money For Nothing",
+          "artists": [
+            "Dire Straits"
+          ],
+          "url": "https://www.deezer.com/track/2514681",
+          "position": 36
+        },
+        {
+          "title": "Walk Of Life",
+          "artists": [
+            "Dire Straits"
+          ],
+          "url": "https://www.deezer.com/track/2514683",
+          "position": 37
+        },
+        {
+          "title": "Hotel California (2013 Remaster)",
+          "artists": [
+            "Eagles"
+          ],
+          "url": "https://www.deezer.com/track/426703682",
+          "position": 38
+        },
+        {
+          "title": "Take It Easy (2013 Remaster)",
+          "artists": [
+            "Eagles"
+          ],
+          "url": "https://www.deezer.com/track/68116147",
+          "position": 39
+        },
+        {
+          "title": "Smells Like Teen Spirit",
+          "artists": [
+            "Nirvana"
+          ],
+          "url": "https://www.deezer.com/track/13791930",
+          "position": 40
+        },
+        {
+          "title": "Come As You Are (Remastered 2021)",
+          "artists": [
+            "Nirvana"
+          ],
+          "url": "https://www.deezer.com/track/1543592132",
+          "position": 41
+        },
+        {
+          "title": "Lithium",
+          "artists": [
+            "Nirvana"
+          ],
+          "url": "https://www.deezer.com/track/529900491",
+          "position": 42
+        },
+        {
+          "title": "Sweet Child O' Mine",
+          "artists": [
+            "Guns N' Roses"
+          ],
+          "url": "https://www.deezer.com/track/122891348",
+          "position": 43
+        },
+        {
+          "title": "Welcome to the Jungle",
+          "artists": [
+            "Guns N' Roses"
+          ],
+          "url": "https://www.deezer.com/track/122891330",
+          "position": 44
+        },
+        {
+          "title": "November Rain",
+          "artists": [
+            "Guns N' Roses"
+          ],
+          "url": "https://www.deezer.com/track/1169683",
+          "position": 45
+        },
+        {
+          "title": "Livin' On A Prayer",
+          "artists": [
+            "Bon Jovi"
+          ],
+          "url": "https://www.deezer.com/track/538660022",
+          "position": 46
+        },
+        {
+          "title": "It's My Life",
+          "artists": [
+            "Bon Jovi"
+          ],
+          "url": "https://www.deezer.com/track/577487252",
+          "position": 47
+        },
+        {
+          "title": "You Give Love A Bad Name",
+          "artists": [
+            "Bon Jovi"
+          ],
+          "url": "https://www.deezer.com/track/577487242",
+          "position": 48
+        },
+        {
+          "title": "Light My Fire",
+          "artists": [
+            "The Doors"
+          ],
+          "url": "https://www.deezer.com/track/3614129",
+          "position": 49
+        },
+        {
+          "title": "Break on Through (To the Other Side)",
+          "artists": [
+            "The Doors"
+          ],
+          "url": "https://www.deezer.com/track/3614124",
+          "position": 50
+        },
+        {
+          "title": "Riders on the Storm",
+          "artists": [
+            "The Doors"
+          ],
+          "url": "https://www.deezer.com/track/65445466",
+          "position": 51
+        },
+        {
+          "title": "Have You Ever Seen The Rain",
+          "artists": [
+            "Creedence Clearwater Revival"
+          ],
+          "url": "https://www.deezer.com/track/883644",
+          "position": 52
+        },
+        {
+          "title": "Fortunate Son",
+          "artists": [
+            "Creedence Clearwater Revival"
+          ],
+          "url": "https://www.deezer.com/track/883648",
+          "position": 53
+        },
+        {
+          "title": "Bad Moon Rising (Remastered 1985)",
+          "artists": [
+            "Creedence Clearwater Revival"
+          ],
+          "url": "https://www.deezer.com/track/883640",
+          "position": 54
+        },
+        {
+          "title": "Fear of the Dark (2015 Remaster)",
+          "artists": [
+            "Iron Maiden"
+          ],
+          "url": "https://www.deezer.com/track/585608872",
+          "position": 55
+        },
+        {
+          "title": "The Trooper (1998 Remaster)",
+          "artists": [
+            "Iron Maiden"
+          ],
+          "url": "https://www.deezer.com/track/3155089",
+          "position": 56
+        },
+        {
+          "title": "Run to the Hills (1998 Remaster)",
+          "artists": [
+            "Iron Maiden"
+          ],
+          "url": "https://www.deezer.com/track/3158433",
+          "position": 57
+        },
+        {
+          "title": "Группа крови",
+          "artists": [
+            "Кино"
+          ],
+          "url": "https://www.deezer.com/track/448260732",
+          "position": 58
+        },
+        {
+          "title": "Пачка сигарет",
+          "artists": [
+            "Кино"
+          ],
+          "url": "https://www.deezer.com/track/491201782",
+          "position": 59
+        },
+        {
+          "title": "Звезда по имени Солнце",
+          "artists": [
+            "Кино"
+          ],
+          "url": "https://www.deezer.com/track/448265892",
+          "position": 60
+        },
+        {
+          "title": "Кукушка",
+          "artists": [
+            "Кино"
+          ],
+          "url": "https://www.deezer.com/track/491201752",
+          "position": 61
+        },
+        {
+          "title": "Кукла колдуна",
+          "artists": [
+            "Король и Шут"
+          ],
+          "url": "https://www.deezer.com/track/2566497572",
+          "position": 62
+        },
+        {
+          "title": "Лесник",
+          "artists": [
+            "Король и Шут"
+          ],
+          "url": "https://www.deezer.com/track/2603529472",
+          "position": 63
+        },
+        {
+          "title": "Дурак и молния",
+          "artists": [
+            "Король и Шут"
+          ],
+          "url": "https://www.deezer.com/track/2603551832",
+          "position": 64
+        },
+        {
+          "title": "Проклятый старый дом",
+          "artists": [
+            "Король и Шут"
+          ],
+          "url": "https://www.deezer.com/track/2603545962",
+          "position": 65
+        },
+        {
+          "title": "Крылья",
+          "artists": [
+            "Наутилус Помпилиус"
+          ],
+          "url": "https://www.deezer.com/track/105436432",
+          "position": 66
+        },
+        {
+          "title": "Я хочу быть с тобой",
+          "artists": [
+            "Наутилус Помпилиус"
+          ],
+          "url": "https://www.deezer.com/track/102529050",
+          "position": 67
+        },
+        {
+          "title": "Прогулки по воде",
+          "artists": [
+            "Наутилус Помпилиус"
+          ],
+          "url": "https://www.deezer.com/track/102529062",
+          "position": 68
+        }
       ]
     },
     {
@@ -927,164 +2618,1139 @@
     },
     {
       "id": "modern-pop-top",
-      "kind": "deezer-artist-top",
-      "title": "Deezer — самые популярные песни мирового попа и поп-рока",
-      "url": "https://www.deezer.com/",
+      "kind": "verified-tracks",
+      "title": "Полсекунды — Мировой поп: редакторский список хитов",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
       "genres": [
         "modern-pop"
       ],
-      "perArtist": 5,
-      "limit": 500,
-      "artists": [
-        "The Weeknd",
-        "Imagine Dragons",
-        "Barns Courtney",
-        "Dua Lipa",
-        "Billie Eilish",
-        "Harry Styles",
-        "Ed Sheeran",
-        "Coldplay",
-        "OneRepublic",
-        "Twenty One Pilots",
-        "Maroon 5",
-        "Post Malone",
-        "Arctic Monkeys",
-        "Lana Del Rey",
-        "Hozier",
-        "Glass Animals",
-        "Sia",
-        "Halsey",
-        "Bruno Mars",
-        "Panic! At The Disco",
-        "Kaleo",
-        "The Neighbourhood",
-        "Taylor Swift",
-        "Ariana Grande",
-        "Justin Bieber",
-        "Rihanna",
-        "Katy Perry",
-        "Lady Gaga",
-        "Olivia Rodrigo",
-        "Sabrina Carpenter",
-        "Shawn Mendes",
-        "Miley Cyrus",
-        "Selena Gomez",
-        "Lewis Capaldi",
-        "Charlie Puth",
-        "Calvin Harris",
-        "David Guetta",
-        "Avicii",
-        "Adele",
-        "Sam Smith",
-        "Camila Cabello",
-        "Benson Boone",
-        "Teddy Swims",
-        "Chappell Roan",
-        "Tate McRae"
-      ]
-    },
-    {
-      "id": "us-hiphop-top",
-      "kind": "deezer-artist-top",
-      "title": "Deezer — самые популярные песни американского хип-хопа",
-      "url": "https://www.deezer.com/",
-      "genres": [
-        "us-hiphop"
+      "allowedArtistIds": [
+        564,
+        892,
+        1182,
+        1188,
+        1309,
+        3469,
+        12178,
+        12246,
+        12294,
+        12436,
+        74398,
+        75438,
+        75491,
+        75798,
+        144227,
+        288166,
+        292185,
+        293585,
+        294631,
+        362326,
+        384236,
+        416239,
+        429675,
+        647650,
+        1097709,
+        1176900,
+        1362735,
+        1424821,
+        1562681,
+        2489131,
+        4050205,
+        5062414,
+        5313805,
+        5962948,
+        8706544,
+        9074712,
+        9635624,
+        11152580,
+        12088868,
+        12945219,
+        13817211,
+        64927672,
+        146543992
       ],
-      "perArtist": 4,
-      "limit": 500,
-      "artists": [
-        "Drake",
-        "Kendrick Lamar",
-        "Travis Scott",
-        "Kanye West",
-        "Eminem",
-        "50 Cent",
-        "Snoop Dogg",
-        "Dr. Dre",
-        "JAY-Z",
-        "Lil Wayne",
-        "Nicki Minaj",
-        "Cardi B",
-        "Post Malone",
-        "Future",
-        "21 Savage",
-        "Metro Boomin",
-        "Lil Baby",
-        "DaBaby",
-        "Roddy Ricch",
-        "Pop Smoke",
-        "J. Cole",
-        "Tyler, The Creator",
-        "A$AP Rocky",
-        "Mac Miller",
-        "Wiz Khalifa",
-        "Lil Nas X",
-        "Megan Thee Stallion",
-        "Doja Cat",
-        "Gunna",
-        "Young Thug",
-        "Playboi Carti",
-        "Migos",
-        "Childish Gambino",
-        "Kid Cudi",
-        "The Notorious B.I.G.",
-        "2Pac",
-        "Ice Cube",
-        "Coolio",
-        "Outkast",
-        "Missy Elliott",
-        "NLE Choppa",
-        "Jack Harlow",
-        "Ice Spice",
-        "Don Toliver",
-        "Rae Sremmurd",
-        "Tyga",
-        "Big Sean",
-        "Macklemore",
-        "Flo Rida",
-        "Nelly"
+      "tracks": [
+        {
+          "title": "Blinding Lights",
+          "artists": [
+            "The Weeknd"
+          ],
+          "url": "https://www.deezer.com/track/908604612",
+          "position": 1
+        },
+        {
+          "title": "Save Your Tears",
+          "artists": [
+            "The Weeknd"
+          ],
+          "url": "https://www.deezer.com/track/908604632",
+          "position": 2
+        },
+        {
+          "title": "Believer",
+          "artists": [
+            "Imagine Dragons"
+          ],
+          "url": "https://www.deezer.com/track/528330441",
+          "position": 3
+        },
+        {
+          "title": "Radioactive",
+          "artists": [
+            "Imagine Dragons"
+          ],
+          "url": "https://www.deezer.com/track/63510358",
+          "position": 4
+        },
+        {
+          "title": "Demons",
+          "artists": [
+            "Imagine Dragons"
+          ],
+          "url": "https://www.deezer.com/track/63510361",
+          "position": 5
+        },
+        {
+          "title": "Glitter & Gold",
+          "artists": [
+            "Barns Courtney"
+          ],
+          "url": "https://www.deezer.com/track/111263366",
+          "position": 6
+        },
+        {
+          "title": "Fire",
+          "artists": [
+            "Barns Courtney"
+          ],
+          "url": "https://www.deezer.com/track/410107962",
+          "position": 7
+        },
+        {
+          "title": "Houdini",
+          "artists": [
+            "Dua Lipa"
+          ],
+          "url": "https://www.deezer.com/track/2525537871",
+          "position": 8
+        },
+        {
+          "title": "bad guy",
+          "artists": [
+            "Billie Eilish"
+          ],
+          "url": "https://www.deezer.com/track/655095912",
+          "position": 9
+        },
+        {
+          "title": "lovely",
+          "artists": [
+            "Billie Eilish"
+          ],
+          "url": "https://www.deezer.com/track/486928932",
+          "position": 10
+        },
+        {
+          "title": "BIRDS OF A FEATHER",
+          "artists": [
+            "Billie Eilish"
+          ],
+          "url": "https://www.deezer.com/track/2801558052",
+          "position": 11
+        },
+        {
+          "title": "As It Was",
+          "artists": [
+            "Harry Styles"
+          ],
+          "url": "https://www.deezer.com/track/1703487577",
+          "position": 12
+        },
+        {
+          "title": "Watermelon Sugar",
+          "artists": [
+            "Harry Styles"
+          ],
+          "url": "https://www.deezer.com/track/830336922",
+          "position": 13
+        },
+        {
+          "title": "Shape of You",
+          "artists": [
+            "Ed Sheeran"
+          ],
+          "url": "https://www.deezer.com/track/139470659",
+          "position": 14
+        },
+        {
+          "title": "Perfect",
+          "artists": [
+            "Ed Sheeran"
+          ],
+          "url": "https://www.deezer.com/track/142986206",
+          "position": 15
+        },
+        {
+          "title": "Bad Habits",
+          "artists": [
+            "Ed Sheeran"
+          ],
+          "url": "https://www.deezer.com/track/1529509472",
+          "position": 16
+        },
+        {
+          "title": "A Sky Full of Stars (Radio Edit)",
+          "artists": [
+            "Coldplay"
+          ],
+          "url": "https://www.deezer.com/track/80134624",
+          "position": 17
+        },
+        {
+          "title": "Counting Stars",
+          "artists": [
+            "OneRepublic"
+          ],
+          "url": "https://www.deezer.com/track/78527795",
+          "position": 18
+        },
+        {
+          "title": "I Ain't Worried",
+          "artists": [
+            "OneRepublic"
+          ],
+          "url": "https://www.deezer.com/track/1764283667",
+          "position": 19
+        },
+        {
+          "title": "Apologize",
+          "artists": [
+            "OneRepublic"
+          ],
+          "url": "https://www.deezer.com/track/916829",
+          "position": 20
+        },
+        {
+          "title": "Stressed Out",
+          "artists": [
+            "Twenty One Pilots"
+          ],
+          "url": "https://www.deezer.com/track/99976952",
+          "position": 21
+        },
+        {
+          "title": "Ride",
+          "artists": [
+            "Twenty One Pilots"
+          ],
+          "url": "https://www.deezer.com/track/99976954",
+          "position": 22
+        },
+        {
+          "title": "Heathens",
+          "artists": [
+            "Twenty One Pilots"
+          ],
+          "url": "https://www.deezer.com/track/126884459",
+          "position": 23
+        },
+        {
+          "title": "Sugar",
+          "artists": [
+            "Maroon 5"
+          ],
+          "url": "https://www.deezer.com/track/100052800",
+          "position": 24
+        },
+        {
+          "title": "Animals",
+          "artists": [
+            "Maroon 5"
+          ],
+          "url": "https://www.deezer.com/track/83124206",
+          "position": 25
+        },
+        {
+          "title": "Memories",
+          "artists": [
+            "Maroon 5"
+          ],
+          "url": "https://www.deezer.com/track/1400843202",
+          "position": 26
+        },
+        {
+          "title": "Do I Wanna Know?",
+          "artists": [
+            "Arctic Monkeys"
+          ],
+          "url": "https://www.deezer.com/track/70322130",
+          "position": 27
+        },
+        {
+          "title": "I Wanna Be Yours",
+          "artists": [
+            "Arctic Monkeys"
+          ],
+          "url": "https://www.deezer.com/track/70322142",
+          "position": 28
+        },
+        {
+          "title": "Young And Beautiful",
+          "artists": [
+            "Lana Del Rey"
+          ],
+          "url": "https://www.deezer.com/track/66660698",
+          "position": 29
+        },
+        {
+          "title": "Take Me To Church",
+          "artists": [
+            "Hozier"
+          ],
+          "url": "https://www.deezer.com/track/84791735",
+          "position": 30
+        },
+        {
+          "title": "Too Sweet",
+          "artists": [
+            "Hozier"
+          ],
+          "url": "https://www.deezer.com/track/2704610682",
+          "position": 31
+        },
+        {
+          "title": "Heat Waves",
+          "artists": [
+            "Glass Animals"
+          ],
+          "url": "https://www.deezer.com/track/1040154662",
+          "position": 32
+        },
+        {
+          "title": "Chandelier",
+          "artists": [
+            "Sia"
+          ],
+          "url": "https://www.deezer.com/track/79587580",
+          "position": 33
+        },
+        {
+          "title": "Cheap Thrills",
+          "artists": [
+            "Sia"
+          ],
+          "url": "https://www.deezer.com/track/118195184",
+          "position": 34
+        },
+        {
+          "title": "Just the Way You Are",
+          "artists": [
+            "Bruno Mars"
+          ],
+          "url": "https://www.deezer.com/track/8011850",
+          "position": 35
+        },
+        {
+          "title": "Grenade",
+          "artists": [
+            "Bruno Mars"
+          ],
+          "url": "https://www.deezer.com/track/8011849",
+          "position": 36
+        },
+        {
+          "title": "That's What I Like",
+          "artists": [
+            "Bruno Mars"
+          ],
+          "url": "https://www.deezer.com/track/136336116",
+          "position": 37
+        },
+        {
+          "title": "Shake It Off",
+          "artists": [
+            "Taylor Swift"
+          ],
+          "url": "https://www.deezer.com/track/89077555",
+          "position": 38
+        },
+        {
+          "title": "Blank Space",
+          "artists": [
+            "Taylor Swift"
+          ],
+          "url": "https://www.deezer.com/track/89077547",
+          "position": 39
+        },
+        {
+          "title": "Cruel Summer",
+          "artists": [
+            "Taylor Swift"
+          ],
+          "url": "https://www.deezer.com/track/737967292",
+          "position": 40
+        },
+        {
+          "title": "7 rings",
+          "artists": [
+            "Ariana Grande"
+          ],
+          "url": "https://www.deezer.com/track/629899842",
+          "position": 41
+        },
+        {
+          "title": "thank u, next",
+          "artists": [
+            "Ariana Grande"
+          ],
+          "url": "https://www.deezer.com/track/629899852",
+          "position": 42
+        },
+        {
+          "title": "Sorry",
+          "artists": [
+            "Justin Bieber"
+          ],
+          "url": "https://www.deezer.com/track/112662366",
+          "position": 43
+        },
+        {
+          "title": "Love Yourself",
+          "artists": [
+            "Justin Bieber"
+          ],
+          "url": "https://www.deezer.com/track/112662368",
+          "position": 44
+        },
+        {
+          "title": "What Do You Mean?",
+          "artists": [
+            "Justin Bieber"
+          ],
+          "url": "https://www.deezer.com/track/112662364",
+          "position": 45
+        },
+        {
+          "title": "Diamonds",
+          "artists": [
+            "Rihanna"
+          ],
+          "url": "https://www.deezer.com/track/60978718",
+          "position": 46
+        },
+        {
+          "title": "We Found Love",
+          "artists": [
+            "Rihanna"
+          ],
+          "url": "https://www.deezer.com/track/14525574",
+          "position": 47
+        },
+        {
+          "title": "Umbrella",
+          "artists": [
+            "Rihanna"
+          ],
+          "url": "https://www.deezer.com/track/925106",
+          "position": 48
+        },
+        {
+          "title": "Roar",
+          "artists": [
+            "Katy Perry"
+          ],
+          "url": "https://www.deezer.com/track/71645431",
+          "position": 49
+        },
+        {
+          "title": "Firework",
+          "artists": [
+            "Katy Perry"
+          ],
+          "url": "https://www.deezer.com/track/3892384211",
+          "position": 50
+        },
+        {
+          "title": "Dark Horse",
+          "artists": [
+            "Katy Perry"
+          ],
+          "url": "https://www.deezer.com/track/71645436",
+          "position": 51
+        },
+        {
+          "title": "Bad Romance",
+          "artists": [
+            "Lady Gaga"
+          ],
+          "url": "https://www.deezer.com/track/4601933",
+          "position": 52
+        },
+        {
+          "title": "Poker Face",
+          "artists": [
+            "Lady Gaga"
+          ],
+          "url": "https://www.deezer.com/track/2603558",
+          "position": 53
+        },
+        {
+          "title": "Just Dance",
+          "artists": [
+            "Lady Gaga"
+          ],
+          "url": "https://www.deezer.com/track/4709947",
+          "position": 54
+        },
+        {
+          "title": "drivers license",
+          "artists": [
+            "Olivia Rodrigo"
+          ],
+          "url": "https://www.deezer.com/track/1378342592",
+          "position": 55
+        },
+        {
+          "title": "good 4 u",
+          "artists": [
+            "Olivia Rodrigo"
+          ],
+          "url": "https://www.deezer.com/track/1378342622",
+          "position": 56
+        },
+        {
+          "title": "vampire",
+          "artists": [
+            "Olivia Rodrigo"
+          ],
+          "url": "https://www.deezer.com/track/2440763155",
+          "position": 57
+        },
+        {
+          "title": "Espresso",
+          "artists": [
+            "Sabrina Carpenter"
+          ],
+          "url": "https://www.deezer.com/track/2743578151",
+          "position": 58
+        },
+        {
+          "title": "Please Please Please",
+          "artists": [
+            "Sabrina Carpenter"
+          ],
+          "url": "https://www.deezer.com/track/2831602002",
+          "position": 59
+        },
+        {
+          "title": "Stitches",
+          "artists": [
+            "Shawn Mendes"
+          ],
+          "url": "https://www.deezer.com/track/113418500",
+          "position": 60
+        },
+        {
+          "title": "Treat You Better",
+          "artists": [
+            "Shawn Mendes"
+          ],
+          "url": "https://www.deezer.com/track/351594981",
+          "position": 61
+        },
+        {
+          "title": "Flowers",
+          "artists": [
+            "Miley Cyrus"
+          ],
+          "url": "https://www.deezer.com/track/2105158337",
+          "position": 62
+        },
+        {
+          "title": "Wrecking Ball",
+          "artists": [
+            "Miley Cyrus"
+          ],
+          "url": "https://www.deezer.com/track/71137166",
+          "position": 63
+        },
+        {
+          "title": "Lose You To Love Me",
+          "artists": [
+            "Selena Gomez"
+          ],
+          "url": "https://www.deezer.com/track/847637202",
+          "position": 64
+        },
+        {
+          "title": "Love You Like A Love Song",
+          "artists": [
+            "Selena Gomez & The Scene"
+          ],
+          "url": "https://www.deezer.com/track/90305559",
+          "position": 65
+        },
+        {
+          "title": "Someone You Loved",
+          "artists": [
+            "Lewis Capaldi"
+          ],
+          "url": "https://www.deezer.com/track/582143242",
+          "position": 66
+        },
+        {
+          "title": "Before You Go",
+          "artists": [
+            "Lewis Capaldi"
+          ],
+          "url": "https://www.deezer.com/track/807205422",
+          "position": 67
+        },
+        {
+          "title": "Attention",
+          "artists": [
+            "Charlie Puth"
+          ],
+          "url": "https://www.deezer.com/track/349385251",
+          "position": 68
+        },
+        {
+          "title": "We Don't Talk Anymore (feat. Selena Gomez)",
+          "artists": [
+            "Charlie Puth"
+          ],
+          "url": "https://www.deezer.com/track/117797212",
+          "position": 69
+        },
+        {
+          "title": "Wake Me Up",
+          "artists": [
+            "Avicii"
+          ],
+          "url": "https://www.deezer.com/track/70266756",
+          "position": 70
+        },
+        {
+          "title": "Levels (Radio Edit)",
+          "artists": [
+            "Avicii"
+          ],
+          "url": "https://www.deezer.com/track/14383880",
+          "position": 71
+        },
+        {
+          "title": "Hey Brother",
+          "artists": [
+            "Avicii"
+          ],
+          "url": "https://www.deezer.com/track/70266758",
+          "position": 72
+        },
+        {
+          "title": "Hello",
+          "artists": [
+            "Adele"
+          ],
+          "url": "https://www.deezer.com/track/138545995",
+          "position": 73
+        },
+        {
+          "title": "Rolling in the Deep",
+          "artists": [
+            "Adele"
+          ],
+          "url": "https://www.deezer.com/track/8086126",
+          "position": 74
+        },
+        {
+          "title": "Someone Like You",
+          "artists": [
+            "Adele"
+          ],
+          "url": "https://www.deezer.com/track/8086136",
+          "position": 75
+        },
+        {
+          "title": "Stay With Me",
+          "artists": [
+            "Sam Smith"
+          ],
+          "url": "https://www.deezer.com/track/111780376",
+          "position": 76
+        },
+        {
+          "title": "I'm Not The Only One",
+          "artists": [
+            "Sam Smith"
+          ],
+          "url": "https://www.deezer.com/track/111780380",
+          "position": 77
+        },
+        {
+          "title": "Beautiful Things",
+          "artists": [
+            "Benson Boone"
+          ],
+          "url": "https://www.deezer.com/track/2704682202",
+          "position": 78
+        },
+        {
+          "title": "Lose Control",
+          "artists": [
+            "Teddy Swims"
+          ],
+          "url": "https://www.deezer.com/track/2319265555",
+          "position": 79
+        },
+        {
+          "title": "Good Luck, Babe!",
+          "artists": [
+            "Chappell Roan"
+          ],
+          "url": "https://www.deezer.com/track/2728070371",
+          "position": 80
+        },
+        {
+          "title": "greedy",
+          "artists": [
+            "Tate McRae"
+          ],
+          "url": "https://www.deezer.com/track/2444176345",
+          "position": 81
+        }
       ]
     },
     {
       "id": "dead-inside-top",
-      "kind": "deezer-artist-top",
-      "title": "Deezer — популярные песни русского эмо, инди и пост-панка (по списку друга)",
-      "url": "https://www.deezer.com/",
+      "kind": "verified-tracks",
+      "title": "Полсекунды — Дед инсайд: редакторский список хитов",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
       "genres": [
         "dead-inside"
       ],
-      "perArtist": 5,
-      "limit": 500,
-      "artists": [
-        "Пошлая Молли",
-        "ONDA ANDAR",
-        "Boulevard Depo",
-        "Кишлак",
-        "Автостопом по фазе сна",
-        "Убей меня, Эйс",
-        "Lil Peep",
-        "CUPSIZE",
-        "Монеточка",
-        "zhanulka",
-        "Дора",
-        "найтивыход",
-        "Папин Олимпос",
-        "Три дня дождя",
-        "Хадн Дадн",
-        "ssshhhiiittt!",
-        "Нервы",
-        "pyrokinesis",
-        "Френдзона",
-        "Алёна Швец",
-        "Пасош",
-        "Буерак",
-        "Дайте танк (!)",
-        "Sqwore",
-        "Mukka",
-        "Электрофорез",
-        "Шарлот",
-        "Лампабикт"
+      "allowedArtistIds": [
+        10292790,
+        11052788,
+        11420468,
+        54188452,
+        57812002,
+        73922432,
+        82043302,
+        98846202,
+        123267812,
+        124167622,
+        285630331,
+        290803481
+      ],
+      "tracks": [
+        {
+          "title": "универ",
+          "artists": [
+            "Baby Cute"
+          ],
+          "url": "https://www.deezer.com/track/4049813041",
+          "position": 1
+        },
+        {
+          "title": "I Hate love",
+          "artists": [
+            "Baby Cute"
+          ],
+          "url": "https://www.deezer.com/track/2430504215",
+          "position": 2
+        },
+        {
+          "title": "10th Chance",
+          "artists": [
+            "Baby Cute"
+          ],
+          "url": "https://www.deezer.com/track/4028896291",
+          "position": 3
+        },
+        {
+          "title": "I Got It",
+          "artists": [
+            "Baby Cute"
+          ],
+          "url": "https://www.deezer.com/track/4028935121",
+          "position": 4
+        },
+        {
+          "title": "Capybara",
+          "artists": [
+            "Baby Cute"
+          ],
+          "url": "https://www.deezer.com/track/2337208055",
+          "position": 5
+        },
+        {
+          "title": "пятый элемент",
+          "artists": [
+            "CUPSIZE"
+          ],
+          "url": "https://www.deezer.com/track/2477349141",
+          "position": 6
+        },
+        {
+          "title": "оригами",
+          "artists": [
+            "CUPSIZE"
+          ],
+          "url": "https://www.deezer.com/track/3563221491",
+          "position": 7
+        },
+        {
+          "title": "семнадцать ножевых",
+          "artists": [
+            "CUPSIZE"
+          ],
+          "url": "https://www.deezer.com/track/4051293491",
+          "position": 8
+        },
+        {
+          "title": "ты любишь танцевать",
+          "artists": [
+            "CUPSIZE"
+          ],
+          "url": "https://www.deezer.com/track/2477349131",
+          "position": 9
+        },
+        {
+          "title": "целую тебя",
+          "artists": [
+            "CUPSIZE"
+          ],
+          "url": "https://www.deezer.com/track/2477349151",
+          "position": 10
+        },
+        {
+          "title": "Friendly Fire (Prod. Avepack)",
+          "artists": [
+            "BOULEVARD DEPO"
+          ],
+          "url": "https://www.deezer.com/track/1111651652",
+          "position": 11
+        },
+        {
+          "title": "Angry toy$ (Prod. Ray Qwa)",
+          "artists": [
+            "BOULEVARD DEPO"
+          ],
+          "url": "https://www.deezer.com/track/1111651592",
+          "position": 12
+        },
+        {
+          "title": "No Flag (Prod. by Dante)",
+          "artists": [
+            "BOULEVARD DEPO"
+          ],
+          "url": "https://www.deezer.com/track/635291402",
+          "position": 13
+        },
+        {
+          "title": "Star Shopping",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478544551",
+          "position": 14
+        },
+        {
+          "title": "Save That Shit",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478514141",
+          "position": 15
+        },
+        {
+          "title": "Benz Truck (гелик)",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478510591",
+          "position": 16
+        },
+        {
+          "title": "The Brightside",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478543311",
+          "position": 17
+        },
+        {
+          "title": "Awful Things",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478514151",
+          "position": 18
+        },
+        {
+          "title": "type london",
+          "artists": [
+            "ONDA ANDAR"
+          ],
+          "url": "https://www.deezer.com/track/3578302941",
+          "position": 19
+        },
+        {
+          "title": "cachalot",
+          "artists": [
+            "ONDA ANDAR"
+          ],
+          "url": "https://www.deezer.com/track/3354502651",
+          "position": 20
+        },
+        {
+          "title": "Analog Angels",
+          "artists": [
+            "ONDA ANDAR"
+          ],
+          "url": "https://www.deezer.com/track/3510290181",
+          "position": 21
+        },
+        {
+          "title": "Интернет человек #2016",
+          "artists": [
+            "ONDA ANDAR"
+          ],
+          "url": "https://www.deezer.com/track/3042498091",
+          "position": 22
+        },
+        {
+          "title": "sleep mode",
+          "artists": [
+            "ONDA ANDAR"
+          ],
+          "url": "https://www.deezer.com/track/3842359741",
+          "position": 23
+        },
+        {
+          "title": "бабочки",
+          "artists": [
+            "zhanulka"
+          ],
+          "url": "https://www.deezer.com/track/3539291961",
+          "position": 24
+        },
+        {
+          "title": "наколки",
+          "artists": [
+            "zhanulka"
+          ],
+          "url": "https://www.deezer.com/track/2683998582",
+          "position": 25
+        },
+        {
+          "title": "лазить по стенам",
+          "artists": [
+            "zhanulka"
+          ],
+          "url": "https://www.deezer.com/track/2683998632",
+          "position": 26
+        },
+        {
+          "title": "ty pohozh na kota (remaster)",
+          "artists": [
+            "zhanulka"
+          ],
+          "url": "https://www.deezer.com/track/1533376712",
+          "position": 27
+        },
+        {
+          "title": "кимоно (2021)",
+          "artists": [
+            "zhanulka"
+          ],
+          "url": "https://www.deezer.com/track/2683998642",
+          "position": 28
+        },
+        {
+          "title": "Холодно",
+          "artists": [
+            "Кишлак"
+          ],
+          "url": "https://www.deezer.com/track/2537095391",
+          "position": 29
+        },
+        {
+          "title": "Ржавый",
+          "artists": [
+            "Кишлак"
+          ],
+          "url": "https://www.deezer.com/track/2537095351",
+          "position": 30
+        },
+        {
+          "title": "Самый лучший день",
+          "artists": [
+            "Кишлак"
+          ],
+          "url": "https://www.deezer.com/track/2317457285",
+          "position": 31
+        },
+        {
+          "title": "Слёзы",
+          "artists": [
+            "Кишлак"
+          ],
+          "url": "https://www.deezer.com/track/2317457305",
+          "position": 32
+        },
+        {
+          "title": "Дорадура",
+          "artists": [
+            "дора"
+          ],
+          "url": "https://www.deezer.com/track/3510729111",
+          "position": 33
+        },
+        {
+          "title": "Втюрилась",
+          "artists": [
+            "дора"
+          ],
+          "url": "https://www.deezer.com/track/3510785071",
+          "position": 34
+        },
+        {
+          "title": "Пошлю его на...",
+          "artists": [
+            "дора"
+          ],
+          "url": "https://www.deezer.com/track/2328781705",
+          "position": 35
+        },
+        {
+          "title": "Каждый раз",
+          "artists": [
+            "Монеточка"
+          ],
+          "url": "https://www.deezer.com/track/497528352",
+          "position": 36
+        },
+        {
+          "title": "Нимфоманка",
+          "artists": [
+            "Монеточка"
+          ],
+          "url": "https://www.deezer.com/track/497528362",
+          "position": 37
+        },
+        {
+          "title": "Переживу",
+          "artists": [
+            "Монеточка"
+          ],
+          "url": "https://www.deezer.com/track/1091430212",
+          "position": 38
+        },
+        {
+          "title": "Монополия",
+          "artists": [
+            "Монеточка"
+          ],
+          "url": "https://www.deezer.com/track/2812590722",
+          "position": 39
+        },
+        {
+          "title": "Это было в России",
+          "artists": [
+            "Монеточка"
+          ],
+          "url": "https://www.deezer.com/track/2812590692",
+          "position": 40
+        },
+        {
+          "title": "Тёмно-оранжевый закат",
+          "artists": [
+            "Папин Олимпос"
+          ],
+          "url": "https://www.deezer.com/track/3352943791",
+          "position": 41
+        },
+        {
+          "title": "Динозаврики",
+          "artists": [
+            "Папин Олимпос"
+          ],
+          "url": "https://www.deezer.com/track/3352940851",
+          "position": 42
+        },
+        {
+          "title": "Школа",
+          "artists": [
+            "Папин Олимпос"
+          ],
+          "url": "https://www.deezer.com/track/3352940981",
+          "position": 43
+        },
+        {
+          "title": "Официантка",
+          "artists": [
+            "Папин Олимпос"
+          ],
+          "url": "https://www.deezer.com/track/3352940561",
+          "position": 44
+        },
+        {
+          "title": "Снежинка",
+          "artists": [
+            "Папин Олимпос"
+          ],
+          "url": "https://www.deezer.com/track/2037972137",
+          "position": 45
+        },
+        {
+          "title": "цветы",
+          "artists": [
+            "тёмный принц"
+          ],
+          "url": "https://www.deezer.com/track/3402100921",
+          "position": 46
+        },
+        {
+          "title": "утекай",
+          "artists": [
+            "тёмный принц"
+          ],
+          "url": "https://www.deezer.com/track/4145181512",
+          "position": 47
+        },
+        {
+          "title": "Отпускай",
+          "artists": [
+            "Три дня дождя"
+          ],
+          "url": "https://www.deezer.com/track/1724829697",
+          "position": 48
+        },
+        {
+          "title": "Где ты",
+          "artists": [
+            "Три дня дождя"
+          ],
+          "url": "https://www.deezer.com/track/1254761232",
+          "position": 49
+        },
+        {
+          "title": "Демоны",
+          "artists": [
+            "Три дня дождя"
+          ],
+          "url": "https://www.deezer.com/track/873030372",
+          "position": 50
+        },
+        {
+          "title": "Я и одиночество",
+          "artists": [
+            "Три дня дождя"
+          ],
+          "url": "https://www.deezer.com/track/1829123547",
+          "position": 51
+        }
       ]
     },
     {
@@ -1530,15 +4196,6 @@
           "period": "Школьная ностальгия"
         },
         {
-          "title": "Безумие",
-          "artists": [
-            "Breezey Montana",
-            "ЛСП"
-          ],
-          "url": "https://www.deezer.com/track/609773952",
-          "period": "Школьная ностальгия"
-        },
-        {
           "title": "По волнам",
           "artists": [
             "Burito"
@@ -1739,17 +4396,6 @@
           "period": "Школьная ностальгия"
         },
         {
-          "title": "Монетка",
-          "artists": [
-            "СД",
-            "ЛСП",
-            "Booker",
-            "Вири Альди"
-          ],
-          "url": "https://www.deezer.com/track/3568829331",
-          "period": "Школьная ностальгия"
-        },
-        {
           "title": "Плачу на техно",
           "artists": [
             "ХЛЕБ"
@@ -1770,331 +4416,80 @@
     {
       "id": "us-hiphop-hits",
       "kind": "verified-tracks",
-      "title": "US Hip-Hop — редакторская подборка знакомых песен",
-      "url": "https://www.deezer.com/",
+      "title": "Полсекунды — US Hip-Hop: редакторский список хитов",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
       "genres": [
         "us-hiphop"
       ],
+      "allowedArtistIds": [
+        3,
+        13,
+        66,
+        102,
+        230,
+        763,
+        2519,
+        3505,
+        7972,
+        74309,
+        165930,
+        167095,
+        240305,
+        246791,
+        339209,
+        398521,
+        432022,
+        525046,
+        577666,
+        662130,
+        1113629,
+        1194083,
+        1384338,
+        1518490,
+        1590752,
+        4344192,
+        4495513,
+        4962010,
+        4968870,
+        5059044,
+        5575762,
+        6043160,
+        6853403,
+        7543848,
+        9093938,
+        9551192,
+        10002824,
+        13594287,
+        13631667,
+        15166511,
+        57203182,
+        58447102,
+        299587271
+      ],
       "tracks": [
-        {
-          "title": "Bank Account",
-          "artists": [
-            "21 Savage"
-          ],
-          "url": "https://www.deezer.com/track/380536131",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "a lot",
-          "artists": [
-            "21 Savage"
-          ],
-          "url": "https://www.deezer.com/track/607697962",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "F**kin' Problems (feat. Drake, 2 Chainz & Kendrick Lamar)",
-          "artists": [
-            "A$AP Rocky",
-            "Drake",
-            "Kendrick Lamar",
-            "2 Chainz"
-          ],
-          "url": "https://www.deezer.com/track/623422582",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Praise The Lord (Da Shine) (feat. Skepta)",
-          "artists": [
-            "A$AP Rocky",
-            "Skepta"
-          ],
-          "url": "https://www.deezer.com/track/503169162",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Panda",
-          "artists": [
-            "Desiigner"
-          ],
-          "url": "https://www.deezer.com/track/120026876",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "God's Plan",
-          "artists": [
-            "Drake"
-          ],
-          "url": "https://www.deezer.com/track/533609232",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Hotline Bling",
-          "artists": [
-            "Drake"
-          ],
-          "url": "https://www.deezer.com/track/124603286",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Mask Off",
-          "artists": [
-            "Future"
-          ],
-          "url": "https://www.deezer.com/track/142337683",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Life Is Good (feat. Drake)",
-          "artists": [
-            "Future",
-            "Drake"
-          ],
-          "url": "https://www.deezer.com/track/847699482",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Bound 2",
-          "artists": [
-            "Kanye West"
-          ],
-          "url": "https://www.deezer.com/track/68350113",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Heartless",
-          "artists": [
-            "Kanye West"
-          ],
-          "url": "https://www.deezer.com/track/130412300",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "POWER",
-          "artists": [
-            "Kanye West"
-          ],
-          "url": "https://www.deezer.com/track/7667059",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Stronger",
-          "artists": [
-            "Kanye West"
-          ],
-          "url": "https://www.deezer.com/track/1178682",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Flashing Lights",
-          "artists": [
-            "Kanye West",
-            "Dwele"
-          ],
-          "url": "https://www.deezer.com/track/630827302",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Gold Digger",
-          "artists": [
-            "Kanye West",
-            "Jamie Foxx"
-          ],
-          "url": "https://www.deezer.com/track/1184309",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "DNA.",
-          "artists": [
-            "Kendrick Lamar"
-          ],
-          "url": "https://www.deezer.com/track/350171251",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "HUMBLE.",
-          "artists": [
-            "Kendrick Lamar"
-          ],
-          "url": "https://www.deezer.com/track/350171311",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Money Trees",
-          "artists": [
-            "Kendrick Lamar",
-            "Jay Rock"
-          ],
-          "url": "https://www.deezer.com/track/67929157",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "MONTERO (Call Me By Your Name)",
-          "artists": [
-            "Lil Nas X"
-          ],
-          "url": "https://www.deezer.com/track/1283264142",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Old Town Road",
-          "artists": [
-            "Lil Nas X"
-          ],
-          "url": "https://www.deezer.com/track/699056262",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "INDUSTRY BABY",
-          "artists": [
-            "Lil Nas X",
-            "Jack Harlow"
-          ],
-          "url": "https://www.deezer.com/track/1439691952",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Am I Dreaming",
-          "artists": [
-            "Metro Boomin",
-            "A$AP Rocky",
-            "Roisee"
-          ],
-          "url": "https://www.deezer.com/track/2309928755",
-          "period": "Знакомые песни для компании"
-        },
         {
           "title": "Superhero (Heroes & Villains)",
           "artists": [
-            "Metro Boomin",
-            "Future",
-            "Chris Brown"
+            "Metro Boomin"
           ],
           "url": "https://www.deezer.com/track/2047662397",
-          "period": "Знакомые песни для компании"
+          "position": 1
         },
         {
           "title": "Too Many Nights",
           "artists": [
-            "Metro Boomin",
-            "Future",
-            "Don Toliver"
+            "Metro Boomin"
           ],
           "url": "https://www.deezer.com/track/2047662407",
-          "period": "Знакомые песни для компании"
+          "position": 2
         },
         {
-          "title": "Creepin'",
+          "title": "Space Cadet",
           "artists": [
-            "Metro Boomin",
-            "The Weeknd",
-            "21 Savage"
+            "Metro Boomin"
           ],
-          "url": "https://www.deezer.com/track/2047662477",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Walk It Talk It",
-          "artists": [
-            "Migos",
-            "Drake"
-          ],
-          "url": "https://www.deezer.com/track/453844292",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Bad and Boujee",
-          "artists": [
-            "Migos",
-            "Lil Uzi Vert"
-          ],
-          "url": "https://www.deezer.com/track/1693337757",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Camelot",
-          "artists": [
-            "NLE Choppa"
-          ],
-          "url": "https://www.deezer.com/track/745210272",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Shotta Flow",
-          "artists": [
-            "NLE Choppa"
-          ],
-          "url": "https://www.deezer.com/track/2628285692",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Walk Em Down (feat. Roddy Ricch)",
-          "artists": [
-            "NLE Choppa",
-            "Roddy Ricch"
-          ],
-          "url": "https://www.deezer.com/track/904180872",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Dior",
-          "artists": [
-            "Pop Smoke"
-          ],
-          "url": "https://www.deezer.com/track/3529770711",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "For The Night",
-          "artists": [
-            "Pop Smoke",
-            "Lil Baby",
-            "DaBaby"
-          ],
-          "url": "https://www.deezer.com/track/3529770231",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "rockstar",
-          "artists": [
-            "Post Malone",
-            "21 Savage"
-          ],
-          "url": "https://www.deezer.com/track/491446942",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Congratulations",
-          "artists": [
-            "Post Malone",
-            "Quavo"
-          ],
-          "url": "https://www.deezer.com/track/137726987",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Antidote",
-          "artists": [
-            "Travis Scott"
-          ],
-          "url": "https://www.deezer.com/track/106713886",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "BUTTERFLY EFFECT",
-          "artists": [
-            "Travis Scott"
-          ],
-          "url": "https://www.deezer.com/track/536421122",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "HIGHEST IN THE ROOM",
-          "artists": [
-            "Travis Scott"
-          ],
-          "url": "https://www.deezer.com/track/767583072",
-          "period": "Знакомые песни для компании"
+          "url": "https://www.deezer.com/track/578715472",
+          "position": 3
         },
         {
           "title": "SICKO MODE",
@@ -2102,7 +4497,7 @@
             "Travis Scott"
           ],
           "url": "https://www.deezer.com/track/536421002",
-          "period": "Знакомые песни для компании"
+          "position": 4
         },
         {
           "title": "goosebumps",
@@ -2110,275 +4505,567 @@
             "Travis Scott"
           ],
           "url": "https://www.deezer.com/track/132201196",
-          "period": "Знакомые песни для компании"
+          "position": 5
+        },
+        {
+          "title": "HIGHEST IN THE ROOM",
+          "artists": [
+            "Travis Scott"
+          ],
+          "url": "https://www.deezer.com/track/767583072",
+          "position": 6
         },
         {
           "title": "FE!N (feat. Playboi Carti)",
           "artists": [
-            "Travis Scott",
-            "Playboi Carti"
+            "Travis Scott"
           ],
           "url": "https://www.deezer.com/track/2386586085",
-          "period": "Знакомые песни для компании"
+          "position": 7
+        },
+        {
+          "title": "Stronger",
+          "artists": [
+            "Kanye West"
+          ],
+          "url": "https://www.deezer.com/track/1178682",
+          "position": 8
+        },
+        {
+          "title": "POWER",
+          "artists": [
+            "Kanye West"
+          ],
+          "url": "https://www.deezer.com/track/7667059",
+          "position": 9
+        },
+        {
+          "title": "Heartless",
+          "artists": [
+            "Kanye West"
+          ],
+          "url": "https://www.deezer.com/track/130412300",
+          "position": 10
+        },
+        {
+          "title": "Gold Digger",
+          "artists": [
+            "Kanye West"
+          ],
+          "url": "https://www.deezer.com/track/1184309",
+          "position": 11
+        },
+        {
+          "title": "HUMBLE.",
+          "artists": [
+            "Kendrick Lamar"
+          ],
+          "url": "https://www.deezer.com/track/350171311",
+          "position": 12
+        },
+        {
+          "title": "DNA.",
+          "artists": [
+            "Kendrick Lamar"
+          ],
+          "url": "https://www.deezer.com/track/350171251",
+          "position": 13
+        },
+        {
+          "title": "Not Like Us",
+          "artists": [
+            "Kendrick Lamar"
+          ],
+          "url": "https://www.deezer.com/track/2783963122",
+          "position": 14
+        },
+        {
+          "title": "God's Plan",
+          "artists": [
+            "Drake"
+          ],
+          "url": "https://www.deezer.com/track/533609232",
+          "position": 15
+        },
+        {
+          "title": "Hotline Bling",
+          "artists": [
+            "Drake"
+          ],
+          "url": "https://www.deezer.com/track/124603286",
+          "position": 16
+        },
+        {
+          "title": "Nonstop",
+          "artists": [
+            "Drake"
+          ],
+          "url": "https://www.deezer.com/track/533609202",
+          "position": 17
+        },
+        {
+          "title": "Mask Off",
+          "artists": [
+            "Future"
+          ],
+          "url": "https://www.deezer.com/track/142337683",
+          "position": 18
+        },
+        {
+          "title": "a lot",
+          "artists": [
+            "21 Savage"
+          ],
+          "url": "https://www.deezer.com/track/607697962",
+          "position": 19
+        },
+        {
+          "title": "Bank Account",
+          "artists": [
+            "21 Savage"
+          ],
+          "url": "https://www.deezer.com/track/380536131",
+          "position": 20
+        },
+        {
+          "title": "redrum",
+          "artists": [
+            "21 Savage"
+          ],
+          "url": "https://www.deezer.com/track/2614584352",
+          "position": 21
+        },
+        {
+          "title": "Walk It Talk It",
+          "artists": [
+            "Migos"
+          ],
+          "url": "https://www.deezer.com/track/453844292",
+          "position": 22
+        },
+        {
+          "title": "Praise The Lord (Da Shine) (feat. Skepta)",
+          "artists": [
+            "A$AP Rocky"
+          ],
+          "url": "https://www.deezer.com/track/503169162",
+          "position": 23
+        },
+        {
+          "title": "F**kin' Problems (feat. Drake, 2 Chainz & Kendrick Lamar)",
+          "artists": [
+            "A$AP Rocky"
+          ],
+          "url": "https://www.deezer.com/track/623422582",
+          "position": 24
+        },
+        {
+          "title": "MONTERO (Call Me By Your Name)",
+          "artists": [
+            "Lil Nas X"
+          ],
+          "url": "https://www.deezer.com/track/1283264142",
+          "position": 25
+        },
+        {
+          "title": "INDUSTRY BABY",
+          "artists": [
+            "Lil Nas X"
+          ],
+          "url": "https://www.deezer.com/track/1439691952",
+          "position": 26
+        },
+        {
+          "title": "Old Town Road",
+          "artists": [
+            "Lil Nas X"
+          ],
+          "url": "https://www.deezer.com/track/699056262",
+          "position": 27
+        },
+        {
+          "title": "Shotta Flow",
+          "artists": [
+            "NLE Choppa"
+          ],
+          "url": "https://www.deezer.com/track/2628285692",
+          "position": 28
+        },
+        {
+          "title": "Camelot",
+          "artists": [
+            "NLE Choppa"
+          ],
+          "url": "https://www.deezer.com/track/745210272",
+          "position": 29
+        },
+        {
+          "title": "Walk Em Down (feat. Roddy Ricch)",
+          "artists": [
+            "NLE Choppa"
+          ],
+          "url": "https://www.deezer.com/track/904180872",
+          "position": 30
+        },
+        {
+          "title": "Dior",
+          "artists": [
+            "Pop Smoke"
+          ],
+          "url": "https://www.deezer.com/track/3529770711",
+          "position": 31
+        },
+        {
+          "title": "Welcome To The Party",
+          "artists": [
+            "Pop Smoke"
+          ],
+          "url": "https://www.deezer.com/track/3529770671",
+          "position": 32
+        },
+        {
+          "title": "rockstar",
+          "artists": [
+            "Post Malone"
+          ],
+          "url": "https://www.deezer.com/track/491446942",
+          "position": 33
+        },
+        {
+          "title": "Congratulations",
+          "artists": [
+            "Post Malone"
+          ],
+          "url": "https://www.deezer.com/track/137726987",
+          "position": 34
+        },
+        {
+          "title": "White Iverson",
+          "artists": [
+            "Post Malone"
+          ],
+          "url": "https://www.deezer.com/track/137726975",
+          "position": 35
+        },
+        {
+          "title": "Magnolia",
+          "artists": [
+            "Playboi Carti"
+          ],
+          "url": "https://www.deezer.com/track/347376721",
+          "position": 36
+        },
+        {
+          "title": "Sky",
+          "artists": [
+            "Playboi Carti"
+          ],
+          "url": "https://www.deezer.com/track/1189531242",
+          "position": 37
+        },
+        {
+          "title": "fukumean",
+          "artists": [
+            "Gunna"
+          ],
+          "url": "https://www.deezer.com/track/2329875155",
+          "position": 38
+        },
+        {
+          "title": "Hot (feat. Gunna)",
+          "artists": [
+            "Young Thug"
+          ],
+          "url": "https://www.deezer.com/track/731858182",
+          "position": 39
+        },
+        {
+          "title": "Digits",
+          "artists": [
+            "Young Thug"
+          ],
+          "url": "https://www.deezer.com/track/121275010",
+          "position": 40
+        },
+        {
+          "title": "Freestyle",
+          "artists": [
+            "Lil Baby"
+          ],
+          "url": "https://www.deezer.com/track/434713132",
+          "position": 41
+        },
+        {
+          "title": "Yes Indeed",
+          "artists": [
+            "Lil Baby"
+          ],
+          "url": "https://www.deezer.com/track/500099532",
+          "position": 42
+        },
+        {
+          "title": "The Box",
+          "artists": [
+            "Roddy Ricch"
+          ],
+          "url": "https://www.deezer.com/track/825986992",
+          "position": 43
+        },
+        {
+          "title": "High Fashion (feat. Mustard)",
+          "artists": [
+            "Roddy Ricch"
+          ],
+          "url": "https://www.deezer.com/track/825987082",
+          "position": 44
+        },
+        {
+          "title": "No Role Modelz",
+          "artists": [
+            "J. Cole"
+          ],
+          "url": "https://www.deezer.com/track/1591188152",
+          "position": 45
+        },
+        {
+          "title": "MIDDLE CHILD",
+          "artists": [
+            "J. Cole"
+          ],
+          "url": "https://www.deezer.com/track/622457832",
+          "position": 46
+        },
+        {
+          "title": "EARFQUAKE",
+          "artists": [
+            "Tyler, The Creator"
+          ],
+          "url": "https://www.deezer.com/track/681009652",
+          "position": 47
+        },
+        {
+          "title": "See You Again (feat. Kali Uchis)",
+          "artists": [
+            "Tyler, The Creator"
+          ],
+          "url": "https://www.deezer.com/track/384157591",
+          "position": 48
+        },
+        {
+          "title": "No Idea",
+          "artists": [
+            "Don Toliver"
+          ],
+          "url": "https://www.deezer.com/track/685888382",
+          "position": 49
+        },
+        {
+          "title": "After Party",
+          "artists": [
+            "Don Toliver"
+          ],
+          "url": "https://www.deezer.com/track/902532622",
+          "position": 50
+        },
+        {
+          "title": "Black Beatles",
+          "artists": [
+            "Rae Sremmurd"
+          ],
+          "url": "https://www.deezer.com/track/130105294",
+          "position": 51
+        },
+        {
+          "title": "No Type",
+          "artists": [
+            "Rae Sremmurd"
+          ],
+          "url": "https://www.deezer.com/track/92871300",
+          "position": 52
+        },
+        {
+          "title": "Lose Yourself",
+          "artists": [
+            "Eminem"
+          ],
+          "url": "https://www.deezer.com/track/1109731",
+          "position": 53
+        },
+        {
+          "title": "Without Me",
+          "artists": [
+            "Eminem"
+          ],
+          "url": "https://www.deezer.com/track/916424",
+          "position": 54
+        },
+        {
+          "title": "The Real Slim Shady",
+          "artists": [
+            "Eminem"
+          ],
+          "url": "https://www.deezer.com/track/1109737",
+          "position": 55
+        },
+        {
+          "title": "In Da Club",
+          "artists": [
+            "50 Cent"
+          ],
+          "url": "https://www.deezer.com/track/1141668",
+          "position": 56
+        },
+        {
+          "title": "P.I.M.P.",
+          "artists": [
+            "50 Cent"
+          ],
+          "url": "https://www.deezer.com/track/1141674",
+          "position": 57
+        },
+        {
+          "title": "Still D.R.E.",
+          "artists": [
+            "Dr. Dre"
+          ],
+          "url": "https://www.deezer.com/track/128743581",
+          "position": 58
+        },
+        {
+          "title": "The Next Episode",
+          "artists": [
+            "Dr. Dre"
+          ],
+          "url": "https://www.deezer.com/track/128743595",
+          "position": 59
+        },
+        {
+          "title": "Forgot About Dre",
+          "artists": [
+            "Dr. Dre"
+          ],
+          "url": "https://www.deezer.com/track/128743593",
+          "position": 60
+        },
+        {
+          "title": "Drop It Like It's Hot",
+          "artists": [
+            "Snoop Dogg"
+          ],
+          "url": "https://www.deezer.com/track/67461455",
+          "position": 61
+        },
+        {
+          "title": "Who Am I (What’s My Name)?",
+          "artists": [
+            "Snoop Dogg"
+          ],
+          "url": "https://www.deezer.com/track/2182691897",
+          "position": 62
+        },
+        {
+          "title": "Lollipop",
+          "artists": [
+            "Lil Wayne"
+          ],
+          "url": "https://www.deezer.com/track/884266",
+          "position": 63
+        },
+        {
+          "title": "Panda",
+          "artists": [
+            "Desiigner"
+          ],
+          "url": "https://www.deezer.com/track/120026876",
+          "position": 64
+        },
+        {
+          "title": "This Is America",
+          "artists": [
+            "Childish Gambino"
+          ],
+          "url": "https://www.deezer.com/track/496157642",
+          "position": 65
+        },
+        {
+          "title": "Redbone",
+          "artists": [
+            "Childish Gambino"
+          ],
+          "url": "https://www.deezer.com/track/3025966451",
+          "position": 66
+        },
+        {
+          "title": "Hypnotize (2007 Remaster)",
+          "artists": [
+            "The Notorious B.I.G."
+          ],
+          "url": "https://www.deezer.com/track/3616651",
+          "position": 67
+        },
+        {
+          "title": "Juicy (2007 Remaster)",
+          "artists": [
+            "The Notorious B.I.G."
+          ],
+          "url": "https://www.deezer.com/track/3616649",
+          "position": 68
+        },
+        {
+          "title": "California Love",
+          "artists": [
+            "2Pac"
+          ],
+          "url": "https://www.deezer.com/track/65163036",
+          "position": 69
+        },
+        {
+          "title": "Changes",
+          "artists": [
+            "2Pac"
+          ],
+          "url": "https://www.deezer.com/track/910693",
+          "position": 70
         }
       ]
     },
     {
       "id": "soundcloud-hits",
       "kind": "verified-tracks",
-      "title": "SoundCloud Hits — редакторская подборка знакомых песен",
-      "url": "https://www.deezer.com/",
+      "title": "Полсекунды — SoundCloud Hits: редакторский список хитов",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
       "genres": [
         "soundcloud"
       ],
+      "allowedArtistIds": [
+        230,
+        1590752,
+        4495513,
+        5059044,
+        6570309,
+        7101343,
+        7215914,
+        9776678,
+        9822974,
+        10502441,
+        10668131,
+        10989836,
+        11347866,
+        11420468,
+        11934257,
+        12835615,
+        13327309,
+        14456487,
+        59936352
+      ],
       "tracks": [
         {
-          "title": "Mood (feat. iann dior)",
-          "artists": [
-            "24kgoldn",
-            "Iann Dior"
-          ],
-          "url": "https://www.deezer.com/track/1283264632",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "emotions",
-          "artists": [
-            "Iann Dior"
-          ],
-          "url": "https://www.deezer.com/track/2493713371",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "gone girl (feat. Trippie Redd)",
-          "artists": [
-            "Iann Dior",
-            "Trippie Redd"
-          ],
-          "url": "https://www.deezer.com/track/2493716331",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "All Girls Are The Same",
-          "artists": [
-            "Juice Wrld"
-          ],
-          "url": "https://www.deezer.com/track/601837412",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Lucid Dreams",
-          "artists": [
-            "Juice Wrld"
-          ],
-          "url": "https://www.deezer.com/track/601837422",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Robbery",
-          "artists": [
-            "Juice Wrld"
-          ],
-          "url": "https://www.deezer.com/track/1634179012",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Wishing Well",
-          "artists": [
-            "Juice Wrld"
-          ],
-          "url": "https://www.deezer.com/track/1016968532",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Come & Go",
-          "artists": [
-            "Juice Wrld",
-            "Marshmello"
-          ],
-          "url": "https://www.deezer.com/track/1016968502",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Awful Things",
-          "artists": [
-            "Lil Peep"
-          ],
-          "url": "https://www.deezer.com/track/2478514151",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Benz Truck (гелик)",
-          "artists": [
-            "Lil Peep"
-          ],
-          "url": "https://www.deezer.com/track/2478510591",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Save That Shit",
-          "artists": [
-            "Lil Peep"
-          ],
-          "url": "https://www.deezer.com/track/2478514141",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Star Shopping",
-          "artists": [
-            "Lil Peep"
-          ],
-          "url": "https://www.deezer.com/track/2478544551",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "D Rose",
-          "artists": [
-            "Lil Pump"
-          ],
-          "url": "https://www.deezer.com/track/413807792",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Gucci Gang",
-          "artists": [
-            "Lil Pump"
-          ],
-          "url": "https://www.deezer.com/track/399023232",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Nowadays (feat. Landon Cube)",
-          "artists": [
-            "Lil Skies",
-            "Landon Cube"
-          ],
-          "url": "https://www.deezer.com/track/442693212",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Red Roses (feat. Landon Cube)",
-          "artists": [
-            "Lil Skies",
-            "Landon Cube"
-          ],
-          "url": "https://www.deezer.com/track/414870102",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "20 Min",
-          "artists": [
-            "Lil Uzi Vert"
-          ],
-          "url": "https://www.deezer.com/track/428537532",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Just Wanna Rock",
-          "artists": [
-            "Lil Uzi Vert"
-          ],
-          "url": "https://www.deezer.com/track/1965920237",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Money Longer",
-          "artists": [
-            "Lil Uzi Vert"
-          ],
-          "url": "https://www.deezer.com/track/125536814",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "XO Tour Llif3",
-          "artists": [
-            "Lil Uzi Vert"
-          ],
-          "url": "https://www.deezer.com/track/144949268",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "The Way Life Goes (feat. Oh Wonder)",
-          "artists": [
-            "Lil Uzi Vert",
-            "Oh Wonder"
-          ],
-          "url": "https://www.deezer.com/track/397571872",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "One Night",
-          "artists": [
-            "Lil Yachty"
-          ],
-          "url": "https://www.deezer.com/track/127880605",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "WITHOUT YOU",
-          "artists": [
-            "The Kid Laroi"
-          ],
-          "url": "https://www.deezer.com/track/1445417732",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "STAY",
-          "artists": [
-            "The Kid Laroi",
-            "Justin Bieber"
-          ],
-          "url": "https://www.deezer.com/track/1425844092",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Love Scars",
-          "artists": [
-            "Trippie Redd"
-          ],
-          "url": "https://www.deezer.com/track/2495298691",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Taking A Walk",
-          "artists": [
-            "Trippie Redd"
-          ],
-          "url": "https://www.deezer.com/track/2495308671",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Dark Knight Dummo (feat. Travis Scott)",
-          "artists": [
-            "Trippie Redd",
-            "Travis Scott"
-          ],
-          "url": "https://www.deezer.com/track/2495349031",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Hope",
+          "title": "SAD!",
           "artists": [
             "XXXTentacion"
           ],
-          "url": "https://www.deezer.com/track/472992722",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Jocelyn Flores",
-          "artists": [
-            "XXXTentacion"
-          ],
-          "url": "https://www.deezer.com/track/398055682",
-          "period": "Знакомые песни для компании"
-        },
-        {
-          "title": "Look At Me!",
-          "artists": [
-            "XXXTentacion"
-          ],
-          "url": "https://www.deezer.com/track/142594564",
-          "period": "Знакомые песни для компании"
+          "url": "https://www.deezer.com/track/472992602",
+          "position": 1
         },
         {
           "title": "Moonlight",
@@ -2386,15 +5073,31 @@
             "XXXTentacion"
           ],
           "url": "https://www.deezer.com/track/472992592",
-          "period": "Знакомые песни для компании"
+          "position": 2
         },
         {
-          "title": "SAD!",
+          "title": "Jocelyn Flores",
           "artists": [
             "XXXTentacion"
           ],
-          "url": "https://www.deezer.com/track/472992602",
-          "period": "Знакомые песни для компании"
+          "url": "https://www.deezer.com/track/398055682",
+          "position": 3
+        },
+        {
+          "title": "Look At Me!",
+          "artists": [
+            "XXXTentacion"
+          ],
+          "url": "https://www.deezer.com/track/142594564",
+          "position": 4
+        },
+        {
+          "title": "Hope",
+          "artists": [
+            "XXXTentacion"
+          ],
+          "url": "https://www.deezer.com/track/472992722",
+          "position": 5
         },
         {
           "title": "changes",
@@ -2402,7 +5105,215 @@
             "XXXTentacion"
           ],
           "url": "https://www.deezer.com/track/472992712",
-          "period": "Знакомые песни для компании"
+          "position": 6
+        },
+        {
+          "title": "XO Tour Llif3",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/144949268",
+          "position": 7
+        },
+        {
+          "title": "Money Longer",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/125536814",
+          "position": 8
+        },
+        {
+          "title": "20 Min",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/428537532",
+          "position": 9
+        },
+        {
+          "title": "You Was Right",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/125536818",
+          "position": 10
+        },
+        {
+          "title": "The Way Life Goes (feat. Oh Wonder)",
+          "artists": [
+            "Lil Uzi Vert"
+          ],
+          "url": "https://www.deezer.com/track/397571872",
+          "position": 11
+        },
+        {
+          "title": "Lucid Dreams",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/601837422",
+          "position": 12
+        },
+        {
+          "title": "All Girls Are The Same",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/601837412",
+          "position": 13
+        },
+        {
+          "title": "Robbery",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/1634179012",
+          "position": 14
+        },
+        {
+          "title": "Wishing Well",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/1016968532",
+          "position": 15
+        },
+        {
+          "title": "Lean Wit Me",
+          "artists": [
+            "Juice Wrld"
+          ],
+          "url": "https://www.deezer.com/track/601837462",
+          "position": 16
+        },
+        {
+          "title": "Star Shopping",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478544551",
+          "position": 17
+        },
+        {
+          "title": "Save That Shit",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478514141",
+          "position": 18
+        },
+        {
+          "title": "Benz Truck (гелик)",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478510591",
+          "position": 19
+        },
+        {
+          "title": "Awful Things",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478514151",
+          "position": 20
+        },
+        {
+          "title": "The Brightside",
+          "artists": [
+            "Lil Peep"
+          ],
+          "url": "https://www.deezer.com/track/2478543311",
+          "position": 21
+        },
+        {
+          "title": "Love Scars",
+          "artists": [
+            "Trippie Redd"
+          ],
+          "url": "https://www.deezer.com/track/2495298691",
+          "position": 22
+        },
+        {
+          "title": "Taking A Walk",
+          "artists": [
+            "Trippie Redd"
+          ],
+          "url": "https://www.deezer.com/track/2495308671",
+          "position": 23
+        },
+        {
+          "title": "Dark Knight Dummo (feat. Travis Scott)",
+          "artists": [
+            "Trippie Redd"
+          ],
+          "url": "https://www.deezer.com/track/2495349031",
+          "position": 24
+        },
+        {
+          "title": "Red Roses (feat. Landon Cube)",
+          "artists": [
+            "Lil Skies"
+          ],
+          "url": "https://www.deezer.com/track/414870102",
+          "position": 25
+        },
+        {
+          "title": "Nowadays (feat. Landon Cube)",
+          "artists": [
+            "Lil Skies"
+          ],
+          "url": "https://www.deezer.com/track/442693212",
+          "position": 26
+        },
+        {
+          "title": "I",
+          "artists": [
+            "Lil Skies"
+          ],
+          "url": "https://www.deezer.com/track/639462052",
+          "position": 27
+        },
+        {
+          "title": "Gucci Gang",
+          "artists": [
+            "Lil Pump"
+          ],
+          "url": "https://www.deezer.com/track/399023232",
+          "position": 28
+        },
+        {
+          "title": "D Rose",
+          "artists": [
+            "Lil Pump"
+          ],
+          "url": "https://www.deezer.com/track/413807792",
+          "position": 29
+        },
+        {
+          "title": "Esskeetit",
+          "artists": [
+            "Lil Pump"
+          ],
+          "url": "https://www.deezer.com/track/484090122",
+          "position": 30
+        },
+        {
+          "title": "One Night",
+          "artists": [
+            "Lil Yachty"
+          ],
+          "url": "https://www.deezer.com/track/127880605",
+          "position": 31
+        },
+        {
+          "title": "Minnesota",
+          "artists": [
+            "Lil Yachty"
+          ],
+          "url": "https://www.deezer.com/track/127880593",
+          "position": 32
         },
         {
           "title": "Murder on My Mind",
@@ -2410,7 +5321,71 @@
             "YNW Melly"
           ],
           "url": "https://www.deezer.com/track/505197202",
-          "period": "Знакомые песни для компании"
+          "position": 33
+        },
+        {
+          "title": "Mixed Personalities (feat. Kanye West)",
+          "artists": [
+            "YNW Melly"
+          ],
+          "url": "https://www.deezer.com/track/617739852",
+          "position": 34
+        },
+        {
+          "title": "emotions",
+          "artists": [
+            "Iann Dior"
+          ],
+          "url": "https://www.deezer.com/track/2493713371",
+          "position": 35
+        },
+        {
+          "title": "gone girl (feat. Trippie Redd)",
+          "artists": [
+            "Iann Dior"
+          ],
+          "url": "https://www.deezer.com/track/2493716331",
+          "position": 36
+        },
+        {
+          "title": "Faucet Failure",
+          "artists": [
+            "Ski Mask the Slump God"
+          ],
+          "url": "https://www.deezer.com/track/3527344531",
+          "position": 37
+        },
+        {
+          "title": "Catch Me Outside",
+          "artists": [
+            "Ski Mask the Slump God"
+          ],
+          "url": "https://www.deezer.com/track/3528333971",
+          "position": 38
+        },
+        {
+          "title": "Take A Step Back",
+          "artists": [
+            "Ski Mask the Slump God"
+          ],
+          "url": "https://www.deezer.com/track/3528333981",
+          "position": 39
+        },
+        {
+          "title": "Audi.",
+          "artists": [
+            "Smokepurpp"
+          ],
+          "url": "https://www.deezer.com/track/1477827272",
+          "position": 40
+        },
+        {
+          "title": "Fingers Blue (feat. Travis Scott)",
+          "artists": [
+            "Smokepurpp"
+          ],
+          "url": "https://www.deezer.com/track/1477827322",
+          "position": 41
         }
       ]
     }
