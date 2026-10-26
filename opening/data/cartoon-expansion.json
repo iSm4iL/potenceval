@@ -1,0 +1,1197 @@
+[
+  {
+    "animeId": "cartoon-frozen",
+    "category": "cartoon",
+    "titleRu": "Холодное сердце",
+    "titleOriginal": "Frozen",
+    "franchiseId": "frozen",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/0/05/Frozen_%282013_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Frozen_(2013_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 72371930,
+    "trackTitle": "Let It Go (From \"Frozen\"/Soundtrack Version)",
+    "artist": "Idina Menzel",
+    "artistId": 7023,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/7113713",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-lion-king",
+    "category": "cartoon",
+    "titleRu": "Король Лев",
+    "titleOriginal": "The Lion King",
+    "franchiseId": "lion-king",
+    "genres": [
+      "Adventure",
+      "Musical"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/3d/The_Lion_King_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Lion_King",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 24307571,
+    "trackTitle": "Circle of Life",
+    "artist": "Carmen Twillie",
+    "artistId": 4555326,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/2323051",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-aladdin",
+    "category": "cartoon",
+    "titleRu": "Аладдин",
+    "titleOriginal": "Aladdin",
+    "franchiseId": "aladdin",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/bd/Aladdin_%281992_Disney_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Aladdin_(1992_Disney_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 120917666,
+    "trackTitle": "A Whole New World",
+    "artist": "Lea Salonga",
+    "artistId": 13916,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/12626032",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-little-mermaid",
+    "category": "cartoon",
+    "titleRu": "Русалочка",
+    "titleOriginal": "The Little Mermaid",
+    "franchiseId": "little-mermaid",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/c/c0/The_Little_Mermaid_%28Official_1989_Film_Poster%29.png",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(1989_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 145187390,
+    "trackTitle": "Part of Your World",
+    "artist": "Jodi Benson",
+    "artistId": 244594,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/15766664",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-beauty-and-the-beast",
+    "category": "cartoon",
+    "titleRu": "Красавица и Чудовище",
+    "titleOriginal": "Beauty and the Beast",
+    "franchiseId": "beauty-and-the-beast",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/5e/Beauty_and_the_Beast_%281991_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Beauty_and_the_Beast_(1991_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 2381496005,
+    "trackTitle": "Beauty and the Beast",
+    "artist": "Angela Lansbury",
+    "artistId": 78558,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/468219345",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-mulan",
+    "category": "cartoon",
+    "titleRu": "Мулан",
+    "titleOriginal": "Mulan",
+    "franchiseId": "mulan",
+    "genres": [
+      "Adventure",
+      "Musical"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/a/a3/Movie_poster_mulan.JPG",
+    "posterSource": "https://en.wikipedia.org/wiki/Mulan_(1998_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 1377537502,
+    "trackTitle": "Reflection",
+    "artist": "Lea Salonga",
+    "artistId": 13916,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/231376432",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-pocahontas",
+    "category": "cartoon",
+    "titleRu": "Покахонтас",
+    "titleOriginal": "Pocahontas",
+    "franchiseId": "pocahontas",
+    "genres": [
+      "Adventure",
+      "Musical"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/57/Pocahontasposter.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Pocahontas_(1995_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 3118641,
+    "trackTitle": "Colors of the Wind",
+    "artist": "Judy Kuhn",
+    "artistId": 166840,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/301056",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-hercules",
+    "category": "cartoon",
+    "titleRu": "Геркулес",
+    "titleOriginal": "Hercules",
+    "franchiseId": "hercules",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/6/65/Hercules_%281997_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Hercules_(1997_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 531228861,
+    "trackTitle": "Go the Distance",
+    "artist": "Roger Bart",
+    "artistId": 311796,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/68849201",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-tarzan",
+    "category": "cartoon",
+    "titleRu": "Тарзан",
+    "titleOriginal": "Tarzan",
+    "franchiseId": "tarzan",
+    "genres": [
+      "Adventure",
+      "Musical"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/4/4f/Tarzan_%281999_film%29_-_theatrical_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Tarzan_(1999_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 561875132,
+    "trackTitle": "You'll Be In My Heart",
+    "artist": "Phil Collins",
+    "artistId": 186,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/74437962",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-tangled",
+    "category": "cartoon",
+    "titleRu": "Рапунцель: Запутанная история",
+    "titleOriginal": "Tangled",
+    "franchiseId": "tangled",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/a/a8/Tangled_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Tangled",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 7599985,
+    "trackTitle": "I See the Light (From \"Tangled\" / Soundtrack Version)",
+    "artist": "Mandy Moore",
+    "artistId": 282,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/700970",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-moana",
+    "category": "cartoon",
+    "titleRu": "Моана",
+    "titleOriginal": "Moana",
+    "franchiseId": "moana",
+    "genres": [
+      "Adventure",
+      "Musical"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/2/26/Moana_Teaser_Poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Moana_(2016_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 136349848,
+    "trackTitle": "How Far I'll Go",
+    "artist": "Auli'i Cravalho",
+    "artistId": 11389676,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/14582832",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-encanto",
+    "category": "cartoon",
+    "titleRu": "Энканто",
+    "titleOriginal": "Encanto",
+    "franchiseId": "encanto",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/83/Encanto_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Encanto",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 1550821762,
+    "trackTitle": "We Don't Talk About Bruno",
+    "artist": "Carolina Gaitán - La Gaita",
+    "artistId": 136485012,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/272207802",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-zootopia",
+    "category": "cartoon",
+    "titleRu": "Зверополис",
+    "titleOriginal": "Zootopia",
+    "franchiseId": "zootopia",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/9/96/Zootopia_%28movie_poster%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Zootopia",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 586860862,
+    "trackTitle": "Try Everything",
+    "artist": "Shakira",
+    "artistId": 160,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/78857542",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-princess-and-the-frog",
+    "category": "cartoon",
+    "titleRu": "Принцесса и лягушка",
+    "titleOriginal": "The Princess and the Frog",
+    "franchiseId": "princess-and-the-frog",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/81/The_Princess_and_the_Frog_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Princess_and_the_Frog",
+    "posterCredit": "Wikipedia; promotional artwork copyright Walt Disney Animation Studios",
+    "trackId": 534375642,
+    "trackTitle": "Almost There",
+    "artist": "Anika Noni Rose",
+    "artistId": 317397,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/69452992",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-coco",
+    "category": "cartoon",
+    "titleRu": "Тайна Коко",
+    "titleOriginal": "Coco",
+    "franchiseId": "coco",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/9/98/Coco_%282017_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Coco_(2017_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 424600092,
+    "trackTitle": "Remember Me (Reunion)",
+    "artist": "Anthony Gonzalez",
+    "artistId": 4408138,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/51005402",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-toy-story",
+    "category": "cartoon",
+    "titleRu": "История игрушек",
+    "titleOriginal": "Toy Story",
+    "franchiseId": "toy-story",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Toy_Story",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 6813638,
+    "trackTitle": "You've Got a Friend in Me",
+    "artist": "Randy Newman",
+    "artistId": 5679,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/629211",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-cars",
+    "category": "cartoon",
+    "titleRu": "Тачки",
+    "titleOriginal": "Cars",
+    "franchiseId": "cars",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/34/Cars_2006.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Cars_(film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 128948754,
+    "trackTitle": "Life is a Highway",
+    "artist": "Rascal Flatts",
+    "artistId": 315,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/13632934",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-ratatouille",
+    "category": "cartoon",
+    "titleRu": "Рататуй",
+    "titleOriginal": "Ratatouille",
+    "franchiseId": "ratatouille",
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/50/RatatouillePoster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Ratatouille_(film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 3107455,
+    "trackTitle": "Le Festin",
+    "artist": "Camille",
+    "artistId": 646,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/300394",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-up",
+    "category": "cartoon",
+    "titleRu": "Вверх",
+    "titleOriginal": "Up",
+    "franchiseId": "up",
+    "genres": [
+      "Adventure",
+      "Drama"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Up_(2009_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 4232526,
+    "trackTitle": "Married Life",
+    "artist": "Michael Giacchino",
+    "artistId": 4962,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/394031",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-incredibles",
+    "category": "cartoon",
+    "titleRu": "Суперсемейка",
+    "titleOriginal": "The Incredibles",
+    "franchiseId": "incredibles",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/2/27/The_Incredibles_%282004_animated_feature_film%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Incredibles",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 24185421,
+    "trackTitle": "The Incredits",
+    "artist": "Michael Giacchino",
+    "artistId": 4962,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/2310491",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-finding-nemo",
+    "category": "cartoon",
+    "titleRu": "В поисках Немо",
+    "titleOriginal": "Finding Nemo",
+    "franchiseId": "finding-nemo",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/2/29/Finding_Nemo.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Finding_Nemo",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 5167350,
+    "trackTitle": "Nemo Egg (Main Title)",
+    "artist": "Thomas Newman",
+    "artistId": 2245,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/473879",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-inside-out",
+    "category": "cartoon",
+    "titleRu": "Головоломка",
+    "titleOriginal": "Inside Out",
+    "franchiseId": "inside-out",
+    "genres": [
+      "Adventure",
+      "Drama"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Inside_Out",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 101112858,
+    "trackTitle": "Bundle of Joy",
+    "artist": "Michael Giacchino",
+    "artistId": 4962,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/10495744",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-soul",
+    "category": "cartoon",
+    "titleRu": "Душа",
+    "titleOriginal": "Soul",
+    "franchiseId": "soul",
+    "genres": [
+      "Fantasy",
+      "Drama"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Drama"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/39/Soul_%282020_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Soul_(2020_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 1173672332,
+    "trackTitle": "Born to Play",
+    "artist": "Jon Batiste",
+    "artistId": 1059460,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/192533862",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-wall-e",
+    "category": "cartoon",
+    "titleRu": "ВАЛЛ-И",
+    "titleOriginal": "WALL-E",
+    "franchiseId": "wall-e",
+    "genres": [
+      "Sci-Fi",
+      "Adventure"
+    ],
+    "moodTags": [
+      "Sci-Fi",
+      "Adventure"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/4/4c/WALL-E_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/WALL-E",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 602439992,
+    "trackTitle": "Define Dancing",
+    "artist": "Thomas Newman",
+    "artistId": 2245,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/81455242",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-monsters-inc",
+    "category": "cartoon",
+    "titleRu": "Корпорация монстров",
+    "titleOriginal": "Monsters, Inc.",
+    "franchiseId": "monsters-inc",
+    "genres": [
+      "Fantasy",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/6/63/Monsters_Inc.JPG",
+    "posterSource": "https://en.wikipedia.org/wiki/Monsters%2C_Inc.",
+    "posterCredit": "Wikipedia; promotional artwork copyright Pixar / Disney",
+    "trackId": 3203369,
+    "trackTitle": "If I Didn't Have You",
+    "artist": "Billy Crystal",
+    "artistId": 265527,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/306936",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-shrek",
+    "category": "cartoon",
+    "titleRu": "Шрек",
+    "titleOriginal": "Shrek",
+    "franchiseId": "shrek",
+    "genres": [
+      "Fantasy",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/7/7b/Shrek_%282001_animated_feature_film%29.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Shrek",
+    "posterCredit": "Wikipedia; promotional artwork copyright DreamWorks Animation",
+    "trackId": 917717,
+    "trackTitle": "All Star",
+    "artist": "Smash Mouth",
+    "artistId": 1179,
+    "distractorIds": [],
+    "themeSource": "https://en.wikipedia.org/wiki/All_Star_(song)",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-kung-fu-panda",
+    "category": "cartoon",
+    "titleRu": "Кунг-фу Панда",
+    "titleOriginal": "Kung Fu Panda",
+    "franchiseId": "kung-fu-panda",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/7/76/Kungfupanda.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Kung_Fu_Panda_(film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright DreamWorks Animation",
+    "trackId": 623727792,
+    "trackTitle": "Oogway Ascends",
+    "artist": "Hans Zimmer",
+    "artistId": 1935,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/85608242",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-how-to-train-your-dragon",
+    "category": "cartoon",
+    "titleRu": "Как приручить дракона",
+    "titleOriginal": "How to Train Your Dragon",
+    "franchiseId": "how-to-train-your-dragon",
+    "genres": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/9/99/How_to_Train_Your_Dragon_Poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/How_to_Train_Your_Dragon_(2010_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright DreamWorks Animation",
+    "trackId": 119437636,
+    "trackTitle": "Test Drive (From How To Train Your Dragon Music From The Motion Picture)",
+    "artist": "John Powell",
+    "artistId": 2301,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/12442548",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-megamind",
+    "category": "cartoon",
+    "titleRu": "Мегамозг",
+    "titleOriginal": "Megamind",
+    "franchiseId": "megamind",
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Action",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/89/Megamind2010Poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Megamind",
+    "posterCredit": "Wikipedia; promotional artwork copyright DreamWorks Animation",
+    "trackId": 132917196,
+    "trackTitle": "Giant Blue Head",
+    "artist": "Hans Zimmer",
+    "artistId": 1935,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/14137814",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-despicable-me",
+    "category": "cartoon",
+    "titleRu": "Гадкий я 2",
+    "titleOriginal": "Despicable Me 2",
+    "franchiseId": "despicable-me",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/2/29/Despicable_Me_2_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Despicable_Me_2",
+    "posterCredit": "Wikipedia; promotional artwork copyright Illumination / Universal Pictures",
+    "trackId": 701326562,
+    "trackTitle": "Happy (From \"Despicable Me 2\")",
+    "artist": "Pharrell Williams",
+    "artistId": 103,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/track/701326562",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-sing",
+    "category": "cartoon",
+    "titleRu": "Зверопой",
+    "titleOriginal": "Sing",
+    "franchiseId": "sing",
+    "genres": [
+      "Comedy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/bb/Sing_%282016_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Sing_(2016_American_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Illumination / Universal Pictures",
+    "trackId": 135365006,
+    "trackTitle": "Faith (From \"Sing\" Original Motion Picture Soundtrack)",
+    "artist": "Stevie Wonder",
+    "artistId": 166,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/14458406",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-ice-age",
+    "category": "cartoon",
+    "titleRu": "Ледниковый период",
+    "titleOriginal": "Ice Age",
+    "franchiseId": "ice-age",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/3c/Ice_Age_%282002_film%29_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Ice_Age_(2002_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Blue Sky Studios / 20th Century",
+    "trackId": 118586208,
+    "trackTitle": "Opening Travel Music",
+    "artist": "David Newman",
+    "artistId": 10800,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/12330390",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-rio",
+    "category": "cartoon",
+    "titleRu": "Рио",
+    "titleOriginal": "Rio",
+    "franchiseId": "rio",
+    "genres": [
+      "Adventure",
+      "Musical"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/bb/Rio2011Poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Rio_(2011_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Blue Sky Studios / 20th Century",
+    "trackId": 10381631,
+    "trackTitle": "Real In Rio",
+    "artist": "Jesse Eisenberg",
+    "artistId": 394839,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/949455",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-anastasia",
+    "category": "cartoon",
+    "titleRu": "Анастасия",
+    "titleOriginal": "Anastasia",
+    "franchiseId": "anastasia",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/36/Anastasia-don-bluth.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Anastasia_(1997_film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright 20th Century Fox Animation",
+    "trackId": 113628608,
+    "trackTitle": "Once Upon a December (From The \"Anastasia\" Soundtrack)",
+    "artist": "Liz Callaway",
+    "artistId": 3942,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/track/113628608",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-prince-of-egypt",
+    "category": "cartoon",
+    "titleRu": "Принц Египта",
+    "titleOriginal": "The Prince of Egypt",
+    "franchiseId": "prince-of-egypt",
+    "genres": [
+      "Drama",
+      "Musical"
+    ],
+    "moodTags": [
+      "Drama",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/6/6c/Prince_of_egypt_ver2.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Prince_of_Egypt",
+    "posterCredit": "Wikipedia; promotional artwork copyright DreamWorks Animation",
+    "trackId": 3041346,
+    "trackTitle": "Deliver Us",
+    "artist": "Ofra Haza",
+    "artistId": 64132,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/294919",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-spirit",
+    "category": "cartoon",
+    "titleRu": "Спирит: Душа прерий",
+    "titleOriginal": "Spirit: Stallion of the Cimarron",
+    "franchiseId": "spirit",
+    "genres": [
+      "Adventure",
+      "Drama"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/3b/Spirit_Stallion_of_the_Cimarron_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Spirit%3A_Stallion_of_the_Cimarron",
+    "posterCredit": "Wikipedia; promotional artwork copyright DreamWorks Animation",
+    "trackId": 2487332,
+    "trackTitle": "Here I Am",
+    "artist": "Bryan Adams",
+    "artistId": 170,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/244428",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-coraline",
+    "category": "cartoon",
+    "titleRu": "Коралина в Стране Кошмаров",
+    "titleOriginal": "Coraline",
+    "franchiseId": "coraline",
+    "genres": [
+      "Fantasy",
+      "Horror"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Horror"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/36/Coraline_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Coraline_(film)",
+    "posterCredit": "Wikipedia; promotional artwork copyright Laika / Focus Features",
+    "trackId": 66025019,
+    "trackTitle": "Exploration",
+    "artist": "Bruno Coulais",
+    "artistId": 1075,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/6463032",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-nightmare-before-christmas",
+    "category": "cartoon",
+    "titleRu": "Кошмар перед Рождеством",
+    "titleOriginal": "The Nightmare Before Christmas",
+    "franchiseId": "nightmare-before-christmas",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/9/9a/The_nightmare_before_christmas_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Nightmare_Before_Christmas",
+    "posterCredit": "Wikipedia; promotional artwork copyright Touchstone Pictures / Disney",
+    "trackId": 1762460387,
+    "trackTitle": "This is Halloween",
+    "artist": "Danny Elfman",
+    "artistId": 760,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/321098807",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-corpse-bride",
+    "category": "cartoon",
+    "titleRu": "Труп невесты",
+    "titleOriginal": "Corpse Bride",
+    "franchiseId": "corpse-bride",
+    "genres": [
+      "Fantasy",
+      "Musical"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Musical"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/a/a6/Corpse_Bride_film_poster.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/Corpse_Bride",
+    "posterCredit": "Wikipedia; promotional artwork copyright Warner Bros. Pictures",
+    "trackId": 788968,
+    "trackTitle": "Main Titles",
+    "artist": "Tim Burton's Corpse Bride Soundtrack",
+    "artistId": 66880,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/92293",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-simpsons",
+    "category": "cartoon",
+    "titleRu": "Симпсоны",
+    "titleOriginal": "The Simpsons",
+    "franchiseId": "simpsons",
+    "genres": [
+      "Comedy"
+    ],
+    "moodTags": [
+      "Comedy"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/a/aa/The_Simpsons_season_1.jpg",
+    "posterSource": "https://en.wikipedia.org/wiki/The_Simpsons_season_1",
+    "posterCredit": "Wikipedia; promotional artwork copyright 20th Television",
+    "trackId": 1574887642,
+    "trackTitle": "The Simpsons Main Title Theme (Extended Version)",
+    "artist": "The Simpsons",
+    "artistId": 4412,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/277270432",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-gravity-falls",
+    "category": "cartoon",
+    "titleRu": "Гравити Фолз",
+    "titleOriginal": "Gravity Falls",
+    "franchiseId": "gravity-falls",
+    "genres": [
+      "Fantasy",
+      "Mystery"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Mystery"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/b0/Gravity_Falls_season_1_poster.png",
+    "posterSource": "https://en.wikipedia.org/wiki/Gravity_Falls_season_1",
+    "posterCredit": "Wikipedia; promotional artwork copyright Disney Television Animation",
+    "trackId": 2608999752,
+    "trackTitle": "Gravity Falls Main Title Theme",
+    "artist": "Brad Breeck",
+    "artistId": 4531924,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/531274602",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26",
+    "disabledReason": "Preview duration 27.87 seconds; below 29.5-second minimum"
+  },
+  {
+    "animeId": "cartoon-adventure-time",
+    "category": "cartoon",
+    "titleRu": "Время приключений",
+    "titleOriginal": "Adventure Time",
+    "franchiseId": "adventure-time",
+    "genres": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "poster": "https://upload.wikimedia.org/wikipedia/en/a/af/Adventure_Time_Season_1_cover.png",
+    "posterSource": "https://en.wikipedia.org/wiki/Adventure_Time_season_1",
+    "posterCredit": "Wikipedia; promotional artwork copyright Cartoon Network",
+    "trackId": 986571912,
+    "trackTitle": "Island Song (Come Along with Me) [feat. Ashley Eriksson]",
+    "artist": "Adventure Time",
+    "artistId": 298935,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/153584142",
+    "themeKind": "soundtrack",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-steven-universe",
+    "category": "cartoon",
+    "titleRu": "Вселенная Стивена",
+    "titleOriginal": "Steven Universe",
+    "franchiseId": "steven-universe",
+    "genres": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "moodTags": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "poster": "https://static.tvmaze.com/uploads/images/original_untouched/8/22200.jpg",
+    "posterSource": "https://www.tvmaze.com/shows/1615/steven-universe",
+    "posterCredit": "TVMaze; promotional artwork copyright Cartoon Network",
+    "trackId": 951106322,
+    "trackTitle": "We Are The Crystal Gems (feat. Zach Callison, Estelle, Deedee Magno Hall, Michaela Dietz & Tom Scharpling) (Full Theme Song)",
+    "artist": "Steven Universe",
+    "artistId": 13478619,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/146324932",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-duck-tales",
+    "category": "cartoon",
+    "titleRu": "Утиные истории",
+    "titleOriginal": "DuckTales",
+    "franchiseId": "duck-tales",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://static.tvmaze.com/uploads/images/original_untouched/62/156739.jpg",
+    "posterSource": "https://www.tvmaze.com/shows/4295/ducktales",
+    "posterCredit": "TVMaze; promotional artwork copyright Disney Television Animation",
+    "trackId": 677778992,
+    "trackTitle": "Duck Tales Theme (From “Duck Tales“)",
+    "artist": "The Disney Afternoon Studio Chorus",
+    "artistId": 5289988,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/96428402",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-chip-and-dale",
+    "category": "cartoon",
+    "titleRu": "Чип и Дейл спешат на помощь",
+    "titleOriginal": "Chip 'n Dale: Rescue Rangers",
+    "franchiseId": "chip-and-dale",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://static.tvmaze.com/uploads/images/original_untouched/22/55233.jpg",
+    "posterSource": "https://www.tvmaze.com/shows/5308/chip-n-dale-rescue-rangers",
+    "posterCredit": "TVMaze; promotional artwork copyright Disney Television Animation",
+    "trackId": 677779002,
+    "trackTitle": "Chip 'N' Dale's Rescue Rangers Theme Song",
+    "artist": "The Disney Afternoon Studio Chorus",
+    "artistId": 5289988,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/96428402",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cartoon-arcane",
+    "category": "cartoon",
+    "titleRu": "Аркейн",
+    "titleOriginal": "Arcane",
+    "franchiseId": "arcane",
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Fantasy"
+    ],
+    "poster": "https://static.tvmaze.com/uploads/images/original_untouched/536/1340287.jpg",
+    "posterSource": "https://www.tvmaze.com/shows/55138/arcane-league-of-legends",
+    "posterCredit": "TVMaze; promotional artwork copyright Riot Games / Fortiche / Netflix",
+    "trackId": 2817563352,
+    "trackTitle": "Enemy (from the series Arcane League of Legends)",
+    "artist": "Imagine Dragons",
+    "artistId": 416239,
+    "distractorIds": [],
+    "themeSource": "https://www.deezer.com/album/591799552",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  }
+]

@@ -315,3 +315,5 @@ body[data-game="screen"] .sharp-steps i.on { background:linear-gradient(90deg,#e
 body[data-game="screen"] .sharpen-btn { width:100%; padding:12px; border-radius:4px; color:#2b1d10; background:linear-gradient(135deg,#f3d08c,#d9a85a); font-size:14px; }
 body[data-game="screen"] .sharpen-btn b { margin-left:4px; color:#7a2a1a; }
 @media (prefers-reduced-motion:reduce) { body[data-game="screen"] .poster-frame .clue-photo { transition:none; } }
+
+body[data-game='screen'] .poster-message{position:absolute;inset:0;z-index:2;display:grid;place-content:center;padding:28px;background:#211a13;color:#e6ceaa;text-align:center;font:14px/1.6 Onest,sans-serif}body[data-game='screen'] .poster-retry{position:absolute;left:15%;right:15%;bottom:20%;z-index:3;padding:12px;background:#eccb86;color:#39291c;border-radius:5px;font-size:12px}

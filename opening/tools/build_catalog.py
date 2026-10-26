@@ -1,42 +1,59 @@
-"""Build metadata only from manually reviewed original recordings."""
+"""Assemble reviewed soundtrack records and genre-compatible answer choices."""
 import datetime
 import json
 import pathlib
+import re
+from collections import Counter
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-APPROVED = {
- 'oshi':2287882757,'gurren':975986452,'dandadan':3024903811,'mashle':2580253682,
- 'chainsaw':1946911957,'jujutsu':1143848452,'attack':472698952,'demon':1093334492,
- 'naruto':121134202,'bleach':975900332,'onepiece':3033808841,'deathnote':2665292552,
- 'tokyo':975968052,'onepunch':2767184121,'fullmetal':975952742,'eva':1143838252,
- 'geass':976202432,'sao':976378422,'noragami':3618414102,'fireforce':711676642,
- 'haikyuu':1439536642,'bluelock':1951233967,'frieren':2449469235,'spy':1701852587,
- 'kaguya':976086872,'lie':976093942,'bunny':975905312,'bocchi':1922480887,
- 'konosuba':2524728881,'rezero':2358580505,'nogame':2809886802,
- 'parasyte':2665262552,'erased':1100590722,
-}
-def read(name):
- return json.loads((ROOT/'data'/name).read_text(encoding='utf-8-sig'))
+SOURCE_FILES = ('anime-originals.json','anime-expansion.json','film-expansion.json','series-expansion.json','cartoon-expansion.json')
+
+def tags(entry, field):
+    aliases = {'sciencefiction':'scifi','scifi':'scifi','romantic':'romance','animated':'animation','families':'family'}
+    values = {re.sub(r'[^a-z0-9]', '', tag.lower()) for tag in entry.get(field, [])}
+    return {aliases.get(tag, tag) for tag in values if tag}
+
+def assemble(sources):
+    entries = []
+    ids, recordings = set(), set()
+    for source in sources:
+        for raw in source:
+            if raw.get('disabledReason'):
+                continue
+            entry = dict(raw)
+            entry.setdefault('category', 'anime')
+            entry.setdefault('themeKind', 'opening' if entry['category']=='anime' else 'soundtrack')
+            if entry['animeId'] in ids or entry['trackId'] in recordings:
+                raise ValueError(f'duplicate title/recording: {entry["animeId"]}')
+            ids.add(entry['animeId']); recordings.add(entry['trackId'])
+            entries.append(entry)
+    for entry in entries:
+        genres, mood = tags(entry, 'genres'), tags(entry, 'moodTags')
+        curated = set(entry.get('distractorIds', []))
+        candidates = []
+        for other in entries:
+            if other['category'] != entry['category'] or other['franchiseId'] == entry['franchiseId'] or other['trackId'] == entry['trackId']:
+                continue
+            score = 5*len(genres & tags(other, 'genres')) + 2*len(mood & tags(other, 'moodTags'))
+            score += 8 if entry['artistId'] == other['artistId'] else 0
+            score += 6 if other['animeId'] in curated else 0
+            if score:
+                candidates.append((score, other['animeId']))
+        candidates.sort(key=lambda item: (-item[0], item[1]))
+        if len(candidates) < 3:
+            raise ValueError(f'need three similar answers: {entry["animeId"]}')
+        entry['distractorIds'] = [key for _, key in candidates[:12]]
+    return {'version':2,'checkedAt':datetime.date.today().isoformat(),'counts':dict(Counter(e['category'] for e in entries)), 'entries':entries}
+
 def main():
- seeds=read('seeds.json')
- anime={x['idMal']:x for x in read('anime-metadata.json')}
- tracks={x['key']:{t['id']:t for t in x['tracks']} for x in read('recording-candidates.json')}
- date=datetime.date.today().isoformat()
- entries=[]
- for key,ru,mal,title,artist,_,distractors in seeds:
-  if key not in APPROVED: continue
-  meta=anime[mal];track=tracks[key][APPROVED[key]]
-  if key=='haikyuu': distractors='bluelock naruto onepunch mashle fireforce'
-  if key=='bluelock': distractors='haikyuu naruto onepunch mashle fireforce'
-  if key=='onepunch': distractors='mashle gurren dandadan fireforce naruto'
-  entries.append({
-   'animeId':key,'titleRu':ru,'titleOriginal':meta['title']['romaji'],
-   'franchiseId':key,'genres':meta['genres'],'moodTags':meta['genres'][:3],
-   'poster':meta['coverImage']['extraLarge'],'posterSource':meta['siteUrl'],
-   'posterCredit':'AniList; artwork copyright respective rights holders',
-   'trackId':track['id'],'trackTitle':track['title'],'artist':track['artist']['name'],
-   'artistId':track['artist']['id'],'distractorIds':[i for i in distractors.split() if i in APPROVED],
-   'themeSource':f'https://myanimelist.net/anime/{mal}','themeTitle':title,'checkedAt':date,
-  })
- (ROOT/'data'/'catalog.json').write_text(json.dumps({'version':1,'checkedAt':date,'sources':['https://docs.anilist.co/','https://api.deezer.com/'],'entries':entries},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
- print(f'Built {len(entries)} reviewed anime openings; no audio stored.')
-if __name__=='__main__': main()
+    sources = [json.loads((ROOT/'data'/name).read_text(encoding='utf-8-sig')) for name in SOURCE_FILES]
+    data = assemble(sources)
+    from check_catalog import validate
+    errors = validate(data)
+    if errors:
+        raise ValueError('\n'.join(errors))
+    (ROOT/'data'/'catalog.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(f'Built {len(data["entries"])} titles: {data["counts"]}')
+
+if __name__=='__main__':
+    main()

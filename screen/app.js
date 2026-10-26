@@ -1,7 +1,8 @@
 import { TITLES as SEED_TITLES, OPTIONS } from './catalog.js';
 import { EXTRA_TITLES } from './catalog.extra.js';
 import { revealPaidClue, BLUR, SHARPEN } from './round.js?v=posters-20261025';
-import { visualFor } from './visuals.js?v=posters-20261025';
+import { visualFor } from './visuals.js?v=posters-20261026';
+import { bindPoster } from './poster-image.js?v=posters-20261026';
 
 const stage = document.querySelector('#stage');
 const exitBtn = document.querySelector('#exitBtn');
@@ -102,14 +103,13 @@ function next() {
 function renderRound() {
   const t = round.title;
   const visual = visualFor(t);
-  const art = `<div class="clue-illustration" style="--art-dark:${visual.dark};--art-light:${visual.light}" aria-hidden="true"><span class="art-ring"></span><span class="art-corner">${esc(visual.glyph)}</span><span class="art-glyph">${esc(visual.glyph)}</span></div>`;
   const available = hintDefs.filter(h => h.get(t));
   const actors = (t.cast || '').split(', ').filter(Boolean).slice(0, 3);
   const castLabel = t.category === 'anime' || t.category === 'cartoon' ? 'Актёры озвучивания' : 'В главных ролях';
   const actorCosts = [10, 14, 18];
   const level = round.sharp.size, blur = round.done ? 0 : BLUR[level];
   stage.innerHTML = `<div class="round-head"><div><p class="eyebrow">${esc(modes.find(m => m.id === mode).name)} · ${played} из ${played + deck.length}</p><h1>Что это?</h1></div><div class="score"><strong>${round.score}</strong><span>очков в раунде</span></div></div>
-  <div class="round-layout"><div class="poster-column"><div class="poster-frame" style="--blur:${round.shownBlur}px">${art}${visual.image ? `<img class="clue-photo" src="${esc(visual.image)}" alt="Размытый постер" referrerpolicy="no-referrer">` : ''}</div>
+  <div class="round-layout"><div class="poster-column"><div class="poster-frame" style="--blur:${round.shownBlur}px"><img class="clue-photo" alt="Постер для угадывания" referrerpolicy="no-referrer" hidden><div class="poster-message" id="posterStatus" role="status">Загружаем настоящий постер…</div><button class="poster-retry" id="posterRetry" hidden>Повторить загрузку</button></div>
   <div class="sharpen"><div class="sharp-steps" aria-label="Чёткость ${level + 1} из ${BLUR.length}">${BLUR.map((_, i) => `<i class="${i <= level ? 'on' : ''}"></i>`).join('')}</div>${round.done || level >= SHARPEN.length ? `<p class="poster-caption">${round.done ? 'Постер открыт' : 'Чётче уже некуда'}</p>` : `<button class="btn sharpen-btn" id="sharpBtn" ${round.score < SHARPEN[level] ? 'disabled' : ''}>Сделать чётче <b>−${SHARPEN[level]}</b></button>`}</div></div>
   <div class="facts-column"><div class="answer-area"><label for="guess">Название</label><div class="guess-row"><input id="guess" type="search" placeholder="Начни писать название…" autocomplete="off" ${round.done ? 'disabled' : ''}><button id="guessBtn" class="btn primary" ${round.done ? 'disabled' : ''}>Ответить</button></div><div id="suggestions" class="suggestions" hidden></div><p id="feedback" class="feedback" role="status" aria-live="polite">Выбери название из списка или напиши его целиком.</p></div>
   <div class="facts-head"><h2>Досье</h2><span>Выбирай, что узнать дальше</span></div><div class="free-facts"><span><small>Год</small><b>${esc(t.year)}</b></span><span><small>Страна</small><b>${esc(t.country)}</b></span><span><small>Длительность</small><b>${esc(t.runtime)}</b></span><span><small>Жанр</small><b>${esc(t.genres[0])}</b></span></div>
@@ -117,15 +117,12 @@ function renderRound() {
   <section class="clue-section"><div class="clue-head"><h3>Другие зацепки</h3><span>Цена указана на каждой карточке</span></div><div class="clue-grid">${available.map(h => `<div class="clue-card${round.opened.has(h.key) || round.done ? ' open' : ''}"><span>${esc(h.label)}</span>${round.opened.has(h.key) || round.done ? `<strong>${esc(h.get(t))}</strong>` : `<button data-hint="${h.key}" ${round.score < h.cost ? 'disabled' : ''}>Открыть <b>−${h.cost}</b></button>`}</div>`).join('')}</div></section>
   <div class="round-foot"><button class="skip" id="skipBtn">Пропустить раунд</button><span>${visual.image ? `<a href="${esc(visual.source)}" target="_blank" rel="noopener noreferrer">${esc(visual.caption)}</a>` : 'Оригинальная иллюстрация-подсказка'}</span></div></div></div>`;
   const photo = stage.querySelector('.clue-photo');
-  if (photo) {
-    const visualCredit = stage.querySelector('.round-foot span');
-    const showIllustration = () => {
-      photo.remove();
-      visualCredit.textContent = 'Оригинальная иллюстрация-подсказка';
-    };
-    photo.addEventListener('error', showIllustration, { once: true });
-    if (photo.complete && !photo.naturalWidth) showIllustration();
-  }
+  const sharpButton = stage.querySelector('#sharpBtn');
+  const currentRound = round;
+  bindPoster({image:photo,message:stage.querySelector('#posterStatus'),retry:stage.querySelector('#posterRetry'),
+    credit:stage.querySelector('.round-foot a'),candidates:[visual,...(visual.alternatives || [])],
+    onReady:ready => { if (sharpButton) sharpButton.disabled = !ready || currentRound.score < SHARPEN[level]; }
+  });
   // Постер плавно становится чётче: кадр рисуется с прошлым размытием и сразу переходит к новому.
   const frame = stage.querySelector('.poster-frame');
   void frame.offsetWidth; // зафиксировать прошлое размытие, чтобы сработал плавный переход

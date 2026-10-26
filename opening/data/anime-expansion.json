@@ -1,0 +1,2701 @@
+[
+  {
+    "animeId": "hunter",
+    "category": "anime",
+    "titleRu": "Охотник × Охотник",
+    "titleOriginal": "HUNTER×HUNTER (2011)",
+    "franchiseId": "hunter",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11061-y5gsT1hoHuHw.png",
+    "posterSource": "https://anilist.co/anime/11061",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2665357712,
+    "trackTitle": "departure!",
+    "artist": "Masatoshi Ono",
+    "artistId": 6607436,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/hunter_x_hunter_2011?include=animethemes.song.artists",
+    "themeTitle": "departure!",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "gintama",
+    "category": "anime",
+    "titleRu": "Гинтама",
+    "titleOriginal": "Gintama",
+    "franchiseId": "gintama",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Comedy",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx918-iOaeBVUn4uK7.jpg",
+    "posterSource": "https://anilist.co/anime/918",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975999612,
+    "trackTitle": "A Cloudy Sky",
+    "artist": "Does",
+    "artistId": 4197065,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/gintama?include=animethemes.song.artists",
+    "themeTitle": "DONTEN",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "pokemon",
+    "category": "anime",
+    "titleRu": "Покемон",
+    "titleOriginal": "Pocket Monsters",
+    "franchiseId": "pokemon",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b527-t6dBVJ5OVcXK.png",
+    "posterSource": "https://anilist.co/anime/527",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3504033041,
+    "trackTitle": "Pokémon Theme",
+    "artist": "Pokémon",
+    "artistId": 11125,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/pokemon?include=animethemes.song.artists",
+    "themeTitle": "Pokémon Theme (Gotta Catch'em All)",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cowboy",
+    "category": "anime",
+    "titleRu": "Ковбой Бибоп",
+    "titleOriginal": "Cowboy Bebop",
+    "franchiseId": "cowboy",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-GCsPm7waJ4kS.png",
+    "posterSource": "https://anilist.co/anime/1",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1006888182,
+    "trackTitle": "Tank!",
+    "artist": "Seatbelts",
+    "artistId": 14444749,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/cowboy_bebop?include=animethemes.song.artists",
+    "themeTitle": "Tank!",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "samuraichamploo",
+    "category": "anime",
+    "titleRu": "Самурай Чамплу",
+    "titleOriginal": "Samurai Champloo",
+    "franchiseId": "samuraichamploo",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205-7tHVFu6dPBm9.png",
+    "posterSource": "https://anilist.co/anime/205",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2593430612,
+    "trackTitle": "battlecry",
+    "artist": "Nujabes",
+    "artistId": 1978,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/samurai_champloo?include=animethemes.song.artists",
+    "themeTitle": "Battlecry",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "trigun",
+    "category": "anime",
+    "titleRu": "Триган",
+    "titleOriginal": "TRIGUN",
+    "franchiseId": "trigun",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6-wd4saT1JzStH.jpg",
+    "posterSource": "https://anilist.co/anime/6",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2116051347,
+    "trackTitle": "H.T",
+    "artist": "Tsuneo Imahori",
+    "artistId": 11976226,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/trigun?include=animethemes.song.artists",
+    "themeTitle": "H.T.",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "berserk",
+    "category": "anime",
+    "titleRu": "Берсерк",
+    "titleOriginal": "Kenpuu Denki Berserk",
+    "franchiseId": "berserk",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx33-PSwfE5B0gejI.jpg",
+    "posterSource": "https://anilist.co/anime/33",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2948235301,
+    "trackTitle": "TELL ME WHY",
+    "artist": "PENPALS",
+    "artistId": 219091945,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/berserk?include=animethemes.song.artists",
+    "themeTitle": "Tell Me Why",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "fate",
+    "category": "anime",
+    "titleRu": "Судьба: Начало",
+    "titleOriginal": "Fate/Zero",
+    "franchiseId": "fate",
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Fantasy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10087-M4Hd9qrHGrXk.png",
+    "posterSource": "https://anilist.co/anime/10087",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976512132,
+    "trackTitle": "Oath Sign",
+    "artist": "LiSA",
+    "artistId": 11446160,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/fatezero?include=animethemes.song.artists",
+    "themeTitle": "oath sign",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "madoka",
+    "category": "anime",
+    "titleRu": "Девочка-волшебница Мадока",
+    "titleOriginal": "Mahou Shoujo Madoka☆Magica",
+    "franchiseId": "madoka",
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "Mahou Shoujo",
+      "Psychological",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Fantasy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9756-QnUGwlwwnsuN.jpg",
+    "posterSource": "https://anilist.co/anime/9756",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975906392,
+    "trackTitle": "Connect",
+    "artist": "ClariS",
+    "artistId": 4485144,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/mahou_shoujo_madokamagica?include=animethemes.song.artists",
+    "themeTitle": "Connect",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "haruhi",
+    "category": "anime",
+    "titleRu": "Меланхолия Харухи Судзумии",
+    "titleOriginal": "Suzumiya Haruhi no Yuuutsu",
+    "franchiseId": "haruhi",
+    "genres": [
+      "Comedy",
+      "Mystery",
+      "Sci-Fi",
+      "Slice of Life",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx849-wQM3GqLvl62P.png",
+    "posterSource": "https://anilist.co/anime/849",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3870372071,
+    "trackTitle": "冒険でしょでしょ？",
+    "artist": "Aya Hirano",
+    "artistId": 2440161,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/suzumiya_haruhi_no_yuuutsu?include=animethemes.song.artists",
+    "themeTitle": "Bouken Desho Desho?",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "luckystar",
+    "category": "anime",
+    "titleRu": "Счастливая звезда",
+    "titleOriginal": "Lucky☆Star",
+    "franchiseId": "luckystar",
+    "genres": [
+      "Comedy",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1887-P36Pucd4qKji.png",
+    "posterSource": "https://anilist.co/anime/1887",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2595881202,
+    "trackTitle": "Motteke! Sailor Fuku",
+    "artist": "Konata Izumi (CV: Aya Hirano)",
+    "artistId": 247898222,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/luckystar?include=animethemes.song.artists",
+    "themeTitle": "Motteke! Sailor Fuku",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "kon",
+    "category": "anime",
+    "titleRu": "Кэйон!",
+    "titleOriginal": "K-ON!",
+    "franchiseId": "kon",
+    "genres": [
+      "Comedy",
+      "Music",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Music",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5680-r3AI3Cwfv0Aq.png",
+    "posterSource": "https://anilist.co/anime/5680",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 477690222,
+    "trackTitle": "Cagayake! Girls (From \"K-On!\")",
+    "artist": "Sakurakou K-ON Bu",
+    "artistId": 6746943,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/k_on?include=animethemes.song.artists",
+    "themeTitle": "Cagayake! GIRLS",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "angelbeats",
+    "category": "anime",
+    "titleRu": "Ангельские ритмы!",
+    "titleOriginal": "Angel Beats!",
+    "franchiseId": "angelbeats",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Comedy",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6547-SYexAn5aFyss.png",
+    "posterSource": "https://anilist.co/anime/6547",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3137186291,
+    "trackTitle": "My Soul, Your Beats!",
+    "artist": "LIA",
+    "artistId": 13699737,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/angel_beats?include=animethemes.song.artists",
+    "themeTitle": "My Soul, Your Beats!",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "anohana",
+    "category": "anime",
+    "titleRu": "Невиданный цветок",
+    "titleOriginal": "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.",
+    "franchiseId": "anohana",
+    "genres": [
+      "Drama",
+      "Romance",
+      "Slice of Life",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9989-hImMg6kCMm6I.jpg",
+    "posterSource": "https://anilist.co/anime/9989",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975911872,
+    "trackTitle": "Aoi Shiori",
+    "artist": "Galileo Galilei",
+    "artistId": 4766237,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/ano_hi_mita_hana_no_namae_wo_bokutachi_wa_mada_shiranai?include=animethemes.song.artists",
+    "themeTitle": "Aoi Shiori",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "toradora",
+    "category": "anime",
+    "titleRu": "Торадора!",
+    "titleOriginal": "Toradora!",
+    "franchiseId": "toradora",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4224-PXVMBLNwy2aF.jpg",
+    "posterSource": "https://anilist.co/anime/4224",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 4164671522,
+    "trackTitle": "Orange",
+    "artist": "Taiga Aisaka(CV:Rie Kugimiya)/Minori Kushieda(CV:Yui Horie)/Ami Kawashima(CV:Eri Kitamura)",
+    "artistId": 404773202,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/toradora?include=animethemes.song.artists",
+    "themeTitle": "Orange",
+    "themeKind": "ending",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "durarara",
+    "category": "anime",
+    "titleRu": "Дюрарара!!",
+    "titleOriginal": "Durarara!!",
+    "franchiseId": "durarara",
+    "genres": [
+      "Action",
+      "Mystery",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Mystery",
+      "Supernatural"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6746-3LTwM95Uqeoa.png",
+    "posterSource": "https://anilist.co/anime/6746",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976074582,
+    "trackTitle": "Uragirinoyuuyake",
+    "artist": "Theatre Brook",
+    "artistId": 50606892,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/durarara?include=animethemes.song.artists",
+    "themeTitle": "Uragiri no Yuuyake",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "psychopass",
+    "category": "anime",
+    "titleRu": "Психопаспорт",
+    "titleOriginal": "PSYCHO-PASS",
+    "franchiseId": "psychopass",
+    "genres": [
+      "Action",
+      "Psychological",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Action",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13601-i42VFuHpqEOJ.jpg",
+    "posterSource": "https://anilist.co/anime/13601",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976078922,
+    "trackTitle": "Abnormalize",
+    "artist": "Ling tosite sigure",
+    "artistId": 8002136,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/psycho_pass?include=animethemes.song.artists",
+    "themeTitle": "abnormalize",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "deathparade",
+    "category": "anime",
+    "titleRu": "Парад смерти",
+    "titleOriginal": "Death Parade",
+    "franchiseId": "deathparade",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Psychological",
+      "Supernatural",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Drama",
+      "Mystery",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20931-bktYqOcxPERi.jpg",
+    "posterSource": "https://anilist.co/anime/20931",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3440788731,
+    "trackTitle": "Flyers",
+    "artist": "BRADIO",
+    "artistId": 13328779,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/death_parade?include=animethemes.song.artists",
+    "themeTitle": "Flyers",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "blueexorcist",
+    "category": "anime",
+    "titleRu": "Синий экзорцист",
+    "titleOriginal": "Ao no Exorcist",
+    "franchiseId": "blueexorcist",
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9919-nXS7JOZrWHfS.jpg",
+    "posterSource": "https://anilist.co/anime/9919",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976372622,
+    "trackTitle": "Core Pride",
+    "artist": "UVERworld",
+    "artistId": 2503,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/ao_no_exorcist?include=animethemes.song.artists",
+    "themeTitle": "CORE PRIDE",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "drstone",
+    "category": "anime",
+    "titleRu": "Доктор Стоун",
+    "titleOriginal": "Dr. STONE",
+    "franchiseId": "drstone",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-GybuoSoOZfpH.jpg",
+    "posterSource": "https://anilist.co/anime/105333",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975929972,
+    "trackTitle": "Good Morning World!",
+    "artist": "BURNOUT SYNDROMES",
+    "artistId": 9962448,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/dr_stone?include=animethemes.song.artists",
+    "themeTitle": "Good Morning World!",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "promisedneverland",
+    "category": "anime",
+    "titleRu": "Обещанный Неверленд",
+    "titleOriginal": "Yakusoku no Neverland",
+    "franchiseId": "promisedneverland",
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Mystery",
+      "Psychological",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Drama",
+      "Fantasy",
+      "Horror"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101759-8UR7r9MNVpz2.jpg",
+    "posterSource": "https://anilist.co/anime/101759",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1024962302,
+    "trackTitle": "Touch off",
+    "artist": "UVERworld",
+    "artistId": 2503,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/yakusoku_no_neverland?include=animethemes.song.artists",
+    "themeTitle": "Touch Off",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "beastars",
+    "category": "anime",
+    "titleRu": "Выдающиеся звери",
+    "titleOriginal": "BEASTARS",
+    "franchiseId": "beastars",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Psychological",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Drama",
+      "Mystery",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107660-hgknnyaLchJW.png",
+    "posterSource": "https://anilist.co/anime/107660",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1024948992,
+    "trackTitle": "Wild Side",
+    "artist": "ALI",
+    "artistId": 91021012,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/beastars?include=animethemes.song.artists",
+    "themeTitle": "Wild Side",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "vinland",
+    "category": "anime",
+    "titleRu": "Сага о Винланде",
+    "titleOriginal": "VINLAND SAGA",
+    "franchiseId": "vinland",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101348-2fhDFPCuMNiz.jpg",
+    "posterSource": "https://anilist.co/anime/101348",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975899312,
+    "trackTitle": "Mukanjyo",
+    "artist": "Survive Said The Prophet",
+    "artistId": 12136902,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/vinland_saga?include=animethemes.song.artists",
+    "themeTitle": "MUKANJYO",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "ranking",
+    "category": "anime",
+    "titleRu": "Рейтинг короля",
+    "titleOriginal": "Ousama Ranking",
+    "franchiseId": "ranking",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113717-9sNnN8WRgK15.jpg",
+    "posterSource": "https://anilist.co/anime/113717",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1509640142,
+    "trackTitle": "BOY",
+    "artist": "King Gnu",
+    "artistId": 12944623,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/ousama_ranking?include=animethemes.song.artists",
+    "themeTitle": "BOY",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "heavenly",
+    "category": "anime",
+    "titleRu": "Иллюзия рая",
+    "titleOriginal": "Tengoku Daimakyou",
+    "franchiseId": "heavenly",
+    "genres": [
+      "Adventure",
+      "Mystery",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155783-YosKbsmZzuDE.jpg",
+    "posterSource": "https://anilist.co/anime/155783",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2220355087,
+    "trackTitle": "innocent arrogance",
+    "artist": "Bish",
+    "artistId": 1227183,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/tengoku_daimakyou?include=animethemes.song.artists",
+    "themeTitle": "innocent arrogance",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "undead",
+    "category": "anime",
+    "titleRu": "Нежить и Неудача",
+    "titleOriginal": "Undead Unluck",
+    "franchiseId": "undead",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Sci-Fi",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154116-3ydDI9hhvPgw.png",
+    "posterSource": "https://anilist.co/anime/154116",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2464909545,
+    "trackTitle": "ZERO ICHI",
+    "artist": "QUEEN BEE",
+    "artistId": 187156157,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/undead_unluck?include=animethemes.song.artists",
+    "themeTitle": "01",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "zom100",
+    "category": "anime",
+    "titleRu": "Предсмертный список зомби",
+    "titleOriginal": "Zom 100: Zombie ni Naru Made ni Shitai 100 no Koto",
+    "franchiseId": "zom100",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Horror",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx159831-cJUNqCqzuApc.png",
+    "posterSource": "https://anilist.co/anime/159831",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2345664365,
+    "trackTitle": "Song of the Dead",
+    "artist": "KANA-BOON",
+    "artistId": 4726033,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/zom_100_zombie_ni_naru_made_ni_shitai_100_no_koto?include=animethemes.song.artists",
+    "themeTitle": "Song of the Dead",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "myhero",
+    "category": "anime",
+    "titleRu": "Моя геройская академия",
+    "titleOriginal": "Boku no Hero Academia",
+    "franchiseId": "myhero",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21459-nYh85uj2Fuwr.jpg",
+    "posterSource": "https://anilist.co/anime/21459",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 543429922,
+    "trackTitle": "The Day",
+    "artist": "Porno Graffitti",
+    "artistId": 10039830,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/boku_no_hero_academia?include=animethemes.song.artists",
+    "themeTitle": "The Day",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "fairytail",
+    "category": "anime",
+    "titleRu": "Хвост феи",
+    "titleOriginal": "FAIRY TAIL",
+    "franchiseId": "fairytail",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png",
+    "posterSource": "https://anilist.co/anime/6702",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 369864211,
+    "trackTitle": "Snow Fairy",
+    "artist": "FUNKIST",
+    "artistId": 8184760,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/fairy_tail?include=animethemes.song.artists",
+    "themeTitle": "Snow Fairy",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "sevendeadly",
+    "category": "anime",
+    "titleRu": "Семь смертных грехов",
+    "titleOriginal": "Nanatsu no Taizai",
+    "franchiseId": "sevendeadly",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Ecchi",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20789-Ma5ouSYPkru9.jpg",
+    "posterSource": "https://anilist.co/anime/20789",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 121134224,
+    "trackTitle": "Netsujo No Spectrum",
+    "artist": "Ikimonogakari",
+    "artistId": 5960768,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/nanatsu_no_taizai?include=animethemes.song.artists",
+    "themeTitle": "Netsujou no Spectrum",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "killlakill",
+    "category": "anime",
+    "titleRu": "Убей или умри",
+    "titleOriginal": "Kill la Kill",
+    "franchiseId": "killlakill",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Ecchi"
+    ],
+    "moodTags": [
+      "Action",
+      "Comedy",
+      "Ecchi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b18679-lbkq7iYESoFW.png",
+    "posterSource": "https://anilist.co/anime/18679",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975935642,
+    "trackTitle": "sirius",
+    "artist": "Eir Aoi",
+    "artistId": 8002046,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/kill_la_kill?include=animethemes.song.artists",
+    "themeTitle": "Sirius",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "darling",
+    "category": "anime",
+    "titleRu": "Милый во Франксе",
+    "titleOriginal": "Darling in the Franxx",
+    "franchiseId": "darling",
+    "genres": [
+      "Action",
+      "Drama",
+      "Mecha",
+      "Psychological",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Mecha"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx99423-8MBxtwCeHf8B.png",
+    "posterSource": "https://anilist.co/anime/99423",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1086616762,
+    "trackTitle": "Kiss of Death",
+    "artist": "Mika Nakashima",
+    "artistId": 4018276,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/darling_in_the_franxx?include=animethemes.song.artists",
+    "themeTitle": "KISS OF DEATH (Produced by HYDE)",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "guiltycrown",
+    "category": "anime",
+    "titleRu": "Корона грешника",
+    "titleOriginal": "Guilty Crown",
+    "franchiseId": "guiltycrown",
+    "genres": [
+      "Action",
+      "Drama",
+      "Mecha",
+      "Psychological",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Mecha"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10793-KCysCbrVNqK9.jpg",
+    "posterSource": "https://anilist.co/anime/10793",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976109912,
+    "trackTitle": "My Dearest",
+    "artist": "Supercell",
+    "artistId": 184460,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/guilty_crown?include=animethemes.song.artists",
+    "themeTitle": "My Dearest",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "akame",
+    "category": "anime",
+    "titleRu": "Убийца Акаме!",
+    "titleOriginal": "Akame ga Kill!",
+    "franchiseId": "akame",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Psychological",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20613-HXHpec4bemk5.jpg",
+    "posterSource": "https://anilist.co/anime/20613",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976523372,
+    "trackTitle": "Skyreach",
+    "artist": "Sora Amamiya",
+    "artistId": 11073602,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/akame_ga_kill?include=animethemes.song.artists",
+    "themeTitle": "Skyreach",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "nozaki",
+    "category": "anime",
+    "titleRu": "Ежемесячное сёдзё Нозаки-куна",
+    "titleOriginal": "Gekkan Shoujo Nozaki-kun",
+    "franchiseId": "nozaki",
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20668-6UslJY5NDYNh.png",
+    "posterSource": "https://anilist.co/anime/20668",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2403299805,
+    "trackTitle": "KIMIJA NAKYA DAME MITAI",
+    "artist": "Masayoshi Oishi",
+    "artistId": 6490211,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/gekkan_shoujo_nozaki_kun?include=animethemes.song.artists",
+    "themeTitle": "Kimi ja Nakya Dame Mitai",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "wotakoi",
+    "category": "anime",
+    "titleRu": "Так сложно любить отаку",
+    "titleOriginal": "Wotaku ni Koi wa Muzukashii",
+    "franchiseId": "wotakoi",
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx99578-oO5KChtfhzln.png",
+    "posterSource": "https://anilist.co/anime/99578",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 823122692,
+    "trackTitle": "Fiction",
+    "artist": "sumika",
+    "artistId": 5200027,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/wotaku_ni_koi_wa_muzukashii?include=animethemes.song.artists",
+    "themeTitle": "Fiction",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "horimiya",
+    "category": "anime",
+    "titleRu": "Хоримия",
+    "titleOriginal": "Horimiya",
+    "franchiseId": "horimiya",
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-3i22mRVPBS0T.jpg",
+    "posterSource": "https://anilist.co/anime/124080",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1212802752,
+    "trackTitle": "Irokousui",
+    "artist": "Yoh Kamiyama",
+    "artistId": 70459772,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/horimiya?include=animethemes.song.artists",
+    "themeTitle": "Iro Kousui",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "chuunibyo",
+    "category": "anime",
+    "titleRu": "Чудачества любви не помеха!",
+    "titleOriginal": "Chuunibyou demo Koi ga Shitai!",
+    "franchiseId": "chuunibyo",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14741-CGXEIeUe2roA.jpg",
+    "posterSource": "https://anilist.co/anime/14741",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3430482141,
+    "trackTitle": "Sparkling Daydream",
+    "artist": "Zaq",
+    "artistId": 3584751,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/chuunibyou_demo_koi_ga_shitai?include=animethemes.song.artists",
+    "themeTitle": "Sparkling Daydream",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "sakurasou",
+    "category": "anime",
+    "titleRu": "Кошечка из Сакурасо",
+    "titleOriginal": "Sakurasou no Pet na Kanojo",
+    "franchiseId": "sakurasou",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13759-xNf0gJK4Axt2.jpg",
+    "posterSource": "https://anilist.co/anime/13759",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2892183332,
+    "trackTitle": "DAYS of DASH",
+    "artist": "鈴木このみ",
+    "artistId": 14107459,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/sakurasou_no_pet_na_kanojo?include=animethemes.song.artists",
+    "themeTitle": "DAYS of DASH",
+    "themeKind": "ending",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "violet",
+    "category": "anime",
+    "titleRu": "Вайолет Эвергарден",
+    "titleOriginal": "Violet Evergarden",
+    "franchiseId": "violet",
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Drama",
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21827-ubzq619ZA2E9.png",
+    "posterSource": "https://anilist.co/anime/21827",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3464548501,
+    "trackTitle": "Sincerely",
+    "artist": "True",
+    "artistId": 474970,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/violet_evergarden?include=animethemes.song.artists",
+    "themeTitle": "Sincerely",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "furtheruniverse",
+    "category": "anime",
+    "titleRu": "Место за пределами Вселенной",
+    "titleOriginal": "Sora yori mo Tooi Basho",
+    "franchiseId": "furtheruniverse",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Drama"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Comedy",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99426-ti5BL69Ip3kZ.png",
+    "posterSource": "https://anilist.co/anime/99426",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2681014512,
+    "trackTitle": "The Girls Are Alright!",
+    "artist": "Saya",
+    "artistId": 68155,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/sora_yori_mo_tooi_basho?include=animethemes.song.artists",
+    "themeTitle": "The Girls Are Alright!",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "hibike",
+    "category": "anime",
+    "titleRu": "Звучи, эуфониум!",
+    "titleOriginal": "Hibike! Euphonium",
+    "franchiseId": "hibike",
+    "genres": [
+      "Drama",
+      "Music",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Drama",
+      "Music",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20912-SiiG4HPrjQlX.jpg",
+    "posterSource": "https://anilist.co/anime/20912",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2826710442,
+    "trackTitle": "DREAM SOLISTER",
+    "artist": "True",
+    "artistId": 474970,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/hibike_euphonium?include=animethemes.song.artists",
+    "themeTitle": "DREAM SOLISTER",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "sk8",
+    "category": "anime",
+    "titleRu": "Скейт: Бесконечность",
+    "titleOriginal": "SK∞",
+    "franchiseId": "sk8",
+    "genres": [
+      "Action",
+      "Drama",
+      "Sports"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Sports"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124153-uEBI764OSavB.png",
+    "posterSource": "https://anilist.co/anime/124153",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1176866562,
+    "trackTitle": "Paradise",
+    "artist": "Rude-alpha",
+    "artistId": 49941012,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/sk?include=animethemes.song.artists",
+    "themeTitle": "Paradise",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "initiald",
+    "category": "anime",
+    "titleRu": "Инициал Ди",
+    "titleOriginal": "Initial D",
+    "franchiseId": "initiald",
+    "genres": [
+      "Action",
+      "Drama",
+      "Sports"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Sports"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b185-GvXiR8AKTmdn.jpg",
+    "posterSource": "https://anilist.co/anime/185",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3714441612,
+    "trackTitle": "around the world",
+    "artist": "m.o.v.e",
+    "artistId": 4049,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/initial_d_first_stage?include=animethemes.song.artists",
+    "themeTitle": "Around the World",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "dorohedoro",
+    "category": "anime",
+    "titleRu": "Дорохедоро",
+    "titleOriginal": "Dorohedoro",
+    "franchiseId": "dorohedoro",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy",
+      "Horror",
+      "Mystery"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105228-I4xr84QS9Pvk.jpg",
+    "posterSource": "https://anilist.co/anime/105228",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 4280137212,
+    "trackTitle": "Welcome To Chaos",
+    "artist": "(K)now_Name",
+    "artistId": 39670062,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/dorohedoro?include=animethemes.song.artists",
+    "themeTitle": "Welcome to Chaos",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "goldenkamuy",
+    "category": "anime",
+    "titleRu": "Золотое божество",
+    "titleOriginal": "Golden Kamuy",
+    "franchiseId": "goldenkamuy",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99699-mBCjpoWpAVGX.jpg",
+    "posterSource": "https://anilist.co/anime/99699",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975910712,
+    "trackTitle": "Winding Road",
+    "artist": "MAN WITH A MISSION",
+    "artistId": 5797990,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/golden_kamuy?include=animethemes.song.artists",
+    "themeTitle": "Winding Road",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "apothecary",
+    "category": "anime",
+    "titleRu": "Монолог фармацевта",
+    "titleOriginal": "Kusuriya no Hitorigoto",
+    "franchiseId": "apothecary",
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "moodTags": [
+      "Drama",
+      "Mystery"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-QLbzHXiYRgV2.jpg",
+    "posterSource": "https://anilist.co/anime/161645",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2493747201,
+    "trackTitle": "Be a flower",
+    "artist": "Ryokuoushoku Shakai",
+    "artistId": 72120942,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/kusuriya_no_hitorigoto?include=animethemes.song.artists",
+    "themeTitle": "Hana ni Natte",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "classroomelite",
+    "category": "anime",
+    "titleRu": "Класс превосходства",
+    "titleOriginal": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+    "franchiseId": "classroomelite",
+    "genres": [
+      "Drama",
+      "Psychological"
+    ],
+    "moodTags": [
+      "Drama",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98659-WNyPLIZDpGGY.jpg",
+    "posterSource": "https://anilist.co/anime/98659",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3430482391,
+    "trackTitle": "カーストルーム",
+    "artist": "Zaq",
+    "artistId": 3584751,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/youkoso_jitsuryoku_shijou_shugi_no_kyoushitsu_e?include=animethemes.song.artists",
+    "themeTitle": "Caste Room",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "overlord",
+    "category": "anime",
+    "titleRu": "Повелитель",
+    "titleOriginal": "Overlord",
+    "franchiseId": "overlord",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20832-vUNm5zrYWifc.jpg",
+    "posterSource": "https://anilist.co/anime/20832",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2403083575,
+    "trackTitle": "Clattanoia",
+    "artist": "OxT",
+    "artistId": 13924431,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/overlord?include=animethemes.song.artists",
+    "themeTitle": "Clattanoia",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "shieldhero",
+    "category": "anime",
+    "titleRu": "Восхождение героя щита",
+    "titleOriginal": "Tate no Yuusha no Nariagari",
+    "franchiseId": "shieldhero",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99263-LcazQwdlWzMy.jpg",
+    "posterSource": "https://anilist.co/anime/99263",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2551266622,
+    "trackTitle": "Rise",
+    "artist": "Madkid",
+    "artistId": 390549491,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/tate_no_yuusha_no_nariagari?include=animethemes.song.artists",
+    "themeTitle": "RISE",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "slime",
+    "category": "anime",
+    "titleRu": "О моём перерождении в слизь",
+    "titleOriginal": "Tensei Shitara Slime Datta Ken",
+    "franchiseId": "slime",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101280-tDxCVJm714nt.jpg",
+    "posterSource": "https://anilist.co/anime/101280",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3545810821,
+    "trackTitle": "Nameless Story",
+    "artist": "Takuma Terashima",
+    "artistId": 9594396,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/tensei_shitara_slime_datta_ken?include=animethemes.song.artists",
+    "themeTitle": "Nameless Story",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "mushoku",
+    "category": "anime",
+    "titleRu": "Реинкарнация безработного",
+    "titleOriginal": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "franchiseId": "mushoku",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Ecchi",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Drama",
+      "Ecchi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-1ANspF1EWyFx.jpg",
+    "posterSource": "https://anilist.co/anime/108465",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3737031652,
+    "trackTitle": "旅人の唄",
+    "artist": "大原ゆい子",
+    "artistId": 128990432,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/mushoku_tensei_isekai_ittara_honki_dasu?include=animethemes.song.artists",
+    "themeTitle": "Tabibito no Uta",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "eminence",
+    "category": "anime",
+    "titleRu": "Восхождение в тени!",
+    "titleOriginal": "Kage no Jitsuryokusha ni Naritakute!",
+    "franchiseId": "eminence",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130298-YMdcKHytpWNH.jpg",
+    "posterSource": "https://anilist.co/anime/130298",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2403083755,
+    "trackTitle": "HIGHEST",
+    "artist": "OxT",
+    "artistId": 13924431,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/kage_no_jitsuryokusha_ni_naritakute?include=animethemes.song.artists",
+    "themeTitle": "HIGHEST",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "tanya",
+    "category": "anime",
+    "titleRu": "Военная хроника маленькой девочки",
+    "titleOriginal": "Youjo Senki",
+    "franchiseId": "tanya",
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Fantasy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21613-qT3NiwYP5dYc.png",
+    "posterSource": "https://anilist.co/anime/21613",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2157451947,
+    "trackTitle": "JINGO JUNGLE",
+    "artist": "Myth & Roid",
+    "artistId": 14434339,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/youjo_senki?include=animethemes.song.artists",
+    "themeTitle": "JINGO JUNGLE",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "hyouka",
+    "category": "anime",
+    "titleRu": "Хёка",
+    "titleOriginal": "Hyouka",
+    "franchiseId": "hyouka",
+    "genres": [
+      "Mystery",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Mystery",
+      "Romance",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12189-zj5AWUYO53Fv.jpg",
+    "posterSource": "https://anilist.co/anime/12189",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2821789062,
+    "trackTitle": "Yasashisa no Riyu",
+    "artist": "Choucho",
+    "artistId": 4254091,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/hyouka?include=animethemes.song.artists",
+    "themeTitle": "Yasashisa no Riyuu",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "monogatari",
+    "category": "anime",
+    "titleRu": "Истории монстров",
+    "titleOriginal": "Bakemonogatari",
+    "franchiseId": "monogatari",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Mystery",
+      "Psychological",
+      "Romance",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Mystery"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081-9GocceQ5Z865.jpg",
+    "posterSource": "https://anilist.co/anime/5081",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 569781822,
+    "trackTitle": "Renai Circulation",
+    "artist": "MONOGATARI Series",
+    "artistId": 52714562,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/bakemonogatari?include=animethemes.song.artists",
+    "themeTitle": "Ren'ai Circulation",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "blackclover",
+    "category": "anime",
+    "titleRu": "Чёрный клевер",
+    "titleOriginal": "Black Clover",
+    "franchiseId": "blackclover",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97940-fyh8o7gNbha0.png",
+    "posterSource": "https://anilist.co/anime/97940",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2355735915,
+    "trackTitle": "Black Catcher",
+    "artist": "ビッケブランカ",
+    "artistId": 50322192,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/black_clover_tv?include=animethemes.song.artists",
+    "themeTitle": "Black Catcher",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "souleater",
+    "category": "anime",
+    "titleRu": "Пожиратель душ",
+    "titleOriginal": "Soul Eater",
+    "franchiseId": "souleater",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx3588-fSMggQoFSbUI.png",
+    "posterSource": "https://anilist.co/anime/3588",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975978682,
+    "trackTitle": "PAPERMOON",
+    "artist": "Tommy heavenly6",
+    "artistId": 5584425,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/soul_eater?include=animethemes.song.artists",
+    "themeTitle": "PAPERMOON",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "inuyasha",
+    "category": "anime",
+    "titleRu": "Инуяся",
+    "titleOriginal": "Inuyasha",
+    "franchiseId": "inuyasha",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy",
+      "Romance"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx249-jVBkyLnBvnRE.png",
+    "posterSource": "https://anilist.co/anime/249",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2516454071,
+    "trackTitle": "深い森",
+    "artist": "Do As Infinity",
+    "artistId": 920,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/inuyasha?include=animethemes.song.artists",
+    "themeTitle": "Fukai Mori",
+    "themeKind": "ending",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "kenshin",
+    "category": "anime",
+    "titleRu": "Бродяга Кэнсин",
+    "titleOriginal": "Rurouni Kenshin: Meiji Kenkaku Romantan",
+    "franchiseId": "kenshin",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx45-DEFgZRCxiGmF.png",
+    "posterSource": "https://anilist.co/anime/45",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975993252,
+    "trackTitle": "Sobakasu",
+    "artist": "Judy & Mary",
+    "artistId": 8002222,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/rurouni_kenshin_meiji_kenkaku_romantan?include=animethemes.song.artists",
+    "themeTitle": "Sobakasu",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "gto",
+    "category": "anime",
+    "titleRu": "Крутой учитель Онидзука",
+    "titleOriginal": "GTO",
+    "franchiseId": "gto",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx245-NcQAyTipUMeO.jpg",
+    "posterSource": "https://anilist.co/anime/245",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976294042,
+    "trackTitle": "Driver's High",
+    "artist": "L'Arc-en-Ciel",
+    "artistId": 133611,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/great_teacher_onizuka?include=animethemes.song.artists",
+    "themeTitle": "Driver's High",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "pandora",
+    "category": "anime",
+    "titleRu": "Сердца Пандоры",
+    "titleOriginal": "Pandora Hearts",
+    "franchiseId": "pandora",
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5530-ukD9JNrN47aA.jpg",
+    "posterSource": "https://anilist.co/anime/5530",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2116021197,
+    "trackTitle": "Parallel Hearts",
+    "artist": "FictionJunction",
+    "artistId": 68976552,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/pandora_hearts?include=animethemes.song.artists",
+    "themeTitle": "Parallel Hearts",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "steins",
+    "category": "anime",
+    "titleRu": "Врата Штейна",
+    "titleOriginal": "Steins;Gate",
+    "franchiseId": "steins",
+    "genres": [
+      "Drama",
+      "Psychological",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Drama",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9253-tIUXF2gfU8Sg.jpg",
+    "posterSource": "https://anilist.co/anime/9253",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3584685331,
+    "trackTitle": "Hacking to the Gate",
+    "artist": "いとうかなこ",
+    "artistId": 13886759,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/steinsgate?include=animethemes.song.artists",
+    "themeTitle": "Hacking to the Gate",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "nhk",
+    "category": "anime",
+    "titleRu": "Добро пожаловать в NHK!",
+    "titleOriginal": "NHK ni Youkoso!",
+    "franchiseId": "nhk",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Psychological",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1210-2XotjcgqdcaX.jpg",
+    "posterSource": "https://anilist.co/anime/1210",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2116068107,
+    "trackTitle": "Puzzle",
+    "artist": "Round Table",
+    "artistId": 13215383,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/nhk_ni_youkoso?include=animethemes.song.artists",
+    "themeTitle": "Puzzle",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "spicewolf",
+    "category": "anime",
+    "titleRu": "Волчица и пряности",
+    "titleOriginal": "Ookami to Koushinryou",
+    "franchiseId": "spicewolf",
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Adventure",
+      "Fantasy",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2966-AEULMyYA9WKb.png",
+    "posterSource": "https://anilist.co/anime/2966",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2114753717,
+    "trackTitle": "Tabi no Tochuu",
+    "artist": "Natsumi Kiyoura",
+    "artistId": 48645552,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/ookami_to_koushinryou?include=animethemes.song.artists",
+    "themeTitle": "Tabi no Tochuu",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "ghostshell",
+    "category": "anime",
+    "titleRu": "Призрак в доспехах: Синдром одиночки",
+    "titleOriginal": "Koukaku Kidoutai: STAND ALONE COMPLEX",
+    "franchiseId": "ghostshell",
+    "genres": [
+      "Action",
+      "Mystery",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Mystery",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx467-mBTtIoR13qs2.jpg",
+    "posterSource": "https://anilist.co/anime/467",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2116029137,
+    "trackTitle": "inner universe",
+    "artist": "ORIGA",
+    "artistId": 1842,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/ghost_in_the_shell_stand_alone_complex?include=animethemes.song.artists",
+    "themeTitle": "Inner Universe",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "darker",
+    "category": "anime",
+    "titleRu": "Темнее чёрного",
+    "titleOriginal": "DARKER THAN BLACK: Kuro no Keiyakusha",
+    "franchiseId": "darker",
+    "genres": [
+      "Action",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b2025-ZKVteVzUyFLH.png",
+    "posterSource": "https://anilist.co/anime/2025",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1282477012,
+    "trackTitle": "HOWLING",
+    "artist": "abingdon boys school",
+    "artistId": 14345,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/darker_than_black_kuro_no_keiyakusha?include=animethemes.song.artists",
+    "themeTitle": "Howling",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26",
+    "disabledReason": "Preview shorter than 15 seconds; browser decode audit 2026-10-26"
+  },
+  {
+    "animeId": "inuyashiki",
+    "category": "anime",
+    "titleRu": "Инуясики",
+    "titleOriginal": "Inuyashiki",
+    "franchiseId": "inuyashiki",
+    "genres": [
+      "Action",
+      "Drama",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97922-qrGn5fkQinDs.jpg",
+    "posterSource": "https://anilist.co/anime/97922",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 418164132,
+    "trackTitle": "My Hero",
+    "artist": "MAN WITH A MISSION",
+    "artistId": 5797990,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/inuyashiki?include=animethemes.song.artists",
+    "themeTitle": "My Hero",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "devilman",
+    "category": "anime",
+    "titleRu": "Человек-дьявол: Плакса",
+    "titleOriginal": "DEVILMAN crybaby",
+    "franchiseId": "devilman",
+    "genres": [
+      "Action",
+      "Drama",
+      "Horror",
+      "Psychological",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Horror"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98460-bLtH2c3jd6sV.png",
+    "posterSource": "https://anilist.co/anime/98460",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 439189422,
+    "trackTitle": "Man Human (Devilman Crybaby Version)",
+    "artist": "Denki Groove",
+    "artistId": 450958,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/devilman_crybaby?include=animethemes.song.artists",
+    "themeTitle": "MAN HUMAN (DEVILMAN crybaby Ver.)",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "eureka",
+    "category": "anime",
+    "titleRu": "Эврика 7",
+    "titleOriginal": "Koukyoushihen Eureka Seven",
+    "franchiseId": "eureka",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Mecha",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx237-P1YEQQFqZ1An.jpg",
+    "posterSource": "https://anilist.co/anime/237",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1124776612,
+    "trackTitle": "Days",
+    "artist": "FLOW",
+    "artistId": 4407,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/eureka_seven?include=animethemes.song.artists",
+    "themeTitle": "DAYS",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "blacklagoon",
+    "category": "anime",
+    "titleRu": "Пираты «Чёрной лагуны»",
+    "titleOriginal": "BLACK LAGOON",
+    "franchiseId": "blacklagoon",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx889-4S7N2ciq2cwA.png",
+    "posterSource": "https://anilist.co/anime/889",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3296014901,
+    "trackTitle": "Red fraction",
+    "artist": "MeLL",
+    "artistId": 58963,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/black_lagoon?include=animethemes.song.artists",
+    "themeTitle": "Red Fraction",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "free",
+    "category": "anime",
+    "titleRu": "Вольный стиль!",
+    "titleOriginal": "Free!",
+    "franchiseId": "free",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Slice of Life",
+      "Sports"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx18507-RajfCYPpBfT3.png",
+    "posterSource": "https://anilist.co/anime/18507",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2806502142,
+    "trackTitle": "Rage on",
+    "artist": "OLDCODEX",
+    "artistId": 15085759,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/free?include=animethemes.song.artists",
+    "themeTitle": "Rage on",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "bananafish",
+    "category": "anime",
+    "titleRu": "Банановая рыба",
+    "titleOriginal": "BANANA FISH",
+    "franchiseId": "bananafish",
+    "genres": [
+      "Action",
+      "Drama",
+      "Psychological",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100388-hjkg1AnlJR5z.jpg",
+    "posterSource": "https://anilist.co/anime/100388",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975991842,
+    "trackTitle": "Found & Lost",
+    "artist": "Survive Said The Prophet",
+    "artistId": 12136902,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/banana_fish?include=animethemes.song.artists",
+    "themeTitle": "found & lost",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "given",
+    "category": "anime",
+    "titleRu": "Дарованный",
+    "titleOriginal": "Given",
+    "franchiseId": "given",
+    "genres": [
+      "Drama",
+      "Music",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Drama",
+      "Music",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108430-UdruJPro4vDK.jpg",
+    "posterSource": "https://anilist.co/anime/108430",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975911712,
+    "trackTitle": "Kizuato",
+    "artist": "Centimillimental",
+    "artistId": 70886932,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/given?include=animethemes.song.artists",
+    "themeTitle": "Kizuato",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "nana",
+    "category": "anime",
+    "titleRu": "Нана",
+    "titleOriginal": "NANA",
+    "franchiseId": "nana",
+    "genres": [
+      "Drama",
+      "Music",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Drama",
+      "Music",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx877-6BUYEWp8By8j.png",
+    "posterSource": "https://anilist.co/anime/877",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 2367782785,
+    "trackTitle": "rose",
+    "artist": "ANNA inspi' NANA(BLACK STONES)",
+    "artistId": 221605055,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/nana?include=animethemes.song.artists",
+    "themeTitle": "Rose",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "natsume",
+    "category": "anime",
+    "titleRu": "Тетрадь дружбы Нацумэ",
+    "titleOriginal": "Natsume Yuujinchou",
+    "franchiseId": "natsume",
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Slice of Life",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Drama",
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4081-xi08naD69tjr.jpg",
+    "posterSource": "https://anilist.co/anime/4081",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3469987151,
+    "trackTitle": "Issei no sei",
+    "artist": "Shuhei Kita",
+    "artistId": 123887502,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/natsume_yuujinchou?include=animethemes.song.artists",
+    "themeTitle": "Issei no Sei",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "flcl",
+    "category": "anime",
+    "titleRu": "Фури-кури",
+    "titleOriginal": "FLCL",
+    "franchiseId": "flcl",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Mecha",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Comedy",
+      "Mecha"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx227-qOB9ZhVvNnqO.jpg",
+    "posterSource": "https://anilist.co/anime/227",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1831943227,
+    "trackTitle": "Ride on shooting star",
+    "artist": "the pillows",
+    "artistId": 1178,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/flcl?include=animethemes.song.artists",
+    "themeTitle": "Ride On Shooting Star",
+    "themeKind": "ending",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "charlotte",
+    "category": "anime",
+    "titleRu": "Шарлотта",
+    "titleOriginal": "Charlotte",
+    "franchiseId": "charlotte",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Sci-Fi",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20997-axVYrsIfjtYJ.jpg",
+    "posterSource": "https://anilist.co/anime/20997",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3174335601,
+    "trackTitle": "Bravely You",
+    "artist": "LIA",
+    "artistId": 13699737,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/charlotte?include=animethemes.song.artists",
+    "themeTitle": "Bravely You",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "plasticmemories",
+    "category": "anime",
+    "titleRu": "Пластиковые воспоминания",
+    "titleOriginal": "Plastic Memories",
+    "franchiseId": "plasticmemories",
+    "genres": [
+      "Drama",
+      "Romance",
+      "Sci-Fi",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20872-j5PBzzVtrYDM.jpg",
+    "posterSource": "https://anilist.co/anime/20872",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 4061476741,
+    "trackTitle": "Ring of Fortune",
+    "artist": "佐々木恵梨",
+    "artistId": 13887327,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/plastic_memories?include=animethemes.song.artists",
+    "themeTitle": "Ring of Fortune",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "relife",
+    "category": "anime",
+    "titleRu": "Повторная жизнь",
+    "titleOriginal": "ReLIFE",
+    "franchiseId": "relife",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21049-4AHSLeiDE9eg.png",
+    "posterSource": "https://anilist.co/anime/21049",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 975888712,
+    "trackTitle": "Button",
+    "artist": "PENGUIN RESEARCH",
+    "artistId": 9717256,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/relife?include=animethemes.song.artists",
+    "themeTitle": "Button",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "shakugan",
+    "category": "anime",
+    "titleRu": "Жгучий взор Сяны",
+    "titleOriginal": "Shakugan no Shana",
+    "franchiseId": "shakugan",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Fantasy",
+      "Romance",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Action",
+      "Comedy",
+      "Drama"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx355-tB52QB38leMs.png",
+    "posterSource": "https://anilist.co/anime/355",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 3296122641,
+    "trackTitle": "緋色の空",
+    "artist": "Mami Kawada",
+    "artistId": 11963223,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/shakugan_no_shana?include=animethemes.song.artists",
+    "themeTitle": "Hishoku no Sora",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "recreators",
+    "category": "anime",
+    "titleRu": "Возрождающие",
+    "titleOriginal": "Re:CREATORS",
+    "franchiseId": "recreators",
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "Mecha",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Fantasy"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97980-9NQwPW0igSMk.jpg",
+    "posterSource": "https://anilist.co/anime/97980",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976109212,
+    "trackTitle": "Gravity Wall",
+    "artist": "SawanoHiroyuki[nZk]",
+    "artistId": 51708732,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/recreators?include=animethemes.song.artists",
+    "themeTitle": "gravityWall",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "aldnoah",
+    "category": "anime",
+    "titleRu": "Альдноа.Зеро",
+    "titleOriginal": "Aldnoah.Zero",
+    "franchiseId": "aldnoah",
+    "genres": [
+      "Action",
+      "Mecha",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Mecha",
+      "Sci-Fi"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20632-Mkgbtvi1kmhD.jpg",
+    "posterSource": "https://anilist.co/anime/20632",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976823472,
+    "trackTitle": "Heavenly Blue",
+    "artist": "Kalafina",
+    "artistId": 1575953,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/aldnoahzero?include=animethemes.song.artists",
+    "themeTitle": "heavenly blue",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "terror",
+    "category": "anime",
+    "titleRu": "Эхо террора",
+    "titleOriginal": "Zankyou no Terror",
+    "franchiseId": "terror",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Psychological",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Drama",
+      "Mystery",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20661-aCR7QgzDfOSI.png",
+    "posterSource": "https://anilist.co/anime/20661",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 976002022,
+    "trackTitle": "Trigger",
+    "artist": "Yuuki Ozaki",
+    "artistId": 9743402,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/zankyou_no_terror?include=animethemes.song.artists",
+    "themeTitle": "Trigger",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "eightysix",
+    "category": "anime",
+    "titleRu": "Восемьдесят шесть",
+    "titleOriginal": "86: Eighty Six",
+    "franchiseId": "eightysix",
+    "genres": [
+      "Action",
+      "Drama",
+      "Mecha",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Mecha"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116589-KawXHB6sApFt.jpg",
+    "posterSource": "https://anilist.co/anime/116589",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1342240002,
+    "trackTitle": "3 min 29 sec",
+    "artist": "hitorie",
+    "artistId": 13703461,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/86?include=animethemes.song.artists",
+    "themeTitle": "3-pun 29-byou",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "summertime",
+    "category": "anime",
+    "titleRu": "Летнее время",
+    "titleOriginal": "Summer Time Render",
+    "franchiseId": "summertime",
+    "genres": [
+      "Action",
+      "Drama",
+      "Mystery",
+      "Supernatural",
+      "Thriller"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Mystery"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx129201-HJBauga2be8I.png",
+    "posterSource": "https://anilist.co/anime/129201",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1704127417,
+    "trackTitle": "Hoshigaoyogu",
+    "artist": "Macaroni Empitsu",
+    "artistId": 132848352,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/summer_time_render?include=animethemes.song.artists",
+    "themeTitle": "Hoshi ga Oyogu",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "cyberpunk",
+    "category": "anime",
+    "titleRu": "Киберпанк: Бегущие по краю",
+    "titleOriginal": "Cyberpunk: Edgerunners",
+    "franchiseId": "cyberpunk",
+    "genres": [
+      "Action",
+      "Drama",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "moodTags": [
+      "Action",
+      "Drama",
+      "Psychological"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120377-ayZPoxiWt4Li.jpg",
+    "posterSource": "https://anilist.co/anime/120377",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 4642375,
+    "trackTitle": "This fffire (New Version)",
+    "artist": "Franz Ferdinand",
+    "artistId": 919,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/cyberpunk_edgerunners?include=animethemes.song.artists",
+    "themeTitle": "This Fffire",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "komi",
+    "category": "anime",
+    "titleRu": "У Коми проблемы с общением",
+    "titleOriginal": "Komi-san wa, Komyushou desu.",
+    "franchiseId": "komi",
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx133965-9TZBS4m4yvED.png",
+    "posterSource": "https://anilist.co/anime/133965",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1509504982,
+    "trackTitle": "Cinderella",
+    "artist": "Cidergirl",
+    "artistId": 13082439,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/komi_san_wa_comyushou_desu?include=animethemes.song.artists",
+    "themeTitle": "Cinderella",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "nagatoro",
+    "category": "anime",
+    "titleRu": "Не издевайся, Нагаторо!",
+    "titleOriginal": "Ijiranaide, Nagatoro-san",
+    "franchiseId": "nagatoro",
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120697-BA2TqxB1I5bJ.jpg",
+    "posterSource": "https://anilist.co/anime/120697",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1274955472,
+    "trackTitle": "EASY LOVE",
+    "artist": "Sumire Uesaka",
+    "artistId": 7242988,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/ijiranaide_nagatoro_san?include=animethemes.song.artists",
+    "themeTitle": "EASY LOVE",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  },
+  {
+    "animeId": "callnight",
+    "category": "anime",
+    "titleRu": "Песнь ночных сов",
+    "titleOriginal": "Yofukashi no Uta",
+    "franchiseId": "callnight",
+    "genres": [
+      "Comedy",
+      "Psychological",
+      "Romance",
+      "Slice of Life",
+      "Supernatural"
+    ],
+    "moodTags": [
+      "Comedy",
+      "Psychological",
+      "Romance"
+    ],
+    "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141391-M3ZgUKTPENUk.jpg",
+    "posterSource": "https://anilist.co/anime/141391",
+    "posterCredit": "AniList; artwork copyright respective rights holders",
+    "trackId": 1799810607,
+    "trackTitle": "Daten",
+    "artist": "Creepy Nuts",
+    "artistId": 13046819,
+    "distractorIds": [],
+    "themeSource": "https://api.animethemes.moe/anime/yofukashi_no_uta?include=animethemes.song.artists",
+    "themeTitle": "Daten",
+    "themeKind": "opening",
+    "checkedAt": "2026-10-26"
+  }
+]
