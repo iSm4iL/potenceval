@@ -5,6 +5,7 @@ import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=silence-1';
 import { resultPresentation } from './feedback.js?v=bonus-1';
 import { createCatalogClient } from './collection.js';
+import './report.js?v=report-1';
 import { createMultiplayer } from './multiplayer.js?v=friends-20261025-2';
 
 const stage = $('#stage'), player = new AudioPlayer(), service = createDeezerClient(), catalog = createCatalogClient();
@@ -132,6 +133,7 @@ function renderGame(focusAnswer = false) {
   $('#exitBtn').hidden = false;
   if (state.phase === 'summary') { renderSummary(); if (multiplayer.active) multiplayer.decorate(); stage.scrollIntoView({ block: 'start' }); return; }
   const track = trackById(state.queue[state.index]);
+  stage.dataset.reportTrack = JSON.stringify({ id: track.deezerId, title: track.title, artist: track.artist, pack: state.packTitle || state.packId || '' }); // для флажка жалобы (report.js)
   if (state.phase === 'reveal') renderReveal(track); else renderRound();
   stage.scrollIntoView({ block: 'start' });
   prepareAudio(track, screenVersion, focusAnswer);
