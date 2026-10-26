@@ -1,0 +1,1124 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-25",
+  "sources": [
+    "https://docs.anilist.co/",
+    "https://api.deezer.com/"
+  ],
+  "entries": [
+    {
+      "animeId": "oshi",
+      "titleRu": "Ребёнок идола",
+      "titleOriginal": "[Oshi no Ko]",
+      "franchiseId": "oshi",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Psychological",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Drama",
+        "Mystery",
+        "Psychological"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx150672-WqmmwZ4nMzAy.png",
+      "posterSource": "https://anilist.co/anime/150672",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2287882757,
+      "trackTitle": "Idol",
+      "artist": "YOASOBI",
+      "artistId": 108153772,
+      "distractorIds": [
+        "kaguya",
+        "lie",
+        "bunny",
+        "bocchi",
+        "spy",
+        "frieren"
+      ],
+      "themeSource": "https://myanimelist.net/anime/52034",
+      "themeTitle": "Idol",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "gurren",
+      "titleRu": "Гуррен-Лаганн",
+      "titleOriginal": "Tengen Toppa Gurren Lagann",
+      "franchiseId": "gurren",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Mecha",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "moodTags": [
+        "Action",
+        "Comedy",
+        "Drama"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2001-XwRnjzGeFWRQ.png",
+      "posterSource": "https://anilist.co/anime/2001",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 975986452,
+      "trackTitle": "Sorairo Days",
+      "artist": "Shoko Nakagawa",
+      "artistId": 5503316,
+      "distractorIds": [
+        "geass",
+        "eva",
+        "fireforce"
+      ],
+      "themeSource": "https://myanimelist.net/anime/2001",
+      "themeTitle": "Sorairo Days",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "dandadan",
+      "titleRu": "Дандадан",
+      "titleOriginal": "Dandadan",
+      "franchiseId": "dandadan",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Romance",
+        "Sci-Fi",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Comedy",
+        "Drama"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-60q1B6GK2Ghb.jpg",
+      "posterSource": "https://anilist.co/anime/171018",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 3024903811,
+      "trackTitle": "Otonoke",
+      "artist": "Creepy Nuts",
+      "artistId": 13046819,
+      "distractorIds": [
+        "mashle",
+        "chainsaw",
+        "jujutsu",
+        "noragami"
+      ],
+      "themeSource": "https://myanimelist.net/anime/57334",
+      "themeTitle": "Otonoke",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "mashle",
+      "titleRu": "Магия и мускулы",
+      "titleOriginal": "MASHLE: Kami Shinkakusha Kouho Senbatsu Shiken-hen",
+      "franchiseId": "mashle",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ],
+      "moodTags": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx166610-S5q7V2v5zdDK.jpg",
+      "posterSource": "https://anilist.co/anime/166610",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2580253682,
+      "trackTitle": "Bling-Bang-Bang-Born",
+      "artist": "Creepy Nuts",
+      "artistId": 13046819,
+      "distractorIds": [
+        "dandadan",
+        "onepunch",
+        "konosuba"
+      ],
+      "themeSource": "https://myanimelist.net/anime/55813",
+      "themeTitle": "Bling-Bang-Bang-Born",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "chainsaw",
+      "titleRu": "Человек-бензопила",
+      "titleOriginal": "Chainsaw Man",
+      "franchiseId": "chainsaw",
+      "genres": [
+        "Action",
+        "Drama",
+        "Horror",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Horror"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-DdP4vAdssLoz.png",
+      "posterSource": "https://anilist.co/anime/127230",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1946911957,
+      "trackTitle": "KICK BACK",
+      "artist": "Kenshi Yonezu",
+      "artistId": 5289039,
+      "distractorIds": [
+        "jujutsu",
+        "dandadan",
+        "tokyo",
+        "parasyte",
+        "fireforce"
+      ],
+      "themeSource": "https://myanimelist.net/anime/44511",
+      "themeTitle": "KICK BACK",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "jujutsu",
+      "titleRu": "Магическая битва",
+      "titleOriginal": "Jujutsu Kaisen",
+      "franchiseId": "jujutsu",
+      "genres": [
+        "Action",
+        "Drama",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Supernatural"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-LHBAeoZDIsnF.jpg",
+      "posterSource": "https://anilist.co/anime/113415",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1143848452,
+      "trackTitle": "Kaikai Kitan",
+      "artist": "Eve",
+      "artistId": 69128312,
+      "distractorIds": [
+        "chainsaw",
+        "demon",
+        "bleach",
+        "noragami",
+        "dandadan"
+      ],
+      "themeSource": "https://myanimelist.net/anime/40748",
+      "themeTitle": "Kaikai Kitan",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "attack",
+      "titleRu": "Атака титанов",
+      "titleOriginal": "Shingeki no Kyojin",
+      "franchiseId": "attack",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Mystery"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Fantasy"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-buvcRTBx4NSm.jpg",
+      "posterSource": "https://anilist.co/anime/16498",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 472698952,
+      "trackTitle": "Guren No Yumiya",
+      "artist": "Linked Horizon",
+      "artistId": 7174384,
+      "distractorIds": [
+        "fullmetal",
+        "geass",
+        "eva",
+        "parasyte",
+        "tokyo"
+      ],
+      "themeSource": "https://myanimelist.net/anime/16498",
+      "themeTitle": "Guren no Yumiya",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "demon",
+      "titleRu": "Клинок, рассекающий демонов",
+      "titleOriginal": "Kimetsu no Yaiba",
+      "franchiseId": "demon",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg",
+      "posterSource": "https://anilist.co/anime/101922",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1093334492,
+      "trackTitle": "Gurenge",
+      "artist": "LiSA",
+      "artistId": 11446160,
+      "distractorIds": [
+        "jujutsu",
+        "bleach",
+        "naruto",
+        "sao"
+      ],
+      "themeSource": "https://myanimelist.net/anime/38000",
+      "themeTitle": "Gurenge",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "naruto",
+      "titleRu": "Наруто",
+      "titleOriginal": "NARUTO: Shippuuden",
+      "franchiseId": "naruto",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1735-kGfVm0YqCPcu.png",
+      "posterSource": "https://anilist.co/anime/1735",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 121134202,
+      "trackTitle": "Blue Bird",
+      "artist": "Ikimonogakari",
+      "artistId": 5960768,
+      "distractorIds": [
+        "bleach",
+        "onepiece",
+        "fullmetal"
+      ],
+      "themeSource": "https://myanimelist.net/anime/1735",
+      "themeTitle": "Blue Bird",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "bleach",
+      "titleRu": "Блич",
+      "titleOriginal": "BLEACH",
+      "franchiseId": "bleach",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Adventure",
+        "Supernatural"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx269-d2GmRkJbMopq.png",
+      "posterSource": "https://anilist.co/anime/269",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 975900332,
+      "trackTitle": "*Asterisk",
+      "artist": "ORANGE RANGE",
+      "artistId": 878,
+      "distractorIds": [
+        "naruto",
+        "onepiece",
+        "demon",
+        "noragami"
+      ],
+      "themeSource": "https://myanimelist.net/anime/269",
+      "themeTitle": "Asterisk",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "onepiece",
+      "titleRu": "Ван-Пис",
+      "titleOriginal": "ONE PIECE",
+      "franchiseId": "onepiece",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "moodTags": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21-ELSYx3yMPcKM.jpg",
+      "posterSource": "https://anilist.co/anime/21",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 3033808841,
+      "trackTitle": "We Are!",
+      "artist": "Hiroshi Kitadani",
+      "artistId": 12014778,
+      "distractorIds": [
+        "naruto",
+        "bleach",
+        "fullmetal",
+        "gurren"
+      ],
+      "themeSource": "https://myanimelist.net/anime/21",
+      "themeTitle": "We Are!",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "deathnote",
+      "titleRu": "Тетрадь смерти",
+      "titleOriginal": "DEATH NOTE",
+      "franchiseId": "deathnote",
+      "genres": [
+        "Mystery",
+        "Psychological",
+        "Supernatural",
+        "Thriller"
+      ],
+      "moodTags": [
+        "Mystery",
+        "Psychological",
+        "Supernatural"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-kUgkcrfOrkUM.jpg",
+      "posterSource": "https://anilist.co/anime/1535",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2665292552,
+      "trackTitle": "the WORLD",
+      "artist": "Nightmare",
+      "artistId": 254820662,
+      "distractorIds": [
+        "tokyo",
+        "parasyte",
+        "erased",
+        "geass"
+      ],
+      "themeSource": "https://myanimelist.net/anime/1535",
+      "themeTitle": "the WORLD",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "tokyo",
+      "titleRu": "Токийский гуль",
+      "titleOriginal": "Tokyo Ghoul",
+      "franchiseId": "tokyo",
+      "genres": [
+        "Action",
+        "Drama",
+        "Horror",
+        "Mystery",
+        "Psychological",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Horror"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg",
+      "posterSource": "https://anilist.co/anime/20605",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 975968052,
+      "trackTitle": "Unravel",
+      "artist": "TK from Ling tosite sigure",
+      "artistId": 9973848,
+      "distractorIds": [
+        "parasyte",
+        "chainsaw",
+        "deathnote",
+        "jujutsu",
+        "noragami"
+      ],
+      "themeSource": "https://myanimelist.net/anime/22319",
+      "themeTitle": "unravel",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "onepunch",
+      "titleRu": "Ванпанчмен",
+      "titleOriginal": "One Punch Man",
+      "franchiseId": "onepunch",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21087-B5DHjqZ3kW4b.jpg",
+      "posterSource": "https://anilist.co/anime/21087",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2767184121,
+      "trackTitle": "THE HERO!!: Ikareru Kobushi ni Hi o Tsukero",
+      "artist": "JAM Project",
+      "artistId": 6372,
+      "distractorIds": [
+        "mashle",
+        "gurren",
+        "dandadan",
+        "fireforce",
+        "naruto"
+      ],
+      "themeSource": "https://myanimelist.net/anime/30276",
+      "themeTitle": "THE HERO!!",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "fullmetal",
+      "titleRu": "Стальной алхимик: Братство",
+      "titleOriginal": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+      "franchiseId": "fullmetal",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "moodTags": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5114-nSWCgQlmOMtj.jpg",
+      "posterSource": "https://anilist.co/anime/5114",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 975952742,
+      "trackTitle": "Again",
+      "artist": "YUI",
+      "artistId": 4771,
+      "distractorIds": [
+        "attack",
+        "naruto",
+        "demon"
+      ],
+      "themeSource": "https://myanimelist.net/anime/5114",
+      "themeTitle": "again",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "eva",
+      "titleRu": "Евангелион",
+      "titleOriginal": "Shin Seiki Evangelion",
+      "franchiseId": "eva",
+      "genres": [
+        "Action",
+        "Drama",
+        "Mecha",
+        "Mystery",
+        "Psychological",
+        "Sci-Fi"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Mecha"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx30-AI1zr74Dh4ye.jpg",
+      "posterSource": "https://anilist.co/anime/30",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1143838252,
+      "trackTitle": "The Cruel Angel's Thesis",
+      "artist": "Yoko Takahashi",
+      "artistId": 7951446,
+      "distractorIds": [
+        "gurren",
+        "geass",
+        "attack"
+      ],
+      "themeSource": "https://myanimelist.net/anime/30",
+      "themeTitle": "A Cruel Angel's Thesis",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "geass",
+      "titleRu": "Код Гиас",
+      "titleOriginal": "Code Geass: Hangyaku no Lelouch",
+      "franchiseId": "geass",
+      "genres": [
+        "Action",
+        "Drama",
+        "Mecha",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Mecha"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1575-hsmWM2ydNm1m.jpg",
+      "posterSource": "https://anilist.co/anime/1575",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 976202432,
+      "trackTitle": "Colors",
+      "artist": "FLOW",
+      "artistId": 4407,
+      "distractorIds": [
+        "gurren",
+        "eva",
+        "deathnote",
+        "attack"
+      ],
+      "themeSource": "https://myanimelist.net/anime/1575",
+      "themeTitle": "COLORS",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "sao",
+      "titleRu": "Мастера меча онлайн",
+      "titleOriginal": "Sword Art Online",
+      "franchiseId": "sao",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "moodTags": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757-SxYDUzdr9rh2.jpg",
+      "posterSource": "https://anilist.co/anime/11757",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 976378422,
+      "trackTitle": "Crossing Field",
+      "artist": "LiSA",
+      "artistId": 11446160,
+      "distractorIds": [
+        "demon",
+        "nogame",
+        "rezero",
+        "konosuba"
+      ],
+      "themeSource": "https://myanimelist.net/anime/11757",
+      "themeTitle": "crossing field",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "noragami",
+      "titleRu": "Бездомный бог",
+      "titleOriginal": "Noragami",
+      "franchiseId": "noragami",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20447-EoQXeygHaVCK.jpg",
+      "posterSource": "https://anilist.co/anime/20447",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 3618414102,
+      "trackTitle": "Goyanomachiawase",
+      "artist": "Hello Sleepwalkers",
+      "artistId": 14626387,
+      "distractorIds": [
+        "jujutsu",
+        "bleach",
+        "tokyo",
+        "dandadan"
+      ],
+      "themeSource": "https://myanimelist.net/anime/20507",
+      "themeTitle": "Goya wa Machiawase",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "fireforce",
+      "titleRu": "Пламенная бригада пожарных",
+      "titleOriginal": "Enen no Shouboutai",
+      "franchiseId": "fireforce",
+      "genres": [
+        "Action",
+        "Drama",
+        "Sci-Fi",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105310-2PKUvoaA6fTn.jpg",
+      "posterSource": "https://anilist.co/anime/105310",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 711676642,
+      "trackTitle": "Inferno",
+      "artist": "Mrs. Green Apple",
+      "artistId": 8152202,
+      "distractorIds": [
+        "chainsaw",
+        "demon",
+        "gurren"
+      ],
+      "themeSource": "https://myanimelist.net/anime/38671",
+      "themeTitle": "Inferno",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "haikyuu",
+      "titleRu": "Волейбол!!",
+      "titleOriginal": "Haikyuu!!",
+      "franchiseId": "haikyuu",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Sports"
+      ],
+      "moodTags": [
+        "Comedy",
+        "Drama",
+        "Sports"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20464-ooZUyBe4ptp9.png",
+      "posterSource": "https://anilist.co/anime/20464",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1439536642,
+      "trackTitle": "Imagination",
+      "artist": "Spyair",
+      "artistId": 5794305,
+      "distractorIds": [
+        "bluelock",
+        "naruto",
+        "onepunch",
+        "mashle",
+        "fireforce"
+      ],
+      "themeSource": "https://myanimelist.net/anime/20583",
+      "themeTitle": "Imagination",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "bluelock",
+      "titleRu": "Синяя тюрьма: Блю Лок",
+      "titleOriginal": "Blue Lock",
+      "franchiseId": "bluelock",
+      "genres": [
+        "Action",
+        "Drama",
+        "Sports"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Sports"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137822-U8naszP96vzC.png",
+      "posterSource": "https://anilist.co/anime/137822",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1951233967,
+      "trackTitle": "Chaos Ga Kiwamaru",
+      "artist": "UNISON SQUARE GARDEN",
+      "artistId": 14002467,
+      "distractorIds": [
+        "haikyuu",
+        "naruto",
+        "onepunch",
+        "mashle",
+        "fireforce"
+      ],
+      "themeSource": "https://myanimelist.net/anime/49596",
+      "themeTitle": "Chaos ga Kiwamaru",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "frieren",
+      "titleRu": "Провожающая в последний путь Фрирен",
+      "titleOriginal": "Sousou no Frieren",
+      "franchiseId": "frieren",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "moodTags": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-qQTzQnEJJ3oB.jpg",
+      "posterSource": "https://anilist.co/anime/154587",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2449469235,
+      "trackTitle": "勇者",
+      "artist": "YOASOBI",
+      "artistId": 108153772,
+      "distractorIds": [
+        "oshi",
+        "sao",
+        "rezero",
+        "nogame",
+        "demon"
+      ],
+      "themeSource": "https://myanimelist.net/anime/52991",
+      "themeTitle": "Yuusha",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "spy",
+      "titleRu": "Семья шпиона",
+      "titleOriginal": "SPY×FAMILY",
+      "franchiseId": "spy",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Action",
+        "Comedy",
+        "Slice of Life"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960-Kb6R5nYQfjmP.jpg",
+      "posterSource": "https://anilist.co/anime/140960",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1701852587,
+      "trackTitle": "Mixed Nuts",
+      "artist": "OFFICIAL HIGE DANDISM",
+      "artistId": 7579730,
+      "distractorIds": [
+        "kaguya",
+        "oshi",
+        "bunny",
+        "konosuba",
+        "bocchi"
+      ],
+      "themeSource": "https://myanimelist.net/anime/50265",
+      "themeTitle": "Mixed Nuts",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "kaguya",
+      "titleRu": "Госпожа Кагуя: в любви как на войне",
+      "titleOriginal": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+      "franchiseId": "kaguya",
+      "genres": [
+        "Comedy",
+        "Psychological",
+        "Romance",
+        "Slice of Life"
+      ],
+      "moodTags": [
+        "Comedy",
+        "Psychological",
+        "Romance"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101921-ufrjLzhSz7L1.jpg",
+      "posterSource": "https://anilist.co/anime/101921",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 976086872,
+      "trackTitle": "Love Dramatic",
+      "artist": "Masayuki Suzuki",
+      "artistId": 4636764,
+      "distractorIds": [
+        "oshi",
+        "bunny",
+        "lie",
+        "spy",
+        "bocchi"
+      ],
+      "themeSource": "https://myanimelist.net/anime/37999",
+      "themeTitle": "Love Dramatic",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "lie",
+      "titleRu": "Твоя апрельская ложь",
+      "titleOriginal": "Shigatsu wa Kimi no Uso",
+      "franchiseId": "lie",
+      "genres": [
+        "Drama",
+        "Music",
+        "Romance",
+        "Slice of Life"
+      ],
+      "moodTags": [
+        "Drama",
+        "Music",
+        "Romance"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-TLgkL8T8IRFd.png",
+      "posterSource": "https://anilist.co/anime/20665",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 976093942,
+      "trackTitle": "Hikarunara",
+      "artist": "Goose house",
+      "artistId": 1413597,
+      "distractorIds": [
+        "bunny",
+        "bocchi",
+        "kaguya",
+        "oshi",
+        "spy"
+      ],
+      "themeSource": "https://myanimelist.net/anime/23273",
+      "themeTitle": "Hikaru nara",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "bunny",
+      "titleRu": "Этот глупый свин не понимает мечту девочки-зайки",
+      "titleOriginal": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+      "franchiseId": "bunny",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Mystery",
+        "Psychological",
+        "Romance",
+        "Supernatural"
+      ],
+      "moodTags": [
+        "Comedy",
+        "Drama",
+        "Mystery"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101291-wfEdgPqtfU0l.jpg",
+      "posterSource": "https://anilist.co/anime/101291",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 975905312,
+      "trackTitle": "Kiminosei",
+      "artist": "the peggies",
+      "artistId": 50260642,
+      "distractorIds": [
+        "kaguya",
+        "lie",
+        "oshi",
+        "bocchi",
+        "spy"
+      ],
+      "themeSource": "https://myanimelist.net/anime/37450",
+      "themeTitle": "Kimi no Sei",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "bocchi",
+      "titleRu": "Одинокий рокер!",
+      "titleOriginal": "Bocchi the Rock!",
+      "franchiseId": "bocchi",
+      "genres": [
+        "Comedy",
+        "Music",
+        "Slice of Life"
+      ],
+      "moodTags": [
+        "Comedy",
+        "Music",
+        "Slice of Life"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png",
+      "posterSource": "https://anilist.co/anime/130003",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1922480887,
+      "trackTitle": "seisyun complex",
+      "artist": "kessoku band",
+      "artistId": 183953437,
+      "distractorIds": [
+        "lie",
+        "bunny",
+        "kaguya",
+        "oshi",
+        "spy"
+      ],
+      "themeSource": "https://myanimelist.net/anime/47917",
+      "themeTitle": "Seishun Complex",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "konosuba",
+      "titleRu": "Этот замечательный мир!",
+      "titleOriginal": "Kono Subarashii Sekai ni Shukufuku wo!",
+      "franchiseId": "konosuba",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Ecchi",
+        "Fantasy"
+      ],
+      "moodTags": [
+        "Adventure",
+        "Comedy",
+        "Ecchi"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-mPOr80AEjUcZ.png",
+      "posterSource": "https://anilist.co/anime/21202",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2524728881,
+      "trackTitle": "Fantastic Dreamer",
+      "artist": "Machico",
+      "artistId": 14107475,
+      "distractorIds": [
+        "rezero",
+        "nogame",
+        "sao",
+        "mashle",
+        "spy"
+      ],
+      "themeSource": "https://myanimelist.net/anime/30831",
+      "themeTitle": "fantastic dreamer",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "rezero",
+      "titleRu": "Re:Zero. Жизнь с нуля в альтернативном мире",
+      "titleOriginal": "Re:Zero kara Hajimeru Isekai Seikatsu",
+      "franchiseId": "rezero",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Psychological",
+        "Romance",
+        "Thriller"
+      ],
+      "moodTags": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21355-wRVUrGxpvIQQ.jpg",
+      "posterSource": "https://anilist.co/anime/21355",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2358580505,
+      "trackTitle": "redo",
+      "artist": "Konomi Suzuki",
+      "artistId": 7501576,
+      "distractorIds": [
+        "nogame",
+        "sao",
+        "konosuba",
+        "frieren"
+      ],
+      "themeSource": "https://myanimelist.net/anime/31240",
+      "themeTitle": "Redo",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "nogame",
+      "titleRu": "Нет игры — нет жизни",
+      "titleOriginal": "No Game No Life",
+      "franchiseId": "nogame",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Ecchi",
+        "Fantasy"
+      ],
+      "moodTags": [
+        "Adventure",
+        "Comedy",
+        "Ecchi"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b19815-sEOQ9yQaPKlk.jpg",
+      "posterSource": "https://anilist.co/anime/19815",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2809886802,
+      "trackTitle": "THIS GAME",
+      "artist": "Konomi Suzuki",
+      "artistId": 7501576,
+      "distractorIds": [
+        "rezero",
+        "sao",
+        "konosuba",
+        "geass",
+        "frieren"
+      ],
+      "themeSource": "https://myanimelist.net/anime/19815",
+      "themeTitle": "This game",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "parasyte",
+      "titleRu": "Паразит: Учение о жизни",
+      "titleOriginal": "Kiseijuu: Sei no Kakuritsu",
+      "franchiseId": "parasyte",
+      "genres": [
+        "Action",
+        "Drama",
+        "Horror",
+        "Psychological",
+        "Sci-Fi"
+      ],
+      "moodTags": [
+        "Action",
+        "Drama",
+        "Horror"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20623-dUARfggnNDOe.jpg",
+      "posterSource": "https://anilist.co/anime/20623",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 2665262552,
+      "trackTitle": "Let Me Hear",
+      "artist": "Fear, and Loathing in Las Vegas",
+      "artistId": 12607433,
+      "distractorIds": [
+        "tokyo",
+        "chainsaw",
+        "deathnote",
+        "attack",
+        "erased"
+      ],
+      "themeSource": "https://myanimelist.net/anime/22535",
+      "themeTitle": "Let Me Hear",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "animeId": "erased",
+      "titleRu": "Город, в котором меня нет",
+      "titleOriginal": "Boku dake ga Inai Machi",
+      "franchiseId": "erased",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Psychological",
+        "Supernatural",
+        "Thriller"
+      ],
+      "moodTags": [
+        "Drama",
+        "Mystery",
+        "Psychological"
+      ],
+      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21234-XmqW39aQ9o7O.jpg",
+      "posterSource": "https://anilist.co/anime/21234",
+      "posterCredit": "AniList; artwork copyright respective rights holders",
+      "trackId": 1100590722,
+      "trackTitle": "Re:Re:",
+      "artist": "ASIAN KUNG-FU GENERATION",
+      "artistId": 831,
+      "distractorIds": [
+        "deathnote",
+        "parasyte",
+        "tokyo",
+        "rezero"
+      ],
+      "themeSource": "https://myanimelist.net/anime/31043",
+      "themeTitle": "Re:Re:",
+      "checkedAt": "2026-10-25"
+    }
+  ]
+}

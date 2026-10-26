@@ -1,0 +1,11 @@
+*.log
+tools/__pycache__/
+data/anilist.json
+data/anime-metadata.json
+data/recording-candidates.json
+data/research.json
+data/candidates.json
+data/online-check.json
+qa.html
+mobile-qa.html
+lifecycle-qa.html
