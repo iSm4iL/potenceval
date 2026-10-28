@@ -8,7 +8,9 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 const catalogPath = process.argv[2] || new URL('../data/catalog.json', import.meta.url);
-const tracks = JSON.parse(readFileSync(catalogPath, 'utf8')).tracks;
+const data = JSON.parse(readFileSync(catalogPath, 'utf8'));
+// «Полсекунды»: tracks[].deezerId; «Угадай опенинг»: entries[].trackId
+const tracks = data.tracks || data.entries.map(e => ({ deezerId: e.trackId, title: e.trackTitle || e.title || e.titleRu, artist: e.artist || '', genres: [e.category || ''] }));
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const log = text => process.stderr.write(text + '\n');
 

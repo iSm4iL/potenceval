@@ -1,11 +1,11 @@
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
 import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=covers-1';
-import { PACKS, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack, sameArtist } from './catalog.js?v=genres-20261026';
+import { PACKS, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack, sameArtist } from './catalog.js?v=drill-20261028';
 import { createDeezerClient } from './service.js?v=audio-20261023';
 import { AudioPlayer } from './audio.js?v=silence-1';
 import { resultPresentation } from './feedback.js?v=bonus-1';
 import { createCatalogClient } from './collection.js';
-import './report.js?v=report-1';
+import './report.js?v=drill-20261028';
 import { createMultiplayer } from './multiplayer.js?v=friends-20261025-2';
 
 const stage = $('#stage'), player = new AudioPlayer(), service = createDeezerClient(), catalog = createCatalogClient();

@@ -900,7 +900,8 @@
     "themeSource": "https://api.animethemes.moe/anime/nanatsu_no_taizai?include=animethemes.song.artists",
     "themeTitle": "Netsujou no Spectrum",
     "themeKind": "opening",
-    "checkedAt": "2026-10-26"
+    "checkedAt": "2026-10-26",
+    "disabledReason": "Preview 4 seconds; browser decode audit 2026-10-28"
   },
   {
     "animeId": "killlakill",

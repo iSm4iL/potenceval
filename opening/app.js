@@ -1,6 +1,7 @@
 import { buildSession, buildChoices, createRound, startRound, answerRound, remainingTime, interruptRound } from './game.js?v=collections-20261026';
 import { deezerRequest } from '../music/service.js';
 import { AudioPlayer } from '../music/audio.js';
+import { reportPlaybackError } from '../shared/diagnostics.js';
 
 const $ = id => document.getElementById(id);
 const player = new AudioPlayer();
@@ -63,6 +64,7 @@ function showFailure(message) {
   cancelPlayback();
   $('technicalError').hidden = false;
   $('errorText').textContent = message;
+  if (round?.entry) reportPlaybackError('Угадай опенинг', { id: round.entry.trackId, title: round.entry.trackTitle, artist: round.entry.artist }, message);
   $('playLabel').textContent = 'Эту пластинку не удалось включить';
   $('roundStatus').textContent = 'Раунд не засчитан. Заменим песню без штрафа.';
   $('listenButton').hidden = true;

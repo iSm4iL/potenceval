@@ -10,6 +10,8 @@ export const PACKS = [
   { id: 'us-hiphop', title: 'US Hip-Hop', icon: '🎙️', description: 'Metro Boomin, Travis Scott, Kanye West, Lil Nas X, NLE Choppa и другие' },
   { id: 'soundcloud', title: 'SoundCloud Hits', icon: '☁️', description: 'XXXTentacion, Lil Uzi Vert, Juice WRLD, Lil Peep и другие' },
   { id: 'dead-inside', title: 'Дед инсайд', icon: '🖤', description: 'Baby Cute, CUPSIZE, Boulevard Depo, Lil Peep, ONDA ANDAR, Кишлак, дора и другие' },
+  { id: 'drill', title: 'Дрилл', icon: '🥷', description: 'Central Cee, Digga D, Headie One, Pop Smoke, Chief Keef, Fivio Foreign и другие', art: 'us-hiphop' },
+  { id: 'hookah', title: 'Кальянный рэп', icon: '💨', description: 'Скриптонит, T-Fest, Truwer, 104, Andy Panda, HammAli & Navai и другие', art: 'ru-rap' },
 ].map(pack => ({ ...pack, curated: true }));
 
 export const normalize = value => String(value || '').toLocaleLowerCase('ru').replace(/ё/g, 'е').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();

@@ -213,7 +213,7 @@
       "genres": [
         "ru-rap"
       ],
-      "perArtist": 5,
+      "perArtist": 8,
       "limit": 500,
       "artists": [
         "madk1d",
@@ -5387,6 +5387,75 @@
           "url": "https://www.deezer.com/track/1477827322",
           "position": 41
         }
+      ]
+    },
+    {
+      "id": "drill-top",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — популярные песни дрилла: UK, Нью-Йорк, Чикаго",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "drill"
+      ],
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        "Central Cee",
+        "Digga D",
+        "Headie One",
+        "Unknown T",
+        "Russ Millions",
+        "Tion Wayne",
+        "K-Trap",
+        "Dutchavelli",
+        "Skrapz",
+        "Abra Cadabra",
+        "Kwengface",
+        "Clavish",
+        "Skepta",
+        "Fivio Foreign",
+        "Kay Flock",
+        "Bizzy Banks",
+        "Sheff G",
+        "Sleepy Hallow",
+        "22Gz",
+        "Pop Smoke",
+        "Chief Keef",
+        "Lil Durk",
+        "G Herbo",
+        {
+          "name": "King Von",
+          "id": 12431462
+        },
+        {
+          "name": "Loski",
+          "id": 7682224
+        }
+      ]
+    },
+    {
+      "id": "hookah-top",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — популярные песни мелодичного «кальянного» рэпа",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "hookah"
+      ],
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        "Скриптонит",
+        "T-Fest",
+        "Truwer",
+        "104",
+        "Райда",
+        "Niman",
+        "Andy Panda",
+        "Miyagi & Andy Panda",
+        "HammAli & Navai",
+        "Jah Khalib",
+        "Macan",
+        "Bahh Tee"
       ]
     }
   ]
