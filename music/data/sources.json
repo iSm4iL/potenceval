@@ -3,27 +3,32 @@
   "excludeArtists": [
     "Каспийский Груз",
     "Гио ПиКа",
-    "ДДТ"
+    "ДДТ",
+    "Райда"
   ],
   "excludeTracks": [
-    2892414082,
-    66439560,
-    66439548,
-    753641722,
-    2536502991,
-    1056549262,
-    136408140,
-    2661514912,
-    1124841682,
-    1124841712,
     3157972,
     8086130,
     8086135,
+    66439548,
+    66439560,
+    136408140,
+    753641722,
     847699482,
+    1056549262,
+    1097090202,
+    1124841682,
+    1124841712,
     1359118712,
-    2036010427,
+    1995581857,
+    1996104407,
     2030090437,
-    2030090447
+    2030090447,
+    2036010427,
+    2536502991,
+    2661514912,
+    2892414082,
+    4292533162
   ],
   "newWaveArtists": [
     "madk1d",
@@ -5448,7 +5453,6 @@
         "T-Fest",
         "Truwer",
         "104",
-        "Райда",
         "Niman",
         "Andy Panda",
         "Miyagi & Andy Panda",
@@ -5456,6 +5460,1159 @@
         "Jah Khalib",
         "Macan",
         "Bahh Tee"
+      ]
+    },
+    {
+      "id": "us-hiphop-more",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни американского хип-хопа",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "us-hiphop"
+      ],
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        {
+          "name": "Drake",
+          "id": 246791
+        },
+        {
+          "name": "Kendrick Lamar",
+          "id": 525046
+        },
+        {
+          "name": "Travis Scott",
+          "id": 4495513
+        },
+        {
+          "name": "Kanye West",
+          "id": 230
+        },
+        {
+          "name": "Eminem",
+          "id": 13
+        },
+        {
+          "name": "50 Cent",
+          "id": 66
+        },
+        {
+          "name": "Snoop Dogg",
+          "id": 3
+        },
+        {
+          "name": "Dr. Dre",
+          "id": 763
+        },
+        {
+          "name": "JAY Z",
+          "id": 1309
+        },
+        {
+          "name": "Lil Wayne",
+          "id": 74309
+        },
+        {
+          "name": "Nicki Minaj",
+          "id": 382937
+        },
+        {
+          "name": "Cardi B",
+          "id": 9064930
+        },
+        {
+          "name": "Future",
+          "id": 165930
+        },
+        {
+          "name": "21 Savage",
+          "id": 6853403
+        },
+        {
+          "name": "Metro Boomin",
+          "id": 4968870
+        },
+        {
+          "name": "Lil Baby",
+          "id": 398521
+        },
+        {
+          "name": "DaBaby",
+          "id": 11363014
+        },
+        {
+          "name": "Roddy Ricch",
+          "id": 13594287
+        },
+        {
+          "name": "J. Cole",
+          "id": 339209
+        },
+        {
+          "name": "Tyler, The Creator",
+          "id": 1194083
+        },
+        {
+          "name": "A$AP Rocky",
+          "id": 1518490
+        },
+        {
+          "name": "MAC MILLER",
+          "id": 632926
+        },
+        {
+          "name": "Wiz Khalifa",
+          "id": 74804
+        },
+        {
+          "name": "Lil Nas X",
+          "id": 15166511
+        },
+        {
+          "name": "Megan Thee Stallion",
+          "id": 12816021
+        },
+        {
+          "name": "Gunna",
+          "id": 4344192
+        },
+        {
+          "name": "Young Thug",
+          "id": 1590752
+        },
+        {
+          "name": "Migos",
+          "id": 4962010
+        },
+        {
+          "name": "Childish Gambino",
+          "id": 577666
+        },
+        {
+          "name": "Kid Cudi",
+          "id": 158706
+        },
+        {
+          "name": "The Notorious B.I.G.",
+          "id": 2519
+        },
+        {
+          "name": "2Pac",
+          "id": 167095
+        },
+        {
+          "name": "Ice Cube",
+          "id": 2353
+        },
+        {
+          "name": "Coolio",
+          "id": 99
+        },
+        {
+          "name": "Outkast",
+          "id": 9
+        },
+        {
+          "name": "Missy Elliott",
+          "id": 91
+        },
+        {
+          "name": "NLE Choppa",
+          "id": 57203182
+        },
+        {
+          "name": "Jack Harlow",
+          "id": 9093938
+        },
+        {
+          "name": "Don Toliver",
+          "id": 13631667
+        },
+        {
+          "name": "Rae Sremmurd",
+          "id": 5575762
+        },
+        {
+          "name": "Tyga",
+          "id": 304545
+        },
+        {
+          "name": "Big Sean",
+          "id": 15427
+        },
+        {
+          "name": "Macklemore",
+          "id": 152291
+        },
+        {
+          "name": "Flo Rida",
+          "id": 64333
+        },
+        {
+          "name": "Nelly",
+          "id": 105
+        },
+        {
+          "name": "Akon",
+          "id": 38
+        },
+        {
+          "name": "T-Pain",
+          "id": 323
+        },
+        {
+          "name": "Ludacris",
+          "id": 78
+        },
+        {
+          "name": "Busta Rhymes",
+          "id": 796
+        },
+        {
+          "name": "Post Malone",
+          "id": 7543848
+        },
+        {
+          "name": "Quavo",
+          "id": 5059044
+        },
+        {
+          "name": "Offset",
+          "id": 68334
+        },
+        {
+          "name": "Swae Lee",
+          "id": 7627172
+        },
+        {
+          "name": "Lil Yachty",
+          "id": 9776678
+        },
+        {
+          "name": "Kodak Black",
+          "id": 7260670
+        },
+        {
+          "name": "POLO G",
+          "id": 49818632
+        },
+        {
+          "name": "Fetty Wap",
+          "id": 7200950
+        }
+      ],
+      "allowedArtistIds": [
+        3,
+        9,
+        13,
+        38,
+        66,
+        78,
+        91,
+        99,
+        102,
+        103,
+        105,
+        228,
+        230,
+        323,
+        564,
+        763,
+        796,
+        1309,
+        2353,
+        2519,
+        15427,
+        64333,
+        68334,
+        74309,
+        74804,
+        152291,
+        158706,
+        165930,
+        167095,
+        244962,
+        246791,
+        304545,
+        339209,
+        382937,
+        398521,
+        525046,
+        577666,
+        632926,
+        1194083,
+        1518490,
+        1590752,
+        2568121,
+        3933641,
+        4050205,
+        4344192,
+        4438587,
+        4495513,
+        4962010,
+        4968870,
+        4989034,
+        5059044,
+        5078097,
+        5097674,
+        5131091,
+        5575762,
+        5804578,
+        6853403,
+        7004075,
+        7101343,
+        7150049,
+        7200950,
+        7260670,
+        7295394,
+        7543848,
+        7627172,
+        7682224,
+        9064930,
+        9093938,
+        9776678,
+        9822974,
+        10002824,
+        10159994,
+        10427460,
+        10502441,
+        10668131,
+        10846460,
+        11347866,
+        11363014,
+        11420468,
+        11674815,
+        11934257,
+        12431462,
+        12816021,
+        12835615,
+        13124535,
+        13200787,
+        13594287,
+        13631667,
+        13639985,
+        13719947,
+        14063641,
+        14456487,
+        14492701,
+        15166511,
+        49818632,
+        57203182,
+        59936352
+      ]
+    },
+    {
+      "id": "soundcloud-more",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни рэперов эпохи SoundCloud",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "soundcloud"
+      ],
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        {
+          "name": "XXXTentacion",
+          "id": 9822974
+        },
+        {
+          "name": "Lil Uzi Vert",
+          "id": 7101343
+        },
+        {
+          "name": "Juice Wrld",
+          "id": 14456487
+        },
+        {
+          "name": "Lil Peep",
+          "id": 11420468
+        },
+        {
+          "name": "Trippie Redd",
+          "id": 11934257
+        },
+        {
+          "name": "Ski Mask the Slump God",
+          "id": 11347866
+        },
+        {
+          "name": "Lil Pump",
+          "id": 10668131
+        },
+        {
+          "name": "$uicideboy$",
+          "id": 10159994
+        },
+        {
+          "name": "Playboi Carti",
+          "id": 10002824
+        },
+        {
+          "name": "Lil Skies",
+          "id": 12835615
+        },
+        {
+          "name": "Lil Tecca",
+          "id": 14492701
+        },
+        {
+          "name": "Comethazine",
+          "id": 10846460
+        },
+        {
+          "name": "Denzel Curry",
+          "id": 5131091
+        },
+        {
+          "name": "Rich The Kid",
+          "id": 4989034
+        },
+        {
+          "name": "6IX9INE",
+          "id": 13124535
+        },
+        {
+          "name": "Lil Mosey",
+          "id": 13719947
+        },
+        {
+          "name": "Iann Dior",
+          "id": 59936352
+        },
+        {
+          "name": "Sheck Wes",
+          "id": 13200787
+        },
+        {
+          "name": "Yung Lean",
+          "id": 5097674
+        },
+        {
+          "name": "Ghostemane",
+          "id": 7150049
+        },
+        {
+          "name": "Night Lovell",
+          "id": 7295394
+        },
+        {
+          "name": "Bladee",
+          "id": 5804578
+        },
+        {
+          "name": "Smokepurpp",
+          "id": 10502441
+        },
+        {
+          "name": "Wifisfuneral",
+          "id": 10427460
+        },
+        {
+          "name": "Lil Tracy",
+          "id": 11674815
+        },
+        {
+          "name": "Joji",
+          "id": 5078097
+        },
+        {
+          "name": "Ken Carson",
+          "id": 2568121
+        },
+        {
+          "name": "Destroy Lonely",
+          "id": 14063641
+        },
+        {
+          "name": "Yeat",
+          "id": 13639985
+        }
+      ],
+      "allowedArtistIds": [
+        3,
+        9,
+        13,
+        38,
+        66,
+        78,
+        91,
+        99,
+        102,
+        103,
+        105,
+        228,
+        230,
+        323,
+        564,
+        763,
+        796,
+        1309,
+        2353,
+        2519,
+        15427,
+        64333,
+        68334,
+        74309,
+        74804,
+        152291,
+        158706,
+        165930,
+        167095,
+        244962,
+        246791,
+        304545,
+        339209,
+        382937,
+        398521,
+        525046,
+        577666,
+        632926,
+        1194083,
+        1518490,
+        1590752,
+        2568121,
+        3933641,
+        4050205,
+        4344192,
+        4438587,
+        4495513,
+        4962010,
+        4968870,
+        4989034,
+        5059044,
+        5078097,
+        5097674,
+        5131091,
+        5575762,
+        5804578,
+        6853403,
+        7004075,
+        7101343,
+        7150049,
+        7200950,
+        7260670,
+        7295394,
+        7543848,
+        7627172,
+        7682224,
+        9064930,
+        9093938,
+        9776678,
+        9822974,
+        10002824,
+        10159994,
+        10427460,
+        10502441,
+        10668131,
+        10846460,
+        11347866,
+        11363014,
+        11420468,
+        11674815,
+        11934257,
+        12431462,
+        12816021,
+        12835615,
+        13124535,
+        13200787,
+        13594287,
+        13631667,
+        13639985,
+        13719947,
+        14063641,
+        14456487,
+        14492701,
+        15166511,
+        49818632,
+        57203182,
+        59936352
+      ]
+    },
+    {
+      "id": "modern-pop-more",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни мирового попа",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "modern-pop"
+      ],
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        {
+          "name": "The Weeknd",
+          "id": 4050205
+        },
+        {
+          "name": "Bruno Mars",
+          "id": 429675
+        },
+        {
+          "name": "Dua Lipa",
+          "id": 8706544
+        },
+        {
+          "name": "Billie Eilish",
+          "id": 9635624
+        },
+        {
+          "name": "Ed Sheeran",
+          "id": 384236
+        },
+        {
+          "name": "Harry Styles",
+          "id": 5313805
+        },
+        {
+          "name": "Taylor Swift",
+          "id": 12246
+        },
+        {
+          "name": "Ariana Grande",
+          "id": 1562681
+        },
+        {
+          "name": "Justin Bieber",
+          "id": 288166
+        },
+        {
+          "name": "Rihanna",
+          "id": 564
+        },
+        {
+          "name": "Katy Perry",
+          "id": 144227
+        },
+        {
+          "name": "Lady Gaga",
+          "id": 75491
+        },
+        {
+          "name": "Olivia Rodrigo",
+          "id": 11152580
+        },
+        {
+          "name": "Sabrina Carpenter",
+          "id": 1176900
+        },
+        {
+          "name": "Shawn Mendes",
+          "id": 5962948
+        },
+        {
+          "name": "Miley Cyrus",
+          "id": 12436
+        },
+        {
+          "name": "Selena Gomez",
+          "id": 292185
+        },
+        {
+          "name": "Lewis Capaldi",
+          "id": 12088868
+        },
+        {
+          "name": "Charlie Puth",
+          "id": 1362735
+        },
+        {
+          "name": "Calvin Harris",
+          "id": 12178
+        },
+        {
+          "name": "David Guetta",
+          "id": 542
+        },
+        {
+          "name": "Avicii",
+          "id": 293585
+        },
+        {
+          "name": "Adele",
+          "id": 75798
+        },
+        {
+          "name": "Sam Smith",
+          "id": 1097709
+        },
+        {
+          "name": "Camila Cabello",
+          "id": 9236850
+        },
+        {
+          "name": "Benson Boone",
+          "id": 146543992
+        },
+        {
+          "name": "Teddy Swims",
+          "id": 64927672
+        },
+        {
+          "name": "Coldplay",
+          "id": 892
+        },
+        {
+          "name": "Imagine Dragons",
+          "id": 416239
+        },
+        {
+          "name": "Maroon 5",
+          "id": 1188
+        },
+        {
+          "name": "OneRepublic",
+          "id": 74398
+        },
+        {
+          "name": "Doja Cat",
+          "id": 5578942
+        },
+        {
+          "name": "SZA",
+          "id": 5531258
+        },
+        {
+          "name": "Lana Del Rey",
+          "id": 1424821
+        },
+        {
+          "name": "Sia",
+          "id": 3469
+        },
+        {
+          "name": "Halsey",
+          "id": 5292512
+        },
+        {
+          "name": "Twenty One Pilots",
+          "id": 647650
+        },
+        {
+          "name": "Arctic Monkeys",
+          "id": 1182
+        },
+        {
+          "name": "Hozier",
+          "id": 5062414
+        },
+        {
+          "name": "Tones and I",
+          "id": 59070642
+        },
+        {
+          "name": "Lizzo",
+          "id": 5200025
+        },
+        {
+          "name": "Beyoncé",
+          "id": 145
+        },
+        {
+          "name": "Marshmello",
+          "id": 7890702
+        },
+        {
+          "name": "Alan Walker",
+          "id": 4999707
+        },
+        {
+          "name": "Kygo",
+          "id": 4768753
+        }
+      ]
+    },
+    {
+      "id": "modern-pop-stars-more",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — главные хиты The Weeknd и Bruno Mars",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "modern-pop"
+      ],
+      "perArtist": 10,
+      "limit": 500,
+      "artists": [
+        {
+          "name": "The Weeknd",
+          "id": 4050205
+        },
+        {
+          "name": "Bruno Mars",
+          "id": 429675
+        }
+      ]
+    },
+    {
+      "id": "mom-pop-more",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни российской эстрады",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "mom-pop"
+      ],
+      "perArtist": 4,
+      "limit": 500,
+      "artists": [
+        {
+          "name": "Zivert",
+          "id": 12250622
+        },
+        {
+          "name": "Loboda",
+          "id": 819827
+        },
+        {
+          "name": "Ани Лорак",
+          "id": 4388201
+        },
+        {
+          "name": "Emin",
+          "id": 1425072
+        },
+        {
+          "name": "Владимир Пресняков",
+          "id": 4314396
+        },
+        {
+          "name": "Кристина Орбакайте",
+          "id": 4179117
+        },
+        {
+          "name": "Valeriya",
+          "id": 247957
+        },
+        {
+          "name": "Полина Гагарина",
+          "id": 4398405
+        },
+        {
+          "name": "Ёлка",
+          "id": 4237486
+        },
+        {
+          "name": "NYUSHA",
+          "id": 4153481
+        },
+        {
+          "name": "Вера Брежнева",
+          "id": 4839143
+        },
+        {
+          "name": "Мари Краймбрери",
+          "id": 5810420
+        },
+        {
+          "name": "Ирина Аллегрова",
+          "id": 5325126
+        },
+        {
+          "name": "Филипп Киркоров",
+          "id": 4490150
+        },
+        {
+          "name": "Николай Басков",
+          "id": 4543697
+        },
+        {
+          "name": "Сергей Лазарев",
+          "id": 1476502
+        },
+        {
+          "name": "Дима Билан",
+          "id": 808834
+        },
+        {
+          "name": "ВИА ГРА",
+          "id": 4505878
+        },
+        {
+          "name": "Serebro",
+          "id": 1658933
+        },
+        {
+          "name": "Валерий Меладзе",
+          "id": 1015507
+        },
+        {
+          "name": "Григорий Лепс",
+          "id": 4369388
+        },
+        {
+          "name": "Artik & Asti",
+          "id": 4315121
+        },
+        {
+          "name": "Ирина Дубцова",
+          "id": 4982338
+        },
+        {
+          "name": "АЛСУ",
+          "id": 3078091
+        },
+        {
+          "name": "Лолита",
+          "id": 65008
+        },
+        {
+          "name": "Татьяна Буланова",
+          "id": 4322517
+        },
+        {
+          "name": "Наташа Королёва",
+          "id": 4614317
+        },
+        {
+          "name": "Анжелика Варум",
+          "id": 4321818
+        },
+        {
+          "name": "Леонид Агутин",
+          "id": 4520857
+        },
+        {
+          "name": "Юлия Савичева",
+          "id": 4542223
+        },
+        {
+          "name": "MAX BARSKIH",
+          "id": 1365309
+        },
+        {
+          "name": "Мот",
+          "id": 4512791
+        },
+        {
+          "name": "Слава",
+          "id": 4170158
+        }
+      ]
+    },
+    {
+      "id": "dad-rock-more",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — самые популярные песни классического рока",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "dad-rock"
+      ],
+      "perArtist": 4,
+      "limit": 500,
+      "artists": [
+        {
+          "name": "Led Zeppelin",
+          "id": 848
+        },
+        {
+          "name": "Pink Floyd",
+          "id": 860
+        },
+        {
+          "name": "Deep Purple",
+          "id": 864
+        },
+        {
+          "name": "The Beatles",
+          "id": 1
+        },
+        {
+          "name": "Queen",
+          "id": 412
+        },
+        {
+          "name": "The Rolling Stones",
+          "id": 11
+        },
+        {
+          "name": "AC/DC",
+          "id": 115
+        },
+        {
+          "name": "Aerosmith",
+          "id": 1005
+        },
+        {
+          "name": "Scorpions",
+          "id": 863
+        },
+        {
+          "name": "Dire Straits",
+          "id": 176
+        },
+        {
+          "name": "Eagles",
+          "id": 210
+        },
+        {
+          "name": "Nirvana",
+          "id": 415
+        },
+        {
+          "name": "Guns N' Roses",
+          "id": 663
+        },
+        {
+          "name": "Bon Jovi",
+          "id": 637
+        },
+        {
+          "name": "The Doors",
+          "id": 847
+        },
+        {
+          "name": "Creedence Clearwater Revival",
+          "id": 2468
+        },
+        {
+          "name": "KISS",
+          "id": 67
+        },
+        {
+          "name": "The Who",
+          "id": 817
+        },
+        {
+          "name": "Def Leppard",
+          "id": 2557
+        },
+        {
+          "name": "ZZ Top",
+          "id": 2703
+        },
+        {
+          "name": "Toto",
+          "id": 215
+        },
+        {
+          "name": "Boston",
+          "id": 3339
+        },
+        {
+          "name": "Kansas",
+          "id": 1385
+        },
+        {
+          "name": "Uriah Heep",
+          "id": 7709
+        },
+        {
+          "name": "Smokie",
+          "id": 12818
+        },
+        {
+          "name": "Status Quo",
+          "id": 694
+        },
+        {
+          "name": "Bryan Adams",
+          "id": 170
+        },
+        {
+          "name": "Eric Clapton",
+          "id": 192
+        },
+        {
+          "name": "Jimi Hendrix",
+          "id": 849
+        },
+        {
+          "name": "Lynyrd Skynyrd",
+          "id": 816
+        },
+        {
+          "name": "Кино",
+          "id": 4505880
+        },
+        {
+          "name": "Король и Шут",
+          "id": 4237492
+        },
+        {
+          "name": "Наутилус Помпилиус",
+          "id": 4179069
+        },
+        {
+          "name": "Сплин",
+          "id": 4394822
+        },
+        {
+          "name": "Би-2",
+          "id": 4546074
+        },
+        {
+          "name": "Чайф",
+          "id": 4179076
+        },
+        {
+          "name": "Алиса",
+          "id": 4329395
+        },
+        {
+          "name": "Агата Кристи",
+          "id": 14966
+        },
+        {
+          "name": "Машина Времени",
+          "id": 4329392
+        },
+        {
+          "name": "Любэ",
+          "id": 16180
+        },
+        {
+          "name": "Sektor Gaza",
+          "id": 3083691
+        },
+        {
+          "name": "Аквариум",
+          "id": 4179081
+        },
+        {
+          "name": "Земфира",
+          "id": 4913467
+        },
+        {
+          "name": "Ария",
+          "id": 4237485
+        }
+      ]
+    },
+    {
+      "id": "hookah-more",
+      "kind": "deezer-artist-top",
+      "title": "Deezer — популярные песни кальянного рэпа",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "hookah"
+      ],
+      "perArtist": 5,
+      "limit": 500,
+      "artists": [
+        {
+          "name": "The Limba",
+          "id": 14801651
+        },
+        {
+          "name": "JONY",
+          "id": 5569223
+        },
+        {
+          "name": "Xcho",
+          "id": 63630312
+        },
+        {
+          "name": "Rauf & Faik",
+          "id": 10184856
+        },
+        {
+          "name": "Konfuz",
+          "id": 331334
+        },
+        {
+          "name": "Elman",
+          "id": 4645258
+        }
       ]
     }
   ]
