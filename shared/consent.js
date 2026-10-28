@@ -1,7 +1,8 @@
-// Согласие на cookie Метрики и рекламы. Пока METRIKA_ID пуст, сайт ставит только
+// Согласие на cookie Метрики и рекламы. Пока METRIKA_ID и ADSENSE пусты, сайт ставит только
 // необходимое (localStorage pv.*) — баннер не нужен и не показывается.
-// После «Принять» счётчик грузится; до этого никаких запросов к mc.yandex.ru.
+// После «Принять» грузятся счётчик и AdSense; до этого никаких запросов к mc.yandex.ru и Google.
 const METRIKA_ID = ''; // номер счётчика из metrika.yandex.ru, когда заведёшь
+const ADSENSE = 'ca-pub-9572809042176495'; // издатель AdSense; он же в meta на главной и в /ads.txt
 const KEY = 'pv.consent';
 const ROOT = new URL('../', import.meta.url);
 
@@ -17,21 +18,31 @@ function loadMetrika() {
   ym(METRIKA_ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
 }
 
-if (METRIKA_ID) {
+function loadAds() {
+  const s = document.createElement('script');
+  s.async = true; s.crossOrigin = 'anonymous';
+  s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE}`;
+  document.head.append(s);
+}
+
+const load = () => { if (METRIKA_ID) loadMetrika(); if (ADSENSE) loadAds(); };
+
+if (METRIKA_ID || ADSENSE) {
   let v = null; try { v = localStorage.getItem(KEY); } catch {}
-  if (v === 'yes') loadMetrika();
+  if (v === 'yes') load();
   else if (v !== 'no') {
     const bar = document.createElement('div');
     bar.className = 'consent';
     bar.setAttribute('role', 'dialog');
     bar.setAttribute('aria-label', 'Cookie');
-    bar.innerHTML = `<p>Мы хотим включить Яндекс Метрику и рекламу — они ставят cookie. Без вашего согласия они не работают, игры от этого не ломаются.
+    const what = [ADSENSE && 'рекламу Google', METRIKA_ID && 'Яндекс Метрику'].filter(Boolean).join(' и ');
+    bar.innerHTML = `<p>Мы хотим включить ${what} — это ставит cookie. Без вашего согласия ничего из этого не загружается, игры работают как обычно.
       <a href="${new URL('legal/consent.html', ROOT).href}">Согласие</a> · <a href="${new URL('legal/privacy.html', ROOT).href}">Политика</a></p>
       <div><button data-v="no">Только необходимые</button><button data-v="yes" class="yes">Принять</button></div>`;
     bar.onclick = e => {
       const b = e.target.closest('button'); if (!b) return;
       remember(b.dataset.v); bar.remove();
-      if (b.dataset.v === 'yes') loadMetrika();
+      if (b.dataset.v === 'yes') load();
     };
     document.body.append(bar);
   }
@@ -44,7 +55,7 @@ addEventListener('click', e => {
   try { localStorage.removeItem(KEY); } catch {}
   for (const c of document.cookie.split(';')) {
     const n = c.split('=')[0].trim();
-    if (n.startsWith('_ym')) document.cookie = `${n}=; max-age=0; path=/; domain=.${location.hostname}`;
+    if (/^(_ym|__gads|__gpi|__eoi)/.test(n)) document.cookie = `${n}=; max-age=0; path=/; domain=.${location.hostname}`;
   }
   location.reload();
 });
