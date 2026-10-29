@@ -1,0 +1,4 @@
+/* Host navigation appears only in the ready main hall, away from battle controls. */
+#potencevalHome{display:none;position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:500;align-items:center;min-height:44px;padding:0 12px;border:1px solid #b9985d55;border-radius:6px;background:#0c0e16dd;color:#dccda9;font:12px/1.3 system-ui,sans-serif;text-decoration:none;touch-action:manipulation}
+body:has(#mainMenu.show[data-panel="menuHome"][data-boot="ready"]) #potencevalHome{display:inline-flex}
+#potencevalHome:hover,#potencevalHome:focus-visible{color:#fff0cd;border-color:#e8cc91;outline:2px solid #e8cc91;outline-offset:3px}

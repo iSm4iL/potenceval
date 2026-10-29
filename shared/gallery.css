@@ -13,6 +13,8 @@ body.club-gallery{background:linear-gradient(90deg,#100d0af5,#100d0aeb 58%,#100d
 .club-card-where{--stage:#2f4a3a;--stage-light:#5d7f62;--trim:#a3b58a;--card-paper:#e4e2c8}
 .club-card-rap{--stage:#194d56;--stage-light:#397782;--trim:#85b0b1;--card-paper:#dce8e3}
 .club-card-opening{--stage:#253f52;--stage-light:#557f86;--trim:#9cc6c0;--card-paper:#e8ebd9}
+.club-card-aura{--stage:#26332e;--stage-light:#536b50;--trim:#a49762;--card-paper:#e6dbc1}
+.club-card-aura img{object-fit:cover;padding:0;filter:none}
 .club-card:hover{transform:translateY(-4px)}
 .club-card:focus-visible{outline:3px solid #ffda94;outline-offset:5px}
 .club-card figure{position:relative;isolation:isolate;margin:0;aspect-ratio:1.72;overflow:hidden;background:radial-gradient(ellipse at 50% 95%,var(--stage-light),transparent 75%),var(--stage);border-bottom:1px solid #0004}

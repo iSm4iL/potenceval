@@ -321,3 +321,50 @@ body[data-game="screen"] .answer-area { position:sticky; top:-14px; z-index:5; m
 @media(max-width:540px) { body[data-game="screen"] .answer-area { margin:-16px -12px 0; padding:16px 12px 14px; } }
 
 body[data-game='screen'] .poster-message{position:absolute;inset:0;z-index:2;display:grid;place-content:center;padding:28px;background:#211a13;color:#e6ceaa;text-align:center;font:14px/1.6 Onest,sans-serif}body[data-game='screen'] .poster-retry{position:absolute;left:15%;right:15%;bottom:20%;z-index:3;padding:12px;background:#eccb86;color:#39291c;border-radius:5px;font-size:12px}
+
+/* Keep the tape shelf, settings and start button in one laptop view. */
+@media(min-width:981px) and (max-height:820px){
+  body[data-game="screen"] .screen-wrap{padding-bottom:16px}
+  body[data-game="screen"] .launch{padding:14px 0 6px}
+  body[data-game="screen"] .launch-intro{min-height:540px;padding:28px}
+  body[data-game="screen"] .launch h1{font-size:82px}
+  body[data-game="screen"] .hero-copy{margin:17px 0}
+  body[data-game="screen"] .launch-panel{padding:16px 20px 14px}
+  body[data-game="screen"] .launch-panel-head{margin-bottom:12px}
+  body[data-game="screen"] .shelf-cabinet{gap:16px}
+  body[data-game="screen"] .shelf{height:140px}
+  body[data-game="screen"] .shelf-bottom{height:126px}
+  body[data-game="screen"] .cassette{height:118px}
+  body[data-game="screen"] .shelf-bottom .cassette{height:107px}
+  body[data-game="screen"] .blank-case{height:113px}
+  body[data-game="screen"] .shelf-bottom .blank-case{height:99px}
+  body[data-game="screen"] .screen-footer{margin-top:12px}
+}
+@media(min-width:981px) and (max-height:820px){
+  body[data-game="screen"] .round-head{margin:18px 0 15px}
+  body[data-game="screen"] .round-head h1{font-size:48px}
+  body[data-game="screen"] .round-layout{grid-template-columns:minmax(210px,270px) minmax(0,1fr);gap:22px}
+  body[data-game="screen"] .poster-column{padding:12px}
+  body[data-game="screen"] .poster-frame{height:clamp(260px,calc(100dvh - 320px),440px);aspect-ratio:auto}
+  body[data-game="screen"] .facts-column{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;padding:20px}
+  body[data-game="screen"] .answer-area,body[data-game="screen"] .facts-head,body[data-game="screen"] .free-facts,body[data-game="screen"] .round-foot,body[data-game="screen"] .result{grid-column:1/-1}
+  body[data-game="screen"] .answer-area{padding-bottom:12px}
+  body[data-game="screen"] .suggestions{position:absolute;z-index:20;left:0;right:0;top:75px;max-height:230px;overflow:auto}
+  body[data-game="screen"] .facts-head{margin:12px 0 8px}
+  body[data-game="screen"] .facts-head h2{font-size:28px}
+  body[data-game="screen"] .free-facts>span{min-height:58px;padding:8px}
+  body[data-game="screen"] .actor-section,body[data-game="screen"] .clue-section{margin-top:15px}
+  body[data-game="screen"] .clue-head{margin-bottom:8px}
+  body[data-game="screen"] .clue-head span{display:none}
+  body[data-game="screen"] .actor-row{min-height:44px;padding:4px 7px;gap:7px}
+  body[data-game="screen"] .actor-list{gap:5px}
+  body[data-game="screen"] .actor-row button,body[data-game="screen"] .clue-card button{min-height:34px;padding:6px 8px}
+  body[data-game="screen"] .clue-grid{grid-template-columns:1fr;gap:6px}
+  body[data-game="screen"] .clue-card{display:flex;flex-flow:row wrap;align-items:center;justify-content:space-between;gap:6px;min-height:66px;padding:8px}
+  body[data-game="screen"] .clue-card button{margin:0}
+  body[data-game="screen"] .clue-card strong{flex-basis:100%;max-height:100px;overflow:auto;margin:0}
+  body[data-game="screen"] .round-foot{margin-top:12px}
+}
+@media(min-width:981px) and (max-height:820px){
+  body[data-game="screen"] #stage:has(.round-layout)+.screen-footer{display:none}
+}

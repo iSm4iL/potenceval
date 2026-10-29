@@ -1,16 +1,17 @@
+import { t } from '../shared/i18n.js?v=ui-20261029';
 // Правила «Угадай страну»: покупки, очки, платные направления и ротация стран.
 export const START = 1000, WRONG = 50;
 // Первый факт бесплатен. Все остальные подсказки можно покупать независимо.
 export const CLUES = [
-  { key: 'fact1', cost: 0, label: 'Первый факт' },
-  { key: 'fact2', cost: 50, label: 'Ещё факт' },
-  { key: 'phrase', cost: 75, label: 'Язык' },
-  { key: 'food', cost: 75, label: 'Кухня' },
-  { key: 'money', cost: 100, label: 'Валюта' },
-  { key: 'person', cost: 150, label: 'Известный человек' },
-  { key: 'walk', cost: 150, label: 'Прогулка' },
-  { key: 'shape', cost: 200, label: 'Контур страны' },
-  { key: 'compass', cost: 100, label: 'Направление' },
+  { key: 'fact1', cost: 0, label: t('Первый факт', 'First fact') },
+  { key: 'fact2', cost: 50, label: t('Ещё факт', 'Another fact') },
+  { key: 'phrase', cost: 75, label: t('Язык', 'Language') },
+  { key: 'food', cost: 75, label: t('Кухня', 'Food') },
+  { key: 'money', cost: 100, label: t('Валюта', 'Currency') },
+  { key: 'person', cost: 150, label: t('Известный человек', 'Famous person') },
+  { key: 'walk', cost: 150, label: t('Прогулка', 'Street walk') },
+  { key: 'shape', cost: 200, label: t('Контур страны', 'Country outline') },
+  { key: 'compass', cost: 100, label: t('Направление', 'Direction') },
 ];
 // free оставлен для совместимости; отсутствующие подсказки блокируются через unavailable.
 export const cluePrice = (r, key) => (r.free.includes(key) ? 0 : r.prices[key] ?? CLUES.find(c => c.key === key).cost);

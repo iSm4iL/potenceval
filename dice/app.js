@@ -1,4 +1,4 @@
-import { t } from '../shared/i18n.js';
+import { t } from '../shared/i18n.js?v=ui-20261029';
 import { createState, reduce, colScore, total, humans, botMove, BOT_ID } from './game.js';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, enter,
   setControls, initPage, buildHome, buildLobby, renderPlist } from '../shared/kit.js?v=kick-1';
@@ -56,18 +56,17 @@ function buildHomeScreen() {
   buildHome(stage, net, `<div class="hero" data-in><span class="kicker">${t('Как в Cult of the Lamb · 1–2 игрока', 'Like in Cult of the Lamb · 1–2 players')}</span>
     <h1 id="heroTitle">${t('Костяшки', 'Knucklebones')}</h1>
     <p class="sub">${t('Кидай кость в один из трёх столбцов. Одинаковые кости в столбце умножаются, а твоя кость сносит такие же у соперника.', 'Drop your die into one of three columns. Matching dice in a column multiply, and your die knocks out the same ones on your rival’s side.')}</p>
-    <figure class="dice-scene"><img src="../shared/assets/club/dice.webp" alt="${t('Костяные кубики в ореховом лотке на зелёном сукне', 'Bone dice in a walnut tray on green felt')}" width="1200" height="800" fetchpriority="high"></figure>
-    <div class="ritual" aria-label="${t('Пример партии: белые против чёрных', 'Sample game: white vs black')}">
+    <figure class="dice-demo"><div class="ritual" aria-label="${t('Пример партии: белые против чёрных', 'Sample game: white vs black')}">
       <div class="mini-board" data-side="black">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
       <div class="mini-mid"><span class="mini-tray"></span><span class="mini-turn"></span></div>
       <div class="mini-board" data-side="white">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
-    </div></div>`);
+    </div><figcaption>${t('Живая партия: чёрные против белых', 'A round in motion: black vs white')}</figcaption></figure></div>`);
   demoTable($('.ritual'));
 }
 
 // Живая мини-партия на главной: кости сами бросаются, умножаются и сносят чужие.
 async function demoTable(root) {
-  const boards = { white: [[], [], []], black: [[], [], []] };
+  const boards = { white: [[4, 4], [2], [6]], black: [[1], [5, 5], [3]] };
   const mult = (col, v) => ({ 2: 'x2', 3: 'x3' })[col.filter(x => x === v).length] || '';
   const draw = () => {
     for (const side of ['white', 'black']) root.querySelectorAll(`[data-side="${side}"] .mini-col`).forEach((el, c) => {
@@ -81,9 +80,9 @@ async function demoTable(root) {
     });
   };
   const tray = $('.mini-tray', root), turnEl = $('.mini-turn', root), wait = ms => new Promise(r => setTimeout(r, ms));
+  draw();
   if (still()) {
-    boards.white = [[4, 4], [2], [6]]; boards.black = [[1], [5, 5], [3]];
-    draw(); tray.innerHTML = dieHTML(3); turnEl.textContent = t('пример партии', 'sample game');
+    tray.innerHTML = dieHTML(3); turnEl.textContent = t('пример партии', 'sample game');
     return;
   }
   for (let turn = 0; root.isConnected; turn++) {

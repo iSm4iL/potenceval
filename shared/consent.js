@@ -1,6 +1,7 @@
 // Согласие на cookie Метрики и рекламы. Пока METRIKA_ID и ADSENSE пусты, сайт ставит только
 // необходимое (localStorage pv.*) — баннер не нужен и не показывается.
 // После «Принять» грузятся счётчик и AdSense; до этого никаких запросов к mc.yandex.ru и Google.
+import { t } from './i18n.js?v=ui-20261029';
 const METRIKA_ID = ''; // номер счётчика из metrika.yandex.ru, когда заведёшь
 const ADSENSE = 'ca-pub-9572809042176495'; // издатель AdSense; он же в meta на главной и в /ads.txt
 const KEY = 'pv.consent';
@@ -35,10 +36,10 @@ if (METRIKA_ID || ADSENSE) {
     bar.className = 'consent';
     bar.setAttribute('role', 'dialog');
     bar.setAttribute('aria-label', 'Cookie');
-    const what = [ADSENSE && 'рекламу Google', METRIKA_ID && 'Яндекс Метрику'].filter(Boolean).join(' и ');
-    bar.innerHTML = `<p>Мы хотим включить ${what} — это ставит cookie. Без вашего согласия ничего из этого не загружается, игры работают как обычно.
-      <a href="${new URL('legal/consent.html', ROOT).href}">Согласие</a> · <a href="${new URL('legal/privacy.html', ROOT).href}">Политика</a></p>
-      <div><button data-v="no">Только необходимые</button><button data-v="yes" class="yes">Принять</button></div>`;
+    const what = [ADSENSE && t('рекламу Google', 'Google ads'), METRIKA_ID && t('Яндекс Метрику', 'Yandex Metrica')].filter(Boolean).join(t(' и ', ' and '));
+    bar.innerHTML = `<p>${t(`Мы хотим включить ${what} — это ставит cookie. Без вашего согласия ничего из этого не загружается, игры работают как обычно.`, `We’d like to enable ${what}, which uses cookies. These services stay off unless you agree. The games work either way.`)}
+      <a href="${new URL('legal/consent.html', ROOT).href}">${t('Согласие', 'Consent')}</a> · <a href="${new URL('legal/privacy.html', ROOT).href}">${t('Политика', 'Privacy')}</a></p>
+      <div><button data-v="no">${t('Только необходимые', 'Necessary only')}</button><button data-v="yes" class="yes">${t('Принять', 'Accept')}</button></div>`;
     bar.onclick = e => {
       const b = e.target.closest('button'); if (!b) return;
       remember(b.dataset.v); bar.remove();

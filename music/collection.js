@@ -1,3 +1,4 @@
+import { t } from '../shared/i18n.js?v=ui-20261029';
 const safeUrl = value => {
   try { const u = new URL(value); return u.protocol === 'https:' && !u.username && !u.password; }
   catch { return false; }
@@ -5,7 +6,7 @@ const safeUrl = value => {
 const chartIsCurrent = (source, now) => source.kind === 'apple-chart' && source.status === 'fresh' && Number.isFinite(Date.parse(source.updatedAt)) && now - Date.parse(source.updatedAt) >= -5 * 60000 && now - Date.parse(source.updatedAt) < 3 * 86400000;
 
 export function selectCollection(data, genre, mode = 'hits', now = Date.now()) {
-  if (data?.version !== 1 || !Array.isArray(data.tracks) || !Array.isArray(data.sources)) throw new Error('Не удалось прочитать каталог песен. Попробуй обновить страницу.');
+  if (data?.version !== 1 || !Array.isArray(data.tracks) || !Array.isArray(data.sources)) throw new Error(t('Не удалось прочитать каталог песен. Попробуй обновить страницу.', "Could not read the song catalog. Try reloading the page."));
   const sources = new Map(data.sources.filter(s => s?.id && safeUrl(s.url)).map(s => [s.id, s]));
   const counts = {}, seen = new Set(), tracks = [];
   for (const t of data.tracks) {
@@ -30,7 +31,7 @@ export function createCatalogClient({ fetcher = globalThis.fetch, now = Date.now
       signal?.throwIfAborted();
       if (!cached || refresh || now() >= expires) {
         const response = await fetcher(new URL('./data/catalog.json', import.meta.url), { signal, cache: 'no-cache' });
-        if (!response.ok) throw new Error('Каталог пока недоступен. Попробуй обновить подборку.');
+        if (!response.ok) throw new Error(t('Каталог пока недоступен. Попробуй обновить подборку.', "The catalog is unavailable. Try refreshing the collection."));
         const data = await response.json();
         selectCollection(data, genre, mode); // Validate before replacing a good snapshot.
         signal?.throwIfAborted(); cached = data; expires = now() + 300000;

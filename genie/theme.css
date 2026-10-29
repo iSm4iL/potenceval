@@ -2,16 +2,16 @@
 body.club-theme[data-game="genie"] {
   --genie-paper:linear-gradient(120deg,#f4e5c9,#e4cda7);
 }
-.club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1.5fr) minmax(290px,.85fr); gap:48px; align-items:center; }
-.club-theme[data-game="genie"] .hero { min-width:0; }
-.club-theme[data-game="genie"] .hero h1 { font:400 clamp(76px,9vw,112px)/.95 'Marck Script',cursive; color:#edb965; text-shadow:0 2px 0 #52301c,0 0 24px #c9934228; }
+.club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1fr) 360px; gap:48px; align-items:start; padding-top:0; }
+.club-theme[data-game="genie"] .home > .panel { min-width:0; padding:24px; }
+.club-theme[data-game="genie"] .home .joinrow .field { min-width:0; }
+.club-theme[data-game="genie"] .hero { display:grid; grid-template-columns:minmax(0,1fr) 210px; align-items:start; gap:14px 12px; min-width:0; }
+.club-theme[data-game="genie"] .hero h1 { font:400 clamp(72px,7vw,92px)/.95 'Marck Script',cursive; color:#edb965; text-shadow:0 2px 0 #52301c,0 0 24px #c9934228; }
 .club-theme[data-game="genie"] .hero h1 span:last-child { color:inherit; text-shadow:none; }
 .club-theme[data-game="genie"] .hero .sub { max-width:540px; font-size:17px; line-height:1.55; color:#cbb99e; }
-.genie-scene { position:relative; margin:22px 0 0; padding:6px; background:#4b3320; border:1px solid #bb8a4c80; border-radius:5px; box-shadow:0 14px 27px #0006,inset 0 0 0 2px #24170c; }
-.genie-scene::after { content:''; position:absolute; inset:11px; border:1px solid #d9b47445; pointer-events:none; }
-.genie-scene img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:1px; }
-.club-theme[data-game="genie"] .fan { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; height:auto; margin:17px 2px 0; }
-.club-theme[data-game="genie"] .fan .mini { position:relative; left:auto; right:auto; top:auto; width:auto; padding:12px; border-radius:2px; font-size:12px; line-height:1.4; color:#443324; background:var(--genie-paper); border:1px solid #d0b58b; transform:rotate(-2deg); animation:none; box-shadow:0 5px 8px #0004; }
+.genie-host { display:block; width:100%; height:auto; max-height:280px; object-fit:contain; object-position:center bottom; filter:drop-shadow(0 12px 14px #0005); }
+.club-theme[data-game="genie"] .fan { display:grid; grid-column:1 / -1; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; gap:12px; height:auto; margin:0 2px; }
+.club-theme[data-game="genie"] .fan .mini { position:relative; left:auto; right:auto; top:auto; width:auto; min-width:0; padding:15px 13px; border-radius:2px; font-size:13px; line-height:1.45; color:#443324; background:var(--genie-paper); border:1px solid #d0b58b; transform:rotate(-2deg); animation:none; box-shadow:0 5px 8px #0004; }
 .club-theme[data-game="genie"] .fan .m2 { transform:rotate(1deg); }
 .club-theme[data-game="genie"] .fan .m3 { transform:rotate(-1deg); background:#29443b; color:#ead7b5; border-color:#9a8754; }
 .club-theme[data-game="genie"] .fan .mini b { padding:0 0 4px; border-radius:0; font-family:'Onest',sans-serif; font-size:11px; letter-spacing:.06em; color:#6c4c27; background:none; border-bottom:1px solid #886a4045; }
@@ -71,16 +71,27 @@ body.club-theme[data-game="genie"] {
 .club-theme[data-game="genie"] .pod.p1 .bar { background:linear-gradient(#e5b971,#b98a45); border-color:#edc47d; color:#443324; }
 .club-theme[data-game="genie"] .custom-row { align-items:stretch; }
 .club-theme[data-game="genie"] .custom-row .field { min-width:0; }
+@media (max-width:1100px) {
+  .club-theme[data-game="genie"] .hero { grid-template-columns:minmax(0,1fr) 170px; }
+  .genie-host { max-height:240px; }
+}
 @media (max-width:900px) {
-  .club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1fr) minmax(265px,.8fr); gap:28px; }
-  .club-theme[data-game="genie"] .fan { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .club-theme[data-game="genie"] .fan .m3 { display:none; }
+  .club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1fr) 300px; gap:28px; }
+  .club-theme[data-game="genie"] .home > .panel { padding:20px; }
+  .club-theme[data-game="genie"] .hero { grid-template-columns:minmax(0,1fr) 110px; }
+  .genie-host { max-height:210px; }
+  .club-theme[data-game="genie"] .fan { grid-template-columns:minmax(0,1fr); gap:10px; }
+  .club-theme[data-game="genie"] .fan .mini { padding:12px; transform:none; }
 }
 @media (max-width:700px) {
-  .club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1fr); gap:26px; }
-  .club-theme[data-game="genie"] .hero h1 { font-size:82px; }
+  .club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1fr) 130px; gap:24px 12px; }
+  .club-theme[data-game="genie"] .hero { display:contents; }
+  .club-theme[data-game="genie"] .genie-intro { grid-column:1; grid-row:1; }
+  .club-theme[data-game="genie"] .home > .panel { grid-column:1 / -1; grid-row:2; }
+  .club-theme[data-game="genie"] .fan { grid-row:3; }
+  .club-theme[data-game="genie"] .hero h1 { font-size:72px; }
   .club-theme[data-game="genie"] .hero .sub { font-size:16px; }
-  .club-theme[data-game="genie"] .fan { display:none; }
+  .club-theme[data-game="genie"] .genie-host { grid-column:2; grid-row:1; align-self:center; max-height:230px; }
   .club-theme[data-game="genie"] .hint { flex-wrap:wrap; }
   .club-theme[data-game="genie"] .hint #hintTxt { flex-basis:calc(100% - 65px); }
   .club-theme[data-game="genie"] .hint .qbtn { margin-left:auto; }
@@ -88,6 +99,11 @@ body.club-theme[data-game="genie"] {
   .club-theme[data-game="genie"] .compose .btn { padding-inline:16px; }
   .club-theme[data-game="genie"] .custom-row { flex-wrap:wrap; }
   .club-theme[data-game="genie"] .custom-row .field { flex:1 1 220px; }
+}
+@media (max-width:420px) {
+  .club-theme[data-game="genie"] .home { grid-template-columns:minmax(0,1fr) 100px; column-gap:8px; }
+  .club-theme[data-game="genie"] .hero h1 { font-size:64px; }
+  .club-theme[data-game="genie"] .genie-host { max-height:210px; }
 }
 @media (prefers-reduced-motion:reduce) {
   .club-theme[data-game="genie"] :is(.steps .pill,.ccard,.poster) { transition:none; }

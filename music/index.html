@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Полсекунды — potenceval</title>
-<meta name="description" content="Угадай музыку за полсекунды: рок, рэп, электроника, инди и новая школа. Жанровые подборки для компании, история ответов и музыка онлайн.">
-<meta property="og:title" content="Полсекунды — угадай музыку с друзьями">
+<title data-en="Half a Second — potenceval">Полсекунды — potenceval</title>
+<meta name="description" content="Угадай музыку за полсекунды: рок, рэп, электроника, инди и новая школа. Жанровые подборки для компании, история ответов и музыка онлайн." data-en-content="Guess the music in half a second: rock, rap, pop and more. Play with friends, explore genre collections and keep track of your guesses.">
+<meta property="og:title" content="Полсекунды — угадай музыку с друзьями" data-en-content="Half a Second — guess the music with friends">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
 <link rel="stylesheet" href="../shared/fonts/fonts.css?v=music-20261025">
 <link rel="stylesheet" href="../shared/style.css?v=lang-20261028">
 <link rel="stylesheet" href="style.css?v=answers-20261023">
-<link rel="stylesheet" href="record-store.css?v=lang-20261028">
+<link rel="stylesheet" href="record-store.css?v=locale-20261029">
 <link rel="stylesheet" href="multiplayer.css?v=friends-20261025">
 <link rel="stylesheet" href="../shared/club.css?v=lang-20261028">
 </head>
@@ -20,42 +20,42 @@
   <header class="top">
     <a class="logo" href="../"><b>potenceval</b><span>games</span></a>
     <div class="top-right">
-      <button class="qbtn" id="rulesOpen">Как играть</button>
-      <button class="exit" id="exitBtn" hidden>К подборкам</button>
+      <button class="qbtn" id="rulesOpen" data-en="How to play">Как играть</button>
+      <button class="exit" id="exitBtn" data-en="Back to collections" hidden>К подборкам</button>
     </div>
   </header>
-  <section id="musicRoom" class="friend-room" aria-label="Лобби и счёт игроков" hidden></section>
-  <main id="stage"><p class="sub boot-message">Собираем подборку…</p></main>
-  <footer class="music-footer"><span>Один экран или лобби с друзьями.</span><span>Играете с одного экрана? Передайте звук в Discord.</span></footer>
+  <section id="musicRoom" class="friend-room" aria-label="Лобби и счёт игроков" data-en-aria-label="Lobby and player scores" hidden></section>
+  <main id="stage"><p class="sub boot-message" data-en="Loading collection…">Собираем подборку…</p></main>
+  <footer class="music-footer"><span data-en="One screen or a lobby with friends.">Один экран или лобби с друзьями.</span><span data-en="Sharing one screen? Share your audio in Discord.">Играете с одного экрана? Передайте звук в Discord.</span></footer>
 </div>
 
 <dialog class="music-dialog" id="rulesDialog" aria-labelledby="rulesTitle">
-  <div class="dialog-head"><h2 id="rulesTitle">Узнаешь с полсекунды?</h2><button class="dialog-close" data-close="rulesDialog" aria-label="Закрыть правила">×</button></div>
-  <p class="sub">Играйте с одного экрана или создайте лобби: каждый друг сможет отвечать со своего устройства. Без таймера.</p>
+  <div class="dialog-head"><h2 id="rulesTitle" data-en="Know it in half a second?">Узнаешь с полсекунды?</h2><button class="dialog-close" data-close="rulesDialog" aria-label="Закрыть правила" data-en-aria-label="Close rules">×</button></div>
+  <p class="sub" data-en="Share one screen or create a lobby so everyone can answer on their own device. No timer.">Играйте с одного экрана или создайте лобби: каждый друг сможет отвечать со своего устройства. Без таймера.</p>
   <ol class="rules-list">
-    <li><b>Слушайте.</b> Сначала — только 0,5 секунды онлайн-превью песни. Нажмите на пластинку ещё раз или пробел — звук остановится.</li>
-    <li><b>Угадывайте.</b> В режиме «Песню» выберите песню из подсказок. В режиме «Исполнителя / группу» достаточно выбрать имя артиста или группы. Поиск понимает опечатки и транслит.</li>
-    <li><b>Нужно ещё?</b> «Не узнал? Слушать дольше» или ошибка открывают 1, 2, 5, 10, затем 15 секунд. Можно сразу нажать любую клавишу длины — дважды, чтобы не потерять очки случайно.</li>
-    <li><b>Собирайте очки.</b> Чем раньше ответили, тем больше получили: от 1000 до 100. Угадали только исполнителя — +100. Совсем мимо — 0.</li>
-    <li><b>Смотрите подсказки.</b> Красный ответ — не та песня, жёлтый — угадан исполнитель, зелёный — точное попадание. Все попытки остаются рядом с полем ответа.</li>
+    <li data-en="&lt;b&gt;Listen.&lt;/b&gt; Start with just 0.5 seconds of a song preview. Press the record again or hit Space to stop."><b>Слушайте.</b> Сначала — только 0,5 секунды онлайн-превью песни. Нажмите на пластинку ещё раз или пробел — звук остановится.</li>
+    <li data-en="&lt;b&gt;Guess.&lt;/b&gt; In Song mode, select a song from the suggestions. In Artist / band mode, just select the performer. Search understands typos and transliteration."><b>Угадывайте.</b> В режиме «Песню» выберите песню из подсказок. В режиме «Исполнителя / группу» достаточно выбрать имя артиста или группы. Поиск понимает опечатки и транслит.</li>
+    <li data-en="&lt;b&gt;Need more?&lt;/b&gt; Listen longer or make a guess to unlock 1, 2, 5, 10, then 15 seconds. You can also choose any duration: press twice to confirm and avoid losing points by accident."><b>Нужно ещё?</b> «Не узнал? Слушать дольше» или ошибка открывают 1, 2, 5, 10, затем 15 секунд. Можно сразу нажать любую клавишу длины — дважды, чтобы не потерять очки случайно.</li>
+    <li data-en="&lt;b&gt;Earn points.&lt;/b&gt; Earlier answers earn more: from 1,000 down to 100 points. Artist only: +100. No match: 0."><b>Собирайте очки.</b> Чем раньше ответили, тем больше получили: от 1000 до 100. Угадали только исполнителя — +100. Совсем мимо — 0.</li>
+    <li data-en="&lt;b&gt;Follow the hints.&lt;/b&gt; Red means the wrong song, yellow means the right artist, and green means a correct answer. All guesses stay beside the answer field."><b>Смотрите подсказки.</b> Красный ответ — не та песня, жёлтый — угадан исполнитель, зелёный — точное попадание. Все попытки остаются рядом с полем ответа.</li>
   </ol>
-  <div class="score-rule">Повторять открытый отрывок можно бесплатно. Каждый раз он начинается с того же места.</div>
-  <div class="score-rule">В лобби очки за песню умножаются на место среди правильных ответов: ×1,5 → ×1,25 → ×1 → ×0,75 → ×0,5. С пятого места — ×0,5. Ответ открывается после завершения раунда всеми игроками; следующий раунд включает ведущий.</div>
-  <button class="btn primary big" data-close="rulesDialog">Понятно, погнали</button>
+  <div class="score-rule" data-en="Replaying an unlocked snippet is free. It always starts at the same point.">Повторять открытый отрывок можно бесплатно. Каждый раз он начинается с того же места.</div>
+  <div class="score-rule" data-en="In a lobby, song points are multiplied by correct-answer rank: ×1.5 → ×1.25 → ×1 → ×0.75 → ×0.5. Fifth place onward: ×0.5. The answer is revealed when everyone finishes; the host starts the next round.">В лобби очки за песню умножаются на место среди правильных ответов: ×1,5 → ×1,25 → ×1 → ×0,75 → ×0,5. С пятого места — ×0,5. Ответ открывается после завершения раунда всеми игроками; следующий раунд включает ведущий.</div>
+  <button class="btn primary big" data-close="rulesDialog" data-en="Got it, let’s play">Понятно, погнали</button>
 </dialog>
 
 <dialog class="music-dialog" id="artistDialog" aria-labelledby="artistTitle">
-  <div class="dialog-head"><div><h2 id="artistTitle">Кого будем угадывать?</h2><p class="sub">Найди исполнителя, чтобы собрать подборку его песен.</p></div><button class="dialog-close" data-close="artistDialog" aria-label="Закрыть поиск исполнителя">×</button></div>
-  <label class="setting-label" for="artistInput">Имя исполнителя<input class="field" id="artistInput" type="search" placeholder="madk1d, тёмный принц, Скриптонит…" maxlength="100" autocomplete="off"></label>
+  <div class="dialog-head"><div><h2 id="artistTitle" data-en="Who shall we guess?">Кого будем угадывать?</h2><p class="sub" data-en="Find an artist to build a collection of their songs.">Найди исполнителя, чтобы собрать подборку его песен.</p></div><button class="dialog-close" data-close="artistDialog" aria-label="Закрыть поиск исполнителя" data-en-aria-label="Close artist search">×</button></div>
+  <label class="setting-label" for="artistInput"><span data-en="Artist name">Имя исполнителя</span><input class="field" id="artistInput" type="search" placeholder="madk1d, тёмный принц, Скриптонит…" data-en-placeholder="Metallica, The Weeknd, BLACKPINK…" maxlength="100" autocomplete="off"></label>
   <div class="artist-results" id="artistResults" role="status" aria-live="polite"></div>
 </dialog>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <dialog class="music-dialog" id="lineupDialog" aria-labelledby="lineupTitle">
-  <div class="dialog-head"><h2 id="lineupTitle">Исполнители подборки</h2><button class="dialog-close" data-close="lineupDialog" aria-label="Закрыть список исполнителей">×</button></div>
-  <p class="sub">Состав всей подборки, включая дуэты. Не все исполнители встретятся в одной партии.</p>
+  <div class="dialog-head"><h2 id="lineupTitle" data-en="Collection artists">Исполнители подборки</h2><button class="dialog-close" data-close="lineupDialog" aria-label="Закрыть список исполнителей" data-en-aria-label="Close artist list">×</button></div>
+  <p class="sub" data-en="Everyone in this collection, including duets. You won’t hear every artist in a single game.">Состав всей подборки, включая дуэты. Не все исполнители встретятся в одной партии.</p>
   <ul class="lineup-list" id="lineupList"></ul>
 </dialog>
-<script type="module" src="../shared/menu.js?v=lang-20261028"></script>
-<script type="module" src="record-store.js?v=drill-20261028"></script>
+<script type="module" src="../shared/menu.js?v=ui-20261029"></script>
+<script type="module" src="record-store.js?v=locale-20261029"></script>
 </body>
 </html>

@@ -1,20 +1,21 @@
+import { t } from '../shared/i18n.js?v=ui-20261029';
 import { esc } from '../shared/kit.js';
-import { recordArt, shelfPage, selectionPage } from './record-store-model.js?v=dead-cover-20261025';
+import { recordArt, shelfPage, selectionPage } from './record-store-model.js?v=locale-20261029';
 
 const stage = document.querySelector('#stage');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const colors = { 'new-wave': '#ef613b', 'ru-rap': '#b5a181', nostalgia: '#e287ce', kpop: '#b68aef', 'modern-pop': '#73b3de', 'mom-pop': '#ffd0ba', 'dad-rock': '#e6c68b', metal: '#df7067', 'us-hiphop': '#e4aa67', soundcloud: '#b8a3ef', 'dead-inside': '#c9c3d6' , drill: '#9fb3c8', hookah: '#c9a77c' };
-let page = 0, selectedId = null, lastTitle = 'Новая школа', playOnEntry = false;
+let page = 0, selectedId = null, lastTitle = t('Новая школа', "New school"), playOnEntry = false;
 let restoreFocus = null;
 
-const sign = () => `<h1 class="store-sign"><span class="visually-hidden">Полсекунды</span><svg viewBox="0 0 800 155" aria-hidden="true"><g class="neon-tubes"><text class="neon-halo" x="400" y="111" text-anchor="middle">Полсекунды</text><text class="neon-tube" x="400" y="111" text-anchor="middle">Полсекунды</text><text class="neon-core" x="400" y="111" text-anchor="middle">Полсекунды</text><path class="neon-underline" d="M171 139 Q405 123 636 128"/></g></svg></h1>`;
+const sign = () => `<h1 class="store-sign"><span class="visually-hidden">${t("Полсекунды", "Half a Second")}</span><svg viewBox="0 0 800 155" aria-hidden="true"><g class="neon-tubes"><text class="neon-halo" x="400" y="111" text-anchor="middle">${t("Полсекунды", "Half a Second")}</text><text class="neon-tube" x="400" y="111" text-anchor="middle">${t("Полсекунды", "Half a Second")}</text><text class="neon-core" x="400" y="111" text-anchor="middle">${t("Полсекунды", "Half a Second")}</text><path class="neon-underline" d="M171 139 Q405 123 636 128"/></g></svg></h1>`;
 
 function deck(title, artId, home = false) {
   return `<div class="store-deck${home ? ' home-deck' : ''}" style="--label-art:url('${recordArt(artId)}');--label-color:${colors[artId] || '#f2b85b'}">
     <img class="deck-body" src="assets/record-store/turntable-body.webp" alt="" draggable="false">
-    <div class="deck-vinyl" aria-hidden="true"><div class="disc-spinning"><div class="disc-label"><span>${esc(title)}</span><small>Полсекунды</small></div></div><span class="disc-reflection"></span><i class="disc-spindle"></i></div>
+    <div class="deck-vinyl" aria-hidden="true"><div class="disc-spinning"><div class="disc-label"><span>${esc(title)}</span><small>${t("Полсекунды", "Half a Second")}</small></div></div><span class="disc-reflection"></span><i class="disc-spindle"></i></div>
     <img class="deck-arm" src="assets/record-store/tonearm.webp" alt="" draggable="false">
-    ${home ? `<button type="button" class="deck-trigger" aria-label="Начать игру: ${esc(title)}"><span>▶</span></button>` : ''}
+    ${home ? `<button type="button" class="deck-trigger" aria-label="${t("Начать игру", "Start game")}: ${esc(title)}"><span>▶</span></button>` : ''}
   </div>`;
 }
 
@@ -39,20 +40,20 @@ function decorateHome(home) {
   };
   const shop = document.createElement('div');
   shop.className = 'record-shop';
-  shop.innerHTML = `<div class="store-masthead">${sign()}<p>Хорошая музыка. Хорошая компания. Угадаешь с полсекунды?</p></div>
-    <div class="shop-layout"><section class="record-crate" aria-label="Выбор музыкальной подборки">
+  shop.innerHTML = `<div class="store-masthead">${sign()}<p>${t("Хорошая музыка. Хорошая компания. Угадаешь с полсекунды?", "Good music. Good company. Can you name it in half a second?")}</p></div>
+    <div class="shop-layout"><section class="record-crate" aria-label="${t("Выбор музыкальной подборки", "Choose a music collection")}">
       <div class="crate-back" aria-hidden="true"></div><div class="sleeve-grid"></div>
-      <div class="crate-lip"><span class="crate-stamp">Музыка<br>объединяет</span><nav class="shelf-navigation" aria-label="Страницы подборок"><button type="button" class="shelf-prev" aria-label="Предыдущие подборки">←</button><span class="shelf-position" aria-live="polite" aria-atomic="true"></span><button type="button" class="shelf-next" aria-label="Следующие подборки">→</button></nav><span class="crate-note">Найди свою<br>пластинку ♡</span></div>
-      <p class="shelf-caption">Выбери обложку, а потом нажми «Играть».</p></section>
+      <div class="crate-lip"><span class="crate-stamp">${t("Музыка", "Music")}<br>${t("объединяет", "brings us together")}</span><nav class="shelf-navigation" aria-label="${t("Страницы подборок", "Collection pages")}"><button type="button" class="shelf-prev" aria-label="${t("Предыдущие подборки", "Previous collections")}">←</button><span class="shelf-position" aria-live="polite" aria-atomic="true"></span><button type="button" class="shelf-next" aria-label="${t("Следующие подборки", "Next collections")}">→</button></nav><span class="crate-note">${t("Найди свою", "Find your")}<br>${t("пластинку", "record")} ♡</span></div>
+      <p class="shelf-caption">${t("Выбери обложку, а потом нажми «Играть».", "Pick a cover, then press Play.")}</p></section>
     <aside class="shop-counter"><div class="counter-player${changed ? ' record-changed' : ''}">${deck(title, id, true)}</div>
-      <div class="store-start"></div><div class="store-settings"><div class="store-catalog"><span class="store-setting-title">Какие песни?</span></div><div class="store-answer"></div><div class="store-rounds"></div></div>
+      <div class="store-start"></div><div class="store-settings"><div class="store-catalog"><span class="store-setting-title">${t("Какие песни?", "Which songs?")}</span></div><div class="store-answer"></div><div class="store-rounds"></div></div>
       <div class="store-status"></div><div class="store-tools"></div></aside></div><div class="store-resume"></div>`;
   cards.forEach(card => {
     const cardTitle = card.querySelector('.pack-meta b').textContent;
     const description = card.querySelector('.pack-meta small').textContent;
     card.setAttribute('aria-label', cardTitle);
     card.title = description;
-    card.innerHTML = `<span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-cover"><img src="${recordArt(card.dataset.pack)}" alt="" draggable="false"><span class="sleeve-lettering" style="--letter-color:${colors[card.dataset.pack] || '#ffe3c4'}">${esc(cardTitle)}</span><span class="sleeve-mark">Полсекунды · коллекция</span></span><span class="sleeve-chosen" aria-hidden="true">Выбрано ✓</span>`;
+    card.innerHTML = `<span class="sleeve-disc" aria-hidden="true"></span><span class="sleeve-cover"><img src="${recordArt(card.dataset.pack)}" alt="" draggable="false"><span class="sleeve-lettering" style="--letter-color:${colors[card.dataset.pack] || '#ffe3c4'}">${esc(cardTitle)}</span><span class="sleeve-mark">${t("Полсекунды · коллекция", "Half a Second · collection")}</span></span><span class="sleeve-chosen" aria-hidden="true">${t("Выбрано ✓", "Selected ✓")}</span>`;
   });
   let turning = false;
   const grid = shop.querySelector('.sleeve-grid');
@@ -88,7 +89,7 @@ function decorateHome(home) {
   shop.querySelector('.store-status').append(controls.status);
   shop.querySelector('.store-tools').append(controls.lineup, controls.artist, controls.refresh);
   if (controls.resume) shop.querySelector('.store-resume').append(controls.resume);
-  controls.start.textContent = controls.start.disabled ? controls.status.classList.contains('failed') ? 'Выбери другую подборку' : 'Собираем треки…' : '▶  Играть';
+  controls.start.textContent = controls.start.disabled ? controls.status.classList.contains('failed') ? t('Выбери другую подборку', "Choose another collection") : t('Собираем треки…', "Loading tracks…") : t('▶  Играть', "▶  Play");
   const trigger = shop.querySelector('.deck-trigger');
   trigger.disabled = controls.start.disabled;
   trigger.onclick = () => controls.start.click();
@@ -126,7 +127,7 @@ function decorateGame(game) {
   const title = round.dataset.packTitle || lastTitle;
   const top = jukebox.querySelector('.jb-top');
   const points = jukebox.querySelector('.jb-marquee');
-  points.innerHTML = `За ответ: <b>${points.querySelector('b').textContent}</b>`;
+  points.innerHTML = `${t("За ответ:", "Correct answer:")} <b>${points.querySelector('b').textContent}</b>`;
   const tools = top.querySelector('.jb-tools');
   tools.before(points);
   const score = round.querySelector('.total-score');
@@ -149,8 +150,8 @@ function decorateGame(game) {
     const answer = document.createElement('div');
     answer.className = 'store-answer-panel';
     const heading = document.createElement('h2');
-    heading.textContent = 'Что это за песня?';
-    if (form.querySelector('#answerInput').placeholder.includes('Металлика')) heading.textContent = 'Кто это поёт?';
+    heading.textContent = t('Что это за песня?', "What’s this song?");
+    if (game.dataset.answerMode === 'artist') heading.textContent = t('Кто это поёт?', "Who’s singing?");
     answer.append(heading, form, history);
     const feedback = game.querySelector('.round-feedback,.answer-hint');
     if (feedback) form.after(feedback);
@@ -198,5 +199,5 @@ function rotate(now) {
 requestAnimationFrame(rotate);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=drill-20261028');
+await import('./app.js?v=locale-20261029');
 decorate();

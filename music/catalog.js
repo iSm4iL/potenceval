@@ -1,18 +1,27 @@
+import { t } from '../shared/i18n.js?v=ui-20261029';
+
 export const PACKS = [
-  { id: 'new-wave', title: 'Новая школа', icon: '🔥', description: 'madk1d, VILLIAN, MORGENSHTERN, OG Buda и новое поколение' },
-  { id: 'ru-rap', title: 'Русский рэп', icon: '🎤', description: 'Знаковые треки разных поколений' },
-  { id: 'nostalgia', title: 'Ностальгия 2010-х', icon: '📼', description: 'Культовые хиты, под которые взрослели' },
-  { id: 'kpop', title: 'K-pop', icon: '💜', description: 'BTS, BLACKPINK, TWICE, Stray Kids и другие' },
-  { id: 'modern-pop', title: 'Мировой поп', icon: '🌍', description: 'The Weeknd, Imagine Dragons, Barns Courtney…' },
-  { id: 'mom-pop', title: 'Для мамы', icon: '💐', description: 'LOBODA, Ани Лорак, Emin, Пресняков, Орбакайте, Zivert' },
-  { id: 'dad-rock', title: 'Батин рок', icon: '🎸', description: 'Led Zeppelin, Pink Floyd, Deep Purple, The Beatles' },
-  { id: 'metal', title: 'Рок и метал', icon: '🤘', description: 'Metallica, Slipknot, Rammstein, System Of A Down' },
-  { id: 'us-hiphop', title: 'US Hip-Hop', icon: '🎙️', description: 'Metro Boomin, Travis Scott, Kanye West, Lil Nas X, NLE Choppa и другие' },
-  { id: 'soundcloud', title: 'SoundCloud Hits', icon: '☁️', description: 'XXXTentacion, Lil Uzi Vert, Juice WRLD, Lil Peep и другие' },
-  { id: 'dead-inside', title: 'Дед инсайд', icon: '🖤', description: 'Baby Cute, CUPSIZE, Boulevard Depo, Lil Peep, ONDA ANDAR, Кишлак, дора и другие' },
-  { id: 'drill', title: 'Дрилл', icon: '🥷', description: 'Central Cee, Digga D, Headie One, Pop Smoke, Chief Keef, Fivio Foreign и другие', art: 'us-hiphop' },
-  { id: 'hookah', title: 'Кальянный рэп', icon: '💨', description: 'Скриптонит, T-Fest, Truwer, 104, Andy Panda, HammAli & Navai и другие', art: 'ru-rap' },
+  { id: 'new-wave', title: t('Новая школа', "New school"), icon: '🔥', description: t('madk1d, VILLIAN, MORGENSHTERN, OG Buda и новое поколение', "madk1d, VILLIAN, MORGENSHTERN, OG Buda and the new generation") },
+  { id: 'ru-rap', title: t('Русский рэп', "Russian rap"), icon: '🎤', description: t('Знаковые треки разных поколений', "Iconic tracks across generations") },
+  { id: 'nostalgia', title: t('Ностальгия 2010-х', "2010s nostalgia"), icon: '📼', description: t('Культовые хиты, под которые взрослели', "The hits we grew up with") },
+  { id: 'kpop', title: 'K-pop', icon: '💜', description: t('BTS, BLACKPINK, TWICE, Stray Kids и другие', "BTS, BLACKPINK, TWICE, Stray Kids and more") },
+  { id: 'modern-pop', title: t('Мировой поп', "Global pop"), icon: '🌍', description: 'The Weeknd, Imagine Dragons, Barns Courtney…' },
+  { id: 'mom-pop', title: t('Для мамы', "For mom"), icon: '💐', description: t('LOBODA, Ани Лорак, Emin, Пресняков, Орбакайте, Zivert', "LOBODA, Ani Lorak, Emin, Presnyakov, Orbakaite, Zivert") },
+  { id: 'dad-rock', title: t('Батин рок', "Dad’s rock"), icon: '🎸', description: 'Led Zeppelin, Pink Floyd, Deep Purple, The Beatles' },
+  { id: 'metal', title: t('Рок и метал', "Rock & metal"), icon: '🤘', description: 'Metallica, Slipknot, Rammstein, System Of A Down' },
+  { id: 'us-hiphop', title: 'US Hip-Hop', icon: '🎙️', description: t('Metro Boomin, Travis Scott, Kanye West, Lil Nas X, NLE Choppa и другие', "Metro Boomin, Travis Scott, Kanye West, Lil Nas X, NLE Choppa and more") },
+  { id: 'soundcloud', title: 'SoundCloud Hits', icon: '☁️', description: t('XXXTentacion, Lil Uzi Vert, Juice WRLD, Lil Peep и другие', "XXXTentacion, Lil Uzi Vert, Juice WRLD, Lil Peep and more") },
+  { id: 'dead-inside', title: t('Дед инсайд', "Dead inside"), icon: '🖤', description: t('Baby Cute, CUPSIZE, Boulevard Depo, Lil Peep, ONDA ANDAR, Кишлак, дора и другие', "Baby Cute, CUPSIZE, Boulevard Depo, Lil Peep, ONDA ANDAR, Kishlak, Dora and more") },
+  { id: 'drill', title: t('Дрилл', "Drill"), icon: '🥷', description: t('Central Cee, Digga D, Headie One, Pop Smoke, Chief Keef, Fivio Foreign и другие', "Central Cee, Digga D, Headie One, Pop Smoke, Chief Keef, Fivio Foreign and more"), art: 'us-hiphop' },
+  { id: 'hookah', title: t('Кальянный рэп', "Hookah rap"), icon: '💨', description: t('Скриптонит, T-Fest, Truwer, 104, Andy Panda, HammAli & Navai и другие', "Scriptonite, T-Fest, Truwer, 104, Andy Panda, HammAli & Navai and more"), art: 'ru-rap' },
 ].map(pack => ({ ...pack, curated: true }));
+
+// Saved games and lobby hosts may have used the other language.
+export function localizedPackTitle(id, fallback = '', mode) {
+  const pack = PACKS.find(pack => pack.id === id);
+  if (!pack) return fallback || t('Музыка', 'Music');
+  return pack.title + (mode === 'current' || / · (Сейчас в чартах|In the charts)$/.test(fallback) ? t(' · Сейчас в чартах', ' · In the charts') : '');
+}
 
 export const normalize = value => String(value || '').toLocaleLowerCase('ru').replace(/ё/g, 'е').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 

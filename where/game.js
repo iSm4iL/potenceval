@@ -1,5 +1,5 @@
 // «Где я?» (как GeoGuessr): чистая логика. Хост держит состояние, остальные шлют действия.
-import { t as tr } from '../shared/i18n.js';
+import { t as tr } from '../shared/i18n.js?v=ui-20261029';
 import { SPOTS } from './spots.js';
 
 export const MAX_PLAYERS = 8;

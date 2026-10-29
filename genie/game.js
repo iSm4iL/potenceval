@@ -1,5 +1,5 @@
 // Логика игры: чистые функции. Хост держит состояние, клиенты присылают действия.
-import { t as tr } from '../shared/i18n.js';
+import { t as tr } from '../shared/i18n.js?v=ui-20261029';
 import { DECK, GENIE_ANY } from './content.js';
 
 export const MAX_PLAYERS = 8;

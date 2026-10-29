@@ -1,6 +1,7 @@
-import { t, lang } from '../shared/i18n.js';
+import { t, lang } from '../shared/i18n.js?v=ui-20261029';
 import { createState, reduce, publicView, ROUNDS, TIMES } from './game.js';
 import { NAMES } from './spots.js';
+import { mountGlobe } from './globe.js';
 import { A, $, h, esc, first, nameOf, me, LS, isHostOf, still, SPRING, confetti, enter,
   setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js?v=kick-1';
 import { createNet } from '../shared/net.js?v=own-1';
@@ -34,7 +35,7 @@ const mine = s => s.players.find(p => p.id === me.pid) || { score: 0 };
 const panoUrl = s => { const [, lat, lng, id] = s.spot; return `https://www.google.com/maps/embed?pb=!4v0!6m8!1m7!1s${id}!2m2!1d${lat}!2d${lng}!3f${s.heading}!4f0!5f0.78`; };
 
 /* ---------- render loop ---------- */
-let view = null, rendered = null, shownKey = null, chain = Promise.resolve(), skew = 0;
+let view = null, rendered = null, shownKey = null, chain = Promise.resolve(), skew = 0, stopGlobe = null;
 function onState(s, now) {
   if (now) skew = now - Date.now();
   view = s;
@@ -51,6 +52,7 @@ async function renderState(s) {
   if (s?.code) $('#roomCode').textContent = s.code;
   if (key !== shownKey) {
     shownKey = key;
+    stopGlobe?.(); stopGlobe = null;
     const old = [...stage.children];
     await Promise.all(old.map((el, k) => A(el, [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-14px) scale(.98)' }], { duration: 220, delay: k * 25, easing: 'ease-in', fill: 'forwards' })));
     stage.replaceChildren();
@@ -81,21 +83,15 @@ function controls(s) {
 }
 
 /* ---------- home & lobby ---------- */
-const GLOBE = `<svg class="globe" viewBox="0 0 240 240" aria-hidden="true">
-  <defs><radialGradient id="sea" cx="38%" cy="32%"><stop offset="0" stop-color="#5f8f95"/><stop offset=".7" stop-color="#25525a"/><stop offset="1" stop-color="#173339"/></radialGradient></defs>
-  <circle cx="120" cy="128" r="92" fill="url(#sea)" stroke="#d7b174" stroke-width="3"/>
-  <g class="mer" fill="none" stroke="#e8d3a8" stroke-opacity=".45" stroke-width="1.6">
-    ${[0, 1, 2, 3, 4, 5].map(k => `<ellipse cx="120" cy="128" rx="92" ry="92" style="animation-delay:${-k}s"/>`).join('')}
-  </g>
-  <g fill="none" stroke="#e8d3a8" stroke-opacity=".35" stroke-width="1.4"><path d="M32 100h176M28 128h184M32 156h176M52 76h136M52 180h136"/></g>
-  <path d="M206 70 A110 110 0 0 1 206 186" fill="none" stroke="#b88742" stroke-width="7" stroke-linecap="round"/>
-  <g class="drop"><path d="M150 52c-15 0-26 11-26 26 0 19 26 44 26 44s26-25 26-44c0-15-11-26-26-26z" fill="#e2574c" stroke="#7a2b22" stroke-width="3"/><circle cx="150" cy="78" r="9" fill="#f6e7c8"/></g>
-</svg>`;
+const GLOBE = `<div class="globe-stand"><div class="globe-meridian" aria-hidden="true"></div><button class="world-globe" id="worldGlobe" type="button"><canvas aria-hidden="true"></canvas></button><span class="globe-base" aria-hidden="true"></span><small>${t('Коснись глобуса, чтобы остановить', 'Tap the globe to pause')}</small></div>`;
 function buildHomeScreen() {
-  buildHome(stage, net, `<div class="hero" data-in><span class="kicker">${t('Как GeoGuessr · один или до 8 друзей', 'Like GeoGuessr · solo or up to 8 friends')}</span>
+  buildHome(stage, net, `<div class="hero expedition-hero" data-in><div class="expedition-copy"><span class="kicker">${t('Один или до 8 друзей', 'Solo or up to 8 friends')}</span>
     <h1>${t('Где я?', 'Where Am I?')}</h1>
-    <p class="sub">${t('Тебя высаживают на случайной улице где-то в мире. Осмотрись, найди подсказки — вывески, номера машин, разметку, горы на горизонте — и поставь точку на карте. Чем ближе, тем больше очков.', 'You’re dropped on a random street somewhere in the world. Look around for clues — signs, license plates, road markings, mountains on the horizon — and drop a pin on the map. The closer, the more points.')}</p>
-    ${GLOBE}</div>`);
+    <p class="sub">${t('Незнакомая улица. Ни адреса, ни билета обратно. Сможешь понять, где ты, по деталям вокруг?', 'An unfamiliar street. No address, no return ticket. Can you work out where you are from the details around you?')}</p></div>
+    ${GLOBE}<ol class="field-guide"><li><b>${t('Осмотрись', 'Look around')}</b><span>${t('Вывески, номера машин, горы на горизонте — всё может стать зацепкой.', 'Signs, license plates, mountains on the horizon — anything can be a clue.')}</span></li><li><b>${t('Поставь точку', 'Drop a pin')}</b><span>${t('Найди место на карте. Чем ближе, тем больше очков.', 'Find the spot on the map. The closer, the more points.')}</span></li><li><b>${t('Сравни маршруты', 'Compare your routes')}</b><span>${t('Исследуй мир один или проверь, кто из друзей знает его лучше.', 'Explore solo or find out which friend knows the world best.')}</span></li></ol></div>`);
+  stage.querySelector('.home').classList.add('expedition-home');
+  stage.querySelector('.panel').prepend(h(`<h2 class="travel-ticket">${t('Билет в неизвестность', 'A ticket to anywhere')}</h2>`));
+  stopGlobe = mountGlobe($('#worldGlobe'), {play:t('Вращать глобус', 'Rotate the globe'),pause:t('Остановить глобус', 'Pause the globe')});
   $('#createBtn').after(h(`<button class="btn ghost" id="soloBtn">${t('Играть одному', 'Play solo')}</button>`));
   $('#soloBtn').onclick = startSolo;
 }

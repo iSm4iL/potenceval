@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+ <defs>
+  <linearGradient id="gold" x2="1" y2="1"><stop stop-color="#f4d697"/><stop offset=".27" stop-color="#94703a"/><stop offset=".5" stop-color="#d3ad66"/><stop offset=".76" stop-color="#4c341c"/><stop offset="1" stop-color="#d1aa62"/></linearGradient>
+  <g id="corner" fill="none" stroke="url(#gold)" stroke-linejoin="miter">
+   <path stroke-width="3" d="M2 40V16L16 2H40M8 40V19L19 8H40M15 40V23L23 15H40"/>
+   <path stroke-width="1" d="M4 30L30 4M6 23L23 6M13 36L36 13M18 29L29 18M2 16L16 16 16 2"/>
+   <path fill="#b89150" stroke-width="1" d="M7 7L13 10 10 13zM19 19L24 16 28 20 24 24z"/>
+   <path stroke-width="2" d="M4 40H12M40 4V12"/>
+  </g>
+ </defs>
+ <path fill="none" stroke="#0b0806" stroke-width="14" d="M8 40V18L18 8H142L152 18V142L142 152H18L8 142Z"/>
+ <path fill="none" stroke="url(#gold)" stroke-width="2" d="M3 40V16L16 3H144L157 16V144L144 157H16L3 144Z"/>
+ <path fill="none" stroke="#c6a365" stroke-width="1" d="M11 40V21L21 11H139L149 21V139L139 149H21L11 139Z"/>
+ <use href="#corner"/><use href="#corner" transform="translate(160 0) rotate(90)"/><use href="#corner" transform="translate(160 160) rotate(180)"/><use href="#corner" transform="translate(0 160) rotate(270)"/>
+</svg>

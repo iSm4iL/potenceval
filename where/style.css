@@ -93,3 +93,42 @@ body.in-arena { overflow:hidden; }
   .result-card { bottom:0; width:100%; max-height:52%; border-width:4px 0 0; border-radius:12px 12px 0 0; padding:16px; }
 }
 @media (prefers-reduced-motion:reduce) { .globe .mer ellipse,.globe .drop,.clock.hot,.pv-goal span,.rows .bar b { animation:none; } }
+
+/* A field journal, with the real world map rotating on a brass globe. */
+body.club-theme[data-game="where"]{--club-scene:url('../shared/assets/club/geo.webp');background-color:#161b17}
+.club-theme[data-game="where"] .wrap{max-width:1280px;padding-bottom:20px}
+.club-theme[data-game="where"] #stage:has(.expedition-home){padding-top:22px;min-height:0}
+.club-theme[data-game="where"] .expedition-home{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start;margin:0}
+.club-theme[data-game="where"] .expedition-hero{display:grid;grid-template-columns:280px minmax(0,1fr);gap:18px 20px;padding:0}
+.expedition-copy{grid-column:1/-1}
+.club-theme[data-game="where"] .hero h1{font-size:clamp(60px,6vw,86px);line-height:1.08;margin:0;white-space:normal}
+.club-theme[data-game="where"] .hero .sub{font-size:16px;line-height:1.5;max-width:650px;margin-top:10px}
+.club-theme[data-game="where"] .expedition-home .panel{position:relative;margin-top:8px;padding:23px;border:1px solid #a38757;border-radius:4px;background:#dfd0ac url('../geo/assets/case-folder.webp') 3% 52%/auto 110%;box-shadow:5px 6px 0 #42301e,10px 13px 28px #0006}
+.club-theme[data-game="where"] .expedition-home .panel .btn{width:100%}
+.club-theme[data-game="where"] .expedition-home .panel .joinrow .btn{width:auto}
+.travel-ticket{font:400 29px/1.1 'Marck Script',cursive;color:#65472a;margin:0 0 23px;padding:0 0 15px;border-bottom:1px dashed #9a80598c}
+.globe-stand{position:relative;width:280px;height:316px;margin:6px auto 0;display:flex;justify-content:center;align-items:flex-start;padding-top:13px}
+.world-globe{flex:none;width:250px;height:250px;padding:0;border-radius:50%;border:2px solid #b18d50;background:#386c70;position:relative;z-index:2;box-shadow:inset 0 0 16px #0009,9px 15px 23px #0007;cursor:grab}
+.world-globe canvas{display:block;width:100%;height:100%;border-radius:50%}
+.world-globe::after{content:'';position:absolute;inset:0;border-radius:50%;box-shadow:inset -12px -6px 21px #0a1d1e7a,inset 4px 3px 10px #ead8af3b;pointer-events:none}
+.globe-meridian{position:absolute;z-index:1;width:274px;height:274px;top:1px;border:6px solid #a68043;border-left-color:#cba769;border-right-color:#715028;border-radius:50%;transform:rotate(-15deg);box-shadow:inset 0 0 0 1px #f2d58f,1px 2px 2px #0009}
+.globe-base{position:absolute;left:calc(50% - 50px);top:268px;width:100px;height:19px;border-radius:50%;background:linear-gradient(#b49356,#73512d);box-shadow:0 5px 4px #0007}
+.globe-base::before{content:'';position:absolute;width:12px;height:22px;background:#987342;bottom:10px;left:44px;z-index:-1}
+.globe-stand small{position:absolute;bottom:0;color:#b9aa87;font-size:11px}
+.field-guide{align-self:center;list-style:none;margin:0;padding:15px 0 0;counter-reset:stops;display:grid;gap:17px}
+.field-guide li{position:relative;padding-left:29px;counter-increment:stops;font-size:13px;line-height:1.45}
+.field-guide li::before{content:counter(stops);position:absolute;left:0;top:0;color:#e3bd7b;font:400 27px/1 'Marck Script',cursive}
+.field-guide b{display:block;font-size:15px;color:#eed7ae;margin-bottom:4px}
+.field-guide span{color:#bbaa8c}
+.club-theme[data-game="where"] #controls:empty{display:none}
+@media(min-width:901px) and (max-height:730px){.club-theme[data-game="where"] #stage:has(.expedition-home){padding-top:12px}.club-theme[data-game="where"] .hero h1{font-size:64px}.club-theme[data-game="where"] .hero .sub{font-size:14px}.globe-stand{transform:scale(.87);transform-origin:top center;height:278px}.field-guide{gap:12px}.club-theme[data-game="where"] .expedition-home .panel{padding:18px}}
+@media(max-width:1050px){.club-theme[data-game="where"] .expedition-home{grid-template-columns:minmax(0,1fr) 310px;gap:25px}.club-theme[data-game="where"] .expedition-hero{grid-template-columns:230px 1fr;gap:12px}.globe-stand{width:280px;transform:scale(.83);transform-origin:top left;height:272px}.field-guide li{padding-left:23px;font-size:12px}.field-guide b{font-size:13px}}
+@media(max-width:800px){.club-theme[data-game="where"] .expedition-home{grid-template-columns:1fr;gap:20px;max-width:620px;margin:auto}.club-theme[data-game="where"] .expedition-hero{grid-template-columns:230px 1fr}.club-theme[data-game="where"] .hero h1{font-size:64px}.club-theme[data-game="where"] .expedition-home .panel{margin:0;padding:20px}.travel-ticket{margin-bottom:15px}.club-theme[data-game="where"] .hero .sub{font-size:14px}}
+@media(max-width:450px){.club-theme[data-game="where"] .expedition-hero{grid-template-columns:150px 1fr;gap:10px}.club-theme[data-game="where"] .hero h1{font-size:51px}.globe-stand{width:280px;transform:scale(.55);height:175px;transform-origin:top left;margin-top:8px}.globe-stand small{display:none}.field-guide{gap:17px;padding-top:0}.field-guide li{font-size:11px;padding-left:21px}.field-guide b{font-size:13px}.field-guide span{display:none}.field-guide li::before{font-size:23px}.club-theme[data-game="where"] .expedition-home .panel{padding:16px}.club-theme[data-game="where"] .expedition-home{gap:9px}.club-theme[data-game="where"] .expedition-home .panel .or{margin:10px 0}.travel-ticket{font-size:26px;margin-bottom:12px;padding-bottom:10px}}
+@media(max-width:450px){
+  .globe-stand{transform:scale(.45);height:143px;margin-left:8px}
+  .club-theme[data-game="where"] .expedition-home .panel{gap:8px}
+  .club-theme[data-game="where"] .expedition-home .panel .field{padding:11px 12px;min-height:44px;font-size:15px}
+  .club-theme[data-game="where"] .expedition-home .panel .or{margin:0}
+  .club-theme[data-game="where"] .travel-ticket{margin-bottom:8px}
+}

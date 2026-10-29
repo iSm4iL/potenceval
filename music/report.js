@@ -1,10 +1,11 @@
+import { t } from '../shared/i18n.js?v=ui-20261029';
 // Флажок «Проблема с треком»: жалоба уходит push-уведомлением в ntfy.sh (без регистрации).
 // Читать жалобы: приложение ntfy → подписка на тему ниже, или https://ntfy.sh/<тема> в браузере.
 import { $, LS, toast } from '../shared/kit.js';
 import { reportPlaybackError } from '../shared/diagnostics.js';
 
 export const REPORT_TOPIC = 'potenceval-halfsec-reports-b28430b1bd8c';
-const REASONS = { silent: 'Не играет / тишина', wrong: 'Не подходит к подборке', answer: 'Правильный ответ не засчитало', other: 'Другое' };
+const REASONS = { silent: t('Не играет / тишина', "Won’t play / no sound"), wrong: t('Не подходит к подборке', "Doesn’t fit this collection"), answer: t('Правильный ответ не засчитало', "Correct answer was rejected"), other: t('Другое', "Other") };
 const stage = $('#stage');
 
 document.head.insertAdjacentHTML('beforeend', `<style>
@@ -23,29 +24,29 @@ function track() {
 }
 
 function open() {
-  const t = track(); if (!t) return;
+  const song = track(); if (!song) return;
   const dialog = document.createElement('dialog');
   dialog.className = 'report-dialog';
-  dialog.innerHTML = `<form method="dialog"><h2>Что не так с треком?</h2><p>Сообщение уйдёт автору сайта. Ответ не подсказываем: название увидит только он.</p>
+  dialog.innerHTML = `<form method="dialog"><h2>${t("Что не так с треком?", "What’s wrong with this track?")}</h2><p>${t("Сообщение уйдёт автору сайта. Ответ не подсказываем: название увидит только он.", "Your report goes to the site owner. Only they will see the song title.")}</p>
     ${Object.entries(REASONS).map(([k, v], i) => `<label><input type="radio" name="reason" value="${k}" ${i ? '' : 'checked'}>${v}</label>`).join('')}
-    <textarea name="note" maxlength="300" placeholder="Можно пояснить (необязательно)"></textarea>
-    <div class="row"><button class="btn ghost" value="cancel">Отмена</button><button class="btn primary" value="send">Отправить</button></div></form>`;
+    <textarea name="note" maxlength="300" placeholder="${t("Можно пояснить (необязательно)", "Add details (optional)")}"></textarea>
+    <div class="row"><button class="btn ghost" value="cancel">${t("Отмена", "Cancel")}</button><button class="btn primary" value="send">${t("Отправить", "Send")}</button></div></form>`;
   document.body.append(dialog);
-  dialog.addEventListener('close', () => { if (dialog.returnValue === 'send') send(t, new FormData(dialog.querySelector('form'))); dialog.remove(); });
+  dialog.addEventListener('close', () => { if (dialog.returnValue === 'send') send(song, new FormData(dialog.querySelector('form'))); dialog.remove(); });
   dialog.showModal();
 }
 
-async function send(t, form) {
+async function send(song, form) {
   const reason = REASONS[form.get('reason')] || REASONS.other, note = String(form.get('note') || '').trim().slice(0, 300);
-  const body = `${reason}\n${t.artist} — ${t.title}\nПодборка: ${t.pack}\nhttps://www.deezer.com/track/${t.id}${note ? `\n\n«${note}»` : ''}`;
+  const body = `${reason}\n${song.artist} — ${song.title}\n${t('Подборка:', 'Collection:')} ${song.pack}\nhttps://www.deezer.com/track/${song.id}${note ? `\n\n«${note}»` : ''}`;
   try {
     // заголовок — параметром: в HTTP-заголовках кириллица запрещена
-    const url = `https://ntfy.sh/${REPORT_TOPIC}?${new URLSearchParams({ title: `Полсекунды: ${reason}`, tags: 'warning' })}`;
+    const url = `https://ntfy.sh/${REPORT_TOPIC}?${new URLSearchParams({ title: `${t("Полсекунды", "Half a Second")}: ${reason}`, tags: 'warning' })}`;
     const response = await fetch(url, { method: 'POST', body });
     if (!response.ok) throw new Error(response.status);
-    LS.set('music.reported', [...new Set([...(LS.get('music.reported') || []), t.id])].slice(-200));
-    toast('Спасибо! Жалоба отправлена, разберёмся с треком.', 3000);
-  } catch { toast('Не получилось отправить жалобу. Проверьте интернет и попробуйте ещё раз.', 3500); }
+    LS.set('music.reported', [...new Set([...(LS.get('music.reported') || []), song.id])].slice(-200));
+    toast(t('Спасибо! Жалоба отправлена, разберёмся с треком.', "Thanks! Report sent. We’ll check the track."), 3000);
+  } catch { toast(t('Не получилось отправить жалобу. Проверьте интернет и попробуйте ещё раз.', "Could not send the report. Check your connection and try again."), 3500); }
 }
 
 function decorate() {
@@ -55,8 +56,8 @@ function decorate() {
   const host = head.querySelector('.round-controls') || head, old = head.querySelector('.report-flag');
   if (old) { if (old.parentElement !== host) host.append(old); return; }
   const flag = document.createElement('button');
-  flag.type = 'button'; flag.className = 'report-flag'; flag.textContent = '⚑ Проблема с треком';
-  flag.title = 'Не играет или не подходит к подборке — сообщите нам';
+  flag.type = 'button'; flag.className = 'report-flag'; flag.textContent = t('⚑ Проблема с треком', "⚑ Report a track");
+  flag.title = t('Не играет или не подходит к подборке — сообщите нам', "Can’t play it or doesn’t fit the collection? Let us know");
   flag.onclick = open;
   host.append(flag);
 }
@@ -66,7 +67,7 @@ function watchAudioError() {
   const box = stage.querySelector('#audioError');
   if (box && !box.hidden && !box.dataset.reported) {
     box.dataset.reported = '1';
-    reportPlaybackError('Полсекунды', track(), stage.querySelector('#audioErrorText')?.textContent || 'ошибка звука');
+    reportPlaybackError(t('Полсекунды', "Half a Second"), track(), stage.querySelector('#audioErrorText')?.textContent || t('ошибка звука', 'audio error'));
   }
 }
 

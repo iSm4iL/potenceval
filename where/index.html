@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="../shared/vendor/leaflet.css">
 <link rel="stylesheet" href="../shared/style.css?v=lang-20261028">
 <link rel="stylesheet" href="../shared/club.css?v=lang-20261028">
-<link rel="stylesheet" href="style.css?v=where-1">
+<link rel="stylesheet" href="style.css?v=expedition-20261029">
 </head>
 <body class="club-theme" data-game="where">
 <div class="wrap">
@@ -30,7 +30,7 @@
 
 <section class="arena" id="arena" hidden>
   <div class="pano">
-    <iframe id="panoFrame" title="Панорама улицы"></iframe>
+    <iframe id="panoFrame" title="Панорама улицы" data-en-title="Street panorama"></iframe>
     <span class="cover" data-en="📍 Somewhere in the world…">📍 Где-то в мире…</span>
   </div>
   <div class="hud">
@@ -38,7 +38,7 @@
     <span class="chip clock" id="timer" hidden></span>
     <span class="chip"><span data-en="Points">Очки</span> <b id="score"></b></span>
     <span class="who" id="who"></span>
-    <button class="chip btnchip" id="restart" title="Вернуться туда, откуда начал" data-en="↻ Back to start">↻ К началу</button>
+    <button class="chip btnchip" id="restart" title="Вернуться туда, откуда начал" data-en-title="Return to your starting point" data-en="↻ Back to start">↻ К началу</button>
   </div>
   <div class="mapbox" id="mapbox">
     <div id="map"></div>
@@ -67,7 +67,7 @@
 
 <script src="../shared/vendor/mqtt.min.js"></script>
 <script src="../shared/vendor/leaflet.js"></script>
-<script type="module" src="../shared/menu.js?v=lang-20261028"></script>
-<script type="module" src="app.js?v=lang-20261028"></script>
+<script type="module" src="../shared/menu.js?v=ui-20261029"></script>
+<script type="module" src="app.js?v=expedition-20261029"></script>
 </body>
 </html>

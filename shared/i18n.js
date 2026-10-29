@@ -13,4 +13,9 @@ export function setLang(l) {
 }
 
 if (browser) document.documentElement.lang = lang;
-if (browser && lang === 'en') for (const el of document.querySelectorAll('[data-en]')) el.innerHTML = el.dataset.en;
+if (browser && lang === 'en') {
+  for (const el of document.querySelectorAll('[data-en]')) el.innerHTML = el.dataset.en;
+  for (const attr of ['title', 'placeholder', 'aria-label', 'content']) {
+    for (const el of document.querySelectorAll(`[data-en-${attr}]`)) el.setAttribute(attr, el.getAttribute(`data-en-${attr}`));
+  }
+}

@@ -1,4 +1,4 @@
-import { t } from '../shared/i18n.js';
+import { t } from '../shared/i18n.js?v=ui-20261029';
 import { createState, reduce, publicView, humans, GENIE_ID } from './game.js';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, nudge, smoke, enter, flyIn, flip,
   toast, setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js?v=kick-1';
@@ -147,11 +147,11 @@ const title = (kicker, h1, sub = '') => stage.append(h(`<div class="phase-title"
 const BUILD = {}, PATCH = {};
 
 BUILD.home = () => buildHome(stage, net, `
-  <div class="hero" data-in><span class="kicker">${t('Игра для друзей · 2–8 человек', 'A game for friends · 2–8 people')}</span>
+  <div class="hero" data-in><div class="genie-intro"><span class="kicker">${t('Игра для друзей · 2–8 человек', 'A game for friends · 2–8 people')}</span>
     <h1 id="heroTitle">${t('Джинн', 'Genie')}</h1>
     <p class="sub">${t('Один получает суперсилу. Остальные придумывают, в чём подвох. Джинн тоже придумывает — и он подлый.', 'One player gets a superpower. The others invent the catch. The Genie invents one too — and he’s sneaky.')}</p>
-    <figure class="genie-scene"><img src="../shared/assets/club/genie.webp" alt="${t('Латунная лампа с бирюзовым дымом на прилавке антикварной лавки', 'A brass lamp with turquoise smoke on an antique shop counter')}" width="1200" height="800" fetchpriority="high"></figure>
-    <div class="fan">
+    </div><img class="genie-host" src="assets/genie-host.webp" alt="${t('Дружелюбный джинн поднимается из резной лампы и приглашает играть', 'A friendly genie rises from an ornate lamp and invites you to play')}" width="1122" height="1402" fetchpriority="high">
+    <div class="fan" aria-label="${t('Пример суперсилы и двух подвохов', 'A sample superpower and two catches')}">
       <div class="mini m1"><b>${t('СИЛА', 'POWER')}</b><br>🌀 ${t('Телепортация куда угодно. Тело и одежда — в целости.', 'Teleport anywhere. Body and clothes intact.')}</div>
       <div class="mini m2"><b>${t('НО', 'BUT')}</b><br>${t('С каждым телепортом ты в два раза тупее. <i>…и умнеешь, только если идёшь пешком.</i>', 'Every teleport makes you twice as dumb. <i>…and you only get smarter by walking.</i>')}</div>
       <div class="mini m3"><b>${t('ДЖИНН', 'GENIE')}</b><br>${t('Тело и одежда в целости, как и просил. Про волосы уговора не было.', 'Body and clothes intact, as requested. Nobody said anything about hair.')}</div>

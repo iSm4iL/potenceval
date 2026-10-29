@@ -1,4 +1,5 @@
-import { guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
+import { t as translate } from '../shared/i18n.js?v=ui-20261029';
+import { guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=locale-20261029';
 
 export const MULTIPLIERS = [1.5, 1.25, 1, .75, .5];
 export const rankMultiplier = rank => MULTIPLIERS[Math.min(rank - 1, MULTIPLIERS.length - 1)];
@@ -41,9 +42,9 @@ export function reduceRoom(s, a, from) {
   switch (a.type) {
     case 'join': {
       if (s.banned.includes(from)) return s;
-      if (p) { Object.assign(t.players.find(p => p.id === from), { name: clean(a.name) || 'Игрок', online: true }); break; }
+      if (p) { Object.assign(t.players.find(p => p.id === from), { name: clean(a.name) || translate('Игрок', 'Player'), online: true }); break; }
       if (s.players.length >= 8) return s;
-      t.players.push({ id: from, name: clean(a.name) || 'Игрок', online: true, score: 0 });
+      t.players.push({ id: from, name: clean(a.name) || translate('Игрок', 'Player'), online: true, score: 0 });
       break;
     }
     case 'online': {

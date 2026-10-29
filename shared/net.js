@@ -3,7 +3,7 @@
 // устройствами не нужно, поэтому работает и с телефона на мобильном интернете.
 // Свой брокер на российском сервере ставится из server/mqtt; пока OWN пустой — публичные
 // зарубежные брокеры без гарантий.
-import { t } from './i18n.js';
+import { t } from './i18n.js?v=ui-20261029';
 import { LS, me, toast, hideToast } from './kit.js?v=kick-1';
 
 const OWN = ''; // 'wss://mqtt.<домен>/mqtt' после server/mqtt/setup.sh

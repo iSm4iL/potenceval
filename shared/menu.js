@@ -1,17 +1,17 @@
 // Меню-бургер слева: список игр сайта. Подключается на каждой странице.
-import './consent.js';
-import { lang, t, setLang } from './i18n.js';
+import './consent.js?v=ui-20261029';
+import { lang, t, setLang } from './i18n.js?v=ui-20261029';
 const ROOT = new URL('../', import.meta.url);
 // Порядок = порядок на главной: сначала три основные игры.
 export const GAMES = [
   { path: 'music/', icon: '🎧', name: t('Полсекунды', 'Half a Second'), desc: t('Угадай музыку · один экран или лобби', 'Guess the song · one screen or lobby') },
   { path: 'geo/', icon: '🕵️', name: t('Угадай страну', 'Guess the Country'), desc: t('Детективная доска с уликами · 1–4 игрока', 'A detective board of clues · 1–4 players') },
-  { path: 'opening/', icon: '✷', name: t('Угадай опенинг', 'Name That Opening'), desc: t('Аниме, кино, сериалы и мультфильмы по музыке', 'Anime, movies, shows and cartoons by their music') },
+  { path: 'opening/', icon: '✷', name: t('Угадай по саундтреку', 'Name That Soundtrack'), desc: t('Аниме, кино, сериалы и мультфильмы по музыке', 'Anime, movies, shows and cartoons by their music') },
   { path: 'where/', icon: '📍', name: t('Где я?', 'Where Am I?'), desc: t('Как GeoGuessr · один или с друзьями', 'Like GeoGuessr · solo or with friends') },
-  { path: 'screen/', icon: '🎬', name: t('До титров', 'Before the Credits'), desc: t('Угадай кино, сериал, аниме или мультфильм', 'Guess the movie, show, anime or cartoon') },
+  { path: 'screen/', icon: '🎬', name: t('До титров', 'Until the Credits'), desc: t('Угадай кино, сериал, аниме или мультфильм', 'Guess the movie, show, anime or cartoon') },
   { path: 'genie/', icon: '✦', name: t('Джинн', 'Genie'), desc: t('Суперсила с подвохом · 2–8 игроков', 'A superpower with a catch · 2–8 players') },
   { path: 'dice/', icon: '🎲', name: t('Костяшки', 'Knucklebones'), desc: t('Кости как в Cult of the Lamb · 1–2 игрока', 'Dice like in Cult of the Lamb · 1–2 players') },
-  { path: 'rap/', icon: '🎙', name: t('Биты', 'Beats'), desc: t('Звуковая мастерская · слушать и сохранять', 'Beat workshop · listen and save') },
+  { path: 'aura/', icon: '✧', name: 'Sorcery & Aura', desc: t('Четыре школы магии · выживание среди волн врагов', 'Four schools of magic · survive waves of enemies') },
 ];
 const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches || document.hidden;
 const anim = (el, kf, o) => (still() ? null : el.animate(kf, { easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards', ...o }));

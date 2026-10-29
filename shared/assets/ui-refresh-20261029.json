@@ -1,0 +1,16 @@
+{
+  "created": "2026-10-29",
+  "generator": "Built-in image_gen",
+  "assets": [
+    {
+      "path": "geo/assets/case-folder.webp",
+      "prompt": "Create a high resolution production website background asset: an OPEN DETECTIVE CASE FILE folder viewed completely flat from directly overhead, landscape 3:2. Warm aged golden manila paper, subtle realistic fibers and worn corners, visible fine central vertical fold dividing two blank paper leaves, a small plain folder tab at upper left, a very faint old coffee cup ring lower right corner. Photoreal tactile stationery, grounded in a cozy 1920s investigator's study. Paper fills the entire rectangular image edge to edge with no table or surroundings. Almost all surface clean, uniform light cream tan #e3cc96 for very legible dark interface text overlaid in code. Gentle darker edge wear, no heavy textures in central fields. No writing, no words, no letters, no stamps, no photos, no objects, no buttons, no UI. This is just the blank beautiful paper folder for the game's home screen."
+    },
+    {
+      "path": "genie/assets/genie-host.webp",
+      "transparent_background": true,
+      "prompt": "A production transparent PNG game website illustration, isolated cutout with actual transparent background. A charming mischievous adult magical GENIE emerging from an ornate antique brass oil lamp, full subject from lamp base through head visible, tall 4:5 composition. Genie's upper body made of softly curling teal blue smoke, expressive lively face with arched eyebrows, small neat beard and swept back dark hair, subtle brass jewelry and warm amber waist sash. One hand open, palm up, gesturing to the viewer's RIGHT as though welcoming friends to create a game lobby; other hand near chin with a playful clever smile. Antique hand engraved brass lamp below, elegant large curved handle and long spout, soft wisps joining lamp spout to torso. Premium hand painted realistic 3D storybook game art, beautifully lit, warm golden lamplight from left with teal smoke, restrained mature cozy speakeasy mood fitting a dark wood boardgame room. Strong silhouette, very readable at 350px height, detailed but not busy. No rectangle behind the subject, no room, no table, no scenery, no frame, no lettering, no words, no sign or UI. Keep transparent empty padding small around silhouette."
+    }
+  ],
+  "reused_art": {"shared/assets/gallery-v2/aura.webp":"Sorcery & Aura: assets/menu/tabletop/world-map-v016.webp"}
+}

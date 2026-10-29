@@ -2,5 +2,6 @@ User-agent: *
 Disallow: /net-test.html
 Disallow: /docs/
 Disallow: /server/
+Disallow: /output/
 
 Sitemap: https://potenceval.com/sitemap.xml

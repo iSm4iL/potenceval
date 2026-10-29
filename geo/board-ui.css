@@ -88,3 +88,17 @@ body[data-game="geo"] .pin{top:calc(14% - 6px)}.clue.just-opened .clue-inner{ani
 @media(prefers-reduced-motion:reduce){.clue.just-opened .clue-inner,.suspect.open,.threads path{animation:none!important;transition:none!important}}
 body[data-game="geo"] .threads{z-index:2}body[data-game="geo"] .evidence-person,body[data-game="geo"] .evidence-food{padding-top:35px}.board .evidence-photo{max-height:85px}@media(max-width:760px){.board .evidence-photo{max-height:55px}}
 .board .evidence-money .banknote-photo{max-height:90px;max-width:100%;width:auto;object-fit:contain}.board .evidence-money .currency-symbol:has(+.banknote-zoom){display:none}.board .evidence-money .banknote-zoom+h2{font-size:11px}.evidence-zoom .banknote-photo{max-height:42dvh;max-width:100%;width:auto;object-fit:contain}.evidence-zoom .banknote-zoom{align-self:center}@media(max-width:760px){.board .evidence-money .banknote-photo{max-height:60px}.board .evidence-money .banknote-zoom+h2{font-size:9px!important}}
+
+/* On laptops the board and the answer notebook stay in the same view. */
+@media(min-width:1181px) and (max-height:820px){
+  body[data-game="geo"] .geo-wrap{padding-bottom:12px}
+  body[data-game="geo"] .case{margin-top:22px}
+  body[data-game="geo"] .board{padding-top:28px;padding-bottom:24px;row-gap:20px}
+  body[data-game="geo"] .clue-inner,body[data-game="geo"] .back,body[data-game="geo"] .front>*,body[data-game="geo"] .evidence-content{min-height:130px}
+  body[data-game="geo"] .suspect-front{height:170px}
+  body[data-game="geo"] .suspect{width:176px}
+  .board .evidence-photo{max-height:70px}
+  .board .evidence-money .banknote-photo{max-height:75px}
+  body[data-game="geo"] .notebook{max-height:calc(100dvh - 112px);overflow:auto}
+  .board-help{margin-top:8px}
+}

@@ -1,0 +1,559 @@
+{
+  "version": 2,
+  "reference": [
+    941,
+    1672
+  ],
+  "assets": [
+    {
+      "id": "counter-left",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        110,
+        127,
+        1349,
+        850
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/counter-left.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 72956
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/counter-left.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 191166
+        }
+      }
+    },
+    {
+      "id": "counter-right",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        49,
+        48,
+        1462,
+        962
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/counter-right.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 87882
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/counter-right.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 237762
+        }
+      }
+    },
+    {
+      "id": "desktop-hall",
+      "width": 1672,
+      "height": 941,
+      "bounds": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/desktop-hall.webp",
+          "width": 1152,
+          "height": 648,
+          "bytes": 163866
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/desktop-hall.webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 371406
+        }
+      }
+    },
+    {
+      "id": "eclipse",
+      "width": 1254,
+      "height": 1254,
+      "bounds": [
+        305.5,
+        296.4,
+        637,
+        637
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/eclipse-v180.webp",
+          "width": 384,
+          "height": 384,
+          "bytes": 68078
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/eclipse-v180.webp",
+          "width": 768,
+          "height": 768,
+          "bytes": 247860
+        }
+      }
+    },
+    {
+      "id": "floor",
+      "width": 941,
+      "height": 1672,
+      "bounds": [
+        0,
+        1043,
+        941,
+        629
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/floor.webp",
+          "width": 648,
+          "height": 1152,
+          "bytes": 79928
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/floor.webp",
+          "width": 941,
+          "height": 1672,
+          "bytes": 179630
+        }
+      }
+    },
+    {
+      "id": "fog",
+      "width": 2172,
+      "height": 724,
+      "bounds": [
+        190,
+        424,
+        1851,
+        236
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/fog.webp",
+          "width": 1152,
+          "height": 384,
+          "bytes": 85584
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/fog.webp",
+          "width": 1672,
+          "height": 557,
+          "bytes": 204268
+        }
+      }
+    },
+    {
+      "id": "gallery-left",
+      "width": 941,
+      "height": 1672,
+      "bounds": [
+        0,
+        0,
+        375,
+        1341
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/gallery-left.webp",
+          "width": 648,
+          "height": 1152,
+          "bytes": 48242
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/gallery-left.webp",
+          "width": 941,
+          "height": 1672,
+          "bytes": 105814
+        }
+      }
+    },
+    {
+      "id": "gallery-right",
+      "width": 941,
+      "height": 1672,
+      "bounds": [
+        560,
+        0,
+        381,
+        1435
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/gallery-right.webp",
+          "width": 648,
+          "height": 1152,
+          "bytes": 55768
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/gallery-right.webp",
+          "width": 941,
+          "height": 1672,
+          "bytes": 121490
+        }
+      }
+    },
+    {
+      "id": "king-throne",
+      "width": 1024,
+      "height": 1536,
+      "bounds": [
+        116,
+        12,
+        792,
+        1431
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/king-throne.webp",
+          "width": 512,
+          "height": 768,
+          "bytes": 57120
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/king-throne.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 155382
+        }
+      }
+    },
+    {
+      "id": "master",
+      "width": 941,
+      "height": 1672,
+      "bounds": [
+        9,
+        19,
+        923,
+        1621
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/master.webp",
+          "width": 432,
+          "height": 768,
+          "bytes": 61476
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/master.webp",
+          "width": 675,
+          "height": 1200,
+          "bytes": 163552
+        }
+      }
+    },
+    {
+      "id": "merchant",
+      "width": 1024,
+      "height": 1536,
+      "bounds": [
+        274,
+        57,
+        512,
+        1443
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/merchant.webp",
+          "width": 512,
+          "height": 768,
+          "bytes": 51790
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/merchant.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 134510
+        }
+      }
+    },
+    {
+      "id": "rear-wall",
+      "width": 941,
+      "height": 1672,
+      "bounds": [
+        0,
+        0,
+        941,
+        1282
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/rear-wall.webp",
+          "width": 648,
+          "height": 1152,
+          "bytes": 104036
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/rear-wall.webp",
+          "width": 941,
+          "height": 1672,
+          "bytes": 236368
+        }
+      }
+    },
+    {
+      "id": "sky",
+      "width": 1672,
+      "height": 940,
+      "bounds": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/sky.webp",
+          "width": 1152,
+          "height": 648,
+          "bytes": 27448
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/sky.webp",
+          "width": 1672,
+          "height": 940,
+          "bytes": 67660
+        }
+      }
+    },
+    {
+      "id": "stained-glass",
+      "width": 941,
+      "height": 1672,
+      "bounds": [
+        249,
+        7,
+        444,
+        1657
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/stained-glass.webp",
+          "width": 432,
+          "height": 768,
+          "bytes": 70244
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/stained-glass.webp",
+          "width": 675,
+          "height": 1200,
+          "bytes": 180114
+        }
+      }
+    },
+    {
+      "id": "stairs",
+      "width": 1997,
+      "height": 787,
+      "bounds": [
+        48,
+        280,
+        1902,
+        463
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/stairs.webp",
+          "width": 768,
+          "height": 303,
+          "bytes": 24334
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/stairs.webp",
+          "width": 1200,
+          "height": 473,
+          "bytes": 69164
+        }
+      }
+    },
+    {
+      "id": "stall-left-back",
+      "width": 1024,
+      "height": 1536,
+      "bounds": [
+        20,
+        2,
+        974,
+        1508
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/stall-left-back.webp",
+          "width": 512,
+          "height": 768,
+          "bytes": 114358
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/stall-left-back.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 312946
+        }
+      }
+    },
+    {
+      "id": "stall-right-back",
+      "width": 1203,
+      "height": 1308,
+      "bounds": [
+        36,
+        2,
+        1137,
+        1275
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/stall-right-back.webp",
+          "width": 706,
+          "height": 768,
+          "bytes": 122774
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/stall-right-back.webp",
+          "width": 1104,
+          "height": 1200,
+          "bytes": 305462
+        }
+      }
+    },
+    {
+      "id": "statue-far-left",
+      "width": 941,
+      "height": 1672,
+      "bounds": [
+        241,
+        10,
+        451,
+        1643
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/statue-far-left.webp",
+          "width": 432,
+          "height": 768,
+          "bytes": 43198
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/statue-far-left.webp",
+          "width": 675,
+          "height": 1200,
+          "bytes": 114388
+        }
+      }
+    },
+    {
+      "id": "statue-far-right",
+      "width": 941,
+      "height": 1672,
+      "bounds": [
+        255,
+        5,
+        512,
+        1652
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/statue-far-right.webp",
+          "width": 432,
+          "height": 768,
+          "bytes": 46716
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/statue-far-right.webp",
+          "width": 675,
+          "height": 1200,
+          "bytes": 118274
+        }
+      }
+    },
+    {
+      "id": "statue-front-left",
+      "width": 1024,
+      "height": 1536,
+      "bounds": [
+        209,
+        0,
+        538,
+        1512
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/statue-front-left.webp",
+          "width": 512,
+          "height": 768,
+          "bytes": 50204
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/statue-front-left.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 130698
+        }
+      }
+    },
+    {
+      "id": "statue-front-right",
+      "width": 1024,
+      "height": 1536,
+      "bounds": [
+        296,
+        17,
+        457,
+        1503
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/statue-front-right.webp",
+          "width": 512,
+          "height": 768,
+          "bytes": 46664
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/statue-front-right.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 119342
+        }
+      }
+    },
+    {
+      "id": "war-table",
+      "width": 1774,
+      "height": 887,
+      "bounds": [
+        6,
+        2,
+        1762,
+        883
+      ],
+      "files": {
+        "mobile": {
+          "url": "assets/menu/parallax-v1/mobile/war-table.webp",
+          "width": 1152,
+          "height": 576,
+          "bytes": 184434
+        },
+        "large": {
+          "url": "assets/menu/parallax-v1/large/war-table.webp",
+          "width": 1672,
+          "height": 836,
+          "bytes": 398096
+        }
+      }
+    }
+  ]
+}

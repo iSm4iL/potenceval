@@ -1,5 +1,5 @@
 // Общее для всех игр: анимации, эффекты, тосты, правила, лобби, хранилище.
-import { t } from './i18n.js';
+import { t } from './i18n.js?v=ui-20261029';
 export const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const EASE = 'cubic-bezier(.2,.8,.2,1)', SPRING = 'cubic-bezier(.34,1.56,.64,1)';
 export const still = () => reduceMotion || document.hidden;

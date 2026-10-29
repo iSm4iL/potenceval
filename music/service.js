@@ -1,4 +1,5 @@
-import { normalizeDeezer } from './catalog.js';
+import { t } from '../shared/i18n.js?v=ui-20261029';
+import { normalizeDeezer } from './catalog.js?v=locale-20261029';
 
 const API_ORIGIN = 'https://api.deezer.com';
 let callbackSequence = 0;
@@ -53,8 +54,8 @@ export function deezerRequest(path, params = {}, { signal } = {}) {
     };
     script.async = true;
     script.src = url.href;
-    script.onerror = () => finish(new Error('Не удалось загрузить данные Deezer. Проверьте подключение к интернету и блокировщики в браузере.'));
-    timer = setTimeout(() => finish(new Error('Вышло время ожидания: Deezer не ответил за 12 секунд. Попробуйте ещё раз или проверьте игру через другое подключение к интернету.')), 12000);
+    script.onerror = () => finish(new Error(t('Не удалось загрузить данные Deezer. Проверьте подключение к интернету и блокировщики в браузере.', "Could not load Deezer data. Check your internet connection and browser blockers.")));
+    timer = setTimeout(() => finish(new Error(t('Вышло время ожидания: Deezer не ответил за 12 секунд. Попробуйте ещё раз или проверьте игру через другое подключение к интернету.', "Deezer did not respond within 12 seconds. Try again or use another internet connection."))), 12000);
     signal?.addEventListener('abort', onAbort, { once: true });
     if (signal?.aborted) {
       onAbort();
@@ -78,7 +79,7 @@ function numericId(value, allowZero = false) {
 }
 
 function rows(response) {
-  if (!Array.isArray(response?.data)) throw new Error('Deezer вернул некорректный список. Попробуй обновить подборку.');
+  if (!Array.isArray(response?.data)) throw new Error(t('Deezer вернул некорректный список. Попробуй обновить подборку.', "Deezer returned an invalid list. Try refreshing the collection."));
   return response.data;
 }
 
@@ -120,7 +121,7 @@ export function createDeezerClient({ request = deezerRequest } = {}) {
       }
       if (!Array.isArray(pack.artists) || !pack.artists.length) throw new Error('Pack requires a genre or artists');
       const limit = pack.topLimit ?? (pack.artists.length === 1 ? 10 : 5);
-      if (!Number.isInteger(limit) || limit < 1 || limit > 100) throw new Error('Некорректное количество треков исполнителя');
+      if (!Number.isInteger(limit) || limit < 1 || limit > 100) throw new Error(t('Некорректное количество треков исполнителя', "Invalid artist track count"));
       const results = await Promise.all(pack.artists.map(async artist => {
         try {
           const response = await get(`artist/${numericId(artist.id)}/top`, { limit }, signal);
@@ -133,7 +134,7 @@ export function createDeezerClient({ request = deezerRequest } = {}) {
       }));
       checkAborted(signal);
       const failures = results.filter(result => result.failure).map(result => result.failure);
-      if (failures.length === results.length) throw new Error(`Не удалось загрузить исполнителей из Deezer: ${failures.join('; ')}`);
+      if (failures.length === results.length) throw new Error(`${t("Не удалось загрузить исполнителей из Deezer:", "Could not load artists from Deezer:")} ${failures.join('; ')}`);
       return {
         tracks: normalizeTracks(roundRobin(results.filter(result => result.tracks).map(result => result.tracks))),
         loadedAt: Date.now(),
@@ -144,7 +145,7 @@ export function createDeezerClient({ request = deezerRequest } = {}) {
     async track(id, { signal } = {}) {
       checkAborted(signal);
       const result = normalizeDeezer(await get(`track/${numericId(id)}`, {}, signal));
-      if (!result) throw new Error('Превью Deezer недоступно. Попробуй заменить этот трек без штрафа.');
+      if (!result) throw new Error(t('Превью Deezer недоступно. Попробуй заменить этот трек без штрафа.', "The Deezer preview is unavailable. Replace this track without penalty."));
       return result;
     },
 

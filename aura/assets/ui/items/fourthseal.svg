@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Печать четвёртого круга">
+  <defs>
+    <radialGradient id="bg"><stop stop-color="#433047"/><stop offset=".72" stop-color="#211b2a"/><stop offset="1" stop-color="#10131d"/></radialGradient>
+    <linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#fff0b0"/><stop offset=".55" stop-color="#d1a75e"/><stop offset="1" stop-color="#8c5d3d"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <circle cx="64" cy="64" r="59" fill="url(#bg)" stroke="#795e54" stroke-width="3"/>
+  <circle cx="64" cy="64" r="45" fill="none" stroke="#d6b16b" stroke-width="4" opacity=".35" filter="url(#glow)"/>
+  <circle cx="64" cy="64" r="43" fill="none" stroke="url(#gold)" stroke-width="4"/>
+  <circle cx="64" cy="64" r="31" fill="none" stroke="#b7a0d0" stroke-width="2" stroke-dasharray="8 4"/>
+  <path d="M64 14v18M64 96v18M14 64h18M96 64h18" stroke="#edc878" stroke-width="5" stroke-linecap="round"/>
+  <path d="M64 38 84 64 64 90 44 64Z" fill="#251c31" stroke="#e9c576" stroke-width="3"/>
+  <path d="M64 47v33M52 67h24" stroke="#f7e3a9" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="64" cy="64" r="6" fill="#e7c5ff"/>
+</svg>

@@ -1,4 +1,4 @@
-import { t } from '../shared/i18n.js';
+import { t } from '../shared/i18n.js?v=ui-20261029';
 export function bindPoster({image, message, retry, credit, candidates, onReady = () => {}}) {
   let index = 0;
   function load() {

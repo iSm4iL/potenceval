@@ -1,3 +1,5 @@
+import { t } from '../shared/i18n.js?v=ui-20261029';
+
 export const ROUND_MS = 30000;
 
 function shuffle(items, rng = Math.random) {
@@ -13,7 +15,7 @@ export function buildChoices(entry, catalog, rng = Math.random) {
   const ids = new Set(entry.distractorIds);
   const pool = catalog.filter(x => ids.has(x.animeId) && (x.category || 'anime') === (entry.category || 'anime') && x.animeId !== entry.animeId && x.franchiseId !== entry.franchiseId && x.trackId !== entry.trackId);
   const unique = [...new Map(pool.map(x => [x.animeId, x])).values()];
-  if (unique.length < 3) throw new Error('Недостаточно похожих вариантов ответа.');
+  if (unique.length < 3) throw new Error(t('Недостаточно похожих вариантов ответа.', 'Not enough similar answer choices.'));
   return shuffle([entry, ...shuffle(unique, rng).slice(0, 3)], rng);
 }
 
@@ -28,7 +30,7 @@ export function buildSession(catalog, count = 10, rng = Math.random, { category,
     seen.add(entry.franchiseId);
     return true;
   });
-  if (eligible.length < count) throw new Error('Недостаточно доступных произведений для партии (аниме, кино или сериалы).');
+  if (eligible.length < count) throw new Error(t('Недостаточно доступных произведений для партии (аниме, кино или сериалы).', 'Not enough available titles for a game (anime, movies or series).'));
   return eligible.slice(0, count);
 }
 

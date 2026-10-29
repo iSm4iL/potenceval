@@ -1,21 +1,35 @@
-import { buildSession, buildChoices, createRound, startRound, answerRound, remainingTime, interruptRound } from './game.js?v=collections-20261026';
+import { buildSession, buildChoices, createRound, startRound, answerRound, remainingTime, interruptRound } from './game.js?v=lang-20261029';
 import { deezerRequest } from '../music/service.js';
 import { AudioPlayer } from '../music/audio.js';
 import { reportPlaybackError } from '../shared/diagnostics.js';
+import { t, lang } from '../shared/i18n.js?v=ui-20261029';
+import { TITLES_EN } from './titles.en.js';
 
 const $ = id => document.getElementById(id);
 const player = new AudioPlayer();
 let catalog = [], queue = [], reserves = [], history = [], round = null, choices = [];
 let interval = null, request = null, generation = 0, starting = false, failures = 0;
 let category = 'anime', playedByCategory = {};
-const categoryLabels = { anime:'аниме', film:'фильм', series:'сериал', cartoon:'мультфильм' };
+const categoryLabels = { anime:t('аниме', 'anime'), film:t('фильм', 'movie'), series:t('сериал', 'series'), cartoon:t('мультфильм', 'cartoon') };
+const titleFor = entry => lang === 'en' ? TITLES_EN[entry.animeId] || entry.titleOriginal : entry.titleRu;
+// Shared audio and service errors may still arrive in Russian.
+const errorMessage = (error, fallback) => error?.message && !(lang === 'en' && /[А-Яа-яЁё]/.test(error.message)) ? error.message : fallback;
+$('roundDots').setAttribute('aria-label', t('Прогресс партии', 'Game progress'));
+$('volume').setAttribute('aria-label', t('Громкость', 'Volume'));
+$('seconds').parentElement.setAttribute('aria-label', t('Осталось секунд', 'Seconds remaining'));
+$('choices').setAttribute('aria-label', t('Варианты ответа', 'Answer choices'));
+$('closeRules').setAttribute('aria-label', t('Закрыть правила', 'Close rules'));
+document.querySelector('meta[name="description"]').content = t(
+  'Узнай аниме, фильм, сериал или мультфильм по музыке: 30 секунд, четыре постера и десять раундов. Новые произведения в каждой партии.',
+  'Name That Soundtrack: recognize anime, movies, series and cartoons from music. 30 seconds, four posters and ten rounds, with new titles each game.'
+);
 try {
   const saved = JSON.parse(localStorage.getItem('opening-played-v1') || '{}');
   for (const key of Object.keys(categoryLabels)) {
     playedByCategory[key] = Array.isArray(saved[key]) ? saved[key].filter(id => typeof id === 'string').slice(-2000) : [];
   }
 } catch { /* Private mode or unavailable storage: keep this visit's history in memory. */ }
-const fallback = new URL('assets/poster-fallback.svg', import.meta.url).href;
+const fallback = new URL(t('assets/poster-fallback.svg', 'assets/poster-fallback.en.svg'), import.meta.url).href;
 const safeImage = image => { image.addEventListener('error', () => { if (image.src !== fallback) image.src = fallback; }); };
 const totalScore = () => history.reduce((sum, item) => sum + item.points, 0);
 
@@ -51,8 +65,9 @@ function renderChoices() {
     const key = document.createElement('span'); key.className = 'choice-key'; key.textContent = index + 1;
     figure.append(img, key);
     const name = document.createElement('span'); name.className = 'choice-name';
-    const title = document.createElement('b'); title.textContent = entry.titleRu;
+    const title = document.createElement('b'); title.textContent = titleFor(entry);
     const subtitle = document.createElement('small'); subtitle.textContent = entry.titleOriginal;
+    subtitle.hidden = title.textContent === entry.titleOriginal;
     name.append(title, subtitle); button.append(figure, name);
     button.addEventListener('click', () => finishRound(entry.animeId));
     return button;
@@ -64,9 +79,9 @@ function showFailure(message) {
   cancelPlayback();
   $('technicalError').hidden = false;
   $('errorText').textContent = message;
-  if (round?.entry) reportPlaybackError('Угадай опенинг', { id: round.entry.trackId, title: round.entry.trackTitle, artist: round.entry.artist }, message);
-  $('playLabel').textContent = 'Эту пластинку не удалось включить';
-  $('roundStatus').textContent = 'Раунд не засчитан. Заменим песню без штрафа.';
+  if (round?.entry) reportPlaybackError(t('Угадай по саундтреку', 'Name That Soundtrack'), { id: round.entry.trackId, title: round.entry.trackTitle, artist: round.entry.artist }, message);
+  $('playLabel').textContent = t('Эту пластинку не удалось включить', 'This record wouldn’t play');
+  $('roundStatus').textContent = t('Раунд не засчитан. Заменим песню без штрафа.', 'This round won’t count. Replace the song without a penalty.');
   $('listenButton').hidden = true;
   for (const button of $('choices').children) button.disabled = true;
 }
@@ -79,33 +94,33 @@ async function prepareRound(entry) {
   round = createRound(entry); round.phase = 'loading';
   choices = buildChoices(entry, catalog);
   renderDots(); renderChoices();
-  $('roundNumber').textContent = `Раунд ${history.length + 1} / 10`;
+  $('roundNumber').textContent = t(`Раунд ${history.length + 1} / 10`, `Round ${history.length + 1} / 10`);
   $('reveal').hidden = true; $('technicalError').hidden = true; $('roundFoot').hidden = false;
   $('seconds').textContent = '30'; $('timeFill').style.transform = 'scaleX(1)';
   $('seconds').parentElement.classList.remove('urgent');
   $('listenButton').hidden = false; $('listenButton').disabled = true;
-  $('playLabel').textContent = 'Готовим отрывок';
-  $('roundStatus').textContent = 'Загружаем музыку. Таймер пока не идёт.';
+  $('playLabel').textContent = t('Готовим отрывок', 'Preparing the clip');
+  $('roundStatus').textContent = t('Загружаем музыку. Таймер пока не идёт.', 'Loading the music. The timer hasn’t started yet.');
   showScreen('game'); $('roundTitle').focus({ preventScroll: true });
   try {
     const track = await deezerRequest(`/track/${entry.trackId}`, {}, { signal: request.signal });
     if (token !== generation) return;
-    if (Number(track.id) !== entry.trackId || !track.preview) throw new Error('У этой песни сейчас нет доступного превью.');
+    if (Number(track.id) !== entry.trackId || !track.preview) throw new Error(t('У этой песни сейчас нет доступного превью.', 'This song has no preview available right now.'));
     const loaded = await player.load({ preview: track.preview });
     if (!loaded || token !== generation) return;
-    if (player.buffer.duration < 29.5) throw new Error('Этот отрывок короче 30 секунд. Выберем другую песню.');
+    if (player.buffer.duration < 29.5) throw new Error(t('Этот отрывок короче 30 секунд. Выберем другую песню.', 'This clip is shorter than 30 seconds. Let’s pick another song.'));
     round.phase = 'ready';
     player.getContext().onstatechange = () => {
       if (token === generation && round?.phase === 'playing' && player.getContext().state !== 'running') {
-        showFailure('Браузер прервал звук. Заменим этот раунд без штрафа.');
+        showFailure(t('Браузер прервал звук. Заменим этот раунд без штрафа.', 'The browser interrupted the audio. Replace this round without a penalty.'));
       }
     };
-    $('playLabel').textContent = 'Все четыре постера на месте';
-    $('roundStatus').textContent = 'Нажми «Слушать» — начнутся твои 30 секунд.';
+    $('playLabel').textContent = t('Все четыре постера на месте', 'All four posters are ready');
+    $('roundStatus').textContent = t('Нажми «Слушать» — начнутся твои 30 секунд.', 'Press “Listen” to start your 30 seconds.');
     $('listenButton').disabled = false;
   } catch (error) {
     if (token !== generation || error.name === 'AbortError') return;
-    showFailure(error.message || 'Музыка не загрузилась. Проверь подключение к интернету.');
+    showFailure(errorMessage(error, t('Музыка не загрузилась. Проверь подключение к интернету.', 'The music didn’t load. Check your connection or replace the song without a penalty.')));
   }
 }
 
@@ -116,27 +131,27 @@ async function play() {
   let timer;
   try {
     const context = player.getContext();
-    await Promise.race([context.resume(), new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('Браузер не включил звук. Нажми «Слушать» ещё раз.')), 5000); })]);
+    await Promise.race([context.resume(), new Promise((_, reject) => { timer = setTimeout(() => reject(new Error(t('Браузер не включил звук. Нажми «Слушать» ещё раз.', 'The browser didn’t start the audio. Press “Listen” again.'))), 5000); })]);
     if (token !== generation) return;
-    if (context.state !== 'running') throw new Error('Разреши звук для сайта и нажми «Слушать» ещё раз.');
+    if (context.state !== 'running') throw new Error(t('Разреши звук для сайта и нажми «Слушать» ещё раз.', 'Allow audio for this site and press “Listen” again.'));
     const source = context.createBufferSource();
     source.buffer = player.buffer; source.connect(player.master); player.source = source;
     source.onended = () => {
       if (token === generation && round?.phase === 'playing' && remainingTime(round, performance.now()) > 1000) {
-        showFailure('Звук прервался. Этот раунд заменим без штрафа.');
+        showFailure(t('Звук прервался. Этот раунд заменим без штрафа.', 'The audio stopped. Replace this round without a penalty.'));
       }
     };
     source.start(0, 0, Math.min(30, player.buffer.duration));
     startRound(round, performance.now());
     document.body.classList.add('is-playing');
-    $('playLabel').textContent = 'Слушай. Это точно знакомо.';
-    $('roundStatus').textContent = `Выбери ${categoryLabels[category]} до конца отрывка.`;
+    $('playLabel').textContent = t('Слушай. Это точно знакомо.', 'Listen. You’ve heard this before.');
+    $('roundStatus').textContent = t(`Выбери ${categoryLabels[category]} до конца отрывка.`, `Pick the ${categoryLabels[category]} before the clip ends.`);
     $('listenButton').hidden = true;
     for (const button of $('choices').children) button.disabled = false;
     interval = setInterval(tick, 70); tick();
   } catch (error) {
     if (token === generation) {
-      $('roundStatus').textContent = error.message;
+      $('roundStatus').textContent = errorMessage(error, t('Не удалось включить звук. Нажми «Слушать» ещё раз.', 'Couldn’t start the audio. Allow audio for this site and press “Listen” again.'));
       $('listenButton').disabled = false;
     }
   } finally { clearTimeout(timer); if (token === generation) starting = false; }
@@ -166,16 +181,16 @@ function finishRound(selectedId) {
     button.classList.add(correct ? 'correct' : chosen ? 'incorrect' : 'dimmed');
     if (correct || chosen) {
       const badge = document.createElement('span'); badge.className = 'choice-badge';
-      badge.textContent = correct ? '✓ Это оно' : '✕ Твой ответ'; button.append(badge);
+      badge.textContent = correct ? t('✓ Это оно', '✓ That’s it') : t('✕ Твой ответ', '✕ Your answer'); button.append(badge);
     }
   }
-  $('playLabel').textContent = round.correct ? 'Попадание с первых нот!' : timedOut ? 'Время вышло' : 'Звучало похоже, но…';
-  $('roundStatus').textContent = 'Правильный ответ уже открыт.';
-  $('verdict').textContent = round.correct ? `Верно! +${round.points} очков` : timedOut ? '30 секунд закончились. В этот раз — 0 очков.' : 'Не угадал. Следующий саундтрек будет твоим.';
-  $('answerTitle').textContent = round.entry.titleRu;
+  $('playLabel').textContent = round.correct ? t('Попадание с первых нот!', 'Got it from the first notes!') : timedOut ? t('Время вышло', 'Time’s up') : t('Звучало похоже, но…', 'It sounded close, but…');
+  $('roundStatus').textContent = t('Правильный ответ уже открыт.', 'The correct answer is now revealed.');
+  $('verdict').textContent = round.correct ? t(`Верно! +${round.points} очков`, `Correct! +${round.points} points`) : timedOut ? t('30 секунд закончились. В этот раз — 0 очков.', 'Your 30 seconds are up. No points this time.') : t('Не угадал. Следующий саундтрек будет твоим.', 'Not this time. The next soundtrack could be yours.');
+  $('answerTitle').textContent = titleFor(round.entry);
   $('answerSong').textContent = `${round.entry.trackTitle} — ${round.entry.artist}`;
   $('deezerLink').href = `https://www.deezer.com/track/${round.entry.trackId}`;
-  $('nextButton').firstChild.textContent = queue.length ? 'Следующий раунд ' : 'Смотреть результат ';
+  $('nextButton').firstChild.textContent = queue.length ? t('Следующий раунд ', 'Next round ') : t('Смотреть результат ', 'See results ');
   $('roundFoot').hidden = true; $('reveal').hidden = false;
   // ответ и «Следующий раунд» появляются под постерами — подкручиваем ровно настолько, чтобы их было видно
   $('reveal').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -187,7 +202,7 @@ function startGame() {
   const count = new Set(pool.map(entry => entry.franchiseId)).size;
   const all = buildSession(catalog, count, Math.random, { category, seenIds: playedByCategory[category] || [] });
   if (all.length < 10) return;
-  $('roundTitle').textContent = `Из какого ${category === 'anime' ? 'аниме' : category === 'film' ? 'фильма' : category === 'series' ? 'сериала' : 'мультфильма'} эта музыка?`;
+  $('roundTitle').textContent = t(`Из какого ${category === 'anime' ? 'аниме' : category === 'film' ? 'фильма' : category === 'series' ? 'сериала' : 'мультфильма'} эта музыка?`, `Which ${categoryLabels[category]} is this music from?`);
   queue = all.slice(0, 10); reserves = all.slice(10);
   prepareRound(queue.shift());
 }
@@ -195,16 +210,16 @@ function startGame() {
 function showResults() {
   cancelPlayback(); round = null;
   const correct = history.filter(item => item.correct).length;
-  $('resultsTitle').textContent = correct >= 8 ? 'Вот это наслушанность!' : correct >= 4 ? 'Узнаёшь своих с первых нот.' : 'Твой следующий плейлист готов.';
+  $('resultsTitle').textContent = correct >= 8 ? t('Вот это наслушанность!', 'You’ve got a great ear!') : correct >= 4 ? t('Узнаёшь своих с первых нот.', 'You know your favorites from the first notes.') : t('Твой следующий плейлист готов.', 'Your next playlist is ready.');
   $('resultCorrect').textContent = `${correct} / ${history.length}`;
-  $('resultPoints').textContent = `${totalScore()} очков`;
-  $('resultNote').textContent = history.length < 10 ? `Доступные песни закончились. Сыграно ${history.length} из 10 раундов; технические замены не считаются ошибками.` : failures ? `Недоступных отрывков заменено: ${failures}. Без штрафа.` : 'В следующей партии сначала прозвучат ещё не сыгранные произведения.';
+  $('resultPoints').textContent = t(`${totalScore()} очков`, `${totalScore()} points`);
+  $('resultNote').textContent = history.length < 10 ? t(`Доступные песни закончились. Сыграно ${history.length} из 10 раундов; технические замены не считаются ошибками.`, `No more songs are available. You played ${history.length} of 10 rounds; technical replacements don’t count as mistakes.`) : failures ? t(`Недоступных отрывков заменено: ${failures}. Без штрафа.`, `Unavailable clips replaced: ${failures}. No penalty.`) : t('В следующей партии сначала прозвучат ещё не сыгранные произведения.', 'Your next game will start with titles you haven’t played yet.');
   $('playlist').replaceChildren(...history.map((item, index) => {
     const li = document.createElement('li');
     const n = document.createElement('span'); n.className = 'playlist-number'; n.textContent = index + 1;
     const img = document.createElement('img'); img.src = item.entry.poster; img.alt = ''; img.referrerPolicy = 'no-referrer'; safeImage(img);
     const copy = document.createElement('div'); copy.className = 'playlist-copy';
-    const title = document.createElement('b'); title.textContent = item.entry.titleRu;
+    const title = document.createElement('b'); title.textContent = titleFor(item.entry);
     const song = document.createElement('span'); song.textContent = `${item.entry.trackTitle} — ${item.entry.artist}`;
     copy.append(title, song);
     const link = document.createElement('a'); link.href = `https://www.deezer.com/track/${item.entry.trackId}`; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = 'Deezer ↗';
@@ -230,7 +245,7 @@ function selectCategory(key) {
     const active = button.dataset.category === key;
     button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
   }
-  $('catalogCount').textContent = `Произведений в подборке: ${pool.length}`;
+  $('catalogCount').textContent = t(`Произведений в подборке: ${pool.length}`, `Titles in this collection: ${pool.length}`);
   $('posterFan').replaceChildren(...pool.slice(0, 3).map(entry => {
     const image = document.createElement('img'); image.src = entry.poster; image.alt = ''; image.referrerPolicy = 'no-referrer'; safeImage(image); return image;
   }));
@@ -245,19 +260,19 @@ document.addEventListener('keydown', event => {
 document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
 window.addEventListener('pagehide', cancelPlayback);
 window.addEventListener('pageshow', event => {
-  if (event.persisted && round) showFailure('Ты вернулся в игру после перехода на другую страницу. Прерванный раунд заменим без штрафа.');
+  if (event.persisted && round) showFailure(t('Ты вернулся в игру после перехода на другую страницу. Прерванный раунд заменим без штрафа.', 'You returned after leaving the page. Replace the interrupted round without a penalty.'));
 });
 
 try {
   const response = await fetch(new URL('data/catalog.json?v=collections-20261026', import.meta.url));
-  if (!response.ok) throw new Error('Каталог не загрузился. Обнови страницу, чтобы попробовать снова.');
+  if (!response.ok) throw new Error(t('Каталог не загрузился. Обнови страницу, чтобы попробовать снова.', 'The catalog didn’t load. Refresh the page to try again.'));
   const data = await response.json();
   catalog = data.entries;
   buildSession(catalog, 10);
   for (const button of document.querySelectorAll('[data-category]')) {
     const count = catalog.filter(entry => (entry.category || 'anime') === button.dataset.category).length;
-    button.querySelector('small').textContent = `В подборке: ${count}`;
+    button.querySelector('small').textContent = t(`В подборке: ${count}`, `In this collection: ${count}`);
     button.disabled = count < 10;
   }
   selectCategory('anime');
-} catch (error) { $('homeStatus').textContent = error.message || 'Не удалось загрузить игру. Обнови страницу.'; $('catalogCount').textContent = 'Каталог недоступен'; }
+} catch (error) { $('homeStatus').textContent = errorMessage(error, t('Не удалось загрузить игру. Обнови страницу.', 'The game couldn’t load. Refresh the page to try again.')); $('catalogCount').textContent = t('Каталог недоступен', 'Catalog unavailable'); }

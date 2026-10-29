@@ -1,5 +1,5 @@
 // Костяшки (knucklebones из Cult of the Lamb): чистая логика. Хост держит состояние.
-import { t as tr } from '../shared/i18n.js';
+import { t as tr } from '../shared/i18n.js?v=ui-20261029';
 export const BOT_ID = 'bot';
 export const MAX_PLAYERS = 8;
 const COLORS = ['#ff4d6d', '#22b5a0', '#f08a24', '#7c5cff', '#3fa7ff', '#e05ad1', '#9bd13f', '#ffb020'];

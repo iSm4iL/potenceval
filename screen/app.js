@@ -1,7 +1,7 @@
 import { TITLES as SEED_TITLES, OPTIONS } from './catalog.js';
 import { EXTRA_TITLES } from './catalog.extra.js';
 import { toEnglish, OPTIONS_EN } from './catalog.en.js';
-import { t as tr, lang } from '../shared/i18n.js';
+import { t as tr, lang } from '../shared/i18n.js?v=ui-20261029';
 import { revealPaidClue, BLUR, SHARPEN } from './round.js?v=posters-20261025';
 import { visualFor } from './visuals.js?v=posters-20261026';
 import { bindPoster } from './poster-image.js?v=lang-20261028';
@@ -9,6 +9,7 @@ import { bindPoster } from './poster-image.js?v=lang-20261028';
 const stage = document.querySelector('#stage');
 const exitBtn = document.querySelector('#exitBtn');
 const rules = document.querySelector('#rulesDialog');
+document.querySelector('meta[name="description"]').content = tr('Угадай кино, сериал, аниме или мультфильм по подсказкам и размытому постеру.', 'Until the Credits: guess movies, series, anime and cartoons from a blurred poster and clues.');
 const modes = [
   { id: 'film', icon: '▣', short: tr('КИНО', 'FILM'), name: tr('Кино', 'Movies'), desc: tr('Полнометражные фильмы', 'Feature films') },
   { id: 'series', icon: '▤', short: tr('СЕРИАЛЫ', 'SERIES'), name: tr('Сериалы', 'Series'), desc: tr('Истории на много серий', 'Stories over many episodes') },
@@ -51,7 +52,7 @@ function home() {
   const blanks = side => `<span class="blank-bank blank-bank-${side}" aria-hidden="true">${Array.from({ length: 24 }, (_, i) => `<span class="blank-case blank-tone-${i % 4}"><i></i></span>`).join('')}</span>`;
   const chosen = modes.find(m => m.id === selectedMode);
   const chosenCount = TITLES.filter(t => inMode(t, selectedMode)).length;
-  stage.innerHTML = `<section class="launch"><div class="launch-intro"><div class="cabinet-stamp">${tr('Видеопрокат', 'Video rental')} · potenceval</div><div class="cabinet-plaque"><p class="eyebrow">${tr('Угадай до финальных титров', 'Guess it before the end credits')}</p><h1>${tr('До титров', 'Before the Credits')}</h1><p class="hero-copy">${tr('Выбери кассету с полки. Узнавай кино, сериал, аниме или мультфильм по постеру и подсказкам.', 'Pick a tape from the shelf. Guess the movie, series, anime or cartoon from the poster and clues.')}</p><div class="launch-facts"><span>${tr('Размытый постер', 'Blurred poster')}</span><span>${tr('100 очков', '100 points')}</span><span>${tr('Подсказки за баллы', 'Clues cost points')}</span></div></div><div class="cabinet-hinge hinge-one" aria-hidden="true"></div><div class="cabinet-hinge hinge-two" aria-hidden="true"></div></div>
+  stage.innerHTML = `<section class="launch"><div class="launch-intro"><div class="cabinet-stamp">${tr('Видеопрокат', 'Video rental')} · potenceval</div><div class="cabinet-plaque"><p class="eyebrow">${tr('Угадай до финальных титров', 'Guess it before the end credits')}</p><h1>${tr('До титров', 'Until the Credits')}</h1><p class="hero-copy">${tr('Выбери кассету с полки. Узнавай кино, сериал, аниме или мультфильм по постеру и подсказкам.', 'Pick a tape from the shelf. Guess the movie, series, anime or cartoon from the poster and clues.')}</p><div class="launch-facts"><span>${tr('Размытый постер', 'Blurred poster')}</span><span>${tr('100 очков', '100 points')}</span><span>${tr('Подсказки за баллы', 'Clues cost points')}</span></div></div><div class="cabinet-hinge hinge-one" aria-hidden="true"></div><div class="cabinet-hinge hinge-two" aria-hidden="true"></div></div>
   <div class="launch-panel"><div class="launch-panel-head"><span>${tr('Полка с историями', 'Shelf of stories')}</span><small>${tr('Нажми на кассету', 'Tap a tape')}</small></div><div class="shelf-cabinet"><div class="shelf shelf-top" aria-label="${tr('Кино, сериалы, аниме и мультфильмы', 'Movies, series, anime and cartoons')}">${blanks('left')}${modes.slice(0, 4).map(cassette).join('')}${blanks('right')}</div><div class="shelf shelf-bottom" aria-label="${tr('Подборки Мама, Папа и смешанная', 'Mom, Dad and mixed collections')}">${blanks('left')}${modes.slice(4).map(cassette).join('')}${blanks('right')}</div></div><div class="selected-summary" aria-live="polite"><span>${tr('Выбрана кассета', 'Tape selected')} · ${chosenCount} ${puzzlesWord(chosenCount)}</span><strong id="selectedTitle">${chosen.name}</strong><small id="selectedDesc">${chosen.desc}</small></div><div class="round-picker"><span>${tr('Сколько угадываем?', 'How many to guess?')}</span><div id="roundChoices" class="round-choices" role="group" aria-label="${tr('Количество загадок', 'Number of puzzles')}"></div></div><button id="startBtn" class="btn primary launch-start">${tr('Играть', 'Play')}: ${chosen.name} <span>↗</span></button><p class="launch-note">${tr('В коллекции', 'The collection has')} ${TITLES.length} ${worksWord(TITLES.length)}. ${tr('«Мама» и «Папа» собирают знакомые истории разных лет и форматов.', '“Mom” and “Dad” gather familiar stories from different years and formats.')}</p></div></section>`;
   const renderRoundChoices = () => {
     const count = TITLES.filter(t => inMode(t, selectedMode)).length;
@@ -193,7 +194,7 @@ function showResult() {
 
 function finish() {
   exitBtn.hidden = true;
-  stage.innerHTML = `<section class="finish"><div class="finish-mark">✦</div><h1>${tr('Титры!', 'Roll credits!')}</h1><p>${tr(`Ты прошёл ${played} ${puzzlesWord(played, true)} и набрал`, `You solved ${played} ${puzzlesWord(played)} and scored`)}</p><strong>${total}</strong><span>${tr('очков', 'points')}</span><div class="finish-buttons"><button class="btn primary" id="againBtn">${tr('Ещё раз', 'Again')}</button><button class="btn ghost" id="homeBtn">${tr('Выбрать подборку', 'Pick a collection')}</button></div></section>`;
+  stage.innerHTML = `<section class="finish"><div class="finish-mark">✦</div><h1>${tr('Титры!', 'Roll credits!')}</h1><p>${tr(`Ты прошёл ${played} ${puzzlesWord(played, true)} и набрал`, `You played ${played} ${puzzlesWord(played)} and scored`)}</p><strong>${total}</strong><span>${tr('очков', 'points')}</span><div class="finish-buttons"><button class="btn primary" id="againBtn">${tr('Ещё раз', 'Again')}</button><button class="btn ghost" id="homeBtn">${tr('Выбрать подборку', 'Pick a collection')}</button></div></section>`;
   stage.querySelector('#againBtn').addEventListener('click', () => start(mode));
   stage.querySelector('#homeBtn').addEventListener('click', home);
 }

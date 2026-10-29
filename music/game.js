@@ -1,4 +1,5 @@
-import { sameArtist, snapshotTrack } from './catalog.js';
+import { t } from '../shared/i18n.js?v=ui-20261029';
+import { sameArtist, snapshotTrack } from './catalog.js?v=locale-20261029';
 export const LENGTHS = Object.freeze([0.5, 1, 2, 5, 10, 15]);
 export const POINTS = Object.freeze([1000, 800, 600, 400, 200, 100]);
 // Песню не угадали, но исполнителя назвали — утешительные очки.
@@ -81,10 +82,10 @@ function selectParty(pool, count, cap, recent) {
 }
 
 export function createGame(tracks, { rounds = 10, random = Math.random, maxPerArtist = Infinity, recent = [], answerMode = 'track' } = {}) {
-  if (!['track', 'artist'].includes(answerMode)) throw new Error('Неизвестный режим ответа.');
-  if (maxPerArtist !== Infinity && !validCap(maxPerArtist)) throw new Error('Лимит песен одного исполнителя должен быть положительным целым числом.');
+  if (!['track', 'artist'].includes(answerMode)) throw new Error(t('Неизвестный режим ответа.', "Unknown answer mode."));
+  if (maxPerArtist !== Infinity && !validCap(maxPerArtist)) throw new Error(t('Лимит песен одного исполнителя должен быть положительным целым числом.', "The per-artist song limit must be a positive integer."));
   const unique = [...new Map(tracks.filter(validTrack).map(t => [t.id, { ...snapshotTrack(t), ...(t.workKey ? { workKey: t.workKey } : {}) }])).values()];
-  if (!Number.isInteger(rounds) || rounds < 1 || rounds > unique.length) throw new Error('В подборке недостаточно песен для такой партии.');
+  if (!Number.isInteger(rounds) || rounds < 1 || rounds > unique.length) throw new Error(t('В подборке недостаточно песен для такой партии.', "Not enough songs in this collection for that game length."));
   const ids = unique.map(t => t.id);
   for (let i = ids.length - 1; i > 0; i--) {
     const j = Math.min(i, Math.max(0, Math.floor(random() * (i + 1))));
@@ -92,7 +93,7 @@ export function createGame(tracks, { rounds = 10, random = Math.random, maxPerAr
   }
   const byId = new Map(unique.map(t => [t.id, t]));
   const selected = selectParty(ids.map(id => byId.get(id)), rounds, maxPerArtist, recent);
-  if (!selected) throw new Error('Недостаточно разных песен для партии с таким лимитом на исполнителя.');
+  if (!selected) throw new Error(t('Недостаточно разных песен для партии с таким лимитом на исполнителя.', "Not enough different songs for this per-artist limit."));
   const queue = selected.map(t => t.id), selectedIds = new Set(queue);
   const recentWorks = unique.filter(t => recent.includes(t.id) || recent.includes(t.answerKey) || (t.workKey && recent.includes(t.workKey)));
   const heard = id => recentWorks.some(t => sameWork(t, byId.get(id)));
