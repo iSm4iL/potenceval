@@ -11,7 +11,7 @@ test('shelf arrows expose every collection without wrapping past either end', ()
   const last = shelfPage(PACKS, 99);
   assert.equal(last.page, 1);
   assert.equal(last.pages, 2);
-  assert.deepEqual(last.items.map(p => p.id), ['us-hiphop', 'soundcloud', 'dead-inside']);
+  assert.deepEqual(last.items.map(p => p.id), ['us-hiphop', 'soundcloud', 'dead-inside', 'drill', 'hookah']);
   assert.equal(last.previous, true);
   assert.equal(last.next, false);
 });
@@ -28,5 +28,8 @@ test('a custom artist remains reachable and gets a safe shared sleeve', () => {
   assert.equal(shelfPage(all, 1).items.at(-1).id, 'artist-42');
   assert.equal(recordArt('artist-42'), recordArt('new-wave'));
   assert.equal(recordArt('../secret'), recordArt('new-wave'));
-  assert.equal(new Set(PACKS.map(p => recordArt(p.id))).size, PACKS.length);
+  // своя обложка у каждой подборки; `art` — временно чужая, пока своя не нарисована
+  const own = PACKS.filter(p => !p.art);
+  assert.equal(new Set(own.map(p => recordArt(p.id))).size, own.length);
+  for (const p of PACKS.filter(p => p.art)) assert.ok(own.some(o => o.id === p.art));
 });

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Костяшки — potenceval</title>
+<title data-en="Knucklebones — potenceval">Костяшки — potenceval</title>
 <meta name="description" content="Кости как в Cult of the Lamb: кидай кость, собирай одинаковые в столбце и сноси кости соперника.">
 <meta property="og:title" content="Костяшки — кости как в Cult of the Lamb">
 <meta property="og:description" content="Заходи по коду лобби и сыграй в костяшки с другом или со Скелетом.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
 <link rel="stylesheet" href="../shared/fonts/fonts.css">
-<link rel="stylesheet" href="../shared/style.css?v=menu-20261025">
+<link rel="stylesheet" href="../shared/style.css?v=lang-20261028">
 <link rel="stylesheet" href="style.css?v=fit-1">
-<link rel="stylesheet" href="../shared/club.css?v=menu-20261025">
+<link rel="stylesheet" href="../shared/club.css?v=lang-20261028">
 <link rel="stylesheet" href="theme.css?v=club-20261025">
 </head>
 <body class="club-theme" data-game="dice">
@@ -20,9 +20,9 @@
   <header class="top">
     <a class="logo" href="../"><b>potenceval</b><span>games</span></a>
     <div class="top-right">
-      <span class="room" id="room" hidden>КОД <b id="roomCode"></b></span>
-      <button class="qbtn" data-rules>Правила</button>
-      <button class="exit" id="exitBtn" hidden>Выйти</button>
+      <span class="room" id="room" hidden><span data-en="CODE">КОД</span> <b id="roomCode"></b></span>
+      <button class="qbtn" data-rules data-en="Rules">Правила</button>
+      <button class="exit" id="exitBtn" hidden data-en="Leave">Выйти</button>
     </div>
   </header>
   <main class="stage" id="stage"></main>
@@ -30,22 +30,22 @@
 </div>
 
 <div class="modal" id="rules" hidden><div class="sheet">
-  <span class="kicker">Правила за 20 секунд</span>
-  <h2>Как играть в «Костяшки»</h2>
-  <p class="sub">Двое, у каждого поле 3×3. Ходите по очереди.</p>
+  <span class="kicker" data-en="Rules in 20 seconds">Правила за 20 секунд</span>
+  <h2 data-en="How to play Knucklebones">Как играть в «Костяшки»</h2>
+  <p class="sub" data-en="Two players, each with a 3×3 board. Take turns.">Двое, у каждого поле 3×3. Ходите по очереди.</p>
   <div class="rgrid">
-    <div class="rc"><span class="rn">1</span><div class="re">🎲</div><b>Бросок</b><p>В начале хода тебе выпадает кость.</p></div>
-    <div class="rc"><span class="rn">2</span><div class="re">⬇️</div><b>Столбец</b><p>Кладёшь её в любой свой столбец, где есть место.</p></div>
-    <div class="rc"><span class="rn">3</span><div class="re">✖️</div><b>Множитель</b><p>Одинаковые кости в столбце умножаются: 4+4 = 16, 4+4+4 = 36.</p></div>
-    <div class="rc"><span class="rn">4</span><div class="re">💥</div><b>Снос</b><p>Твоя кость сносит такие же у соперника в том же столбце.</p></div>
+    <div class="rc"><span class="rn">1</span><div class="re">🎲</div><b data-en="Roll">Бросок</b><p data-en="At the start of your turn you roll a die.">В начале хода тебе выпадает кость.</p></div>
+    <div class="rc"><span class="rn">2</span><div class="re">⬇️</div><b data-en="Column">Столбец</b><p data-en="Place it in any of your columns with room.">Кладёшь её в любой свой столбец, где есть место.</p></div>
+    <div class="rc"><span class="rn">3</span><div class="re">✖️</div><b data-en="Multiplier">Множитель</b><p data-en="Matching dice in a column multiply: 4+4 = 16, 4+4+4 = 36.">Одинаковые кости в столбце умножаются: 4+4 = 16, 4+4+4 = 36.</p></div>
+    <div class="rc"><span class="rn">4</span><div class="re">💥</div><b data-en="Knock out">Снос</b><p data-en="Your die knocks out the same dice in your rival’s matching column.">Твоя кость сносит такие же у соперника в том же столбце.</p></div>
   </div>
-  <div class="score-rule">Игра заканчивается, когда у кого-то заполнено поле. У кого больше очков — тот победил.</div>
-  <button class="btn primary" id="rulesOk">Понятно, кидаем</button>
+  <div class="score-rule" data-en="The game ends when someone’s board is full. Most points wins.">Игра заканчивается, когда у кого-то заполнено поле. У кого больше очков — тот победил.</div>
+  <button class="btn primary" id="rulesOk" data-en="Got it, let’s roll">Понятно, кидаем</button>
 </div></div>
 <div class="toast" id="toast" hidden></div>
 
 <script src="../shared/vendor/mqtt.min.js"></script>
-<script type="module" src="../shared/menu.js?v=merge-20261026"></script>
-<script type="module" src="app.js?v=club-20261025"></script>
+<script type="module" src="../shared/menu.js?v=lang-20261028"></script>
+<script type="module" src="app.js?v=lang-20261028"></script>
 </body>
 </html>

@@ -1,0 +1,114 @@
+[
+  {
+    "key": "RU",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/5000_rubles_obverse_2023.jpg/960px-5000_rubles_obverse_2023.jpg",
+    "crop": [
+      0.26,
+      0.23,
+      0.62,
+      0.71
+    ],
+    "reviewed": "2026-10-28",
+    "sourceFile": "RU.img",
+    "asset": "geo/assets/banknotes/RU.webp",
+    "sourceSha256": "8344a32debef1c08f45cbede71a25fac5710ab7db7bfc2368974ccf618daf05e"
+  },
+  {
+    "key": "UA",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/2000-%D0%B3%D1%80%D0%B8%D0%B2%D0%B5%D0%BD%D1%8C-2026-%D0%B0%D0%B2%D0%B5%D1%80%D1%81.jpg/960px-2000-%D0%B3%D1%80%D0%B8%D0%B2%D0%B5%D0%BD%D1%8C-2026-%D0%B0%D0%B2%D0%B5%D1%80%D1%81.jpg",
+    "crop": [
+      0.28,
+      0.14,
+      0.57,
+      0.78
+    ],
+    "reviewed": "2026-10-28",
+    "sourceFile": "UA.img",
+    "asset": "geo/assets/banknotes/UA.webp",
+    "sourceSha256": "42410ed03c270bbf9810585fb3063837413f8279f08608dffc0ccd638cfdff7d"
+  },
+  {
+    "key": "BY",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/500_Belarus_2009_front.jpg",
+    "crop": [
+      0.45,
+      0.23,
+      0.77,
+      0.81
+    ],
+    "reviewed": "2026-10-28",
+    "sourceFile": "BY.img",
+    "asset": "geo/assets/banknotes/BY.webp",
+    "sourceSha256": "922017ea0cdace4ac2322ca8fda331bb576ef64e52ed0353f9ede1812cf60c84"
+  },
+  {
+    "key": "MD",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/MD_1000_lei_av.jpg/960px-MD_1000_lei_av.jpg",
+    "crop": [
+      0.11,
+      0.16,
+      0.32,
+      0.82
+    ],
+    "reviewed": "2026-10-28",
+    "sourceFile": "MD.img",
+    "asset": "geo/assets/banknotes/MD.webp",
+    "sourceSha256": "e72ce5e38998b0768929cce3f35ab6ba3c830edb6736c2a5f8a9ac0d576350fd"
+  },
+  {
+    "key": "CZ",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/5000_Czech_koruna_Obverse.jpg",
+    "crop": [
+      0.6,
+      0.13,
+      0.81,
+      0.78
+    ],
+    "reviewed": "2026-10-28",
+    "sourceFile": "CZ.img",
+    "asset": "geo/assets/banknotes/CZ.webp",
+    "sourceSha256": "59d780719589217141924f84b5c22ccba599615b2570ecba7407212ef906f147"
+  },
+  {
+    "key": "EUR",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/EUR_5_obverse_%282013_issue%29.png",
+    "crop": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "reviewed": "2026-10-28",
+    "sourceFile": "SK.img",
+    "asset": "geo/assets/banknotes/EUR.webp",
+    "sourceSha256": "257845a3ffc5c242c8aa9a3f4c194cc0ff6c4d16bfe2b6530a2b5194956659fb"
+  },
+  {
+    "key": "BO",
+    "url": "https://www.bcb.gob.bo/webdocs/nfb/billetes/nfb/img/10000/anverso10000.jpg",
+    "crop": [
+      0.63,
+      0.2,
+      0.96,
+      0.76
+    ],
+    "reviewed": "2026-10-28",
+    "sourceFile": "BO.img",
+    "asset": "geo/assets/banknotes/BO.webp",
+    "sourceSha256": "80845b6ab98790bb8613d4ba0868d0ec01cf8d47da2ae63a0bc72185726544bf"
+  },
+  {
+    "key": "TJ",
+    "url": "https://www.nbt.tj/files/banknotes_coins/500s-1.jpg",
+    "crop": [
+      0.58,
+      0.12,
+      0.81,
+      0.86
+    ],
+    "reviewed": "2026-10-28",
+    "sourceFile": "TJ.img",
+    "asset": "geo/assets/banknotes/TJ.webp",
+    "sourceSha256": "02e1407a4f6697704c0b6ef94bed5fb27d824e1a261fc4cb16cd1ec2ea242d27"
+  }
+]

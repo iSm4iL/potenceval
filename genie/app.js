@@ -1,3 +1,4 @@
+import { t } from '../shared/i18n.js';
 import { createState, reduce, publicView, humans, GENIE_ID } from './game.js';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, nudge, smoke, enter, flyIn, flip,
   toast, setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js?v=kick-1';
@@ -59,7 +60,7 @@ function renderChips(p, s) {
   const box = $('#players');
   box.innerHTML = s.players.map(pl => `<div class="chip ${pl.id === s.wisher ? 'wisher' : ''} ${pl.genie ? 'genie' : ''} ${pl.online ? '' : 'off'}" data-id="${esc(pl.id)}">
     <span class="av" style="background:${esc(pl.color)}">${pl.genie ? '✦' : esc(first(pl.name))}</span>${pl.id === s.hostId ? '👑 ' : ''}${esc(pl.name)}
-    ${pl.id === me.pid ? '<small>ты</small>' : ''}${pl.id === s.wisher && s.phase !== 'final' ? '<small>загадывает</small>' : ''}<span class="sc">${pl.score}</span></div>`).join('');
+    ${pl.id === me.pid ? `<small>${t('ты', 'you')}</small>` : ''}${pl.id === s.wisher && s.phase !== 'final' ? `<small>${t('загадывает', 'wishing')}</small>` : ''}<span class="sc">${pl.score}</span></div>`).join('');
   if (!p) return;
   for (const pl of s.players) {
     const old = p.players.find(x => x.id === pl.id);
@@ -74,46 +75,46 @@ function placePill() {
   if (a) { pill.style.left = a.offsetLeft + 'px'; pill.style.width = a.offsetWidth + 'px'; }
 }
 function setHint(html) {
-  const t = $('#hintTxt');
-  if (t.dataset.v === html) return;
-  t.dataset.v = html; t.innerHTML = html;
-  A(t, [{ opacity: 0, transform: 'translateY(10px)', filter: 'blur(4px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: 450, easing: SPRING });
+  const el = $('#hintTxt');
+  if (el.dataset.v === html) return;
+  el.dataset.v = html; el.innerHTML = html;
+  A(el, [{ opacity: 0, transform: 'translateY(10px)', filter: 'blur(4px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: 450, easing: SPRING });
 }
 const W = s => `<b>${esc(nameOf(s, s.wisher))}</b>`;
 const HINTS = {
-  power: s => (s.wisher === me.pid ? 'Ты загадываешь. Тяни суперсилу или впиши свою.' : `${W(s)} тянет суперсилу. Смотрите.`),
-  write: s => (s.wisher === me.pid ? 'Остальные пишут подвохи к твоей силе. Не подглядывай 🙈' : `Придумай подвох к силе, которую получает ${W(s)}. Джинн тоже пишет.`),
-  reveal: s => (canDrive(s) ? 'Жми «Раскрыть следующий» и читай вслух. Гениально — жмите 🔥' : 'Открываем по одной, читаем вслух. Гениально — жми 🔥'),
-  hype: () => 'Докрути любой подвох, чтобы стало ещё хуже. Можно несколько раз.',
-  verdict: s => (s.wisher === me.pid ? 'Выбери самый жёсткий подвох и реши: берёшь силу или нет.' : `${W(s)} выбирает самый жёсткий подвох и решает, брать ли силу.`),
-  share: () => 'Раунд всё. Кидайте карточку в чат.',
+  power: s => (s.wisher === me.pid ? t('Ты загадываешь. Тяни суперсилу или впиши свою.', 'You’re wishing. Draw a superpower or write your own.') : t(`${W(s)} тянет суперсилу. Смотрите.`, `${W(s)} is drawing a superpower. Watch.`)),
+  write: s => (s.wisher === me.pid ? t('Остальные пишут подвохи к твоей силе. Не подглядывай 🙈', 'The others are writing catches for your power. No peeking 🙈') : t(`Придумай подвох к силе, которую получает ${W(s)}. Джинн тоже пишет.`, `Invent a catch for the power ${W(s)} is getting. The Genie is writing too.`)),
+  reveal: s => (canDrive(s) ? t('Жми «Раскрыть следующий» и читай вслух. Гениально — жмите 🔥', 'Hit “Reveal next” and read it out loud. Genius? Hit 🔥') : t('Открываем по одной, читаем вслух. Гениально — жми 🔥', 'One at a time, read out loud. Genius? Hit 🔥')),
+  hype: () => t('Докрути любой подвох, чтобы стало ещё хуже. Можно несколько раз.', 'Twist any catch to make it even worse. As many times as you like.'),
+  verdict: s => (s.wisher === me.pid ? t('Выбери самый жёсткий подвох и реши: берёшь силу или нет.', 'Pick the harshest catch and decide: take the power or not.') : t(`${W(s)} выбирает самый жёсткий подвох и решает, брать ли силу.`, `${W(s)} picks the harshest catch and decides whether to take the power.`)),
+  share: () => t('Раунд всё. Кидайте карточку в чат.', 'Round over. Drop the card in the chat.'),
 };
 
 function controls(s) {
   const b = [];
   const drv = s && canDrive(s);
   const next = label => ['next', label, 'primary ready', () => send({ type: 'next' })];
-  if (s?.phase === 'lobby' && isHostOf(s)) b.push(['start', humans(s).length < 2 ? 'Начать (ты против Джинна)' : 'Начать игру', 'primary ready', () => send({ type: 'start' })]);
+  if (s?.phase === 'lobby' && isHostOf(s)) b.push(['start', humans(s).length < 2 ? t('Начать (ты против Джинна)', 'Start (you vs the Genie)') : t('Начать игру', 'Start game'), 'primary ready', () => send({ type: 'start' })]);
   else if (s?.phase === 'power' && drv) {
-    if (!s.power) b.push(['draw', 'Тянуть силу', 'primary ready', () => send({ type: 'draw' })], ['custom', 'Своя сила', 'ghost', toggleCustom]);
-    else b.push(['draw', 'Другую', 'ghost', () => send({ type: 'draw' })], ['custom', 'Своя сила', 'ghost', toggleCustom], next('Дальше: подвохи →'));
-  } else if (s?.phase === 'write' && drv) b.push(['next', 'Раскрыть сейчас', 'ghost', () => send({ type: 'next' })]);
-  else if (s?.phase === 'reveal' && drv) b.push(s.revealed < s.cards.length ? ['flip', 'Раскрыть следующий', 'gold ready', () => send({ type: 'flip' })] : next('Дальше: разгон →'));
-  else if (s?.phase === 'hype' && drv) b.push(['next', 'Дальше: вердикт →', 'primary', () => send({ type: 'next' })]);
-  else if (s?.phase === 'verdict' && drv && s.took !== null) b.push(next('Дальше →'));
-  else if (s?.phase === 'share' && drv) b.push(next(s.round + 1 >= s.order.length ? 'Итоги →' : 'Следующий раунд →'));
-  else if (s?.phase === 'final' && isHostOf(s)) b.push(['again', 'Ещё партию', 'primary ready', () => send({ type: 'start' })], ['lobby', 'В лобби', 'ghost', () => send({ type: 'lobby' })]);
+    if (!s.power) b.push(['draw', t('Тянуть силу', 'Draw a power'), 'primary ready', () => send({ type: 'draw' })], ['custom', t('Своя сила', 'Own power'), 'ghost', toggleCustom]);
+    else b.push(['draw', t('Другую', 'Another'), 'ghost', () => send({ type: 'draw' })], ['custom', t('Своя сила', 'Own power'), 'ghost', toggleCustom], next(t('Дальше: подвохи →', 'Next: catches →')));
+  } else if (s?.phase === 'write' && drv) b.push(['next', t('Раскрыть сейчас', 'Reveal now'), 'ghost', () => send({ type: 'next' })]);
+  else if (s?.phase === 'reveal' && drv) b.push(s.revealed < s.cards.length ? ['flip', t('Раскрыть следующий', 'Reveal next'), 'gold ready', () => send({ type: 'flip' })] : next(t('Дальше: разгон →', 'Next: twist →')));
+  else if (s?.phase === 'hype' && drv) b.push(['next', t('Дальше: вердикт →', 'Next: verdict →'), 'primary', () => send({ type: 'next' })]);
+  else if (s?.phase === 'verdict' && drv && s.took !== null) b.push(next(t('Дальше →', 'Next →')));
+  else if (s?.phase === 'share' && drv) b.push(next(s.round + 1 >= s.order.length ? t('Итоги →', 'Results →') : t('Следующий раунд →', 'Next round →')));
+  else if (s?.phase === 'final' && isHostOf(s)) b.push(['again', t('Ещё партию', 'Play again'), 'primary ready', () => send({ type: 'start' })], ['lobby', t('В лобби', 'Back to lobby'), 'ghost', () => send({ type: 'lobby' })]);
   setControls(b);
 }
 
 /* ---------- cards ---------- */
-const backHTML = genie => `<div class="cb ${genie ? 'g' : ''}"><div class="q">${genie ? '✦' : '?'}</div><span>${genie ? 'ДЖИНН' : 'ПОДВОХ'}</span></div>`;
+const backHTML = genie => `<div class="cb ${genie ? 'g' : ''}"><div class="q">${genie ? '✦' : '?'}</div><span>${genie ? t('ДЖИНН', 'GENIE') : t('ПОДВОХ', 'CATCH')}</span></div>`;
 const addHTML = (s, a) => `<div class="add"><b>+ ${esc(nameOf(s, a.by))}:</b> ${esc(a.text)}</div>`;
 function frontHTML(s, i, { more = false } = {}) {
   const c = s.cards[i], g = c.by === GENIE_ID;
-  return `<div class="cf ${g ? 'g' : ''} ${(c.text || '').length > 60 ? 'long' : ''}"><span class="no">НО</span>
+  return `<div class="cf ${g ? 'g' : ''} ${(c.text || '').length > 60 ? 'long' : ''}"><span class="no">${t('НО', 'BUT')}</span>
     <div class="txt">${esc(c.text)}</div><div class="adds">${c.adds.map(a => addHTML(s, a)).join('')}</div>
-    <div class="ft"><span>${g ? '✦ Джинн' : esc(nameOf(s, c.by))}</span><span>${more ? '<button class="more">+ докрутить</button>' : ''}<button class="fire" data-i="${i}">🔥 <b>${c.fire}</b></button></span></div></div>`;
+    <div class="ft"><span>${g ? '✦ ' + t('Джинн', 'Genie') : esc(nameOf(s, c.by))}</span><span>${more ? `<button class="more">${t('+ докрутить', '+ twist it')}</button>` : ''}<button class="fire" data-i="${i}">🔥 <b>${c.fire}</b></button></span></div></div>`;
 }
 function staticGrid(s, { more = false, pick = false } = {}) {
   const grid = h(`<div class="cgrid ${pick ? 'pick' : ''}" id="grid" data-in></div>`);
@@ -146,24 +147,24 @@ const title = (kicker, h1, sub = '') => stage.append(h(`<div class="phase-title"
 const BUILD = {}, PATCH = {};
 
 BUILD.home = () => buildHome(stage, net, `
-  <div class="hero" data-in><span class="kicker">Игра для друзей · 2–8 человек</span>
-    <h1 id="heroTitle">Джинн</h1>
-    <p class="sub">Один получает суперсилу. Остальные придумывают, в чём подвох. Джинн тоже придумывает — и он подлый.</p>
-    <figure class="genie-scene"><img src="../shared/assets/club/genie.webp" alt="Латунная лампа с бирюзовым дымом на прилавке антикварной лавки" width="1200" height="800" fetchpriority="high"></figure>
+  <div class="hero" data-in><span class="kicker">${t('Игра для друзей · 2–8 человек', 'A game for friends · 2–8 people')}</span>
+    <h1 id="heroTitle">${t('Джинн', 'Genie')}</h1>
+    <p class="sub">${t('Один получает суперсилу. Остальные придумывают, в чём подвох. Джинн тоже придумывает — и он подлый.', 'One player gets a superpower. The others invent the catch. The Genie invents one too — and he’s sneaky.')}</p>
+    <figure class="genie-scene"><img src="../shared/assets/club/genie.webp" alt="${t('Латунная лампа с бирюзовым дымом на прилавке антикварной лавки', 'A brass lamp with turquoise smoke on an antique shop counter')}" width="1200" height="800" fetchpriority="high"></figure>
     <div class="fan">
-      <div class="mini m1"><b>СИЛА</b><br>🌀 Телепортация куда угодно. Тело и одежда — в целости.</div>
-      <div class="mini m2"><b>НО</b><br>С каждым телепортом ты в два раза тупее. <i>…и умнеешь, только если идёшь пешком.</i></div>
-      <div class="mini m3"><b>ДЖИНН</b><br>Тело и одежда в целости, как и просил. Про волосы уговора не было.</div>
+      <div class="mini m1"><b>${t('СИЛА', 'POWER')}</b><br>🌀 ${t('Телепортация куда угодно. Тело и одежда — в целости.', 'Teleport anywhere. Body and clothes intact.')}</div>
+      <div class="mini m2"><b>${t('НО', 'BUT')}</b><br>${t('С каждым телепортом ты в два раза тупее. <i>…и умнеешь, только если идёшь пешком.</i>', 'Every teleport makes you twice as dumb. <i>…and you only get smarter by walking.</i>')}</div>
+      <div class="mini m3"><b>${t('ДЖИНН', 'GENIE')}</b><br>${t('Тело и одежда в целости, как и просил. Про волосы уговора не было.', 'Body and clothes intact, as requested. Nobody said anything about hair.')}</div>
     </div>
   </div>`);
 
-const lobbyTag = (pl, s) => (pl.genie ? 'бот-подлец, играет всегда' : pl.id === s.hostId ? 'хост' : pl.online ? 'в лобби' : 'отключился');
+const lobbyTag = (pl, s) => (pl.genie ? t('бот-подлец, играет всегда', 'sneaky bot, always plays') : pl.id === s.hostId ? t('хост', 'host') : pl.online ? t('в лобби', 'in lobby') : t('отключился', 'offline'));
 BUILD.lobby = s => {
   const host = isHostOf(s);
-  buildLobby(stage, s, 'Продиктуй код или кинь ссылку. Можно играть даже вдвоём: Джинн всегда в деле.', lobbyTag, id => send({ type: 'kick', id }));
-  stage.append(h(`<div class="settings" data-in>${seg('laps', 'Кругов', [1, 2, 3], s.settings.laps, '', host)}${seg('sec', 'Время на подвох', [45, 60, 90], s.settings.sec, ' с', host)}</div>`));
+  buildLobby(stage, s, t('Продиктуй код или кинь ссылку. Можно играть даже вдвоём: Джинн всегда в деле.', 'Read out the code or send the link. Even two can play: the Genie is always in.'), lobbyTag, id => send({ type: 'kick', id }));
+  stage.append(h(`<div class="settings" data-in>${seg('laps', t('Кругов', 'Laps'), [1, 2, 3], s.settings.laps, '', host)}${seg('sec', t('Время на подвох', 'Time per catch'), [45, 60, 90], s.settings.sec, t(' с', ' s'), host)}</div>`));
   stage.querySelectorAll('.seg button').forEach(b => { b.onclick = () => send({ type: 'settings', [b.dataset.k]: +b.dataset.v }); });
-  if (!host) stage.append(h(`<p class="wait" data-in>Ждём, пока <b>${esc(nameOf(s, s.hostId))}</b> начнёт <span class="dots"><i></i><i></i><i></i></span></p>`));
+  if (!host) stage.append(h(`<p class="wait" data-in>${t('Ждём, пока', 'Waiting for')} <b>${esc(nameOf(s, s.hostId))}</b> ${t('начнёт', 'to start')} <span class="dots"><i></i><i></i><i></i></span></p>`));
   requestAnimationFrame(placeSegPills);
 };
 PATCH.lobby = (p, s) => {
@@ -174,8 +175,8 @@ PATCH.lobby = (p, s) => {
 
 function fillPower(s) {
   const pw = s.power;
-  $('#pcFront').innerHTML = `<div class="pc-front ${pw.title.length > 20 ? 'long' : ''}"><div class="pc-top"><span class="tag">СИЛА</span><span>${pw.id ? '#' + String(pw.id).padStart(3, '0') : 'своя'}</span></div>
-    <div class="pc-icon">${pw.icon}</div><h2>${esc(pw.title)}</h2><p>${esc(pw.text)}</p><div class="pc-foot">загадывает ${esc(nameOf(s, s.wisher))}</div></div>`;
+  $('#pcFront').innerHTML = `<div class="pc-front ${pw.title.length > 20 ? 'long' : ''}"><div class="pc-top"><span class="tag">${t('СИЛА', 'POWER')}</span><span>${pw.id ? '#' + String(pw.id).padStart(3, '0') : t('своя', 'custom')}</span></div>
+    <div class="pc-icon">${pw.icon}</div><h2>${esc(pw.title)}</h2><p>${esc(pw.text)}</p><div class="pc-foot">${t('загадывает', 'wished by')} ${esc(nameOf(s, s.wisher))}</div></div>`;
 }
 function toggleCustom() {
   const row = $('#customRow');
@@ -190,11 +191,11 @@ function submitCustom() {
 }
 BUILD.power = s => {
   const mine = s.wisher === me.pid;
-  title(`Раунд ${s.round + 1} из ${s.order.length}`, mine ? 'Тяни суперсилу' : `${esc(nameOf(s, s.wisher))} тянет силу`,
-    mine ? 'Не нравится — тяни другую или впиши свою.' : 'Сейчас узнаем, какая сила выпадет.');
+  title(t(`Раунд ${s.round + 1} из ${s.order.length}`, `Round ${s.round + 1} of ${s.order.length}`), mine ? t('Тяни суперсилу', 'Draw a superpower') : t(`${esc(nameOf(s, s.wisher))} тянет силу`, `${esc(nameOf(s, s.wisher))} is drawing a power`),
+    mine ? t('Не нравится — тяни другую или впиши свою.', 'Don’t like it? Draw another or write your own.') : t('Сейчас узнаем, какая сила выпадет.', 'Let’s see which power comes up.'));
   stage.append(h(`<div class="deck" data-in><div class="pcard b3"></div><div class="pcard b2"></div>
-    <div class="pcard flip" id="pc"><div class="inner"><div class="face"><div class="pc-back"><div class="logo2">✦</div><span>СУПЕРСИЛА</span></div></div><div class="face front-face" id="pcFront"></div></div></div></div>`));
-  stage.append(h(`<div class="custom-row" id="customRow" hidden><input class="field" id="customIn" maxlength="80" placeholder="Например: читать мысли кошек"><button class="btn primary" id="customOk">Готово</button></div>`));
+    <div class="pcard flip" id="pc"><div class="inner"><div class="face"><div class="pc-back"><div class="logo2">✦</div><span>${t('СУПЕРСИЛА', 'SUPERPOWER')}</span></div></div><div class="face front-face" id="pcFront"></div></div></div></div>`));
+  stage.append(h(`<div class="custom-row" id="customRow" hidden><input class="field" id="customIn" maxlength="80" placeholder="${t('Например: читать мысли кошек', 'E.g. read cats’ minds')}"><button class="btn primary" id="customOk">${t('Готово', 'Done')}</button></div>`));
   $('#customOk').onclick = submitCustom;
   $('#customIn').onkeydown = e => { if (e.key === 'Enter') submitCustom(); };
   if (s.power) { fillPower(s); $('#pc').classList.add('is-flipped'); }
@@ -254,16 +255,16 @@ function sendCatch() {
 }
 BUILD.write = s => {
   const mine = s.wisher === me.pid, myGen = gen;
-  title(mine ? 'Отвернись 🙈' : 'Все, кроме ' + esc(nameOf(s, s.wisher)), mine ? 'Пишут подвохи' : 'Придумай подвох',
-    mine ? 'Сейчас тебе испортят суперсилу.' : 'Чем гениальнее подвох, тем вероятнее от силы откажутся.');
+  title(mine ? t('Отвернись 🙈', 'Look away 🙈') : t('Все, кроме ', 'Everyone except ') + esc(nameOf(s, s.wisher)), mine ? t('Пишут подвохи', 'Catches incoming') : t('Придумай подвох', 'Invent a catch'),
+    mine ? t('Сейчас тебе испортят суперсилу.', 'They’re about to ruin your superpower.') : t('Чем гениальнее подвох, тем вероятнее от силы откажутся.', 'The smarter the catch, the likelier they refuse the power.'));
   stage.append(h(`<div class="strip" data-in><span class="ic">${s.power.icon}</span><div><b>${esc(s.power.title)}</b>${s.power.text ? '<br>' + esc(s.power.text) : ''}</div>
     <div class="timer" id="timer"><svg width="52" height="52"><circle class="tr" cx="26" cy="26" r="22"/><circle class="tv" cx="26" cy="26" r="22"/></svg><span></span></div></div>`));
   const grid = h(`<div class="cgrid write-grid" id="wgrid" data-in></div>`);
   [...humans(s).filter(p => p.id !== s.wisher), s.players.find(p => p.genie)].forEach(p => grid.append(h(`<div class="slot" data-by="${esc(p.id)}">
-    <span>${p.genie ? '<span class="dots"><i></i><i></i><i></i></span>&nbsp;колдует' : 'пишет…'}</span><div class="who">${esc(p.name)}</div></div>`)));
+    <span>${p.genie ? '<span class="dots"><i></i><i></i><i></i></span>&nbsp;' + t('колдует', 'conjuring') : t('пишет…', 'writing…')}</span><div class="who">${esc(p.name)}</div></div>`)));
   stage.append(grid);
   if (!mine) {
-    stage.append(h(`<div class="compose" data-in><input class="field" id="mineIn" maxlength="120" placeholder="Твой подвох… (Enter — кинуть)"><button class="btn primary" id="sendBtn">Кинуть</button></div>`));
+    stage.append(h(`<div class="compose" data-in><input class="field" id="mineIn" maxlength="120" placeholder="${t('Твой подвох… (Enter — кинуть)', 'Your catch… (Enter to send)')}"><button class="btn primary" id="sendBtn">${t('Кинуть', 'Send')}</button></div>`));
     $('#sendBtn').onclick = sendCatch;
     $('#mineIn').onkeydown = e => { if (e.key === 'Enter') sendCatch(); };
     if (s.cards.some(c => c.by === me.pid)) { $('#mineIn').disabled = true; $('#sendBtn').disabled = true; }
@@ -281,7 +282,7 @@ PATCH.write = (p, s) => {
 
 function fillFront(el, s, i) { $('.front-face', el).innerHTML = frontHTML(s, i); }
 BUILD.reveal = s => {
-  title(s.wisher === me.pid ? 'Твоя сила под угрозой' : esc(nameOf(s, s.wisher)) + ' смотрит', 'Раскрываем', 'По одному. Джинн — последним. Гениально? Жми 🔥');
+  title(s.wisher === me.pid ? t('Твоя сила под угрозой', 'Your power is in danger') : esc(nameOf(s, s.wisher)) + t(' смотрит', ' is watching'), t('Раскрываем', 'Reveal'), t('По одному. Джинн — последним. Гениально? Жми 🔥', 'One by one. The Genie goes last. Genius? Hit 🔥'));
   const grid = h(`<div class="cgrid" id="grid" data-in></div>`);
   s.cards.forEach((c, i) => {
     const el = h(`<div class="ccard flip" data-i="${i}"><div class="inner"><div class="face">${backHTML(c.by === GENIE_ID)}</div><div class="face front-face"></div></div></div>`);
@@ -317,7 +318,7 @@ function addLine(card, html) {
 }
 function openAdd(card, btn) {
   btn.hidden = true;
-  const box = h(`<div class="mini-in"><input maxlength="90" placeholder="…и ещё"><button>OK</button></div>`);
+  const box = h(`<div class="mini-in"><input maxlength="90" placeholder="${t('…и ещё', '…and also')}"><button>OK</button></div>`);
   $('.adds', card).after(box);
   A(box, [{ opacity: 0, transform: 'translateY(-6px)' }, { opacity: 1, transform: 'none' }], { duration: 300 });
   const inp = $('input', box);
@@ -331,7 +332,7 @@ function openAdd(card, btn) {
   inp.onkeydown = e => { if (e.key === 'Enter') ok(); if (e.key === 'Escape') { box.remove(); btn.hidden = false; } };
 }
 BUILD.hype = s => {
-  title('Разгон', 'Докрутите', 'Сделайте любой подвох ещё хуже. Тут и начинается ор.');
+  title(t('Разгон', 'Twist'), t('Докрутите', 'Make it worse'), t('Сделайте любой подвох ещё хуже. Тут и начинается ор.', 'Make any catch even worse. This is where the screaming starts.'));
   const grid = staticGrid(s, { more: true });
   grid.addEventListener('click', e => {
     const m = e.target.closest('.more');
@@ -360,27 +361,27 @@ function focusChosen(s, anim) {
 function showDecision(s, anim) {
   const vb = $('#vbox'), w = esc(nameOf(s, s.wisher));
   vb.replaceChildren(h(canDrive(s)
-    ? `<div class="banner"><h2>${s.wisher === me.pid ? 'Берёшь' : 'Берёт ли ' + w} силу с этим подвохом?</h2>
-       <div class="row"><button class="btn ghost" id="takeBtn">Беру всё равно</button><button class="btn primary" id="nopeBtn">Не, нафиг</button></div>
-       <p class="sub">Можно передумать и тыкнуть другую карточку.</p></div>`
-    : `<div class="banner"><h2>${w} решает <span class="dots"><i></i><i></i><i></i></span></h2></div>`));
+    ? `<div class="banner"><h2>${s.wisher === me.pid ? t('Берёшь силу с этим подвохом?', 'Will you take the power with this catch?') : t(`Берёт ли ${w} силу с этим подвохом?`, `Will ${w} take the power with this catch?`)}</h2>
+       <div class="row"><button class="btn ghost" id="takeBtn">${t('Беру всё равно', 'Taking it anyway')}</button><button class="btn primary" id="nopeBtn">${t('Не, нафиг', 'Nope, no way')}</button></div>
+       <p class="sub">${t('Можно передумать и тыкнуть другую карточку.', 'You can change your mind and tap another card.')}</p></div>`
+    : `<div class="banner"><h2>${w} ${t('решает', 'is deciding')} <span class="dots"><i></i><i></i><i></i></span></h2></div>`));
   if (anim) A(vb.firstElementChild, [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 500, easing: SPRING });
   const take = $('#takeBtn'), nope = $('#nopeBtn');
   if (take) { take.onclick = () => send({ type: 'decide', take: true }); nope.onclick = () => send({ type: 'decide', take: false }); }
 }
 function showResult(s, anim) {
   const c = s.cards[s.chosen], refused = !s.took, w = esc(nameOf(s, s.wisher));
-  const who = refused ? (c.by === GENIE_ID ? 'Джинн' : nameOf(s, c.by)) : nameOf(s, s.wisher);
+  const who = refused ? (c.by === GENIE_ID ? t('Джинн', 'Genie') : nameOf(s, c.by)) : nameOf(s, s.wisher);
   const vb = $('#vbox');
-  vb.replaceChildren(h(`<div class="banner"><h2>${refused ? `${w}: «Не, нафиг». Подвох сработал!` : `${w} берёт силу. Подвох не дожал.`}</h2>
-    <p>${refused ? 'Очко автору подвоха' : 'Очко за смелость'}</p><span class="plus">+1 ${esc(who)}</span></div>`));
+  vb.replaceChildren(h(`<div class="banner"><h2>${refused ? t(`${w}: «Не, нафиг». Подвох сработал!`, `${w}: “Nope, no way.” The catch worked!`) : t(`${w} берёт силу. Подвох не дожал.`, `${w} takes the power. The catch wasn’t enough.`)}</h2>
+    <p>${refused ? t('Очко автору подвоха', 'A point to the catch’s author') : t('Очко за смелость', 'A point for bravery')}</p><span class="plus">+1 ${esc(who)}</span></div>`));
   if (!anim) return;
   A(vb.firstElementChild, [{ opacity: 0, transform: 'scale(.85)' }, { opacity: 1, transform: 'none' }], { duration: 600, easing: SPRING });
   if (refused) { confetti($('#grid').children[s.chosen]); shake(); }
 }
 BUILD.verdict = s => {
   const drv = canDrive(s), mine = s.wisher === me.pid;
-  title('Вердикт', mine ? 'Какой подвох самый жёсткий?' : `${esc(nameOf(s, s.wisher))} выбирает самый жёсткий`, drv && s.took === null ? 'Тыкни карточку.' : '');
+  title(t('Вердикт', 'Verdict'), mine ? t('Какой подвох самый жёсткий?', 'Which catch is the harshest?') : t(`${esc(nameOf(s, s.wisher))} выбирает самый жёсткий`, `${esc(nameOf(s, s.wisher))} is picking the harshest`), drv && s.took === null ? t('Тыкни карточку.', 'Tap a card.') : '');
   const grid = staticGrid(s, { pick: drv });
   grid.addEventListener('click', e => {
     const card = e.target.closest('.ccard');
@@ -418,10 +419,10 @@ async function posterBlob(s, c) {
   };
   const F = { title: '800 58px Unbounded', ptext: '400 34px Onest', catch: '500 48px Onest', add: '400 34px Onest' };
   const blocks = [
-    ['pill', 'СИЛА', '#344a3b'],
+    ['pill', t('СИЛА', 'POWER'), '#344a3b'],
     ['text', wrap(`${s.power.icon} ${s.power.title}`, F.title), F.title, 70, '#443324'],
     ...(s.power.text ? [['text', wrap(s.power.text, F.ptext), F.ptext, 46, '#786044']] : []),
-    ['gap', 30], ['pill', 'НО', '#873e34'],
+    ['gap', 30], ['pill', t('НО', 'BUT'), '#873e34'],
     ['text', wrap(c.text, F.catch), F.catch, 62, '#443324'],
     ...c.adds.map(a => ['text', wrap('+ ' + a.text, F.add), F.add, 46, '#854b35']),
   ];
@@ -435,7 +436,7 @@ async function posterBlob(s, c) {
   ctx.fillStyle = glow; ctx.fillRect(0, 0, Wd, height);
   ctx.textBaseline = 'top';
   ctx.font = '800 32px Unbounded'; ctx.fillStyle = '#735326'; ctx.fillText('potenceval', P, P);
-  ctx.font = '400 28px Onest'; ctx.fillStyle = '#786044'; ctx.textAlign = 'right'; ctx.fillText(`✦ Джинн · раунд ${s.round + 1}`, Wd - P, P + 4); ctx.textAlign = 'left';
+  ctx.font = '400 28px Onest'; ctx.fillStyle = '#786044'; ctx.textAlign = 'right'; ctx.fillText(t(`✦ Джинн · раунд ${s.round + 1}`, `✦ Genie · round ${s.round + 1}`), Wd - P, P + 4); ctx.textAlign = 'left';
   let y = P + 90;
   for (const b of blocks) {
     if (b[0] === 'gap') { y += b[1]; continue; }
@@ -454,23 +455,23 @@ async function posterBlob(s, c) {
   ctx.fillStyle = 'rgba(142,109,60,.3)'; ctx.fillRect(P, y, maxW, 2);
   y += 34;
   ctx.font = '400 30px Onest'; ctx.fillStyle = '#786044';
-  ctx.fillText('придумал' + (c.by === GENIE_ID ? ' ✦ Джинн' : ': ' + nameOf(s, c.by)), P, y);
+  ctx.fillText(t('придумал', 'by') + (c.by === GENIE_ID ? ' ✦ ' + t('Джинн', 'Genie') : ': ' + nameOf(s, c.by)), P, y);
   ctx.textAlign = 'right'; ctx.fillText('🔥 ' + c.fire, Wd - P, y); ctx.textAlign = 'left';
   return new Promise(r => cv.toBlob(r, 'image/png'));
 }
 BUILD.share = s => {
   const c = s.cards[s.chosen ?? 0];
   if (!c) return;
-  title('Итог раунда', 'Карточка в чат', 'Скопируй и вставь в дискорд или скачай картинкой.');
-  const by = c.by === GENIE_ID ? '✦ Джинн' : esc(nameOf(s, c.by));
+  title(t('Итог раунда', 'Round result'), t('Карточка в чат', 'Card for the chat'), t('Скопируй и вставь в дискорд или скачай картинкой.', 'Copy and paste it into Discord or download it as an image.'));
+  const by = c.by === GENIE_ID ? '✦ ' + t('Джинн', 'Genie') : esc(nameOf(s, c.by));
   const wrapEl = h(`<div class="poster-wrap" data-in><div class="poster" id="poster">
-    <div class="brand"><b>potenceval</b><span>✦ Джинн · раунд ${s.round + 1}</span></div>
-    <span class="lab l1">СИЛА</span><h2>${s.power.icon} ${esc(s.power.title)}</h2>
-    <span class="lab l2">НО</span><div class="ptxt">${esc(c.text)}</div>
+    <div class="brand"><b>potenceval</b><span>${t(`✦ Джинн · раунд ${s.round + 1}`, `✦ Genie · round ${s.round + 1}`)}</span></div>
+    <span class="lab l1">${t('СИЛА', 'POWER')}</span><h2>${s.power.icon} ${esc(s.power.title)}</h2>
+    <span class="lab l2">${t('НО', 'BUT')}</span><div class="ptxt">${esc(c.text)}</div>
     ${c.adds.map(a => `<div class="padd">+ ${esc(a.text)}</div>`).join('')}
-    <div class="pft"><span>придумал${c.by === GENIE_ID ? '' : ':'} ${by}</span><span>🔥 ${c.fire}</span></div></div></div>`);
+    <div class="pft"><span>${t('придумал', 'by')}${c.by === GENIE_ID ? '' : ':'} ${by}</span><span>🔥 ${c.fire}</span></div></div></div>`);
   stage.append(wrapEl);
-  stage.append(h(`<div class="row" data-in><button class="btn gold" id="copyImg">Скопировать картинку</button><button class="btn ghost" id="dlImg">Скачать</button></div>`));
+  stage.append(h(`<div class="row" data-in><button class="btn gold" id="copyImg">${t('Скопировать картинку', 'Copy image')}</button><button class="btn ghost" id="dlImg">${t('Скачать', 'Download')}</button></div>`));
   const p = $('#poster');
   wrapEl.onpointermove = e => {
     if (still()) return;
@@ -481,15 +482,15 @@ BUILD.share = s => {
   $('#dlImg').onclick = async () => {
     const blob = await posterBlob(s, c);
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = `dzhinn-raund-${s.round + 1}.png`; a.click();
+    a.href = URL.createObjectURL(blob); a.download = t(`dzhinn-raund-${s.round + 1}.png`, `genie-round-${s.round + 1}.png`); a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 5000);
   };
   $('#copyImg').onclick = async () => {
     try {
       await navigator.clipboard.write([new ClipboardItem({ 'image/png': posterBlob(s, c) })]);
-      toast('Картинка скопирована — вставь в чат (Ctrl+V)', 2200);
+      toast(t('Картинка скопирована — вставь в чат (Ctrl+V)', 'Image copied — paste it in the chat (Ctrl+V)'), 2200);
       burstAt(p, { chars: ['✨'], n: 10, spread: 120 });
-    } catch { toast('Браузер не дал скопировать — жми «Скачать»', 2500); }
+    } catch { toast(t('Браузер не дал скопировать — жми «Скачать»', 'The browser blocked copying — hit “Download”'), 2500); }
   };
   setTimeout(() => burstAt(p, { chars: ['✦', '✨', '🔥'], n: 16, spread: 200, up: 180 }), 700);
 };
@@ -497,7 +498,7 @@ BUILD.share = s => {
 BUILD.final = s => {
   const ranked = [...s.players].sort((a, b) => b.score - a.score);
   const top = ranked[0], tie = ranked[1] && ranked[1].score === top.score;
-  title('Конец игры', tie ? 'Ничья!' : `Победитель — ${esc(top.name)}`, tie ? 'Делите корону.' : top.genie ? 'Джинн оказался подлее всех. Позор.' : 'Корона уходит сюда. Ещё партию?');
+  title(t('Конец игры', 'Game over'), tie ? t('Ничья!', 'Draw!') : t(`Победитель — ${esc(top.name)}`, `Winner — ${esc(top.name)}`), tie ? t('Делите корону.', 'Share the crown.') : top.genie ? t('Джинн оказался подлее всех. Позор.', 'The Genie was the sneakiest of all. Shame.') : t('Корона уходит сюда. Ещё партию?', 'The crown goes here. Another game?'));
   const max = Math.max(1, top.score);
   const podium = ranked.slice(0, 3);
   const order = [podium[1], podium[0], podium[2]].filter(Boolean);

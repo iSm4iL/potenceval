@@ -8,9 +8,9 @@ body.club-theme[data-game="rap"]{--club-scene:url('assets/club/rap.webp')}
 .club-theme .blobs{display:none}
 .club-theme .wrap{max-width:1240px;padding:24px 28px 50px}
 .club-theme .top{gap:12px;min-height:48px;padding-bottom:19px;border-bottom:1px solid #9d794d40}
-.club-theme .logo{align-items:center;gap:8px;font-size:19px;letter-spacing:-.04em}
+.club-theme .logo{align-items:center;gap:8px;font-size:23px;letter-spacing:-.04em}
 .club-theme .logo::before{content:'';width:43px;height:43px;flex:none;background:url('assets/club/club-mark.svg') center / contain no-repeat;margin-right:3px}
-.club-theme .logo b{color:#f3e5cc}.club-theme .logo span{color:#d5ac69;font-size:13px;letter-spacing:0}
+.club-theme .logo b{color:#f3e5cc}.club-theme .logo span{color:#d5ac69;font-size:14px;letter-spacing:0}
 .club-theme h1,.club-theme h2{letter-spacing:0}
 .club-theme .phase-title h1{font:400 clamp(36px,5vw,54px)/1.08 'Marck Script',cursive;color:#f3dfbd}
 .club-theme .kicker{text-transform:none;letter-spacing:.03em;font-size:13px;color:#d7b174}
@@ -62,5 +62,5 @@ body.club-theme[data-game="rap"]{--club-scene:url('assets/club/rap.webp')}
 .drawer .dlink small,.drawer .dlabel,.drawer .dlegal a{color:#baa383}
 .drawer .dsoon{color:#baa383;border-color:#a87e4c52;border-radius:7px}
 .club-theme .burger{background:#291f17;border-color:#82613b70;border-radius:11px}.club-theme .burger:hover{background:#3b2b1d}.club-theme .burger span{background:#eadac0}
-@media(max-width:650px){.club-theme .wrap{padding:16px 16px 36px}.club-theme .top{gap:8px;padding-bottom:14px}.club-theme .logo{font-size:15px;gap:6px}.club-theme .logo::before{width:34px;height:34px;margin-right:0}.club-theme .logo span{font-size:11px}.club-theme .top-right{gap:7px}.club-theme .qbtn,.club-theme .exit{padding:8px 10px;font-size:12px}.club-theme .panel{padding:22px 18px;border-width:6px}.club-theme .btn{padding:12px 16px}.club-theme .phase-title{margin-bottom:20px}}
+@media(max-width:650px){.club-theme .wrap{padding:16px 16px 36px}.club-theme .top{gap:8px;padding-bottom:14px}.club-theme .logo{font-size:18px;gap:6px}.club-theme .logo::before{width:34px;height:34px;margin-right:0}.club-theme .logo span{font-size:11px}.club-theme .top-right{gap:7px}.club-theme .qbtn,.club-theme .exit{padding:8px 10px;font-size:12px}.club-theme .panel{padding:22px 18px;border-width:6px}.club-theme .btn{padding:12px 16px}.club-theme .phase-title{margin-bottom:20px}}
 @media(prefers-reduced-motion:reduce){.club-theme *,.club-theme *::before,.club-theme *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

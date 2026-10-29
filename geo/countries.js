@@ -383,7 +383,7 @@ export const COUNTRIES = [
   { id: 'NA', area: 'africa', name: 'Намибия', aliases: ['Namibia'],
     facts: ['Эта страна стала независимой одной из последних в Африке — в 1990 году, до этого ею управлял сосед.', 'Здесь находятся одни из самых высоких песчаных дюн в мире.'],
     phrase: ['Dankie! Moro!', 'Спасибо! Привет!'], food: ['Капана', 'en:Namibian cuisine'], money: ['Доллар', 'Намибийский доллар'],
-    person: ['Фрэнки Фредерикс', 'спринтер', 'en:Frankie Fredericks'], walk: ['Christ Church, Windhoek', 'Independence Memorial Museum'] },
+    person: ['Фрэнки Фредерикс', 'спринтер', 'en:Frankie Fredericks'], walk: ['Christ Church, Windhoek', 'Independence Memorial Museum (Namibia)'] },
 
   /* ---------------- Америка ---------------- */
   { id: 'US', area: 'america', name: 'США', aliases: ['Соединённые Штаты', 'Соединённые Штаты Америки', 'Америка', 'USA', 'Штаты'],

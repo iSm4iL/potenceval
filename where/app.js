@@ -1,3 +1,4 @@
+import { t, lang } from '../shared/i18n.js';
 import { createState, reduce, publicView, ROUNDS, TIMES } from './game.js';
 import { NAMES } from './spots.js';
 import { A, $, h, esc, first, nameOf, me, LS, isHostOf, still, SPRING, confetti, enter,
@@ -15,15 +16,19 @@ const soloApply = (a, from) => { const next = reduce(solo, a, from); if (next !=
 setInterval(() => { if (solo) tick(solo, soloApply); }, 500);
 const send = a => (solo ? soloApply(a, me.pid) : net.send(a));
 function startSolo() {
-  solo = reduce(createState(me.pid, ''), { type: 'join', name: me.name || 'Ты' }, me.pid);
+  solo = reduce(createState(me.pid, ''), { type: 'join', name: me.name || t('Ты', 'You') }, me.pid);
   const saved = LS.get('where.solo');
   if (ROUNDS.includes(saved?.rounds)) solo.rounds = saved.rounds;
   if (TIMES.includes(saved?.time)) solo.time = saved.time;
   onState(solo, Date.now());
 }
 
-const fmt = n => Math.round(n).toLocaleString('ru');
-const dist = km => (km < 1 ? `${Math.round(km * 1000)} м` : `${km < 100 ? km.toFixed(1).replace('.', ',') : fmt(km)} км`);
+const fmt = n => Math.round(n).toLocaleString(lang);
+const dist = km => (km < 1 ? `${Math.round(km * 1000)} ${t('м', 'm')}` : `${km < 100 ? km.toFixed(1).replace('.', t(',', '.')) : fmt(km)} ${t('км', 'km')}`);
+// Названия стран: русские — из spots.js, английские — из встроенного справочника браузера.
+const REGIONS = new Intl.DisplayNames(['en'], { type: 'region' });
+const country = cc => (lang === 'en' ? REGIONS.of(cc) : NAMES[cc]);
+const timeLabel = x => (x ? x / 60 + t(' мин', ' min') : t('без', 'none'));
 const clock = ms => { const t = Math.ceil(ms / 1000); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
 const mine = s => s.players.find(p => p.id === me.pid) || { score: 0 };
 const panoUrl = s => { const [, lat, lng, id] = s.spot; return `https://www.google.com/maps/embed?pb=!4v0!6m8!1m7!1s${id}!2m2!1d${lat}!2d${lng}!3f${s.heading}!4f0!5f0.78`; };
@@ -66,11 +71,11 @@ async function renderState(s) {
 function controls(s) {
   const b = [];
   if (s?.phase === 'lobby' && (solo || isHostOf(s))) {
-    b.push(['start', solo ? 'Поехали' : 'Начать', 'primary ready', () => send({ type: 'start' })]);
-    if (solo) b.push(['home', 'Назад', 'ghost', showHome]);
+    b.push(['start', solo ? t('Поехали', 'Let’s go') : t('Начать', 'Start'), 'primary ready', () => send({ type: 'start' })]);
+    if (solo) b.push(['home', t('Назад', 'Back'), 'ghost', showHome]);
   } else if (s?.phase === 'over' && (solo || isHostOf(s))) {
-    b.push(['again', 'Ещё партия', 'primary ready', () => send({ type: 'start' })]);
-    b.push(solo ? ['home', 'На главную', 'ghost', showHome] : ['lobby', 'В лобби', 'ghost', () => send({ type: 'lobby' })]);
+    b.push(['again', t('Ещё партия', 'Play again'), 'primary ready', () => send({ type: 'start' })]);
+    b.push(solo ? ['home', t('На главную', 'Home'), 'ghost', showHome] : ['lobby', t('В лобби', 'Back to lobby'), 'ghost', () => send({ type: 'lobby' })]);
   }
   setControls(b);
 }
@@ -87,35 +92,35 @@ const GLOBE = `<svg class="globe" viewBox="0 0 240 240" aria-hidden="true">
   <g class="drop"><path d="M150 52c-15 0-26 11-26 26 0 19 26 44 26 44s26-25 26-44c0-15-11-26-26-26z" fill="#e2574c" stroke="#7a2b22" stroke-width="3"/><circle cx="150" cy="78" r="9" fill="#f6e7c8"/></g>
 </svg>`;
 function buildHomeScreen() {
-  buildHome(stage, net, `<div class="hero" data-in><span class="kicker">Как GeoGuessr · один или до 8 друзей</span>
-    <h1>Где я?</h1>
-    <p class="sub">Тебя высаживают на случайной улице где-то в мире. Осмотрись, найди подсказки — вывески, номера машин, разметку, горы на горизонте — и поставь точку на карте. Чем ближе, тем больше очков.</p>
+  buildHome(stage, net, `<div class="hero" data-in><span class="kicker">${t('Как GeoGuessr · один или до 8 друзей', 'Like GeoGuessr · solo or up to 8 friends')}</span>
+    <h1>${t('Где я?', 'Where Am I?')}</h1>
+    <p class="sub">${t('Тебя высаживают на случайной улице где-то в мире. Осмотрись, найди подсказки — вывески, номера машин, разметку, горы на горизонте — и поставь точку на карте. Чем ближе, тем больше очков.', 'You’re dropped on a random street somewhere in the world. Look around for clues — signs, license plates, road markings, mountains on the horizon — and drop a pin on the map. The closer, the more points.')}</p>
     ${GLOBE}</div>`);
-  $('#createBtn').after(h(`<button class="btn ghost" id="soloBtn">Играть одному</button>`));
+  $('#createBtn').after(h(`<button class="btn ghost" id="soloBtn">${t('Играть одному', 'Play solo')}</button>`));
   $('#soloBtn').onclick = startSolo;
 }
-const lobbyTag = (p, s) => (p.id === s.hostId ? 'хост' : p.online ? 'в игре' : 'нет связи');
+const lobbyTag = (p, s) => (p.id === s.hostId ? t('хост', 'host') : p.online ? t('в игре', 'in game') : t('нет связи', 'offline'));
 function settingsHTML(s, on) {
   return `<div class="settings" id="settings" data-in>
-    ${seg('rounds', 'Раундов', ROUNDS, s.rounds, '', on)}
-    ${seg('time', 'Время на раунд', TIMES.map(t => (t ? t / 60 + ' мин' : 'без')), s.time ? s.time / 60 + ' мин' : 'без', '', on)}</div>`;
+    ${seg('rounds', t('Раундов', 'Rounds'), ROUNDS, s.rounds, '', on)}
+    ${seg('time', t('Время на раунд', 'Time per round'), TIMES.map(timeLabel), timeLabel(s.time), '', on)}</div>`;
 }
 function buildLobbyScreen(s) {
-  if (solo) stage.append(h(`<div class="phase-title" data-in><span class="kicker">Один в дороге</span><h1>Собираем чемодан</h1><p class="sub">Сколько мест посетить и сколько времени дать себе на каждое.</p></div>`));
-  else buildLobby(stage, s, 'Зови друзей по коду или ссылке. Все увидят одно и то же место и поставят свои точки.', lobbyTag, id => send({ type: 'kick', id }));
+  if (solo) stage.append(h(`<div class="phase-title" data-in><span class="kicker">${t('Один в дороге', 'Solo trip')}</span><h1>${t('Собираем чемодан', 'Packing the suitcase')}</h1><p class="sub">${t('Сколько мест посетить и сколько времени дать себе на каждое.', 'How many places to visit and how much time to give yourself for each.')}</p></div>`));
+  else buildLobby(stage, s, t('Зови друзей по коду или ссылке. Все увидят одно и то же место и поставят свои точки.', 'Invite friends with the code or link. Everyone sees the same place and drops their own pin.'), lobbyTag, id => send({ type: 'kick', id }));
   stage.append(h(settingsHTML(s, solo || isHostOf(s))));
-  if (!solo && !isHostOf(s)) stage.append(h(`<p class="wait" data-in>Ждём, пока <b>${esc(nameOf(s, s.hostId))}</b> начнёт <span class="dots"><i></i><i></i><i></i></span></p>`));
+  if (!solo && !isHostOf(s)) stage.append(h(`<p class="wait" data-in>${t('Ждём, пока', 'Waiting for')} <b>${esc(nameOf(s, s.hostId))}</b> ${t('начнёт', 'to start')} <span class="dots"><i></i><i></i><i></i></span></p>`));
   $('#settings').onclick = onSetting;
   requestAnimationFrame(placeSegPills);
 }
 function onSetting(e) {
   const b = e.target.closest('button[data-k]');
   if (!b || b.disabled) return;
-  send({ type: 'set', k: b.dataset.k, v: b.dataset.k === 'rounds' ? +b.dataset.v : b.dataset.v === 'без' ? 0 : parseInt(b.dataset.v) * 60 });
+  send({ type: 'set', k: b.dataset.k, v: b.dataset.k === 'rounds' ? +b.dataset.v : b.dataset.v === timeLabel(0) ? 0 : parseInt(b.dataset.v) * 60 });
 }
 function patchLobby(s) {
   renderPlist(s, lobbyTag);
-  for (const [k, v] of [['rounds', String(s.rounds)], ['time', s.time ? s.time / 60 + ' мин' : 'без']]) stage.querySelectorAll(`[data-k="${k}"]`).forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  for (const [k, v] of [['rounds', String(s.rounds)], ['time', timeLabel(s.time)]]) stage.querySelectorAll(`[data-k="${k}"]`).forEach(b => b.classList.toggle('on', b.dataset.v === v));
   placeSegPills();
   if (solo) LS.set('where.solo', { rounds: s.rounds, time: s.time });
 }
@@ -135,7 +140,7 @@ function ensureMap() {
   map.on('click', e => {
     if (view?.phase !== 'guess' || view.guesses[me.pid]) return;
     pinAt = e.latlng.wrap();
-    if (pin) pin.setLatLng(e.latlng); else pin = L.marker(e.latlng, { icon: pinIcon(mine(view).color || '#e2574c', first(me.name || 'Ты')) }).addTo(marks);
+    if (pin) pin.setLatLng(e.latlng); else pin = L.marker(e.latlng, { icon: pinIcon(mine(view).color || '#e2574c', first(me.name || t('Ты', 'You'))) }).addTo(marks);
     $('#guessBtn').disabled = false;
   });
   // мини-карта растёт при наведении — Leaflet должен узнать новый размер
@@ -169,11 +174,11 @@ function buildGuess(s) {
 function patchGuess(s, p) {
   $('#round').textContent = `${s.round} / ${s.deck.length}`;
   $('#score').textContent = fmt(mine(s).score);
-  $('#who').innerHTML = s.players.length > 1 ? s.players.map(pl => `<span class="dot ${s.guesses[pl.id] ? 'done' : ''} ${pl.online ? '' : 'off'}" style="--c:${esc(pl.color)}" title="${esc(pl.name)}${s.guesses[pl.id] ? ' — ответил' : ''}">${esc(first(pl.name))}</span>`).join('') : '';
+  $('#who').innerHTML = s.players.length > 1 ? s.players.map(pl => `<span class="dot ${s.guesses[pl.id] ? 'done' : ''} ${pl.online ? '' : 'off'}" style="--c:${esc(pl.color)}" title="${esc(pl.name)}${s.guesses[pl.id] ? t(' — ответил', ' — answered') : ''}">${esc(first(pl.name))}</span>`).join('') : '';
   const done = !!s.guesses[me.pid];
   arena.classList.toggle('done', done);
   $('#guessBtn').disabled = done || !pinAt;
-  $('#guessBtn').textContent = done ? 'Ждём остальных…' : 'Угадать';
+  $('#guessBtn').textContent = done ? t('Ждём остальных…', 'Waiting for others…') : t('Угадать', 'Guess');
   if (p && s.endsAt && s.endsAt !== p.endsAt && p.phase === 'guess' && !done) A($('#timer'), [{ transform: 'scale(1.35)' }, { transform: 'none' }], { duration: 600, easing: SPRING });
 }
 function submit() {
@@ -212,13 +217,13 @@ function buildReveal(s) {
   }
   L.marker(goal, { icon: goalIcon(), zIndexOffset: 1000 }).addTo(marks);
   const card = h(`<div class="result-card" id="result">
-    <span class="kicker">Раунд ${s.round} из ${s.deck.length}</span>
-    <h2>${esc(NAMES[cc] || 'Где-то на Земле')}</h2>
-    <p class="meta">${year ? `Снято в ${year} · ` : ''}<a href="https://www.google.com/maps/@?api=1&map_action=pano&pano=${esc(id)}" target="_blank" rel="noopener">открыть в Google Картах ↗</a></p>
+    <span class="kicker">${t(`Раунд ${s.round} из ${s.deck.length}`, `Round ${s.round} of ${s.deck.length}`)}</span>
+    <h2>${esc(country(cc) || t('Где-то на Земле', 'Somewhere on Earth'))}</h2>
+    <p class="meta">${year ? t(`Снято в ${year} · `, `Captured in ${year} · `) : ''}<a href="https://www.google.com/maps/@?api=1&map_action=pano&pano=${esc(id)}" target="_blank" rel="noopener">${t('открыть в Google Картах ↗', 'open in Google Maps ↗')}</a></p>
     <ol class="rows">${rows.map(({ p, g }) => `<li style="--c:${esc(p.color)}" class="${p.id === me.pid ? 'me' : ''}">
-      <span class="av">${esc(first(p.name))}</span><b>${esc(p.name)}${p.id === me.pid && s.players.length > 1 ? ' (ты)' : ''}</b>
-      <span class="km">${g ? dist(g.km) : 'не успел'}</span><span class="pts" data-pts="${g?.pts || 0}">+0</span>
-      <i class="bar"><b style="width:${(g?.pts || 0) / 50}%"></b></i>${s.players.length > 1 ? `<small>всего ${fmt(p.score)}</small>` : ''}</li>`).join('')}</ol>
+      <span class="av">${esc(first(p.name))}</span><b>${esc(p.name)}${p.id === me.pid && s.players.length > 1 ? t(' (ты)', ' (you)') : ''}</b>
+      <span class="km">${g ? dist(g.km) : t('не успел', 'out of time')}</span><span class="pts" data-pts="${g?.pts || 0}">+0</span>
+      <i class="bar"><b style="width:${(g?.pts || 0) / 50}%"></b></i>${s.players.length > 1 ? `<small>${t('всего', 'total')} ${fmt(p.score)}</small>` : ''}</li>`).join('')}</ol>
     <div class="actions" id="revealActions"></div></div>`);
   arena.append(card);
   patchReveal(s);
@@ -234,8 +239,8 @@ function patchReveal(s) {
   if (!box) return;
   const last = s.round >= s.deck.length;
   box.innerHTML = solo || isHostOf(s)
-    ? `<button class="btn primary ready" id="nextBtn">${last ? 'Итоги партии' : 'Следующее место →'}</button>`
-    : `<p class="wait">Ждём, пока <b>${esc(nameOf(s, s.hostId))}</b> поедет дальше <span class="dots"><i></i><i></i><i></i></span></p>`;
+    ? `<button class="btn primary ready" id="nextBtn">${last ? t('Итоги партии', 'Game results') : t('Следующее место →', 'Next place →')}</button>`
+    : `<p class="wait">${t('Ждём, пока', 'Waiting for')} <b>${esc(nameOf(s, s.hostId))}</b> ${t('поедет дальше', 'to move on')} <span class="dots"><i></i><i></i><i></i></span></p>`;
   const b = $('#nextBtn');
   if (b) b.onclick = () => { b.disabled = true; send({ type: 'next' }); };
 }
@@ -255,21 +260,21 @@ function buildOver(s) {
   const ranked = [...s.players].sort((a, b) => b.score - a.score), max = 5000 * s.deck.length;
   const share = mine(s).score / max;
   const title = ranked.length === 1
-    ? (share >= 0.8 ? 'Бывалый путешественник' : share >= 0.5 ? 'Неплохо ориентируешься' : share >= 0.25 ? 'Турист со стажем' : 'Где я вообще был?')
-    : ranked[0].score === ranked[1].score ? 'Ничья!' : `${esc(ranked[0].name)} знает мир лучше всех`;
-  stage.append(h(`<div class="phase-title" data-in><span class="kicker">Партия окончена · ${s.deck.length} ${s.deck.length === 3 ? 'места' : 'мест'}</span><h1>${title}</h1></div>`));
-  if (ranked.length === 1) stage.append(h(`<div class="solo-total" data-in><b data-to="${mine(s).score}">0</b><small>из ${fmt(max)}</small></div>`));
+    ? (share >= 0.8 ? t('Бывалый путешественник', 'Seasoned traveler') : share >= 0.5 ? t('Неплохо ориентируешься', 'You know your way around') : share >= 0.25 ? t('Турист со стажем', 'Experienced tourist') : t('Где я вообще был?', 'Where was I, even?'))
+    : ranked[0].score === ranked[1].score ? t('Ничья!', 'Draw!') : t(`${esc(ranked[0].name)} знает мир лучше всех`, `${esc(ranked[0].name)} knows the world best`);
+  stage.append(h(`<div class="phase-title" data-in><span class="kicker">${t('Партия окончена', 'Game over')} · ${s.deck.length} ${t(s.deck.length === 3 ? 'места' : 'мест', 'places')}</span><h1>${title}</h1></div>`));
+  if (ranked.length === 1) stage.append(h(`<div class="solo-total" data-in><b data-to="${mine(s).score}">0</b><small>${t('из', 'of')} ${fmt(max)}</small></div>`));
   else {
     const order = [ranked[1], ranked[0], ranked[2]].filter(Boolean);
     stage.append(h(`<div class="podium" data-in>${order.map(p => { const k = ranked.indexOf(p) + 1; return `<div class="pod p${k}">
       <div class="crown">${k === 1 ? '👑' : ''}</div><span class="av" style="background:${esc(p.color)}">${esc(first(p.name))}</span>
-      <div class="nm">${esc(p.name)}${p.id === me.pid ? ' (ты)' : ''}</div><div class="bar" style="height:${[0, 170, 120, 90][k]}px">${fmt(p.score)}</div></div>`; }).join('')}</div>`));
+      <div class="nm">${esc(p.name)}${p.id === me.pid ? t(' (ты)', ' (you)') : ''}</div><div class="bar" style="height:${[0, 170, 120, 90][k]}px">${fmt(p.score)}</div></div>`; }).join('')}</div>`));
     if (ranked.length > 3) stage.append(h(`<div class="rest" data-in>${ranked.slice(3).map((p, i) => `<div><span>${i + 4}. ${esc(p.name)}</span><b>${fmt(p.score)}</b></div>`).join('')}</div>`));
   }
   stage.append(h(`<ol class="trip" data-in>${s.log.map(({ spot, guesses }, i) => {
     const best = s.players.filter(p => guesses[p.id]).sort((a, b) => guesses[a.id].km - guesses[b.id].km)[0];
     const g = ranked.length === 1 ? guesses[me.pid] : best && guesses[best.id];
-    return `<li><span class="n">${i + 1}</span><b>${esc(NAMES[spot[0]] || '?')}</b><span>${g ? `${ranked.length > 1 ? esc(best.name) + ' · ' : ''}${dist(g.km)} · +${fmt(g.pts)}` : 'никто не ответил'}</span></li>`;
+    return `<li><span class="n">${i + 1}</span><b>${esc(country(spot[0]) || '?')}</b><span>${g ? `${ranked.length > 1 ? esc(best.name) + ' · ' : ''}${dist(g.km)} · +${fmt(g.pts)}` : t('никто не ответил', 'nobody answered')}</span></li>`;
   }).join('')}</ol>`));
   const big = stage.querySelector('.solo-total b');
   if (big) countUp(big, +big.dataset.to, 1400, 500, '');

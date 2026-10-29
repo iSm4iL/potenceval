@@ -21,7 +21,8 @@ input{font:inherit}
 
 .wrap{max-width:1080px;margin:0 auto;padding:18px 16px 48px}
 .top{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;justify-content:space-between}
-.logo{font-family:'Unbounded';font-weight:800;font-size:19px;color:var(--text);text-decoration:none;display:flex;align-items:baseline;gap:8px}
+.logo{font-family:'Unbounded';font-weight:800;font-size:22px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo a{display:flex;align-items:center;color:inherit;text-decoration:none}
 .logo b{color:var(--gold)}
 .logo span{font-family:'Onest';font-weight:500;font-size:13px;color:var(--muted)}
 .top-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -278,7 +279,7 @@ input{font:inherit}
 
 .dlegal{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:18px;font-size:12px}
 .dlegal a{color:var(--muted)}
-.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:640px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:18px;background:var(--surface);border:1px solid var(--line);box-shadow:0 20px 50px -20px #000;font-size:14px;line-height:1.4}
+.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:39;max-width:640px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:18px;background:var(--surface);border:1px solid var(--line);box-shadow:0 20px 50px -20px #000;font-size:14px;line-height:1.4}
 .consent p{margin:0;flex:1 1 280px}
 .consent a{color:var(--gold)}
 .consent div{display:flex;gap:8px}
@@ -288,6 +289,18 @@ input{font:inherit}
 .legal h1{font-size:clamp(26px,5vw,38px);margin:28px 0 6px}
 .legal h2{font-size:19px;margin:28px 0 8px}
 .legal a{color:var(--gold)}
-.legal table{width:100%;border-collapse:collapse;font-size:14px}
+.legal table{display:block;overflow-x:auto;width:100%;border-collapse:collapse;font-size:14px}
 .legal td,.legal th{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
 .legal .fill{background:rgba(255,201,74,.18);padding:0 4px;border-radius:4px}
+
+.lang{display:flex;flex:none;padding:3px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
+.lang button{padding:5px 9px;border-radius:99px;background:transparent;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.06em}
+.lang button[aria-pressed="true"]{background:var(--violet);color:#fff}
+.lang button:not([aria-pressed="true"]):hover{color:var(--text)}
+@media(max-width:600px){
+  .top:has(.lang):not(:has(.room)){flex-wrap:nowrap}
+  .lang button[aria-pressed="true"]{display:none}
+  .logo,.logo a{min-width:0}
+  .logo a:first-child{flex:none}
+  .logo span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}

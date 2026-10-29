@@ -3,7 +3,7 @@ import { recordArt, shelfPage, selectionPage } from './record-store-model.js?v=d
 
 const stage = document.querySelector('#stage');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const colors = { 'new-wave': '#ef613b', 'ru-rap': '#b5a181', nostalgia: '#e287ce', kpop: '#b68aef', 'modern-pop': '#73b3de', 'mom-pop': '#ffd0ba', 'dad-rock': '#e6c68b', metal: '#df7067', 'us-hiphop': '#e4aa67', soundcloud: '#b8a3ef', 'dead-inside': '#c9c3d6' };
+const colors = { 'new-wave': '#ef613b', 'ru-rap': '#b5a181', nostalgia: '#e287ce', kpop: '#b68aef', 'modern-pop': '#73b3de', 'mom-pop': '#ffd0ba', 'dad-rock': '#e6c68b', metal: '#df7067', 'us-hiphop': '#e4aa67', soundcloud: '#b8a3ef', 'dead-inside': '#c9c3d6' , drill: '#9fb3c8', hookah: '#c9a77c' };
 let page = 0, selectedId = null, lastTitle = 'Новая школа', playOnEntry = false;
 let restoreFocus = null;
 
@@ -198,5 +198,5 @@ function rotate(now) {
 requestAnimationFrame(rotate);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=genres-20261026');
+await import('./app.js?v=drill-20261028');
 decorate();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "checkedAt": "2026-10-26",
+  "checkedAt": "2026-10-28",
   "counts": {
-    "anime": 122,
+    "anime": 121,
     "film": 50,
     "series": 37,
     "cartoon": 45
@@ -174,8 +174,8 @@
         "naruto",
         "onepiece",
         "pokemon",
-        "sevendeadly",
-        "shakugan"
+        "shakugan",
+        "slime"
       ],
       "themeSource": "https://myanimelist.net/anime/55813",
       "themeTitle": "Bling-Bang-Bang-Born",
@@ -347,7 +347,7 @@
         "bleach",
         "jujutsu",
         "onepiece",
-        "sevendeadly"
+        "shakugan"
       ],
       "themeSource": "https://myanimelist.net/anime/38000",
       "themeTitle": "Gurenge",
@@ -381,7 +381,6 @@
       "artist": "Ikimonogakari",
       "artistId": 5960768,
       "distractorIds": [
-        "sevendeadly",
         "onepiece",
         "souleater",
         "fullmetal",
@@ -392,7 +391,8 @@
         "dorohedoro",
         "fairytail",
         "inuyasha",
-        "kenshin"
+        "kenshin",
+        "noragami"
       ],
       "themeSource": "https://myanimelist.net/anime/1735",
       "themeTitle": "Blue Bird",
@@ -428,13 +428,13 @@
         "noragami",
         "onepiece",
         "berserk",
-        "sevendeadly",
         "souleater",
         "zom100",
         "akame",
         "blackclover",
         "blacklagoon",
-        "blueexorcist"
+        "blueexorcist",
+        "cowboy"
       ],
       "themeSource": "https://myanimelist.net/anime/269",
       "themeTitle": "Asterisk",
@@ -475,10 +475,10 @@
         "inuyasha",
         "kenshin",
         "pokemon",
-        "sevendeadly",
         "slime",
         "souleater",
-        "trigun"
+        "trigun",
+        "gurren"
       ],
       "themeSource": "https://myanimelist.net/anime/21",
       "themeTitle": "We Are!",
@@ -817,7 +817,6 @@
       "artistId": 14626387,
       "distractorIds": [
         "naruto",
-        "sevendeadly",
         "souleater",
         "zom100",
         "bleach",
@@ -827,7 +826,8 @@
         "drstone",
         "fairytail",
         "goldenkamuy",
-        "inuyasha"
+        "inuyasha",
+        "kenshin"
       ],
       "themeSource": "https://myanimelist.net/anime/20507",
       "themeTitle": "Goya wa Machiawase",
@@ -1034,12 +1034,12 @@
         "naruto",
         "noragami",
         "onepunch",
-        "sevendeadly",
         "shakugan",
         "souleater",
         "undead",
         "zom100",
-        "bunny"
+        "bunny",
+        "kaguya"
       ],
       "themeSource": "https://myanimelist.net/anime/50265",
       "themeTitle": "Mixed Nuts",
@@ -1245,7 +1245,6 @@
       "artistId": 14107475,
       "distractorIds": [
         "nogame",
-        "sevendeadly",
         "blackclover",
         "dorohedoro",
         "fairytail",
@@ -1255,7 +1254,8 @@
         "onepiece",
         "pokemon",
         "slime",
-        "souleater"
+        "souleater",
+        "mashle"
       ],
       "themeSource": "https://myanimelist.net/anime/30831",
       "themeTitle": "fantastic dreamer",
@@ -1335,7 +1335,6 @@
       "distractorIds": [
         "konosuba",
         "rezero",
-        "sevendeadly",
         "blackclover",
         "dorohedoro",
         "fairytail",
@@ -1344,7 +1343,8 @@
         "naruto",
         "onepiece",
         "pokemon",
-        "slime"
+        "slime",
+        "souleater"
       ],
       "themeSource": "https://myanimelist.net/anime/19815",
       "themeTitle": "This game",
@@ -1556,12 +1556,12 @@
         "inuyasha",
         "naruto",
         "onepiece",
-        "sevendeadly",
         "slime",
         "souleater",
         "drstone",
         "goldenkamuy",
-        "kenshin"
+        "kenshin",
+        "myhero"
       ],
       "themeSource": "https://api.animethemes.moe/anime/pokemon?include=animethemes.song.artists",
       "themeTitle": "Pokémon Theme (Gotta Catch'em All)",
@@ -1735,7 +1735,7 @@
         "dorohedoro",
         "fate",
         "onepiece",
-        "sevendeadly"
+        "shakugan"
       ],
       "themeSource": "https://api.animethemes.moe/anime/berserk?include=animethemes.song.artists",
       "themeTitle": "Tell Me Why",
@@ -2242,14 +2242,14 @@
         "berserk",
         "demon",
         "naruto",
-        "sevendeadly",
         "shakugan",
         "souleater",
         "promisedneverland",
         "attack",
         "bleach",
         "durarara",
-        "eminence"
+        "eminence",
+        "hunter"
       ],
       "themeSource": "https://api.animethemes.moe/anime/ao_no_exorcist?include=animethemes.song.artists",
       "themeTitle": "CORE PRIDE",
@@ -2552,7 +2552,7 @@
         "haruhi",
         "naruto",
         "noragami",
-        "sevendeadly"
+        "shakugan"
       ],
       "themeSource": "https://api.animethemes.moe/anime/undead_unluck?include=animethemes.song.artists",
       "themeTitle": "01",
@@ -2588,7 +2588,6 @@
         "dorohedoro",
         "naruto",
         "noragami",
-        "sevendeadly",
         "souleater",
         "berserk",
         "blackclover",
@@ -2596,7 +2595,8 @@
         "fairytail",
         "goldenkamuy",
         "inuyasha",
-        "kenshin"
+        "kenshin",
+        "myhero"
       ],
       "themeSource": "https://api.animethemes.moe/anime/zom_100_zombie_ni_naru_made_ni_shitai_100_no_koto?include=animethemes.song.artists",
       "themeTitle": "Song of the Dead",
@@ -2676,60 +2676,15 @@
         "naruto",
         "onepiece",
         "pokemon",
-        "sevendeadly",
         "slime",
         "souleater",
         "drstone",
         "goldenkamuy",
-        "kenshin"
+        "kenshin",
+        "myhero"
       ],
       "themeSource": "https://api.animethemes.moe/anime/fairy_tail?include=animethemes.song.artists",
       "themeTitle": "Snow Fairy",
-      "themeKind": "opening",
-      "checkedAt": "2026-10-26"
-    },
-    {
-      "animeId": "sevendeadly",
-      "category": "anime",
-      "titleRu": "Семь смертных грехов",
-      "titleOriginal": "Nanatsu no Taizai",
-      "franchiseId": "sevendeadly",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Ecchi",
-        "Fantasy",
-        "Supernatural"
-      ],
-      "moodTags": [
-        "Action",
-        "Adventure",
-        "Comedy"
-      ],
-      "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20789-Ma5ouSYPkru9.jpg",
-      "posterSource": "https://anilist.co/anime/20789",
-      "posterCredit": "AniList; artwork copyright respective rights holders",
-      "trackId": 121134224,
-      "trackTitle": "Netsujo No Spectrum",
-      "artist": "Ikimonogakari",
-      "artistId": 5960768,
-      "distractorIds": [
-        "naruto",
-        "souleater",
-        "blackclover",
-        "dorohedoro",
-        "fairytail",
-        "inuyasha",
-        "noragami",
-        "onepiece",
-        "pokemon",
-        "slime",
-        "zom100",
-        "berserk"
-      ],
-      "themeSource": "https://api.animethemes.moe/anime/nanatsu_no_taizai?include=animethemes.song.artists",
-      "themeTitle": "Netsujou no Spectrum",
       "themeKind": "opening",
       "checkedAt": "2026-10-26"
     },
@@ -2757,7 +2712,6 @@
       "artist": "Eir Aoi",
       "artistId": 8002046,
       "distractorIds": [
-        "sevendeadly",
         "angelbeats",
         "blackclover",
         "dandadan",
@@ -2768,7 +2722,8 @@
         "flcl",
         "gintama",
         "goldenkamuy",
-        "gurren"
+        "gurren",
+        "inuyasha"
       ],
       "themeSource": "https://api.animethemes.moe/anime/kill_la_kill?include=animethemes.song.artists",
       "themeTitle": "Sirius",
@@ -3366,12 +3321,12 @@
         "naruto",
         "onepiece",
         "pokemon",
-        "sevendeadly",
         "slime",
         "souleater",
         "zom100",
         "akame",
-        "berserk"
+        "berserk",
+        "drstone"
       ],
       "themeSource": "https://api.animethemes.moe/anime/dorohedoro?include=animethemes.song.artists",
       "themeTitle": "Welcome to Chaos",
@@ -3616,11 +3571,11 @@
         "naruto",
         "onepiece",
         "pokemon",
-        "sevendeadly",
         "souleater",
         "drstone",
         "goldenkamuy",
-        "kenshin"
+        "kenshin",
+        "myhero"
       ],
       "themeSource": "https://api.animethemes.moe/anime/tensei_shitara_slime_datta_ken?include=animethemes.song.artists",
       "themeTitle": "Nameless Story",
@@ -3663,7 +3618,7 @@
         "rezero",
         "naruto",
         "onepiece",
-        "sevendeadly"
+        "blacklagoon"
       ],
       "themeSource": "https://api.animethemes.moe/anime/mushoku_tensei_isekai_ittara_honki_dasu?include=animethemes.song.artists",
       "themeTitle": "Tabibito no Uta",
@@ -3703,9 +3658,9 @@
         "naruto",
         "onepiece",
         "pokemon",
-        "sevendeadly",
         "shakugan",
-        "slime"
+        "slime",
+        "souleater"
       ],
       "themeSource": "https://api.animethemes.moe/anime/kage_no_jitsuryokusha_ni_naritakute?include=animethemes.song.artists",
       "themeTitle": "HIGHEST",
@@ -3870,12 +3825,12 @@
         "naruto",
         "onepiece",
         "pokemon",
-        "sevendeadly",
         "slime",
         "souleater",
         "drstone",
         "goldenkamuy",
-        "kenshin"
+        "kenshin",
+        "myhero"
       ],
       "themeSource": "https://api.animethemes.moe/anime/black_clover_tv?include=animethemes.song.artists",
       "themeTitle": "Black Catcher",
@@ -3909,7 +3864,6 @@
       "artistId": 5584425,
       "distractorIds": [
         "naruto",
-        "sevendeadly",
         "blackclover",
         "dorohedoro",
         "fairytail",
@@ -3919,7 +3873,8 @@
         "pokemon",
         "slime",
         "zom100",
-        "berserk"
+        "berserk",
+        "demon"
       ],
       "themeSource": "https://api.animethemes.moe/anime/soul_eater?include=animethemes.song.artists",
       "themeTitle": "PAPERMOON",
@@ -3959,11 +3914,11 @@
         "naruto",
         "onepiece",
         "pokemon",
-        "sevendeadly",
         "slime",
         "souleater",
         "rezero",
-        "sao"
+        "sao",
+        "shakugan"
       ],
       "themeSource": "https://api.animethemes.moe/anime/inuyasha?include=animethemes.song.artists",
       "themeTitle": "Fukai Mori",
@@ -4083,7 +4038,6 @@
         "berserk",
         "demon",
         "naruto",
-        "sevendeadly",
         "souleater",
         "bleach",
         "blueexorcist",
@@ -4091,7 +4045,8 @@
         "hunter",
         "overlord",
         "sao",
-        "shieldhero"
+        "shieldhero",
+        "spicewolf"
       ],
       "themeSource": "https://api.animethemes.moe/anime/pandora_hearts?include=animethemes.song.artists",
       "themeTitle": "Parallel Hearts",

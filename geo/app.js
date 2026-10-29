@@ -1,40 +1,34 @@
-import { $, esc, LS, A, SPRING, toast, confetti, flip, nudge, shake, wait } from '../shared/kit.js';
-import { PACKS, COUNTRIES } from './countries.js?v=clues-20261025';
+import { $, esc, LS, toast, confetti, A, SPRING, nudge } from '../shared/kit.js';
+import { PACKS, COUNTRIES } from './countries.js?v=atlas-20261028b';
 import { WORLD, SHAPES, PHOTOS } from './atlas.js?v=clues-20261025';
-import { WALKS } from './walks.js';
-import { CLUES, START, WRONG, norm, nameIndex, matchCountry, canOpen, openClue, guess, surrender, createGame, award, nextRound } from './game.js';
+import { banknoteHTML, banknoteFor } from './banknotes.js?v=notes-20261028';
+import { WALKS } from './walks.js?v=atlas-20261028b';
+import { FACTS, PEOPLE, OMIT_PEOPLE, MONEY } from './content.js?v=atlas-20261028b';
+import { CLUES, START, WRONG, norm, nameIndex, matchCountry, canOpen, cluePrice, currencyPrice, openClue, refundWalk, guess, guidance, surrender, createGame, award, nextRound, selectFacts } from './game.js?v=atlas-20261028b';
 
-const stage = $('#stage'), exitBtn = $('#exitBtn');
-const byId = new Map(COUNTRIES.map(c => [c.id, c]));
-const world = new Map(WORLD.map(w => [w[0], w]));
-const at = id => world.get(id).slice(2);
-const names = nameIndex(WORLD, COUNTRIES);
-const nameOf = id => byId.get(id)?.name || world.get(id)?.[1] || id;
-const spotsOf = id => (byId.get(id).walk && WALKS[id]) || null; // координаты прогулки: tools/snap.mjs
-const allNames = [...new Set([...COUNTRIES.flatMap(c => [c.name, ...c.aliases]), ...WORLD.map(w => w[1])])];
-const AVATARS = ['🕵️', '🦊', '🐱', '🦉'];
-const ICONS = { fact1: '🗂', fact2: '🗂', phrase: '💬', food: '🍲', walk: '👣', money: '💵', person: '📰', shape: '✉' };
-const TILT = { fact1: -3, walk: 2, person: 3, phrase: -4, fact2: 2.5, food: -2, shape: 1, money: -3 };
+const stage = $('#stage'), byId = new Map(COUNTRIES.map(c => [c.id, c]));
+const world = new Map(WORLD.map(w => [w[0], w])), names = nameIndex(WORLD, COUNTRIES);
+const at = id => world.get(id).slice(2), nameOf = id => byId.get(id)?.name || world.get(id)?.[1] || id;
 const num = n => n.toLocaleString('ru-RU');
-const directionNames = { '↑': 'На север', '↗': 'На северо-восток', '→': 'На восток', '↘': 'На юго-восток', '↓': 'На юг', '↙': 'На юго-запад', '←': 'На запад', '↖': 'На северо-запад' };
-const cases = n => `${n} ${{ one: 'дело', few: 'дела', many: 'дел', other: 'дела' }[new Intl.PluralRules('ru').select(n)]}`;
-const shapeSvg = (id, cls = '') => `<svg class="${cls}" viewBox="-20 -20 1040 1040" aria-hidden="true"><path d="${SHAPES[id]}" pathLength="1"/></svg>`;
-
+const countryCount = n => `${n} ${{one:'страна',few:'страны',many:'стран',other:'стран'}[new Intl.PluralRules('ru').select(n)]}`;
+const allNames = [...new Set([...COUNTRIES.flatMap(c => [c.name, ...c.aliases]), ...WORLD.map(w => w[1])])];
+const directions = { '↑':'На север', '↗':'На северо-восток', '→':'На восток', '↘':'На юго-восток', '↓':'На юг', '↙':'На юго-запад', '←':'На запад', '↖':'На северо-запад' };
+const icons = { fact1:'✦', fact2:'✦', phrase:'Aa', food:'◒', money:'¤', person:'☺', walk:'↟', shape:'◈', compass:'↗' };
+const descriptions = { fact1:'Первый факт уже открыт', fact2:'Другой факт об этой стране', phrase:'Фраза и её перевод', food:'Блюдо и его название', money:'Фрагмент банкноты и денежная единица', person:'Человек и его достижение', walk:'Осмотреться на улицах', shape:'Сильная подсказка: силуэт на карте', compass:'Направления от всех ошибочных ответов' };
 const saved = LS.get('geo.setup') || {};
-const settings = {
-  pack: PACKS.some(p => p.id === saved.pack) ? saved.pack : 'europe',
-  rounds: [5, 10, 15].includes(saved.rounds) ? saved.rounds : 5,
-  mode: saved.mode === 'team' ? 'team' : 'solo',
-  players: Array.isArray(saved.players) ? saved.players.filter(p => typeof p === 'string').slice(0, 4) : [],
-};
+const settings = { pack: PACKS.some(p => p.id === saved.pack) ? saved.pack : 'europe', rounds:[5,10,15].includes(saved.rounds) ? saved.rounds : 5, mode:saved.mode === 'team' ? 'team' : 'solo', players:Array.isArray(saved.players) ? saved.players.filter(p=>typeof p==='string').slice(0,4) : [] };
 const persist = () => LS.set('geo.setup', settings);
 const poolOf = pack => COUNTRIES.filter(c => pack === 'all' || c.area === pack).map(c => c.id);
-const roundChoices = pack => { const max = poolOf(pack).length; const list = [5, 10, 15].filter(n => n <= max); return list.length ? list : [max]; };
-let game = null;
+const spotsOf = id => byId.get(id)?.walk && WALKS[id]?.length ? WALKS[id] : null;
+const personOf = c => OMIT_PEOPLE.includes(c.id) ? null : PEOPLE[c.id] || c.person;
+const shape = id => `<svg viewBox="-20 -20 1040 1040" aria-label="Контур страны"><path d="${SHAPES[id]}"/></svg>`;
+const exitBtn=$('#exitBtn'), AVATARS=['🕵️','🦊','🐱','🦉'], shapeSvg=shape;
+const roundChoices=pack=>{const max=poolOf(pack).length;return [5,10,15].filter(n=>n<=max);};
+let freshClue=null;
+let game = null, active = 'fact1', roundFacts = [], settled = false;
 
-/* ---------- папка с настройками ---------- */
 function home() {
-  game = null; resetWalk();
+  game = null; resetWalk(); document.body.classList.remove('is-investigating');
   exitBtn.hidden = true; $('#progress').hidden = true;
   const teaser = COUNTRIES[Math.floor(Math.random() * COUNTRIES.length)];
   stage.innerHTML = `<section class="desk">
@@ -50,7 +44,7 @@ function home() {
       </div>
       <div class="folder-page folder-right">
         <h2>Картотека</h2>
-        <div class="packs" role="radiogroup" aria-label="Картотека">${PACKS.map(p => `<button class="pack${p.id === settings.pack ? ' on' : ''}" role="radio" aria-checked="${p.id === settings.pack}" data-pack="${p.id}"><span class="pack-ic">${p.icon}</span><b>${p.name}</b><small>${poolOf(p.id).length} стран</small></button>`).join('')}</div>
+        <div class="packs" role="radiogroup" aria-label="Картотека">${PACKS.map(p => `<button class="pack${p.id === settings.pack ? ' on' : ''}" role="radio" aria-checked="${p.id === settings.pack}" data-pack="${p.id}"><span class="pack-ic">${p.icon}</span><b>${p.name}</b><small>${countryCount(poolOf(p.id).length)}</small></button>`).join('')}</div>
         <h2>Сколько дел</h2>
         <div class="rounds" id="rounds"></div>
         <h2>Кто расследует</h2>
@@ -99,318 +93,147 @@ function home() {
 }
 
 function start() {
-  if (settings.mode === 'team') {
-    const typed = $('#agentName')?.value.replace(/\s+/g, ' ').trim();
-    if (typed && settings.players.length < 4) { settings.players.push(typed); persist(); }
-    if (settings.players.length < 2) { toast('Впиши хотя бы двух следователей — или выбери «Я один»', 2600); return $('#agentName') ? nudge($('#agentName')) : null; }
-  }
-  stage.onclick = null;
-  game = createGame(poolOf(settings.pack), settings.rounds, settings.mode === 'team' ? settings.players : ['Ты'], { freeOf: id => (spotsOf(id) ? [] : ['walk']) });
-  shown = START;
-  renderRound();
+  const typed=$('#agentName')?.value.trim(); if(settings.mode==='team'&&typed&&settings.players.length<4){settings.players.push(typed.slice(0,20));persist();}
+  if(settings.mode==='team' && settings.players.length<2) return toast('Впиши хотя бы два имени через запятую.',3000);
+  stage.onclick=null;
+  const recent = LS.get('geo.recent') || [];
+  game = createGame(poolOf(settings.pack),settings.rounds,settings.mode==='team'?settings.players:['Ты'],{recent:Array.isArray(recent)?recent:[],pricesOf:id=>({money:currencyPrice(MONEY[id],Object.values(MONEY))}),unavailableOf:id=>[...(!spotsOf(id)?['walk']:[]),...(!personOf(byId.get(id))?['person']:[])]});
+  beginRound();
 }
-
-/* ---------- доска ---------- */
-function front(c, key) {
-  const img = t => (PHOTOS[t] ? `<img src="${esc(PHOTOS[t])}" alt="" referrerpolicy="no-referrer" data-zoom>` : '');
-  switch (key) {
-    case 'fact1': case 'fact2': return `<div class="archive"><span class="archive-head">Архив · лист ${key === 'fact1' ? 1 : 2}</span><p>${esc(c.facts[key === 'fact1' ? 0 : 1])}</p></div>`;
-    case 'phrase': return `<div class="sticky"><b dir="auto">${esc(c.phrase[0])}</b><small>${esc(c.phrase[1])}</small></div>`;
-    case 'food': return `<figure class="polaroid${PHOTOS[c.food[1]] ? '' : ' bare'}"><span class="tape" aria-hidden="true"></span>${img(c.food[1])}<figcaption>${esc(c.food[0])}</figcaption></figure>`;
-    case 'walk': return spotsOf(c.id)
-      ? `<div class="streetcard"><span class="street-pin" aria-hidden="true">📍</span><b>Прогулка</b><button class="walk-go" data-walk>👣 Гулять по улицам</button></div>`
-      : `<div class="streetcard none"><b>Прогулки пока нет</b><small>Для этой страны ещё не подготовлены точки прогулки. Очки не списаны.</small></div>`;
-    case 'money': return `<div class="banknote${PHOTOS[c.money[1]] ? '' : ' bare'}">${img(c.money[1])}<b>${esc(c.money[0])}</b></div>`;
-    case 'person': {
-      const credit = c.personCredit;
-      return `<div class="clipping"><span class="clip-head">Знаменитость</span><div class="clip-body">${img(c.person[2])}<p><b class="${c.person[0].length > 16 ? 'long' : ''}">${esc(c.person[0])}</b><small>${esc(c.person[1])}</small></p></div>${credit ? `<small class="photo-credit"><a href="${esc(credit.source)}" target="_blank" rel="noopener noreferrer">${esc(credit.author)}</a> · <a href="${esc(credit.url)}" target="_blank" rel="noopener noreferrer">${esc(credit.license)}</a></small>` : ''}</div>`;
-    }
-    case 'shape': return `<div class="outline">${shapeSvg(c.id)}</div>`;
-  }
+function beginRound() {
+  resetWalk(); active='fact1'; settled=false;
+  const c=byId.get(game.round.id), history=LS.get('geo.facts.v2') || {};
+  const facts=[...c.facts,...(FACTS[c.id] || [])], used=Array.isArray(history[c.id])?history[c.id]:[];
+  roundFacts=selectFacts(facts,used);
+  const unique=[...new Set(facts)];
+  history[c.id]=[...new Set([...used,...roundFacts])];
+  if(history[c.id].length>=unique.length) history[c.id]=roundFacts;
+  LS.set('geo.facts.v2',history);
+  const recent=LS.get('geo.recent');
+  LS.set('geo.recent',[...(Array.isArray(recent)?recent:[]).filter(id=>id!==c.id),c.id].slice(-COUNTRIES.length));
+  renderRound(); scrollTo({top:0,behavior:'instant'});
 }
-const card = (c, { key, cost, label }) => `<div class="clue clue-${key}${game.round.open.includes(key) ? ' open' : ''}" data-key="${key}" style="--tilt:${TILT[key]}deg">
-  <span class="pin" aria-hidden="true"></span>
-  <div class="clue-inner">
-    <button class="side back" data-open="${key}" aria-label="Открыть улику: ${label}, −${cost} очков"><span class="back-ic">${ICONS[key]}</span><b>${label}</b><span class="price">${key === 'shape' ? 'вскрыть последней' : '−' + cost}</span></button>
-    <div class="side front">${front(c, key)}</div>
-  </div>
-</div>`;
-
-const LAMP = `<svg class="lamp" viewBox="0 0 220 260" aria-hidden="true"><defs><linearGradient id="lm" x1="0" x2="1"><stop offset="0" stop-color="#2a1c2e"/><stop offset=".5" stop-color="#5a4152"/><stop offset="1" stop-color="#1c1220"/></linearGradient></defs>
-  <path d="M18 0v70l70 60" fill="none" stroke="#3b2a35" stroke-width="10" stroke-linecap="round"/><circle cx="88" cy="130" r="9" fill="#5a4152"/>
-  <path d="M60 120l95 -10 50 90-150 30z" fill="url(#lm)"/><ellipse cx="130" cy="216" rx="78" ry="16" transform="rotate(-12 130 216)" fill="#ffd98a"/><ellipse cx="130" cy="216" rx="60" ry="10" transform="rotate(-12 130 216)" fill="#fff4d6"/></svg>`;
-const PROPS = `<div class="props" aria-hidden="true">
-  <svg class="glass" viewBox="0 0 200 90"><rect x="96" y="40" width="100" height="16" rx="8" transform="rotate(14 96 48)" fill="#4a2c1d"/><circle cx="62" cy="40" r="34" fill="rgba(200,230,255,.18)" stroke="#c9a15a" stroke-width="7"/><path d="M42 24a26 26 0 0 1 22-10" stroke="rgba(255,255,255,.6)" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
-  <svg class="mug" viewBox="0 0 120 120"><ellipse cx="54" cy="104" rx="46" ry="10" fill="rgba(0,0,0,.35)"/><path d="M14 30h80v58a18 18 0 0 1-18 18H32a18 18 0 0 1-18-18z" fill="#8f2d3a"/><path d="M94 44h8a14 14 0 0 1 0 28h-8" fill="none" stroke="#8f2d3a" stroke-width="9"/><ellipse cx="54" cy="30" rx="40" ry="9" fill="#3a1d12"/><ellipse cx="54" cy="30" rx="40" ry="9" fill="none" stroke="#b5485a" stroke-width="3"/><path class="steam" d="M40 18c-8-10 8-14 0-24M62 16c-8-10 8-14 0-24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/></svg>
-</div>`;
-
 function renderRound() {
-  const r = game.round, c = byId.get(r.id), n = game.index + 1;
-  resetWalk();
-  exitBtn.hidden = false; exitBtn.textContent = 'Закрыть дело';
-  $('#progress').hidden = false;
-  $('#progressText').textContent = `Дело ${n} из ${game.order.length}`;
-  $('#progressBar').style.width = `${n / game.order.length * 100}%`;
-  stage.innerHTML = `<section class="case">
-    <div class="scene">
-      ${LAMP}
-      <div class="frame">
-        <div class="plaque">Дело № ${String(n).padStart(3, '0')} · ${esc(PACKS.find(p => p.id === settings.pack).name)}</div>
-        <div class="board" id="board">
-          <span class="light" aria-hidden="true"></span>
-          <span class="ring" aria-hidden="true"></span>
-          <svg class="threads" id="threads" aria-hidden="true"></svg>
-          ${CLUES.map(cl => card(c, cl)).join('')}
-          <div class="suspect" id="suspect"><span class="scrap" aria-hidden="true"></span><span class="note" aria-hidden="true">где это?!</span><span class="pin" aria-hidden="true"></span>
-            <div class="suspect-inner">
-              <div class="side suspect-front"><b>?</b><span>Страна № ${n}</span></div>
-              <div class="side suspect-back">${shapeSvg(c.id)}<img src="https://flagcdn.com/w80/${c.id.toLowerCase()}.png" alt=""><b>${esc(c.name)}</b></div>
-            </div>
-            <span class="stamp" id="stamp" hidden></span>
-          </div>
-        </div>
-      </div>
-      ${PROPS}
-    </div>
-    <aside class="notebook" id="notebook"></aside>
-  </section>`;
-  renderNotebook();
-  $('#board').addEventListener('click', onBoardClick);
-  $('#board').querySelectorAll('img').forEach(im => im.addEventListener('error', () => im.remove(), { once: true }));
-  requestAnimationFrame(() => drawThreads());
-  [...stage.querySelectorAll('.clue, .suspect')].forEach((el, k) => A(el, [{ opacity: 0, transform: `translateY(-60px) rotate(${k % 2 ? 9 : -9}deg) scale(1.08)` }, { opacity: 1, transform: 'none' }], { duration: 620, delay: 60 + k * 70, easing: SPRING }));
-  // на узком экране поле ответа приколото к низу (position:fixed), а сдвиг блокнота утащил бы его за собой
-  if (!matchMedia('(max-width:1180px)').matches) A($('#notebook'), [{ opacity: 0, transform: 'translateX(40px) rotate(3deg)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 250, easing: SPRING });
-}
-
-async function onBoardClick(e) {
-  const back = e.target.closest('[data-open]'), zoom = e.target.closest('[data-zoom]'), walk = e.target.closest('[data-walk]');
-  if (walk) return openWalk();
-  if (zoom) return openViewer(zoom.src, zoom.closest('.clue')?.querySelector('figcaption, b')?.textContent || '');
-  if (!back) return;
-  const key = back.dataset.open, r = game.round;
-  if (key === 'shape' && !canOpen(r, key) && !r.done) { toast('Конверт с формой вскрывают последним — сначала открой остальные улики', 2600); return nudge(back.closest('.clue')); }
-  if (!openClue(r, key)) return;
-  await revealCard(key);
-  setScore();
-  if (key === 'walk' && spotsOf(r.id)) openWalk();
-}
-
-async function revealCard(key) {
-  const el = stage.querySelector(`.clue[data-key="${key}"]`);
-  el.classList.add('open');
-  const flipping = flip(el.querySelector('.clue-inner'));
-  if (key === 'shape') A(el.querySelector('path'), [{ strokeDashoffset: 1, fillOpacity: 0 }, { strokeDashoffset: 0, fillOpacity: 0, offset: .75 }, { strokeDashoffset: 0, fillOpacity: 1 }], { duration: 1800, delay: 500, easing: 'ease-in-out' });
-  await wait(450);
-  drawThreads(key);
-  return flipping;
-}
-
-// Красные нитки от каждой открытой улики к карточке «?».
-function drawThreads(fresh) {
-  const board = $('#board'), svg = $('#threads');
-  if (!board || !svg) return;
-  const b = board.getBoundingClientRect(), pinAt = el => { const p = el.querySelector('.pin').getBoundingClientRect(); return [p.left + p.width / 2 - b.left, p.top + p.height / 2 - b.top]; };
-  const [sx, sy] = pinAt($('#suspect'));
-  svg.setAttribute('viewBox', `0 0 ${b.width} ${b.height}`);
-  svg.innerHTML = [...board.querySelectorAll('.clue.open')].map(el => {
-    const [x, y] = pinAt(el), sag = Math.hypot(sx - x, sy - y) * .12;
-    return `<path data-for="${el.dataset.key}" pathLength="1" d="M${x} ${y} Q${(x + sx) / 2} ${(y + sy) / 2 + sag} ${sx} ${sy}"/>`;
-  }).join('');
-  const line = fresh && svg.querySelector(`[data-for="${fresh}"]`);
-  if (line) A(line, [{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 650, easing: 'ease-out' });
-}
-addEventListener('resize', () => drawThreads());
-
-/* ---------- блокнот ---------- */
-function ranks() {
-  if (game.players.length < 2) return `<div class="solo-total"><span>Всего за игру</span><b>${num(game.players[0].score)}</b></div>`;
-  const top = Math.max(...game.players.map(p => p.score));
-  return `<ol class="ranks">${game.players.map((p, i) => ({ ...p, i })).sort((a, b) => b.score - a.score).map(p => `<li class="${p.score === top && top > 0 ? 'lead' : ''}"><span>${p.score === top && top > 0 ? '👑' : AVATARS[p.i]}</span><b>${esc(p.name)}</b><em>${num(p.score)}</em></li>`).join('')}</ol>`;
-}
-const missRow = m => `<li><s>${esc(nameOf(m.id))}</s><span class="miss-guidance"><strong><b aria-hidden="true">${m.dir}</b> ${directionNames[m.dir]}</strong><small>около ${num(m.km)} км</small></span></li>`;
-
-function renderNotebook() {
-  const r = game.round;
-  $('#notebook').innerHTML = `<span class="paperclip" aria-hidden="true"></span>
-    <h2>Что это за страна?</h2>
-    <form class="guess" id="guessForm" autocomplete="off">
-      <input class="field" id="guessIn" placeholder="Название страны…" aria-label="Название страны" aria-autocomplete="list" aria-controls="sugg">
-      <div class="sugg" id="sugg" role="listbox" hidden></div>
-      <button class="btn primary big">Ответить</button>
-    </form>
-    <p class="direction-note" id="directionNote" ${r.wrong.length ? '' : 'hidden'}>Стрелка показывает направление от названной страны к загаданной. Километры — по условным центрам стран.</p>
-    <ul class="misses" id="misses" aria-live="polite">${r.wrong.map(missRow).join('')}</ul>
-    <div class="round-score"><span>Очки за дело</span><strong id="score">${num(r.score)}</strong><small>ошибка −${WRONG} · подскажу, куда ближе</small></div>
-    ${ranks()}
-    <button class="give-up" id="giveUp">Сдаться и раскрыть</button>`;
-  const input = $('#guessIn'), box = $('#sugg');
-  let hi = 0, list = [];
-  const show = () => {
-    const q = norm(input.value);
-    const starts = [], has = [];
-    if (q) for (const n of allNames) { const m = norm(n); if (m.startsWith(q)) starts.push(n); else if (m.includes(q)) has.push(n); }
-    list = [...new Set([...starts, ...has])].slice(0, 6); hi = 0;
-    box.innerHTML = list.map((n, i) => `<button type="button" role="option" class="${i === hi ? 'hi' : ''}" data-name="${esc(n)}">${esc(n)}</button>`).join('');
-    box.hidden = !list.length;
+  const r=game.round;
+  document.body.classList.add('is-investigating');
+  $('#exitBtn').hidden=false; $('#progress').hidden=false;
+  $('#progressText').textContent=`Дело ${game.index+1} из ${game.order.length}`;
+  $('#progressBar').style.width=`${(game.index+1)/game.order.length*100}%`;
+  stage.innerHTML=`<section class="case"><div class="scene"><div class="frame"><div class="plaque">Дело № ${String(game.index+1).padStart(3,'0')} · ${esc(PACKS.find(p=>p.id===settings.pack).name)}</div><div class="board" id="clueMenu" aria-label="Доска расследования"></div></div><p class="board-help">Нажми на открытую заметку, чтобы рассмотреть её крупнее.</p></div><aside class="notebook answer-panel" id="notebook"><h2>Что это за страна?</h2><form class="guess" id="guessForm" autocomplete="off"><label class="visually-hidden" for="guessIn">Название страны</label><div class="search-wrap"><input class="field" id="guessIn" role="combobox" aria-label="Название страны" aria-autocomplete="list" aria-controls="sugg" aria-expanded="false" placeholder="Название страны…"><div id="sugg" class="sugg" role="listbox" hidden></div></div><button class="btn primary" type="submit">Ответить</button></form><p class="answer-note">Ошибка −${WRONG}. Направление покупается отдельно.</p><div id="resultActions"></div><div class="round-score"><span>Очки за дело</span><strong id="score">${num(r.score)}</strong></div><div class="compass-panel" id="compassPanel"></div><div class="attempts"><h3>Проверенные версии</h3><ul id="misses"></ul></div><div id="totals">${ranks()}</div><button class="give-up" id="giveUp">Сдаться и узнать страну</button></aside></section>`;
+  renderMenu(); renderMisses(); bindAnswer(); renderCompass();
+  $('#clueMenu').onclick=e=>{
+    if(e.target.closest('[data-walk]'))return openWalk();
+    const photo=e.target.closest('[data-zoom]')?.querySelector('img');if(photo)return openViewer(photo.src);
+    const opened=e.target.closest('.clue.open:not(.unavailable)');
+    const b=e.target.closest('[data-clue]');if(!b){if(opened)openEvidence(opened.dataset.key);return;}
+    const key=b.dataset.clue;
+    if(r.open.includes(key)||r.done){openEvidence(key);return;}
+    if(!canOpen(r,key))return;
+    const price=cluePrice(r,key);openClue(r,key);freshClue=key;active=key;update();toast(`${CLUES.find(c=>c.key===key).label}: −${price} очков`,1800);
   };
-  input.addEventListener('input', show);
-  input.addEventListener('keydown', e => {
-    if (box.hidden || !['ArrowDown', 'ArrowUp'].includes(e.key)) return;
-    e.preventDefault();
-    hi = (hi + (e.key === 'ArrowDown' ? 1 : list.length - 1)) % list.length;
-    [...box.children].forEach((b, i) => b.classList.toggle('hi', i === hi));
-  });
-  box.addEventListener('click', e => { const b = e.target.closest('[data-name]'); if (b) { input.value = b.dataset.name; submit(); } });
-  $('#guessForm').addEventListener('submit', e => { e.preventDefault(); if (!matchCountry(input.value, names) && list[hi]) input.value = list[hi]; submit(); });
-  $('#giveUp').onclick = () => { surrender(game.round); setScore(); finishRound(); };
-  if (matchMedia('(pointer:fine)').matches) input.focus({ preventScroll: true });
+  $('#giveUp').onclick=()=>{surrender(r);finishRound();};
+}
+function renderMenu() {
+  const r=game.round,c=byId.get(r.id),focusKey=document.activeElement?.dataset?.clue;
+  const tilt={fact1:-2,fact2:2,phrase:-3,food:2,walk:1,money:-2,person:3,shape:-1};
+  $('#clueMenu').innerHTML='<svg class="threads" id="threads" aria-hidden="true"></svg>'+CLUES.filter(cl=>cl.key!=='compass').map(cl=>{
+    const absent=r.unavailable.includes(cl.key),open=!absent&&(r.open.includes(cl.key)||r.done),price=cluePrice(r,cl.key);
+    let detail=absent?'Недоступно':r.score<price&&!open?`Нужно ${price}`:open?'Рассмотреть':`Открыть за ${price}`;
+    if(cl.key==='money'&&!open&&!banknoteFor(c.id,MONEY[c.id]))detail+=' · без фото';
+    return `<div class="clue clue-${cl.key}${open?' open':''}${absent?' unavailable':''}${freshClue===cl.key?' just-opened':''}" data-key="${cl.key}" style="--tilt:${tilt[cl.key]}deg"><span class="pin" aria-hidden="true"></span><div class="clue-inner"><button class="side back" tabindex="${open?-1:0}" aria-hidden="${open}" data-clue="${cl.key}" ${absent||(!open&&!canOpen(r,cl.key))?'disabled':''} aria-label="${esc(cl.label)}, ${detail}"><span class="back-ic" aria-hidden="true">${icons[cl.key]}</span><b>${esc(cl.label)}</b><span class="price">${detail}</span></button><div class="side front" aria-hidden="${!open}">${open&&!absent?evidenceHTML(cl.key):'<div class="empty-note"></div>'}</div></div>${open&&!absent?`<button class="inspect-note" data-clue="${cl.key}" aria-label="Рассмотреть: ${esc(cl.label)}">↗</button>`:''}</div>`;
+  }).join('')+`<div class="suspect${r.done?' open':''}" id="suspect"><span class="pin" aria-hidden="true"></span><div class="suspect-inner"><div class="side suspect-front" aria-hidden="${r.done}"><b>?</b><span>Страна № ${game.index+1}</span></div><div class="side suspect-back" aria-hidden="${!r.done}">${r.done?shape(c.id):''}<b>${r.done?esc(c.name):''}</b></div></div></div>`;
+  $('#clueMenu').querySelectorAll('img').forEach(img=>img.onerror=()=>img.remove());
+  if(focusKey){const note=$('#clueMenu').querySelector(`[data-key="${focusKey}"]`);(note?.querySelector('.inspect-note')||note?.querySelector('.back'))?.focus({preventScroll:true});}
+  freshClue=null;
+  boardObserver.disconnect(); boardObserver.observe($('#clueMenu'));
+  $('#clueMenu').querySelectorAll('.clue,#suspect').forEach(el=>boardObserver.observe(el));
+  requestAnimationFrame(drawThreads);
+}
+function drawThreads(){
+  const board=$('#clueMenu'),svg=$('#threads'),sus=$('#suspect');if(!board||!svg||!sus)return;
+  const rect=board.getBoundingClientRect();
+  const pin=el=>{const r=el.querySelector('.pin').getBoundingClientRect();return [r.left+r.width/2-rect.left,r.top+r.height/2-rect.top];};
+  const [sx,sy]=pin(sus);svg.setAttribute('viewBox',`0 0 ${rect.width} ${rect.height}`);
+  svg.innerHTML=[...board.querySelectorAll('.clue.open:not(.unavailable)')].map(el=>{const [x,y]=pin(el);return `<path pathLength="1" d="M${x} ${y} Q${(x+sx)/2} ${(y+sy)/2+20} ${sx} ${sy}"/>`;}).join('');
+}
+const boardObserver=new ResizeObserver(()=>requestAnimationFrame(drawThreads));
+addEventListener('resize',()=>requestAnimationFrame(drawThreads));
+function renderCompass(){
+  const r=game.round,open=r.open.includes('compass');
+  $('#compassPanel').innerHTML=`<button class="compass-buy" id="compassBuy" ${!open&&!canOpen(r,'compass')?'disabled':''}>↗ ${open?'Направление открыто':'Направление · −100'}</button><small>${!r.wrong.length?'Доступно после первой ошибки':open?'Действует на все версии этого дела':'Без покупки стрелок и расстояний нет'}</small>`;
+  $('#compassBuy').onclick=()=>{if(open){openEvidence('compass');return;}if(openClue(r,'compass'))update();};
+}
+function openEvidence(key){active=key;$('#viewerBody').innerHTML=`<div class="evidence-zoom">${evidenceHTML(key)}</div>`;$('#viewerNote').textContent=CLUES.find(cl=>cl.key===key).label;$('#viewer').showModal();}
+function evidenceHTML(key) {
+  const r=game.round,c=byId.get(r.id),cl={...CLUES.find(cl=>cl.key===key),cost:cluePrice(r,key)};
+  let body='';
+  const picture=(article,alt)=>PHOTOS[article]?`<button type="button" class="photo-zoom" data-zoom aria-label="Увеличить фото: ${esc(alt)}"><img class="evidence-photo" src="${esc(PHOTOS[article])}" alt="${esc(alt)}" referrerpolicy="no-referrer"></button>`:'';
+  switch(key){
+    case 'fact1':case 'fact2':body=`<span class="fact-mark" aria-hidden="true">“</span><p class="fact-text">${esc(roundFacts[key==='fact1'?0:1])}</p><small class="evidence-note">Присмотрись к деталям: они связывают факт с одной страной.</small>`;break;
+    case 'phrase':body=`<span class="language-symbol" aria-hidden="true">Aa</span><blockquote class="phrase" style="--long-word:${Math.max(...c.phrase[0].split(/\s+/).map(w=>[...w].length))}" dir="auto">${esc(c.phrase[0])}</blockquote><p class="translation">${esc(c.phrase[1])}</p><small class="evidence-note">Фраза — подсказка. Один язык может встречаться в нескольких странах.</small>`;break;
+    case 'food':body=`${picture(c.food[1],c.food[0])}<h2>${esc(c.food[0])}</h2><p>Это блюдо встречается в местной кухне. Оно может быть знакомо и соседям.</p>`;break;
+    case 'money':body=`${banknoteHTML(c.id,MONEY[c.id])||'<div class="currency-symbol" aria-hidden="true">¤</div>'}<h2>${esc(MONEY[c.id] || c.money[0].split(' · ')[0])}</h2><p>Денежная единица или её деление.</p><small class="evidence-note">Часто встречающиеся валюты дешевле, редкие — дороже.</small><small class="evidence-note">На фото оставлен фрагмент банкноты без названия страны. Если проверенного фото пока нет, показана текстовая подсказка.</small>`;break;
+    case 'person':{const p=personOf(c),credit=!PEOPLE[c.id]&&c.personCredit;body=p?`${picture(p[2],p[0])}<h2>${esc(p[0])}</h2><p>${esc(p[1])}</p>${credit?`<small class="evidence-note">Фото: <a href="${esc(credit.source)}" target="_blank" rel="noopener noreferrer">${esc(credit.author)}</a>, <a href="${esc(credit.url)}" target="_blank" rel="noopener noreferrer">${esc(credit.license)}</a></small>`:''}`:'<h2>Без случайных имён</h2><p>Для этой страны пока нет достаточно узнаваемого человека в подборке.</p>';break;}
+    case 'shape':body=`<div class="country-outline">${shape(c.id)}</div><p>Силуэт страны. Масштаб и положение на карте не показаны.</p>`;break;
+    case 'compass':{const list=guidance(r,at);body=`<div class="compass-rose" aria-hidden="true">✥</div><h2>Куда двигаться</h2>${list.length?`<ul class="bearings">${list.map(m=>`<li><span>${esc(nameOf(m.id))}</span><b>${m.dir} ${directions[m.dir]}</b></li>`).join('')}</ul>`:'<p>Направления появятся здесь после ошибочных версий.</p>'}<small class="evidence-note">От условного центра названной страны к центру загаданной. Покупка действует на все попытки этого раунда.</small>`;break;}
+    case 'walk':body=`<div class="street-symbol" aria-hidden="true">↟</div><h2>Осмотрись вокруг</h2><p>Дороги, здания и вывески могут многое рассказать.</p><button class="btn primary" data-walk>Открыть прогулку</button><small class="evidence-note">Если точка неудачная — выбери другое место. Повторно очки не списываются.</small>`;break;
+  }
+  return `<div class="evidence-content evidence-${key}">${body}</div>`;
 }
 
-function submit() {
-  const input = $('#guessIn'), id = matchCountry(input.value, names);
-  if (!input.value.trim()) return nudge(input);
-  if (!id) { toast('Не знаю такой страны — выбери из подсказок', 2200); return nudge(input); }
-  const res = guess(game.round, id, at);
-  input.value = ''; $('#sugg').hidden = true;
-  if (!res) return toast(`${nameOf(id)} уже проверяли`, 1800);
-  if (res.correct) return finishRound();
-  setScore();
-  $('#directionNote').hidden = false;
-  $('#misses').insertAdjacentHTML('afterbegin', missRow(res));
-  A($('#misses').firstElementChild, [{ opacity: 0, transform: 'translateX(-20px) rotate(-3deg)' }, { opacity: 1, transform: 'none' }], { duration: 450, easing: SPRING });
-  shake($('#suspect'));
-  // на узком экране блокнот далеко под доской — «куда ближе» показываем прямо над полем ответа
-  if (matchMedia('(max-width:1180px)').matches) toast(`${nameOf(id)} — мимо. ${res.dir} ${directionNames[res.dir]}, около ${num(res.km)} км`, 3500);
+function ranks(){return `<h3>Счёт за игру</h3><ul class="ranks">${game.players.map(p=>`<li><span>${esc(p.name)}</span><b>${num(p.score)}</b></li>`).join('')}</ul>`;}
+function renderMisses(){const r=game.round,list=guidance(r,at);$('#misses').innerHTML=r.wrong.length?r.wrong.map(m=>{const d=list.find(d=>d.id===m.id);return `<li><span>${esc(nameOf(m.id))}</span><small>${d?`${d.dir} ${directions[d.dir]}`:'Мимо'}</small></li>`;}).reverse().join(''):'<li class="empty">Пока нет ошибок</li>';}
+function update() { $('#score').textContent=num(game.round.score); renderMenu();renderCompass();renderMisses(); }
+function bindAnswer(){
+  const input=$('#guessIn'),box=$('#sugg');let list=[],hi=0,choosing=false;
+  const close=()=>{box.hidden=true;input.setAttribute('aria-expanded','false');};
+  input.oninput=()=>{const q=norm(input.value);list=q?allNames.filter(n=>norm(n).includes(q)).sort((a,b)=>Number(norm(b).startsWith(q))-Number(norm(a).startsWith(q))).slice(0,6):[];hi=0;choosing=false;box.innerHTML=list.map((n,i)=>`<button type="button" id="choice-${i}" role="option" aria-selected="${i===hi}" data-name="${esc(n)}">${esc(n)}</button>`).join('');box.hidden=!list.length;input.setAttribute('aria-expanded',String(!!list.length));input.setAttribute('aria-activedescendant',list.length?'choice-0':'');};
+  input.onkeydown=e=>{if(e.key==='Escape'){choosing=false;close();return;}if(box.hidden||!['ArrowDown','ArrowUp'].includes(e.key))return;e.preventDefault();choosing=true;hi=(hi+(e.key==='ArrowDown'?1:list.length-1))%list.length;[...box.children].forEach((b,i)=>b.setAttribute('aria-selected',i===hi));input.setAttribute('aria-activedescendant',`choice-${hi}`);box.children[hi].scrollIntoView({block:'nearest'});};
+  box.onmousedown=e=>e.preventDefault();
+  box.onclick=e=>{const b=e.target.closest('[data-name]');if(b){input.value=b.dataset.name;submit();close();}};
+  input.onblur=close;
+  $('#guessForm').onsubmit=e=>{e.preventDefault();if((choosing||!matchCountry(input.value,names))&&list[hi])input.value=list[hi];submit();close();};
 }
-
-let shown = START;
-function setScore() {
-  const el = $('#score'), to = game.round.score, from = shown;
-  shown = to;
-  if (!el) return;
-  if (from === to) { el.textContent = num(to); return; }
-  const t0 = performance.now();
-  const tick = t => { const k = Math.min(1, (t - t0) / 500); el.textContent = num(Math.round(from + (to - from) * k)); if (k < 1) requestAnimationFrame(tick); };
-  requestAnimationFrame(tick);
-  A(el, [{ transform: 'scale(1.25)', color: '#ff4d6d' }, { transform: 'none' }], { duration: 500 });
+function submit(){
+  const input=$('#guessIn'),id=matchCountry(input.value,names);
+  if(!id)return toast('Выбери страну из списка или напиши её полное название.',2500);
+  const res=guess(game.round,id,at);input.value='';
+  if(!res)return toast('Эту версию уже проверяли.',1800);
+  if(res.correct)return finishRound();
+  update();toast(`${nameOf(id)} — мимо. −${WRONG} очков.`,2200);
 }
-
-/* ---------- раскрытие ---------- */
-async function finishRound() {
-  const r = game.round, c = byId.get(r.id), sus = $('#suspect'), stamp = $('#stamp');
-  $('#guessForm')?.remove(); $('#giveUp')?.remove();
-  foldWalk();
-  stamp.textContent = r.solved ? 'Раскрыто' : 'Не раскрыто';
-  stamp.classList.toggle('fail', !r.solved);
-  stamp.hidden = false;
-  await A(stamp, [{ opacity: 0, transform: 'rotate(-14deg) scale(3)' }, { opacity: 1, transform: 'rotate(-14deg) scale(.92)', offset: .7 }, { opacity: 1, transform: 'rotate(-14deg) scale(1)' }], { duration: 420, easing: 'cubic-bezier(.5,0,.75,0)' });
-  shake($('#board'));
-  sus.classList.add('open');
-  flip(sus.querySelector('.suspect-inner'));
-  A(sus.querySelector('.suspect-back path'), [{ strokeDashoffset: 1, fillOpacity: 0 }, { strokeDashoffset: 0, fillOpacity: 0, offset: .7 }, { strokeDashoffset: 0, fillOpacity: 1 }], { duration: 1600, delay: 300 });
-  if (r.solved) confetti(sus, 90);
-  const rest = CLUES.filter(cl => !r.open.includes(cl.key));
-  for (const cl of rest) { r.open.push(cl.key); revealCard(cl.key); await wait(140); }
-  const nb = $('#notebook');
-  const head = r.solved ? `<div class="verdict ok"><span>Это ${esc(c.name)}!</span><strong>+${num(r.score)}</strong></div>` : `<div class="verdict"><span>Это была ${esc(c.name)}</span><strong>0</strong></div>`;
-  const who = r.solved && r.score > 0 && game.players.length > 1;
-  nb.querySelector('h2').outerHTML = head;
-  nb.querySelector('.round-score').remove();
-  const actions = document.createElement('div');
-  actions.className = 'after';
-  actions.innerHTML = who ? `<p>Кто раскрыл дело?</p><div class="who">${game.players.map((p, i) => `<button class="btn ghost" data-who="${i}">${AVATARS[i]} ${esc(p.name)}</button>`).join('')}<button class="btn ghost" data-who="">Никто</button></div>` : nextButton();
-  nb.querySelector('.misses').after(actions);
-  A(actions, [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 500, easing: SPRING });
-  if (!who) settle(r.solved ? 0 : null);
-  actions.addEventListener('click', e => {
-    const w = e.target.closest('[data-who]');
-    if (w) { settle(w.dataset.who === '' ? null : +w.dataset.who); actions.innerHTML = nextButton(); }
-    if (e.target.closest('#nextBtn')) { if (nextRound(game)) { shown = START; renderRound(); } else finish(); }
-  });
+function finishRound(){
+  const r=game.round,c=byId.get(r.id);resetWalk();update();
+  $('#guessForm').hidden=true;$('#giveUp').hidden=true;$('.answer-note').hidden=true;
+  $('.answer-panel h2').textContent=c.name;
+  $('#resultActions').innerHTML=`<div class="verdict"><b>${r.solved?'Верно!':'Ответ раскрыт'}</b><span>+${num(r.score)} очков</span></div>${r.solved&&game.players.length>1?`<p>Кто угадал?</p><div class="who">${game.players.map((p,i)=>`<button class="btn" data-who="${i}">${esc(p.name)}</button>`).join('')}<button class="btn" data-who="">Никто</button></div>`:nextButton()}`;
+  if(game.players.length===1||!r.solved)settle(r.solved?0:null);
+  $('#resultActions').onclick=e=>{const b=e.target.closest('[data-who]');if(b){settle(b.dataset.who===''?null:+b.dataset.who);$('#resultActions').innerHTML=nextButton();}if(e.target.closest('#nextBtn')){if(nextRound(game))beginRound();else finish();}};
+  if(r.solved)confetti($('.verdict'),35);
 }
-const nextButton = () => `<button class="btn primary big" id="nextBtn">${game.index + 1 < game.order.length ? 'Следующее дело' : 'Итоги расследования'}</button>`;
-function settle(who) {
-  award(game, who);
-  const old = $('#notebook .ranks, #notebook .solo-total');
-  if (old) old.outerHTML = ranks();
+const nextButton=()=>`<button class="btn primary" id="nextBtn">${game.index+1<game.order.length?'Следующая страна':'Итоги игры'}</button>`;
+function settle(who){if(settled)return;settled=true;award(game,who);$('#totals').innerHTML=ranks();}
+function finish(){
+  resetWalk();document.body.classList.remove('is-investigating');$('#progress').hidden=true;
+  stage.innerHTML=`<section class="final"><h1>Кругосветка завершена</h1><p>Раскрыто ${game.log.filter(l=>l.solved).length} из ${game.log.length} стран</p><div class="final-ranks">${ranks()}</div><div class="files">${game.log.map(l=>`<article>${shape(l.id)}<b>${esc(nameOf(l.id))}</b><span>${l.solved?`+${num(l.pts)}`:'Не угадано'}</span></article>`).join('')}</div><button class="btn primary" id="againBtn">Ещё путешествие</button> <button class="btn" id="homeBtn">К подборкам</button></section>`;
+  $('#againBtn').onclick=start;$('#homeBtn').onclick=home;scrollTo({top:0,behavior:'instant'});
 }
-
-/* ---------- итоги ---------- */
-function finish() {
-  exitBtn.hidden = true; $('#progress').hidden = true; resetWalk();
-  const ps = game.players.map((p, i) => ({ ...p, i })).sort((a, b) => b.score - a.score);
-  const solo = ps.length === 1;
-  stage.innerHTML = `<section class="final">
-    <div class="final-head"><h1>${solo ? 'Расследование закрыто' : `${esc(ps[0].name)} — лучший следователь`}</h1>
-      <p class="lead">${solo ? `Раскрыто ${game.log.filter(l => l.pts).length} из ${cases(game.log.length)}. Итог — ${num(ps[0].score)} очков.` : ps.map(p => `${AVATARS[p.i]} ${esc(p.name)}: ${num(p.score)}`).join(' · ')}</p></div>
-    <div class="files">${game.log.map(l => `<div class="file${l.pts ? '' : ' cold'}">${shapeSvg(l.id)}<b>${esc(nameOf(l.id))}</b><span>${l.pts ? `+${num(l.pts)}${solo ? '' : ' · ' + esc(game.players[l.who].name)}` : 'не раскрыто'}</span></div>`).join('')}</div>
-    <div class="final-buttons"><button class="btn primary" id="againBtn">Новая партия</button><button class="btn ghost" id="homeBtn">Сменить картотеку</button></div>
-  </section>`;
-  [...stage.querySelectorAll('.file')].forEach((el, k) => A(el, [{ opacity: 0, transform: 'translateY(30px) rotate(-6deg)' }, { opacity: 1, transform: 'none' }], { duration: 550, delay: 150 + k * 90, easing: SPRING }));
-  if (game.log.some(l => l.pts)) setTimeout(() => confetti($('.final-head h1'), 80), 400);
-  $('#againBtn').onclick = start;
-  $('#homeBtn').onclick = home;
-}
-
-/* ---------- прогулка: панель, которую можно свернуть вниз ---------- */
-// Без ключа — встраиваемая панорама Google, но она иногда заводит в кафе и отели (снимки людей).
-// С ключом Maps Embed API берём только уличные съёмки (source=outdoor); не нашлось — «Другое место»
-// перебирает знаменитые места, а потом разрешает любые панорамы. Табличку с адресом закрывает .walk-cover.
-const MAPS_KEY = '';
-const walkEl = $('#walk'), dockEl = $('#walkDock'), frameEl = $('#walkFrame');
-let spot = 0;
-const walkSteps = spots => (MAPS_KEY ? [...spots.map(s => [s, 'outdoor']), ...spots.map(s => [s, 'default'])] : spots.map(s => [s]));
-const panoUrl = ([[lat, lng], source]) => {
-  const heading = Math.floor(Math.random() * 360);
-  return MAPS_KEY
-    ? `https://www.google.com/maps/embed/v1/streetview?key=${MAPS_KEY}&location=${lat},${lng}&heading=${heading}&fov=90&radius=2000&source=${source}&language=ru`
-    : `https://www.google.com/maps/embed?pb=!6m7!1m6!2m2!1d${lat}!2d${lng}!3f${heading}!4f0!5f0.8`;
-};
-function openWalk() {
-  const spots = spotsOf(game.round.id), steps = walkSteps(spots);
-  // Каждый раз высаживаемся у случайного знаменитого места страны.
-  if (!frameEl.src.startsWith('https://')) frameEl.src = panoUrl(steps[spot = Math.floor(Math.random() * spots.length)]);
-  $('#walkOther').hidden = steps.length < 2;
-  dockEl.hidden = true; walkEl.hidden = false;
-  A(walkEl, [{ transform: 'translateY(105%)' }, { transform: 'none' }], { duration: 520, easing: SPRING });
-}
-async function foldWalk() {
-  if (walkEl.hidden) return;
-  await A(walkEl, [{ transform: 'none' }, { transform: 'translateY(105%)' }], { duration: 320, easing: 'ease-in', fill: 'forwards' });
-  walkEl.getAnimations().forEach(a => a.cancel());
-  walkEl.hidden = true;
-  dockEl.hidden = false;
-  A(dockEl, [{ transform: 'translate(-50%,120%)' }, { transform: 'translate(-50%,0)' }], { duration: 450, easing: SPRING });
-}
-function resetWalk() {
-  walkEl.hidden = true; dockEl.hidden = true; spot = 0;
-  frameEl.removeAttribute('src');
-}
-$('#walkFold').onclick = foldWalk;
-dockEl.onclick = openWalk;
-$('#walkOther').onclick = () => {
-  const steps = walkSteps(spotsOf(game.round.id));
-  spot = (spot + 1) % steps.length;
-  frameEl.src = panoUrl(steps[spot]);
-};
-addEventListener('keydown', e => { if (e.key === 'Escape' && !walkEl.hidden) foldWalk(); });
-
-/* ---------- фото крупно, правила, выход ---------- */
-function openViewer(src, note) {
-  $('#viewerBody').innerHTML = `<img src="${esc(src)}" alt="" referrerpolicy="no-referrer">`;
-  $('#viewerNote').textContent = note;
-  $('#viewer').showModal();
-}
-document.addEventListener('click', e => { if (e.target.closest('[data-close]')) e.target.closest('dialog').close(); });
-document.querySelectorAll('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
-$('#viewer').addEventListener('close', () => { $('#viewerBody').innerHTML = ''; });
-$('#rulesBtn').onclick = () => $('#rulesDialog').showModal();
-let armed = null;
-exitBtn.onclick = () => {
-  if (armed) { clearTimeout(armed); armed = null; home(); return; }
-  exitBtn.textContent = 'Точно выйти?';
-  armed = setTimeout(() => { armed = null; exitBtn.textContent = 'Закрыть дело'; }, 3000);
-};
-if (!LS.get('geo.seenRules')) { LS.set('geo.seenRules', 1); setTimeout(() => $('#rulesDialog').showModal(), 600); }
+const walkEl=$('#walk'),dockEl=$('#walkDock'),frameEl=$('#walkFrame');let spot=0;
+function panoUrl([lat,lng]){return `https://www.google.com/maps/embed?pb=!6m7!1m6!2m2!1d${lat}!2d${lng}!3f0!4f0!5f0.8`;}
+function openWalk(){const spots=spotsOf(game.round.id);if(!spots)return; if(!frameEl.getAttribute('src'))frameEl.src=panoUrl(spots[spot]);walkEl.hidden=false;if(!walkEl.open)walkEl.showModal();dockEl.hidden=true;$('#walkOther').hidden=spots.length<2;$('#walkRefund').hidden=game.round.done;}
+function foldWalk(){if(walkEl.open)walkEl.close();walkEl.hidden=true;dockEl.hidden=!game||game.round.done;}
+function resetWalk(){if(walkEl.open)walkEl.close();walkEl.hidden=true;dockEl.hidden=true;spot=0;frameEl.removeAttribute('src');}
+walkEl.addEventListener('cancel',e=>{e.preventDefault();foldWalk();});
+walkEl.addEventListener('close',()=>{if(!walkEl.open)walkEl.hidden=true;});
+$('#walkFold').onclick=foldWalk;dockEl.onclick=openWalk;
+$('#walkRefund').onclick=()=>{if(game&&refundWalk(game.round)){resetWalk();active='fact1';update();toast('150 очков возвращены. Прогулка отключена до следующего раунда.',3000);}};
+$('#walkOther').onclick=()=>{const spots=spotsOf(game.round.id);if(spots){spot=(spot+1)%spots.length;frameEl.src=panoUrl(spots[spot]);}};
+function openViewer(src){$('#viewerBody').innerHTML=`<img src="${esc(src)}" alt="Подсказка крупно">`;$('#viewerNote').textContent='';if(!$('#viewer').open)$('#viewer').showModal();}
+$('#viewerBody').onclick=e=>{if(e.target.closest('[data-walk]')){$('#viewer').close();openWalk();}const img=e.target.closest('[data-zoom]')?.querySelector('img');if(img)openViewer(img.src);};
+$('#viewer').onclose=()=>{$('#viewerBody').innerHTML='';};
+document.addEventListener('click',e=>{if(e.target.closest('[data-close]'))e.target.closest('dialog').close();});
+document.querySelectorAll('dialog').forEach(d=>d.onclick=e=>{if(e.target===d){if(d===walkEl)foldWalk();else d.close();}});
+$('#rulesBtn').onclick=()=>$('#rulesDialog').showModal();
+$('#exitBtn').onclick=home;
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!walkEl.hidden)foldWalk();});
 home();

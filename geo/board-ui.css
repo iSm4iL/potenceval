@@ -1,0 +1,90 @@
+/* Материальная доска: живые улики и красные нити поверх сгенерированных материалов. */
+body[data-game="geo"] .geo-wrap{max-width:1520px;padding-inline:24px}
+body[data-game="geo"] .case{grid-template-columns:minmax(0,1fr) 290px;gap:26px;margin-top:26px}
+body[data-game="geo"] .frame{padding:0;background:none;border-radius:12px;box-shadow:0 22px 50px #0008}
+body[data-game="geo"] .frame::after{display:none}
+body[data-game="geo"] .board{background:url('assets/investigation-board.png') center/100% 100% no-repeat,#9c703f;border:0;box-shadow:none;border-radius:12px;padding:34px 30px 28px;gap:25px 25px;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:'fact1 walk walk person' 'phrase sus sus fact2' 'food shape shape money';align-items:center}
+body[data-game="geo"] .clue{max-width:230px;transform:rotate(var(--tilt));min-width:0}
+body[data-game="geo"] .clue-walk{max-width:270px}body[data-game="geo"] .clue-shape{max-width:240px}
+body[data-game="geo"] .clue-inner{min-height:145px;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+body[data-game="geo"] .back{background:url('assets/evidence-note.png') center/100% 100% no-repeat;color:#533d26;border:0;box-shadow:none;min-height:145px;padding:20px 12px 17px;gap:5px;border-radius:0}
+body[data-game="geo"] .back::before{display:none}
+body[data-game="geo"] .back b{font:700 20px/1.15 Caveat,cursive;text-align:center}
+body[data-game="geo"] .back .back-ic{font-size:27px;filter:none;color:#806346;background:none;box-shadow:none;width:auto;height:auto}
+body[data-game="geo"] .price{font:500 11px/1.4 Onest,sans-serif;background:#58412412;color:#72533b;border:0;padding:3px 7px;border-radius:3px;box-shadow:none}
+body[data-game="geo"] .back:disabled{opacity:.65;cursor:default;filter:grayscale(.6)}
+body[data-game="geo"] .back:disabled:hover{transform:none}
+body[data-game="geo"] .front{box-shadow:none;position:relative}
+body[data-game="geo"] .front>*{min-height:145px}
+body[data-game="geo"] .front>*::after{display:none}
+body[data-game="geo"] .pin{top:7px;width:12px;height:12px;margin-left:-6px;opacity:0}
+body[data-game="geo"] .evidence-content{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:23px 19px 19px;color:#422c1d;background:url('assets/evidence-note.png') center/100% 100% no-repeat;min-height:145px;text-align:center;overflow:visible}
+body[data-game="geo"] .evidence-content>*{max-width:100%;margin:0;word-break:normal;overflow-wrap:normal;hyphens:none}
+body[data-game="geo"] .evidence-content .fact-text{font:500 clamp(12px,1vw,14px)/1.55 Onest,Arial,sans-serif;text-align:left;color:#432f20}
+body[data-game="geo"] .evidence-content .fact-mark,.board .evidence-note,.board .evidence-footer,.board .evidence-heading{display:none}
+body[data-game="geo"] .evidence-content h2{font:650 17px/1.25 Onest,sans-serif;letter-spacing:0}
+body[data-game="geo"] .evidence-content p{font:12px/1.5 Onest,sans-serif;color:#634a36}
+body[data-game="geo"] .evidence-content .phrase{font:650 20px/1.35 Onest,sans-serif;max-width:100%;margin:0}
+body[data-game="geo"] .evidence-content .translation{font-size:12px}
+body[data-game="geo"] .language-symbol,.currency-symbol,.street-symbol{display:none}
+body[data-game="geo"] .evidence-money .currency-symbol{display:block;font-size:27px;color:#6c6c40}
+body[data-game="geo"] .evidence-money h2{font-size:15px}
+body[data-game="geo"] .evidence-money p{display:none}
+body[data-game="geo"] .evidence-food,.evidence-person{padding:20px 18px 18px;gap:5px}
+.photo-zoom{display:block;max-width:100%;padding:0;background:none;border:0;cursor:zoom-in}
+.evidence-photo{display:block;max-width:100%;width:auto;max-height:105px;object-fit:contain;border-radius:1px;margin:auto}
+body[data-game="geo"] .evidence-person h2{font-size:14px;line-height:1.3}
+body[data-game="geo"] .evidence-person p{font-size:10px;line-height:1.4}
+body[data-game="geo"] .evidence-food h2{font:700 22px/1.2 Caveat,cursive}
+body[data-game="geo"] .evidence-food p{display:none}
+body[data-game="geo"] .evidence-walk{min-height:130px}
+body[data-game="geo"] .evidence-walk h2{font:700 24px Caveat,cursive}
+body[data-game="geo"] .evidence-walk p{display:none}
+body[data-game="geo"] .evidence-walk .btn{padding:8px 12px;font-size:11px;min-height:34px}
+.country-outline{width:100%;height:110px}.country-outline svg{width:100%;height:100%;fill:#a27c48;stroke:#5f422b;stroke-width:4}
+.board .evidence-shape>p{display:none}
+.inspect-note{position:absolute;bottom:15px;right:16px;z-index:8;width:24px;height:24px;border-radius:50%;background:#78552e20;color:#67472d;font-size:16px;line-height:1;cursor:zoom-in}
+body[data-game="geo"] .threads{display:block;z-index:4}
+body[data-game="geo"] .threads path{stroke:#a52826;stroke-width:2.2;filter:drop-shadow(0 2px 1px #3d1c1577);stroke-dasharray:1;animation:thread-reveal .55s ease-out both}
+@keyframes thread-reveal{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+body[data-game="geo"] .suspect{width:190px;z-index:5}
+body[data-game="geo"] .suspect-front,body[data-game="geo"] .suspect-back{background:url('assets/evidence-note.png') center/100% 100% no-repeat;box-shadow:none;border-radius:0;padding:26px 24px 20px}
+body[data-game="geo"] .suspect-front{height:195px}
+body[data-game="geo"] .suspect-front b{font-size:94px;color:#6e2925}
+body[data-game="geo"] .suspect-front b::after{border-color:#9e362b;width:118px;height:104px;margin:-52px 0 0 -59px}
+body[data-game="geo"] .suspect-front span{font-size:24px;color:#63442e;border-color:#a64432}
+body[data-game="geo"] .suspect-back{grid-template-rows:1fr auto;backface-visibility:hidden}
+body[data-game="geo"] .suspect-back b{font:700 19px/1.3 Onest,sans-serif;word-break:normal;overflow-wrap:normal}
+body[data-game="geo"] .suspect-back svg{fill:#b19059;stroke:#5d3e24;stroke-width:3}
+body[data-game="geo"] .notebook{padding:32px 20px 22px;position:sticky;top:15px}
+body[data-game="geo"] .notebook h2{font:700 30px/1.1 Caveat,cursive;margin:0 0 15px}
+body[data-game="geo"] .guess{gap:9px}
+.search-wrap{position:relative;min-width:0}.guess .field{width:100%;min-width:0;font-size:15px}.guess .sugg{top:calc(100% + 5px);left:0;right:0;max-height:240px;overflow:auto}
+.sugg button[aria-selected=true]{background:#ead7b3}
+.answer-note{font:11px/1.6 Onest,sans-serif;color:#806348;margin:10px 0 5px}
+body[data-game="geo"] .round-score{margin:12px 0;padding:10px 0;gap:4px}
+body[data-game="geo"] .round-score strong{font-size:39px;color:#986129}
+body[data-game="geo"] .round-score span{font:600 12px Onest,sans-serif}
+.compass-panel{display:grid;gap:6px;margin:12px 0}.compass-panel small{font:10px/1.5 Onest,sans-serif;color:#806348}
+.compass-buy{padding:9px 10px;background:#dfc8a0;color:#60422b;border:1px dashed #a17d52;border-radius:5px;font-size:12px}.compass-buy:disabled{opacity:.55;cursor:default}
+.attempts{margin:15px 0}.attempts h3,#totals h3{font:600 11px Onest,sans-serif;margin:0 0 8px;color:#806348}.attempts ul{list-style:none;max-height:110px;overflow:auto;padding:0;margin:0;display:grid;gap:6px}.attempts li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;font:12px/1.4 Onest,sans-serif;color:#69513a}.attempts small{font-size:10px;color:#8d5c41}
+body[data-game="geo"] .ranks li{background:#e5d1ac;color:#5b3f2b;grid-template-columns:1fr auto;border-radius:4px;padding:7px 9px;font:12px Onest,sans-serif}.ranks li b{color:#835326}
+body[data-game="geo"] .give-up{font-size:11px;margin-top:16px}
+.verdict{display:grid;gap:6px;margin:8px 0 14px}.verdict b{font:700 24px Caveat,cursive}.verdict span{font:700 28px Onest,sans-serif;color:#956229}#resultActions>.btn{width:100%}.who{display:flex;gap:5px;flex-wrap:wrap}.who .btn{font-size:12px;padding:8px 12px}#resultActions>p{font:700 22px Caveat,cursive;margin:8px 0}
+body[data-game="geo"] .viewer{background:#ede0c2;color:#4c3320;max-width:620px;padding:35px 25px 22px}
+body[data-game="geo"] .evidence-zoom .evidence-content{padding:25px 10px;background:none;min-height:250px;gap:20px}
+body[data-game="geo"] .evidence-zoom .fact-text{font-size:22px;text-align:left}
+body[data-game="geo"] .evidence-zoom .evidence-note{display:block;font:12px/1.6 Onest,sans-serif;color:#826a4b}
+body[data-game="geo"] .evidence-zoom h2{font-size:27px}.evidence-zoom .evidence-photo{max-height:300px}.evidence-zoom .phrase{font-size:30px!important}.evidence-zoom .country-outline{height:260px}.evidence-zoom .compass-rose{font-size:60px;color:#9c6040}.bearings{padding:0;list-style:none;width:100%}.bearings li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:8px 0;font-size:14px}.viewer-note{color:#826a4b;font:12px Onest,sans-serif}
+.walk{padding:0;border:1px solid #a17b4b;max-width:none;max-height:none}.walk::backdrop{background:#110a07bb}.walk-bar{flex-wrap:wrap}.walk-hint{white-space:normal;font-size:11px}.walk-btn{font-size:11px}.walk-cover{font-size:20px}
+.final-ranks{max-width:350px;margin:20px 0}.files article{padding:18px;background:#e8d5b2;color:#4c3320;border-radius:5px;display:grid;gap:10px;text-align:center}.files article svg{height:90px;width:100%;fill:#a4814e}.files article b{font-size:14px}.files article span{font-size:12px}.final>.btn{margin-top:24px}
+@media(max-width:1180px){body[data-game="geo"] .case{grid-template-columns:1fr;gap:18px}body[data-game="geo"] .notebook{position:relative;max-width:560px}body[data-game="geo"] .guess{grid-template-columns:1fr auto}.guess .sugg{bottom:calc(100% + 6px);top:auto}#resultActions{margin-top:10px}body[data-game="geo"] .case{padding-bottom:90px}}
+@media(max-width:760px){body[data-game="geo"] .geo-wrap{padding-inline:12px}body[data-game="geo"] .board{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-areas:'fact1 walk person' 'phrase sus fact2' 'food shape money';padding:22px 12px 20px;gap:14px 8px;min-width:0}body[data-game="geo"] .clue,body[data-game="geo"] .clue-person,body[data-game="geo"] .clue-walk{max-width:100%}body[data-game="geo"] .clue-inner,body[data-game="geo"] .back,body[data-game="geo"] .front>*,body[data-game="geo"] .evidence-content{min-height:110px}.board .evidence-content{padding:16px 10px 13px!important;gap:5px!important}.board .evidence-content .fact-text{font-size:9px!important;line-height:1.4!important}.board .evidence-content h2{font-size:10px!important}.board .evidence-content p{font-size:9px!important}.board .evidence-content .phrase{font-size:11px!important;line-height:1.4}.board .evidence-photo{max-height:55px}.board .evidence-person p{display:none}body[data-game="geo"] .back{padding:17px 6px 12px;gap:4px}.board .back b{font-size:16px!important}.board .back .back-ic{font-size:21px!important}.board .price{font-size:8px!important;padding:2px 3px}.board .country-outline{height:75px}body[data-game="geo"] .suspect{width:100%;max-width:125px}body[data-game="geo"] .suspect-front{height:145px;padding:21px 7px 15px}body[data-game="geo"] .suspect-front b{font-size:67px}body[data-game="geo"] .suspect-front b::after{width:80px;height:74px;margin:-37px 0 0 -40px}body[data-game="geo"] .suspect-front span{font-size:15px}body[data-game="geo"] .suspect-back{padding:20px 10px 16px}body[data-game="geo"] .suspect-back b{font-size:12px}.inspect-note{bottom:8px;right:7px;width:19px;height:19px;font-size:13px}.board .evidence-walk .btn{font-size:9px!important;padding:5px;min-height:30px}body[data-game="geo"] .threads{display:block}.board .threads path{stroke-width:1.8}body[data-game="geo"] .plaque{font-size:8px;padding:5px 14px;top:-11px}.walk-bar b,.walk-hint{display:none}.walk-bar{gap:5px}.walk-btn{padding:8px;font-size:10px;flex:1;white-space:normal}.evidence-zoom .evidence-content .fact-text{font-size:20px!important}.evidence-zoom .evidence-content .phrase{font-size:25px!important}.notebook .round-score strong{font-size:34px}}
+@media(prefers-reduced-motion:reduce){body[data-game="geo"] .clue-inner,.threads path{animation:none;transition:none}}
+body[data-game="geo"] .pin{top:calc(14% - 6px)}.clue.just-opened .clue-inner{animation:open-evidence .6s cubic-bezier(.2,.8,.2,1) both}@keyframes open-evidence{from{transform:rotateY(0)}to{transform:rotateY(180deg)}}.suspect.open{animation:case-reveal .6s ease-out}@keyframes case-reveal{0%{filter:brightness(1.3);transform:scale(.94)}65%{transform:scale(1.04)}100%{filter:none;transform:none}}
+.clue.open:not(.unavailable) .front{cursor:zoom-in}.board-help{font:11px/1.5 Onest,sans-serif;color:#b99e79;text-align:center;margin:12px 0 0}.inspect-note{width:28px;height:28px}.evidence-zoom .evidence-content{max-height:70dvh;overflow:auto}.evidence-zoom .evidence-content p{flex:none}.evidence-zoom .evidence-photo{max-height:32dvh}
+@media(max-width:760px){.board .evidence-content .phrase{font-size:clamp(8px,calc(135px / var(--long-word,12)),11px)!important}}
+.guess>label.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.evidence-zoom .evidence-content{align-items:stretch}.evidence-zoom .evidence-content .fact-text{text-align:left}body[data-game="geo"] .viewer{background:url("assets/evidence-note.png") center/100% 100% no-repeat transparent;box-shadow:none;border:0;border-radius:0;padding:40px 30px 32px}@media(max-width:760px){body[data-game="geo"] .top{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:8px}.top .burger{grid-column:1;grid-row:1}.top .logo{grid-column:2;grid-row:1;font-size:14px;min-width:0;gap:4px}.top .logo::before{width:26px;height:26px;margin-right:0}.top .lang{grid-column:3;grid-row:1}.top .case-progress{grid-column:1/-1;grid-row:2;width:100%;max-width:none;font-size:10px;gap:3px}.top .case-progress i{height:4px}.top .logo span{font-size:9px}.top .logo a{min-width:0}body[data-game="geo"] .guess{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}.guess .search-wrap{min-width:0}.guess .field{font-size:15px}.guess .btn{font-size:13px;padding-inline:12px}}
+@media(prefers-reduced-motion:reduce){.clue.just-opened .clue-inner,.suspect.open,.threads path{animation:none!important;transition:none!important}}
+body[data-game="geo"] .threads{z-index:2}body[data-game="geo"] .evidence-person,body[data-game="geo"] .evidence-food{padding-top:35px}.board .evidence-photo{max-height:85px}@media(max-width:760px){.board .evidence-photo{max-height:55px}}
+.board .evidence-money .banknote-photo{max-height:90px;max-width:100%;width:auto;object-fit:contain}.board .evidence-money .currency-symbol:has(+.banknote-zoom){display:none}.board .evidence-money .banknote-zoom+h2{font-size:11px}.evidence-zoom .banknote-photo{max-height:42dvh;max-width:100%;width:auto;object-fit:contain}.evidence-zoom .banknote-zoom{align-self:center}@media(max-width:760px){.board .evidence-money .banknote-photo{max-height:60px}.board .evidence-money .banknote-zoom+h2{font-size:9px!important}}

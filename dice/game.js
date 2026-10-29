@@ -1,4 +1,5 @@
 // Костяшки (knucklebones из Cult of the Lamb): чистая логика. Хост держит состояние.
+import { t as tr } from '../shared/i18n.js';
 export const BOT_ID = 'bot';
 export const MAX_PLAYERS = 8;
 const COLORS = ['#ff4d6d', '#22b5a0', '#f08a24', '#7c5cff', '#3fa7ff', '#e05ad1', '#9bd13f', '#ffb020'];
@@ -49,7 +50,7 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
   switch (a.type) {
     case 'join': {
       if (from === BOT_ID || t.banned?.includes(from)) return s;
-      const name = clean(a.name, 20) || 'Игрок';
+      const name = clean(a.name, 20) || tr('Игрок', 'Player');
       if (me) { me.name = name; me.online = true; break; }
       if (humans(t).length >= MAX_PLAYERS) return s;
       t.players.splice(humans(t).length, 0, { id: from, name, color: COLORS[humans(t).length % COLORS.length], online: true });
@@ -71,7 +72,7 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
       }
       const duel = hs.length >= 2 ? [hs[0].id, hs[1].id] : [hs[0].id, BOT_ID];
       t.players = hs;
-      if (duel[1] === BOT_ID) t.players.push({ id: BOT_ID, name: 'Скелет', bot: true, color: '#b9a98a', online: true });
+      if (duel[1] === BOT_ID) t.players.push({ id: BOT_ID, name: tr('Скелет', 'Skeleton'), bot: true, color: '#b9a98a', online: true });
       if (String(t.duel) !== String(duel)) { t.wins = {}; t.starter = 0; } // другая пара — новая серия
       Object.assign(t, {
         duel, boards: { [duel[0]]: [[], [], []], [duel[1]]: [[], [], []] },

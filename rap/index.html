@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Биты — potenceval</title>
+<title data-en="Beats — potenceval">Биты — potenceval</title>
+<meta name="description" content="Биты под настроение: хард, дарк, дрилл, мелодик, трэп и восточный. Слушай новые сочетания живых инструментов и баса.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
 <link rel="stylesheet" href="../shared/fonts/fonts.css">
-<link rel="stylesheet" href="../shared/style.css?v=menu-20261025">
+<link rel="stylesheet" href="../shared/style.css?v=lang-20261028">
 <style>
 .beats{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:26px}
 .beat{position:relative;padding:16px;border-radius:20px;background:linear-gradient(160deg,#241a48,#16102c);border:1px solid var(--line);overflow:hidden}
@@ -22,7 +23,7 @@
 @keyframes pulse2{to{opacity:.35}}
 .note{max-width:640px;margin:26px auto 0;padding:12px 16px;border-radius:12px;border:1px dashed var(--line);color:var(--muted);font-size:13px;text-align:center}
 </style>
-<link rel="stylesheet" href="../shared/club.css?v=menu-20261025">
+<link rel="stylesheet" href="../shared/club.css?v=lang-20261028">
 <link rel="stylesheet" href="club.css?v=club-20261025">
 </head>
 <body class="club-theme" data-game="rap">
@@ -30,19 +31,20 @@
 <div class="wrap">
   <header class="top"><a class="logo" href="../"><b>potenceval</b><span>games</span></a></header>
   <section class="intro rap-hero">
-    <div class="studio-copy"><span class="kicker">Под настроение и в наушниках</span>
-    <h1>Своя студия</h1>
-    <p class="sub">Хард, дарк, дрилл, мелодик, трэп и восточный. Слушай новые сочетания живых инструментов, баса и барабанов. Понравился бит — забирай WAV.</p></div>
+    <div class="studio-copy"><span class="kicker" data-en="For the mood, best in headphones">Под настроение и в наушниках</span>
+    <h1 data-en="Your own studio">Своя студия</h1>
+    <p class="sub" data-en="Hard, dark, drill, melodic, trap and eastern. Listen to fresh mixes of live instruments, bass and drums. Like a beat? Grab the WAV.">Хард, дарк, дрилл, мелодик, трэп и восточный. Слушай новые сочетания живых инструментов, баса и барабанов. Понравился бит — забирай WAV.</p></div>
     <figure class="studio-scene"><img src="../shared/assets/club/rap.webp" alt="" width="768" height="512"></figure>
   </section>
-  <div class="row" style="justify-content:flex-start"><button class="btn primary" id="more">Ещё 5 битов</button></div>
+  <div class="row" style="justify-content:flex-start"><button class="btn primary" id="more" data-en="5 more beats">Ещё 5 битов</button></div>
   <div class="beats" id="beats"></div>
   <p class="note" id="credits" style="border:0;margin-top:10px"></p>
-  <p class="note">Пять битов каждый раз звучат по-новому. Можно слушать, перематывать волну и сохранять WAV. Записи голоса здесь пока нет.</p>
+  <p class="note" data-en="Five beats sound new every time. You can listen, scrub the waveform and save a WAV. No voice recording here yet.">Пять битов каждый раз звучат по-новому. Можно слушать, перематывать волну и сохранять WAV. Записи голоса здесь пока нет.</p>
 </div>
-<script type="module" src="../shared/menu.js?v=merge-20261026"></script>
+<script type="module" src="../shared/menu.js?v=lang-20261028"></script>
 <script type="module">
 import { describe, renderBeat, toWav, MAIN_STYLES, CREDITS } from './beats.js';
+import { t } from '../shared/i18n.js';
 document.getElementById('credits').textContent = CREDITS;
 const box = document.getElementById('beats');
 let ac, playing = null;
@@ -61,7 +63,7 @@ function drawWave(canvas, buf, progress = 0) {
 function stop() {
   if (!playing) return;
   playing.src.onended = null; playing.src.stop(); cancelAnimationFrame(playing.raf);
-  playing.btn.textContent = '▶ Слушать'; drawWave(playing.canvas, playing.buf);
+  playing.btn.textContent = t('▶ Слушать', '▶ Listen'); drawWave(playing.canvas, playing.buf);
   playing = null;
 }
 function play(card, buf, from = 0) {
@@ -70,7 +72,7 @@ function play(card, buf, from = 0) {
   src.buffer = buf; src.connect(ctx.destination); src.start(0, from * buf.duration);
   const t0 = ctx.currentTime - from * buf.duration, canvas = card.querySelector('canvas'), btn = card.querySelector('.play');
   playing = { src, buf, canvas, btn };
-  btn.textContent = '■ Стоп';
+  btn.textContent = t('■ Стоп', '■ Stop');
   const tick = () => { drawWave(canvas, buf, (ctx.currentTime - t0) / buf.duration); playing.raf = requestAnimationFrame(tick); };
   tick();
   src.onended = stop;
@@ -85,8 +87,8 @@ function addBeats() {
     const info = describe(Math.floor(Math.random() * 2 ** 31), style);
     const card = document.createElement('div');
     card.className = 'beat loading';
-    card.innerHTML = `<div class="tags"><span class="st">${info.label}</span><span>${info.bpm} BPM</span><span>${info.keyName}</span><span>${Math.round(info.duration)} с</span></div>
-      <h3>«${info.name}»</h3><p class="inst">${info.tags.join(' · ')}</p><canvas></canvas><div class="row2"><button class="btn primary play" disabled>собираю…</button><a class="btn ghost dl" hidden>WAV</a></div>`;
+    card.innerHTML = `<div class="tags"><span class="st">${info.label}</span><span>${info.bpm} BPM</span><span>${info.keyName}</span><span>${Math.round(info.duration)} ${t('с', 's')}</span></div>
+      <h3>${t('«', '“')}${info.name}${t('»', '”')}</h3><p class="inst">${info.tags.join(' · ')}</p><canvas></canvas><div class="row2"><button class="btn primary play" disabled>${t('собираю…', 'building…')}</button><a class="btn ghost dl" hidden>WAV</a></div>`;
     box.append(card);
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) card.animate([{ opacity: 0, transform: 'translateY(20px) scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: i * 80, easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards' });
     const buf = await renderBeat(info);
@@ -94,7 +96,7 @@ function addBeats() {
     card.classList.remove('loading');
     drawWave(card.querySelector('canvas'), buf);
     const btn = card.querySelector('.play');
-    btn.disabled = false; btn.textContent = '▶ Слушать';
+    btn.disabled = false; btn.textContent = t('▶ Слушать', '▶ Listen');
     btn.onclick = () => (playing?.btn === btn ? stop() : play(card, buf));
     card.querySelector('canvas').onclick = e => play(card, buf, e.offsetX / e.target.clientWidth);
     const dl = card.querySelector('.dl');

@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Угадай страну — potenceval</title>
-<meta name="description" content="Детективная доска: собирай улики — факты из истории, язык, еду, прогулку по улицам, валюту — и угадай страну.">
+<meta name="description" content="Угадай страну по меняющимся фактам, языку, кухне и известным людям. Выбирай подсказки и сохраняй очки — одному или с друзьями.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕵️</text></svg>">
 <link rel="stylesheet" href="../shared/fonts/fonts.css">
-<link rel="stylesheet" href="../shared/style.css?v=menu-20261025">
+<link rel="stylesheet" href="../shared/style.css?v=lang-20261028">
 <link rel="stylesheet" href="style.css?v=fit-1">
-<link rel="stylesheet" href="../shared/club.css?v=menu-20261025">
+<link rel="stylesheet" href="../shared/club.css?v=lang-20261028">
 <link rel="stylesheet" href="club.css?v=clues-20261025">
+<link rel="stylesheet" href="board-ui.css?v=notes-20261028">
 </head>
 <body class="club-theme" data-game="geo">
 <div class="wrap geo-wrap">
@@ -22,30 +23,31 @@
       <button class="exit" id="exitBtn" hidden>Закрыть дело</button>
     </div>
   </header>
-  <main id="stage"></main>
+  <main id="stage"><p>Открываем атлас…</p><noscript>Для игры нужен JavaScript.</noscript></main>
 </div>
 
-<section class="walk" id="walk" aria-label="Прогулка по улицам" hidden>
+<dialog class="walk" id="walk" aria-label="Прогулка по улицам" hidden>
   <header class="walk-bar">
     <b>👣 Прогулка</b>
     <span class="walk-hint">Тащи, чтобы осмотреться. Стрелки на дороге — идти дальше.</span>
     <button class="walk-btn" id="walkOther">↻ Другое место</button>
+    <button class="walk-btn" id="walkRefund">Не работает? Вернуть очки</button>
     <button class="walk-btn fold" id="walkFold">Свернуть ▾</button>
   </header>
   <div class="walk-view">
     <iframe id="walkFrame" title="Панорама улицы"></iframe>
     <span class="walk-cover">📍 Где-то в этой стране…</span>
   </div>
-</section>
+</dialog>
 <button class="walk-dock" id="walkDock" hidden>👣 Вернуться на прогулку ▴</button>
 
 <dialog class="geo-dialog" id="rulesDialog" aria-labelledby="rulesTitle">
   <h2 id="rulesTitle">Как вести дело</h2>
   <ol class="rules-list">
-    <li>На доске загадана страна. Один лист из архива открыт сразу.</li>
-    <li>Переворачивай улики: ещё факт, язык, кухню, прогулку по настоящим улицам, валюту и знаменитость. Каждая стоит очков — ценник на обороте.</li>
-    <li>Форма страны — последняя улика. Конверт вскрывается, когда на доске всё остальное.</li>
-    <li>Ошибся — минус 50 очков, зато блокнот покажет, сколько километров до нужной страны и в какую сторону.</li>
+    <li>Узнай страну по подсказкам. На старте — 1 000 очков и бесплатный факт.</li>
+    <li>Ещё факт — 50, язык и кухня — по 75, валюта — от 50 до 175 (редкая дороже), человек и прогулка — по 150, контур — 200 очков. Открытые подсказки можно перечитывать бесплатно.</li>
+    <li>Выбирай любой порядок. Недоступные подсказки не продаются. Если прогулка не работает, её стоимость можно вернуть; в этом раунде она закроется.</li>
+    <li>Ошибка — минус 50, без бесплатных направлений и расстояний. После первой ошибки можно купить «Направление» за 100: оно действует на все ошибочные версии этого раунда, включая будущие.</li>
     <li>Играешь с друзьями — кто первым назвал страну, тому и очки.</li>
   </ol>
   <button class="btn primary big" data-close>Понятно</button>
@@ -57,7 +59,7 @@
   <p class="viewer-note" id="viewerNote"></p>
 </dialog>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-<script type="module" src="../shared/menu.js?v=merge-20261026"></script>
-<script type="module" src="app.js?v=merge-20261026"></script>
+<script type="module" src="../shared/menu.js?v=lang-20261028"></script>
+<script type="module" src="app.js?v=notes-20261028"></script>
 </body>
 </html>

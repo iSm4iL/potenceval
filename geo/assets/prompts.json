@@ -1,0 +1,15 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-10-28",
+  "assets": [
+    {
+      "file": "investigation-board.png",
+      "prompt": "Create a production game UI background asset for an atmospheric detective investigation corkboard. One landscape image 3:2, straight-on orthographic view, board fills whole image edge to edge. Warm honey-brown natural cork with realistic small chips and fine grain, framed by a dark worn walnut wooden frame on all four edges, thin inner brass beading, warm soft overhead incandescent lighting, subtle edge shadows. The center and all usable cork surface must be EMPTY: no papers, no pins, no strings, no labels, no map, no letters, no lamp, no objects overlapping board. This is the actual background texture under interactive evidence notes and red threads in a party geography detective game, not a mockup of a website. Handmade tactile cozy detective study, rich material detail, restrained contrast to let cream paper notes read clearly. No gradient graphic background, no flat vector, no UI, no text. Save output as a usable raster asset."
+    },
+    {
+      "file": "evidence-note.png",
+      "transparent": true,
+      "prompt": "Production 2D game UI asset: ONE blank aged cream evidence index card pinned by one small dark red round pushpin exactly at top center. Full card in straight-on orthographic front view, landscape 4:3 shape centered occupying 88% of image, actual TRANSPARENT background around card. Slightly uneven natural paper edges, subtle aged linen paper fibres, faint soft stains near edges only, mostly clean LIGHT blank writing area across center, one softly curled lower right corner, tiny realistic drop shadow under card, warm cozy detective study aesthetic, photoreal tactile game prop, no perspective skew. This blank card will have live Russian clue text or a photo composited over it in a detective corkboard game. Absolutely NO text, NO letters, NO numbers, NO handwriting, NO printed lines, NO map, NO photo, NO strings, NO board. Exactly one card and one pushpin, not an asset sheet."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+@import url('./cabinet.css?v=cabinet-20261023');
+.preview-notice{display:flex;justify-content:space-between;gap:15px;color:#aeb6ae;font-size:11px;margin:0 0 18px}
+.preview-notice>span:first-child{color:#dfbb77}
+@media(max-width:760px){.preview-notice>span:last-child{max-width:230px;text-align:right}}
+@media(max-width:450px){.preview-notice{font-size:9px;gap:10px}.preview-notice>span:last-child{max-width:190px}}

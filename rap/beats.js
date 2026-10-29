@@ -1,38 +1,39 @@
 // Рэп-биты: в основном современный трэп (как «ДИНАСТИЯ»), плюс бум-бэп и фонк про запас.
 // Мелодии и аккорды — живые сэмплы инструментов, 808 и барабаны — синтез, как у продюсеров.
 // Бит целиком задаётся сидом и стилем: у всех игроков он одинаковый, по сети передаём только их.
+import { t, lang } from '../shared/i18n.js';
 const SR = 44100;
 const SF = 'https://cdn.jsdelivr.net/gh/gleitz/midi-js-soundfonts@044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/';
-export const CREDITS = 'Сэмплы инструментов: FluidR3 GM (Frank Wen), CC BY 3.0, через gleitz/midi-js-soundfonts';
+export const CREDITS = t('Сэмплы инструментов: FluidR3 GM (Frank Wen), CC BY 3.0, через gleitz/midi-js-soundfonts', 'Instrument samples: FluidR3 GM (Frank Wen), CC BY 3.0, via gleitz/midi-js-soundfonts');
 
 // ring — щипковые/ударные: звучат, пока сами не затухнут; иначе нота держится, сколько нужно
 const SAMPLED = {
-  piano: { gm: 'acoustic_grand_piano', label: 'пианино', ring: 1 },
-  epiano: { gm: 'electric_piano_1', label: 'родес', ring: 1 },
-  musicbox: { gm: 'music_box', label: 'шкатулка', ring: 1 },
-  bells: { gm: 'tubular_bells', label: 'колокола', ring: 1, vol: .8 },
-  glock: { gm: 'glockenspiel', label: 'колокольчики', ring: 1, vol: .7 },
-  celesta: { gm: 'celesta', label: 'челеста', ring: 1 },
-  kalimba: { gm: 'kalimba', label: 'калимба', ring: 1 },
-  harp: { gm: 'orchestral_harp', label: 'арфа', ring: 1 },
-  guitar: { gm: 'acoustic_guitar_nylon', label: 'гитара', ring: 1 },
-  eguitar: { gm: 'electric_guitar_clean', label: 'электрогитара', ring: 1 },
-  pizz: { gm: 'pizzicato_strings', label: 'пиццикато', ring: 1 },
-  sitar: { gm: 'sitar', label: 'ситар', ring: 1 },
-  koto: { gm: 'koto', label: 'кото', ring: 1 },
-  harpsichord: { gm: 'harpsichord', label: 'клавесин', ring: 1, vol: .8 },
-  upright: { gm: 'acoustic_bass', label: 'контрабас', ring: 1, vol: 1.6 },
-  strings: { gm: 'string_ensemble_1', label: 'струнные', vol: .7 },
-  violin: { gm: 'violin', label: 'скрипка' },
-  cello: { gm: 'cello', label: 'виолончель' },
-  choir: { gm: 'choir_aahs', label: 'хор', vol: .7 },
-  voice: { gm: 'voice_oohs', label: 'голоса', vol: .7 },
-  flute: { gm: 'flute', label: 'флейта' },
-  panflute: { gm: 'pan_flute', label: 'пан-флейта' },
-  brass: { gm: 'brass_section', label: 'духовые', vol: .8 },
-  organ: { gm: 'church_organ', label: 'орган', vol: .6 },
+  piano: { gm: 'acoustic_grand_piano', label: t('пианино', 'piano'), ring: 1 },
+  epiano: { gm: 'electric_piano_1', label: t('родес', 'Rhodes'), ring: 1 },
+  musicbox: { gm: 'music_box', label: t('шкатулка', 'music box'), ring: 1 },
+  bells: { gm: 'tubular_bells', label: t('колокола', 'bells'), ring: 1, vol: .8 },
+  glock: { gm: 'glockenspiel', label: t('колокольчики', 'glockenspiel'), ring: 1, vol: .7 },
+  celesta: { gm: 'celesta', label: t('челеста', 'celesta'), ring: 1 },
+  kalimba: { gm: 'kalimba', label: t('калимба', 'kalimba'), ring: 1 },
+  harp: { gm: 'orchestral_harp', label: t('арфа', 'harp'), ring: 1 },
+  guitar: { gm: 'acoustic_guitar_nylon', label: t('гитара', 'guitar'), ring: 1 },
+  eguitar: { gm: 'electric_guitar_clean', label: t('электрогитара', 'electric guitar'), ring: 1 },
+  pizz: { gm: 'pizzicato_strings', label: t('пиццикато', 'pizzicato'), ring: 1 },
+  sitar: { gm: 'sitar', label: t('ситар', 'sitar'), ring: 1 },
+  koto: { gm: 'koto', label: t('кото', 'koto'), ring: 1 },
+  harpsichord: { gm: 'harpsichord', label: t('клавесин', 'harpsichord'), ring: 1, vol: .8 },
+  upright: { gm: 'acoustic_bass', label: t('контрабас', 'double bass'), ring: 1, vol: 1.6 },
+  strings: { gm: 'string_ensemble_1', label: t('струнные', 'strings'), vol: .7 },
+  violin: { gm: 'violin', label: t('скрипка', 'violin') },
+  cello: { gm: 'cello', label: t('виолончель', 'cello') },
+  choir: { gm: 'choir_aahs', label: t('хор', 'choir'), vol: .7 },
+  voice: { gm: 'voice_oohs', label: t('голоса', 'voices'), vol: .7 },
+  flute: { gm: 'flute', label: t('флейта', 'flute') },
+  panflute: { gm: 'pan_flute', label: t('пан-флейта', 'pan flute') },
+  brass: { gm: 'brass_section', label: t('духовые', 'brass'), vol: .8 },
+  organ: { gm: 'church_organ', label: t('орган', 'organ'), vol: .6 },
 };
-const LABEL = { '808': '808', sub: 'саб-бас', cowbell: 'ковбелл' };
+const LABEL = { '808': '808', sub: t('саб-бас', 'sub bass'), cowbell: t('ковбелл', 'cowbell') };
 const labelOf = k => SAMPLED[k]?.label ?? LABEL[k];
 
 const SCALES = {
@@ -53,21 +54,21 @@ const TRAP = {
 };
 export const STYLES = {
   hard: {
-    ...TRAP, label: 'Хард', bpm: [148, 162], scales: ['minor', 'harmonic', 'phrygian'], intro: ['melody', 'filtered', 'cold', 'build'],
+    ...TRAP, label: t('Хард', 'Hard'), bpm: [148, 162], scales: ['minor', 'harmonic', 'phrygian'], intro: ['melody', 'filtered', 'cold', 'build'],
     kicks: BOUNCE, hats: ['trap', 'trap', '8ths'], perc: ['none', 'snap', 'rim'], bassPat: ['bounce', 'bounce', 'kick'], drive: 5, bassGain: .82,
     chords: [['choir', 'pad'], ['strings', 'pad'], ['voice', 'pad'], ['none', 'none'], ['none', 'none']],
     lead: [['piano', 'motif'], ['bells', 'motif'], ['musicbox', 'motif'], ['guitar', 'motif'], ['harpsichord', 'motif'], ['glock', 'arp'], ['piano', 'arp'], ['pizz', 'motif']],
     counter: ['choir', 'strings', 'bells', 'violin', 'glock'], seventh: 0, verb: .2, loud: 1,
   },
   dark: {
-    ...TRAP, label: 'Дарк', bpm: [128, 145], clap: .6, scales: ['minor', 'harmonic', 'phrygian'], intro: ['melody', 'filtered', 'cold'],
+    ...TRAP, label: t('Дарк', 'Dark'), bpm: [128, 145], clap: .6, scales: ['minor', 'harmonic', 'phrygian'], intro: ['melody', 'filtered', 'cold'],
     kicks: [[0, 10], [0, 11], [0, 7, 10], [0, 12], [0, 12, 14]], hats: ['8ths', 'trap', 'triplet'], perc: ['rim', 'none'], bassPat: ['kick', 'sustain'], drive: 3, bassGain: .9,
     chords: [['choir', 'pad'], ['strings', 'pad'], ['organ', 'pad'], ['voice', 'pad']],
     lead: [['piano', 'motif'], ['musicbox', 'motif'], ['bells', 'long'], ['celesta', 'motif'], ['harpsichord', 'motif'], ['violin', 'long'], ['piano', 'call']],
     counter: ['bells', 'glock', 'violin', 'cello', 'celesta'], seventh: .2, verb: .32,
   },
   drill: {
-    ...TRAP, label: 'Дрилл', bpm: [138, 146], clap: .5, scales: ['harmonic', 'phrygian', 'minor'], intro: ['melody', 'build', 'filtered'],
+    ...TRAP, label: t('Дрилл', 'Drill'), bpm: [138, 146], clap: .5, scales: ['harmonic', 'phrygian', 'minor'], intro: ['melody', 'build', 'filtered'],
     kicks: [[0, 10], [0, 11], [0, 3, 10], [0, 7]], snares: [[8], [8, 11], [8, 14], [3, 8]], hats: ['triplet', 'drill'], perc: ['rim', 'none'],
     bassPat: ['slide'], drive: 3.5, bassGain: .8,
     chords: [['choir', 'pad'], ['strings', 'pad'], ['none', 'none']],
@@ -75,14 +76,14 @@ export const STYLES = {
     counter: ['choir', 'violin', 'bells', 'cello'], seventh: 0, verb: .28, loud: 1,
   },
   melodic: {
-    ...TRAP, label: 'Мелодик', bpm: [140, 160], scales: ['minor', 'dorian'], intro: ['melody', 'cold', 'filtered'],
+    ...TRAP, label: t('Мелодик', 'Melodic'), bpm: [140, 160], scales: ['minor', 'dorian'], intro: ['melody', 'cold', 'filtered'],
     kicks: [[0, 10], [0, 7, 10], [0, 12, 14], [0, 3, 10], [0, 10, 12]], hats: ['trap', '16ths'], perc: ['snap', 'none'], bassPat: ['bounce', 'kick'], drive: 2.5, bassGain: .85,
     chords: [['guitar', 'arp'], ['harp', 'arp'], ['epiano', 'pad'], ['none', 'none']],
     lead: [['guitar', 'motif'], ['kalimba', 'motif'], ['musicbox', 'arp'], ['eguitar', 'motif'], ['flute', 'motif'], ['celesta', 'arp'], ['epiano', 'motif']],
     counter: ['flute', 'glock', 'strings', 'voice'], seventh: .5, verb: .3,
   },
   trap: {
-    ...TRAP, label: 'Трэп', bpm: [132, 150], clap: .7, scales: ['minor', 'harmonic'], intro: ['melody', 'filtered', 'build', 'drums'],
+    ...TRAP, label: t('Трэп', 'Trap'), bpm: [132, 150], clap: .7, scales: ['minor', 'harmonic'], intro: ['melody', 'filtered', 'build', 'drums'],
     kicks: [[0, 10], [0, 7, 10], [0, 3, 10], [0, 6, 11], [0, 10, 13], [0, 11]], hats: ['trap', '16ths', 'triplet'], perc: ['snap', 'rim', 'none'],
     bassPat: ['kick', 'slide', 'bounce'], drive: 3, bassGain: .9,
     chords: [['strings', 'pad'], ['choir', 'pad'], ['pizz', 'arp'], ['none', 'none']],
@@ -90,14 +91,14 @@ export const STYLES = {
     counter: ['strings', 'choir', 'flute', 'glock', 'brass'], seventh: .2, verb: .22,
   },
   east: {
-    ...TRAP, label: 'Восточный', bpm: [136, 150], scales: ['harmonic', 'phrygian'], intro: ['melody', 'cold', 'filtered'],
+    ...TRAP, label: t('Восточный', 'Eastern'), bpm: [136, 150], scales: ['harmonic', 'phrygian'], intro: ['melody', 'cold', 'filtered'],
     kicks: [[0, 10], [0, 7, 10], [0, 12, 14], [0, 3, 10]], hats: ['trap', '8ths'], perc: ['rim', 'snap'], bassPat: ['bounce', 'kick', 'slide'], drive: 3.5, bassGain: .8,
     chords: [['strings', 'pad'], ['none', 'none'], ['voice', 'pad']],
     lead: [['sitar', 'motif'], ['koto', 'motif'], ['panflute', 'motif'], ['flute', 'call'], ['violin', 'motif'], ['harp', 'arp']],
     counter: ['strings', 'flute', 'violin', 'koto'], seventh: 0, verb: .3, loud: 1,
   },
   boombap: {
-    label: 'Бум-бэп', bpm: [84, 96], swing: [.1, .2], scales: ['minor', 'dorian'], intro: ['melody', 'drums', 'filtered', 'cold'],
+    label: t('Бум-бэп', 'Boom bap'), bpm: [84, 96], swing: [.1, .2], scales: ['minor', 'dorian'], intro: ['melody', 'drums', 'filtered', 'cold'],
     kicks: [[0, 10], [0, 7, 10], [0, 6, 10], [0, 9, 10], [0, 3, 10], [0, 7, 9]], snares: [[4, 12]], ghost: .45,
     hats: ['8ths', '16ths-skip', 'shaker'], perc: ['rim', 'tamb', 'none'], bass: ['upright', 'sub'], bassPat: ['kick', 'walk'],
     kit: { kick: [120, 170], kickDecay: [.3, .55], snare: [1400, 2200] },
@@ -106,14 +107,14 @@ export const STYLES = {
     counter: ['strings', 'flute', 'brass'], seventh: .6, sat: 1.6, verb: .25, vinyl: 1,
   },
   phonk: {
-    ...TRAP, label: 'Фонк', bpm: [128, 140], swing: [0, .05], scales: ['phrygian', 'minor'], intro: ['melody', 'cold', 'filtered'],
+    ...TRAP, label: t('Фонк', 'Phonk'), bpm: [128, 140], swing: [0, .05], scales: ['phrygian', 'minor'], intro: ['melody', 'cold', 'filtered'],
     kicks: [[0, 3, 6, 10], [0, 7, 10, 13], [0, 6, 10]], hats: ['8ths', '16ths'], perc: ['none'], bassPat: ['kick'], drive: 4, bassGain: .68,
     chords: [['none', 'none'], ['choir', 'pad']], lead: [['cowbell', 'riff'], ['cowbell', 'motif']], counter: ['choir', 'voice'], seventh: 0, sat: 1.5, verb: .18, loud: 1,
   },
 };
 export const MAIN_STYLES = ['hard', 'dark', 'drill', 'melodic', 'trap', 'east'];
 
-const NAMES = ['Холодный подъезд', 'Ночная маршрутка', 'Ржавая девятка', 'Бетонный рассвет', 'Последняя электричка', 'Спальный район',
+const NAMES_RU = ['Холодный подъезд', 'Ночная маршрутка', 'Ржавая девятка', 'Бетонный рассвет', 'Последняя электричка', 'Спальный район',
   'Гаражный кооператив', 'Дым над ТЭЦ', 'Пятничная шаурма', 'Двор без фонарей', 'Сломанный домофон', 'Зимний гараж', 'Тёплый асфальт',
   'Девятый этаж', 'Неон над ларьком', 'Пустая остановка', 'Мокрый кроссовок', 'Шумные соседи', 'Кассета в бардачке', 'Звонок в три ночи',
   'Лифт не работает', 'Северный ветер', 'Дача в октябре', 'Сигнал с района', 'Чёрная Приора', 'Магнитола деда', 'Дождь на крыше',
@@ -121,6 +122,8 @@ const NAMES = ['Холодный подъезд', 'Ночная маршрутк
   'Голуби на крыше', 'Батя на гараже', 'Сдача без чека', 'Холодный чай', 'Микрофон за сотку', 'Район спит', 'Синий троллейбус',
   'Пустой стадион', 'Курилка за школой', 'Бит из подвала', 'Тонированная пятёрка', 'Мартовский лёд', 'Свет в окне напротив', 'Три аккорда',
   'Фары в тумане', 'Блок на окраине', 'Династия', 'Корона из фольги', 'Золото на районе', 'Чёрный мерс', 'Тихий час'];
+// Те же названия по-английски, в том же порядке: бит с одним сидом зовётся одинаково.
+const NAMES = lang === 'en' ? ['Cold Stairwell', 'Night Minibus', 'Rusty Lada', 'Concrete Dawn', 'Last Train', 'Commuter Suburb', 'Garage Co-op', 'Smoke over the Plant', 'Friday Shawarma', 'Yard Without Lights', 'Broken Intercom', 'Winter Garage', 'Warm Asphalt', 'Ninth Floor', 'Neon over the Kiosk', 'Empty Bus Stop', 'Wet Sneaker', 'Noisy Neighbors', 'Tape in the Glovebox', '3 AM Call', 'Elevator Out of Order', 'North Wind', 'Dacha in October', 'Signal from the Block', 'Black Priora', 'Grandpa’s Radio', 'Rain on the Roof', 'Midnight Platform', 'Last Lesson', 'Old Player', 'Sneakers on the Wires', 'Basement Studio', 'Bus to the Last Stop', 'Rusty Swings', 'Pigeons on the Roof', 'Dad on the Garage', 'Change Without a Receipt', 'Cold Tea', 'Hundred-Ruble Mic', 'The Block Is Asleep', 'Blue Trolleybus', 'Empty Stadium', 'Smoking Spot Behind School', 'Beat from the Basement', 'Tinted Five', 'March Ice', 'Light in the Window Across', 'Three Chords', 'Headlights in the Fog', 'Block on the Outskirts', 'Dynasty', 'Tinfoil Crown', 'Gold on the Block', 'Black Merc', 'Quiet Hour'] : NAMES_RU;
 const KEYS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const FILE_NOTES = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 const MOTIFS = ['x..x..x...x.x...', 'x..x..x.x..x.x..', 'x...x..x..x.x...', 'x.x...x.x...x.x.', 'x..x..x.........', 'x...x...x..x..x.',
@@ -214,9 +217,9 @@ export function describe(seed, style) {
   return {
     seed, style: rc.style, label: rc.st.label, bpm: rc.bpm, key: rc.key, keyName: KEYS[rc.key] + 'm', name: rc.name, tags: rc.tags, barSec, bars,
     sections: [
-      { name: 'Интро', from: 0, to: ib * barSec },
-      { name: 'Куплет', from: ib * barSec, to: (ib + vb) * barSec },
-      { name: 'Припев', from: (ib + vb) * barSec, to: bars * barSec },
+      { name: t('Интро', 'Intro'), from: 0, to: ib * barSec },
+      { name: t('Куплет', 'Verse'), from: ib * barSec, to: (ib + vb) * barSec },
+      { name: t('Припев', 'Hook'), from: (ib + vb) * barSec, to: bars * barSec },
     ],
     duration: bars * barSec + barSec / 2,
   };

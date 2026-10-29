@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>До титров — potenceval</title>
+<title data-en="Before the Credits — potenceval">До титров — potenceval</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
 <meta name="description" content="Угадай кино, сериал, аниме или мультфильм по подсказкам и частям картинки.">
 <link rel="stylesheet" href="../shared/fonts/fonts.css">
-<link rel="stylesheet" href="../shared/style.css?v=menu-20261025">
+<link rel="stylesheet" href="../shared/style.css?v=lang-20261028">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="../shared/club.css?v=menu-20261025">
+<link rel="stylesheet" href="../shared/club.css?v=lang-20261028">
 <link rel="stylesheet" href="club.css?v=merge-20261026">
 </head>
 <body class="club-theme" data-game="screen">
@@ -16,19 +17,19 @@
 <div class="wrap screen-wrap">
   <header class="top">
     <a class="logo" href="../"><b>potenceval</b><span>games</span></a>
-    <div class="top-right"><button class="qbtn" id="rulesBtn">Как играть</button><button class="exit" id="exitBtn" hidden>К выбору</button></div>
+    <div class="top-right"><button class="qbtn" id="rulesBtn" data-en="How to play">Как играть</button><button class="exit" id="exitBtn" hidden data-en="Back to shelf">К выбору</button></div>
   </header>
   <main id="stage"></main>
-  <footer class="screen-footer"><span>Данные: собственная подборка. Постеры — AniList, TVMaze и Википедия. Источник указан в раунде; права на изображения принадлежат их владельцам.</span></footer>
+  <footer class="screen-footer"><span data-en="Data: our own collection. Posters — AniList, TVMaze and Wikipedia. The source is shown in each round; image rights belong to their owners.">Данные: собственная подборка. Постеры — AniList, TVMaze и Википедия. Источник указан в раунде; права на изображения принадлежат их владельцам.</span></footer>
 </div>
 <dialog id="rulesDialog" aria-labelledby="rulesTitle">
-  <h2 id="rulesTitle">Как играть</h2>
-  <p>Выбери подборку и угадай название. В начале виден сильно размытый постер, а ещё год, страна, длительность и один жанр.</p>
-  <p>Нажимай «Сделать чётче» — постер проясняется в четыре шага: −10, −15, −20 и −25 очков. Ещё можно открывать актёров и другие зацепки, каждого актёра отдельно.</p>
-  <p>Раунд начинается со 100 очков. Подсказки и ошибочные ответы уменьшают счёт. Верное название приносит оставшиеся очки.</p>
-  <button class="btn primary" id="rulesClose">Понятно</button>
+  <h2 id="rulesTitle" data-en="How to play">Как играть</h2>
+  <p data-en="Pick a collection and guess the title. At first you see a heavily blurred poster, plus the year, country, runtime and one genre.">Выбери подборку и угадай название. В начале виден сильно размытый постер, а ещё год, страна, длительность и один жанр.</p>
+  <p data-en="Hit “Sharpen” and the poster clears up in four steps: −10, −15, −20 and −25 points. You can also reveal actors and other clues, each actor separately.">Нажимай «Сделать чётче» — постер проясняется в четыре шага: −10, −15, −20 и −25 очков. Ещё можно открывать актёров и другие зацепки, каждого актёра отдельно.</p>
+  <p data-en="Each round starts at 100 points. Clues and wrong answers lower the score. The right title earns whatever points are left.">Раунд начинается со 100 очков. Подсказки и ошибочные ответы уменьшают счёт. Верное название приносит оставшиеся очки.</p>
+  <button class="btn primary" id="rulesClose" data-en="Got it">Понятно</button>
 </dialog>
-<script type="module" src="../shared/menu.js?v=merge-20261026"></script>
-<script type="module" src="app.js?v=merge-20261026"></script>
+<script type="module" src="../shared/menu.js?v=lang-20261028"></script>
+<script type="module" src="app.js?v=lang-20261028"></script>
 </body>
 </html>

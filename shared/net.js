@@ -3,6 +3,7 @@
 // устройствами не нужно, поэтому работает и с телефона на мобильном интернете.
 // Свой брокер на российском сервере ставится из server/mqtt; пока OWN пустой — публичные
 // зарубежные брокеры без гарантий.
+import { t } from './i18n.js';
 import { LS, me, toast, hideToast } from './kit.js?v=kick-1';
 
 const OWN = ''; // 'wss://mqtt.<домен>/mqtt' после server/mqtt/setup.sh
@@ -19,7 +20,7 @@ export function createNet({ game, createState, reduce, publicView = s => s, rese
 
   function ready() {
     if (typeof mqtt !== 'undefined') return true;
-    toast('Не загрузился модуль связи. Обнови страницу.', 4000);
+    toast(t('Не загрузился модуль связи. Обнови страницу.', 'The connection module failed to load. Refresh the page.'), 4000);
     return false;
   }
   function connect(url) {
@@ -40,7 +41,7 @@ export function createNet({ game, createState, reduce, publicView = s => s, rese
   async function host(c = newCode(), restored = null) {
     if (!ready()) return;
     close(); isHost = true; code = c;
-    toast(restored ? 'Восстанавливаю лобби…' : 'Создаю лобби…');
+    toast(restored ? t('Восстанавливаю лобби…', 'Restoring the lobby…') : t('Создаю лобби…', 'Creating the lobby…'));
     // хост сидит на всех доступных серверах — друг подключится через тот, что открывается у него.
     // Стартуем с первого ответившего, остальные цепляем по мере подключения; ни одного — пробуем ещё раз.
     const attach = l => { l.subscribe(topic(c, 'up')); l.on('message', (_, raw) => onHostMsg(parse(raw))); links.push(l); };
@@ -54,7 +55,7 @@ export function createNet({ game, createState, reduce, publicView = s => s, rese
       }));
     }
     if (code !== c || !isHost) { first?.end(true); return; }
-    if (!first) { isHost = false; toast('Нет связи с сервером. Проверь интернет или выключи/включи VPN.', 5000); return; }
+    if (!first) { isHost = false; toast(t('Нет связи с сервером. Проверь интернет или выключи/включи VPN.', 'Can’t reach the server. Check your internet or toggle your VPN.'), 5000); return; }
     attach(first); hideToast();
     let s = restored || createState(me.pid, c);
     if (restored) s = { ...s, players: s.players.map(x => (x.genie || x.bot || x.id === me.pid ? x : { ...x, online: false })) };
@@ -102,18 +103,18 @@ export function createNet({ game, createState, reduce, publicView = s => s, rese
     if (!ready()) return;
     close(); isHost = false; code = c;
     if (!rejoin) everConnected = false;
-    toast('Подключаюсь…');
+    toast(t('Подключаюсь…', 'Connecting…'));
     let link = null;
     for (const url of [...BROKERS, ...BROKERS]) { link = await connect(url); if (link || code !== c) break; } // по кругу два раза
     if (code !== c || isHost) { link?.end(true); return; }
-    if (!link) { toast('Нет связи с сервером. Проверь интернет или выключи/включи VPN.', 5000); return; }
+    if (!link) { toast(t('Нет связи с сервером. Проверь интернет или выключи/включи VPN.', 'Can’t reach the server. Check your internet or toggle your VPN.'), 5000); return; }
     links = [link];
     link.subscribe([topic(c, 'host'), topic(c, 'down/' + me.pid)]);
-    link.on('message', (t, raw) => {
+    link.on('message', (tp, raw) => {
       const m = parse(raw);
       if (!m || code !== c) return;
-      if (t.endsWith('/host')) {
-        if (m.closed && everConnected) { toast('Хост закрыл лобби', 3500); leave(true); }
+      if (tp.endsWith('/host')) {
+        if (m.closed && everConnected) { toast(t('Хост закрыл лобби', 'The host closed the lobby'), 3500); leave(true); }
         else if (m.ts) hostSeen = Date.now();
         return;
       }
@@ -123,23 +124,23 @@ export function createNet({ game, createState, reduce, publicView = s => s, rese
         everConnected = true; lostShown = false;
         LS.set(key('session'), { code: c, host: false });
         onState(m.s, m.now);
-      } else if (m.t === 'full') { toast('Лобби заполнено', 3500); leave(true); }
-      else if (m.t === 'bye') { toast('Хост закрыл лобби', 3500); leave(true); }
-      else if (m.t === 'kicked') { toast('Хост выгнал тебя из лобби', 4000); leave(true); }
+      } else if (m.t === 'full') { toast(t('Лобби заполнено', 'The lobby is full'), 3500); leave(true); }
+      else if (m.t === 'bye') { toast(t('Хост закрыл лобби', 'The host closed the lobby'), 3500); leave(true); }
+      else if (m.t === 'kicked') { toast(t('Хост выгнал тебя из лобби', 'The host kicked you from the lobby'), 4000); leave(true); }
     });
     const say = t => publish(topic(c, 'up'), { t, pid: me.pid, name: me.name });
     say('hello');
     timers.push(setInterval(() => {
       say(everConnected ? 'ping' : 'hello');
-      if (everConnected && Date.now() - hostSeen > LOST && !lostShown) { lostShown = true; toast('Связь с хостом пропала, ждём его…'); }
+      if (everConnected && Date.now() - hostSeen > LOST && !lostShown) { lostShown = true; toast(t('Связь с хостом пропала, ждём его…', 'Lost the host, waiting for them…')); }
     }, BEAT));
-    timers.push(setTimeout(() => { if (!everConnected && code === c) { toast('Лобби с таким кодом не найдено', 3500); leave(true); } }, 12000));
+    timers.push(setTimeout(() => { if (!everConnected && code === c) { toast(t('Лобби с таким кодом не найдено', 'No lobby with that code'), 3500); leave(true); } }, 12000));
   }
 
   function send(a) {
     if (isHost) apply(a, me.pid);
     else if (links.length) publish(topic(code, 'up'), { t: 'act', pid: me.pid, a });
-    else toast('Нет связи с хостом…', 2000);
+    else toast(t('Нет связи с хостом…', 'No connection to the host…'), 2000);
   }
   function leave(keepToast = false) {
     if (isHost && code) {

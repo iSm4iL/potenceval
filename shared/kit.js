@@ -1,4 +1,5 @@
 // Общее для всех игр: анимации, эффекты, тосты, правила, лобби, хранилище.
+import { t } from './i18n.js';
 export const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const EASE = 'cubic-bezier(.2,.8,.2,1)', SPRING = 'cubic-bezier(.34,1.56,.64,1)';
 export const still = () => reduceMotion || document.hidden;
@@ -107,9 +108,9 @@ export function initPage(game, net) {
   // подтверждение прямо на кнопке: системный confirm браузер может молча заблокировать
   const exit = $('#exitBtn'); let armed = null;
   exit.onclick = () => {
-    if (armed) { clearTimeout(armed); armed = null; exit.textContent = 'Выйти'; net.leave(); return; }
-    exit.textContent = net.isHost ? 'Закрыть лобби?' : 'Точно выйти?';
-    armed = setTimeout(() => { armed = null; exit.textContent = 'Выйти'; }, 3000);
+    if (armed) { clearTimeout(armed); armed = null; exit.textContent = t('Выйти', 'Leave'); net.leave(); return; }
+    exit.textContent = net.isHost ? t('Закрыть лобби?', 'Close lobby?') : t('Точно выйти?', 'Really leave?');
+    armed = setTimeout(() => { armed = null; exit.textContent = t('Выйти', 'Leave'); }, 3000);
   };
   if (!LS.get(game + '.seenRules')) { LS.set(game + '.seenRules', 1); setTimeout(openRules, 700); }
 }
@@ -131,11 +132,11 @@ export function buildHome(stage, net, hero) {
   const code = (new URLSearchParams(location.search).get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 5);
   stage.append(h(`<section class="home">${hero}
     <div class="panel" data-in>
-      <label for="nameIn">Твоё имя</label><input class="field" id="nameIn" maxlength="20" placeholder="Как тебя звать?" value="${esc(me.name)}">
-      <button class="btn primary big" id="createBtn">Создать лобби</button>
-      <div class="or">или войди к друзьям</div>
-      <div class="joinrow"><input class="field" id="codeIn" maxlength="5" placeholder="КОД" autocomplete="off" value="${esc(code)}"><button class="btn ghost" id="joinBtn">Войти</button></div>
-      <button class="linkbtn" data-rules>Как играть?</button>
+      <label for="nameIn">${t('Твоё имя', 'Your name')}</label><input class="field" id="nameIn" maxlength="20" placeholder="${t('Как тебя звать?', 'What should we call you?')}" value="${esc(me.name)}">
+      <button class="btn primary big" id="createBtn">${t('Создать лобби', 'Create lobby')}</button>
+      <div class="or">${t('или войди к друзьям', 'or join your friends')}</div>
+      <div class="joinrow"><input class="field" id="codeIn" maxlength="5" placeholder="${t('КОД', 'CODE')}" autocomplete="off" value="${esc(code)}"><button class="btn ghost" id="joinBtn">${t('Войти', 'Join')}</button></div>
+      <button class="linkbtn" data-rules>${t('Как играть?', 'How to play?')}</button>
     </div></section>`));
   const title = $('#heroTitle');
   if (title) {
@@ -163,14 +164,14 @@ export function buildHome(stage, net, hero) {
 // Код комнаты, ссылка, список игроков. tag(player, state) — подпись под именем.
 // onKick(id) — если передан, хост видит у игроков кнопку «выгнать»
 export function buildLobby(stage, s, sub, tag, onKick) {
-  stage.append(h(`<div class="phase-title" data-in><span class="kicker">Лобби</span><h1>Зови друзей</h1><p class="sub">${sub}</p></div>`));
+  stage.append(h(`<div class="phase-title" data-in><span class="kicker">${t('Лобби', 'Lobby')}</span><h1>${t('Зови друзей', 'Invite friends')}</h1><p class="sub">${sub}</p></div>`));
   const code = h(`<div class="code" data-in>${[...s.code].map(c => `<span>${c}</span>`).join('')}</div>`);
   stage.append(code);
   [...code.children].forEach((sp, k) => A(sp, [{ opacity: 0, transform: 'translateY(-30px) rotateX(90deg)' }, { opacity: 1, transform: 'none' }], { duration: 600, delay: 250 + k * 80, easing: SPRING }));
-  stage.append(h(`<div class="row" data-in><button class="btn ghost" id="copyBtn">Скопировать ссылку</button></div>`));
+  stage.append(h(`<div class="row" data-in><button class="btn ghost" id="copyBtn">${t('Скопировать ссылку', 'Copy link')}</button></div>`));
   $('#copyBtn').onclick = async () => {
     const url = location.origin + location.pathname + '?c=' + s.code;
-    try { await navigator.clipboard.writeText(url); toast('Ссылка скопирована — кидай друзьям', 1800); } catch { prompt('Скопируй ссылку:', url); }
+    try { await navigator.clipboard.writeText(url); toast(t('Ссылка скопирована — кидай друзьям', 'Link copied — send it to your friends'), 1800); } catch { prompt(t('Скопируй ссылку:', 'Copy the link:'), url); }
   };
   stage.append(h(`<div class="plist" id="plist" data-in></div>`));
   renderPlist(s, tag);
@@ -178,7 +179,7 @@ export function buildLobby(stage, s, sub, tag, onKick) {
     const b = e.target.closest('[data-kick]');
     if (!b) return;
     if (b.dataset.armed) onKick(b.dataset.kick);
-    else { b.dataset.armed = 1; b.textContent = 'Выгнать?'; setTimeout(() => { if (b.isConnected) { delete b.dataset.armed; b.textContent = '✕'; } }, 3000); }
+    else { b.dataset.armed = 1; b.textContent = t('Выгнать?', 'Kick?'); setTimeout(() => { if (b.isConnected) { delete b.dataset.armed; b.textContent = '✕'; } }, 3000); }
   });
 }
 export function renderPlist(s, tag) {
@@ -196,8 +197,8 @@ export function renderPlist(s, tag) {
       if (bot && !pl.genie && !pl.bot) box.insertBefore(el, bot); else box.append(el);
       A(el, [{ opacity: 0, transform: 'translateY(20px) scale(.8)' }, { opacity: 1, transform: 'none' }], { duration: 550, easing: SPRING });
     }
-    const kick = isHostOf(s) && pl.id !== me.pid && !pl.genie && !pl.bot ? `<button class="kick" data-kick="${esc(pl.id)}" title="Выгнать из лобби">✕</button>` : '';
-    el.innerHTML = `<span class="av" style="background:${esc(pl.color)}">${pl.genie ? '✦' : pl.bot ? '💀' : esc(first(pl.name))}</span><span>${pl.id === s.hostId ? '👑 ' : ''}${esc(pl.name)}${pl.id === me.pid ? ' (ты)' : ''}<small>${tag(pl, s)}</small></span>${kick}`;
+    const kick = isHostOf(s) && pl.id !== me.pid && !pl.genie && !pl.bot ? `<button class="kick" data-kick="${esc(pl.id)}" title="${t('Выгнать из лобби', 'Kick from lobby')}">✕</button>` : '';
+    el.innerHTML = `<span class="av" style="background:${esc(pl.color)}">${pl.genie ? '✦' : pl.bot ? '💀' : esc(first(pl.name))}</span><span>${pl.id === s.hostId ? '👑 ' : ''}${esc(pl.name)}${pl.id === me.pid ? t(' (ты)', ' (you)') : ''}<small>${tag(pl, s)}</small></span>${kick}`;
     el.classList.toggle('genie', !!(pl.genie || pl.bot)); el.classList.toggle('off', !pl.online);
   }
 }

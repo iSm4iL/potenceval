@@ -1,4 +1,5 @@
 // Логика игры: чистые функции. Хост держит состояние, клиенты присылают действия.
+import { t as tr } from '../shared/i18n.js';
 import { DECK, GENIE_ANY } from './content.js';
 
 export const MAX_PLAYERS = 8;
@@ -8,7 +9,7 @@ export const GENIE_ID = 'genie';
 export function createState(hostId, code) {
   return {
     code, hostId, phase: 'lobby', rev: 0,
-    players: [{ id: GENIE_ID, name: 'Джинн', genie: true, color: '#c99a1e', score: 0, online: true }],
+    players: [{ id: GENIE_ID, name: tr('Джинн', 'Genie'), genie: true, color: '#c99a1e', score: 0, online: true }],
     settings: { laps: 1, sec: 60 },
     order: [], round: 0, wisher: null, power: null,
     cards: [], revealed: 0, chosen: null, took: null, deadline: null, used: [],
@@ -52,7 +53,7 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
   switch (a.type) {
     case 'join': {
       if (t.banned?.includes(from)) return s;
-      const name = clean(a.name, 20) || 'Игрок';
+      const name = clean(a.name, 20) || tr('Игрок', 'Player');
       if (me) { me.name = name; me.online = true; break; }
       if (humans(t).length >= MAX_PLAYERS) return s;
       t.players.splice(t.players.length - 1, 0, { id: from, name, color: COLORS[humans(t).length % COLORS.length], score: 0, online: true });

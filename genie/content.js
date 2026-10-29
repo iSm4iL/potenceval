@@ -1,5 +1,6 @@
 // Колода суперсил. У каждой — заготовки Джинна: подвох через лазейку в формулировке.
-export const DECK = [
+import { lang } from '../shared/i18n.js';
+const RU_DECK = [
   { id: 1, icon: '🌀', title: 'Телепортация', text: 'Куда угодно, когда угодно. Тело и одежда — в целости.',
     genie: ['Тело и одежда в целости, как и просил. Про волосы уговора не было.', 'Телепортируешься ты. Звук телепорта — громкий пердёж — остаётся на месте.'] },
   { id: 2, icon: '🫥', title: 'Невидимость', text: 'Становишься полностью невидимым, когда захочешь.',
@@ -83,7 +84,7 @@ export const DECK = [
 ];
 
 // Подвохи Джинна к силе, которую игрок вписал сам.
-export const GENIE_ANY = [
+const RU_ANY = [
   'Работает. Но только по вторникам.',
   'Работает, пока держишь руку на голове.',
   'Работает, только если громко объявить об этом вслух.',
@@ -101,3 +102,68 @@ export const GENIE_ANY = [
   'Работает. Каждый раз теряешь один носок. Всегда левый.',
   'Работает. Каждый раз где-то рядом играет музыка из рекламы.',
 ];
+
+// Английская колода: те же id и иконки, шутки переведены по смыслу.
+const EN = {
+  1: ['Teleportation', 'Anywhere, anytime. Body and clothes intact.', ['Body and clothes intact, as requested. Nobody said anything about hair.', 'You teleport. The teleport sound — a loud fart — stays behind.']],
+  2: ['Invisibility', 'You turn completely invisible whenever you want.', ['Only you are invisible. Your clothes stay visible.', 'Works only while nobody is looking at you.']],
+  3: ['Flight', 'You fly like a superhero, at any speed.', ['Any speed. Max altitude: 30 centimeters.', 'You can only fly with your arms out, going “vroooom” out loud.']],
+  4: ['Mind reading', 'You hear the thoughts of anyone nearby.', ['You only hear what people think about you.', 'You hear other people’s thoughts. Everyone around hears yours.']],
+  5: ['Rewind time', 'You can rewind time by 10 seconds.', ['Everything rewinds except your shame: you remember every time.', 'Time rewinds. Your voice doesn’t: for the rest of the day you talk backwards.']],
+  6: ['Super strength', 'You lift a truck with one hand.', ['Only trucks. You can’t lift a cup of tea.', 'Strength as requested. Skeleton as usual.']],
+  7: ['Every language', 'You speak any language like a native.', ['Any language except English.', 'Like a native — every time like a village grandma from that country.']],
+  8: ['Endless money', 'Your pocket always holds exactly as much as you need.', ['As much as you need — in pennies.', 'In a pocket. Of the jacket you threw out in 2019.']],
+  9: ['Talk to animals', 'You understand all animals, and they understand you.', ['They understand you. And they all think you’re dumb.', 'You understand them all. They only speak in swear words.']],
+  10: ['No need to sleep', 'You never get tired or sleepy.', ['No sleep needed. Instead you stare at a wall for 8 hours every night.', 'You don’t get tired. Everyone around you does.']],
+  11: ['Luck', 'You’re lucky at everything.', ['Lucky at everything that doesn’t involve money, love or exams.', 'Your bad luck piles up and hits all at once, on one day when you’re 60.']],
+  12: ['Pyrokinesis', 'You set anything on fire with a look.', ['With a look — yes. Now you have to blink very carefully.', 'You set anything on fire. You can’t put it out.']],
+  13: ['Stop time', 'You stop time whenever you want.', ['You can stop it. Only your mom can start it again.', 'Time stops. So do you. Only your thoughts keep moving.']],
+  14: ['Cloning', 'You create a copy of yourself.', ['The copy is sure it’s the original.', 'The copy is you from seventh grade.']],
+  15: ['Regeneration', 'Any wound heals in a second.', ['Heals in a second. The pain is billed at the old rate, spread over a week.', 'Everything grows back. Sometimes extra.']],
+  16: ['Never miss', 'You hit any target.', ['You hit any target. A random passerby picks the target.', 'Only paper balls into the trash can. But every single time.']],
+  17: ['Tech obeys your mind', 'Any gadget does whatever you think.', ['It obeys. But asks to update before every action.', 'It obeys and narrates everything you do out loud.']],
+  18: ['Perfect voice', 'You sing like the best singer in the world.', ['You sing perfectly. You can’t stop.', 'Like the best singer in the world — only when nobody can hear.']],
+  19: ['All food is tasty', 'Even broccoli tastes like pizza.', ['Everything tastes like pizza. Pizza tastes like broccoli.', 'Delicious. Triple the calories.']],
+  20: ['Summon objects', 'Any object flies into your hand.', ['It flies. Into your face, not your hand.', 'Everything you name out loud flies at you. Including “oh crap”.']],
+  21: ['See the future', 'You see what happens a minute from now.', ['You only see other people’s future, and only the awkward moments.', 'You see a minute ahead. You can’t change a thing.']],
+  22: ['Invulnerability', 'Nothing can hurt you.', ['Nothing can hurt you. Except words.', 'You’re invulnerable. Your clothes aren’t.']],
+  23: ['Breathe underwater', 'You live underwater as long as you like.', ['You breathe underwater. On land — every other breath.', 'Only in the bathtub.']],
+  24: ['Super speed', 'You run faster than sound.', ['You run faster than sound. You brake like before.', 'Faster than sound — only when running from responsibility.']],
+  25: ['No. 1 in any game', 'In any game you’re the best player in the world.', ['World No. 1. You get reported for cheating every match.', 'Only in games released before 2005.']],
+  26: ['Charisma', 'Everyone who sees you adores you.', ['Everyone who sees you adores you. Everyone who hears you doesn’t.', 'Everyone adores you. Especially pigeons.']],
+  27: ['Instant learning', 'You learn anything in 5 minutes.', ['You learn in 5 minutes. You forget in 4.', 'Anything except your homework.']],
+  28: ['Night vision', 'You see in the dark like it’s daytime.', ['In the dark — like daytime. In daytime — like the dark.', 'You see in the dark. Your eyes glow. Always.']],
+  29: ['Magic', 'Any spell works if you say it right.', ['You have to say it in Latin, backwards, on the first try.', 'It works. With a 50% chance — on you.']],
+  30: ['Shapeshifting', 'You turn into any animal.', ['Any animal. Turning back — only on Fridays.', 'Any animal — no bigger than a hamster.']],
+  31: ['Never get angry', 'Total calm, always.', ['You’re calm. Your anger goes to your friends, one at a time.', 'You’re calm. Your face still shows what you think.']],
+  32: ['Find anything', 'You always know where the thing you’re looking for is.', ['You know where it is. You can’t get to it.', 'You know where it is. Always at your ex’s.']],
+  33: ['Home anywhere', 'You instantly set up a cozy home anywhere.', ['The house appears. The neighbors are the ones you have now.', 'A cozy home. No toilet.']],
+  34: ['Lord of lightning', 'You control lightning.', ['You control lightning. Every bolt goes through you.', 'You can charge your phone with a finger. That’s it.']],
+  35: ['Sleep in 10 minutes', 'Fully rested in 10 minutes, asleep whenever you want.', ['Rested in 10 minutes. You snore for the full eight hours.', 'You fall asleep whenever you want. Like during an exam.']],
+  36: ['Food from thin air', 'You pull any food out of thin air.', ['Any food — but someone has already taken a bite.', 'From thin air. You do the dishes.']],
+  37: ['Any look', 'You look however you want.', ['However you want. Your voice stays the same.', 'You change your looks and every time forget what the real you looked like.']],
+  38: ['Mute any sound', 'You can switch off any sound around you.', ['You can switch it off. Not back on.', 'You can mute any sound. Except the neighbor’s drill.']],
+  39: ['Redo a day', 'Once a week you can live a day over.', ['Once a week. Always a Monday.', 'You relive it. Everyone remembers both versions.']],
+  40: ['Never get sick', 'No colds, no toothaches.', ['You don’t get sick. You catch other people’s colds “to keep them company”.', 'You never get sick. But everyone is sure you’re contagious.']],
+};
+const EN_ANY = [
+  'It works. But only on Tuesdays.',
+  'It works while you keep a hand on your head.',
+  'It works only if you announce it out loud.',
+  'You get it. Your worst enemy gets the same, twice as strong.',
+  'It works. Your mom gets a notification every time.',
+  'It works, but every time you sneeze ten times in a row.',
+  'It works only within a meter of your home.',
+  'It works. Every day you forget you can do it.',
+  'It works. Everyone knows, and everyone asks you for help.',
+  'It works only when nobody is watching. Including you.',
+  'It works. Only in socks.',
+  'It works. After each use you speak in rhyme for an hour.',
+  'It works. With a three-year delay.',
+  'It works only when your grandma is around.',
+  'It works. Every time you lose a sock. Always the left one.',
+  'It works. Every time, some ad jingle plays nearby.',
+];
+
+export const DECK = lang === 'en' ? RU_DECK.map(d => ({ ...d, title: EN[d.id][0], text: EN[d.id][1], genie: EN[d.id][2] })) : RU_DECK;
+export const GENIE_ANY = lang === 'en' ? EN_ANY : RU_ANY;

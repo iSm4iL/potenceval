@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Полсекунды — варианты раунда</title>
+<link rel="stylesheet" href="../shared/fonts/fonts.css">
+<link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.switch-row{display:flex;align-items:center;gap:10px;margin:18px 0 0;flex-wrap:wrap}
+.switch{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:4px;border-radius:99px;background:#1c1530;border:1px solid var(--line);width:min(100%,520px)}
+.switch .ind{position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px)/4);border-radius:99px;background:var(--paper);box-shadow:0 6px 18px -8px rgba(255,246,230,.6);transition:transform .45s var(--spring)}
+.switch button{position:relative;z-index:1;padding:10px 6px;border-radius:99px;background:transparent;color:var(--muted);font-size:13px;line-height:1;white-space:nowrap;transition:color .3s}
+.switch button b{font-family:'Unbounded';font-size:11px;margin-right:6px;opacity:.6}
+.switch button.on{color:var(--ink);font-weight:700}
+.switch button:not(.on):hover{color:var(--text)}
+.game-shell.enter{animation:rise .5s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+.just{animation:unlock .55s var(--spring) both}
+@keyframes unlock{0%{transform:scale(.85)}60%{transform:scale(1.08)}100%{transform:none}}
+.chips-a button,.tile{overflow:visible}
+.chips-a .ask::after,.tile.ask::after{content:attr(data-ask);position:absolute;inset:-1px;display:grid;place-items:center;padding:4px;border-radius:inherit;background:var(--gold);color:var(--ink);font-weight:700;font-size:12px;line-height:1.25;white-space:pre-line;text-align:center;animation:unlock .35s var(--spring)}
+.tick.ask::after{content:attr(data-ask);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);padding:7px 10px;border-radius:10px;background:var(--gold);color:var(--ink);font-weight:700;font-size:12px;white-space:pre;animation:pop .3s var(--spring)}
+.tick.ask i{background:var(--gold);transform:scaleY(1.3)}
+.vnote{color:var(--muted);font-size:13px;line-height:1.5;margin:10px 0 0;max-width:680px}
+.answer-row{grid-template-columns:minmax(0,1fr) auto}
+.give-up{display:inline-block;margin-top:10px;background:none;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px;padding:0}
+.round-feedback{animation:pop .35s var(--spring)}
+@keyframes pop{from{transform:scale(.96);opacity:0}}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(255,201,74,.5)}50%{box-shadow:0 0 0 9px rgba(255,201,74,0)}}
+
+/* A — подсказки поверх текущего экрана + крупная кнопка */
+.chips-a{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.chips-a button{position:relative;padding:9px 3px;border-radius:9px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--muted);font-size:12px;transition:transform .15s var(--ease),border-color .2s,background .2s}
+.chips-a button:hover{transform:translateY(-2px);border-color:rgba(255,201,74,.5)}
+.chips-a button small{display:block;font-size:10px;margin-top:4px;opacity:.75}
+.chips-a button.opened{color:#d5c9ff;background:rgba(124,92,255,.12)}
+.chips-a button.current{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:700}
+.chips-a button.locked::before{content:'🔒';position:absolute;top:-7px;right:-4px;font-size:11px}
+.more-a{display:flex;align-items:center;gap:14px;width:100%;margin-top:14px;padding:14px 18px;border-radius:14px;text-align:left;color:var(--ink);background:linear-gradient(135deg,var(--gold),#ff9f43);font-weight:700;font-size:16px;animation:nudge 2s infinite}
+.more-a i{font-style:normal;font-size:22px}
+.more-a small{display:block;font-weight:500;font-size:12px;opacity:.75;margin-top:2px}
+.coach{position:relative;display:flex;gap:10px;align-items:center;margin:12px 0 0;padding:10px 12px;border-radius:12px;background:var(--paper);color:var(--ink);font-size:13px;line-height:1.4;animation:pop .4s var(--spring) both}
+.coach::before{content:'';position:absolute;top:-6px;left:28px;width:12px;height:12px;background:var(--paper);transform:rotate(45deg)}
+.coach b{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--pink);color:#fff;font-size:13px}
+.coach-x{margin-left:auto;flex:none;width:26px;height:26px;border-radius:50%;background:rgba(29,20,48,.08);color:var(--ink);font-size:12px}
+.coach-x:hover{background:rgba(29,20,48,.18)}
+.coach.bye{animation:bye .35s var(--ease) forwards}
+@keyframes bye{to{opacity:0;transform:translateY(-6px) scale(.96);margin-top:-48px}}
+.help-btn{padding:5px 10px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--muted);font-size:12px;animation:pop .35s var(--spring)}
+.help-btn:hover{color:var(--text);border-color:var(--gold)}
+.coach-close{margin-top:12px;background:none;color:var(--gold);font-size:13px;padding:0;text-decoration:underline;text-underline-offset:3px}
+
+/* D — музыкальный автомат */
+.jukebox{position:relative;padding:14px 16px 16px;border-radius:26px 26px 18px 18px;background:linear-gradient(180deg,#17120f,#0c0907);border:1px solid #6b5333;box-shadow:inset 0 0 0 4px #120d0a,inset 0 0 0 5px rgba(214,170,98,.35),0 30px 60px -30px #000}
+.jb-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 4px 10px}
+.jb-sign{font-family:'Pacifico',cursive;font-size:24px;color:#f6e7c8;text-shadow:0 0 18px rgba(255,201,74,.35)}
+.jb-dome{padding:6px 6px 0;border-radius:999px 999px 10px 10px/220px 220px 10px 10px;background:linear-gradient(90deg,#7a5a2e,#e8c27a 30%,#9b7340 55%,#f1d494 80%,#7a5a2e)}
+.jb-glass{position:relative;height:clamp(190px,30vw,240px);border-radius:999px 999px 6px 6px/214px 214px 6px 6px;overflow:hidden;background:radial-gradient(ellipse at 50% 110%,#3a2615,#0b0806 70%)}
+.jb-glass::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.07) 38%,transparent 46%),linear-gradient(65deg,transparent 60%,rgba(255,255,255,.05) 66%,transparent 72%)}
+.jb-marquee{position:absolute;z-index:2;top:16%;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:99px;background:#140e0a;border:1px solid rgba(214,170,98,.5);color:#e8c27a;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.jb-marquee b{color:#ffdf8a;font-size:13px}
+.jb-record{position:absolute;left:50%;bottom:0;width:min(88%,520px);aspect-ratio:1;transform:translate(-50%,50%);border-radius:50%;background:repeating-radial-gradient(circle,#0d0b10 0 2px,#26222c 3px,#0d0b10 5px,#0d0b10 8px);box-shadow:0 0 0 3px #2c2522,0 -10px 40px rgba(0,0,0,.6)}
+.jb-record::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 20deg,transparent 0 10%,rgba(255,255,255,.1) 15%,transparent 22% 58%,rgba(255,255,255,.08) 64%,transparent 72%)}
+.jb-record::after{content:'';position:absolute;inset:36%;border-radius:50%;background:var(--pink);border:8px solid #ba395a}
+.is-playing .jb-record{animation:jb-spin 1.8s linear infinite}
+@keyframes jb-spin{from{transform:translate(-50%,50%)}to{transform:translate(-50%,50%) rotate(360deg)}}
+.jb-play{--p:0;position:absolute;z-index:3;left:50%;bottom:24%;transform:translateX(-50%);width:clamp(84px,13vw,104px);aspect-ratio:1;border-radius:50%;padding:0;color:var(--ink);background:radial-gradient(circle at 35% 30%,#fff1c2,#ffc94a 45%,#d98e1f);box-shadow:0 0 0 5px #140e0a,0 0 0 7px rgba(232,194,122,.6),0 14px 30px -8px rgba(255,201,74,.6);transition:transform .2s var(--spring)}
+.jb-play::before{content:'';position:absolute;inset:-12px;border-radius:50%;background:conic-gradient(var(--pink) calc(var(--p)*1%),transparent 0);-webkit-mask:radial-gradient(closest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(closest-side,transparent calc(100% - 4px),#000 calc(100% - 3px))}
+.jb-play:hover{transform:translateX(-50%) scale(1.06)}
+.jb-play:active{transform:translateX(-50%) scale(.94)}
+.jb-play .record-symbol{font-size:clamp(30px,4.5vw,40px);padding-left:6px;color:var(--ink)}
+.is-playing .jb-play .record-symbol{padding-left:0}
+.jukebox:not(.is-playing) .jb-play{animation:jb-call 2.2s ease-in-out infinite}
+@keyframes jb-call{0%,100%{box-shadow:0 0 0 5px #140e0a,0 0 0 7px rgba(232,194,122,.6),0 0 0 7px rgba(255,201,74,.35)}50%{box-shadow:0 0 0 5px #140e0a,0 0 0 7px rgba(232,194,122,.6),0 0 0 22px rgba(255,201,74,0)}}
+.jb-cap{position:absolute;z-index:3;left:0;right:0;bottom:6%;display:flex;justify-content:center;gap:8px;align-items:baseline;color:#f6e7c8;font-size:12px;text-shadow:0 1px 6px #000}
+.jb-cap b{font-family:'Unbounded';font-size:15px;color:#ffdf8a}
+.jb-keys{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:12px;padding:8px 8px 12px;border-radius:12px;background:linear-gradient(180deg,#2a2018,#120d0a);border:1px solid rgba(214,170,98,.35)}
+.jb-key{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 2px 9px;border-radius:7px 7px 10px 10px;background:linear-gradient(180deg,#f3e6c9,#cdb98f);color:#2a1d14;font-weight:700;font-size:13px;box-shadow:0 5px 0 #6e5a3c,0 7px 10px rgba(0,0,0,.5);transition:transform .12s,box-shadow .12s}
+.jb-key small{font-size:10px;font-weight:500;opacity:.7}
+.jb-key i{width:7px;height:7px;border-radius:50%;background:#5a4a35;margin-bottom:2px}
+.jb-key:hover{transform:translateY(2px);box-shadow:0 3px 0 #6e5a3c,0 4px 8px rgba(0,0,0,.5)}
+.jb-key.opened i{background:#8ff0b5;box-shadow:0 0 6px #8ff0b5}
+.jb-key.current{transform:translateY(4px);box-shadow:0 1px 0 #6e5a3c;background:linear-gradient(180deg,#ffe48f,#ffc94a)}
+.jb-key.current i{background:var(--pink);box-shadow:0 0 8px var(--pink)}
+.jb-key.locked{background:linear-gradient(180deg,#5b5040,#3b3227);color:#cbb895;box-shadow:0 5px 0 #231b14,0 7px 10px rgba(0,0,0,.5)}
+.jb-key.locked i{background:none;width:auto;height:auto;font-style:normal}
+.jb-key.locked i::before{content:'🔒';font-size:9px}
+.jb-key.ask::after{content:attr(data-ask);position:absolute;inset:0;display:grid;place-items:center;padding:3px;border-radius:inherit;background:var(--pink);color:#fff;font-size:10px;line-height:1.2;white-space:pre-line;text-align:center;animation:unlock .35s var(--spring)}
+.jb-more{display:block;width:100%;margin-top:14px;padding:12px 14px;border-radius:12px;background:transparent;border:1px solid rgba(214,170,98,.45);color:#f6e7c8;font-size:14px;font-weight:700}
+.jb-more small{font-weight:500;color:#cbb895}
+.jb-more:hover{background:rgba(214,170,98,.1)}
+.jukebox .help-btn{background:rgba(214,170,98,.1);border-color:rgba(214,170,98,.35);color:#e8c27a}
+@media(max-width:560px){.jukebox{padding:12px}.jb-sign{font-size:20px}.jb-key{font-size:11px;padding:9px 1px 8px}.jb-marquee{font-size:9px;top:12%}.jb-marquee b{font-size:11px}}
+
+/* B — линия с засечками */
+.line-b{position:relative;height:74px;margin:4px 22px 0;cursor:pointer}
+.line-b .rail,.line-b .opened,.line-b .prog{position:absolute;left:0;top:33px;height:6px;border-radius:99px}
+.line-b .rail{right:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 6px,transparent 6px 11px)}
+.line-b .opened{background:rgba(160,135,255,.45);transition:width .5s var(--ease)}
+.line-b .prog{width:0;background:linear-gradient(90deg,var(--violet),var(--pink))}
+.line-b .prog::after{content:'';position:absolute;right:-7px;top:-4px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,77,109,.35)}
+.line-b .prog[style*="width: 0"]::after,.line-b .prog:not([style])::after{display:none}
+.tick{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;padding:0 4px;background:none;color:var(--muted);font-size:12px}
+.tick i{width:2px;height:22px;border-radius:2px;background:rgba(255,255,255,.3);transition:transform .15s var(--ease)}
+.tick .t-p{font-size:10px}.tick span{white-space:nowrap}
+.tick.open{color:#d5c9ff}.tick.open i{background:#a087ff}
+.tick.cur{color:var(--gold);font-weight:700}.tick.cur i{background:var(--gold);width:4px}
+.tick.locked .t-l::before{content:'🔒';font-size:9px;margin-right:2px}
+.tick:hover i{transform:scaleY(1.3);background:var(--gold)}
+.b-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap}
+.b-row p{margin:0;font-size:13px;color:var(--muted);line-height:1.4}
+.b-row .btn{padding:13px 18px;font-size:15px;white-space:nowrap}
+.b-row .btn small{font-weight:500;opacity:.75}
+
+/* C — плитки: каждая плитка сама играет свою длину */
+.c-lead{display:flex;align-items:center;gap:14px;margin:14px 0 16px}
+.c-lead .record-button{width:64px;height:64px;pointer-events:none}
+.c-lead .vinyl::after{inset:17px;border-width:5px}
+.c-lead p{margin:0;font-size:15px;line-height:1.45}
+.c-lead p small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.tiles-c{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.tile{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 4px 16px;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);color:var(--text);transition:transform .15s var(--ease),border-color .2s,background .2s}
+.tile:hover{transform:translateY(-3px);border-color:rgba(255,201,74,.55)}
+.tile .ic{font-size:18px;line-height:1}
+.tile b{font-family:'Unbounded';font-size:18px}
+.tile small{font-size:11px;color:var(--muted)}
+.tile em{font-style:normal;font-size:10px;padding:2px 7px;border-radius:99px;background:rgba(255,255,255,.07);color:var(--muted)}
+.tile.opened{background:rgba(124,92,255,.14);border-color:rgba(160,135,255,.35)}
+.tile.current{background:rgba(255,201,74,.12);border-color:var(--gold)}
+.tile.current em{background:var(--gold);color:var(--ink);font-weight:700}
+.tile.current small{color:var(--gold)}
+.tile.locked{opacity:.8}
+.tile em.loss{background:rgba(255,77,109,.15);color:#ff9bab;font-weight:700}
+.c-lead small b{color:var(--gold)}
+.tile .bar{position:absolute;left:0;bottom:0;height:4px;width:0;background:linear-gradient(90deg,var(--violet),var(--pink))}
+@media(max-width:700px){.tiles-c{grid-template-columns:repeat(3,1fr)}.chips-a button{font-size:11px}}
+@media(max-width:560px){.tick{font-size:10px;padding:0}.tick.locked .t-l::before{display:none}.line-b{margin:4px 16px 0}.b-row .btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap music-wrap">
+  <header class="top">
+    <a class="logo" href="../"><b>potenceval</b><span>games</span></a>
+    <div class="top-right"><button class="qbtn">Как играть</button><button class="exit">К подборкам</button></div>
+  </header>
+  <div class="switch-row">
+    <div class="switch" id="switch"><span class="ind"></span>
+      <button data-v="D" class="on"><b>D</b>Автомат</button>
+      <button data-v="A"><b>A</b>Подсказки</button>
+      <button data-v="B"><b>B</b>Шкала</button>
+      <button data-v="C"><b>C</b>Плитки</button>
+    </div>
+    <button class="qbtn" id="reset">↺ Сначала</button>
+  </div>
+  <main id="stage"></main>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script>
+const L = [0.5, 1, 2, 5, 10, 15], P = [1000, 800, 600, 400, 200, 100];
+let v = 'D', prev = 0, ask = -1, askT = 0, enter = true, step = 0, playing = 0, coach = new Set([1, 2, 3]), feedback = '', t0 = 0, raf = 0, toastT = 0;
+const fmt = n => n === 0.5 ? '0,5' : String(n);
+const $ = s => document.querySelector(s), stage = $('#stage');
+
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, 2600); }
+
+function stop() { cancelAnimationFrame(raf); playing = 0; paint(0); }
+function play(k = step) {
+  if (playing && k === playing - 1) return stop();
+  stop(); playing = k + 1; t0 = performance.now();
+  const ms = L[k] * 1000;
+  const tick = now => { const e = Math.min(1, (now - t0) / ms); paint(e * L[k]); if (e < 1) raf = requestAnimationFrame(tick); else stop(); };
+  raf = requestAnimationFrame(tick);
+}
+// Длинный кусок открывается только вторым нажатием: случайный тап не сжигает очки.
+function open(k, sure = false) {
+  if (k <= step) return play(k);
+  if (!sure && ask !== k) {
+    ask = k; clearTimeout(askT); askT = setTimeout(() => { ask = -1; markAsk(); }, 3000);
+    return markAsk();
+  }
+  ask = -1; step = k; feedback = ''; coach.delete(2); render(); play(k);
+}
+function markAsk() {
+  stage.querySelectorAll('[data-open]').forEach(b => {
+    const i = Number(b.dataset.open), on = i === ask;
+    b.classList.toggle('ask', on);
+    if (on) b.dataset.ask = v === 'D' ? `Ещё раз
+−${P[step] - P[i]}` : v === 'B' ? `Открыть ${fmt(L[i])} с? −${P[step] - P[i]} очков` : `Ещё раз — открыть
+−${P[step] - P[i]} очков`;
+  });
+}
+
+function paint(sec) {
+  const k = playing - 1;
+  $('#card')?.classList.toggle('is-playing', !!playing);
+  const sym = $('#playBtn .record-symbol'); if (sym) sym.textContent = playing ? '■' : '▶';
+  const meter = $('#playMeter'); if (meter) meter.style.width = playing ? `${sec / L[k] * 100}%` : '0';
+  const status = $('#playStatus'); if (status) status.textContent = playing ? (v === 'D' ? 'играет…' : `Играет… ${fmt(L[k])} с`) : v === 'D' ? 'музыки' : 'Нажми на пластинку и прислушайся.';
+  const jp = $('.jb-play'); if (jp) jp.style.setProperty('--p', playing ? sec / L[k] * 100 : 0);
+  const pb = $('#progB'); if (pb) pb.style.width = playing ? `${Math.sqrt(sec / 15) * 100}%` : '0';
+  document.querySelectorAll('.tile').forEach((t, i) => { t.querySelector('.ic').textContent = playing && i === k ? '■' : i > step ? '🔒' : '▶'; t.querySelector('.bar').style.width = playing && i === k ? `${sec / L[k] * 100}%` : '0'; });
+}
+
+const header = () => `<div class="round-top"><div><h1>Угадай этот трек</h1><p>Раунд 1 из 10 · Ру-рэп</p></div><div class="total-score"><b>0</b> очков</div></div>`;
+const history = () => `<section class="attempt-history"><div class="history-heading"><h2>Ваши попытки <small>${feedback ? 1 : 0}/6</small></h2></div>${feedback ? `<ol><li class="attempt wrong"><span class="attempt-symbol">×</span><div><b>Мокрые кроссы</b><small>Тима Белорусских</small><span class="attempt-verdict">Не та песня · ${fmt(L[step - 1])} с</span></div></li></ol>` : '<p class="history-empty">Здесь появятся ваши ответы.</p>'}</section>`;
+const vinyl = (cls = '') => `<button class="record-button ${cls}" id="playBtn" aria-label="Слушать"><span class="vinyl"></span><span class="record-symbol">▶</span></button>`;
+const fb = () => feedback ? `<div class="round-feedback wrong"><b>Не та песня. Открыли ${fmt(L[step])} с — слушай ещё.</b><span>Тима Белорусских — Мокрые кроссы</span></div>` : '';
+const form = (extra = '') => `<form class="guess-form" id="guessForm" autocomplete="off"><label for="answerInput">Узнал? Пиши название или исполнителя</label><div class="answer-row"><div class="search-wrap"><input class="field" id="answerInput" placeholder="Кажется, я знаю…"></div><button class="btn primary" type="submit">Ответить</button></div>${extra}<button class="give-up" type="button" id="giveUp">Сдаться и посмотреть ответ</button></form>${fb()}`;
+const c = (n, text) => coach.has(n) ? `<div class="coach" data-coach="${n}"><b>${n}</b><span>${text}</span><button type="button" class="coach-x" aria-label="Скрыть подсказку">✕</button></div>` : '';
+// Подсказка уходит сама, как только сделал то, о чём она говорит.
+function done(n) { if (!coach.delete(n)) return; const el = $(`[data-coach="${n}"]`); if (el) { el.classList.add('bye'); setTimeout(() => el.remove(), 350); } syncHelp(); }
+function syncHelp() { const h = $('#help'); if (h) h.hidden = coach.size > 0; }
+
+function viewA() {
+  const help = '<button class="help-btn" id="help" title="Показать подсказки">? Подсказки</button>';
+  const next = step < 5 ? `<button class="more-a" id="more"><i>⏩</i><span>Не узнал? Слушать ${fmt(L[step + 1])} с<small>За ответ будет ${P[step + 1]} очков вместо ${P[step]}</small></span></button>` : '';
+  return `<div class="listen-card" id="card"><div class="listen-top"><span>За ответ сейчас: ${P[step]} очков</span>${help}</div>
+    <div class="player-body">${vinyl()}<div class="player-copy"><div class="duration-line"><b>${fmt(L[step])}</b>с музыки</div><div class="play-status" id="playStatus"></div><div class="meter"><span id="playMeter"></span></div></div></div>
+    ${c(1, 'Нажми на пластинку — сыграет кусочек песни. Можно слушать сколько угодно раз.')}
+    <div class="chips-a">${L.map((n, i) => `<button data-open="${i}" class="${i === step ? 'current' : i < step ? 'opened' : 'locked'}">${fmt(n)} с<small>${P[i]} очков</small></button>`).join('')}</div>
+    ${next}${c(2, 'Не узнал — жми жёлтую кнопку, будет звучать дольше. Или сразу выбери любую длину сверху.')}</div>
+    ${form(c(3, 'Узнал — пиши название или исполнителя и выбери песню из списка.'))}`;
+}
+
+function viewD() {
+  const help = '<button class="help-btn" id="help" title="Показать подсказки">? Подсказки</button>';
+  const more = step < 5 ? `<button class="jb-more" id="more">Не узнал? Слушать ${fmt(L[step + 1])} с <small>· за ответ станет ${P[step + 1]}</small></button>` : '';
+  return `<div class="jukebox" id="card">
+    <div class="jb-top"><span class="jb-sign">Полсекунды</span>${help}</div>
+    <div class="jb-dome"><div class="jb-glass">
+      <div class="jb-marquee">★ за ответ сейчас <b>${P[step]}</b> очков ★</div>
+      <div class="jb-record"></div>
+      <button class="jb-play" id="playBtn" aria-label="Слушать"><span class="record-symbol">▶</span></button>
+      <div class="jb-cap"><b>${fmt(L[step])} с</b><span id="playStatus"></span></div>
+    </div></div>
+    ${c(1, 'Жми большую кнопку — сыграет кусочек песни. Повторять можно сколько угодно.')}
+    <div class="jb-keys">${L.map((n, i) => `<button class="jb-key ${i === step ? 'current' : i < step ? 'opened' : 'locked'}" data-open="${i}"><i></i>${fmt(n)} с<small>${P[i]}</small></button>`).join('')}</div>
+    ${more}${c(2, 'Не узнал — открой кусок подлиннее: кнопка выше или любая клавиша. Чем длиннее, тем меньше очков.')}</div>
+    ${form(c(3, 'Узнал — пиши название или исполнителя и выбери песню из списка.'))}`;
+}
+
+function viewB() {
+  const pos = i => Math.sqrt(L[i] / 15) * 100;
+  return `<div class="listen-card" id="card"><div class="listen-top"><span>За ответ сейчас: ${P[step]} очков</span></div>
+    <div class="player-body">${vinyl()}<div class="player-copy"><div class="duration-line"><b>${fmt(L[step])}</b>с из 15 открыто</div><div class="play-status" id="playStatus"></div></div></div>
+    <div class="line-b" id="lineB"><div class="rail"></div><div class="opened" style="width:${pos(step)}%"></div><div class="prog" id="progB"></div>
+    ${L.map((n, i) => `<button class="tick ${i === step ? 'cur' : i < step ? 'open' : 'locked'}" style="left:${pos(i)}%" data-open="${i}" aria-label="Открыть ${fmt(n)} с"><span class="t-l">${fmt(n)} с</span><i></i><span class="t-p">${P[i]}</span></button>`).join('')}</div>
+    <div class="b-row"><p>Не узнал? Слушай дольше —<br>или нажми на любую засечку на линии.</p>${step < 5 ? `<button class="btn gold" id="more">⏩ Слушать ${fmt(L[step + 1])} с <small>· ${P[step + 1]} очков</small></button>` : ''}</div></div>${form()}`;
+}
+
+function viewC() {
+  const tag = i => i === step ? 'сейчас' : i < step ? 'открыто' : 'открыть';
+  return `<div class="listen-card" id="card"><div class="listen-top"><span>За ответ сейчас: ${P[step]} очков</span></div>
+    <div class="c-lead">${vinyl()}<p>Жми на плитку — услышишь столько секунд.<small>Сейчас за ответ <b>${P[step]}</b> очков. Открыть кусок длиннее можно сразу, но очков станет меньше — на плитке видно, сколько потеряешь. Открытое слушай сколько угодно.</small></p></div>
+    <div class="tiles-c">${L.map((n, i) => `<button class="tile ${i === step ? 'current' : i < step ? 'opened' : 'locked'}" data-open="${i}"><span class="ic">▶</span><b>${fmt(n)} с</b><small>${P[i]} очков</small>${i > step ? `<em class="loss">−${P[step] - P[i]} очков</em>` : `<em>${tag(i)}</em>`}<span class="bar"></span></button>`).join('')}</div></div>${form()}`;
+}
+
+function render() {
+  stop();
+  stage.innerHTML = `<section class="game-shell ${enter ? 'enter' : ''}">${header()}<div class="round-layout"><div class="round-main">${{ A: viewA, B: viewB, C: viewC, D: viewD }[v]()}</div>${history()}</div></section>`;
+  if (v !== 'C') $('#playBtn').onclick = () => play(step);
+  stage.querySelectorAll('[data-open]').forEach(b => b.onclick = () => open(Number(b.dataset.open)));
+  $('#lineB')?.addEventListener('click', e => { if (e.target.closest('.tick')) return; const r = e.currentTarget.getBoundingClientRect(), sec = ((e.clientX - r.left) / r.width) ** 2 * 15; open(sec <= L[step] + 0.05 ? step : L.findIndex(n => n >= sec - 0.05)); });
+  $('#more')?.addEventListener('click', () => open(step + 1, true));
+  stage.querySelectorAll('[data-open]').forEach(b => { const i = Number(b.dataset.open); if (i > prev && i <= step) b.classList.add('just'); });
+  const ob = $('.line-b .opened'); if (ob && prev !== step) { const w = ob.style.width; ob.style.width = `${Math.sqrt(L[prev] / 15) * 100}%`; requestAnimationFrame(() => requestAnimationFrame(() => ob.style.width = w)); }
+  countDown($('.listen-top span'), P[prev], P[step]);
+  prev = step; enter = false;
+  stage.querySelectorAll('.coach-x').forEach(x => x.onclick = () => done(Number(x.parentElement.dataset.coach)));
+  $('#help')?.addEventListener('click', () => { coach = new Set([1, 2, 3]); render(); });
+  if (v === 'A' || v === 'D') { $('#playBtn').addEventListener('click', () => done(1)); $('#answerInput').addEventListener('input', () => done(3)); }
+  syncHelp();
+  $('#giveUp').onclick = () => toast('Тут откроется экран с ответом');
+  $('#guessForm').onsubmit = e => { e.preventDefault(); if (!$('#answerInput').value.trim()) return toast('Сначала напиши ответ'); if (step < 5) { step++; feedback = 'wrong'; render(); } else toast('Попытки кончились — показали бы ответ'); };
+  paint(0);
+}
+
+function countDown(el, from, to) {
+  if (!el || from === to) return;
+  const t = performance.now(), f = now => { const e = Math.min(1, (now - t) / 600); el.textContent = `За ответ сейчас: ${Math.round(from + (to - from) * (1 - (1 - e) ** 3))} очков`; if (e < 1) requestAnimationFrame(f); };
+  requestAnimationFrame(f);
+}
+$('#switch').onclick = e => {
+  const b = e.target.closest('button'); if (!b || b.dataset.v === v) return;
+  v = b.dataset.v; enter = true; ask = -1;
+  const btns = [...document.querySelectorAll('#switch button')];
+  btns.forEach(x => x.classList.toggle('on', x === b));
+  $('#switch .ind').style.transform = `translateX(${btns.indexOf(b) * 100}%)`;
+  render();
+};
+$('#reset').onclick = () => { step = prev = 0; feedback = ''; coach = new Set([1, 2, 3]); enter = true; ask = -1; render(); };
+document.addEventListener('keydown', e => { if (e.code === 'Space' && !(e.target instanceof HTMLInputElement)) { e.preventDefault(); play(step); } });
+render();
+</script>
+</body>
+</html>

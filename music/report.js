@@ -1,6 +1,7 @@
 // Флажок «Проблема с треком»: жалоба уходит push-уведомлением в ntfy.sh (без регистрации).
 // Читать жалобы: приложение ntfy → подписка на тему ниже, или https://ntfy.sh/<тема> в браузере.
 import { $, LS, toast } from '../shared/kit.js';
+import { reportPlaybackError } from '../shared/diagnostics.js';
 
 export const REPORT_TOPIC = 'potenceval-halfsec-reports-b28430b1bd8c';
 const REASONS = { silent: 'Не играет / тишина', wrong: 'Не подходит к подборке', answer: 'Правильный ответ не засчитало', other: 'Другое' };
@@ -60,5 +61,14 @@ function decorate() {
   host.append(flag);
 }
 
-new MutationObserver(decorate).observe(stage, { childList: true, subtree: true });
+// Окно ошибки звука показалось — сообщаем сами, с текстом ошибки, устройством и сетью.
+function watchAudioError() {
+  const box = stage.querySelector('#audioError');
+  if (box && !box.hidden && !box.dataset.reported) {
+    box.dataset.reported = '1';
+    reportPlaybackError('Полсекунды', track(), stage.querySelector('#audioErrorText')?.textContent || 'ошибка звука');
+  }
+}
+
+new MutationObserver(() => { decorate(); watchAudioError(); }).observe(stage, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden'] });
 decorate();

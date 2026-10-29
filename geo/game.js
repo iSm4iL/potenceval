@@ -1,18 +1,24 @@
-// Правила «Угадай страну» без интерфейса: улики, очки, ошибки с «тепло/холодно».
+// Правила «Угадай страну»: покупки, очки, платные направления и ротация стран.
 export const START = 1000, WRONG = 50;
-// Порядок на доске. Первый факт открыт сразу; форма страны — последняя улика.
+// Первый факт бесплатен. Все остальные подсказки можно покупать независимо.
 export const CLUES = [
-  { key: 'fact1', cost: 0, label: 'Архив' },
+  { key: 'fact1', cost: 0, label: 'Первый факт' },
   { key: 'fact2', cost: 50, label: 'Ещё факт' },
   { key: 'phrase', cost: 75, label: 'Язык' },
   { key: 'food', cost: 75, label: 'Кухня' },
-  { key: 'walk', cost: 125, label: 'Прогулка' },
-  { key: 'money', cost: 150, label: 'Валюта' },
-  { key: 'person', cost: 200, label: 'Знаменитость' },
-  { key: 'shape', cost: 250, label: 'Форма страны' },
+  { key: 'money', cost: 100, label: 'Валюта' },
+  { key: 'person', cost: 150, label: 'Известный человек' },
+  { key: 'walk', cost: 150, label: 'Прогулка' },
+  { key: 'shape', cost: 200, label: 'Контур страны' },
+  { key: 'compass', cost: 100, label: 'Направление' },
 ];
-// free — улики, которые в этом раунде ничего не стоят (прогулка там, где Google не снимал улицы).
-const cost = (r, key) => (r.free.includes(key) ? 0 : CLUES.find(c => c.key === key).cost);
+// free оставлен для совместимости; отсутствующие подсказки блокируются через unavailable.
+export const cluePrice = (r, key) => (r.free.includes(key) ? 0 : r.prices[key] ?? CLUES.find(c => c.key === key).cost);
+export function currencyPrice(label, labels) {
+  const family = value => value.replace(' США', '').replace('Риял', 'Риал');
+  const count = labels.filter(value => family(value) === family(label)).length;
+  return count >= 8 ? 50 : count >= 2 ? 100 : 175;
+}
 
 export const norm = s => String(s).toLocaleLowerCase('ru').replace(/ё/g, 'е').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 
@@ -25,15 +31,22 @@ export function nameIndex(world, extra = []) {
 }
 export const matchCountry = (text, index) => index.get(norm(text)) || null;
 
-export function newRound(id, free = []) {
-  return { id, free, open: ['fact1'], wrong: [], score: START, done: false, solved: false };
+export function newRound(id, free = [], unavailable = [], prices = {}) {
+  return { id, free, unavailable, prices, open: ['fact1'], wrong: [], score: START, done: false, solved: false };
 }
-// Форма открывается, только когда все остальные улики уже на доске.
-export const canOpen = (r, key) => !r.done && !r.open.includes(key) && (key !== 'shape' || CLUES.every(c => c.key === 'shape' || r.open.includes(c.key)));
+export const canOpen = (r, key) => CLUES.some(c => c.key === key) && !r.done && !r.open.includes(key)
+  && !r.unavailable.includes(key) && r.score >= cluePrice(r, key) && (key !== 'compass' || r.wrong.length > 0);
 export function openClue(r, key) {
   if (!canOpen(r, key)) return false;
   r.open.push(key);
-  r.score = Math.max(0, r.score - cost(r, key));
+  r.score = Math.max(0, r.score - cluePrice(r, key));
+  return true;
+}
+export function refundWalk(r) {
+  if (r.done || !r.open.includes('walk') || r.unavailable.includes('walk')) return false;
+  r.open = r.open.filter(key => key !== 'walk');
+  r.score = Math.max(0, START - r.wrong.length * WRONG - r.open.reduce((sum, key) => sum + cluePrice(r, key), 0));
+  r.unavailable.push('walk');
   return true;
 }
 
@@ -54,10 +67,30 @@ export function arrow([lat1, lon1], [lat2, lon2]) {
 export function guess(r, id, at) {
   if (r.done || r.wrong.some(w => w.id === id)) return null;
   if (id === r.id) { r.done = r.solved = true; return { correct: true }; }
-  const miss = { id, km: distanceKm(at(id), at(r.id)), dir: arrow(at(id), at(r.id)) };
+  const miss = { id };
   r.wrong.push(miss);
   r.score = Math.max(0, r.score - WRONG);
   return { correct: false, ...miss };
+}
+// Направления доступны только после покупки; расстояние больше не выдаёт бесплатную подсказку.
+export function guidance(r, at) {
+  return r.open.includes('compass') ? r.wrong.map(m => ({ id: m.id, dir: arrow(at(m.id), at(r.id)) })) : [];
+}
+
+export function shuffle(items, rnd = Math.random) {
+  const deck = [...items];
+  for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
+  return deck;
+}
+// Не повторяем страну, пока не исчерпана подборка; на границе цикла сначала идут ещё не сыгранные.
+export function countryOrder(ids, rounds, recent = [], rnd = Math.random) {
+  const unique = [...new Set(ids)], unseen = unique.filter(id => !recent.includes(id));
+  const seen = unique.filter(id => recent.includes(id)).sort((a, b) => recent.lastIndexOf(a) - recent.lastIndexOf(b));
+  return [...shuffle(unseen, rnd), ...seen].slice(0, Math.max(0, Math.min(rounds, unique.length)));
+}
+export function selectFacts(facts, used = [], rnd = Math.random) {
+  const unique = [...new Set(facts)], fresh = shuffle(unique.filter(f => !used.includes(f)), rnd);
+  return [...fresh, ...shuffle(unique.filter(f => used.includes(f)), rnd)].slice(0, 2);
 }
 export function surrender(r) {
   if (r.done) return;
@@ -67,21 +100,20 @@ export function surrender(r) {
 
 // Партия: случайные страны из подборки, у каждого игрока свой счёт.
 // freeOf(id) — список бесплатных улик для страны.
-export function createGame(ids, rounds, names, { rnd = Math.random, freeOf = () => [] } = {}) {
-  const deck = [...ids];
-  for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
-  const order = deck.slice(0, Math.min(rounds, deck.length));
-  return { order, index: 0, freeOf, players: names.map(name => ({ name, score: 0 })), log: [], round: newRound(order[0], freeOf(order[0])) };
+export function createGame(ids, rounds, names, { rnd = Math.random, recent = [], freeOf = () => [], unavailableOf = () => [], pricesOf = () => ({}) } = {}) {
+  const order = countryOrder(ids, rounds, recent, rnd);
+  if (!order.length) throw new Error('Нет стран в подборке');
+  return { order, index: 0, freeOf, unavailableOf, pricesOf, players: names.map(name => ({ name, score: 0 })), log: [], round: newRound(order[0], freeOf(order[0]), unavailableOf(order[0]), pricesOf(order[0])) };
 }
 // Очки раунда достаются тому, кто раскрыл страну (who — номер игрока, null — никто).
 export function award(g, who) {
   const r = g.round;
   const pts = r.solved && who != null ? r.score : 0;
   if (pts) g.players[who].score += pts;
-  g.log.push({ id: r.id, who: pts ? who : null, pts });
+  g.log.push({ id: r.id, who: pts ? who : null, pts, solved: r.solved });
 }
 export function nextRound(g) {
   g.index += 1;
-  g.round = g.index < g.order.length ? newRound(g.order[g.index], g.freeOf(g.order[g.index])) : null;
+  g.round = g.index < g.order.length ? newRound(g.order[g.index], g.freeOf(g.order[g.index]), g.unavailableOf(g.order[g.index]), g.pricesOf(g.order[g.index])) : null;
   return g.round;
 }

@@ -1,4 +1,5 @@
 // «Где я?» (как GeoGuessr): чистая логика. Хост держит состояние, остальные шлют действия.
+import { t as tr } from '../shared/i18n.js';
 import { SPOTS } from './spots.js';
 
 export const MAX_PLAYERS = 8;
@@ -53,7 +54,7 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
   switch (a.type) {
     case 'join': {
       if (t.banned?.includes(from)) return s;
-      const name = clean(a.name, 20) || 'Игрок';
+      const name = clean(a.name, 20) || tr('Игрок', 'Player');
       if (me) { me.name = name; me.online = true; break; }
       if (t.players.length >= MAX_PLAYERS) return s;
       t.players.push({ id: from, name, color: COLORS[t.players.length % COLORS.length], online: true, score: 0 });

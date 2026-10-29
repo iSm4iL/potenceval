@@ -1,16 +1,17 @@
 // Меню-бургер слева: список игр сайта. Подключается на каждой странице.
 import './consent.js';
+import { lang, t, setLang } from './i18n.js';
 const ROOT = new URL('../', import.meta.url);
 // Порядок = порядок на главной: сначала три основные игры.
 export const GAMES = [
-  { path: 'music/', icon: '🎧', name: 'Полсекунды', desc: 'Угадай музыку · один экран или лобби' },
-  { path: 'geo/', icon: '🕵️', name: 'Угадай страну', desc: 'Детективная доска с уликами · 1–4 игрока' },
-  { path: 'opening/', icon: '✷', name: 'Угадай опенинг', desc: 'Аниме, кино, сериалы и мультфильмы по музыке' },
-  { path: 'where/', icon: '📍', name: 'Где я?', desc: 'Как GeoGuessr · один или с друзьями' },
-  { path: 'screen/', icon: '🎬', name: 'До титров', desc: 'Угадай кино, сериал, аниме или мультфильм' },
-  { path: 'genie/', icon: '✦', name: 'Джинн', desc: 'Суперсила с подвохом · 2–8 игроков' },
-  { path: 'dice/', icon: '🎲', name: 'Костяшки', desc: 'Кости как в Cult of the Lamb · 1–2 игрока' },
-  { path: 'rap/', icon: '🎙', name: 'Биты', desc: 'Звуковая мастерская · слушать и сохранять' },
+  { path: 'music/', icon: '🎧', name: t('Полсекунды', 'Half a Second'), desc: t('Угадай музыку · один экран или лобби', 'Guess the song · one screen or lobby') },
+  { path: 'geo/', icon: '🕵️', name: t('Угадай страну', 'Guess the Country'), desc: t('Детективная доска с уликами · 1–4 игрока', 'A detective board of clues · 1–4 players') },
+  { path: 'opening/', icon: '✷', name: t('Угадай опенинг', 'Name That Opening'), desc: t('Аниме, кино, сериалы и мультфильмы по музыке', 'Anime, movies, shows and cartoons by their music') },
+  { path: 'where/', icon: '📍', name: t('Где я?', 'Where Am I?'), desc: t('Как GeoGuessr · один или с друзьями', 'Like GeoGuessr · solo or with friends') },
+  { path: 'screen/', icon: '🎬', name: t('До титров', 'Before the Credits'), desc: t('Угадай кино, сериал, аниме или мультфильм', 'Guess the movie, show, anime or cartoon') },
+  { path: 'genie/', icon: '✦', name: t('Джинн', 'Genie'), desc: t('Суперсила с подвохом · 2–8 игроков', 'A superpower with a catch · 2–8 players') },
+  { path: 'dice/', icon: '🎲', name: t('Костяшки', 'Knucklebones'), desc: t('Кости как в Cult of the Lamb · 1–2 игрока', 'Dice like in Cult of the Lamb · 1–2 players') },
+  { path: 'rap/', icon: '🎙', name: t('Биты', 'Beats'), desc: t('Звуковая мастерская · слушать и сохранять', 'Beat workshop · listen and save') },
 ];
 const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches || document.hidden;
 const anim = (el, kf, o) => (still() ? null : el.animate(kf, { easing: 'cubic-bezier(.34,1.56,.64,1)', fill: 'backwards', ...o }));
@@ -18,31 +19,48 @@ const here = path => new URL(path, ROOT).pathname === location.pathname;
 
 const btn = document.createElement('button');
 btn.className = 'burger';
-btn.setAttribute('aria-label', 'Меню игр');
+btn.setAttribute('aria-label', t('Меню игр', 'Games menu'));
 btn.setAttribute('aria-expanded', 'false');
 btn.innerHTML = '<span></span><span></span><span></span>';
-document.querySelector('.top')?.prepend(btn);
+const top = document.querySelector('.top');
+top?.prepend(btn);
 
-// В игре шапка — только меню и название; кнопки игры (правила, выход, код комнаты) уезжают в меню.
+// В игре шапка — меню, «potenceval» (на главную) и название игры (на её первый экран);
+// кнопки игры (правила, выход, код комнаты) уезжают в меню.
 const game = GAMES.find(g => here(g.path)), tools = document.querySelector('.top .top-right');
-const label = document.querySelector('.top .logo span');
-if (game && label) label.textContent = game.name;
+const logo = document.querySelector('.top .logo');
+if (game && logo) {
+  const box = document.createElement('div');
+  box.className = logo.className;
+  box.innerHTML = `<a href="${ROOT.href}"><b>potenceval</b></a><a href="${new URL(game.path, ROOT).href}"><span>${game.name}</span></a>`;
+  box.addEventListener('click', e => { if (!e.target.closest('a')) location.href = ROOT.href; }); // значок слева от надписи
+  logo.replaceWith(box);
+}
+
+// Переключатель языка — справа в шапке.
+const langs = document.createElement('div');
+langs.className = 'lang';
+langs.setAttribute('role', 'group');
+langs.setAttribute('aria-label', t('Язык', 'Language'));
+langs.innerHTML = ['ru', 'en'].map(l => `<button data-l="${l}" aria-pressed="${l === lang}">${l.toUpperCase()}</button>`).join('');
+langs.onclick = e => { const l = e.target.closest('button')?.dataset.l; if (l && l !== lang) setLang(l); };
+top?.append(langs);
 
 const link = (path, icon, name, desc) => `<a class="dlink ${here(path) ? 'on' : ''}" href="${new URL(path, ROOT).href}">
   <span class="ic">${icon}</span><span><b>${name}</b><small>${desc}</small></span></a>`;
 const drawer = document.createElement('div');
 drawer.className = 'drawer';
 drawer.hidden = true;
-drawer.innerHTML = `<div class="drawer-bg"></div><nav class="drawer-panel" aria-label="Игры">
+drawer.innerHTML = `<div class="drawer-bg"></div><nav class="drawer-panel" aria-label="${t('Игры', 'Games')}">
   <div class="drawer-head"><span class="logo"><b>potenceval</b><span>games</span></span></div>
-  ${tools ? `<div class="dgame"><div class="dlabel">${game?.name || 'Эта игра'}</div><div class="dtools"></div></div>` : ''}
-  ${link('', '🏠', 'Главная', 'Все игры')}
-  <div class="dlabel">Игры</div>
+  ${tools ? `<div class="dgame"><div class="dlabel">${game?.name || t('Эта игра', 'This game')}</div><div class="dtools"></div></div>` : ''}
+  ${link('', '🏠', t('Главная', 'Home'), t('Все игры', 'All games'))}
+  <div class="dlabel">${t('Игры', 'Games')}</div>
   ${GAMES.map(g => link(g.path, g.icon, g.name, g.desc)).join('')}
-  <div class="dsoon">Скоро новые игры</div>
-  <div class="dlegal"><a href="${new URL('legal/privacy.html', ROOT).href}">Конфиденциальность</a>
-  <a href="${new URL('legal/terms.html', ROOT).href}">Соглашение</a>
-  <a href="${new URL('legal/privacy.html#contacts', ROOT).href}">Контакты</a></div></nav>`;
+  <div class="dsoon">${t('Скоро новые игры', 'More games soon')}</div>
+  <div class="dlegal"><a href="${new URL('legal/privacy.html', ROOT).href}">${t('Конфиденциальность', 'Privacy')}</a>
+  <a href="${new URL('legal/terms.html', ROOT).href}">${t('Соглашение', 'Terms')}</a>
+  <a href="${new URL('legal/privacy.html#contacts', ROOT).href}">${t('Контакты', 'Contacts')}</a></div></nav>`;
 document.body.append(drawer);
 const panel = drawer.querySelector('.drawer-panel'), bg = drawer.querySelector('.drawer-bg');
 if (tools) {

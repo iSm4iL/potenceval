@@ -1,3 +1,4 @@
+import { t } from '../shared/i18n.js';
 import { createState, reduce, colScore, total, humans, botMove, BOT_ID } from './game.js';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, enter,
   setControls, initPage, buildHome, buildLobby, renderPlist } from '../shared/kit.js?v=kick-1';
@@ -42,8 +43,8 @@ async function renderState(s) {
 
 function controls(s) {
   const b = [];
-  if (s?.phase === 'lobby' && isHostOf(s)) b.push(['start', humans(s).length < 2 ? 'Играть против Скелета' : 'Начать', 'primary ready', () => send({ type: 'start' })]);
-  else if (s?.phase === 'over' && isHostOf(s)) b.push(['again', humans(s).length > 2 ? 'Следующая пара' : 'Реванш', 'primary ready', () => send({ type: 'start' })], ['lobby', 'В лобби', 'ghost', () => send({ type: 'lobby' })]);
+  if (s?.phase === 'lobby' && isHostOf(s)) b.push(['start', humans(s).length < 2 ? t('Играть против Скелета', 'Play the Skeleton') : t('Начать', 'Start'), 'primary ready', () => send({ type: 'start' })]);
+  else if (s?.phase === 'over' && isHostOf(s)) b.push(['again', humans(s).length > 2 ? t('Следующая пара', 'Next pair') : t('Реванш', 'Rematch'), 'primary ready', () => send({ type: 'start' })], ['lobby', t('В лобби', 'Back to lobby'), 'ghost', () => send({ type: 'lobby' })]);
   setControls(b);
 }
 
@@ -52,11 +53,11 @@ function controls(s) {
 const colorOf = (s, id) => (id === s.duel[1] ? 'black' : '');
 const dieHTML = (v, cls = '') => `<div class="die ${cls}" data-v="${v}">${'<i></i>'.repeat(9)}</div>`;
 function buildHomeScreen() {
-  buildHome(stage, net, `<div class="hero" data-in><span class="kicker">Как в Cult of the Lamb · 1–2 игрока</span>
-    <h1 id="heroTitle">Костяшки</h1>
-    <p class="sub">Кидай кость в один из трёх столбцов. Одинаковые кости в столбце умножаются, а твоя кость сносит такие же у соперника.</p>
-    <figure class="dice-scene"><img src="../shared/assets/club/dice.webp" alt="Костяные кубики в ореховом лотке на зелёном сукне" width="1200" height="800" fetchpriority="high"></figure>
-    <div class="ritual" aria-label="Пример партии: белые против чёрных">
+  buildHome(stage, net, `<div class="hero" data-in><span class="kicker">${t('Как в Cult of the Lamb · 1–2 игрока', 'Like in Cult of the Lamb · 1–2 players')}</span>
+    <h1 id="heroTitle">${t('Костяшки', 'Knucklebones')}</h1>
+    <p class="sub">${t('Кидай кость в один из трёх столбцов. Одинаковые кости в столбце умножаются, а твоя кость сносит такие же у соперника.', 'Drop your die into one of three columns. Matching dice in a column multiply, and your die knocks out the same ones on your rival’s side.')}</p>
+    <figure class="dice-scene"><img src="../shared/assets/club/dice.webp" alt="${t('Костяные кубики в ореховом лотке на зелёном сукне', 'Bone dice in a walnut tray on green felt')}" width="1200" height="800" fetchpriority="high"></figure>
+    <div class="ritual" aria-label="${t('Пример партии: белые против чёрных', 'Sample game: white vs black')}">
       <div class="mini-board" data-side="black">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
       <div class="mini-mid"><span class="mini-tray"></span><span class="mini-turn"></span></div>
       <div class="mini-board" data-side="white">${('<div class="mini-col">' + '<span></span>'.repeat(3) + '</div>').repeat(3)}</div>
@@ -82,13 +83,13 @@ async function demoTable(root) {
   const tray = $('.mini-tray', root), turnEl = $('.mini-turn', root), wait = ms => new Promise(r => setTimeout(r, ms));
   if (still()) {
     boards.white = [[4, 4], [2], [6]]; boards.black = [[1], [5, 5], [3]];
-    draw(); tray.innerHTML = dieHTML(3); turnEl.textContent = 'пример партии';
+    draw(); tray.innerHTML = dieHTML(3); turnEl.textContent = t('пример партии', 'sample game');
     return;
   }
   for (let turn = 0; root.isConnected; turn++) {
     const side = turn % 2 ? 'black' : 'white', other = side === 'white' ? 'black' : 'white';
     const v = 1 + Math.floor(Math.random() * 6), mine = boards[side], theirs = boards[other];
-    turnEl.textContent = side === 'white' ? 'ход белых' : 'ход чёрных';
+    turnEl.textContent = side === 'white' ? t('ход белых', 'white’s turn') : t('ход чёрных', 'black’s turn');
     tray.innerHTML = dieHTML(v, side === 'black' ? 'black' : '');
     const d = $('.die', tray);
     if (!still()) {
@@ -121,13 +122,13 @@ async function demoTable(root) {
   }
 }
 const lobbyTag = (pl, s) => {
-  if (!pl.online) return 'отключился';
+  if (!pl.online) return t('отключился', 'offline');
   const i = humans(s).findIndex(x => x.id === pl.id);
-  return (pl.id === s.hostId ? 'хост · ' : '') + (i < 2 ? 'играет' : `в очереди #${i - 1}`);
+  return (pl.id === s.hostId ? t('хост · ', 'host · ') : '') + (i < 2 ? t('играет', 'playing') : t(`в очереди #${i - 1}`, `in line #${i - 1}`));
 };
 function buildLobbyScreen(s) {
-  buildLobby(stage, s, 'Играют двое: хост и первый, кто зайдёт. Если вас больше — проигравший уступает место следующему. Один — сыграешь со Скелетом.', lobbyTag, id => send({ type: 'kick', id }));
-  if (!isHostOf(s)) stage.append(h(`<p class="wait" data-in>Ждём, пока <b>${esc(nameOf(s, s.hostId))}</b> начнёт <span class="dots"><i></i><i></i><i></i></span></p>`));
+  buildLobby(stage, s, t('Играют двое: хост и первый, кто зайдёт. Если вас больше — проигравший уступает место следующему. Один — сыграешь со Скелетом.', 'Two play: the host and the first to join. If there are more of you, the loser gives up their seat to the next. Alone? Play the Skeleton.'), lobbyTag, id => send({ type: 'kick', id }));
+  if (!isHostOf(s)) stage.append(h(`<p class="wait" data-in>${t('Ждём, пока', 'Waiting for')} <b>${esc(nameOf(s, s.hostId))}</b> ${t('начнёт', 'to start')} <span class="dots"><i></i><i></i><i></i></span></p>`));
 }
 
 /* ---------- match ---------- */
@@ -139,8 +140,8 @@ const colEl = (id, c) => sideEl(id)?.querySelector(`.col[data-col="${c}"]`);
 function sideHTML(s, id, pos) {
   const pl = s.players.find(p => p.id === id) || { name: '???', color: '#555' };
   const head = `<div class="head"><span class="av" style="background:${esc(pl.color)}">${pl.bot ? '💀' : esc(first(pl.name))}</span>
-    <span class="nm">${id === s.hostId ? '👑 ' : ''}${esc(pl.name)}${id === me.pid ? ' (ты)' : ''}<small>${pl.bot ? 'бот · ' : pos === 'up' ? 'соперник · ' : ''}${colorOf(s, id) ? 'чёрные кости' : 'белые кости'}</small></span><span class="tot" data-tot>0</span></div>`;
-  const board = `<div class="board">${[0, 1, 2].map(c => `<div class="col" data-col="${c}" role="button" aria-label="Столбец ${c + 1}">${'<div class="cell"></div>'.repeat(3)}</div>`).join('')}</div>`;
+    <span class="nm">${id === s.hostId ? '👑 ' : ''}${esc(pl.name)}${id === me.pid ? t(' (ты)', ' (you)') : ''}<small>${pl.bot ? t('бот · ', 'bot · ') : pos === 'up' ? t('соперник · ', 'rival · ') : ''}${colorOf(s, id) ? t('чёрные кости', 'black dice') : t('белые кости', 'white dice')}</small></span><span class="tot" data-tot>0</span></div>`;
+  const board = `<div class="board">${[0, 1, 2].map(c => `<div class="col" data-col="${c}" role="button" aria-label="${t('Столбец', 'Column')} ${c + 1}">${'<div class="cell"></div>'.repeat(3)}</div>`).join('')}</div>`;
   const scores = `<div class="scores" data-scores><span>0</span><span>0</span><span>0</span></div>`;
   return `<div class="side ${pos}" data-side="${esc(id)}">${pos === 'up' ? head + board + scores : scores + board + head}</div>`;
 }
@@ -148,7 +149,7 @@ function buildMatch(s) {
   const [bottom, top] = seats(s);
   stage.append(h(`<div class="duel" data-in><div class="series" id="series"></div>${sideHTML(s, top, 'up')}
     <div class="mid"><div class="tray" id="tray"></div><div class="turn" id="turn"></div></div>${sideHTML(s, bottom, 'down')}</div>`));
-  if (!s.duel.includes(me.pid)) stage.append(h(`<p class="wait" data-in>Ты смотришь. Проигравший уступит место следующему в очереди.</p>`));
+  if (!s.duel.includes(me.pid)) stage.append(h(`<p class="wait" data-in>${t('Ты смотришь. Проигравший уступит место следующему в очереди.', 'You’re watching. The loser gives their seat to the next in line.')}</p>`));
   const mine = sideEl(bottom);
   mine.querySelectorAll('.col').forEach(col => {
     const c = +col.dataset.col;
@@ -216,23 +217,23 @@ async function rollAnim(die, v) {
   die.dataset.v = v;
 }
 function renderMid(s, anim) {
-  const tray = $('#tray'), t = $('#turn');
+  const tray = $('#tray'), turn = $('#turn');
   if (!tray) return;
-  if (s.phase !== 'play') { tray.replaceChildren(); t.innerHTML = ''; return; }
+  if (s.phase !== 'play') { tray.replaceChildren(); turn.innerHTML = ''; return; }
   const [, top] = seats(s);
   tray.innerHTML = dieHTML(s.die, colorOf(s, s.turn));
-  t.innerHTML = s.turn === me.pid
-    ? '<span class="arrow">▼</span> <b>Твой ход.</b><br>Выбери столбец'
-    : `<span class="arrow">${s.turn === top ? '▲' : '▼'}</span> Ходит <b>${esc(nameOf(s, s.turn))}</b>${s.turn === BOT_ID ? '<br>трясёт кость…' : ''}`;
-  if (s.lastCall) t.innerHTML += '<br><b class="last-call">Последний ход!</b>'; // соперник уже заполнил поле
+  turn.innerHTML = s.turn === me.pid
+    ? t('<span class="arrow">▼</span> <b>Твой ход.</b><br>Выбери столбец', '<span class="arrow">▼</span> <b>Your turn.</b><br>Pick a column')
+    : `<span class="arrow">${s.turn === top ? '▲' : '▼'}</span> ${t('Ходит', 'Turn:')} <b>${esc(nameOf(s, s.turn))}</b>${s.turn === BOT_ID ? t('<br>трясёт кость…', '<br>shaking the die…') : ''}`;
+  if (s.lastCall) turn.innerHTML += t('<br><b class="last-call">Последний ход!</b>', '<br><b class="last-call">Last move!</b>'); // соперник уже заполнил поле
   if (!anim) return;
   rollAnim($('.die', tray), s.die);
-  A(t, [{ opacity: 0, transform: 'translateX(-8px)' }, { opacity: 1, transform: 'none' }], { duration: 400 });
+  A(turn, [{ opacity: 0, transform: 'translateX(-8px)' }, { opacity: 1, transform: 'none' }], { duration: 400 });
 }
 function renderSeries(s) {
   const el = $('#series'), [a, b] = s.duel;
   const wa = s.wins[a] || 0, wb = s.wins[b] || 0;
-  el.innerHTML = wa + wb ? `Серия: ${esc(nameOf(s, a))} <b>${wa} : ${wb}</b> ${esc(nameOf(s, b))}` : `Партия ${s.match}`;
+  el.innerHTML = wa + wb ? `${t('Серия', 'Series')}: ${esc(nameOf(s, a))} <b>${wa} : ${wb}</b> ${esc(nameOf(s, b))}` : `${t('Партия', 'Game')} ${s.match}`;
 }
 
 // Кость летит из лотка в столбец, одинаковые кости соперника разлетаются, оставшиеся съезжают к центру.
@@ -293,7 +294,7 @@ async function patchMatch(p, s) {
 }
 function showResult(s, anim) {
   const [bottom, top] = seats(s), w = s.winner, playing = s.duel.includes(me.pid);
-  const title = w === 'draw' ? 'Ничья!' : playing ? (w === me.pid ? 'Победа!' : 'Поражение') : `${esc(nameOf(s, w))} забирает партию`;
+  const title = w === 'draw' ? t('Ничья!', 'Draw!') : playing ? (w === me.pid ? t('Победа!', 'Victory!') : t('Поражение', 'Defeat')) : t(`${esc(nameOf(s, w))} забирает партию`, `${esc(nameOf(s, w))} takes the game`);
   const box = $('.mid'); // итог — в центре, на месте лотка с костью
   box.replaceChildren(h(`<div class="result"><h2>${title}</h2>
     <p>${esc(nameOf(s, bottom))} <b>${total(s.boards[bottom])}</b> : <b>${total(s.boards[top])}</b> ${esc(nameOf(s, top))}</p></div>`));
