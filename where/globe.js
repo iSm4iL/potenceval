@@ -9,16 +9,16 @@ export function spherePoint(x, y, tilt = .20) {
 }
 
 export function mountGlobe(button, labels) {
-  const canvas = button.querySelector('canvas'), ctx = canvas.getContext('2d');
+  const canvas = button.closest('.globe-widget').querySelector('canvas'), ctx = canvas.getContext('2d');
   const image = new Image(), motion = matchMedia('(prefers-reduced-motion: reduce)');
-  let disposed = false, paused = motion.matches, visible = true, frame = 0, last = 0, angle = -.02, texture;
+  let disposed = false, paused = true, visible = true, frame = 0, last = 0, angle = -.02, texture;
   const size = 320, width = 2048, height = 1024, samples = [], pixels = ctx.createImageData(size, size);
   canvas.width = canvas.height = size;
   for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
     const p = spherePoint((x + .5 - size / 2) / (size / 2), (y + .5 - size / 2) / (size / 2));
     if (p) samples.push([4 * (y * size + x), p.u, Math.min(height - 1, Math.floor(p.v * height)), p.light]);
   }
-  const label = () => { button.setAttribute('aria-label', paused ? labels.play : labels.pause); button.setAttribute('aria-pressed', String(!paused)); };
+  const label = () => { button.textContent = paused ? labels.play : labels.pause; button.setAttribute('aria-pressed', String(!paused)); };
   function draw() {
     if (!texture || disposed) return;
     for (const [at, u, y, light] of samples) {
@@ -35,7 +35,7 @@ export function mountGlobe(button, labels) {
   }
   function resume() { if (!frame && texture && !paused && visible && !document.hidden && !disposed) frame = requestAnimationFrame(tick); }
   const click = () => { paused = !paused; label(); resume(); };
-  const preference = () => { paused = motion.matches; label(); resume(); };
+  const preference = () => { if (motion.matches) paused = true; label(); resume(); };
   const observer = new IntersectionObserver(entries => { visible = entries[0].isIntersecting; resume(); });
   observer.observe(button);
   button.addEventListener('click', click); motion.addEventListener('change', preference); document.addEventListener('visibilitychange', resume);

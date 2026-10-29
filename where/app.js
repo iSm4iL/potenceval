@@ -1,7 +1,7 @@
 import { t, lang } from '../shared/i18n.js?v=ui-20261029';
 import { createState, reduce, publicView, ROUNDS, TIMES } from './game.js';
 import { NAMES } from './spots.js';
-import { mountGlobe } from './globe.js';
+import { mountGlobe } from './globe.js?v=layout-20261029';
 import { A, $, h, esc, first, nameOf, me, LS, isHostOf, still, SPRING, confetti, enter,
   setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js?v=kick-1';
 import { createNet } from '../shared/net.js?v=own-1';
@@ -83,11 +83,11 @@ function controls(s) {
 }
 
 /* ---------- home & lobby ---------- */
-const GLOBE = `<div class="globe-stand"><div class="globe-meridian" aria-hidden="true"></div><button class="world-globe" id="worldGlobe" type="button"><canvas aria-hidden="true"></canvas></button><span class="globe-base" aria-hidden="true"></span><small>${t('Коснись глобуса, чтобы остановить', 'Tap the globe to pause')}</small></div>`;
+const GLOBE = `<figure class="globe-widget"><div class="globe-stand" aria-hidden="true"><div class="globe-meridian"></div><div class="world-globe"><canvas></canvas></div><span class="globe-base"></span></div><figcaption><button class="globe-control" id="worldGlobe" type="button">${t('Вращать глобус', 'Rotate the globe')}</button></figcaption></figure>`;
 function buildHomeScreen() {
   buildHome(stage, net, `<div class="hero expedition-hero" data-in><div class="expedition-copy"><span class="kicker">${t('Один или до 8 друзей', 'Solo or up to 8 friends')}</span>
     <h1>${t('Где я?', 'Where Am I?')}</h1>
-    <p class="sub">${t('Незнакомая улица. Ни адреса, ни билета обратно. Сможешь понять, где ты, по деталям вокруг?', 'An unfamiliar street. No address, no return ticket. Can you work out where you are from the details around you?')}</p></div>
+    <p class="sub">${t('Случайная улица где-то в мире. Осмотрись и найди это место на карте.', 'A random street somewhere in the world. Look around and find it on the map.')}</p></div>
     ${GLOBE}<ol class="field-guide"><li><b>${t('Осмотрись', 'Look around')}</b><span>${t('Вывески, номера машин, горы на горизонте — всё может стать зацепкой.', 'Signs, license plates, mountains on the horizon — anything can be a clue.')}</span></li><li><b>${t('Поставь точку', 'Drop a pin')}</b><span>${t('Найди место на карте. Чем ближе, тем больше очков.', 'Find the spot on the map. The closer, the more points.')}</span></li><li><b>${t('Сравни маршруты', 'Compare your routes')}</b><span>${t('Исследуй мир один или проверь, кто из друзей знает его лучше.', 'Explore solo or find out which friend knows the world best.')}</span></li></ol></div>`);
   stage.querySelector('.home').classList.add('expedition-home');
   stage.querySelector('.panel').prepend(h(`<h2 class="travel-ticket">${t('Билет в неизвестность', 'A ticket to anywhere')}</h2>`));
