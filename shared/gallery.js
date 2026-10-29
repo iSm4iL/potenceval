@@ -2,17 +2,28 @@ import { GAMES } from './menu.js?v=ui-20261029';
 import { t } from './i18n.js?v=ui-20261029';
 const root = new URL('../', import.meta.url);
 const details = {
-  genie:[t('Суперсила, о которой пожалеешь. Друзья придумают подвох.','A superpower you’ll regret. Your friends invent the catch.'),t('2–8 игроков · лобби','2–8 players · lobby')],
-  dice:[t('Собирай кости в столбцы и разрушай планы соперника.','Stack dice in columns and wreck your rival’s plans.'),t('Один или вдвоём','Solo or two players')],
-  music:[t('Пластинка, полсекунды звука и знакомая песня. Кто узнает первым?','A record, half a second of sound and a song you know. Who gets it first?'),t('Один экран или лобби','One screen or lobby')],
-  opening:[t('Узнавай аниме, фильмы, сериалы и мультфильмы по знакомой музыке.','Recognize anime, movies, shows and cartoons by their music.'),t('4 подборки · 30 секунд','4 collections · 30 seconds'),'opening.svg'],
-  screen:[t('Выбирай кассету. Узнавай кино, сериалы и аниме по зацепкам.','Pick a tape. Guess movies, shows and anime from the clues.'),t('Один экран · любая компания','One screen · any crowd')],
-  geo:[t('Открывай улики на доске следователя и находи загаданную страну.','Reveal clues on the detective board and find the mystery country.'),t('1–4 игрока · один экран','1–4 players · one screen')],
-  where:[t('Случайная улица где-то в мире. Осмотрись и поставь точку на карте.','A random street somewhere in the world. Look around and drop a pin.'),t('Один или до 8 друзей · лобби','Solo or up to 8 friends · lobby'),'where.svg'],
-  aura:[t('Собирай заклинания, соединяй школы магии и переживи натиск тварей.','Collect spells, combine schools of magic and survive the onslaught.'),t('Один игрок · компьютер или телефон','One player · desktop or phone'),'aura.webp'],
+  music:[t('Узнай песню с полсекунды. Не получилось? Открой отрывок подлиннее.','Name a song in half a second. Need more? Make the clip longer.'),t('Один экран или онлайн','One screen or online'),'shared/assets/club/music.webp'],
+  geo:[t('Покупай улики, соединяй факты и раскрой страну на доске следователя.','Buy clues, connect the facts and uncover the country on your detective board.'),t('1–4 игрока за одним экраном','1–4 players on one screen'),'shared/assets/home/board.webp'],
+  opening:[t('Аниме, кино, сериалы и мультфильмы. Узнай историю по музыке.','Anime, movies, series and cartoons. Hear the theme and pick a poster.'),t('Один экран, любая компания','One screen, any crowd'),'shared/assets/club/screen.webp'],
+  where:[t('Осмотрись на незнакомой улице и найди её на карте.','Explore an unfamiliar street and find it on the map.'),t('Один или до 8 игроков онлайн','Solo or up to 8 online'),'shared/assets/club/geo.webp'],
+  screen:[t('Узнай историю по размытому постеру и подсказкам.','Recognize a story from a blurred poster and clues.'),t('За одним экраном','On one screen'),'shared/assets/gallery-v2/screen.webp'],
+  genie:[t('Получи суперсилу. Друзья придумают подвох.','Get a superpower. Your friends invent the catch.'),t('2–8 игроков онлайн','2–8 players online'),'shared/assets/home/genie.webp'],
+  dice:[t('Собирай комбинации и выбивай кости соперника.','Build combinations and knock out your rival’s dice.'),t('Один или вдвоём онлайн','Solo or two online'),'shared/assets/gallery-v2/dice.webp'],
+  aura:[t('Четыре школы магии. Волны врагов. Один выживший.','Four schools of magic. Waves of enemies. One survivor.'),t('Один игрок','Single player'),'shared/assets/home/aura.webp'],
 };
-document.querySelector('#games').innerHTML = GAMES.map((game, k) => {
-  const id = game.path.replaceAll('/',''), [description, players] = details[id];
-  const art = `shared/assets/gallery-v2/${details[id][2] || id + '.webp'}`;
-  return `<a class="club-card club-card-${id}" href="${new URL(game.path,root)}"><figure><img src="${new URL(art,root)}" alt="" width="900" height="900" ${k < 3 ? 'fetchpriority="high"' : 'loading="lazy"'}></figure><div class="club-card-copy"><h2>${game.name}</h2><p>${description}</p><div class="club-card-bottom"><small>${players}</small><b>${id === 'rap' ? t('Послушать', 'Listen') : t('Играть', 'Play')} ↗</b></div></div></a>`;
-}).join('');
+const url = path => new URL(path, root).href;
+const art = id => {
+  if(id === 'music') return `<img class="game-scene" src="${url(details[id][2])}" alt=""><img class="home-turntable" src="${url('shared/assets/home/player.webp')}" alt=""><span class="home-vinyl"></span>`;
+  if(id === 'geo') return `<img class="game-scene" src="${url(details[id][2])}" alt=""><svg class="case-threads" viewBox="0 0 400 200" aria-hidden="true"><path d="M90 65L210 115L320 55M210 115L95 165M210 115L310 165"/></svg><span class="case-note case-note-one">${t('Факты','Facts')}</span><span class="case-note case-note-two">${t('Язык','Language')}</span><span class="case-note case-note-three">?</span>`;
+  return `<img class="game-scene" src="${url(details[id][2])}" alt=""><span class="soundtrack-disc"></span><span class="soundtrack-caption">${t('Ты точно это слышал','You know this theme')}</span>`;
+};
+const feature = game => {
+  const id=game.path.replace('/',''),[description,mode]=details[id];
+  return `<a class="feature-game game-${id}" href="${url(game.path)}"><div class="game-art" aria-hidden="true">${art(id)}</div><div class="feature-copy"><h2>${game.name}</h2><p>${description}</p><div class="game-entry"><span>${mode}</span><b>${t('Играть','Play')} <span aria-hidden="true">→</span></b></div></div></a>`;
+};
+const small = game => {
+  const id=game.path.replace('/',''),[description,mode,image]=details[id];
+  return `<a class="library-game game-${id}" href="${url(game.path)}"><div class="library-art"><img src="${url(image)}" alt="" loading="lazy"></div><div><h3>${game.name}</h3><p>${description}</p><small>${mode}</small></div><span class="library-arrow" aria-hidden="true">↗</span></a>`;
+};
+const aura=GAMES.find(g=>g.path==='aura/');
+document.querySelector('#games').innerHTML = `<div class="featured-games">${GAMES.slice(0,3).map(feature).join('')}</div><div class="library-bottom"><section class="more-games"><h2>${t('Ещё игры','More to play')}</h2><div class="library-list">${GAMES.slice(3).filter(g=>g!==aura).map(small).join('')}</div></section><a class="aura-entry" href="${url(aura.path)}"><img src="${url(details.aura[2])}" alt="" loading="lazy"><div><span>${details.aura[1]}</span><h2>Sorcery &amp; Aura</h2><p>${details.aura[0]}</p><b>${t('Начать забег','Start a run')} <span aria-hidden="true">→</span></b></div></a></div>`;
