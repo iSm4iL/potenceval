@@ -2,7 +2,7 @@ import { artistKey, artistGroups, selectionFor, setArtistChoice, setTrackChoice,
 
 const data = JSON.parse(document.getElementById('review-catalog').textContent);
 let state = validateReview(JSON.parse(document.getElementById('review-state').textContent));
-const storageKey = 'music-editorial-review-v1';
+const storageKey = 'music-editorial-review-v2';
 let storageWorks = true;
 try {
   const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
@@ -20,7 +20,7 @@ function toast(message) {
 function save() {
   for (const group of artistGroups(activeCollection().tracks)) {
     const choice = state.artists[collection]?.[group.key];
-    if (choice) Object.assign(choice, groupChoice(group));
+    if (choice && 'status' in choice) choice.status = groupChoice(group).status;
   }
   try { localStorage.setItem(storageKey, JSON.stringify(state)); storageWorks = true; } catch { storageWorks = false; }
   element('saveStatus').textContent = storageWorks
@@ -37,7 +37,7 @@ function buttons(choice, scope, key) {
 function groupChoice(group) {
   const selections = group.tracks.map(t => selectionFor(state, collection, t.id));
   return { status: selections.every(s => s.status === 'keep') ? 'keep' : selections.every(s => s.status === 'remove') ? 'remove' : 'unreviewed',
-    more: selections.some(s => s.more), similar: selections.some(s => s.similar) };
+    more: !!state.artists[collection]?.[group.key]?.more, similar: !!state.artists[collection]?.[group.key]?.similar };
 }
 function renderNav() {
   element('collections').innerHTML = data.collections.map(c => {
@@ -125,6 +125,7 @@ element('importFile').onchange = async event => {
   try {
     if (file.size > 20 * 1024 * 1024) throw new Error('Слишком большой файл.');
     const imported = validateReview(JSON.parse(await file.text()));
+    if (imported.intentVersion !== 2) throw new Error('Старый файл смешивает артистов и гостей. Пришлите его в чат для безопасного применения.');
     if (imported.catalogGeneratedAt !== state.catalogGeneratedAt) throw new Error('Это решения для другой версии каталога. Откройте HTML, сохранённый вместе с ними.');
     state = imported; state.updatedAt = Date.now(); save(); render(); toast('Решения загружены.');
   } catch (error) { toast(error.message || 'Не удалось прочитать файл.'); }

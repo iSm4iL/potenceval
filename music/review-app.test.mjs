@@ -40,14 +40,15 @@ test('standalone editor boots with every collection and the requested initial ch
   const state = JSON.parse([...app.storage.values()][0]);
   assert.equal(state.artists['new-wave']['moneyken'].status, 'keep');
   assert.equal(state.artists['new-wave']['платина'].more, true);
-  assert.equal(state.artists['new-wave']['loboda'].status, 'remove');
+  assert.equal(state.intentVersion, 2);
   assert.equal(state.artists['mom-pop'], undefined);
   assert.match(app.node('artists').innerHTML, /data-status="remove"/);
 });
 
 test('track and artist edits survive HTML export and reopening, with safe comments', async () => {
   const app = openReview(original);
-  const first = app.data.collections[0].tracks[0];
+  const seed = JSON.parse(app.node('review-state').textContent);
+  const first = app.data.collections[0].tracks.find(t => !seed.tracks['new-wave']?.[t.id]?.status);
   app.click('track', first.id, 'keep');
   app.click('track', first.id, 'similar');
   app.node('artists').events.input({ target: { dataset: { note: first.id }, value: '</script><img src=x onerror=alert(1)>' } });
@@ -78,16 +79,26 @@ test('every collection can be selected and JSON export retains track context', a
   assert.ok(exported.collections[0].tracks.some(t => t.status === 'remove' && t.title && t.artistNames.length));
 });
 
-test('bulk flags follow individual edits and a later bulk click clears the selection', () => {
+test('artist expansion requests stay independent from individual collaboration flags', () => {
   const app = openReview(original);
   const tracks = app.data.collections[0].tracks.filter(t => t.artistNames.includes('MONEYKEN'));
   app.click('artist', 'moneyken', 'more');
   app.click('artist', 'moneyken', 'more');
   for (const track of tracks) app.click('track', track.id, 'more');
   const choices = JSON.parse([...app.storage.values()][0]);
-  assert.equal(choices.artists['new-wave'].moneyken.more, true);
+  assert.equal(choices.artists['new-wave'].moneyken.more, false);
   app.click('artist', 'moneyken', 'more');
   const cleared = JSON.parse([...app.storage.values()][0]);
-  assert.equal(cleared.artists['new-wave'].moneyken.more, false);
-  assert.ok(tracks.every(t => !cleared.tracks['new-wave'][t.id].more));
+  assert.equal(cleared.artists['new-wave'].moneyken.more, true);
+  assert.ok(tracks.every(t => cleared.tracks['new-wave'][t.id].more));
+});
+
+test('legacy JSON cannot silently turn inherited guest flags into explicit artist requests', async () => {
+  const app = openReview(original);
+  const legacy = JSON.parse(app.node('review-state').textContent);
+  delete legacy.intentVersion;
+  const prior = [...app.storage.values()][0];
+  await app.node('importFile').onchange({ target: { files: [{ size: 1000, text: async () => JSON.stringify(legacy) }], value: 'old.json' } });
+  assert.match(app.node('toast').textContent, /Старый файл/);
+  assert.equal([...app.storage.values()][0], prior);
 });

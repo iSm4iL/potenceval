@@ -30,3 +30,13 @@ test('import rejects malformed and prototype-polluting choices', () => {
     assert.throws(() => validateReview(bad));
   }
 });
+
+test('asking for more songs by an artist never marks their collaborators or track flags', () => {
+  const state = { version: 1, intentVersion: 2, tracks: {}, artists: {} };
+  setArtistChoice(state, 'new-wave', 'thrill pill', tracks, 'more', true);
+  assert.equal(state.artists['new-wave']['thrill pill'].more, true);
+  assert.equal(state.artists['new-wave'].guest, undefined);
+  assert.equal(selectionFor(state, 'new-wave', 'dz-1').more, false);
+  setTrackChoice(state, 'new-wave', 'dz-1', 'more', true);
+  assert.equal(state.artists['new-wave'].guest, undefined);
+});

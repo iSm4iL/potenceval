@@ -51,10 +51,16 @@ def apply_collection_rules(tracks, config):
     """Apply editorial bans to a collection, including guest credits and stale evidence."""
     bans = {genre: {normalize(a) for a in names} for genre, names in config.get("collectionExcludeArtists", {}).items()}
     display = config.get("artistDisplayNames", {})
+    allowlists = config.get("collectionTrackAllowlist", {})
     changed = False
     for track in tracks:
         names = {normalize(a) for a in track["artistNames"]}
         excluded = {genre for genre, banned in bans.items() if names & banned}
+        for genre, allowed in allowlists.items():
+            if (track.get("deezerId") in allowed.get("excludedIds", [])
+                    or track.get("workKey") in allowed.get("excludedWorkKeys", [])
+                    or not (track.get("deezerId") in allowed.get("ids", []) or track.get("workKey") in allowed.get("workKeys", []))):
+                excluded.add(genre)
         for key in ("genres", "currentGenres"):
             changed |= bool(excluded.intersection(track.get(key, [])))
             track[key] = [g for g in track.get(key, []) if g not in excluded]
@@ -378,12 +384,21 @@ def artist_match(expected, actual):
     return True
 
 
+def row_artist_match(row, people):
+    expected = row.get("artistIds")
+    if expected is not None:
+        return (isinstance(expected, list) and bool(expected)
+                and all(type(ident) is int and ident > 0 for ident in expected)
+                and {str(ident) for ident in expected}.issubset({str(p["id"]) for p in people}))
+    return artist_match(row["artists"], [p["name"] for p in people])
+
+
 def match_track(row, raw):
     if not isinstance(raw, dict) or not isinstance(raw.get("id"), int) or isinstance(raw["id"], bool) or raw["id"] <= 0:
         return False, "invalid track detail"
     if not raw.get("artist", {}).get("id") or not raw.get("artist", {}).get("name"):
         return False, "missing main artist"
-    if not artist_match(row["artists"], [p["name"] for p in contributors(raw)]):
+    if not row_artist_match(row, contributors(raw)):
         return False, "artist mismatch"
     expected_versions = {normalize(m[0]) for m in VERSION_WORDS.finditer(row["title"])}
     actual_versions = {normalize(m[0]) for m in VERSION_WORDS.finditer(str(raw.get("title", "")) + " " + str(raw.get("title_version", "")))}
@@ -559,6 +574,16 @@ def validate_config(config):
     display = config.get("artistDisplayNames", {})
     if not isinstance(display, dict) or not all(isinstance(ident, str) and ident.isdigit() and isinstance(name, str) and name.strip() for ident, name in display.items()):
         raise ValueError("artistDisplayNames must map artist IDs to nonempty names")
+    allowlists = config.get("collectionTrackAllowlist", {})
+    if not isinstance(allowlists, dict):
+        raise ValueError("collectionTrackAllowlist must be an object")
+    for genre, allowed in allowlists.items():
+        if not isinstance(genre, str) or not isinstance(allowed, dict):
+            raise ValueError("Invalid collection allowlist")
+        for key in ("ids", "excludedIds", "workKeys", "excludedWorkKeys"):
+            values = allowed.get(key, [])
+            if not isinstance(values, list) or not all((type(v) is int and v > 0) if key.endswith("Ids") or key == "ids" else isinstance(v, str) and bool(v) for v in values):
+                raise ValueError("Invalid collection allowlist values")
     ids = set()
     for source in config["sources"]:
         if not isinstance(source, dict) or not all(isinstance(source.get(k), str) and source[k].strip() for k in ("id", "kind", "title", "url")):
@@ -625,7 +650,7 @@ def build(sources_path, output_path, workers=4, limit_per_source=None, client=No
                     if key in cache:
                         track, validated_at = cache[key]
                         # A key match is rechecked against saved title and contributor names.
-                        if canonical_title(row["title"]) == canonical_title(track.get("title")) and artist_match(row["artists"], track.get("artistNames", [])):
+                        if canonical_title(row["title"]) == canonical_title(track.get("title")) and row_artist_match(row, [{"id": ident, "name": name} for ident, name in zip(track.get("artistIds", []), track.get("artistNames", []))]):
                             return copy.deepcopy(track), None, validated_at, True
                     try:
                         track, failure = resolve(row, client)

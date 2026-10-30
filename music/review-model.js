@@ -21,6 +21,7 @@ export function setTrackChoice(state, collection, id, field, value) {
 export function setArtistChoice(state, collection, key, tracks, field, value) {
   state.artists[collection] ||= {};
   state.artists[collection][key] = { ...state.artists[collection][key], [field]: value };
+  if (field !== 'status') { state.updatedAt = Date.now(); return; }
   for (const track of tracks.filter(t => t.artistNames.some(n => artistKey(n) === key))) {
     setTrackChoice(state, collection, track.id, field, value);
   }

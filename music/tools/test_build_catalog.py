@@ -155,6 +155,20 @@ class BuilderTests(unittest.TestCase):
         self.assertEqual(track["artistNames"], ["Core", "Лобода"])
         self.assertEqual(track["artistIds"], ["1", "2"])
 
+    def test_collection_allowlist_preserves_a_fit_without_approving_guest_solos(self):
+        fit = {"deezerId": 1, "workKey": "1|fit", "artistIds": ["1", "2"], "artistNames": ["Core", "Guest"], "genres": ["new-wave", "ru-rap"], "sources": [{"id": "s", "genres": ["new-wave", "ru-rap"]}]}
+        solo = {"deezerId": 2, "workKey": "2|solo", "artistIds": ["2"], "artistNames": ["Guest"], "genres": ["new-wave", "ru-rap"], "sources": [{"id": "s", "genres": ["new-wave", "ru-rap"]}]}
+        config = {"collectionTrackAllowlist": {"new-wave": {"ids": [1], "workKeys": ["1|fit"], "excludedIds": [], "excludedWorkKeys": []}}}
+        b.apply_collection_rules([fit, solo], config)
+        self.assertEqual(fit["genres"], ["new-wave", "ru-rap"])
+        self.assertEqual(solo["genres"], ["ru-rap"])
+        self.assertEqual(solo["sources"][0]["genres"], ["ru-rap"])
+
+    def test_reviewed_rows_pin_artist_id_across_display_name_changes(self):
+        row = {"title": "Sultans of Swing", "artists": ["Отображаемое имя"], "artistIds": [176]}
+        self.assertTrue(b.match_track(row, raw())[0])
+        self.assertFalse(b.match_track(row, raw(artist_id=999))[0])
+
     def test_verified_deezer_link_resolves_a_track_missing_from_search(self):
         class MissingFromSearch(FakeClient):
             def get(self, url):
