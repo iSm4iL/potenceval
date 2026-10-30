@@ -12,6 +12,13 @@ const queued = s => s.queue.map(id => s.tracks.find(t => t.id === id));
 const collab = (n, artists) => ({ ...song(n, artists[0]), artistIds: artists });
 
 const artistAnswer = id => ({ kind: 'artist', id: `artist-${id}`, artistId: id, name: `Artist ${id}` });
+test('duplicate contributor IDs and names never shift artist identity pairs', () => {
+  const track = normalizeDeezer({ id: 1, title: 'Song', artist: { id: 2, name: 'Same' },
+    contributors: [{ id: 2, name: 'Alias' }, { id: 3, name: 'Same' }, { id: 4, name: 'Guest' }],
+    preview: 'https://cdnt-preview.dzcdn.net/a.mp3' });
+  assert.deepEqual(track.artistIds, ['2', '3', '4']);
+  assert.deepEqual(track.artistNames, ['Same', 'Same', 'Guest']);
+});
 test('artist mode accepts the performer without a song title and preserves score on restore', () => {
   let s = createGame([song(1, 'a'), song(2, 'b')], { rounds: 1, random: () => .999, answerMode: 'artist' });
   s = guessArtist(s, artistAnswer('b'));

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-28T12:15:52Z",
+  "generatedAt": "2026-10-30T13:03:31Z",
   "sources": [
     {
       "id": "apple-ru-chart",
@@ -241,6 +241,16 @@
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
       "count": 30
+    },
+    {
+      "id": "new-wave-player-picks-20261030",
+      "kind": "verified-tracks",
+      "title": "Выбор игроков — Платина, Voskresenskii, kizaru, Markul, OBLADAET, PHARAOH",
+      "url": "https://www.deezer.com/",
+      "updatedAt": "2026-10-30T13:03:31Z",
+      "retrievedAt": "2026-10-30T13:03:31Z",
+      "status": "fresh",
+      "count": 119
     }
   ],
   "tracks": [
@@ -734,20 +744,17 @@
       "link": "https://www.deezer.com/track/4028895691",
       "genres": [
         "ru-rap",
-        "new-wave",
         "mom-pop"
       ],
       "currentGenres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "sources": [
         {
           "id": "apple-ru-chart",
           "position": 15,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "2026-10-28"
         },
@@ -755,8 +762,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ICEGERGERT"
         },
@@ -807,6 +813,15 @@
             "new-wave"
           ],
           "period": "2026-10-28"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 1,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -2812,20 +2827,17 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/0910af51062d9ca97480bf6790b531cc/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3252782331",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "sources": [
         {
           "id": "apple-ru-chart",
           "position": 80,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "2026-10-28"
         }
@@ -3415,20 +3427,17 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2f29218178c906a40c6319c6c1ba0bcf/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4028896351",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "sources": [
         {
           "id": "apple-ru-chart",
           "position": 98,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "2026-10-28"
         },
@@ -3436,8 +3445,7 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ICEGERGERT"
         }
@@ -6792,11 +6800,21 @@
             "nostalgia"
           ],
           "period": "Школьная ностальгия"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 15,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
         "boulevard depo,pharaoh|5 минут назад",
-        "boulevard depo|5 минут назад"
+        "boulevard depo|5 минут назад",
+        "pharaoh|5 минут назад"
       ]
     },
     {
@@ -7333,6 +7351,15 @@
             "nostalgia"
           ],
           "period": "Школьная ностальгия"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 1,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -9619,6 +9646,15 @@
             "new-wave"
           ],
           "period": "популярное у kizaru"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 16,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -9673,6 +9709,15 @@
             "new-wave"
           ],
           "period": "популярное у kizaru"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 1,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -9824,6 +9869,15 @@
             "ru-rap",
             "new-wave"
           ]
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 17,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -10271,6 +10325,15 @@
             "ru-rap",
             "new-wave"
           ]
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 20,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -10867,8 +10930,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/9d710ff7ef2045519a0b1835966e684c/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3294384301",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -10876,8 +10938,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у madk1d"
         }
@@ -11139,14 +11200,14 @@
       "id": "dz-1396680942",
       "deezerId": 1396680942,
       "title": "Cadillac",
-      "artist": "Morgenshtern, Eldzhey",
+      "artist": "Morgenshtern, Элджей",
       "artistIds": [
         "14468689",
         "8042959"
       ],
       "artistNames": [
         "Morgenshtern",
-        "Eldzhey"
+        "Элджей"
       ],
       "answerKey": "14468689|cadillac",
       "workKey": "14468689|cadillac",
@@ -11417,6 +11478,15 @@
             "new-wave"
           ],
           "period": "популярное у PHARAOH"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 4,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -11452,6 +11522,15 @@
             "new-wave"
           ],
           "period": "популярное у PHARAOH"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 6,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -11476,8 +11555,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/da92e704d41e80c44e351c260d594b40/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1975387147",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -11485,8 +11563,7 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у PHARAOH"
         }
@@ -11524,6 +11601,15 @@
             "new-wave"
           ],
           "period": "популярное у PHARAOH"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 10,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -11548,8 +11634,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/cf842170cfbc89e55a54ae5ad9b5cfbb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/392605542",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -11557,8 +11642,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у PHARAOH"
         }
@@ -11598,6 +11682,15 @@
             "new-wave"
           ],
           "period": "популярное у PHARAOH"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 11,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -11635,6 +11728,15 @@
             "new-wave"
           ],
           "period": "популярное у PHARAOH"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 13,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -11904,6 +12006,15 @@
             "new-wave"
           ],
           "period": "популярное у kizaru"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 4,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -12060,8 +12171,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/dcabdd78950ed9725b1d3e812f35ff47/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2645729912",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12069,8 +12179,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у OG Buda"
         }
@@ -12217,10 +12326,29 @@
             "new-wave"
           ],
           "period": "популярное у Платина"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 1,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 3,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
-        "платина|быть богатым"
+        "платина|быть богатым",
+        "voskresenskii|быть богатым"
       ]
     },
     {
@@ -12252,6 +12380,15 @@
             "new-wave"
           ],
           "period": "популярное у Платина"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 12,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -12291,10 +12428,20 @@
             "new-wave"
           ],
           "period": "популярное у Платина"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 8,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
-        "платина|не для меня"
+        "платина|не для меня",
+        "voskresenskii|не для меня"
       ]
     },
     {
@@ -12363,6 +12510,15 @@
             "new-wave"
           ],
           "period": "популярное у Платина"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 13,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -12461,8 +12617,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/1e87d64e34fd63f3e3e7738531ace528/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4081655181",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12470,8 +12625,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MAYOT"
         }
@@ -12498,8 +12652,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/ecbb888cb82882251328fed053a3da29/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4338431432",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12507,8 +12660,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MAYOT"
         }
@@ -12716,8 +12868,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/57dae7701d10509d38bb9429b9389d90/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2011403107",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12725,8 +12876,7 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MAYOT"
         }
@@ -12913,8 +13063,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a7c250d342395ac00451e835d55ab719/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3041026871",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12922,8 +13071,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SEEMEE"
         }
@@ -12950,8 +13098,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/6c0a263ca3a3556cdf548cd52e7549f4/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3583015651",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12959,8 +13106,7 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SEEMEE"
         }
@@ -12993,8 +13139,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/ca8a3669230ffee6b61c07a6b4103b95/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2709590552",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13002,8 +13147,7 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SEEMEE"
         }
@@ -13065,8 +13209,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/cf0ca1625ee8352ec6fae38224dd44cc/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3402227941",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13074,8 +13217,7 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SODA LUV"
         }
@@ -13482,8 +13624,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/0592e0114729b8bcd6cfc3286c17703b/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2330142725",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13491,8 +13632,7 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у BUSHIDO ZHO"
         },
@@ -13500,8 +13640,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Heronwater"
         }
@@ -13551,6 +13690,15 @@
             "new-wave"
           ],
           "period": "популярное у ALBLAK 52"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 10,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -13591,6 +13739,15 @@
             "new-wave"
           ],
           "period": "популярное у kizaru"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 5,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -13637,6 +13794,15 @@
             "new-wave"
           ],
           "period": "популярное у FRIENDLY THUG 52 NGG"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 12,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -13710,6 +13876,15 @@
             "new-wave"
           ],
           "period": "популярное у kizaru"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 15,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -13900,8 +14075,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e1c40e81264dc33d90425321987b2d27/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1584978902",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13909,8 +14083,7 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Boulevard Depo"
         }
@@ -14044,8 +14217,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c1189b13d93bef689a364d753f5a0266/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1977620697",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14053,8 +14225,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у GONE.Fludd"
         }
@@ -14308,8 +14479,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d75aa9f49a1ab0019914d829ddd4155c/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3032335051",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14317,8 +14487,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Lil Krystalll"
         }
@@ -14686,8 +14855,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/9f38565100912def3b663d050553eb52/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3455166151",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14695,8 +14863,7 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Toxi$"
         }
@@ -15183,8 +15350,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/da9fac059e2e17844d1dedd25b667bd4/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3546957851",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15192,8 +15358,7 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Kai Angel"
         }
@@ -15366,8 +15531,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/853a1212b5d1512e580466a0dbba8422/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4192400342",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15375,8 +15539,7 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ICEGERGERT"
         }
@@ -15461,6 +15624,15 @@
             "new-wave"
           ],
           "period": "популярное у OBLADAET"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 3,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -15496,6 +15668,15 @@
             "new-wave"
           ],
           "period": "популярное у OBLADAET"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 7,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -15531,6 +15712,15 @@
             "new-wave"
           ],
           "period": "популярное у OBLADAET"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 6,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -15566,6 +15756,15 @@
             "new-wave"
           ],
           "period": "популярное у OBLADAET"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 8,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -15601,6 +15800,15 @@
             "new-wave"
           ],
           "period": "популярное у OBLADAET"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 10,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -15636,6 +15844,15 @@
             "new-wave"
           ],
           "period": "популярное у OBLADAET"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 5,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -15660,8 +15877,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2536503021",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15669,8 +15885,7 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у OBLADAET"
         }
@@ -15837,8 +16052,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/b0ac17175bd85e91e29d7fe806315546/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3339657991",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15846,8 +16060,7 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у FRIENDLY THUG 52 NGG"
         }
@@ -16174,8 +16387,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a1e8e1fe6000fdd0a77dc3f18e872d67/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3643354112",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -16183,8 +16395,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Aarne"
         }
@@ -16234,6 +16445,15 @@
             "ru-rap"
           ],
           "period": "популярное у Markul"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 4,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -16664,8 +16884,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/abdd2b0cc010f0c69f6b693e45372fae/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2836034702",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -16673,8 +16892,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у unki"
         }
@@ -16699,8 +16917,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c16856c009b4fe11eda6c7aa510d7d53/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2349163215",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -16708,8 +16925,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у unki"
         }
@@ -16736,8 +16952,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/abdd2b0cc010f0c69f6b693e45372fae/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2836034712",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -16745,8 +16960,7 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у unki"
         }
@@ -16777,8 +16991,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e7ba53d754924e7f6c57005ba84d78c8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3040331261",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -16786,8 +16999,7 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у unki"
         }
@@ -16895,8 +17107,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/27a5526650afeca3d3473465d56133b3/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2593754402",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -16904,8 +17115,7 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Whole Lotta Swag"
         }
@@ -17588,8 +17798,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/b022cdc1707b0b6dd64acfbf335ab4e4/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2454482545",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17597,8 +17806,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Heronwater"
         }
@@ -17629,8 +17837,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/10f3dd81fc46f7d2715a622b3c8b91f1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3401987961",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17638,8 +17845,7 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Heronwater"
         }
@@ -17664,8 +17870,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c43acfdc8b97ef8fe057ac0ed01a21b2/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3683532012",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17673,8 +17878,7 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Heronwater"
         }
@@ -17699,8 +17903,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c43acfdc8b97ef8fe057ac0ed01a21b2/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3683531982",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17708,8 +17911,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Heronwater"
         }
@@ -17734,8 +17936,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c43acfdc8b97ef8fe057ac0ed01a21b2/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3683531902",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17743,8 +17944,7 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Heronwater"
         }
@@ -17769,8 +17969,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c43acfdc8b97ef8fe057ac0ed01a21b2/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3683531872",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17778,8 +17977,7 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Heronwater"
         }
@@ -17804,8 +18002,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d961cf5e360016e8405ac764026d9fe2/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3092659491",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17813,8 +18010,7 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Heronwater"
         }
@@ -18022,8 +18218,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2ee6f6deb43d608a21d15f8c695bc979/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3238116791",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -18031,8 +18226,7 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Thrill Pill"
         }
@@ -18168,8 +18362,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/103276f491a17f4e6e855f1dc2fa0def/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4350931132",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -18177,8 +18370,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Yanix"
         }
@@ -18314,8 +18506,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/9f3228195ff9c10b469555b8030f04ad/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3212145011",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -18323,8 +18514,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Baby Melo"
         }
@@ -18705,8 +18895,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/763bc2655d466b67608c9a47f1e33bb9/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3625236022",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -18714,8 +18903,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у LIZER"
         }
@@ -18991,8 +19179,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/135ad2d2e2ac776ca3f8bdba99605ea1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4256265671",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -19000,8 +19187,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SALUKI"
         }
@@ -19826,7 +20012,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/dc054bc64c27ed009270386e28fab960/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1394022492",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -19837,6 +20024,15 @@
             "ru-rap"
           ],
           "period": "популярное у Markul"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 1,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -19859,7 +20055,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/97df6b428fef3cec7508d0bbfd13b5fb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/912448182",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -19870,6 +20067,15 @@
             "ru-rap"
           ],
           "period": "популярное у Markul"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 7,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -19892,7 +20098,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/df16556f9a376217df70e8ef341785db/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1523191082",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -19903,6 +20110,15 @@
             "ru-rap"
           ],
           "period": "популярное у Markul"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 3,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -19925,7 +20141,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d48aab850f8420e3a076b4a3926388f1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3431196461",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -19936,6 +20153,15 @@
             "ru-rap"
           ],
           "period": "популярное у Markul"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 2,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -19960,7 +20186,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/5ab9252719c883dde962594267cca15e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/790225272",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -19971,6 +20198,15 @@
             "ru-rap"
           ],
           "period": "популярное у Markul"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 5,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -19993,7 +20229,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/9d9c863c1b750459074d21508bc70032/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/912448202",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -20004,6 +20241,15 @@
             "ru-rap"
           ],
           "period": "популярное у Markul"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 14,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -20026,7 +20272,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/cce08561c0735fb4c9edd16dde842e46/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2021646807",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -20037,6 +20284,15 @@
             "ru-rap"
           ],
           "period": "популярное у Markul"
+        },
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 16,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
         }
       ],
       "lookupKeys": [
@@ -20247,14 +20503,14 @@
       "id": "dz-1390592632",
       "deezerId": 1390592632,
       "title": "Zloy",
-      "artist": "Slava Marlow, Eldzhey",
+      "artist": "Slava Marlow, Элджей",
       "artistIds": [
         "54656752",
         "8042959"
       ],
       "artistNames": [
         "Slava Marlow",
-        "Eldzhey"
+        "Элджей"
       ],
       "answerKey": "54656752|zloy",
       "workKey": "54656752|zloy",
@@ -20282,7 +20538,7 @@
       "id": "dz-1469911632",
       "deezerId": 1469911632,
       "title": "Ona tebya lyubit",
-      "artist": "Slava Marlow, The Limba, Eldzhey",
+      "artist": "Slava Marlow, The Limba, Элджей",
       "artistIds": [
         "54656752",
         "14801651",
@@ -20291,7 +20547,7 @@
       "artistNames": [
         "Slava Marlow",
         "The Limba",
-        "Eldzhey"
+        "Элджей"
       ],
       "answerKey": "54656752|ona tebya lyubit",
       "workKey": "54656752|ona tebya lyubit",
@@ -20319,13 +20575,13 @@
       "id": "dz-1031372352",
       "deezerId": 1031372352,
       "title": "Rozovoye vino",
-      "artist": "Eldzhey, FEDUK",
+      "artist": "Элджей, FEDUK",
       "artistIds": [
         "8042959",
         "7446926"
       ],
       "artistNames": [
-        "Eldzhey",
+        "Элджей",
         "FEDUK"
       ],
       "answerKey": "8042959|rozovoye vino",
@@ -69385,6 +69641,3024 @@
       ],
       "lookupKeys": [
         "elman|тебя мне дороже"
+      ]
+    },
+    {
+      "id": "dz-1463122912",
+      "deezerId": 1463122912,
+      "title": "За Меня",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|за меня",
+      "workKey": "14097523|за меня",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463122912",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 2,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|за меня"
+      ]
+    },
+    {
+      "id": "dz-1463122902",
+      "deezerId": 1463122902,
+      "title": "В Клубе",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|в клубе",
+      "workKey": "14097523|в клубе",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463122902",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 3,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|в клубе"
+      ]
+    },
+    {
+      "id": "dz-1463122922",
+      "deezerId": 1463122922,
+      "title": "liga la sosa",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|liga la sosa",
+      "workKey": "14097523|liga la sosa",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463122922",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 4,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|liga la sosa"
+      ]
+    },
+    {
+      "id": "dz-781089772",
+      "deezerId": 781089772,
+      "title": "Нотр-Дам Париж",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|нотр дам париж",
+      "workKey": "14097523|нотр дам париж",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ff79f0fddeb393723f023b5158edf5d2/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/781089772",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 5,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|нотр дам париж"
+      ]
+    },
+    {
+      "id": "dz-1463122932",
+      "deezerId": 1463122932,
+      "title": "На Грязном (Диана)",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|на грязном диана",
+      "workKey": "14097523|на грязном диана",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463122932",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 6,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|на грязном диана"
+      ]
+    },
+    {
+      "id": "dz-781089602",
+      "deezerId": 781089602,
+      "title": "Опиаты Круг",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|опиаты круг",
+      "workKey": "14097523|опиаты круг",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ff79f0fddeb393723f023b5158edf5d2/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/781089602",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 7,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|опиаты круг"
+      ]
+    },
+    {
+      "id": "dz-1463122982",
+      "deezerId": 1463122982,
+      "title": "Самый классный парень",
+      "artist": "Платина, PLOHOYPAREN",
+      "artistIds": [
+        "14097523",
+        "14938351"
+      ],
+      "artistNames": [
+        "Платина",
+        "PLOHOYPAREN"
+      ],
+      "answerKey": "14097523|самый классный парень",
+      "workKey": "14097523|самый классный парень",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463122982",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 8,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|самый классный парень"
+      ]
+    },
+    {
+      "id": "dz-1463123002",
+      "deezerId": 1463123002,
+      "title": "Сердце для шалав",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|сердце для шалав",
+      "workKey": "14097523|сердце для шалав",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463123002",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 9,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|сердце для шалав"
+      ]
+    },
+    {
+      "id": "dz-1463123042",
+      "deezerId": 1463123042,
+      "title": "Как до луны (Drizzy flow)",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|как до луны drizzy flow",
+      "workKey": "14097523|как до луны drizzy flow",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463123042",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 10,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|как до луны drizzy flow"
+      ]
+    },
+    {
+      "id": "dz-1463123052",
+      "deezerId": 1463123052,
+      "title": "Все эти деньги сразу",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|все эти деньги сразу",
+      "workKey": "14097523|все эти деньги сразу",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463123052",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 11,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|все эти деньги сразу"
+      ]
+    },
+    {
+      "id": "dz-1463123022",
+      "deezerId": 1463123022,
+      "title": "Генг",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|генг",
+      "workKey": "14097523|генг",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463123022",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 14,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|генг"
+      ]
+    },
+    {
+      "id": "dz-1463122942",
+      "deezerId": 1463122942,
+      "title": "Булки",
+      "artist": "Платина, LIL VAN",
+      "artistIds": [
+        "14097523",
+        "208639397"
+      ],
+      "artistNames": [
+        "Платина",
+        "LIL VAN"
+      ],
+      "answerKey": "14097523|булки",
+      "workKey": "14097523|булки",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463122942",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 15,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|булки"
+      ]
+    },
+    {
+      "id": "dz-1463122952",
+      "deezerId": 1463122952,
+      "title": "Бригада",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|бригада",
+      "workKey": "14097523|бригада",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463122952",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 16,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|бригада"
+      ]
+    },
+    {
+      "id": "dz-1463123032",
+      "deezerId": 1463123032,
+      "title": "Abu Dhabi Ba6y",
+      "artist": "Платина, OG Buda, Mayot",
+      "artistIds": [
+        "14097523",
+        "15037981",
+        "140395792"
+      ],
+      "artistNames": [
+        "Платина",
+        "OG Buda",
+        "Mayot"
+      ],
+      "answerKey": "14097523|abu dhabi ba6y",
+      "workKey": "14097523|abu dhabi ba6y",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463123032",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 17,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|abu dhabi ba6y"
+      ]
+    },
+    {
+      "id": "dz-1463122992",
+      "deezerId": 1463122992,
+      "title": "Вопросов нету",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|вопросов нету",
+      "workKey": "14097523|вопросов нету",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1463122992",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 18,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|вопросов нету"
+      ]
+    },
+    {
+      "id": "dz-781089782",
+      "deezerId": 781089782,
+      "title": "Как в первый раз",
+      "artist": "Платина",
+      "artistIds": [
+        "14097523"
+      ],
+      "artistNames": [
+        "Платина"
+      ],
+      "answerKey": "14097523|как в первый раз",
+      "workKey": "14097523|как в первый раз",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ff79f0fddeb393723f023b5158edf5d2/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/781089782",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 19,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|как в первый раз"
+      ]
+    },
+    {
+      "id": "dz-2868877772",
+      "deezerId": 2868877772,
+      "title": "EDM",
+      "artist": "Big Baby Tape, Aarne, Платина",
+      "artistIds": [
+        "14277587",
+        "1582524",
+        "14097523"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Aarne",
+        "Платина"
+      ],
+      "answerKey": "14277587|edm",
+      "workKey": "14277587|edm",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/505337124ca931cf8085438b2b5aaa2f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2868877772",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 20,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "платина|edm"
+      ]
+    },
+    {
+      "id": "dz-4223201212",
+      "deezerId": 4223201212,
+      "title": "Стиралка",
+      "artist": "Voskresenskii",
+      "artistIds": [
+        "126505322"
+      ],
+      "artistNames": [
+        "Voskresenskii"
+      ],
+      "answerKey": "126505322|стиралка",
+      "workKey": "126505322|стиралка",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/547817b47d51eb4ac532f647ed892cac/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4223201212",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 2,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|стиралка"
+      ]
+    },
+    {
+      "id": "dz-3190082571",
+      "deezerId": 3190082571,
+      "title": "Русская Кукла",
+      "artist": "Scally Milano, Voskresenskii",
+      "artistIds": [
+        "108381822",
+        "126505322"
+      ],
+      "artistNames": [
+        "Scally Milano",
+        "Voskresenskii"
+      ],
+      "answerKey": "108381822|русская кукла",
+      "workKey": "108381822|русская кукла",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/9833a2cb5aa738b1d096f7f7e95600e8/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3190082571",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 4,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|русская кукла"
+      ]
+    },
+    {
+      "id": "dz-4223201192",
+      "deezerId": 4223201192,
+      "title": "Запой",
+      "artist": "Voskresenskii",
+      "artistIds": [
+        "126505322"
+      ],
+      "artistNames": [
+        "Voskresenskii"
+      ],
+      "answerKey": "126505322|запой",
+      "workKey": "126505322|запой",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/547817b47d51eb4ac532f647ed892cac/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4223201192",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 5,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|запой"
+      ]
+    },
+    {
+      "id": "dz-3040331231",
+      "deezerId": 3040331231,
+      "title": "Ботиночки",
+      "artist": "OG Buda, Voskresenskii",
+      "artistIds": [
+        "15037981",
+        "126505322"
+      ],
+      "artistNames": [
+        "OG Buda",
+        "Voskresenskii"
+      ],
+      "answerKey": "15037981|ботиночки",
+      "workKey": "15037981|ботиночки",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e7ba53d754924e7f6c57005ba84d78c8/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3040331231",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 6,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|ботиночки"
+      ]
+    },
+    {
+      "id": "dz-3433296401",
+      "deezerId": 3433296401,
+      "title": "Покажи как ты танцуешь",
+      "artist": "Voskresenskii, SALUKI",
+      "artistIds": [
+        "126505322",
+        "80440752"
+      ],
+      "artistNames": [
+        "Voskresenskii",
+        "SALUKI"
+      ],
+      "answerKey": "126505322|покажи как ты танцуешь",
+      "workKey": "126505322|покажи как ты танцуешь",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/65594e2f3afdf453e130ed5ec67723de/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3433296401",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 7,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|покажи как ты танцуешь"
+      ]
+    },
+    {
+      "id": "dz-3505665361",
+      "deezerId": 3505665361,
+      "title": "DOLBIT NORMALNO",
+      "artist": "Wipo, Voskresenskii",
+      "artistIds": [
+        "7586388",
+        "126505322"
+      ],
+      "artistNames": [
+        "Wipo",
+        "Voskresenskii"
+      ],
+      "answerKey": "7586388|dolbit normalno",
+      "workKey": "7586388|dolbit normalno",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0736d332ec0366d6bbf7526b6af28a9c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3505665361",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 9,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|dolbit normalno"
+      ]
+    },
+    {
+      "id": "dz-4223201242",
+      "deezerId": 4223201242,
+      "title": "Заболел флексом",
+      "artist": "Voskresenskii",
+      "artistIds": [
+        "126505322"
+      ],
+      "artistNames": [
+        "Voskresenskii"
+      ],
+      "answerKey": "126505322|заболел флексом",
+      "workKey": "126505322|заболел флексом",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/547817b47d51eb4ac532f647ed892cac/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4223201242",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 10,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|заболел флексом"
+      ]
+    },
+    {
+      "id": "dz-4223201222",
+      "deezerId": 4223201222,
+      "title": "Просто",
+      "artist": "Voskresenskii",
+      "artistIds": [
+        "126505322"
+      ],
+      "artistNames": [
+        "Voskresenskii"
+      ],
+      "answerKey": "126505322|просто",
+      "workKey": "126505322|просто",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/547817b47d51eb4ac532f647ed892cac/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4223201222",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 11,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|просто"
+      ]
+    },
+    {
+      "id": "dz-3476662301",
+      "deezerId": 3476662301,
+      "title": "KFC",
+      "artist": "aqyla, Voskresenskii",
+      "artistIds": [
+        "176272137",
+        "126505322"
+      ],
+      "artistNames": [
+        "aqyla",
+        "Voskresenskii"
+      ],
+      "answerKey": "176272137|kfc",
+      "workKey": "176272137|kfc",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/9ed0355a9f73a201cee80a5a33a6c9bd/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3476662301",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 12,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|kfc"
+      ]
+    },
+    {
+      "id": "dz-2868877792",
+      "deezerId": 2868877792,
+      "title": "Taz Muzik",
+      "artist": "Big Baby Tape, Aarne, Voskresenskii",
+      "artistIds": [
+        "14277587",
+        "1582524",
+        "126505322"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Aarne",
+        "Voskresenskii"
+      ],
+      "answerKey": "14277587|taz muzik",
+      "workKey": "14277587|taz muzik",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/505337124ca931cf8085438b2b5aaa2f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2868877792",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 13,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|taz muzik"
+      ]
+    },
+    {
+      "id": "dz-2781319371",
+      "deezerId": 2781319371,
+      "title": "Большие факты",
+      "artist": "Voskresenskii",
+      "artistIds": [
+        "126505322"
+      ],
+      "artistNames": [
+        "Voskresenskii"
+      ],
+      "answerKey": "126505322|большие факты",
+      "workKey": "126505322|большие факты",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2199f0b094a56c2a557bc6293c192953/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2781319371",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 14,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|большие факты"
+      ]
+    },
+    {
+      "id": "dz-2589097222",
+      "deezerId": 2589097222,
+      "title": "Три Телефона",
+      "artist": "Scally Milano, Voskresenskii",
+      "artistIds": [
+        "108381822",
+        "126505322"
+      ],
+      "artistNames": [
+        "Scally Milano",
+        "Voskresenskii"
+      ],
+      "answerKey": "108381822|три телефона",
+      "workKey": "108381822|три телефона",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ae8d4a8066b6c298ddc009d338f7cca1/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2589097222",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 15,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|три телефона"
+      ]
+    },
+    {
+      "id": "dz-4159679972",
+      "deezerId": 4159679972,
+      "title": "Да это так",
+      "artist": "Voskresenskii, Wipo",
+      "artistIds": [
+        "126505322",
+        "7586388"
+      ],
+      "artistNames": [
+        "Voskresenskii",
+        "Wipo"
+      ],
+      "answerKey": "126505322|да это так",
+      "workKey": "126505322|да это так",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/27debf063a6b007b6e0c426de8e38256/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4159679972",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 16,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|да это так"
+      ]
+    },
+    {
+      "id": "dz-2781319381",
+      "deezerId": 2781319381,
+      "title": "ИРИ",
+      "artist": "Voskresenskii",
+      "artistIds": [
+        "126505322"
+      ],
+      "artistNames": [
+        "Voskresenskii"
+      ],
+      "answerKey": "126505322|ири",
+      "workKey": "126505322|ири",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2199f0b094a56c2a557bc6293c192953/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2781319381",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 17,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|ири"
+      ]
+    },
+    {
+      "id": "dz-2914185721",
+      "deezerId": 2914185721,
+      "title": "Я не употребляю",
+      "artist": "Voskresenskii, Wipo",
+      "artistIds": [
+        "126505322",
+        "7586388"
+      ],
+      "artistNames": [
+        "Voskresenskii",
+        "Wipo"
+      ],
+      "answerKey": "126505322|я не употребляю",
+      "workKey": "126505322|я не употребляю",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/780414c59a50ddb272a0bb63e797a84d/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2914185721",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 18,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|я не употребляю"
+      ]
+    },
+    {
+      "id": "dz-3868724221",
+      "deezerId": 3868724221,
+      "title": "Скини",
+      "artist": "Voskresenskii, Wipo",
+      "artistIds": [
+        "126505322",
+        "7586388"
+      ],
+      "artistNames": [
+        "Voskresenskii",
+        "Wipo"
+      ],
+      "answerKey": "126505322|скини",
+      "workKey": "126505322|скини",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b8c6be912d6b7bc9d359ad0c15a40c8e/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3868724221",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 19,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|скини"
+      ]
+    },
+    {
+      "id": "dz-2781319411",
+      "deezerId": 2781319411,
+      "title": "Доказал",
+      "artist": "Voskresenskii, Yanix",
+      "artistIds": [
+        "126505322",
+        "4975770"
+      ],
+      "artistNames": [
+        "Voskresenskii",
+        "Yanix"
+      ],
+      "answerKey": "126505322|доказал",
+      "workKey": "126505322|доказал",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2199f0b094a56c2a557bc6293c192953/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2781319411",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 20,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "voskresenskii|доказал"
+      ]
+    },
+    {
+      "id": "dz-1975794587",
+      "deezerId": 1975794587,
+      "title": "Bad Blood",
+      "artist": "Kizaru, Tory Lanez",
+      "artistIds": [
+        "8687202",
+        "259396632"
+      ],
+      "artistNames": [
+        "Kizaru",
+        "Tory Lanez"
+      ],
+      "answerKey": "8687202|bad blood",
+      "workKey": "8687202|bad blood",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b0f04d5d7cd3039f702de0e618e12134/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1975794587",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 2,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|bad blood"
+      ]
+    },
+    {
+      "id": "dz-1975430247",
+      "deezerId": 1975430247,
+      "title": "Bandana",
+      "artist": "Big Baby Tape, Kizaru",
+      "artistIds": [
+        "14277587",
+        "8687202"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Kizaru"
+      ],
+      "answerKey": "14277587|bandana",
+      "workKey": "14277587|bandana",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1975430247",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 3,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|bandana"
+      ]
+    },
+    {
+      "id": "dz-1975430217",
+      "deezerId": 1975430217,
+      "title": "5 Nights Crazy",
+      "artist": "Big Baby Tape, Kizaru",
+      "artistIds": [
+        "14277587",
+        "8687202"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Kizaru"
+      ],
+      "answerKey": "14277587|5 nights crazy",
+      "workKey": "14277587|5 nights crazy",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1975430217",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 6,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|5 nights crazy"
+      ]
+    },
+    {
+      "id": "dz-1975430277",
+      "deezerId": 1975430277,
+      "title": "Bon Voyage",
+      "artist": "Big Baby Tape, Kizaru",
+      "artistIds": [
+        "14277587",
+        "8687202"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Kizaru"
+      ],
+      "answerKey": "14277587|bon voyage",
+      "workKey": "14277587|bon voyage",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1975430277",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 7,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|bon voyage"
+      ]
+    },
+    {
+      "id": "dz-1975430207",
+      "deezerId": 1975430207,
+      "title": "Million",
+      "artist": "Big Baby Tape, Kizaru",
+      "artistIds": [
+        "14277587",
+        "8687202"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Kizaru"
+      ],
+      "answerKey": "14277587|million",
+      "workKey": "14277587|million",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1975430207",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 8,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|million"
+      ]
+    },
+    {
+      "id": "dz-1974314657",
+      "deezerId": 1974314657,
+      "title": "На работе",
+      "artist": "Kizaru",
+      "artistIds": [
+        "8687202"
+      ],
+      "artistNames": [
+        "Kizaru"
+      ],
+      "answerKey": "8687202|на работе",
+      "workKey": "8687202|на работе",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/7129283a0f94480d6cbe8173503c1a34/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1974314657",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 9,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|на работе"
+      ]
+    },
+    {
+      "id": "dz-1974314677",
+      "deezerId": 1974314677,
+      "title": "Делаю всё что хочу",
+      "artist": "Kizaru",
+      "artistIds": [
+        "8687202"
+      ],
+      "artistNames": [
+        "Kizaru"
+      ],
+      "answerKey": "8687202|делаю все что хочу",
+      "workKey": "8687202|делаю все что хочу",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/7129283a0f94480d6cbe8173503c1a34/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1974314677",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 11,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|делаю все что хочу"
+      ]
+    },
+    {
+      "id": "dz-1975430287",
+      "deezerId": 1975430287,
+      "title": "Ride Or Die",
+      "artist": "Big Baby Tape, Kizaru",
+      "artistIds": [
+        "14277587",
+        "8687202"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Kizaru"
+      ],
+      "answerKey": "14277587|ride or die",
+      "workKey": "14277587|ride or die",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1975430287",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 13,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|ride or die"
+      ]
+    },
+    {
+      "id": "dz-1975430187",
+      "deezerId": 1975430187,
+      "title": "Dirrt",
+      "artist": "Big Baby Tape, Kizaru",
+      "artistIds": [
+        "14277587",
+        "8687202"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Kizaru"
+      ],
+      "answerKey": "14277587|dirrt",
+      "workKey": "14277587|dirrt",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1975430187",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 14,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|dirrt"
+      ]
+    },
+    {
+      "id": "dz-2280819707",
+      "deezerId": 2280819707,
+      "title": "Зеркало",
+      "artist": "Kizaru",
+      "artistIds": [
+        "8687202"
+      ],
+      "artistNames": [
+        "Kizaru"
+      ],
+      "answerKey": "8687202|зеркало",
+      "workKey": "8687202|зеркало",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4bdc564d64d4cc4c71301b1f94ba163d/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2280819707",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 17,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|зеркало"
+      ]
+    },
+    {
+      "id": "dz-1975430167",
+      "deezerId": 1975430167,
+      "title": "So Icy Nihao",
+      "artist": "Big Baby Tape, Kizaru",
+      "artistIds": [
+        "14277587",
+        "8687202"
+      ],
+      "artistNames": [
+        "Big Baby Tape",
+        "Kizaru"
+      ],
+      "answerKey": "14277587|so icy nihao",
+      "workKey": "14277587|so icy nihao",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1975430167",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 18,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|so icy nihao"
+      ]
+    },
+    {
+      "id": "dz-3883590671",
+      "deezerId": 3883590671,
+      "title": "Presidential (Majestic)",
+      "artist": "Kizaru",
+      "artistIds": [
+        "8687202"
+      ],
+      "artistNames": [
+        "Kizaru"
+      ],
+      "answerKey": "8687202|presidential majestic",
+      "workKey": "8687202|presidential majestic",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/765f15344a3109e72d234ee36ec1b8ab/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3883590671",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 19,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "kizaru|presidential majestic"
+      ]
+    },
+    {
+      "id": "dz-3432510991",
+      "deezerId": 3432510991,
+      "title": "Честных правил",
+      "artist": "Markul",
+      "artistIds": [
+        "4942575"
+      ],
+      "artistNames": [
+        "Markul"
+      ],
+      "answerKey": "4942575|честных правил",
+      "workKey": "4942575|честных правил",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/bf9f83c0b7f40773d1fba3459d3f3e51/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3432510991",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 6,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|честных правил"
+      ]
+    },
+    {
+      "id": "dz-2930743911",
+      "deezerId": 2930743911,
+      "title": "Ветрено / Холодно",
+      "artist": "Markul",
+      "artistIds": [
+        "4942575"
+      ],
+      "artistNames": [
+        "Markul"
+      ],
+      "answerKey": "4942575|ветрено холодно",
+      "workKey": "4942575|ветрено холодно",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c7c246d3a61d5946f8b2a6956383d0d4/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2930743911",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 8,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|ветрено холодно"
+      ]
+    },
+    {
+      "id": "dz-912448132",
+      "deezerId": 912448132,
+      "title": "X-Ray",
+      "artist": "БИЛИК, Markul",
+      "artistIds": [
+        "53378612",
+        "4942575"
+      ],
+      "artistNames": [
+        "БИЛИК",
+        "Markul"
+      ],
+      "answerKey": "53378612|x ray",
+      "workKey": "53378612|x ray",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/12fa3078e42ca1cc8f0457bc48f9d33b/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/912448132",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 9,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|x ray"
+      ]
+    },
+    {
+      "id": "dz-1523191152",
+      "deezerId": 1523191152,
+      "title": "Cuba Libre",
+      "artist": "Markul",
+      "artistIds": [
+        "4942575"
+      ],
+      "artistNames": [
+        "Markul"
+      ],
+      "answerKey": "4942575|cuba libre",
+      "workKey": "4942575|cuba libre",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/df16556f9a376217df70e8ef341785db/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1523191152",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 10,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|cuba libre"
+      ]
+    },
+    {
+      "id": "dz-1523191192",
+      "deezerId": 1523191192,
+      "title": "Rick James",
+      "artist": "Markul, Anikv",
+      "artistIds": [
+        "4942575",
+        "15170473"
+      ],
+      "artistNames": [
+        "Markul",
+        "Anikv"
+      ],
+      "answerKey": "4942575|rick james",
+      "workKey": "4942575|rick james",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/df16556f9a376217df70e8ef341785db/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1523191192",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 11,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|rick james"
+      ]
+    },
+    {
+      "id": "dz-3112996791",
+      "deezerId": 3112996791,
+      "title": "Осадки",
+      "artist": "Markul",
+      "artistIds": [
+        "4942575"
+      ],
+      "artistNames": [
+        "Markul"
+      ],
+      "answerKey": "4942575|осадки",
+      "workKey": "4942575|осадки",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/17b274549e6671797761a582e945e57f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3112996791",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 12,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|осадки"
+      ]
+    },
+    {
+      "id": "dz-3643354052",
+      "deezerId": 3643354052,
+      "title": "CULTURE",
+      "artist": "Aarne, Toxi$, Markul",
+      "artistIds": [
+        "1582524",
+        "74526042",
+        "4942575"
+      ],
+      "artistNames": [
+        "Aarne",
+        "Toxi$",
+        "Markul"
+      ],
+      "answerKey": "1582524|culture",
+      "workKey": "1582524|culture",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a1e8e1fe6000fdd0a77dc3f18e872d67/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3643354052",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 13,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|culture"
+      ]
+    },
+    {
+      "id": "dz-2581017762",
+      "deezerId": 2581017762,
+      "title": "Ненормальный",
+      "artist": "Markul",
+      "artistIds": [
+        "4942575"
+      ],
+      "artistNames": [
+        "Markul"
+      ],
+      "answerKey": "4942575|ненормальный",
+      "workKey": "4942575|ненормальный",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/de3bcf21b422821c0f473e37b6817dbf/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2581017762",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 15,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|ненормальный"
+      ]
+    },
+    {
+      "id": "dz-3112996781",
+      "deezerId": 3112996781,
+      "title": "Первый раз",
+      "artist": "Markul",
+      "artistIds": [
+        "4942575"
+      ],
+      "artistNames": [
+        "Markul"
+      ],
+      "answerKey": "4942575|первый раз",
+      "workKey": "4942575|первый раз",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/17b274549e6671797761a582e945e57f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3112996781",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 17,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|первый раз"
+      ]
+    },
+    {
+      "id": "dz-1009434212",
+      "deezerId": 1009434212,
+      "title": "Конфеты",
+      "artist": "Markul, Платина",
+      "artistIds": [
+        "4942575",
+        "14097523"
+      ],
+      "artistNames": [
+        "Markul",
+        "Платина"
+      ],
+      "answerKey": "4942575|конфеты",
+      "workKey": "4942575|конфеты",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/501ca07efea525b878188c202c8ccb76/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1009434212",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 18,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|конфеты"
+      ]
+    },
+    {
+      "id": "dz-3112996801",
+      "deezerId": 3112996801,
+      "title": "Корни",
+      "artist": "Markul",
+      "artistIds": [
+        "4942575"
+      ],
+      "artistNames": [
+        "Markul"
+      ],
+      "answerKey": "4942575|корни",
+      "workKey": "4942575|корни",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/17b274549e6671797761a582e945e57f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3112996801",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 19,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|корни"
+      ]
+    },
+    {
+      "id": "dz-3112996771",
+      "deezerId": 3112996771,
+      "title": "MDGA",
+      "artist": "Markul",
+      "artistIds": [
+        "4942575"
+      ],
+      "artistNames": [
+        "Markul"
+      ],
+      "answerKey": "4942575|mdga",
+      "workKey": "4942575|mdga",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/17b274549e6671797761a582e945e57f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3112996771",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 20,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "markul|mdga"
+      ]
+    },
+    {
+      "id": "dz-4365694011",
+      "deezerId": 4365694011,
+      "title": "STAY COLD",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|stay cold",
+      "workKey": "7800506|stay cold",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a1148e86d0f9f3323a1a5e02a12fa7b8/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4365694011",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 1,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|stay cold"
+      ]
+    },
+    {
+      "id": "dz-1287017902",
+      "deezerId": 1287017902,
+      "title": "1 000 000",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|1 000 000",
+      "workKey": "7800506|1 000 000",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4390efdf939633e5d300b36650bc0a30/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1287017902",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 2,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|1 000 000"
+      ]
+    },
+    {
+      "id": "dz-3255022821",
+      "deezerId": 3255022821,
+      "title": "NAME",
+      "artist": "OBLADAET, Icegergert",
+      "artistIds": [
+        "7800506",
+        "129513512"
+      ],
+      "artistNames": [
+        "OBLADAET",
+        "Icegergert"
+      ],
+      "answerKey": "7800506|name",
+      "workKey": "7800506|name",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/716e6ffb3dd5fa47f6c7696409f040c1/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3255022821",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 4,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|name"
+      ]
+    },
+    {
+      "id": "dz-2536502931",
+      "deezerId": 2536502931,
+      "title": "HARLEQUIN",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|harlequin",
+      "workKey": "7800506|harlequin",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2536502931",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 9,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|harlequin"
+      ]
+    },
+    {
+      "id": "dz-2536502971",
+      "deezerId": 2536502971,
+      "title": "BRITNEY",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|britney",
+      "workKey": "7800506|britney",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2536502971",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 11,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|britney"
+      ]
+    },
+    {
+      "id": "dz-3266650841",
+      "deezerId": 3266650841,
+      "title": "CCTV",
+      "artist": "OBLADAET, Полка",
+      "artistIds": [
+        "7800506",
+        "165844447"
+      ],
+      "artistNames": [
+        "OBLADAET",
+        "Полка"
+      ],
+      "answerKey": "7800506|cctv",
+      "workKey": "7800506|cctv",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/d5bbbc054e130e056f7e0c3d04a5167b/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3266650841",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 12,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|cctv"
+      ]
+    },
+    {
+      "id": "dz-2536502951",
+      "deezerId": 2536502951,
+      "title": "Проклятие",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|проклятие",
+      "workKey": "7800506|проклятие",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2536502951",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 13,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|проклятие"
+      ]
+    },
+    {
+      "id": "dz-3081208971",
+      "deezerId": 3081208971,
+      "title": "OVERDOZE",
+      "artist": "Bato, OBLADAET",
+      "artistIds": [
+        "71355022",
+        "7800506"
+      ],
+      "artistNames": [
+        "Bato",
+        "OBLADAET"
+      ],
+      "answerKey": "71355022|overdoze",
+      "workKey": "71355022|overdoze",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ee398b1e147e5bb229f2919fd406e862/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3081208971",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 14,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|overdoze"
+      ]
+    },
+    {
+      "id": "dz-4323040842",
+      "deezerId": 4323040842,
+      "title": "Satisfaction",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|satisfaction",
+      "workKey": "7800506|satisfaction",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e30828fe65163a2a992f8d5cb1c778c6/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4323040842",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 15,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|satisfaction"
+      ]
+    },
+    {
+      "id": "dz-1084610982",
+      "deezerId": 1084610982,
+      "title": "FOR MULA",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|for mula",
+      "workKey": "7800506|for mula",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e2fd9e93484ec0f0d8398f3f76f5d6fd/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1084610982",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 16,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|for mula"
+      ]
+    },
+    {
+      "id": "dz-2536503011",
+      "deezerId": 2536503011,
+      "title": "MONSTER TRAKK",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|monster trakk",
+      "workKey": "7800506|monster trakk",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2536503011",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 18,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|monster trakk"
+      ]
+    },
+    {
+      "id": "dz-2536503081",
+      "deezerId": 2536503081,
+      "title": "Бабочки",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|бабочки",
+      "workKey": "7800506|бабочки",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2536503081",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 19,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|бабочки"
+      ]
+    },
+    {
+      "id": "dz-2536503041",
+      "deezerId": 2536503041,
+      "title": "Большой Брат",
+      "artist": "OBLADAET",
+      "artistIds": [
+        "7800506"
+      ],
+      "artistNames": [
+        "OBLADAET"
+      ],
+      "answerKey": "7800506|большой брат",
+      "workKey": "7800506|большой брат",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2536503041",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 20,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "obladaet|большой брат"
+      ]
+    },
+    {
+      "id": "dz-381303081",
+      "deezerId": 381303081,
+      "title": "Проблемы",
+      "artist": "Pharaoh, The Chemodan",
+      "artistIds": [
+        "10216612",
+        "1653148"
+      ],
+      "artistNames": [
+        "Pharaoh",
+        "The Chemodan"
+      ],
+      "answerKey": "10216612|проблемы",
+      "workKey": "10216612|проблемы",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/06d4708b2ad908ca276b70b8f9485f22/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/381303081",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 2,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|проблемы"
+      ]
+    },
+    {
+      "id": "dz-381303071",
+      "deezerId": 381303071,
+      "title": "Pink Phloyd",
+      "artist": "Pharaoh",
+      "artistIds": [
+        "10216612"
+      ],
+      "artistNames": [
+        "Pharaoh"
+      ],
+      "answerKey": "10216612|pink phloyd",
+      "workKey": "10216612|pink phloyd",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/06d4708b2ad908ca276b70b8f9485f22/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/381303071",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 3,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|pink phloyd"
+      ]
+    },
+    {
+      "id": "dz-508411092",
+      "deezerId": 508411092,
+      "title": "На луне",
+      "artist": "Pharaoh",
+      "artistIds": [
+        "10216612"
+      ],
+      "artistNames": [
+        "Pharaoh"
+      ],
+      "answerKey": "10216612|на луне",
+      "workKey": "10216612|на луне",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b39b73e296adb482b3bc2cf216c8b38f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/508411092",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 5,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|на луне"
+      ]
+    },
+    {
+      "id": "dz-543452012",
+      "deezerId": 543452012,
+      "title": "Шипучка",
+      "artist": "Pharaoh, Big Baby Tape",
+      "artistIds": [
+        "10216612",
+        "14277587"
+      ],
+      "artistNames": [
+        "Pharaoh",
+        "Big Baby Tape"
+      ],
+      "answerKey": "10216612|шипучка",
+      "workKey": "10216612|шипучка",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/75468336e566ba9f39417431127047d4/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/543452012",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 7,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|шипучка"
+      ]
+    },
+    {
+      "id": "dz-433162202",
+      "deezerId": 433162202,
+      "title": "Caramel",
+      "artist": "Pharaoh",
+      "artistIds": [
+        "10216612"
+      ],
+      "artistNames": [
+        "Pharaoh"
+      ],
+      "answerKey": "10216612|caramel",
+      "workKey": "10216612|caramel",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/668b8f645f169dd555d19ca1cfbb77dc/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/433162202",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 8,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|caramel"
+      ]
+    },
+    {
+      "id": "dz-543451932",
+      "deezerId": 543451932,
+      "title": "Смарт",
+      "artist": "Pharaoh",
+      "artistIds": [
+        "10216612"
+      ],
+      "artistNames": [
+        "Pharaoh"
+      ],
+      "answerKey": "10216612|смарт",
+      "workKey": "10216612|смарт",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/75468336e566ba9f39417431127047d4/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/543451932",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 9,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|смарт"
+      ]
+    },
+    {
+      "id": "dz-2034326907",
+      "deezerId": 2034326907,
+      "title": "Соната Ей",
+      "artist": "Pharaoh",
+      "artistIds": [
+        "10216612"
+      ],
+      "artistNames": [
+        "Pharaoh"
+      ],
+      "answerKey": "10216612|соната ей",
+      "workKey": "10216612|соната ей",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/bdfbe0a4ab12e6625a9da9715f87be14/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2034326907",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 12,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|соната ей"
+      ]
+    },
+    {
+      "id": "dz-1394167832",
+      "deezerId": 1394167832,
+      "title": "Pornozvezda",
+      "artist": "Pharaoh, LSP",
+      "artistIds": [
+        "10216612",
+        "265301792"
+      ],
+      "artistNames": [
+        "Pharaoh",
+        "LSP"
+      ],
+      "answerKey": "10216612|pornozvezda",
+      "workKey": "10216612|pornozvezda",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/36a9a7d4ef4f2f438238583f2367ee52/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1394167832",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 14,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|pornozvezda"
+      ]
+    },
+    {
+      "id": "dz-127709379",
+      "deezerId": 127709379,
+      "title": "Плакшери",
+      "artist": "Pharaoh, BOULEVARD DEPO",
+      "artistIds": [
+        "10216612",
+        "10292790"
+      ],
+      "artistNames": [
+        "Pharaoh",
+        "BOULEVARD DEPO"
+      ],
+      "answerKey": "10216612|плакшери",
+      "workKey": "10216612|плакшери",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/761da3655149318c69c47336a9e90c62/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/127709379",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 16,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|плакшери"
+      ]
+    },
+    {
+      "id": "dz-3339547461",
+      "deezerId": 3339547461,
+      "title": "Москва (Не Про)",
+      "artist": "Pharaoh",
+      "artistIds": [
+        "10216612"
+      ],
+      "artistNames": [
+        "Pharaoh"
+      ],
+      "answerKey": "10216612|москва не про",
+      "workKey": "10216612|москва не про",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/d7e334ce697b8b084c2f0c6ee5bed5f6/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3339547461",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 17,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|москва не про"
+      ]
+    },
+    {
+      "id": "dz-381303131",
+      "deezerId": 381303131,
+      "title": "Лаллипап",
+      "artist": "Pharaoh",
+      "artistIds": [
+        "10216612"
+      ],
+      "artistNames": [
+        "Pharaoh"
+      ],
+      "answerKey": "10216612|лаллипап",
+      "workKey": "10216612|лаллипап",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/06d4708b2ad908ca276b70b8f9485f22/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/381303131",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 18,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|лаллипап"
+      ]
+    },
+    {
+      "id": "dz-127710189",
+      "deezerId": 127710189,
+      "title": "Crackhouse",
+      "artist": "Pharaoh, I61",
+      "artistIds": [
+        "10216612",
+        "10520751"
+      ],
+      "artistNames": [
+        "Pharaoh",
+        "I61"
+      ],
+      "answerKey": "10216612|crackhouse",
+      "workKey": "10216612|crackhouse",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e82bcefc95e89e89b8990cdb8b651119/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/127710189",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 19,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|crackhouse"
+      ]
+    },
+    {
+      "id": "dz-128743841",
+      "deezerId": 128743841,
+      "title": "Фосфор",
+      "artist": "Pharaoh",
+      "artistIds": [
+        "10216612"
+      ],
+      "artistNames": [
+        "Pharaoh"
+      ],
+      "answerKey": "10216612|фосфор",
+      "workKey": "10216612|фосфор",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/13e4f9f4e1dd0d6979a648d82b9305a1/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/128743841",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "new-wave-player-picks-20261030",
+          "position": 20,
+          "genres": [
+            "ru-rap",
+            "new-wave"
+          ],
+          "period": "выбор игроков · 30.10.2026"
+        }
+      ],
+      "lookupKeys": [
+        "pharaoh|фосфор"
       ]
     }
   ],

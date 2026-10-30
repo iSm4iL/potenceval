@@ -179,6 +179,26 @@ test('searchArtists returns actual API results in order and never substitutes a 
   assert.deepEqual(await fixtureRequest({ 'search/artist': { data: [] } }).client.searchArtists('unknown'), []);
 });
 
+test('search hydrates omitted guest credits, but preserves hits on detail failure', async () => {
+  const partial = rawTrack(90, { title: 'THRILLEЯ', artist: { id: 165492217, name: 'Kai Angel' }, contributors: undefined });
+  const full = { ...partial, contributors: [{ id: 165492217, name: 'Kai Angel' }, { id: 150616292, name: '9mice' }] };
+  const { client } = fixtureRequest({ search: { data: [partial] }, 'track/90': full });
+  const [track] = await client.searchTracks('9mice THRILLEЯ');
+  assert.equal(track.artist, 'Kai Angel, 9mice');
+  assert.deepEqual(track.artistIds, ['165492217', '150616292']);
+  const failed = fixtureRequest({ search: { data: [partial] }, 'track/90': new Error('offline') });
+  assert.equal((await failed.client.searchTracks('9mice'))[0].id, 'dz-90');
+  const wrong = fixtureRequest({ search: { data: [partial] }, 'track/90': rawTrack(91) });
+  assert.equal((await wrong.client.searchTracks('9mice'))[0].id, 'dz-90');
+});
+
+test('cancelling guest-credit hydration cancels search rather than returning partial results', async () => {
+  const controller = new AbortController();
+  const { client } = fixtureRequest({ search: { data: [rawTrack(90, { contributors: undefined })] },
+    'track/90': () => { controller.abort(); throw new DOMException('Aborted', 'AbortError'); } });
+  await assert.rejects(client.searchTracks('guest', { signal: controller.signal }), { name: 'AbortError' });
+});
+
 test('already aborted operations never send requests', async () => {
   const controller = new AbortController();
   controller.abort();

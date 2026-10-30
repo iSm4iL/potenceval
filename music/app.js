@@ -1,9 +1,9 @@
 import { t, lang } from '../shared/i18n.js?v=ui-20261029';
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
 import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=locale-20261029';
-import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistOptions, snapshotTrack, sameArtist } from './catalog.js?v=locale-20261029';
-import { createDeezerClient } from './service.js?v=locale-20261029';
-import { AudioPlayer } from './audio.js?v=locale-20261029';
+import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistOptions, sameArtist } from './catalog.js?v=music-fixes-20261030';
+import { createDeezerClient } from './service.js?v=music-fixes-20261030';
+import { AudioPlayer } from './audio.js?v=music-fixes-20261030';
 import { resultPresentation } from './feedback.js?v=locale-20261029';
 import { createCatalogClient } from './collection.js?v=locale-20261029';
 import './report.js?v=locale-20261029';
@@ -301,7 +301,7 @@ async function prepareAudio(track, version, focusAnswer = false) {
       if (pre) { $('#playStatus').textContent = t('Ожидаем загрузку следующей песни…', "Waiting for the next track to load…"); try { ({ full, buffer } = await pre); } catch { /* не догрузилась — грузим как обычно */ } }
       if (!full) full = await service.track(track.deezerId, { signal: controller.signal });
       if (version !== screenVersion || request !== audioVersion) return;
-      if (!multiplayer.active && state.phase === 'round' && !state.attempts.length) { state = { ...state, tracks: state.tracks.map(t => t.id === full.id ? { ...t, ...snapshotTrack(full) } : t) }; persistGame(); }
+      // Refresh the audio URL only; answers stay pinned to the party snapshot.
       if (buffer) player.useBuffer(full, buffer);
       else {
         const loaded = await player.load(full, { onStatus: status => { if (version === screenVersion && request === audioVersion) $('#playStatus').textContent = status; } });

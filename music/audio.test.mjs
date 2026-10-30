@@ -23,6 +23,30 @@ const response = () => ({ ok: true, arrayBuffer: async () => new ArrayBuffer(8) 
 const tick = () => new Promise(resolve => setImmediate(resolve));
 const make = (ctx = context(), fetchAudio = async () => response()) => new AudioPlayer({ context: ctx, fetchAudio });
 
+test('a repetitive intro gives way to a more varied window for both load paths', async () => {
+  const rate = 1000, samples = new Float32Array(30 * rate);
+  for (let i = 0; i < samples.length; i++) {
+    const amplitude = i < 15 * rate ? .2 : (Math.floor(i / 500) % 3 + 1) * .15;
+    samples[i] = amplitude * Math.sin(2 * Math.PI * 40 * i / rate);
+  }
+  const buffer = { duration: 30, sampleRate: rate, numberOfChannels: 2, getChannelData: c => c === 0 ? new Float32Array(samples.length) : samples };
+  const ctx = context(); ctx.decodeAudioData = async () => buffer;
+  const player = make(ctx);
+  await player.load(track);
+  const start = player.track.start;
+  assert.ok(start >= 10 && start <= 15, `start=${start}`);
+  player.useBuffer(track, buffer);
+  assert.equal(player.track.start, start);
+  const ended = player.play(15); await tick();
+  assert.ok(ctx.sources.at(-1).args[1] + ctx.sources.at(-1).args[2] <= buffer.duration);
+  ctx.sources.at(-1).onended(); await ended;
+});
+
+test('uniform previews keep a stable start rather than moving on each attempt', () => {
+  const samples = Float32Array.from({ length: 30000 }, (_, i) => .2 * Math.sin(2 * Math.PI * 40 * i / 1000));
+  assert.ok(audibleStart({ duration: 30, sampleRate: 1000, getChannelData: () => samples }) < .1);
+});
+
 test('online preview is fetched with no persistent cache and plays all exact snippet lengths', async () => {
   const ctx = context(), calls = [];
   const player = make(ctx, async (...args) => { calls.push(args); return response(); });

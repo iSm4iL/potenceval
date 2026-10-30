@@ -47,6 +47,27 @@ def unique(items):
     return list(dict.fromkeys(items))
 
 
+def apply_collection_rules(tracks, config):
+    """Apply editorial bans to a collection, including guest credits and stale evidence."""
+    bans = {genre: {normalize(a) for a in names} for genre, names in config.get("collectionExcludeArtists", {}).items()}
+    display = config.get("artistDisplayNames", {})
+    changed = False
+    for track in tracks:
+        names = {normalize(a) for a in track["artistNames"]}
+        excluded = {genre for genre, banned in bans.items() if names & banned}
+        for key in ("genres", "currentGenres"):
+            changed |= bool(excluded.intersection(track.get(key, [])))
+            track[key] = [g for g in track.get(key, []) if g not in excluded]
+        for ref in track.get("sources", []):
+            changed |= bool(excluded.intersection(ref.get("genres", [])))
+            ref["genres"] = [g for g in ref.get("genres", []) if g not in excluded]
+        new_names = [display.get(str(ident), name) for ident, name in zip(track["artistIds"], track["artistNames"])]
+        changed |= new_names != track["artistNames"]
+        track["artistNames"] = new_names
+        track["artist"] = ", ".join(unique(track["artistNames"]))
+    return changed
+
+
 def secure_url(value):
     try:
         url = urlparse(value)
@@ -396,7 +417,7 @@ def public_track(raw, row):
     main_id = str(raw["artist"]["id"])
     return {"id": "dz-" + str(raw["id"]), "deezerId": raw["id"], "title": raw["title"],
             "artist": ", ".join(unique(p["name"] for p in people)), "artistIds": [str(p["id"]) for p in people],
-            "artistNames": unique(p["name"] for p in people),
+            "artistNames": [p["name"] for p in people],
             "answerKey": main_id + "|" + normalize(raw.get("title_short") or raw["title"]),
             "workKey": main_id + "|" + canonical_title(raw["title"]), "cover": cover,
             "link": "https://www.deezer.com/track/" + str(raw["id"]),
@@ -532,6 +553,12 @@ def validate_config(config):
         raise ValueError("Expected version 1 and 1..100 sources")
     if not all(isinstance(a, str) for a in config.get("excludeArtists", [])) or not all(type(i) is int for i in config.get("excludeTracks", [])):
         raise ValueError("excludeArtists must be names, excludeTracks must be Deezer track IDs")
+    collection_bans = config.get("collectionExcludeArtists", {})
+    if not isinstance(collection_bans, dict) or not all(isinstance(genre, str) and isinstance(names, list) and all(isinstance(name, str) for name in names) for genre, names in collection_bans.items()):
+        raise ValueError("collectionExcludeArtists must map collection IDs to artist names")
+    display = config.get("artistDisplayNames", {})
+    if not isinstance(display, dict) or not all(isinstance(ident, str) and ident.isdigit() and isinstance(name, str) and name.strip() for ident, name in display.items()):
+        raise ValueError("artistDisplayNames must map artist IDs to nonempty names")
     ids = set()
     for source in config["sources"]:
         if not isinstance(source, dict) or not all(isinstance(source.get(k), str) and source[k].strip() for k in ("id", "kind", "title", "url")):
@@ -677,6 +704,7 @@ def build(sources_path, output_path, workers=4, limit_per_source=None, client=No
         track["genres"] = unique(g for ref in refs for g in ref["genres"])
         track["currentGenres"] = unique(g for ref in refs if config_sources[ref["id"]].get("current", config_sources[ref["id"]]["kind"] == "apple-chart") for g in ref["genres"])
     tracks = [track for track in tracks if track["sources"]]
+    editorial_pruned |= apply_collection_rules(tracks, config)
     # Стоп-лист: исполнители не в тему подборок и записи, чьё превью не играет в браузере.
     banned_artists = {normalize(a) for a in config.get("excludeArtists", [])}
     banned_tracks = set(config.get("excludeTracks", []))

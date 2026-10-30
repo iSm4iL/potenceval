@@ -42,7 +42,6 @@
     "MAYOT",
     "SEEMEE",
     "LOVV66",
-    "unki",
     "FRIENDLY THUG 52 NGG",
     "ALBLAK 52",
     "Aarne",
@@ -64,11 +63,12 @@
     "Lil Krystalll",
     "INSTASAMKA",
     "CUPSIZE",
-    "Heronwater",
     "Thrill Pill",
     "Baby Melo",
     "LIZER",
-    "Yanix"
+    "Yanix",
+    "Markul",
+    "Vitja AK"
   ],
   "russianArtists": [
     "madk1d",
@@ -6614,6 +6614,905 @@
           "id": 4645258
         }
       ]
+    },
+    {
+      "id": "new-wave-player-picks-20261030",
+      "kind": "verified-tracks",
+      "title": "Выбор игроков — Платина, Voskresenskii, kizaru, Markul, OBLADAET, PHARAOH",
+      "url": "https://www.deezer.com/",
+      "genres": [
+        "ru-rap",
+        "new-wave"
+      ],
+      "current": false,
+      "limit": 500,
+      "tracks": [
+        {
+          "title": "Быть богатым",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/3682944302"
+        },
+        {
+          "title": "За Меня",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463122912"
+        },
+        {
+          "title": "В Клубе",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463122902"
+        },
+        {
+          "title": "liga la sosa",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463122922"
+        },
+        {
+          "title": "Нотр-Дам Париж",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/781089772"
+        },
+        {
+          "title": "На Грязном (Диана)",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463122932"
+        },
+        {
+          "title": "Опиаты Круг",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/781089602"
+        },
+        {
+          "title": "Самый классный парень",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463122982"
+        },
+        {
+          "title": "Сердце для шалав",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463123002"
+        },
+        {
+          "title": "Как до луны (Drizzy flow)",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463123042"
+        },
+        {
+          "title": "Все эти деньги сразу",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463123052"
+        },
+        {
+          "title": "Сан Ларан",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1536077852"
+        },
+        {
+          "title": "Веном",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463123012"
+        },
+        {
+          "title": "Генг",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463123022"
+        },
+        {
+          "title": "Булки",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463122942"
+        },
+        {
+          "title": "Бригада",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463122952"
+        },
+        {
+          "title": "Abu Dhabi Ba6y",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463123032"
+        },
+        {
+          "title": "Вопросов нету",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/1463122992"
+        },
+        {
+          "title": "Как в первый раз",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/781089782"
+        },
+        {
+          "title": "EDM",
+          "artists": [
+            "Платина"
+          ],
+          "url": "https://www.deezer.com/track/2868877772"
+        },
+        {
+          "title": "Франсе",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/4223201262"
+        },
+        {
+          "title": "Стиралка",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/4223201212"
+        },
+        {
+          "title": "Быть богатым",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/3682944302"
+        },
+        {
+          "title": "Русская Кукла",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/3190082571"
+        },
+        {
+          "title": "Запой",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/4223201192"
+        },
+        {
+          "title": "Ботиночки",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/3040331231"
+        },
+        {
+          "title": "Покажи как ты танцуешь",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/3433296401"
+        },
+        {
+          "title": "Не для меня",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/3105145621"
+        },
+        {
+          "title": "DOLBIT NORMALNO",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/3505665361"
+        },
+        {
+          "title": "Заболел флексом",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/4223201242"
+        },
+        {
+          "title": "Просто",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/4223201222"
+        },
+        {
+          "title": "KFC",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/3476662301"
+        },
+        {
+          "title": "Taz Muzik",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/2868877792"
+        },
+        {
+          "title": "Большие факты",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/2781319371"
+        },
+        {
+          "title": "Три Телефона",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/2589097222"
+        },
+        {
+          "title": "Да это так",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/4159679972"
+        },
+        {
+          "title": "ИРИ",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/2781319381"
+        },
+        {
+          "title": "Я не употребляю",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/2914185721"
+        },
+        {
+          "title": "Скини",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/3868724221"
+        },
+        {
+          "title": "Доказал",
+          "artists": [
+            "Voskresenskii"
+          ],
+          "url": "https://www.deezer.com/track/2781319411"
+        },
+        {
+          "title": "99 Problems",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430157"
+        },
+        {
+          "title": "Bad Blood",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975794587"
+        },
+        {
+          "title": "Bandana",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430247"
+        },
+        {
+          "title": "Slip & Slide",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430257"
+        },
+        {
+          "title": "Haunted House",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/2516211021"
+        },
+        {
+          "title": "5 Nights Crazy",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430217"
+        },
+        {
+          "title": "Bon Voyage",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430277"
+        },
+        {
+          "title": "Million",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430207"
+        },
+        {
+          "title": "На работе",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1974314657"
+        },
+        {
+          "title": "52 & HAUNTED",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/2748139771"
+        },
+        {
+          "title": "Делаю всё что хочу",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1974314677"
+        },
+        {
+          "title": "Sold Out",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/2526210271"
+        },
+        {
+          "title": "Ride Or Die",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430287"
+        },
+        {
+          "title": "Dirrt",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430187"
+        },
+        {
+          "title": "2L8",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/4036956611"
+        },
+        {
+          "title": "Что за бизнес сука?",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975794537"
+        },
+        {
+          "title": "Зеркало",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/2280819707"
+        },
+        {
+          "title": "So Icy Nihao",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975430167"
+        },
+        {
+          "title": "Presidential (Majestic)",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/3883590671"
+        },
+        {
+          "title": "Дежавю",
+          "artists": [
+            "kizaru"
+          ],
+          "url": "https://www.deezer.com/track/1975781457"
+        },
+        {
+          "title": "Ya v momente",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/1394022492"
+        },
+        {
+          "title": "Серпантин",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/3431196461"
+        },
+        {
+          "title": "Карусель",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/1523191082"
+        },
+        {
+          "title": "Noir",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/1379369912"
+        },
+        {
+          "title": "Fata Morgana",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/790225272"
+        },
+        {
+          "title": "Честных правил",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/3432510991"
+        },
+        {
+          "title": "B.I.D",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/912448182"
+        },
+        {
+          "title": "Ветрено / Холодно",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/2930743911"
+        },
+        {
+          "title": "X-Ray",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/912448132"
+        },
+        {
+          "title": "Cuba Libre",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/1523191152"
+        },
+        {
+          "title": "Rick James",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/1523191192"
+        },
+        {
+          "title": "Осадки",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/3112996791"
+        },
+        {
+          "title": "CULTURE",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/3643354052"
+        },
+        {
+          "title": "Скалы",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/912448202"
+        },
+        {
+          "title": "Ненормальный",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/2581017762"
+        },
+        {
+          "title": "Ниоткуда",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/2021646807"
+        },
+        {
+          "title": "Первый раз",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/3112996781"
+        },
+        {
+          "title": "Конфеты",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/1009434212"
+        },
+        {
+          "title": "Корни",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/3112996801"
+        },
+        {
+          "title": "MDGA",
+          "artists": [
+            "Markul"
+          ],
+          "url": "https://www.deezer.com/track/3112996771"
+        },
+        {
+          "title": "STAY COLD",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/4365694011"
+        },
+        {
+          "title": "1 000 000",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/1287017902"
+        },
+        {
+          "title": "GLOBA",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536503001"
+        },
+        {
+          "title": "NAME",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/3255022821"
+        },
+        {
+          "title": "DAVID BECKHAM",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/1257190812"
+        },
+        {
+          "title": "SKI ANORAK",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536502961"
+        },
+        {
+          "title": "FVKK YEAH",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/4323040832"
+        },
+        {
+          "title": "BOO!",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536502941"
+        },
+        {
+          "title": "HARLEQUIN",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536502931"
+        },
+        {
+          "title": "735 PROBLEMS",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536503091"
+        },
+        {
+          "title": "BRITNEY",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536502971"
+        },
+        {
+          "title": "CCTV",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/3266650841"
+        },
+        {
+          "title": "Проклятие",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536502951"
+        },
+        {
+          "title": "OVERDOZE",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/3081208971"
+        },
+        {
+          "title": "Satisfaction",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/4323040842"
+        },
+        {
+          "title": "FOR MULA",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/1084610982"
+        },
+        {
+          "title": "I AM",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/354162171"
+        },
+        {
+          "title": "MONSTER TRAKK",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536503011"
+        },
+        {
+          "title": "Бабочки",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536503081"
+        },
+        {
+          "title": "Большой Брат",
+          "artists": [
+            "OBLADAET"
+          ],
+          "url": "https://www.deezer.com/track/2536503041"
+        },
+        {
+          "title": "Дико, например",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/367431961"
+        },
+        {
+          "title": "Проблемы",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/381303081"
+        },
+        {
+          "title": "Pink Phloyd",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/381303071"
+        },
+        {
+          "title": "Не по пути",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/566281122"
+        },
+        {
+          "title": "На луне",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/508411092"
+        },
+        {
+          "title": "Из-за тебя",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/904262292"
+        },
+        {
+          "title": "Шипучка",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/543452012"
+        },
+        {
+          "title": "Caramel",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/433162202"
+        },
+        {
+          "title": "Смарт",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/543451932"
+        },
+        {
+          "title": "Ночь пятницы",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/904262172"
+        },
+        {
+          "title": "Keks",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/1394167862"
+        },
+        {
+          "title": "Соната Ей",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/2034326907"
+        },
+        {
+          "title": "Neon",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/1394167952"
+        },
+        {
+          "title": "Pornozvezda",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/1394167832"
+        },
+        {
+          "title": "5 минут назад",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/127709375"
+        },
+        {
+          "title": "Плакшери",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/127709379"
+        },
+        {
+          "title": "Москва (Не Про)",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/3339547461"
+        },
+        {
+          "title": "Лаллипап",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/381303131"
+        },
+        {
+          "title": "Crackhouse",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/127710189"
+        },
+        {
+          "title": "Фосфор",
+          "artists": [
+            "PHARAOH"
+          ],
+          "url": "https://www.deezer.com/track/128743841"
+        }
+      ]
     }
-  ]
+  ],
+  "collectionExcludeArtists": {
+    "new-wave": [
+      "5sta Family",
+      "Гуляй Рванина",
+      "Лоя",
+      "МАКСИ ГРИН",
+      "Паранойя",
+      "сайко",
+      "A$THMA BOYS",
+      "ANTON BENDER",
+      "ARTEM SHILOVETS",
+      "Brick Bazuka",
+      "DJ Cave",
+      "FADE031",
+      "Flockaa",
+      "GBAN",
+      "glaive",
+      "GreyRock",
+      "HELLOVERCAVI",
+      "Heronwater",
+      "Highself",
+      "Kondachelo",
+      "kurtains",
+      "Loboda",
+      "Mary Gu",
+      "Murovei",
+      "Onative",
+      "Police In Paris",
+      "SaintPrince 52",
+      "Shooval",
+      "SIDODGI DUBOSHIT",
+      "SKY RAE",
+      "SP4K",
+      "tewiq",
+      "Uniqe",
+      "Unki",
+      "VibeTGK",
+      "White Punk",
+      "Yasmi",
+      "Zivert"
+    ]
+  },
+  "artistDisplayNames": {
+    "8042959": "Элджей"
+  }
 }

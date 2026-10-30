@@ -1,5 +1,5 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
-import { isPreviewUrl } from './catalog.js?v=locale-20261029';
+import { isPreviewUrl } from './catalog.js?v=music-fixes-20261030';
 
 // Fetch cancellation alone cannot release a stalled audio decoder or resume().
 function abortable(operation, signal) {
@@ -15,14 +15,42 @@ function abortable(operation, signal) {
   });
 }
 
-// Некоторые превью начинаются с тишины, и полсекунды тишины выглядят как «песня не играет».
-// Отрывок начинаем с первого слышимого звука, оставляя запас на 15 секунд.
+// Prefer a clearly more varied 15-second window over a repetitive intro.
+// This measures signal variety, not vocals or musical recognizability.
 export function audibleStart(buffer, threshold = 0.01) {
   if (typeof buffer?.getChannelData !== 'function') return 0;
-  const data = buffer.getChannelData(0), rate = buffer.sampleRate || 44100;
-  const limit = Math.min(data.length, Math.floor(Math.max(0, buffer.duration - 15) * rate));
-  for (let i = 0; i < limit; i++) if (Math.abs(data[i]) > threshold) return Math.max(0, i / rate - 0.03);
-  return 0;
+  const channels = Array.from({ length: buffer.numberOfChannels || 1 }, (_, c) => buffer.getChannelData(c));
+  const rate = buffer.sampleRate || 44100, latest = Math.max(0, buffer.duration - 15);
+  const limit = Math.min(channels[0].length, Math.floor(latest * rate));
+  let start = 0;
+  for (let i = 0; i < limit; i++) if (channels.some(data => Math.abs(data[i]) > threshold)) {
+    start = Math.max(0, i / rate - 0.03); break;
+  }
+  const size = Math.max(1, Math.floor(rate / 2)), features = [];
+  for (let offset = 0; offset + size <= channels[0].length; offset += size) {
+    let energy = 0, crossings = 0;
+    for (const data of channels) for (let i = offset; i < offset + size; i++) {
+      energy += data[i] * data[i];
+      if (i > offset && (data[i] > 0) !== (data[i - 1] > 0)) crossings++;
+    }
+    features.push([Math.sqrt(energy / (size * channels.length)), crossings / (size * channels.length)]);
+  }
+  const variation = values => {
+    const mean = values.reduce((a, b) => a + b, 0) / values.length;
+    return mean > 0 ? Math.sqrt(values.reduce((sum, x) => sum + (x - mean) ** 2, 0) / values.length) / mean : 0;
+  };
+  const score = time => {
+    const frames = features.slice(Math.ceil(time * rate / size), Math.ceil(time * rate / size) + 30);
+    if (frames.length < 30 || frames.some(f => f[0] < threshold)) return 0;
+    return variation(frames.map(f => f[0])) + .5 * variation(frames.map(f => f[1]));
+  };
+  const baseline = score(start);
+  let best = baseline, chosen = start;
+  for (let time = Math.ceil(start * 2) / 2; time <= latest; time += .5) {
+    const value = score(time);
+    if (value > best + .01) { best = value; chosen = time; }
+  }
+  return best > baseline * 1.5 + .15 ? chosen : start;
 }
 
 export class AudioPlayer {

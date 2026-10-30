@@ -5,6 +5,20 @@ import { searchTracks, combineSuggestions, searchArtistOptions, artistOptions, c
 const track = (id, title, artist, artistId = id) => ({ id: `dz-${id}`, title, artist, artistIds: [String(artistId)], artistNames: [artist], answerKey: `${artistId}|${title}` });
 const songs = [track(1, 'Nothing Else Matters', 'Metallica'), track(2, 'Another Brick in the Wall', 'Pink Floyd'), track(3, 'Перелётная птица', 'Кристина Орбакайте'), track(4, 'Bohemian Rhapsody', 'Queen')];
 
+test('Nine Mice spellings find 9mice songs and artist options without changing identity', () => {
+  const song = track(90, 'THRILLEЯ', '9mice', 150616292);
+  for (const query of ['Nine Mice', 'nine mice THRILLEЯ', 'найн майс', '9 mice']) {
+    assert.equal(searchTracks([song], query)[0]?.id, song.id, query);
+  }
+  assert.equal(searchArtistOptions(artistOptions([song]), 'Nine Mice')[0]?.artistId, '150616292');
+});
+
+test('Deezer search hits survive omitted guest credits and still exclude tried answers', () => {
+  const guestHit = track(90, 'THRILLEЯ', 'Kai Angel');
+  assert.equal(combineSuggestions([], [guestHit], '9mice')[0]?.id, guestHit.id);
+  assert.deepEqual(combineSuggestions([], [guestHit], '9mice', [guestHit.id]), []);
+});
+
 test('song search understands typos, swapped letters and transliteration', () => {
   for (const [query, id] of [['металика', 'dz-1'], ['пинк флойд', 'dz-2'], ['kristina orbakaite', 'dz-3'], ['перелетная птциа', 'dz-3'], ['Nothing Else Maters', 'dz-1'], ['квин', 'dz-4']]) {
     assert.equal(searchTracks(songs, query)[0]?.id, id, query);

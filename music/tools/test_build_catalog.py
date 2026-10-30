@@ -136,6 +136,25 @@ class BuilderTests(unittest.TestCase):
         self.assertFalse(b.match_track({"title": "Song", "artists": ["Alice & Bobby"]}, duet)[0])
         self.assertTrue(b.match_track({"title": "Song", "artists": ["Earth, Wind & Fire"]}, raw(title="Song", artist="Earth, Wind & Fire"))[0])
 
+    def test_public_track_preserves_parallel_credit_pairs_for_namesakes(self):
+        track = b.public_track(raw(artist="Same", contributors=[
+            {"id": 176, "name": "Same"}, {"id": 9, "name": "Same"}, {"id": 10, "name": "Guest"}
+        ]), {"title": "Sultans of Swing", "artists": ["Same"]})
+        self.assertEqual(track["artistIds"], ["176", "9", "10"])
+        self.assertEqual(track["artistNames"], ["Same", "Same", "Guest"])
+
+    def test_collection_exclusions_remove_guests_only_from_requested_genre(self):
+        track = {"artistIds": ["1", "2"], "artistNames": ["Core", "Loboda"], "artist": "Core, Loboda",
+                 "genres": ["new-wave", "mom-pop"], "currentGenres": ["new-wave"],
+                 "sources": [{"id": "a", "genres": ["new-wave", "mom-pop"]}]}
+        b.apply_collection_rules([track], {"collectionExcludeArtists": {"new-wave": ["Loboda"]}})
+        self.assertEqual(track["genres"], ["mom-pop"])
+        self.assertEqual(track["currentGenres"], [])
+        self.assertEqual(track["sources"][0]["genres"], ["mom-pop"])
+        b.apply_collection_rules([track], {"artistDisplayNames": {"2": "Лобода"}})
+        self.assertEqual(track["artistNames"], ["Core", "Лобода"])
+        self.assertEqual(track["artistIds"], ["1", "2"])
+
     def test_verified_deezer_link_resolves_a_track_missing_from_search(self):
         class MissingFromSearch(FakeClient):
             def get(self, url):
@@ -353,6 +372,19 @@ class BuilderTests(unittest.TestCase):
             catalog = json.loads(out.read_text())
             self.assertEqual(catalog["sources"][0]["status"], "stale")
             self.assertEqual(len(catalog["tracks"][0]["sources"]), 2)
+
+    def test_collection_removal_takes_effect_even_if_every_source_is_offline(self):
+        with workspace_temp() as directory:
+            src, out = self.setup_build(directory, [self.source(genres=["new-wave", "mom-pop"])])
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            config = json.loads(src.read_text(encoding="utf-8"))
+            config["collectionExcludeArtists"] = {"new-wave": ["Dire Straits"]}
+            config["sources"][0].update(kind="apple-playlist", url="https://example.org/down")
+            src.write_text(json.dumps(config), encoding="utf-8")
+            self.assertTrue(b.build(src, out, client=FakeClient()))
+            track = json.loads(out.read_text(encoding="utf-8"))["tracks"][0]
+            self.assertEqual(track["genres"], ["mom-pop"])
+            self.assertEqual(track["sources"][0]["genres"], ["mom-pop"])
 
     def test_all_sources_failed_and_zero_valid_do_not_replace_old_bytes(self):
         with workspace_temp() as directory:

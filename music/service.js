@@ -1,5 +1,5 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
-import { normalizeDeezer } from './catalog.js?v=locale-20261029';
+import { normalizeDeezer } from './catalog.js?v=music-fixes-20261030';
 
 const API_ORIGIN = 'https://api.deezer.com';
 let callbackSequence = 0;
@@ -151,7 +151,18 @@ export function createDeezerClient({ request = deezerRequest } = {}) {
 
     async searchTracks(query, { signal } = {}) {
       const response = await get('search', { q: query, limit: 12 }, signal);
-      return normalizeTracks(rows(response), 12);
+      const raw = rows(response);
+      return Promise.all(normalizeTracks(raw, 12).map(async track => {
+        if (raw.find(item => item.id === track.deezerId)?.contributors?.length) return track;
+        try {
+          const detail = normalizeDeezer(await get(`track/${track.deezerId}`, {}, signal));
+          return detail?.id === track.id ? detail : track;
+        } catch (error) {
+          if (error?.name === 'AbortError') throw error;
+          checkAborted(signal);
+          return track;
+        }
+      }));
     },
 
     async searchArtists(query, { signal } = {}) {

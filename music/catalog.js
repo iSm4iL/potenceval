@@ -32,10 +32,14 @@ export function isPreviewUrl(value) {
 
 export function normalizeDeezer(raw) {
   if (!raw || !Number.isSafeInteger(raw.id) || raw.id <= 0 || !raw.title || !raw.artist?.name || !raw.artist.id || !isPreviewUrl(raw.preview)) return null;
-  const artists = [raw.artist, ...(Array.isArray(raw.contributors) ? raw.contributors : [])].filter(a => a?.id && typeof a.name === 'string');
-  const artistNames = [...new Set(artists.map(a => a.name))];
+  const artists = [], seenArtists = new Set();
+  for (const artist of [raw.artist, ...(Array.isArray(raw.contributors) ? raw.contributors : [])]) {
+    if (!artist?.id || typeof artist.name !== 'string' || !artist.name.trim() || seenArtists.has(String(artist.id))) continue;
+    seenArtists.add(String(artist.id)); artists.push(artist);
+  }
+  const artistNames = artists.map(a => a.name);
   return {
-    id: `dz-${raw.id}`, deezerId: raw.id, title: String(raw.title), artist: artistNames.join(', '),
+    id: `dz-${raw.id}`, deezerId: raw.id, title: String(raw.title), artist: [...new Set(artistNames)].join(', '),
     artistIds: [...new Set(artists.map(a => String(a.id)))], artistNames,
     answerKey: `${raw.artist.id}|${normalize(raw.title_short || raw.title)}`,
     kind: 'online', start: 0, preview: raw.preview,
@@ -61,6 +65,8 @@ const soundKey = text => normalize(text).replace(/[а-я]/g, c => translit[c]).n
   .replace(/ph/g, 'f').replace(/qu/g, 'kv').replace(/ee|ea/g, 'i').replace(/oo|ou/g, 'u')
   .replace(/th/g, 't').replace(/ck/g, 'k').replace(/c(?=[eiy])/g, 's').replace(/c/g, 'k').replace(/w/g, 'v').replace(/y/g, 'i').replace(/([a-z])\1+/g, '$1');
 const artistAliases = {
+  '9mice': ['nine mice', '9 mice', 'найн майс', 'найнмайс'],
+  lovv66: ['ловв66', 'лов66', 'ловв 66', 'лов 66'],
   'the beatles': ['битлз', 'битлс'], queen: ['квин', 'куин'],
   'deep purple': ['дип пёрпл', 'дип перпл'], 'guns n roses': ['ганз энд роузес'],
   'the rolling stones': ['роллинг стоунз'], 'red hot chili peppers': ['ред хот чили пепперс'],
@@ -143,7 +149,9 @@ export function combineSuggestions(local, remote, query, excludedIds = []) {
       ids.add(t.id); return true;
     });
   };
-  return [...searchTracks(eligible(local), query), ...searchTracks(eligible(remote), query)].filter(t => {
+  // Deezer may match a guest omitted from its abbreviated search response.
+  const online = eligible(remote);
+  return [...searchTracks(eligible(local), query), ...searchTracks(online, query), ...online].filter(t => {
     const key = t.answerKey || t.id;
     if (seen.has(key)) return false;
     seen.add(key); return true;

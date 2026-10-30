@@ -199,5 +199,5 @@ function rotate(now) {
 requestAnimationFrame(rotate);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=locale-20261029');
+await import('./app.js?v=music-fixes-20261030');
 decorate();
