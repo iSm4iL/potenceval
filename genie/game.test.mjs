@@ -53,7 +53,7 @@ act({ type: 'next' }, wisher);
 assert.equal(s.phase, 'verdict', 'cannot skip verdict without decision');
 const human = s.cards.findIndex(c => c.by === other);
 act({ type: 'choose', i: human }, 'Z');
-assert.equal(s.chosen, null, 'only driver chooses');
+assert.equal(s.chosen, human, 'winner is selected by votes');
 act({ type: 'choose', i: human }, wisher);
 act({ type: 'decide', take: false }, wisher);
 assert.equal(s.players.find(p => p.id === other).score, 1, 'refused -> author scores');
@@ -63,6 +63,7 @@ assert.equal(s.phase, 'share');
 act({ type: 'next' }, wisher);
 assert.equal(s.phase, 'power');
 assert.equal(s.wisher, other, 'next player wishes');
+assert.deepEqual(s.voters, [], 'votes reset for the next round');
 
 // таймер: хост закрывает приём подвохов по истечении времени
 act({ type: 'custom', text: 'Летать' }, other);
@@ -72,9 +73,9 @@ assert.equal(s.phase, 'write', 'timer not expired yet');
 act({ type: 'timeout' }, 'A', 61_000);
 assert.equal(s.phase, 'reveal');
 
-act({ type: 'next' }, 'A'); act({ type: 'next' }, 'A');
-act({ type: 'choose', i: 0 }, 'A'); act({ type: 'decide', take: true }, 'A');
+act({ type: 'next' }, other); act({ type: 'next' }, other);
+act({ type: 'decide', take: true }, other);
 assert.equal(s.players.find(p => p.id === other).score, 2, 'took -> wisher scores');
-act({ type: 'next' }, 'A'); act({ type: 'next' }, 'A');
+act({ type: 'next' }, other); act({ type: 'next' }, other);
 assert.equal(s.phase, 'final');
 console.log('ok');

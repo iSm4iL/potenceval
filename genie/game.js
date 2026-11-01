@@ -12,7 +12,7 @@ export function createState(hostId, code) {
     players: [{ id: GENIE_ID, name: tr('Джинн', 'Genie'), genie: true, color: '#c99a1e', score: 0, online: true }],
     settings: { laps: 1, sec: 60 },
     order: [], round: 0, wisher: null, power: null,
-    cards: [], revealed: 0, chosen: null, took: null, deadline: null, used: [],
+    cards: [], voters: [], revealed: 0, chosen: null, took: null, deadline: null, used: [],
   };
 }
 
@@ -28,7 +28,7 @@ const validIndex = (s, i, limit = s.cards.length) => Number.isInteger(i) && i >=
 const writers = s => humans(s).filter(p => p.id !== s.wisher && p.online);
 
 function startRound(t) {
-  Object.assign(t, { wisher: t.order[t.round], phase: 'power', power: null, cards: [], revealed: 0, chosen: null, took: null, deadline: null });
+  Object.assign(t, { wisher: t.order[t.round], phase: 'power', power: null, cards: [], voters: [], revealed: 0, chosen: null, took: null, deadline: null });
 }
 function toWrite(t, now, rnd) {
   const deck = t.power.id && DECK.find(d => d.id === t.power.id);
@@ -46,7 +46,7 @@ function toReveal(t, rnd) {
 export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
   if (!a || typeof a.type !== 'string') return s;
   const isHost = from === s.hostId;
-  const drive = isHost || from === s.wisher;
+  const drive = from === s.wisher && humans(s).some(p => p.id === from);
   const t = structuredClone(s);
   const me = t.players.find(p => p.id === from);
 
@@ -124,7 +124,8 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
     }
     case 'fire': {
       const visible = t.phase === 'reveal' ? t.revealed : t.cards.length;
-      if (!['reveal', 'hype', 'verdict', 'share'].includes(t.phase) || !validIndex(t, a.i, visible)) return s;
+      if (!['reveal', 'hype'].includes(t.phase) || !me || me.genie || t.voters?.includes(from) || !validIndex(t, a.i, visible)) return s;
+      t.voters = [...(t.voters || []), from];
       t.cards[a.i].fire++;
       break;
     }
@@ -132,11 +133,6 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
       const text = clean(a.text, 90);
       if (t.phase !== 'hype' || !me || !text || !validIndex(t, a.i) || t.cards[a.i].adds.length >= 5) return s;
       t.cards[a.i].adds.push({ by: from, text });
-      break;
-    }
-    case 'choose': {
-      if (!drive || t.phase !== 'verdict' || t.took !== null || !validIndex(t, a.i)) return s;
-      t.chosen = a.i;
       break;
     }
     case 'decide': {
@@ -152,7 +148,13 @@ export function reduce(s, a, from, now = Date.now(), rnd = Math.random) {
       if (t.phase === 'power') { if (!t.power) return s; toWrite(t, now, rnd); }
       else if (t.phase === 'write') toReveal(t, rnd);
       else if (t.phase === 'reveal') { t.revealed = t.cards.length; t.phase = 'hype'; }
-      else if (t.phase === 'hype') t.phase = 'verdict';
+      else if (t.phase === 'hype') {
+        if (!t.cards.length) return s;
+        // Равные голоса: больше докруток, затем последняя раскрытая карта.
+        t.chosen = t.cards.reduce((best, c, i) => c.fire > t.cards[best].fire ||
+          (c.fire === t.cards[best].fire && c.adds.length >= t.cards[best].adds.length) ? i : best, 0);
+        t.phase = 'verdict';
+      }
       else if (t.phase === 'verdict') { if (t.took === null) return s; t.phase = 'share'; }
       else if (t.phase === 'share') { t.round++; if (t.round >= t.order.length) t.phase = 'final'; else startRound(t); }
       else return s;

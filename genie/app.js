@@ -1,11 +1,11 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
-import { createState, reduce, publicView, humans, GENIE_ID } from './game.js';
+import { createState, reduce, publicView, humans, GENIE_ID } from './game.js?v=turn-vote-20261101';
 import { A, $, h, esc, first, nameOf, me, isHostOf, still, SPRING, burstAt, confetti, shake, nudge, smoke, enter, flyIn, flip,
   toast, setControls, initPage, buildHome, buildLobby, renderPlist, seg, placeSegPills } from '../shared/kit.js?v=kick-1';
 import { createNet } from '../shared/net.js?v=own-1';
 
 const STEP = ['power', 'write', 'reveal', 'hype', 'verdict', 'share'];
-const canDrive = s => isHostOf(s) || s.wisher === me.pid;
+const canDrive = s => s.wisher === me.pid;
 const stage = $('#stage');
 const steps = [...document.querySelectorAll('#steps li')];
 
@@ -30,6 +30,7 @@ async function renderState(s) {
   const p = rendered; rendered = s;
   const key = !s ? 'home' : ['lobby', 'final'].includes(s.phase) ? s.phase : s.phase + ':' + s.round;
   chrome(p, s);
+  renderRoundPower(s);
   if (key !== shownKey) {
     shownKey = key;
     const old = [...stage.children];
@@ -40,6 +41,14 @@ async function renderState(s) {
     if (s) window.scrollTo({ top: 0, behavior: still() ? 'auto' : 'smooth' });
   } else if (s) PATCH[s.phase]?.(p, s);
   controls(s);
+}
+
+function renderRoundPower(s) {
+  const el = $('#roundPower');
+  el.hidden = !s?.power || !['write', 'reveal', 'hype', 'verdict', 'share'].includes(s.phase);
+  if (el.hidden) { el.replaceChildren(); return; }
+  const pw = s.power;
+  el.innerHTML = `<span class="round-power-icon" aria-hidden="true">${esc(pw.icon)}</span><div><span class="round-power-label">${t('Суперсила раунда', 'Round superpower')} · ${esc(nameOf(s, s.wisher))}</span><h2>${esc(pw.title)}</h2>${pw.text ? '<p>' + esc(pw.text) + '</p>' : ''}</div>`;
 }
 
 function chrome(p, s) {
@@ -84,9 +93,9 @@ const W = s => `<b>${esc(nameOf(s, s.wisher))}</b>`;
 const HINTS = {
   power: s => (s.wisher === me.pid ? t('Ты загадываешь. Тяни суперсилу или впиши свою.', 'You’re wishing. Draw a superpower or write your own.') : t(`${W(s)} тянет суперсилу. Смотрите.`, `${W(s)} is drawing a superpower. Watch.`)),
   write: s => (s.wisher === me.pid ? t('Остальные пишут подвохи к твоей силе. Не подглядывай 🙈', 'The others are writing catches for your power. No peeking 🙈') : t(`Придумай подвох к силе, которую получает ${W(s)}. Джинн тоже пишет.`, `Invent a catch for the power ${W(s)} is getting. The Genie is writing too.`)),
-  reveal: s => (canDrive(s) ? t('Жми «Раскрыть следующий» и читай вслух. Гениально — жмите 🔥', 'Hit “Reveal next” and read it out loud. Genius? Hit 🔥') : t('Открываем по одной, читаем вслух. Гениально — жми 🔥', 'One at a time, read out loud. Genius? Hit 🔥')),
+  reveal: s => (canDrive(s) ? t('Жми «Раскрыть следующий» и читай вслух. Один голос за раунд — жмите 🔥', 'Hit “Reveal next” and read it out loud. One vote per round — hit 🔥') : t('Открываем по одной, читаем вслух. Один голос за раунд — жми 🔥', 'One at a time, read out loud. One vote per round — hit 🔥')),
   hype: () => t('Докрути любой подвох, чтобы стало ещё хуже. Можно несколько раз.', 'Twist any catch to make it even worse. As many times as you like.'),
-  verdict: s => (s.wisher === me.pid ? t('Выбери самый жёсткий подвох и реши: берёшь силу или нет.', 'Pick the harshest catch and decide: take the power or not.') : t(`${W(s)} выбирает самый жёсткий подвох и решает, брать ли силу.`, `${W(s)} picks the harshest catch and decides whether to take the power.`)),
+  verdict: s => (s.wisher === me.pid ? t('Голоса выбрали подвох. Реши: берёшь силу или нет.', 'The votes picked the catch. Decide: take the power or not.') : t(`${W(s)} решает, брать ли силу с победившим подвохом.`, `${W(s)} decides whether to take the power with the winning catch.`)),
   share: () => t('Раунд всё. Кидайте карточку в чат.', 'Round over. Drop the card in the chat.'),
 };
 
@@ -114,7 +123,7 @@ function frontHTML(s, i, { more = false } = {}) {
   const c = s.cards[i], g = c.by === GENIE_ID;
   return `<div class="cf ${g ? 'g' : ''} ${(c.text || '').length > 60 ? 'long' : ''}"><span class="no">${t('НО', 'BUT')}</span>
     <div class="txt">${esc(c.text)}</div><div class="adds">${c.adds.map(a => addHTML(s, a)).join('')}</div>
-    <div class="ft"><span>${g ? '✦ ' + t('Джинн', 'Genie') : esc(nameOf(s, c.by))}</span><span>${more ? `<button class="more">${t('+ докрутить', '+ twist it')}</button>` : ''}<button class="fire" data-i="${i}">🔥 <b>${c.fire}</b></button></span></div></div>`;
+    <div class="ft"><span>${g ? '✦ ' + t('Джинн', 'Genie') : esc(nameOf(s, c.by))}</span><span>${more ? `<button class="more">${t('+ докрутить', '+ twist it')}</button>` : ''}<button class="fire" data-i="${i}" ${s.voters?.includes(me.pid) || !['reveal', 'hype'].includes(s.phase) ? 'disabled' : ''}>🔥 <b>${c.fire}</b></button></span></div></div>`;
 }
 function staticGrid(s, { more = false, pick = false } = {}) {
   const grid = h(`<div class="cgrid ${pick ? 'pick' : ''}" id="grid" data-in></div>`);
@@ -125,12 +134,13 @@ function staticGrid(s, { more = false, pick = false } = {}) {
 function wireFire(grid) {
   grid.addEventListener('click', e => {
     const f = e.target.closest('.fire');
-    if (!f) return;
+    if (!f || f.disabled) return;
     e.stopPropagation();
     send({ type: 'fire', i: +f.dataset.i });
   });
 }
 function patchFire(p, s) {
+  stage.querySelectorAll('.fire').forEach(b => { b.disabled = !!s.voters?.includes(me.pid) || !['reveal', 'hype'].includes(s.phase); });
   s.cards.forEach((c, i) => {
     const old = p.cards[i]?.fire ?? 0;
     if (c.fire === old) return;
@@ -257,7 +267,7 @@ BUILD.write = s => {
   const mine = s.wisher === me.pid, myGen = gen;
   title(mine ? t('Отвернись 🙈', 'Look away 🙈') : t('Все, кроме ', 'Everyone except ') + esc(nameOf(s, s.wisher)), mine ? t('Пишут подвохи', 'Catches incoming') : t('Придумай подвох', 'Invent a catch'),
     mine ? t('Сейчас тебе испортят суперсилу.', 'They’re about to ruin your superpower.') : t('Чем гениальнее подвох, тем вероятнее от силы откажутся.', 'The smarter the catch, the likelier they refuse the power.'));
-  stage.append(h(`<div class="strip" data-in><span class="ic">${s.power.icon}</span><div><b>${esc(s.power.title)}</b>${s.power.text ? '<br>' + esc(s.power.text) : ''}</div>
+  stage.append(h(`<div class="strip write-timer" data-in><span>${t('Время на подвох', 'Time for a catch')}</span>
     <div class="timer" id="timer"><svg width="52" height="52"><circle class="tr" cx="26" cy="26" r="22"/><circle class="tv" cx="26" cy="26" r="22"/></svg><span></span></div></div>`));
   const grid = h(`<div class="cgrid write-grid" id="wgrid" data-in></div>`);
   [...humans(s).filter(p => p.id !== s.wisher), s.players.find(p => p.genie)].forEach(p => grid.append(h(`<div class="slot" data-by="${esc(p.id)}">
@@ -282,7 +292,7 @@ PATCH.write = (p, s) => {
 
 function fillFront(el, s, i) { $('.front-face', el).innerHTML = frontHTML(s, i); }
 BUILD.reveal = s => {
-  title(s.wisher === me.pid ? t('Твоя сила под угрозой', 'Your power is in danger') : esc(nameOf(s, s.wisher)) + t(' смотрит', ' is watching'), t('Раскрываем', 'Reveal'), t('По одному. Джинн — последним. Гениально? Жми 🔥', 'One by one. The Genie goes last. Genius? Hit 🔥'));
+  title(s.wisher === me.pid ? t('Твоя сила под угрозой', 'Your power is in danger') : esc(nameOf(s, s.wisher)) + t(' смотрит', ' is watching'), t('Раскрываем', 'Reveal'), t('По одному. Джинн — последним. У тебя один голос за раунд 🔥', 'One by one. The Genie goes last. One vote per round — hit 🔥'));
   const grid = h(`<div class="cgrid" id="grid" data-in></div>`);
   s.cards.forEach((c, i) => {
     const el = h(`<div class="ccard flip" data-i="${i}"><div class="inner"><div class="face">${backHTML(c.by === GENIE_ID)}</div><div class="face front-face"></div></div></div>`);
@@ -363,7 +373,7 @@ function showDecision(s, anim) {
   vb.replaceChildren(h(canDrive(s)
     ? `<div class="banner"><h2>${s.wisher === me.pid ? t('Берёшь силу с этим подвохом?', 'Will you take the power with this catch?') : t(`Берёт ли ${w} силу с этим подвохом?`, `Will ${w} take the power with this catch?`)}</h2>
        <div class="row"><button class="btn ghost" id="takeBtn">${t('Беру всё равно', 'Taking it anyway')}</button><button class="btn primary" id="nopeBtn">${t('Не, нафиг', 'Nope, no way')}</button></div>
-       <p class="sub">${t('Можно передумать и тыкнуть другую карточку.', 'You can change your mind and tap another card.')}</p></div>`
+       <p class="sub">${t('Подвох выбран голосами игроков, со всеми докрутками.', 'The players voted for this catch, including all its twists.')}</p></div>`
     : `<div class="banner"><h2>${w} ${t('решает', 'is deciding')} <span class="dots"><i></i><i></i><i></i></span></h2></div>`));
   if (anim) A(vb.firstElementChild, [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 500, easing: SPRING });
   const take = $('#takeBtn'), nope = $('#nopeBtn');
@@ -380,14 +390,8 @@ function showResult(s, anim) {
   if (refused) { confetti($('#grid').children[s.chosen]); shake(); }
 }
 BUILD.verdict = s => {
-  const drv = canDrive(s), mine = s.wisher === me.pid;
-  title(t('Вердикт', 'Verdict'), mine ? t('Какой подвох самый жёсткий?', 'Which catch is the harshest?') : t(`${esc(nameOf(s, s.wisher))} выбирает самый жёсткий`, `${esc(nameOf(s, s.wisher))} is picking the harshest`), drv && s.took === null ? t('Тыкни карточку.', 'Tap a card.') : '');
-  const grid = staticGrid(s, { pick: drv });
-  grid.addEventListener('click', e => {
-    const card = e.target.closest('.ccard');
-    if (!card || e.target.closest('.fire') || !view || !canDrive(view) || view.took !== null) return;
-    send({ type: 'choose', i: +card.dataset.i });
-  });
+  title(t('Вердикт', 'Verdict'), t('Подвох выбран', 'The catch is chosen'), t('Больше всего голосов. Все докрутки остаются в силе.', 'The most votes. All twists still apply.'));
+  const grid = staticGrid(s);
   stage.append(grid);
   stage.append(h(`<div id="vbox"></div>`));
   if (s.chosen !== null) focusChosen(s, false);
