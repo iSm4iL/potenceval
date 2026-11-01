@@ -1,7 +1,8 @@
+import { editorialFacts, editorialPerson, PERSON_ROSTER } from './editorial.js?v=editorial-20261030';
 import { lang, t } from '../shared/i18n.js?v=ui-20261029';
 import { COUNTRIES as DOSSIERS, PACKS as REGIONS } from './countries.js';
-import { FACTS, PEOPLE, OMIT_PEOPLE, MONEY } from './content.js';
-import { PROFILES_EN, FACTS_EN } from './content-en.js';
+import { MONEY } from './content.js';
+import { PROFILES_EN } from './content-en.js';
 
 export { lang, t };
 export const MONEY_EN = {
@@ -56,16 +57,19 @@ const CURRENCY_OVERRIDES_EN = { CZ:'Koruna', IS:'Króna', SE:'Krona', ID:'Rupiah
 const EXTRA_ALIASES = { US:['United States of America','US'], AE:['United Arab Emirates'], GB:['Great Britain'], MK:['Macedonia'] };
 
 export function localizeCountry(c, locale = lang) {
-  const person = OMIT_PEOPLE.includes(c.id) ? null : PEOPLE[c.id] || c.person;
-  const [name, food, personName, achievement] = PROFILES_EN[c.id];
+  const person = editorialPerson(c.id, locale);
+  const factEntries = editorialFacts(c.id, locale);
+  const [name, food] = PROFILES_EN[c.id];
   return {
     ...c,
     name: locale === 'en' ? name : c.name,
     aliases: [...new Set([c.name, name, ...c.aliases, ...(EXTRA_ALIASES[c.id] || [])])],
-    facts: locale === 'en' ? FACTS_EN[c.id] : [...c.facts, ...FACTS[c.id]],
+    facts: factEntries.map(f => f.text),
+    factEntries,
+    personSubjects: PERSON_ROSTER[c.id] ? [PERSON_ROSTER[c.id][5]] : [],
     phrase: locale === 'en' ? [PHRASES_EN[c.id] || c.phrase[0], PHRASE_TRANSLATIONS[c.phrase[1]]] : c.phrase,
     food: [locale === 'en' ? food : c.food[0], c.food[1]],
-    person: person ? [locale === 'en' ? personName : person[0], locale === 'en' ? achievement : person[1], person[2]] : null,
+    person,
     currency: locale === 'en' ? CURRENCY_OVERRIDES_EN[c.id] || MONEY_EN[MONEY[c.id]] : MONEY[c.id],
   };
 }

@@ -4,8 +4,11 @@ import { readFileSync } from 'node:fs';
 import { createContext, runInContext } from 'node:vm';
 import { COUNTRIES as RAW, PACKS } from './countries.js';
 import { PEOPLE, MONEY } from './content.js';
-import { WORLD, SHAPES, PHOTOS } from './atlas.js';
+import { WORLD, SHAPES } from './atlas.js';
+import { PHOTOS } from './photos.js';
 import { WALKS } from './walks.js';
+import { streetViewUrl } from './maps.js';
+import { PHOTO_CREDITS } from './media-credits.js';
 import { localizeCountry, localizePack } from './i18n.js';
 import { localizeWorld } from './i18n.js';
 
@@ -15,7 +18,7 @@ const escapeHTML = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&a
 // A text/interaction harness, not a layout engine. The parent checks the actual browser layout.
 function page(lang) {
   const t = (ru, en) => lang === 'en' ? en : ru;
-  const rules = runInContext(source('game.js') + '\n({CLUES,START,WRONG,norm,nameIndex,matchCountry,canOpen,cluePrice,currencyPrice,openClue,refundWalk,guess,guidance,surrender,createGame,award,nextRound,selectFacts,newRound});', createContext({t}));
+  const rules = runInContext(source('game.js') + '\n({CLUES,START,WRONG,DIRECTION_COST,buyDirection,norm,nameIndex,matchCountry,canOpen,cluePrice,currencyPrice,openClue,refundWalk,guess,guidance,surrender,createGame,award,nextRound,selectFacts,newRound});', createContext({t}));
   const banknotes = runInContext(source('banknotes.js') + '\n({banknoteHTML,banknoteFor});', createContext({t}));
   const nodes = new Map(), storage = new Map(), notices = [];
   const element = key => {
@@ -30,7 +33,7 @@ function page(lang) {
   };
   const document = {querySelector:element,querySelectorAll:()=>[],body:element('body'),activeElement:null,addEventListener(){}};
   const context = createContext({
-    ...rules, ...banknotes, PEOPLE, MONEY, WALKS, WORLD_RU:WORLD, SHAPES, PHOTOS,
+    ...rules, ...banknotes, PEOPLE, MONEY, WALKS, WORLD_RU:WORLD, SHAPES, PHOTOS, streetViewUrl, PHOTO_CREDITS,
     COUNTRIES:RAW.map(c=>localizeCountry(c,lang)), PACKS:PACKS.map(p=>localizePack(p,lang)),
     localizeWorld, lang, t, countryCount:n=>`${n} ${t('стран','countries')}`,
     $:element, esc:escapeHTML, LS:{get:k=>storage.get(k),set:(k,v)=>storage.set(k,v)},
@@ -50,14 +53,22 @@ for (const lang of ['ru','en']) {
     assert.ok(!element('#stage').innerHTML.includes('${t('), 'no unevaluated translations');
     assert.equal((element('#stage').innerHTML.match(/data-pack=/g) || []).length, 6);
     run('start()');
+    assert.ok(run("game.round.unavailable.includes('walk')"), 'no key: no purchasable walk');
     assert.match(element('#stage').innerHTML, new RegExp(lang === 'en' ? 'Country name…' : 'Название страны…'));
-    assert.ok(storage.has(lang === 'ru' ? 'geo.facts.v2' : 'geo.facts.v2.en'));
+    assert.ok(storage.has(lang === 'ru' ? 'geo.facts.v3' : 'geo.facts.v3.en'));
     for (const c of RAW) {
       ui.context.countryId = c.id;
       run('game.round=newRound(countryId,[],[],{money:currencyPrice(MONEY[countryId],Object.values(MONEY))});roundFacts=byId.get(countryId).facts.slice(0,2);renderRound()');
-      for (const key of ['fact1','fact2','phrase','food','money','person','walk','shape','compass']) {
+      for (const key of ['fact1','fact2','phrase','food','money','person','walk']) {
         ui.context.clueKey = key;
         const html = run('evidenceHTML(clueKey)');
+        if (['food','person'].includes(key) && /<img\b/.test(html)) {
+          assert.match(html, /credits\.html#m\d+/, `${c.id}/${key}: attribution next to photo`);
+          const src = html.match(/src="([^"]+)"/)[1].replaceAll('&amp;','&');
+          ui.context.photoSrc = src;
+          run('openViewer(photoSrc)');
+          assert.match(element('#viewerBody').innerHTML, /credits\.html#m\d+/, `${c.id}/${key}: zoom retains attribution`);
+        }
         assert.doesNotMatch(html, /undefined|\$\{t\(/, `${c.id}/${key}`);
         // Source-language phrases are clues; their translation and all other visible text are English.
         const visible = html.replace(/<blockquote\b[^>]*>[\s\S]*?<\/blockquote>/g, '').replace(/<[^>]*>/g, '');
@@ -71,9 +82,11 @@ for (const lang of ['ru','en']) {
     run('submit()');
     assert.equal(run('game.round.score'), 950);
     assert.doesNotMatch(element('#misses').innerHTML, /North|South|East|West|На север|На юг/u);
-    run("openClue(game.round,'compass');renderCompass();renderMisses()");
-    assert.equal(run('game.round.score'), 850);
-    assert.match(element('#misses').innerHTML, /[↑↗→↘↓↙←↖]/u);
+    run("buyDirection(game.round,'JP');renderMisses()");
+    assert.equal(run('game.round.score'), 900);
+    assert.match(element('#misses').innerHTML, /direction-arrow/u);
+    assert.match(element('#misses').innerHTML, /≈/u);
+    assert.match(element('#misses').innerHTML, /direction-result/u);
     element('#guessIn').value = 'Россия';
     run('submit()');
     assert.equal(run('game.round.solved'), true);

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-maps-embed-key" content="">
 <title data-en="Guess the country — potenceval">Угадай страну — potenceval</title>
 <meta name="description" content="Угадай страну по меняющимся фактам, языку, кухне и известным людям. Выбирай подсказки и сохраняй очки — одному или с друзьями." data-en-content="Guess the country from facts, language, food and famous people. Follow clues and keep your points — solo or with friends.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕵️</text></svg>">
@@ -11,7 +12,7 @@
 <link rel="stylesheet" href="style.css?v=fit-1">
 <link rel="stylesheet" href="../shared/club.css?v=lang-20261028">
 <link rel="stylesheet" href="club.css?v=clues-20261025">
-<link rel="stylesheet" href="board-ui.css?v=layout-20261029">
+<link rel="stylesheet" href="board-ui.css?v=launch-20261030">
 <link rel="stylesheet" href="home.css?v=folder-20261029">
 </head>
 <body class="club-theme" data-game="geo">
@@ -36,8 +37,7 @@
     <button class="walk-btn fold" id="walkFold" data-en="Fold away ▾">Свернуть ▾</button>
   </header>
   <div class="walk-view">
-    <iframe id="walkFrame" title="Панорама улицы" data-en-title="Street panorama"></iframe>
-    <span class="walk-cover" data-en="📍 Somewhere in this country…">📍 Где-то в этой стране…</span>
+    <iframe id="walkFrame" title="Панорама улицы" data-en-title="Street panorama" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 </dialog>
 <button class="walk-dock" id="walkDock" hidden data-en="👣 Return to street walk ▴">👣 Вернуться на прогулку ▴</button>
@@ -46,9 +46,9 @@
   <h2 id="rulesTitle" data-en="How to investigate">Как вести дело</h2>
   <ol class="rules-list">
     <li data-en="Identify the country from clues. Start each case with 1,000 points and one free fact.">Узнай страну по подсказкам. На старте — 1 000 очков и бесплатный факт.</li>
-    <li data-en="Another fact costs 50; language and food cost 75 each; currency costs 50–175 (rarer costs more); a person and a street walk cost 150 each; the outline costs 200. Rereading an open clue is free.">Ещё факт — 50, язык и кухня — по 75, валюта — от 50 до 175 (редкая дороже), человек и прогулка — по 150, контур — 200 очков. Открытые подсказки можно перечитывать бесплатно.</li>
+    <li data-en="Another fact costs 50; language and food cost 75 each; currency costs 50–175 (rarer costs more); a person and a street walk cost 150 each; directions cost 50 per wrong guess. Rereading an open clue is free.">Ещё факт — 50, язык и кухня — по 75, валюта — от 50 до 175 (редкая дороже), человек и прогулка — по 150. Направление для одной ошибочной версии — 50 очков. Открытые подсказки можно перечитывать бесплатно.</li>
     <li data-en="Choose any order. Unavailable clues cannot be bought. If a street walk does not work, you can refund it; it will then close for this round.">Выбирай любой порядок. Недоступные подсказки не продаются. Если прогулка не работает, её стоимость можно вернуть; в этом раунде она закроется.</li>
-    <li data-en="A wrong guess costs 50 points and gives no free directions or distances. After the first wrong guess, buy Direction for 100: it covers every wrong guess in this round, including later ones.">Ошибка — минус 50, без бесплатных направлений и расстояний. После первой ошибки можно купить «Направление» за 100: оно действует на все ошибочные версии этого раунда, включая будущие.</li>
+    <li data-en="A wrong guess costs 50 points and gives no free directions or distances. Next to each wrong guess, buy its direction for 50 points. The arrow and an approximate distance are revealed for that guess only.">Ошибка — минус 50, без бесплатных направлений и расстояний. Напротив каждой ошибочной страны можно купить направление за 50: стрелка и примерное расстояние откроются только для этой версии.</li>
     <li data-en="Playing with friends? Award the points to whoever names the country first.">Играешь с друзьями — кто первым назвал страну, тому и очки.</li>
   </ol>
   <button class="btn primary big" data-close data-en="Got it">Понятно</button>
@@ -61,6 +61,6 @@
 </dialog>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script type="module" src="../shared/menu.js?v=ui-20261029"></script>
-<script type="module" src="app.js?v=folder-20261029"></script>
+<script type="module" src="app.js?v=launch-20261030"></script>
 </body>
 </html>

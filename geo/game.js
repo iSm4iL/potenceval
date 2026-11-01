@@ -1,6 +1,7 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
 // Правила «Угадай страну»: покупки, очки, платные направления и ротация стран.
 export const START = 1000, WRONG = 50;
+export const DIRECTION_COST = 50;
 // Первый факт бесплатен. Все остальные подсказки можно покупать независимо.
 export const CLUES = [
   { key: 'fact1', cost: 0, label: t('Первый факт', 'First fact') },
@@ -10,8 +11,6 @@ export const CLUES = [
   { key: 'money', cost: 100, label: t('Валюта', 'Currency') },
   { key: 'person', cost: 150, label: t('Известный человек', 'Famous person') },
   { key: 'walk', cost: 150, label: t('Прогулка', 'Street walk') },
-  { key: 'shape', cost: 200, label: t('Контур страны', 'Country outline') },
-  { key: 'compass', cost: 100, label: t('Направление', 'Direction') },
 ];
 // free оставлен для совместимости; отсутствующие подсказки блокируются через unavailable.
 export const cluePrice = (r, key) => (r.free.includes(key) ? 0 : r.prices[key] ?? CLUES.find(c => c.key === key).cost);
@@ -36,7 +35,7 @@ export function newRound(id, free = [], unavailable = [], prices = {}) {
   return { id, free, unavailable, prices, open: ['fact1'], wrong: [], score: START, done: false, solved: false };
 }
 export const canOpen = (r, key) => CLUES.some(c => c.key === key) && !r.done && !r.open.includes(key)
-  && !r.unavailable.includes(key) && r.score >= cluePrice(r, key) && (key !== 'compass' || r.wrong.length > 0);
+  && !r.unavailable.includes(key) && r.score >= cluePrice(r, key);
 export function openClue(r, key) {
   if (!canOpen(r, key)) return false;
   r.open.push(key);
@@ -46,7 +45,7 @@ export function openClue(r, key) {
 export function refundWalk(r) {
   if (r.done || !r.open.includes('walk') || r.unavailable.includes('walk')) return false;
   r.open = r.open.filter(key => key !== 'walk');
-  r.score = Math.max(0, START - r.wrong.length * WRONG - r.open.reduce((sum, key) => sum + cluePrice(r, key), 0));
+  r.score = Math.max(0, START - r.wrong.length * WRONG - r.wrong.filter(m => m.direction).length * DIRECTION_COST - r.open.reduce((sum, key) => sum + cluePrice(r, key), 0));
   r.unavailable.push('walk');
   return true;
 }
@@ -73,9 +72,20 @@ export function guess(r, id, at) {
   r.score = Math.max(0, r.score - WRONG);
   return { correct: false, ...miss };
 }
-// Направления доступны только после покупки; расстояние больше не выдаёт бесплатную подсказку.
+export function buyDirection(r, id) {
+  const miss = r.wrong.find(m => m.id === id);
+  if (r.done || !miss || miss.direction || r.score < DIRECTION_COST) return false;
+  miss.direction = true;
+  r.score -= DIRECTION_COST;
+  return true;
+}
+// Дистанция между условными центрами: грубые интервалы вместо точных координат.
+export function approximateKm(km) {
+  const step = km < 250 ? 50 : km < 1000 ? 250 : 500;
+  return Math.max(step, Math.round(km / step) * step);
+}
 export function guidance(r, at) {
-  return r.open.includes('compass') ? r.wrong.map(m => ({ id: m.id, dir: arrow(at(m.id), at(r.id)) })) : [];
+  return r.wrong.filter(m => m.direction).map(m => ({ id: m.id, dir: arrow(at(m.id), at(r.id)), km: approximateKm(distanceKm(at(m.id), at(r.id))) }));
 }
 
 export function shuffle(items, rnd = Math.random) {
@@ -89,9 +99,17 @@ export function countryOrder(ids, rounds, recent = [], rnd = Math.random) {
   const seen = unique.filter(id => recent.includes(id)).sort((a, b) => recent.lastIndexOf(a) - recent.lastIndexOf(b));
   return [...shuffle(unseen, rnd), ...seen].slice(0, Math.max(0, Math.min(rounds, unique.length)));
 }
-export function selectFacts(facts, used = [], rnd = Math.random) {
-  const unique = [...new Set(facts)], fresh = shuffle(unique.filter(f => !used.includes(f)), rnd);
-  return [...fresh, ...shuffle(unique.filter(f => used.includes(f)), rnd)].slice(0, 2);
+export function selectFacts(facts, used = [], rnd = Math.random, excludedSubjects = []) {
+  const rows = [...new Map(facts.map(f => { const row = typeof f === 'string' ? { text: f } : f; return [row.text, row]; })).values()]
+    .filter(f => !(f.subjects || []).some(s => excludedSubjects.includes(s)));
+  const pairs = [];
+  for (let i = 0; i < rows.length; i++) for (let j = i + 1; j < rows.length; j++) {
+    const a = rows[i], b = rows[j];
+    if (a.topic && a.topic === b.topic || (a.subjects || []).some(s => (b.subjects || []).includes(s))) continue;
+    pairs.push([a.text, b.text]);
+  }
+  const ordered = shuffle(pairs, rnd).sort((a, b) => a.filter(f => used.includes(f)).length - b.filter(f => used.includes(f)).length);
+  return ordered.length ? shuffle(ordered[0], rnd) : [];
 }
 export function surrender(r) {
   if (r.done) return;

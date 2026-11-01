@@ -102,3 +102,54 @@ body[data-game="geo"] .threads{z-index:2}body[data-game="geo"] .evidence-person,
   body[data-game="geo"] .notebook{max-height:calc(100dvh - 112px);overflow:auto}
   .board-help{margin-top:8px}
 }
+/* Читаемые листки и одинаковые контурные значки вместо символов разных шрифтов. */
+body[data-game="geo"] .board{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-areas:'fact1 walk person' 'phrase sus fact2' 'food sus money';gap:22px;padding:30px 24px}
+body[data-game="geo"] .back b{font:700 15px/1.3 Onest,Arial,sans-serif;letter-spacing:0}
+body[data-game="geo"] .back .back-ic{position:static;display:grid;place-items:center;width:42px;height:42px;margin:0;color:#705236;opacity:1;filter:none}
+body[data-game="geo"] .clue-icon{width:34px;height:34px;display:block}
+body[data-game="geo"] .back{justify-content:center;gap:8px;padding:24px 14px}
+body[data-game="geo"] .price{font:500 11px/1.4 Onest,Arial,sans-serif;transform:none}
+body[data-game="geo"] .evidence-content .fact-text{font:500 13px/1.55 Onest,Arial,sans-serif!important;overflow-wrap:anywhere}
+body[data-game="geo"] .evidence-content h2{font:700 15px/1.35 Onest,Arial,sans-serif!important;overflow-wrap:anywhere}
+body[data-game="geo"] .evidence-person{gap:8px}
+body[data-game="geo"] .evidence-person p{display:block;font:400 11px/1.4 Onest,Arial,sans-serif}
+body[data-game="geo"] .evidence-person .photo-zoom{flex:none}
+body[data-game="geo"] .clue-person .clue-inner,.clue-person .back,.clue-person .evidence-content{min-height:165px}
+body[data-game="geo"] .back:focus-visible,body[data-game="geo"] .inspect-note:focus-visible,.direction-price:focus-visible{outline:3px solid #8b3b22;outline-offset:3px}
+.attempt-head{display:grid;grid-template-columns:minmax(0,1fr) 135px;gap:8px;padding-bottom:7px;border-bottom:1px solid #96765444;font:600 11px/1.4 Onest,Arial,sans-serif;color:#806348}
+.attempt-head>span:last-child{text-align:right}
+body[data-game="geo"] .attempts ul{max-height:240px;gap:0}
+body[data-game="geo"] .attempts li{display:grid;grid-template-columns:minmax(0,1fr) 135px;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #96765422;min-height:48px}
+body[data-game="geo"] .attempts li>span:first-child{overflow-wrap:anywhere}
+body[data-game="geo"] .attempts li.empty{grid-template-columns:1fr}
+.direction-price{justify-self:end;min-width:56px;min-height:40px;padding:7px 12px;border:1px solid #95704c;border-radius:6px;background:#e2c99e;color:#593b24;font:700 14px Onest,Arial,sans-serif}
+.direction-price:hover:not(:disabled){background:#d8b781}.direction-price:disabled{opacity:.45;cursor:not-allowed}
+.direction-result{display:flex;justify-content:flex-end;align-items:center;gap:7px;text-align:right}
+.direction-result b{font:600 11px/1.3 Onest,Arial,sans-serif}
+.direction-result small{display:block;font:500 11px/1.4 Onest,Arial,sans-serif;font-variant-numeric:tabular-nums}
+.direction-arrow{width:22px;height:22px;flex:none;fill:none;stroke:#8b3b22;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+body[data-game="geo"] .evidence-zoom .fact-text{font-size:20px!important;line-height:1.6!important}
+body[data-game="geo"] .evidence-zoom h2{font-size:24px!important}
+body[data-game="geo"] .evidence-zoom .evidence-person p{font-size:16px}
+@media(max-width:760px){
+ body[data-game="geo"] .board{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:'fact1 fact2' 'phrase person' 'food money' 'walk sus';padding:24px 14px;gap:16px 12px}
+ body[data-game="geo"] .back b{font-size:13px!important}
+ body[data-game="geo"] .back .back-ic{width:32px;height:32px;font-size:initial!important}
+ body[data-game="geo"] .clue-icon{width:30px;height:30px}
+ body[data-game="geo"] .back{min-height:158px;padding:23px 12px 19px}
+ body[data-game="geo"] .clue-inner,body[data-game="geo"] .front>*,body[data-game="geo"] .evidence-content{min-height:158px}
+ body[data-game="geo"] .board .evidence-content{padding:24px 14px 20px!important}
+ body[data-game="geo"] .board .evidence-content .fact-text{font-size:12px!important;line-height:1.5!important}
+ body[data-game="geo"] .board .evidence-content h2{font-size:12px!important}
+ body[data-game="geo"] .board .evidence-person p{display:block;font-size:10px!important}
+ body[data-game="geo"] .board .price{font-size:10px!important}
+ body[data-game="geo"] .inspect-note{width:30px;height:30px;bottom:4px;right:3px;font-size:18px}
+ body[data-game="geo"] .suspect{max-width:150px}
+ body[data-game="geo"] .evidence-zoom .evidence-content{padding-inline:12px!important}
+}
+body[data-game="geo"] .back .price{max-width:100%;white-space:normal;text-align:center;overflow-wrap:anywhere}
+body[data-game="geo"] .viewer-note{position:static;margin:0 20px 14px;font:600 12px/1.4 Onest,Arial,sans-serif;color:#72533b}
+body[data-game="geo"] .photo-credit{position:relative;z-index:3;display:block;flex:none;font:400 10px/1.4 Onest,Arial,sans-serif;color:#6b452b;overflow-wrap:anywhere;text-decoration:underline}
+body[data-game="geo"] #viewerBody>.photo-credit{padding:10px 20px;background:var(--paper)}
+body[data-game="geo"] .walk{overflow:auto}
+body[data-game="geo"] .walk-view{min-width:200px;min-height:200px}

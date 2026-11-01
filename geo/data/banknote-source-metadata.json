@@ -1,0 +1,501 @@
+{
+  "checked": "2026-10-30",
+  "status": "source-metadata-not-reproduction-clearance",
+  "records": [
+    {
+      "key": "RU",
+      "file": "5000_rubles_obverse_2023.jpg",
+      "info": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/5000_rubles_obverse_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:5000_rubles_obverse_2023.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=139024067",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2023-10-16 10:32:33",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "5000 rubles obverse 2023",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Yekaterinburg Circus|Main Post Office (Yekaterinburg)|Vysotsky skyscraper|With currency|Yekaterinburg City|Files that may be protected by currency protection laws|PD-RU-exempt (banknotes)|Europe/Asia boundary obelisk, Yekaterinburg|Yekaterinburg in art|Palace of game sports, Yekaterinburg|5000 Russian rubles banknotes (2023)|Sevastyanov's Mansion in art",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Банкнота 5000 рублей, 2023 год",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2023-10-16",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.cbr.ru/press/pr/?file=638330537368764855COINS.htm\">ЦБ РФ</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"https://en.wikipedia.org/wiki/ru:%D0%91%D0%B0%D0%BD%D0%BA_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8\" class=\"extiw\" title=\"w:ru:Банк России\">w:ru:Банк России</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "currency",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    },
+    {
+      "key": "UA",
+      "file": "2000-гривень-2026-аверс.jpg",
+      "info": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/2000-%D0%B3%D1%80%D0%B8%D0%B2%D0%B5%D0%BD%D1%8C-2026-%D0%B0%D0%B2%D0%B5%D1%80%D1%81.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:2000-%D0%B3%D1%80%D0%B8%D0%B2%D0%B5%D0%BD%D1%8C-2026-%D0%B0%D0%B2%D0%B5%D1%80%D1%81.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=195447568",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2026-07-10 12:44:41",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "2000-гривень-2026-аверс",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With currency|Files that may be protected by currency protection laws|PD-UA-exempt (banknotes)|Banknotes with signature of Andriy Pyshnyi|Banknotes of Ukraine, 2026|2000 Hryvnia banknotes|Vasyl Stus on banknotes",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "2000 гривень 2026 року (аверс)",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2026-07-10",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://bank.gov.ua/\">https://bank.gov.ua/</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Андрій Пишний﻿",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "currency",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    },
+    {
+      "key": "BY",
+      "file": "500_Belarus_2009_front.jpg",
+      "info": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/500_Belarus_2009_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:500_Belarus_2009_front.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=49472791",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2016-06-15 12:14:38",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "500 Belarus 2009 front",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "National Library of Belarus Building|PD-BY-exempt (banknotes)|500 Belarusian rubles banknote (2009)",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "500 Belarusian rubles of 2009 model (front side)",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2015-12-23 14:00:43",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.nbrb.by/\">http://www.nbrb.by/</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Национальный банк Республики Беларусь",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    },
+    {
+      "key": "MD",
+      "file": "MD_1000_lei_av.jpg",
+      "info": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/MD_1000_lei_av.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:MD_1000_lei_av.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4154599",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2016-07-24 11:25:44",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "MD 1000 lei av",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Banknotes with a face value of 1000|Self-published work|PD-self|Banknotes of Moldova|PD-MD-exempt (banknotes)|Stephen III of Moldavia on banknotes",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "1000 lei (1992)",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "1992",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "own scan",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "National Bank of Moldova",
+            "source": "commons-desc-page"
+          },
+          "Permission": {
+            "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td><i>LAW OF THE <b><a href=\"//commons.wikimedia.org/wiki/Moldova\" title=\"Moldova\">REPUBLIC OF MOLDOVA</a></b></i>\n<p><i>ON COPYRIGHT AND NEIGHBOURING RIGHTS no. 139 of July 2, 2010 - <a rel=\"nofollow\" class=\"external text\" href=\"http://www.agepi.md/sites/default/files/law/national/l_139_2010-en.pdf\">full text</a></i>\n</p><p><b>Article 8. Works Not Protected by Copyright</b>\n</p>\n<ul><li>Copyright shall not extend to:\n<ul><li>a) Official documents (laws, court decisions, etc.) or to the official translations thereof;</li>\n<li>b) State emblems and official signs (flags, armorial bearings, decorations, monetary signs, etc.);</li>\n<li>c) Folklore expressions;</li>\n<li>d) Daily news and facts of simple informational nature.</li></ul></li></ul>\n<hr>\n<p><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/be-tarask\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/be-tarask\"><bdi class=\"language lang-be-tarask\" lang=\"be-tarask\">беларуская (тарашкевіца)</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/de\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/en\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/es\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/es\"><bdi class=\"language lang-es\" lang=\"es\">Español</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/ja\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/ro\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/ro\"><bdi class=\"language lang-ro\" lang=\"ro\">română</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/ru\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/uk\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:PD-MD-exempt/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:PD-MD-exempt/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td>\n<td><figure class=\"mw-halign-right\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Coat_of_arms_of_Moldova.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Coat_of_arms_of_Moldova.svg/120px-Coat_of_arms_of_Moldova.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"80\" height=\"101\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Coat_of_arms_of_Moldova.svg/250px-Coat_of_arms_of_Moldova.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"477\" data-file-height=\"601\"></a><figcaption></figcaption></figure>\n</td></tr></tbody></table>\n<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td>I, the copyright holder of this work, release this work into the <b><a href=\"https://en.wikipedia.org/wiki/en:public_domain\" class=\"extiw\" title=\"w:en:public domain\">public domain</a></b>. This applies worldwide.<br><small>In some countries this may not be legally possible; if so:</small><br><i>I grant anyone the right to use this work <b>for any purpose</b>, without any conditions, unless such conditions are required by law.</i>\n</td></tr></tbody></table>",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    },
+    {
+      "key": "CZ",
+      "file": "5000_Czech_koruna_Obverse.jpg",
+      "info": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/5000_Czech_koruna_Obverse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:5000_Czech_koruna_Obverse.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=79839243",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2019-06-21 07:31:21",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "5000 Czech koruna Obverse",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With currency|5000 Czech koruna banknotes|Self-published work|PD Czech money|Files that may be protected by currency protection laws",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "5000 Czech koruna Reverse",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2019-06-21",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Phamat123\" title=\"User:Phamat123\">Phamat123</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "currency",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    },
+    {
+      "key": "EUR",
+      "file": "EUR_5_obverse_(2013_issue).png",
+      "info": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/EUR_5_obverse_%282013_issue%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:EUR_5_obverse_(2013_issue).png",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=23748244",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2023-03-11 15:28:28",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "EUR 5 obverse (2013 issue)",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With currency|Second series 5 euro banknotes|Money-EU|Files that may be protected by currency protection laws",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Obverse side of the 2013 €5 banknote",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2013",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.new-euro-banknotes.eu/\">http://www.new-euro-banknotes.eu/</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/Robert_Kalina\" class=\"mw-redirect\" title=\"Robert Kalina\">Robert Kalina</a>, redesign by <a href=\"//commons.wikimedia.org/w/index.php?title=Reinhold_Gerstetter&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Reinhold Gerstetter (page does not exist)\">Reinhold Gerstetter</a>",
+            "source": "commons-desc-page"
+          },
+          "Permission": {
+            "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">ECB decisions ECB/2003/4 and ECB/2003/5</span><span class=\"licensetpl_long\">Use permitted by the ECB subject to the conditions set forth in decisions ECB/2003/4 and ECB/2003/5 and \"as long as reproductions in advertising or illustrations cannot be mistaken for genuine banknotes\".</span><span class=\"licensetpl_attr_req\">false</span><span class=\"licensetpl_link_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width:100%; clear:both; margin:0.5em auto; background-color: var(--background-color-neutral-subtle, #f9f9f9); color: var(--color-base, #202122); border: 2px solid var(--border-color-muted, #dadde3); border-spacing: 8px; box-sizing: border-box; padding: 0;\" lang=\"en\" class=\"layouttemplate licensetpl\" dir=\"ltr\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/SemiPD-icon.svg/120px-SemiPD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/SemiPD-icon.svg/250px-SemiPD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td><i>The image above depicts a euro <a href=\"//commons.wikimedia.org/wiki/Money\" title=\"Money\">banknote</a>. This design is copyrighted by the <b><a href=\"https://en.wikipedia.org/wiki/European_Central_Bank\" class=\"extiw\" title=\"en:European Central Bank\">European Central Bank</a></b> (ECB), and its use is permitted by ECB, subject to the conditions set forth in decisions <a rel=\"nofollow\" class=\"external text\" href=\"http://www.ecb.int/ecb/legal/pdf/l_07820030325en00160019.pdf\">ECB/2003/4</a> and <a rel=\"nofollow\" class=\"external text\" href=\"http://www.ecb.int/ecb/legal/pdf/l_07820030325en00200022.pdf\">ECB/2003/5</a> of 20 March 2003 and \"as long as reproductions in advertising or illustrations cannot be mistaken for genuine banknotes\".</i>\n</td>\n<td><figure class=\"mw-halign-right noresize\" typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Euro_symbol.svg/120px-Euro_symbol.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Euro_symbol.svg/250px-Euro_symbol.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"584\" data-file-height=\"584\"></span><figcaption></figcaption></figure>\n</td></tr></tbody></table>\n<table style=\"width:100%; clear:both; margin:0.5em auto; border-spacing:8px; background-color:var(--background-color-neutral-subtle,#f7f8ff); border:2px solid #8888aa;color: inherit;\" lang=\"en\" dir=\"ltr\" class=\"layouttemplate restrictiontemplate restriction-currency\">\n<tbody><tr>\n<td style=\"border:none; width:64px;\"><figure class=\"mw-halign-center\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/Commons:Non-copyright_restrictions\" title=\"Currency\"><img alt=\"Currency\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Money_Coin_Icon.svg/120px-Money_Coin_Icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"63\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Money_Coin_Icon.svg/250px-Money_Coin_Icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"47\" data-file-height=\"46\"></a><figcaption>Currency</figcaption></figure>\n</td>\n<td style=\"border:none;\"><i>This file, either completely or in part, depicts a <b>unit of currency</b>. Its use may be subject to criminal counterfeiting law or <a href=\"//commons.wikimedia.org/wiki/Commons:Non-copyright_restrictions\" title=\"Commons:Non-copyright restrictions\">other legal provisions outside of copyright law</a>. Before you use this file, you have to ensure that such use is fully compliant with such laws. See our <a href=\"//commons.wikimedia.org/wiki/Commons:General_disclaimer\" title=\"Commons:General disclaimer\">general disclaimer</a>.</i>\n</td></tr></tbody></table>",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseShortName": {
+            "value": "ECB decisions ECB/2003/4 and ECB/2003/5",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Use permitted by the ECB subject to the conditions set forth in decisions ECB/2003/4 and ECB/2003/5 and \"as long as reproductions in advertising or illustrations cannot be mistaken for genuine banknotes\".",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "currency",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      }
+    }
+  ],
+  "officialSources": [
+    {
+      "key": "BO",
+      "url": "https://www.bcb.gob.bo/webdocs/nfb/billetes/nfb/img/10000/anverso10000.jpg"
+    },
+    {
+      "key": "TJ",
+      "url": "https://www.nbt.tj/files/banknotes_coins/500s-1.jpg"
+    }
+  ]
+}

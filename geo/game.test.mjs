@@ -30,17 +30,14 @@ test('answers match names, aliases, ё and case', () => {
   assert.equal(matchCountry('Нарния', idx), null);
 });
 
-test('clues cost once, contour needs no other clues, unavailable and unaffordable clues cannot open', () => {
-  const r=newRound('KZ', [], ['walk']);
-  assert.equal(canOpen(r,'shape'),true);
-  assert.equal(openClue(r,'fact2'),true);
-  assert.equal(openClue(r,'fact2'),false);
-  assert.equal(r.score,START-50);
-  assert.equal(openClue(r,'walk'),false);
-  assert.equal(openClue(r,'invented'),false);
-  assert.equal(openClue(r,'compass'),false);
-  r.score=199;assert.equal(openClue(r,'shape'),false);
-  r.score=200;assert.equal(openClue(r,'shape'),true);assert.equal(r.score,0);
+test('clues cost once; outline and global compass are no longer sold', () => {
+ const r=newRound('KZ',[],['walk']);
+ assert.equal(canOpen(r,'shape'),false);assert.equal(canOpen(r,'compass'),false);
+ assert.equal(openClue(r,'fact2'),true);assert.equal(openClue(r,'fact2'),false);
+ assert.equal(r.score,START-50);assert.equal(openClue(r,'walk'),false);
+ assert.equal(openClue(r,'invented'),false);
+ r.score=74;assert.equal(openClue(r,'phrase'),false);
+ r.score=75;assert.equal(openClue(r,'phrase'),true);assert.equal(r.score,0);
 });
 
 test('a free clue opens without charge', () => {
@@ -49,22 +46,12 @@ test('a free clue opens without charge', () => {
   assert.equal(r.score, START);
 });
 
-test('wrong guess reveals no geography before compass is purchased', () => {
-  const r = newRound('KZ');
-  const miss = guess(r, 'RU', at);
-  assert.equal(miss.correct, false);
-  assert.equal(miss.dir,undefined);
-  assert.equal(miss.km,undefined);
-  assert.deepEqual(guidance(r,at),[]);
-  assert.equal(r.score, START - WRONG);
-  assert.equal(openClue(r,'compass'),true);
-  assert.equal(r.score,START-WRONG-100);
-  assert.deepEqual(guidance(r,at),[{id:'RU',dir:'↘'}]);
-  guess(r,'UZ',at);assert.equal(guidance(r,at).length,2);
-  assert.equal(openClue(r,'compass'),false);
-  assert.equal(guess(r, 'RU', at), null, 'same wrong answer is not charged twice');
-  assert.deepEqual(guess(r, 'KZ', at), { correct: true });
-  assert.equal(guess(r, 'UZ', at), null);
+test('wrong guesses do not disclose unpaid directions and duplicates are not charged', () => {
+ const r=newRound('KZ'); const miss=guess(r,'RU',at);
+ assert.equal(miss.correct,false);assert.equal(miss.dir,undefined);assert.equal(miss.km,undefined);
+ assert.deepEqual(guidance(r,at),[]);assert.equal(r.score,START-WRONG);
+ assert.equal(guess(r,'RU',at),null);assert.equal(r.score,START-WRONG);
+ assert.deepEqual(guess(r,'KZ',at),{correct:true});assert.equal(guess(r,'UZ',at),null);
 });
 
 test('geometry helpers', () => {

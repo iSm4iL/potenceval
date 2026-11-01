@@ -1,10 +1,13 @@
 import { $, esc, LS, toast, confetti, A, SPRING, nudge } from '../shared/kit.js';
-import { PACKS, COUNTRIES, t, lang, countryCount, localizeWorld } from './i18n.js?v=folder-20261029';
-import { WORLD as WORLD_RU, SHAPES, PHOTOS } from './atlas.js?v=clues-20261025';
-import { banknoteHTML, banknoteFor } from './banknotes.js?v=folder-20261029';
+import { PACKS, COUNTRIES, t, lang, countryCount, localizeWorld } from './i18n.js?v=editorial-20261030';
+import { WORLD as WORLD_RU, SHAPES } from './atlas.js?v=clues-20261025';
+import { PHOTOS } from './photos.js?v=review-20261030';
+import { banknoteHTML, banknoteFor } from './banknotes.js?v=legal-20261030';
 import { WALKS } from './walks.js?v=atlas-20261028b';
-import { PEOPLE, MONEY } from './content.js?v=atlas-20261028b';
-import { CLUES, START, WRONG, norm, nameIndex, matchCountry, canOpen, cluePrice, currencyPrice, openClue, refundWalk, guess, guidance, surrender, createGame, award, nextRound, selectFacts } from './game.js?v=folder-20261029';
+import { streetViewUrl } from './maps.js?v=embed-20261030';
+import { PHOTO_CREDITS } from './media-credits.js?v=credits-20261030';
+import { MONEY } from './content.js?v=atlas-20261028b';
+import { CLUES, START, WRONG, DIRECTION_COST, buyDirection, norm, nameIndex, matchCountry, canOpen, cluePrice, currencyPrice, openClue, refundWalk, guess, guidance, surrender, createGame, award, nextRound, selectFacts } from './game.js?v=editorial-20261030';
 
 const WORLD = localizeWorld(WORLD_RU);
 const stage = $('#stage'), byId = new Map(COUNTRIES.map(c => [c.id, c]));
@@ -13,12 +16,22 @@ const at = id => world.get(id).slice(2), nameOf = id => byId.get(id)?.name || wo
 const num = n => n.toLocaleString(lang === 'en' ? 'en-GB' : 'ru-RU');
 const searchCountries = WORLD.map(([id, name]) => ({id, name:nameOf(id), aliases:[name, WORLD_RU.find(w => w[0] === id)[1], ...(byId.get(id)?.aliases || [])]}));
 const directions = { '↑':t('На север','North'), '↗':t('На северо-восток','Northeast'), '→':t('На восток','East'), '↘':t('На юго-восток','Southeast'), '↓':t('На юг','South'), '↙':t('На юго-запад','Southwest'), '←':t('На запад','West'), '↖':t('На северо-запад','Northwest') };
-const icons = { fact1:'✦', fact2:'✦', phrase:'Aa', food:'◒', money:'¤', person:'☺', walk:'↟', shape:'◈', compass:'↗' };
+const iconPaths = {
+ fact1:'M6 3h9l3 3v15H6z M9 10h6 M9 14h6 M9 18h4',
+ fact2:'M6 3h9l3 3v15H6z M9 10h6 M9 14h6 M9 18h4',
+ phrase:'M3 5h12 M9 3v2 M5 8c2 4 5 7 9 8 M12 5c0 5-4 10-9 12 M14 21l4-11 4 11 M16 17h4',
+ food:'M5 3v7 M2 3v5c0 3 6 3 6 0V3 M5 11v10 M18 3c-4 3-4 9 0 9h2V3z M20 12v9',
+ money:'M3 6h18v12H3z M7 6v3H3 M17 18v-3h4 M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6',
+ person:'M12 3a4 4 0 1 0 0 8 4 4 0 1 0 0-8 M4 21v-3c0-6 16-6 16 0v3z',
+ walk:'M3 5l6-2 6 2 6-2v16l-6 2-6-2-6 2z M9 3v16 M15 5v16',
+};
+const clueIcon = key => `<svg class="clue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${iconPaths[key]}"/></svg>`;
 const saved = LS.get('geo.setup') || {};
 const settings = { pack: PACKS.some(p => p.id === saved.pack) ? saved.pack : 'europe', rounds:[5,10,15].includes(saved.rounds) ? saved.rounds : 5, mode:saved.mode === 'team' ? 'team' : 'solo', players:Array.isArray(saved.players) ? saved.players.filter(p=>typeof p==='string').slice(0,4) : [] };
 const persist = () => LS.set('geo.setup', settings);
 const poolOf = pack => COUNTRIES.filter(c => pack === 'all' || c.area === pack).map(c => c.id);
-const spotsOf = id => byId.get(id)?.walk && WALKS[id]?.length ? WALKS[id] : null;
+const mapsKey = document.querySelector('meta[name="google-maps-embed-key"]')?.content?.trim() || '';
+const spotsOf = id => mapsKey && byId.get(id)?.walk && WALKS[id]?.length ? WALKS[id] : null;
 const personOf = c => c.person;
 const shape = id => `<svg viewBox="-20 -20 1040 1040" aria-label="${t("Контур страны","Country outline")}"><path d="${SHAPES[id]}"/></svg>`;
 const exitBtn=$('#exitBtn'), AVATARS=['🕵️','🦊','🐱','🦉'];
@@ -98,9 +111,9 @@ function start() {
 }
 function beginRound() {
   resetWalk(); active='fact1'; settled=false;
-  const c=byId.get(game.round.id), historyKey=lang==='ru'?'geo.facts.v2':'geo.facts.v2.en', history=LS.get(historyKey) || {};
+  const c=byId.get(game.round.id), historyKey=lang==='ru'?'geo.facts.v3':'geo.facts.v3.en', history=LS.get(historyKey) || {};
   const facts=c.facts, used=Array.isArray(history[c.id])?history[c.id]:[];
-  roundFacts=selectFacts(facts,used);
+  roundFacts=selectFacts(c.factEntries,used,Math.random,c.personSubjects);
   const unique=[...new Set(facts)];
   history[c.id]=[...new Set([...used,...roundFacts])];
   if(history[c.id].length>=unique.length) history[c.id]=roundFacts;
@@ -115,9 +128,10 @@ function renderRound() {
   $('#exitBtn').hidden=false; $('#progress').hidden=false;
   $('#progressText').textContent=t(`Дело ${game.index+1} из ${game.order.length}`, `Case ${game.index+1} of ${game.order.length}`);
   $('#progressBar').style.width=`${(game.index+1)/game.order.length*100}%`;
-  stage.innerHTML=`<section class="case"><div class="scene"><div class="frame"><div class="plaque">${t('Дело №','Case no.')} ${String(game.index+1).padStart(3,'0')} · ${esc(PACKS.find(p=>p.id===settings.pack).name)}</div><div class="board" id="clueMenu" aria-label="${t("Доска расследования","Investigation board")}"></div></div><p class="board-help">${t("Нажми на открытую заметку, чтобы рассмотреть её крупнее.","Select an open note to inspect it more closely.")}</p></div><aside class="notebook answer-panel" id="notebook"><h2>${t("Что это за страна?","Which country is it?")}</h2><form class="guess" id="guessForm" autocomplete="off"><label class="visually-hidden" for="guessIn">${t("Название страны","Country name")}</label><div class="search-wrap"><input class="field" id="guessIn" role="combobox" aria-label="${t("Название страны","Country name")}" aria-autocomplete="list" aria-controls="sugg" aria-expanded="false" placeholder="${t("Название страны…","Country name…")}"><div id="sugg" class="sugg" role="listbox" hidden></div></div><button class="btn primary" type="submit">${t("Ответить","Submit guess")}</button></form><p class="answer-note">${t('Ошибка','Wrong guess')} −${WRONG}. ${t("Направление покупается отдельно.","Buy direction guidance separately.")}</p><div id="resultActions"></div><div class="round-score"><span>${t("Очки за дело","Case points")}</span><strong id="score">${num(r.score)}</strong></div><div class="compass-panel" id="compassPanel"></div><div class="attempts"><h3>${t("Проверенные версии","Previous guesses")}</h3><ul id="misses"></ul></div><div id="totals">${ranks()}</div><button class="give-up" id="giveUp">${t("Сдаться и узнать страну","Give up and reveal country")}</button></aside></section>`;
-  renderMenu(); renderMisses(); bindAnswer(); renderCompass();
+  stage.innerHTML=`<section class="case"><div class="scene"><div class="frame"><div class="plaque">${t('Дело №','Case no.')} ${String(game.index+1).padStart(3,'0')} · ${esc(PACKS.find(p=>p.id===settings.pack).name)}</div><div class="board" id="clueMenu" aria-label="${t("Доска расследования","Investigation board")}"></div></div><p class="board-help">${t("Нажми на открытую заметку, чтобы рассмотреть её крупнее.","Select an open note to inspect it more closely.")}</p></div><aside class="notebook answer-panel" id="notebook"><h2>${t("Что это за страна?","Which country is it?")}</h2><form class="guess" id="guessForm" autocomplete="off"><label class="visually-hidden" for="guessIn">${t("Название страны","Country name")}</label><div class="search-wrap"><input class="field" id="guessIn" role="combobox" aria-label="${t("Название страны","Country name")}" aria-autocomplete="list" aria-controls="sugg" aria-expanded="false" placeholder="${t("Название страны…","Country name…")}"><div id="sugg" class="sugg" role="listbox" hidden></div></div><button class="btn primary" type="submit">${t("Ответить","Submit guess")}</button></form><p class="answer-note">${t('Ошибка','Wrong guess')} −${WRONG}. ${t("Направление — для каждой версии. Расстояния округлены между центрами стран.","Buy a direction for each guess. Distances are rounded between country centres.")}</p><div id="resultActions"></div><div class="round-score"><span>${t("Очки за дело","Case points")}</span><strong id="score">${num(r.score)}</strong></div><div class="attempts"><h3>${t("Проверенные версии","Previous guesses")}</h3><div class="attempt-head" aria-hidden="true"><span>${t("Страна","Country")}</span><span>${t("Направление","Direction")}</span></div><ul id="misses" aria-live="polite"></ul></div><div id="totals">${ranks()}</div><button class="give-up" id="giveUp">${t("Сдаться и узнать страну","Give up and reveal country")}</button></aside></section>`;
+  renderMenu(); renderMisses(); bindAnswer();
   $('#clueMenu').onclick=e=>{
+    if(e.target.closest('.photo-credit'))return;
     if(e.target.closest('[data-walk]'))return openWalk();
     const photo=e.target.closest('[data-zoom]')?.querySelector('img');if(photo)return openViewer(photo.src);
     const opened=e.target.closest('.clue.open:not(.unavailable)');
@@ -131,12 +145,13 @@ function renderRound() {
 }
 function renderMenu() {
   const r=game.round,c=byId.get(r.id),focusKey=document.activeElement?.dataset?.clue;
-  const tilt={fact1:-2,fact2:2,phrase:-3,food:2,walk:1,money:-2,person:3,shape:-1};
-  $('#clueMenu').innerHTML='<svg class="threads" id="threads" aria-hidden="true"></svg>'+CLUES.filter(cl=>cl.key!=='compass').map(cl=>{
+  const tilt={fact1:-2,fact2:2,phrase:-3,food:2,walk:1,money:-2,person:3};
+  $('#clueMenu').innerHTML='<svg class="threads" id="threads" aria-hidden="true"></svg>'+CLUES.map(cl=>{
     const absent=r.unavailable.includes(cl.key),open=!absent&&(r.open.includes(cl.key)||r.done),price=cluePrice(r,cl.key);
     let detail=absent?t('Недоступно','Unavailable'):r.score<price&&!open?t(`Нужно ${price}`, `${price} points needed`):open?t('Рассмотреть','Inspect'):t(`Открыть за ${price}`, `Open for ${price}`);
     if(cl.key==='money'&&!open&&!banknoteFor(c.id,MONEY[c.id]))detail+=t(' · без фото',' · text only');
-    return `<div class="clue clue-${cl.key}${open?' open':''}${absent?' unavailable':''}${freshClue===cl.key?' just-opened':''}" data-key="${cl.key}" style="--tilt:${tilt[cl.key]}deg"><span class="pin" aria-hidden="true"></span><div class="clue-inner"><button class="side back" tabindex="${open?-1:0}" aria-hidden="${open}" data-clue="${cl.key}" ${absent||(!open&&!canOpen(r,cl.key))?'disabled':''} aria-label="${esc(cl.label)}, ${detail}"><span class="back-ic" aria-hidden="true">${icons[cl.key]}</span><b>${esc(cl.label)}</b><span class="price">${detail}</span></button><div class="side front" aria-hidden="${!open}">${open&&!absent?evidenceHTML(cl.key):'<div class="empty-note"></div>'}</div></div>${open&&!absent?`<button class="inspect-note" data-clue="${cl.key}" aria-label="${t('Рассмотреть','Inspect')}: ${esc(cl.label)}">↗</button>`:''}</div>`;
+    if(cl.key==='food'&&!open&&!PHOTOS[c.food[1]])detail+=t(' · без фото',' · text only');
+    return `<div class="clue clue-${cl.key}${open?' open':''}${absent?' unavailable':''}${freshClue===cl.key?' just-opened':''}" data-key="${cl.key}" style="--tilt:${tilt[cl.key]}deg"><span class="pin" aria-hidden="true"></span><div class="clue-inner"><button class="side back" tabindex="${open?-1:0}" aria-hidden="${open}" data-clue="${cl.key}" ${absent||(!open&&!canOpen(r,cl.key))?'disabled':''} aria-label="${esc(cl.label)}, ${detail}"><span class="back-ic" aria-hidden="true">${clueIcon(cl.key)}</span><b>${esc(cl.label)}</b><span class="price">${detail}</span></button><div class="side front" aria-hidden="${!open}">${open&&!absent?evidenceHTML(cl.key):'<div class="empty-note"></div>'}</div></div>${open&&!absent?`<button class="inspect-note" data-clue="${cl.key}" aria-label="${t('Рассмотреть','Inspect')}: ${esc(cl.label)}">↗</button>`:''}</div>`;
   }).join('')+`<div class="suspect${r.done?' open':''}" id="suspect"><span class="pin" aria-hidden="true"></span><div class="suspect-inner"><div class="side suspect-front" aria-hidden="${r.done}"><b>?</b><span>${t('Страна №','Country no.')} ${game.index+1}</span></div><div class="side suspect-back" aria-hidden="${!r.done}">${r.done?shape(c.id):''}<b>${r.done?esc(c.name):''}</b></div></div></div>`;
   $('#clueMenu').querySelectorAll('img').forEach(img=>img.onerror=()=>img.remove());
   if(focusKey){const note=$('#clueMenu').querySelector(`[data-key="${focusKey}"]`);(note?.querySelector('.inspect-note')||note?.querySelector('.back'))?.focus({preventScroll:true});}
@@ -154,32 +169,34 @@ function drawThreads(){
 }
 const boardObserver=new ResizeObserver(()=>requestAnimationFrame(drawThreads));
 addEventListener('resize',()=>requestAnimationFrame(drawThreads));
-function renderCompass(){
-  const r=game.round,open=r.open.includes('compass');
-  $('#compassPanel').innerHTML=`<button class="compass-buy" id="compassBuy" ${!open&&!canOpen(r,'compass')?'disabled':''}>↗ ${open?t('Направление открыто','Direction unlocked'):t('Направление · −100','Direction · −100')}</button><small>${!r.wrong.length?t('Доступно после первой ошибки','Available after your first wrong guess'):open?t('Действует на все версии этого дела','Covers every guess in this case'):t('Без покупки стрелок и расстояний нет','No arrows or distances until purchased')}</small>`;
-  $('#compassBuy').onclick=()=>{if(open){openEvidence('compass');return;}if(openClue(r,'compass'))update();};
-}
 function openEvidence(key){active=key;$('#viewerBody').innerHTML=`<div class="evidence-zoom">${evidenceHTML(key)}</div>`;$('#viewerNote').textContent=CLUES.find(cl=>cl.key===key).label;$('#viewer').showModal();}
+function photoCredit(src){const id=PHOTO_CREDITS[src]||(src?.endsWith('/assets/banknotes/EUR-ecb-72dpi.jpg')?'ecb':null);return id?`<a class="photo-credit" href="credits.html#${id}" target="_blank" rel="noopener noreferrer">${t('Автор, источник и лицензия (может раскрыть ответ)','Creator, source and licence (may reveal the answer)')}</a>`:'';}
 function evidenceHTML(key) {
   const r=game.round,c=byId.get(r.id),cl={...CLUES.find(cl=>cl.key===key),cost:cluePrice(r,key)};
   let body='';
-  const picture=(article,alt)=>PHOTOS[article]?`<button type="button" class="photo-zoom" data-zoom aria-label="${t("Увеличить фото: ","Enlarge photo: ")}${esc(alt)}"><img class="evidence-photo" src="${esc(PHOTOS[article])}" alt="${esc(alt)}" referrerpolicy="no-referrer"></button>`:'';
+  const picture=(article,alt)=>PHOTOS[article]?`<button type="button" class="photo-zoom" data-zoom aria-label="${t("Увеличить фото: ","Enlarge photo: ")}${esc(alt)}"><img class="evidence-photo" src="${esc(PHOTOS[article])}" alt="${esc(alt)}" referrerpolicy="no-referrer"></button>${photoCredit(PHOTOS[article])}`:'';
   switch(key){
     case 'fact1':case 'fact2':body=`<span class="fact-mark" aria-hidden="true">“</span><p class="fact-text">${esc(roundFacts[key==='fact1'?0:1])}</p><small class="evidence-note">${t("Присмотрись к деталям: они связывают факт с одной страной.","Look closely: the details connect this fact to a country.")}</small>`;break;
     case 'phrase':body=`<span class="language-symbol" aria-hidden="true">Aa</span><blockquote class="phrase" style="--long-word:${Math.max(...c.phrase[0].split(/\s+/).map(w=>[...w].length))}" dir="auto">${esc(c.phrase[0])}</blockquote><p class="translation">${esc(c.phrase[1])}</p><small class="evidence-note">${t("Фраза — подсказка. Один язык может встречаться в нескольких странах.","The phrase is a clue. A language may be spoken in several countries.")}</small>`;break;
     case 'food':body=`${picture(c.food[1],c.food[0])}<h2>${esc(c.food[0])}</h2><p>${t("Это блюдо встречается в местной кухне. Оно может быть знакомо и соседям.","This dish is found in the local cuisine. Neighbours may know it too.")}</p>`;break;
-    case 'money':body=`${banknoteHTML(c.id,MONEY[c.id])||'<div class="currency-symbol" aria-hidden="true">¤</div>'}<h2>${esc(c.currency)}</h2><p>${t("Денежная единица или её деление.","A monetary unit or its subdivision.")}</p><small class="evidence-note">${t("Часто встречающиеся валюты дешевле, редкие — дороже.","Common currencies cost less; rare ones cost more.")}</small><small class="evidence-note">${t("На фото оставлен фрагмент банкноты без названия страны. Если проверенного фото пока нет, показана текстовая подсказка.","The photo shows a banknote fragment with the country name removed. If no reviewed photo is available, a text clue is shown.")}</small>`;break;
-    case 'person':{const p=personOf(c),credit=!PEOPLE[c.id]&&c.personCredit;body=p?`${picture(p[2],p[0])}<h2>${esc(p[0])}</h2><p>${esc(p[1])}</p>${credit?`<small class="evidence-note">${t("Фото: ","Photo: ")}<a href="${esc(credit.source)}" target="_blank" rel="noopener noreferrer">${esc(credit.author)}</a>, <a href="${esc(credit.url)}" target="_blank" rel="noopener noreferrer">${esc(credit.license)}</a></small>`:''}`:`<h2>${t("Без случайных имён","No obscure names")}</h2><p>${t("Для этой страны пока нет достаточно узнаваемого человека в подборке.","No sufficiently recognisable person is available for this country yet.")}</p>`;break;}
-    case 'shape':body=`<div class="country-outline">${shape(c.id)}</div><p>${t("Силуэт страны. Масштаб и положение на карте не показаны.","The country’s outline. Scale and position on the map are not shown.")}</p>`;break;
-    case 'compass':{const list=guidance(r,at);body=`<div class="compass-rose" aria-hidden="true">✥</div><h2>${t("Куда двигаться","Which way to go")}</h2>${list.length?`<ul class="bearings">${list.map(m=>`<li><span>${esc(nameOf(m.id))}</span><b>${m.dir} ${directions[m.dir]}</b></li>`).join('')}</ul>`:`<p>${t("Направления появятся здесь после ошибочных версий.","Directions will appear here after incorrect guesses.")}</p>`}<small class="evidence-note">${t("От условного центра названной страны к центру загаданной. Покупка действует на все попытки этого раунда.","From the approximate centre of your guess to the centre of the hidden country. This purchase covers all guesses in this round.")}</small>`;break;}
+    case 'money':body=`${banknoteHTML(c.id,MONEY[c.id])||'<div class="currency-symbol" aria-hidden="true">¤</div>'}${photoCredit(banknoteFor(c.id,MONEY[c.id]))}<h2>${esc(c.currency)}</h2><p>${t("Денежная единица или её деление.","A monetary unit or its subdivision.")}</p><small class="evidence-note">${t("Часто встречающиеся валюты дешевле, редкие — дороже.","Common currencies cost less; rare ones cost more.")}</small><small class="evidence-note">${t("На фото — образец или фрагмент банкноты. Для части валют доступна только текстовая подсказка.","The photo shows a specimen or a banknote fragment. Some currencies have a text clue only.")}</small>`;break;
+    case 'person':{const p=personOf(c);body=p?`${picture(p[2],p[0])}<h2>${esc(p[0])}</h2><p>${esc(p[1])}</p>`:`<h2>${t("Без случайных имён","No obscure names")}</h2><p>${t("Для этой страны пока нет достаточно узнаваемого человека в подборке.","No sufficiently recognisable person is available for this country yet.")}</p>`;break;}
     case 'walk':body=`<div class="street-symbol" aria-hidden="true">↟</div><h2>${t("Осмотрись вокруг","Look around")}</h2><p>${t("Дороги, здания и вывески могут многое рассказать.","Roads, buildings and signs can reveal a lot.")}</p><button class="btn primary" data-walk>${t("Открыть прогулку","Open street walk")}</button><small class="evidence-note">${t("Если точка неудачная — выбери другое место. Повторно очки не списываются.","If the spot is unhelpful, choose another place. There is no extra charge.")}</small>`;break;
   }
   return `<div class="evidence-content evidence-${key}">${body}</div>`;
 }
 
 function ranks(){return `<h3>${t("Счёт за игру","Game scores")}</h3><ul class="ranks">${game.players.map(p=>`<li><span>${esc(p.name)}</span><b>${num(p.score)}</b></li>`).join('')}</ul>`;}
-function renderMisses(){const r=game.round,list=guidance(r,at);$('#misses').innerHTML=r.wrong.length?r.wrong.map(m=>{const d=list.find(d=>d.id===m.id);return `<li><span>${esc(nameOf(m.id))}</span><small>${d?`${d.dir} ${directions[d.dir]}`:t('Мимо','Incorrect')}</small></li>`;}).reverse().join(''):`<li class="empty">${t("Пока нет ошибок","No incorrect guesses yet")}</li>`;}
-function update() { $('#score').textContent=num(game.round.score); renderMenu();renderCompass();renderMisses(); }
+function renderMisses(){
+  const r=game.round,list=guidance(r,at);
+  $('#misses').innerHTML=r.wrong.length?r.wrong.map(m=>{
+    const d=list.find(d=>d.id===m.id);
+    const label=t(`Купить направление от ${nameOf(m.id)} за ${DIRECTION_COST} очков`,`Buy direction from ${nameOf(m.id)} for ${DIRECTION_COST} points`);
+    return `<li><span>${esc(nameOf(m.id))}</span>${d?`<span class="direction-result"><svg class="direction-arrow" viewBox="0 0 24 24" style="transform:rotate(${['↑','↗','→','↘','↓','↙','←','↖'].indexOf(d.dir)*45}deg)" aria-hidden="true"><path d="M12 21V3M5 10l7-7 7 7"/></svg><span><b>${directions[d.dir]}</b><small>≈ ${num(d.km)} ${t('км','km')}</small></span></span>`:`<button class="direction-price" data-direction="${esc(m.id)}" aria-label="${esc(label)}" ${r.done||r.score<DIRECTION_COST?'disabled':''}>−${DIRECTION_COST}</button>`}</li>`;
+  }).reverse().join(''):`<li class="empty">${t("Пока нет ошибок","No incorrect guesses yet")}</li>`;
+  $('#misses').onclick=e=>{const b=e.target.closest('[data-direction]');if(!b)return;if(buyDirection(r,b.dataset.direction)){update();}};
+}
+function update() { $('#score').textContent=num(game.round.score); renderMenu();renderMisses(); }
 function bindAnswer(){
   const input=$('#guessIn'),box=$('#sugg');let list=[],hi=0,choosing=false;
   const close=()=>{box.hidden=true;input.setAttribute('aria-expanded','false');};
@@ -215,7 +232,7 @@ function finish(){
   $('#againBtn').onclick=start;$('#homeBtn').onclick=home;scrollTo({top:0,behavior:'instant'});
 }
 const walkEl=$('#walk'),dockEl=$('#walkDock'),frameEl=$('#walkFrame');let spot=0;
-function panoUrl([lat,lng]){return `https://www.google.com/maps/embed?hl=${lang}&pb=!6m7!1m6!2m2!1d${lat}!2d${lng}!3f0!4f0!5f0.8`;}
+function panoUrl(point){return streetViewUrl(point,mapsKey,lang);}
 function openWalk(){const spots=spotsOf(game.round.id);if(!spots)return; if(!frameEl.getAttribute('src'))frameEl.src=panoUrl(spots[spot]);walkEl.hidden=false;if(!walkEl.open)walkEl.showModal();dockEl.hidden=true;$('#walkOther').hidden=spots.length<2;$('#walkRefund').hidden=game.round.done;}
 function foldWalk(){if(walkEl.open)walkEl.close();walkEl.hidden=true;dockEl.hidden=!game||game.round.done;}
 function resetWalk(){if(walkEl.open)walkEl.close();walkEl.hidden=true;dockEl.hidden=true;spot=0;frameEl.removeAttribute('src');}
@@ -224,7 +241,7 @@ walkEl.addEventListener('close',()=>{if(!walkEl.open)walkEl.hidden=true;});
 $('#walkFold').onclick=foldWalk;dockEl.onclick=openWalk;
 $('#walkRefund').onclick=()=>{if(game&&refundWalk(game.round)){resetWalk();active='fact1';update();toast(t('150 очков возвращены. Прогулка отключена до следующего раунда.','150 points refunded. Street walk is disabled until the next round.'),3000);}};
 $('#walkOther').onclick=()=>{const spots=spotsOf(game.round.id);if(spots){spot=(spot+1)%spots.length;frameEl.src=panoUrl(spots[spot]);}};
-function openViewer(src){$('#viewerBody').innerHTML=`<img src="${esc(src)}" alt="${t("Подсказка крупно","Enlarged clue")}">`;$('#viewerNote').textContent='';if(!$('#viewer').open)$('#viewer').showModal();}
+function openViewer(src){$('#viewerBody').innerHTML=`<img src="${esc(src)}" alt="${t("Подсказка крупно","Enlarged clue")}">${photoCredit(src)}`;$('#viewerNote').textContent='';if(!$('#viewer').open)$('#viewer').showModal();}
 $('#viewerBody').onclick=e=>{if(e.target.closest('[data-walk]')){$('#viewer').close();openWalk();}const img=e.target.closest('[data-zoom]')?.querySelector('img');if(img)openViewer(img.src);};
 $('#viewer').onclose=()=>{$('#viewerBody').innerHTML='';};
 document.addEventListener('click',e=>{if(e.target.closest('[data-close]'))e.target.closest('dialog').close();});

@@ -1,3 +1,4 @@
+import { FACT_PAIRS, PERSON_ROSTER } from './editorial.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { COUNTRIES } from './countries.js';
@@ -12,26 +13,26 @@ const ids = COUNTRIES.map(c => c.id).sort();
 const escaped = text => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const word = text => new RegExp(`(?<![\\p{L}\\p{N}])${escaped(text)}(?![\\p{L}\\p{N}])`, 'iu');
 
-test('all 112 dossiers retain all four facts in both languages and complete English clue text', () => {
+test('all 112 dossiers retain the curated facts in both languages and complete English clue text', () => {
   assert.equal(COUNTRIES.length, 112);
   assert.deepEqual(Object.keys(PROFILES_EN).sort(), ids);
   assert.deepEqual(Object.keys(FACTS_EN).sort(), ids);
   for (const raw of COUNTRIES) {
     const ru = localizeCountry(raw, 'ru'), en = localizeCountry(raw, 'en');
-    assert.deepEqual(ru.facts, [...raw.facts, ...FACTS[raw.id]]);
+    assert.deepEqual(ru.facts, FACT_PAIRS[raw.id].map(f=>f[1]));
     assert.equal(en.facts.length, ru.facts.length, raw.id);
-    assert.equal(new Set(en.facts).size, 4, raw.id);
+    assert.equal(new Set(en.facts).size, FACT_PAIRS[raw.id].length, raw.id);
     for (const text of [en.name, en.food[0], en.currency, en.phrase[1], ...en.facts, ...(en.person?.slice(0, 2) || [])]) {
       assert.equal(typeof text, 'string', `${raw.id}: missing translation`);
       assert.ok(text.length > 1, raw.id);
       assert.doesNotMatch(text, /\p{Script=Cyrillic}|undefined|https?:|<[^>]+>/u, raw.id);
     }
     assert.equal(en.food[1], raw.food[1], `${raw.id}: preserve photo key`);
-    assert.equal(en.person === null, OMIT_PEOPLE.includes(raw.id), raw.id);
-    if (en.person) assert.equal(en.person[2], (PEOPLE[raw.id] || raw.person)[2]);
+    assert.equal(en.person === null, !PERSON_ROSTER[raw.id], raw.id);
+    if (en.person) assert.equal(en.person[2], PERSON_ROSTER[raw.id][4]);
     // Every translated fact participates in the same rotation, including the additional facts.
     const first = selectFacts(en.facts, [], () => 0);
-    assert.equal(new Set([...first, ...selectFacts(en.facts, first, () => 0)]).size, 4, raw.id);
+    assert.equal(new Set([...first, ...selectFacts(en.facts, first, () => 0)]).size, Math.min(4, en.facts.length), raw.id);
   }
 });
 
@@ -68,9 +69,7 @@ test('translations preserve currency prices, reviewed snippets and birthplace qu
     assert.equal(currencyPrice(MONEY[c.id], Object.values(MONEY)), prices[c.id]);
     assert.equal(banknoteFor(c.id, MONEY[c.id]), banknoteFor(raw.id, MONEY[raw.id]));
   }
-  for (const id of ['BY','MK','LV','UZ','NP','TZ','IR']) {
-    assert.match(localizeCountry(COUNTRIES.find(c => c.id === id), 'en').person[1], /born here/u, id);
-  }
+  assert.match(localizeCountry(COUNTRIES.find(c=>c.id==='PL'),'en').person[1], /born and raised here/u);
   assert.equal(localizeCountry(COUNTRIES.find(c => c.id === 'CZ'), 'en').currency, 'Koruna');
   assert.equal(localizeCountry(COUNTRIES.find(c => c.id === 'ID'), 'en').currency, 'Rupiah');
 });

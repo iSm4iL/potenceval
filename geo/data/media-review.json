@@ -1,0 +1,18 @@
+{
+  "checked": "2026-10-30",
+  "authorsFromOriginalPages": {
+    "Brunost.jpg": "Maebmij; crop: Ranveig",
+    "Fladenbrot-1.jpg": "Rainer Zenz",
+    "Jiaozi-close-look.jpg": "Prattflora",
+    "Mul_Naengmyeon_with_Mandu.JPG": "ZenKimchi"
+  },
+  "evidence": "media-source-pages.json contains the original Commons page revisions retrieved on 2026-10-30. Underscores and spaces refer to the same Commons file title.",
+  "unresolvedAuthors": ["Mamaliga.jpg", "Simit-2x.JPG", "Feijoada_01.jpg", "Argentinean_asado.jpg"],
+  "notes": {
+    "Feijoada_01.jpg": "Original page describes permission for Wikipedia; do not assume that this establishes the entire chain of commercial rights despite a migrated CC template.",
+    "Fladenbrot-1.jpg": "Original page describes Turkish durum/yufka rather than establishing that this is Armenian lavash. Editorial image match remains uncertain.",
+    "2009-09-gulasch-pörkölt-paprikas-3.jpg": "GFDL 1.2 and separate NC-ND language. NC-ND is not a commercial route. GFDL compliance or separate permission must be established; attribution alone does not clear it.",
+    "18-08-24-Karjalanpiirakka_RRK6538.jpg": "GFDL 1.2; attribution alone does not establish compliance.",
+    "Poutine.JPG": "GFDL 1.2; attribution alone does not establish compliance."
+  }
+}

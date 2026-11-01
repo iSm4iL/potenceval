@@ -17,6 +17,7 @@ test('only reviewed local snippets are served and enlargement receives the same 
   assert.equal(banknoteFor('BO',MONEY.BO),'assets/banknotes/BO.webp');
   assert.equal(banknoteFor('TJ',MONEY.TJ),'assets/banknotes/TJ.webp');
   assert.equal(banknoteFor('FR',MONEY.FR),banknoteFor('SK',MONEY.SK));
+  assert.equal(banknoteFor('FR',MONEY.FR),'assets/banknotes/EUR-ecb-72dpi.jpg');
   assert.equal(banknoteFor('HU',MONEY.HU),null);
 });
 test('crop manifest preserves source evidence and has reviewed bounded regions',()=>{

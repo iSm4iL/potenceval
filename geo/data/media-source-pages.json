@@ -1,0 +1,201 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "normalized": [
+      {
+        "from": "File:18-08-24-Karjalanpiirakka_RRK6538.jpg",
+        "to": "File:18-08-24-Karjalanpiirakka RRK6538.jpg"
+      },
+      {
+        "from": "File:Mul_Naengmyeon_with_Mandu.JPG",
+        "to": "File:Mul Naengmyeon with Mandu.JPG"
+      },
+      {
+        "from": "File:Feijoada_01.jpg",
+        "to": "File:Feijoada 01.jpg"
+      },
+      {
+        "from": "File:Argentinean_asado.jpg",
+        "to": "File:Argentinean asado.jpg"
+      }
+    ],
+    "pages": {
+      "28225": {
+        "pageid": 28225,
+        "ns": 6,
+        "title": "File:Feijoada 01.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "Imagem retirada do site http://geocities.yahoo.com.br/clandestinidadecarioca/ {{Wayback|url=http://geocities.yahoo.com.br/clandestinidadecarioca/ |date=20041207215650 }} . O autor foi contactado via email por andre_v, e autorizou seu uso na wikipedia\n\n[[w:pt:Usuário:Andre v|Andre v]]\n\n{{GFDL|migration=relicense}}\n\n[[Category:Feijoada à brasileira]]\n[[Category:Media missing infobox template]]"
+              }
+            }
+          }
+        ]
+      },
+      "56158": {
+        "pageid": 56158,
+        "ns": 6,
+        "title": "File:Jiaozi-close-look.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "A close look of an jiao-zi .photo by [[User:Prattflora|Prattflora]] 18:39, 13 Feb 2005 (UTC)\n{{GFDL|migration=relicense}}\n\n[[Category:Jiaozi]]\n[[Category:Snack foods of China]]\n[[Category:Media missing infobox template]]"
+              }
+            }
+          }
+        ]
+      },
+      "342608": {
+        "pageid": 342608,
+        "ns": 6,
+        "title": "File:Brunost.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "== {{int:filedesc}} ==\nA chunk of geitost/brunost (Norwegian brown goat’s cheese) and a cheese slicer with a slice on it.\n\nUploaded to en: by [[:en:User:Maebmij]], cropped by [[User:Ranveig]].\n\n[[:en:Image:Gjetost cheese, with slicer.jpg]]\n\n== {{int:license-header}} ==\n{{GFDL-en|migration=relicense}}\n\n[[Category:Brunost]]\n[[Category:Cheese slicers]]\n[[Category:Media missing infobox template]]\n[[Category:Taken with Olympus C-830L / D-340R]]\n[[Category:Chunks of cheese]]"
+              }
+            }
+          }
+        ]
+      },
+      "370125": {
+        "pageid": 370125,
+        "ns": 6,
+        "title": "File:Simit-2x.JPG",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "2 [[w:en:simit|simit]]s in wrapping paper (''[[w:nl:simit|simit]]s in inpakpapier'') - \n{{GFDL|migration=relicense}} - own picture\n\n \n[[Category:Simit of Turkey]]\n[[Category:Media missing infobox template]]\n[[Category:Taken with Panasonic Lumix DMC-FZ5]]"
+              }
+            }
+          }
+        ]
+      },
+      "677695": {
+        "pageid": 677695,
+        "ns": 6,
+        "title": "File:Mamaliga.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "== {{int:license-header}} ==\n{{GFDL-en|migration=relicense}}\n\n[[Category:Mamaliga]]\n[[Category:Media missing infobox template]]\n[[Category:Taken with Sony DSC-P8]]"
+              }
+            }
+          }
+        ]
+      },
+      "739873": {
+        "pageid": 739873,
+        "ns": 6,
+        "title": "File:Mul Naengmyeon with Mandu.JPG",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "from [[:en:Image:IMGP1584.JPG]], 12:55, 7 January 2006. renamed.\n\nMul Naengmyeon with Mandu (self taken from my site www.zenkimchi.com/FoodJournal)\n{{GFDL-user|ZenKimchi|en|migration=relicense}}\n\n\n[[Category:Mulnaengmyeon]]\n[[Category:Naengmyeon with boiled eggs]]\n[[Category:Jjinmandu]]\n[[Category:Media missing infobox template]]\n[[Category:Hamhung naengmyeon]]\n[[Category:Taken with Pentax Optio S50]]"
+              }
+            }
+          }
+        ]
+      },
+      "891927": {
+        "pageid": 891927,
+        "ns": 6,
+        "title": "File:Argentinean asado.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "== {{int:filedesc}} ==\nA typical argentinean asado consisting of:\nBeef, Pork, Ribs, Pork Ribs, Chitterlings, Sweetbread, Sausage, Blood Sausage, Chicken.\nIt is a picture of an asado I made, the photograph was taken by me.\n\n[[Category:Grilled chicken]]\n\n== {{int:license-header}} ==\n{{cc-by-sa-2.5}}\n[[Category:Media missing infobox template]]\n[[Category:Sweetbreads]]\n[[Category:Taken with Fujifilm FinePix A200]]\n[[Category:Asado en parrillas familiares]]"
+              }
+            }
+          }
+        ]
+      },
+      "1008047": {
+        "pageid": 1008047,
+        "ns": 6,
+        "title": "File:Fladenbrot-1.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "Fladenbrot (türkisches Dürüm aus Weizenmehl)\n\nTaken from [[:de:Bild:Fladenbrot-1.jpg]]\n\n\n{{GFDL-user|Rainer Zenz|de|migration=relicense}}\n\n[[Category:Yufka bread]]\n[[Category:Media missing infobox template]]\n[[Category:Turkish cuisine in Germany]]"
+              }
+            }
+          }
+        ]
+      },
+      "5185607": {
+        "pageid": 5185607,
+        "ns": 6,
+        "title": "File:Poutine.JPG",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "== {{int:filedesc}} ==\n{{Information\n|Description=\n{{en|1=Poutine (French fried potatoes with cheese curds and beef gravy) as served at the Frit-O-Cheezz restaurant in Andover, Minnesota, United States}}\n{{es|1=Poutine con patatas fritas y queso fresco.}}\n{{fr|1=Un plat de poutine}}\n{{zh|1=肉汁奶酪薯条}}\n|Source={{Own}}\n|Author=[[User:Jonathunder|Jonathunder]]\n|Date=2008-11-08\n|Permission=\n|other_versions=\n}}\n== {{int:license-header}} ==\n{{GFDL-1.2}}\n\n[[Category:Poutine]]\n[[Category:Taken with Canon EOS 350D]]"
+              }
+            }
+          }
+        ]
+      },
+      "7811828": {
+        "pageid": 7811828,
+        "ns": 6,
+        "title": "File:2009-09-gulasch-pörkölt-paprikas-3.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "{{Information\n|Description=\n\nungarisches Gulasch = Kesselgulasch\n|Source={{own}}, [[:de:User:Ralf Roletschek]] [http://www.fahrradmonteur.de Fahrradmonteur.de]\n|Date=2009-09-13\n|Author={{User:Ralf Roletschek/Autor}}\n|Permission={{User:Ralf Roletschek/Autor2}}\n|other_versions=\n}}\n\n{| align=\"left\" style=\"width:100%; background-color:#FFFFCC; border:2px solid #8888aa; padding:5px;\"\n| [[Image:Wikimedia-logo.svg|65px|The Wikimedia Logo]]\n| Dieses Bild steht der Wikimedia- Foundation, dem Wikimedia e. V. sowie den anderen nationalen Vereinen als gemeinfrei zur Verfügung. Für Länder, die keine Gemeinfreiheit kennen, kann eine Vergleichslizenz benutzt werden (z.&nbsp;B. Public Domain). Die Lizenzierung als gemeinfrei gilt für jegliche Veröffentlichungen gleich in welchem Medium, wenn die Veröffentlichung im Zusammenhang bzw. zum Nutzen der Wikipedia erfolgt.\n|}\n\n{{GFDL-1.2|migration=opt-out}}\n\n{| align=\"center\"  style=\"width:100%; background-color:#f8f8f8; border:2px solid #e0e0e0; padding:2px;\"\n| align=\"left\" | [[Image:CC some rights reserved.svg|90px|Creative Commons License]]<br/>[[Image:Cc-by white.svg|24px|Creative Commons Attribution icon]][[Image:Cc-nc white.svg|24px|Creative Commons Non-commercial icon]][[Image:Cc-nd white.svg|24px|Creative Commons Non-derivative icon]]\n| align=\"left\" | ''This file is licensed under the [[w:Creative Commons|Creative Commons]] ‘Attribution-NonCommercial-NonDerivative 3.0 (US)’<br />Licence: https://creativecommons.org/licenses/by-nc-nd/3.0/''<br />Diese Datei steht unter der Lizenz [[:de:Creative Commons|Creative Commons]] „Namensnennung-keine kommerzielle Nutzung-keine Bearbeitung 3.0 US“ <br />Lizenz: https://creativecommons.org/licenses/by-nc-nd/3.0/deed.de\n|}\n\n==GFDL==\n{| class=\"wikitable\"\n|\n[[Image:Flag of Germany.svg|right|100px]]\nDas Foto habe ich als Urheber unter der '''„[[:de:GNU-Lizenz für freie Dokumentation|GFDL – GNU-Lizenz für freie Dokumentation]]“''' in der Version 1.2 veröffentlicht. Dies bedeutet, dass eine '''kostenlose, auch kommerzielle Nutzung ausserhalb der Wikipedia''' unter folgenden Bedingungen möglich ist:\n\n* '''Online-Medien:'''\n*# Als Urheber wird „Ralf Roletschek“ genannt.\n*# Es wird ein Link auf das Originalfoto gesetzt: {{fullurl:{{FULLPAGENAME}}}}\n\n* '''Print-Medien:'''\n*# Als Urheber wird „Ralf Roletschek/Wikipedia“ genannt.\n*# Die „GNU-Lizenz für freie Dokumentation“ verlangt den Abdruck des kompletten [http://www.gnu.org/copyleft/fdl.html Lizenztextes]. Falls dies aus Platzgründen nicht möglich ist, nehmen Sie bitte vorher Kontakt mit mir auf.\n\nIch bitte um Zusendung eines Belegexemplares bzw. der URL, wo das Foto benutzt wird.\n\nBitte schreiben Sie eine E-Mail an [mailto:roletschek.ralf@gmail.com roletschek.ralf@gmail.com], wenn Sie\n* das Foto in einer höheren Auflösung benötigen,\n* meine Adresse für die Zusendung eines Belegexemplares benötigen,\n* weitergehende Fragen zur Lizenznutzung haben.\n|}\n----\n{| class=\"wikitable\"\n|\n[[Image:Flag of Spain.svg|right|100px]]\nLa fotografía la he publicado yo como autor bajo la licencia '''[[:es:Licencia de documentación libre GNU|GFDL - Licencia de documentación libre GNU]]''' en la Versión 1.2. Eso significa que el uso '''gratuito y comercial fuera de la Wikipedia''' es posible bajo las siguientes condiciones:\n\n*'''Documentos en la red:''' \n*# como autor hay que citar a «Ralf Roletschek». \n*# se debe introducir un enlace a la foto original: {{fullurl:{{FULLPAGENAME}}}}\n\n*'''Medios impresos'''\n*# como autor hay que citar a «Ralf Roletschek/Wikipedia». \n*# la licencia «GNU para documentación libre» requiere la impresión completa del [http://www.gnu.org/copyleft/fdl.html texto de la licencia]. Si esto no es posible por razones de espacio, antes de emplear el objeto, por favor contacte conmigo.\n\nSolicito una copia de la publicación y/o del URL donde se utiliza la foto. Por favor, escriba un correo a [mailto:roletschek.ralf@gmail.com roletschek.ralf@gmail.com], si desea\n* la foto a mayor resolución, \n* mi dirección para el envío de una copia de la publicación, \n* aclarar cuestiones sobre el uso de las licencias.\n|}\n==CC-by-nc-nd==\n{| class=\"wikitable\"\n|\n[[Image:Flag of Germany.svg|right|100px]]\nDie Verwendung des Bildes ohne Einhaltung der GFDL-Lizenzbestimmungen und ohne den Abdruck des kompletten GFDL-Lizenztextes ist '''bei Namensnennung für nicht-kommerzielle Zwecke und ohne Veränderungen des Bildes''' zulässig.\n\nSoll das Bild für kommerzielle Zwecke der Bildung im weitesten Sinne verwendet werden, bitte ich um eine [http://spenden.wikimedia.de/ angemessene Spende] an den Verein Wikimedia Deutschland e. V. Anderwertige kommerzielle Verwendung nur unter Einhaltung der GFDL oder auf Absprache.\n* '''Online-Medien:'''\n*# Als Urheber wird „Ralf Roletschek“ genannt.\n*# Es wird um einen Link auf das Originalfoto gebeten: {{fullurl:{{FULLPAGENAME}}}}\n\n* '''Print-Medien:'''\n*# Als Urheber wird „Ralf Roletschek/Wikipedia“ genannt.\n|}\n\n[[Category:Goulash in Germany]]\n[[Category:Pörkölt]]\n[[Category:Taken with Canon PowerShot S3 IS]]"
+              }
+            }
+          }
+        ]
+      },
+      "71958013": {
+        "pageid": 71958013,
+        "ns": 6,
+        "title": "File:18-08-24-Karjalanpiirakka RRK6538.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "== {{int:filedesc}} ==\n{{Information\n|Description={{fi|Karjalanpiirakka}}{{de|Karelische Pirogge}}\n|Source={{own}}\n|Date=2018-08-24\n|Author={{User:Ralf Roletschek/Autor}}\n|Permission={{User:Ralf Roletschek/Autor4}}\n|other_versions=\n}}{{GFDL 1.2}}\n{{Ostseeparlamentarierkonferenz 2018}}\n[[Category:Karjalanpiirakka]]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
