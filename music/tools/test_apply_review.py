@@ -35,6 +35,14 @@ class ReviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             r.make_plan(data, state, {"tracks": []})
 
+    def test_old_review_cannot_restore_an_audio_failure_removed_from_catalog(self):
+        data = {"collections": [{"id": "test", "tracks": [{"id": "dz-999", "deezerId": 999}]}]}
+        state = {"version": 1, "tracks": {"test": {"dz-999": {"status": "keep", "more": True}}}, "artists": {}}
+        plan = r.make_plan(data, state, {"tracks": []}, excluded_ids=[999])
+        self.assertEqual(plan[0]["allowedIds"], [])
+        self.assertEqual(plan[0]["unavailableIds"], [999])
+        self.assertEqual(plan[0]["requests"], [])
+
 
 if __name__ == '__main__':
     unittest.main()

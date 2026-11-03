@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-30T14:37:34Z",
+  "generatedAt": "2026-11-03T22:11:33.348Z",
   "sources": [
     {
       "id": "apple-ru-chart",
@@ -10,7 +10,7 @@
       "updatedAt": "2026-10-28T12:18:38Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 79
+      "count": 77
     },
     {
       "id": "apple-us-chart",
@@ -70,7 +70,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 71
+      "count": 56
     },
     {
       "id": "dad-rock-top",
@@ -80,7 +80,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 68
+      "count": 50
     },
     {
       "id": "mom-pop-top",
@@ -90,7 +90,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 62
+      "count": 61
     },
     {
       "id": "modern-pop-top",
@@ -100,7 +100,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 81
+      "count": 62
     },
     {
       "id": "dead-inside-top",
@@ -120,7 +120,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 54
+      "count": 49
     },
     {
       "id": "nostalgia-school-2017",
@@ -140,7 +140,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 70
+      "count": 65
     },
     {
       "id": "soundcloud-hits",
@@ -160,7 +160,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 119
+      "count": 117
     },
     {
       "id": "hookah-top",
@@ -180,7 +180,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 158
+      "count": 149
     },
     {
       "id": "soundcloud-more",
@@ -200,7 +200,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 208
+      "count": 180
     },
     {
       "id": "modern-pop-stars-more",
@@ -210,7 +210,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 20
+      "count": 16
     },
     {
       "id": "mom-pop-more",
@@ -230,7 +230,7 @@
       "updatedAt": "2026-10-28T12:15:52Z",
       "retrievedAt": "2026-10-28T12:15:52Z",
       "status": "fresh",
-      "count": 175
+      "count": 149
     },
     {
       "id": "hookah-more",
@@ -250,7 +250,7 @@
       "updatedAt": "2026-10-30T13:03:31Z",
       "retrievedAt": "2026-10-30T13:03:31Z",
       "status": "fresh",
-      "count": 119
+      "count": 118
     },
     {
       "id": "player-review-new-wave",
@@ -260,7 +260,7 @@
       "updatedAt": "2026-10-30T14:37:34Z",
       "retrievedAt": "2026-10-30T14:37:34Z",
       "status": "fresh",
-      "count": 367
+      "count": 366
     },
     {
       "id": "player-review-ru-rap",
@@ -270,7 +270,7 @@
       "updatedAt": "2026-10-30T14:37:34Z",
       "retrievedAt": "2026-10-30T14:37:34Z",
       "status": "fresh",
-      "count": 496
+      "count": 495
     },
     {
       "id": "player-review-nostalgia",
@@ -280,7 +280,7 @@
       "updatedAt": "2026-10-30T14:37:34Z",
       "retrievedAt": "2026-10-30T14:37:34Z",
       "status": "fresh",
-      "count": 119
+      "count": 114
     },
     {
       "id": "player-review-modern-pop",
@@ -290,7 +290,7 @@
       "updatedAt": "2026-10-30T14:37:34Z",
       "retrievedAt": "2026-10-30T14:37:34Z",
       "status": "fresh",
-      "count": 224
+      "count": 180
     },
     {
       "id": "player-review-dad-rock",
@@ -300,7 +300,7 @@
       "updatedAt": "2026-10-30T14:37:34Z",
       "retrievedAt": "2026-10-30T14:37:34Z",
       "status": "fresh",
-      "count": 169
+      "count": 131
     },
     {
       "id": "player-review-metal",
@@ -310,7 +310,7 @@
       "updatedAt": "2026-10-30T14:37:34Z",
       "retrievedAt": "2026-10-30T14:37:34Z",
       "status": "fresh",
-      "count": 67
+      "count": 52
     },
     {
       "id": "player-review-us-hiphop",
@@ -320,7 +320,7 @@
       "updatedAt": "2026-10-30T14:37:34Z",
       "retrievedAt": "2026-10-30T14:37:34Z",
       "status": "fresh",
-      "count": 236
+      "count": 221
     },
     {
       "id": "player-review-soundcloud",
@@ -2313,63 +2313,6 @@
       ]
     },
     {
-      "id": "dz-13791930",
-      "deezerId": 13791930,
-      "title": "Smells Like Teen Spirit",
-      "artist": "Nirvana",
-      "artistIds": [
-        "415"
-      ],
-      "artistNames": [
-        "Nirvana"
-      ],
-      "answerKey": "415|smells like teen spirit",
-      "workKey": "415|smells like teen spirit",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/13791930",
-      "genres": [
-        "alt-rock",
-        "dad-rock"
-      ],
-      "currentGenres": [
-        "alt-rock"
-      ],
-      "sources": [
-        {
-          "id": "apple-ru-chart",
-          "position": 58,
-          "genres": [
-            "alt-rock"
-          ],
-          "period": "2026-10-28"
-        },
-        {
-          "id": "dad-rock-top",
-          "position": 40,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 1,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Nirvana"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "nirvana|smells like teen spirit"
-      ]
-    },
-    {
       "id": "dz-3003118931",
       "deezerId": 3003118931,
       "title": "Валькирия",
@@ -2726,55 +2669,6 @@
       ],
       "lookupKeys": [
         "милена mibreoo давид туров|ненавидеть"
-      ]
-    },
-    {
-      "id": "dz-677232",
-      "deezerId": 677232,
-      "title": "Numb",
-      "artist": "Linkin Park",
-      "artistIds": [
-        "92"
-      ],
-      "artistNames": [
-        "Linkin Park"
-      ],
-      "answerKey": "92|numb",
-      "workKey": "92|numb",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/44df4f6fb2534768f4924365c103d0f7/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/677232",
-      "genres": [
-        "alt-rock",
-        "metal"
-      ],
-      "currentGenres": [
-        "alt-rock"
-      ],
-      "sources": [
-        {
-          "id": "apple-ru-chart",
-          "position": 70,
-          "genres": [
-            "alt-rock"
-          ],
-          "period": "2026-10-28"
-        },
-        {
-          "id": "metal-top",
-          "position": 13,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "linkin park|numb"
       ]
     },
     {
@@ -30259,158 +30153,6 @@
       ]
     },
     {
-      "id": "dz-1483825212",
-      "deezerId": 1483825212,
-      "title": "Enter Sandman (Remastered 2021)",
-      "artist": "Metallica",
-      "artistIds": [
-        "119"
-      ],
-      "artistNames": [
-        "Metallica"
-      ],
-      "answerKey": "119|enter sandman",
-      "workKey": "119|enter sandman",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/4f2093c9d25852c8f1937ae5a47b99a6/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1483825212",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 1,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "metallica|enter sandman"
-      ]
-    },
-    {
-      "id": "dz-1483825282",
-      "deezerId": 1483825282,
-      "title": "Nothing Else Matters (Remastered 2021)",
-      "artist": "Metallica",
-      "artistIds": [
-        "119"
-      ],
-      "artistNames": [
-        "Metallica"
-      ],
-      "answerKey": "119|nothing else matters",
-      "workKey": "119|nothing else matters",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/4f2093c9d25852c8f1937ae5a47b99a6/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1483825282",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 2,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "metallica|nothing else matters"
-      ]
-    },
-    {
-      "id": "dz-424565232",
-      "deezerId": 424565232,
-      "title": "Master Of Puppets",
-      "artist": "Metallica",
-      "artistIds": [
-        "119"
-      ],
-      "artistNames": [
-        "Metallica"
-      ],
-      "answerKey": "119|master of puppets",
-      "workKey": "119|master of puppets",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/291e2af9295ca885b154eee75dfa0432/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/424565232",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 3,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "metallica|master of puppets"
-      ]
-    },
-    {
-      "id": "dz-1483825242",
-      "deezerId": 1483825242,
-      "title": "The Unforgiven (Remastered 2021)",
-      "artist": "Metallica",
-      "artistIds": [
-        "119"
-      ],
-      "artistNames": [
-        "Metallica"
-      ],
-      "answerKey": "119|the unforgiven",
-      "workKey": "119|the unforgiven",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/4f2093c9d25852c8f1937ae5a47b99a6/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1483825242",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 4,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "metallica|the unforgiven"
-      ]
-    },
-    {
       "id": "dz-3819908",
       "deezerId": 3819908,
       "title": "Duality",
@@ -30560,44 +30302,6 @@
       ],
       "lookupKeys": [
         "slipknot|snuff"
-      ]
-    },
-    {
-      "id": "dz-859699",
-      "deezerId": 859699,
-      "title": "Chop Suey!",
-      "artist": "System of a Down",
-      "artistIds": [
-        "458"
-      ],
-      "artistNames": [
-        "System of a Down"
-      ],
-      "answerKey": "458|chop suey",
-      "workKey": "458|chop suey",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/9a26018a2c9bf0eed86e6c5ae6b3decb/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/859699",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 9,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "system of a down|chop suey"
       ]
     },
     {
@@ -31209,120 +30913,6 @@
       ]
     },
     {
-      "id": "dz-3788156052",
-      "deezerId": 3788156052,
-      "title": "Paranoid (Remastered 2009)",
-      "artist": "Black Sabbath",
-      "artistIds": [
-        "647"
-      ],
-      "artistNames": [
-        "Black Sabbath"
-      ],
-      "answerKey": "647|paranoid",
-      "workKey": "647|paranoid",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/bb3b4d0378c91d2fca5204bac48f5e71/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3788156052",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 29,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "black sabbath|paranoid"
-      ]
-    },
-    {
-      "id": "dz-3788156072",
-      "deezerId": 3788156072,
-      "title": "Iron Man (Remastered 2009)",
-      "artist": "Black Sabbath",
-      "artistIds": [
-        "647"
-      ],
-      "artistNames": [
-        "Black Sabbath"
-      ],
-      "answerKey": "647|iron man",
-      "workKey": "647|iron man",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/bb3b4d0378c91d2fca5204bac48f5e71/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3788156072",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 30,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "black sabbath|iron man"
-      ]
-    },
-    {
-      "id": "dz-3788156042",
-      "deezerId": 3788156042,
-      "title": "War Pigs (Remastered 2009)",
-      "artist": "Black Sabbath",
-      "artistIds": [
-        "647"
-      ],
-      "artistNames": [
-        "Black Sabbath"
-      ],
-      "answerKey": "647|war pigs",
-      "workKey": "647|war pigs",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/bb3b4d0378c91d2fca5204bac48f5e71/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3788156042",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 31,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "black sabbath|war pigs"
-      ]
-    },
-    {
       "id": "dz-557625",
       "deezerId": 557625,
       "title": "Breaking the Law",
@@ -31852,158 +31442,6 @@
       ],
       "lookupKeys": [
         "bring me the horizon|drown"
-      ]
-    },
-    {
-      "id": "dz-69443939",
-      "deezerId": 69443939,
-      "title": "Wrong Side of Heaven",
-      "artist": "Five Finger Death Punch",
-      "artistIds": [
-        "158710"
-      ],
-      "artistNames": [
-        "Five Finger Death Punch"
-      ],
-      "answerKey": "158710|wrong side of heaven",
-      "workKey": "158710|wrong side of heaven",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0fc7e13a47c8e8721a988378169f3e35/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/69443939",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 46,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "five finger death punch|wrong side of heaven"
-      ]
-    },
-    {
-      "id": "dz-106156874",
-      "deezerId": 106156874,
-      "title": "Jekyll and Hyde",
-      "artist": "Five Finger Death Punch",
-      "artistIds": [
-        "158710"
-      ],
-      "artistNames": [
-        "Five Finger Death Punch"
-      ],
-      "answerKey": "158710|jekyll and hyde",
-      "workKey": "158710|jekyll and hyde",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/32a0814af4089652ad0a618caef78b06/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/106156874",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 47,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "five finger death punch|jekyll and hyde"
-      ]
-    },
-    {
-      "id": "dz-106156876",
-      "deezerId": 106156876,
-      "title": "Wash It All Away",
-      "artist": "Five Finger Death Punch",
-      "artistIds": [
-        "158710"
-      ],
-      "artistNames": [
-        "Five Finger Death Punch"
-      ],
-      "answerKey": "158710|wash it all away",
-      "workKey": "158710|wash it all away",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/32a0814af4089652ad0a618caef78b06/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/106156876",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 48,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "five finger death punch|wash it all away"
-      ]
-    },
-    {
-      "id": "dz-5169799",
-      "deezerId": 5169799,
-      "title": "Ace of Spades",
-      "artist": "Motörhead",
-      "artistIds": [
-        "2996"
-      ],
-      "artistNames": [
-        "Motörhead"
-      ],
-      "answerKey": "2996|ace of spades",
-      "workKey": "2996|ace of spades",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/6d7a6c133e9b66fe424ec71151c7ca8f/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/5169799",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 49,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "motörhead|ace of spades"
       ]
     },
     {
@@ -32619,82 +32057,6 @@
       ]
     },
     {
-      "id": "dz-132196994",
-      "deezerId": 132196994,
-      "title": "Square Hammer",
-      "artist": "Ghost",
-      "artistIds": [
-        "8506054"
-      ],
-      "artistNames": [
-        "Ghost"
-      ],
-      "answerKey": "8506054|square hammer",
-      "workKey": "8506054|square hammer",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/447eb5235c4199b45fbe2a8f444d00bf/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/132196994",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 67,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "ghost|square hammer"
-      ]
-    },
-    {
-      "id": "dz-505508992",
-      "deezerId": 505508992,
-      "title": "Dance Macabre",
-      "artist": "Ghost",
-      "artistIds": [
-        "8506054"
-      ],
-      "artistNames": [
-        "Ghost"
-      ],
-      "answerKey": "8506054|dance macabre",
-      "workKey": "8506054|dance macabre",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/43a420aa0b32cf1b3ef20e29dfce0c12/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/505508992",
-      "genres": [
-        "metal"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "metal-top",
-          "position": 68,
-          "genres": [
-            "metal"
-          ]
-        },
-        {
-          "id": "player-review-metal",
-          "genres": [
-            "metal"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "ghost|dance macabre"
-      ]
-    },
-    {
       "id": "dz-126338367",
       "deezerId": 126338367,
       "title": "Stranded",
@@ -33166,144 +32528,6 @@
       ],
       "lookupKeys": [
         "pink floyd|comfortably numb"
-      ]
-    },
-    {
-      "id": "dz-3137049",
-      "deezerId": 3137049,
-      "title": "Smoke On The Water",
-      "artist": "Deep Purple",
-      "artistIds": [
-        "864"
-      ],
-      "artistNames": [
-        "Deep Purple"
-      ],
-      "answerKey": "864|smoke on the water",
-      "workKey": "864|smoke on the water",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/13d5c44d211d2dabb34c9c11230a8e9f/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3137049",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 9,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 1,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Deep Purple"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "deep purple|smoke on the water"
-      ]
-    },
-    {
-      "id": "dz-60840053",
-      "deezerId": 60840053,
-      "title": "Highway Star (Remastered 2012)",
-      "artist": "Deep Purple",
-      "artistIds": [
-        "864"
-      ],
-      "artistNames": [
-        "Deep Purple"
-      ],
-      "answerKey": "864|highway star",
-      "workKey": "864|highway star",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/dc8cb2cafee167b6dfec80763407c78b/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/60840053",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 10,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 3,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Deep Purple"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "deep purple|highway star"
-      ]
-    },
-    {
-      "id": "dz-3230170",
-      "deezerId": 3230170,
-      "title": "Child in Time (1995 Remaster)",
-      "artist": "Deep Purple",
-      "artistIds": [
-        "864"
-      ],
-      "artistNames": [
-        "Deep Purple"
-      ],
-      "answerKey": "864|child in time",
-      "workKey": "864|child in time",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/d8aac2249943a90fd5aa6260fc78cf15/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3230170",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 11,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 2,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Deep Purple"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "deep purple|child in time"
       ]
     },
     {
@@ -33789,44 +33013,6 @@
       ]
     },
     {
-      "id": "dz-2594482212",
-      "deezerId": 2594482212,
-      "title": "Paint It Black",
-      "artist": "The Rolling Stones",
-      "artistIds": [
-        "267273492"
-      ],
-      "artistNames": [
-        "The Rolling Stones"
-      ],
-      "answerKey": "267273492|paint it black",
-      "workKey": "267273492|paint it black",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/30ec6f7a13cb9e02c21499be09767fcf/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2594482212",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 23,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "the rolling stones|paint it black"
-      ]
-    },
-    {
       "id": "dz-7677778",
       "deezerId": 7677778,
       "title": "(I Can't Get No) Satisfaction (Mono)",
@@ -34079,52 +33265,6 @@
       ]
     },
     {
-      "id": "dz-624823",
-      "deezerId": 624823,
-      "title": "I Don't Want To Miss A Thing",
-      "artist": "Aerosmith",
-      "artistIds": [
-        "1005"
-      ],
-      "artistNames": [
-        "Aerosmith"
-      ],
-      "answerKey": "1005|i don t want to miss a thing",
-      "workKey": "1005|i don t want to miss a thing",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/82bb160fe7b46cca64dc989a4f5843d0/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/624823",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 30,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 2,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Aerosmith"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "aerosmith|i don t want to miss a thing"
-      ]
-    },
-    {
       "id": "dz-1761381467",
       "deezerId": 1761381467,
       "title": "Crazy",
@@ -34309,144 +33449,6 @@
       ]
     },
     {
-      "id": "dz-2263033",
-      "deezerId": 2263033,
-      "title": "Sultans Of Swing",
-      "artist": "Dire Straits",
-      "artistIds": [
-        "176"
-      ],
-      "artistNames": [
-        "Dire Straits"
-      ],
-      "answerKey": "176|sultans of swing",
-      "workKey": "176|sultans of swing",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/1bf2bc47623db2ec36a38be064131ce5/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2263033",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 35,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 1,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Dire Straits"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "dire straits|sultans of swing"
-      ]
-    },
-    {
-      "id": "dz-2514681",
-      "deezerId": 2514681,
-      "title": "Money For Nothing",
-      "artist": "Dire Straits",
-      "artistIds": [
-        "176"
-      ],
-      "artistNames": [
-        "Dire Straits"
-      ],
-      "answerKey": "176|money for nothing",
-      "workKey": "176|money for nothing",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0aeeab7a9ef9dcc03e3c6490f9bf822d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2514681",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 36,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 2,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Dire Straits"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "dire straits|money for nothing"
-      ]
-    },
-    {
-      "id": "dz-2514683",
-      "deezerId": 2514683,
-      "title": "Walk Of Life",
-      "artist": "Dire Straits",
-      "artistIds": [
-        "176"
-      ],
-      "artistNames": [
-        "Dire Straits"
-      ],
-      "answerKey": "176|walk of life",
-      "workKey": "176|walk of life",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0aeeab7a9ef9dcc03e3c6490f9bf822d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2514683",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 37,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 3,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Dire Straits"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "dire straits|walk of life"
-      ]
-    },
-    {
       "id": "dz-426703682",
       "deezerId": 426703682,
       "title": "Hotel California (2013 Remaster)",
@@ -34490,52 +33492,6 @@
       ],
       "lookupKeys": [
         "eagles|hotel california"
-      ]
-    },
-    {
-      "id": "dz-68116147",
-      "deezerId": 68116147,
-      "title": "Take It Easy (2013 Remaster)",
-      "artist": "Eagles",
-      "artistIds": [
-        "210"
-      ],
-      "artistNames": [
-        "Eagles"
-      ],
-      "answerKey": "210|take it easy",
-      "workKey": "210|take it easy",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/caff1be8c69e55e1b5ea8ac4eefa05fb/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/68116147",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 39,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 2,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Eagles"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "eagles|take it easy"
       ]
     },
     {
@@ -34628,98 +33584,6 @@
       ],
       "lookupKeys": [
         "nirvana|lithium"
-      ]
-    },
-    {
-      "id": "dz-122891348",
-      "deezerId": 122891348,
-      "title": "Sweet Child O' Mine",
-      "artist": "Guns N' Roses",
-      "artistIds": [
-        "663"
-      ],
-      "artistNames": [
-        "Guns N' Roses"
-      ],
-      "answerKey": "663|sweet child o mine",
-      "workKey": "663|sweet child o mine",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/6718867788bc8abd9292f421fd49e982/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/122891348",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 43,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 1,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Guns N' Roses"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "guns n roses|sweet child o mine"
-      ]
-    },
-    {
-      "id": "dz-122891330",
-      "deezerId": 122891330,
-      "title": "Welcome to the Jungle",
-      "artist": "Guns N' Roses",
-      "artistIds": [
-        "663"
-      ],
-      "artistNames": [
-        "Guns N' Roses"
-      ],
-      "answerKey": "663|welcome to the jungle",
-      "workKey": "663|welcome to the jungle",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/6718867788bc8abd9292f421fd49e982/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/122891330",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 44,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 3,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Guns N' Roses"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "guns n roses|welcome to the jungle"
       ]
     },
     {
@@ -35018,258 +33882,6 @@
       ],
       "lookupKeys": [
         "the doors|riders on the storm"
-      ]
-    },
-    {
-      "id": "dz-883644",
-      "deezerId": 883644,
-      "title": "Have You Ever Seen The Rain",
-      "artist": "Creedence Clearwater Revival",
-      "artistIds": [
-        "2468"
-      ],
-      "artistNames": [
-        "Creedence Clearwater Revival"
-      ],
-      "answerKey": "2468|have you ever seen the rain",
-      "workKey": "2468|have you ever seen the rain",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/236aacbb246ef0f6ff6a9e494a7fe9ac/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/883644",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 52,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 2,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Creedence Clearwater Revival"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "creedence clearwater revival|have you ever seen the rain"
-      ]
-    },
-    {
-      "id": "dz-883648",
-      "deezerId": 883648,
-      "title": "Fortunate Son",
-      "artist": "Creedence Clearwater Revival",
-      "artistIds": [
-        "2468"
-      ],
-      "artistNames": [
-        "Creedence Clearwater Revival"
-      ],
-      "answerKey": "2468|fortunate son",
-      "workKey": "2468|fortunate son",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/236aacbb246ef0f6ff6a9e494a7fe9ac/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/883648",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 53,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 1,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Creedence Clearwater Revival"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "creedence clearwater revival|fortunate son"
-      ]
-    },
-    {
-      "id": "dz-883640",
-      "deezerId": 883640,
-      "title": "Bad Moon Rising (Remastered 1985)",
-      "artist": "Creedence Clearwater Revival",
-      "artistIds": [
-        "2468"
-      ],
-      "artistNames": [
-        "Creedence Clearwater Revival"
-      ],
-      "answerKey": "2468|bad moon rising",
-      "workKey": "2468|bad moon rising",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/236aacbb246ef0f6ff6a9e494a7fe9ac/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/883640",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 54,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "dad-rock-more",
-          "position": 3,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Creedence Clearwater Revival"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "creedence clearwater revival|bad moon rising"
-      ]
-    },
-    {
-      "id": "dz-585608872",
-      "deezerId": 585608872,
-      "title": "Fear of the Dark (2015 Remaster)",
-      "artist": "Iron Maiden",
-      "artistIds": [
-        "931"
-      ],
-      "artistNames": [
-        "Iron Maiden"
-      ],
-      "answerKey": "931|fear of the dark",
-      "workKey": "931|fear of the dark",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/f0a2bbd32cdc42b5bf13f3344797bf94/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/585608872",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 55,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "iron maiden|fear of the dark"
-      ]
-    },
-    {
-      "id": "dz-3155089",
-      "deezerId": 3155089,
-      "title": "The Trooper (1998 Remaster)",
-      "artist": "Iron Maiden",
-      "artistIds": [
-        "931"
-      ],
-      "artistNames": [
-        "Iron Maiden"
-      ],
-      "answerKey": "931|the trooper",
-      "workKey": "931|the trooper",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/f4df1d0cc2d586cefd98dde8da717acd/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3155089",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 56,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "iron maiden|the trooper"
-      ]
-    },
-    {
-      "id": "dz-3158433",
-      "deezerId": 3158433,
-      "title": "Run to the Hills (1998 Remaster)",
-      "artist": "Iron Maiden",
-      "artistIds": [
-        "931"
-      ],
-      "artistNames": [
-        "Iron Maiden"
-      ],
-      "answerKey": "931|run to the hills",
-      "workKey": "931|run to the hills",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/ca87a7fc5b10f79866925db083d99ef0/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3158433",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-top",
-          "position": 57,
-          "genres": [
-            "dad-rock"
-          ]
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "iron maiden|run to the hills"
       ]
     },
     {
@@ -35939,39 +34551,6 @@
       ],
       "lookupKeys": [
         "emin,ани лорак|проститься"
-      ]
-    },
-    {
-      "id": "dz-1975386547",
-      "deezerId": 1975386547,
-      "title": "SuperSTAR",
-      "artist": "Loboda",
-      "artistIds": [
-        "819827"
-      ],
-      "artistNames": [
-        "Loboda"
-      ],
-      "answerKey": "819827|superstar",
-      "workKey": "819827|superstar",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/1bb45a01510221c5323ea1badc8804a8/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1975386547",
-      "genres": [
-        "mom-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "mom-pop-top",
-          "position": 8,
-          "genres": [
-            "mom-pop"
-          ],
-          "period": "Из списка мамы"
-        }
-      ],
-      "lookupKeys": [
-        "loboda|superstar"
       ]
     },
     {
@@ -37914,149 +36493,6 @@
       ]
     },
     {
-      "id": "dz-63510358",
-      "deezerId": 63510358,
-      "title": "Radioactive",
-      "artist": "Imagine Dragons",
-      "artistIds": [
-        "416239"
-      ],
-      "artistNames": [
-        "Imagine Dragons"
-      ],
-      "answerKey": "416239|radioactive",
-      "workKey": "416239|radioactive",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/7e8314f4280cffde363547a495a260bc/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/63510358",
-      "genres": [
-        "modern-pop",
-        "nostalgia"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 4,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "nostalgia-2010s",
-          "position": 7,
-          "genres": [
-            "nostalgia"
-          ]
-        },
-        {
-          "id": "player-review-nostalgia",
-          "genres": [
-            "nostalgia"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "imagine dragons|radioactive"
-      ]
-    },
-    {
-      "id": "dz-63510361",
-      "deezerId": 63510361,
-      "title": "Demons",
-      "artist": "Imagine Dragons",
-      "artistIds": [
-        "416239"
-      ],
-      "artistNames": [
-        "Imagine Dragons"
-      ],
-      "answerKey": "416239|demons",
-      "workKey": "416239|demons",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/7e8314f4280cffde363547a495a260bc/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/63510361",
-      "genres": [
-        "modern-pop",
-        "nostalgia"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 5,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 1,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Imagine Dragons"
-        },
-        {
-          "id": "player-review-nostalgia",
-          "genres": [
-            "nostalgia"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "imagine dragons|demons"
-      ]
-    },
-    {
-      "id": "dz-111263366",
-      "deezerId": 111263366,
-      "title": "Glitter & Gold",
-      "artist": "Barns Courtney",
-      "artistIds": [
-        "9074712"
-      ],
-      "artistNames": [
-        "Barns Courtney"
-      ],
-      "answerKey": "9074712|glitter gold",
-      "workKey": "9074712|glitter gold",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/769b0b5ee6263749837daf0020604ddf/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/111263366",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 6,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "barns courtney|glitter gold"
-      ]
-    },
-    {
       "id": "dz-410107962",
       "deezerId": 410107962,
       "title": "Fire",
@@ -38513,44 +36949,6 @@
       ]
     },
     {
-      "id": "dz-78527795",
-      "deezerId": 78527795,
-      "title": "Counting Stars",
-      "artist": "OneRepublic",
-      "artistIds": [
-        "74398"
-      ],
-      "artistNames": [
-        "OneRepublic"
-      ],
-      "answerKey": "74398|counting stars",
-      "workKey": "74398|counting stars",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/63bb716faf92942d967f5c053fc8720c/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/78527795",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 18,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "onerepublic|counting stars"
-      ]
-    },
-    {
       "id": "dz-1764283667",
       "deezerId": 1764283667,
       "title": "I Ain't Worried",
@@ -38594,52 +36992,6 @@
       ],
       "lookupKeys": [
         "onerepublic|i ain t worried"
-      ]
-    },
-    {
-      "id": "dz-916829",
-      "deezerId": 916829,
-      "title": "Apologize",
-      "artist": "OneRepublic",
-      "artistIds": [
-        "74398"
-      ],
-      "artistNames": [
-        "OneRepublic"
-      ],
-      "answerKey": "74398|apologize",
-      "workKey": "74398|apologize",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/565b424faee4bdc6e6db39db8d6fc333/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/916829",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 20,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 1,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у OneRepublic"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "onerepublic|apologize"
       ]
     },
     {
@@ -39075,103 +37427,6 @@
       ]
     },
     {
-      "id": "dz-84791735",
-      "deezerId": 84791735,
-      "title": "Take Me To Church",
-      "artist": "Hozier",
-      "artistIds": [
-        "5062414"
-      ],
-      "artistNames": [
-        "Hozier"
-      ],
-      "answerKey": "5062414|take me to church",
-      "workKey": "5062414|take me to church",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/8442e9ac0227a07b00c9dfd0ec00032d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/84791735",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 30,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "nostalgia-2010s",
-          "position": 28,
-          "genres": []
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 1,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Hozier"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "hozier|take me to church"
-      ]
-    },
-    {
-      "id": "dz-2704610682",
-      "deezerId": 2704610682,
-      "title": "Too Sweet",
-      "artist": "Hozier",
-      "artistIds": [
-        "5062414"
-      ],
-      "artistNames": [
-        "Hozier"
-      ],
-      "answerKey": "5062414|too sweet",
-      "workKey": "5062414|too sweet",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/7a7c512b717a4aa7452f3c3e46675322/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2704610682",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 31,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 2,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Hozier"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "hozier|too sweet"
-      ]
-    },
-    {
       "id": "dz-1040154662",
       "deezerId": 1040154662,
       "title": "Heat Waves",
@@ -39197,217 +37452,6 @@
       ],
       "lookupKeys": [
         "glass animals|heat waves"
-      ]
-    },
-    {
-      "id": "dz-79587580",
-      "deezerId": 79587580,
-      "title": "Chandelier",
-      "artist": "Sia",
-      "artistIds": [
-        "3469"
-      ],
-      "artistNames": [
-        "Sia"
-      ],
-      "answerKey": "3469|chandelier",
-      "workKey": "3469|chandelier",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/4275db12f5e284b3c2f3e20726187b64/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/79587580",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 33,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "nostalgia-2010s",
-          "position": 18,
-          "genres": []
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 2,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Sia"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "sia|chandelier"
-      ]
-    },
-    {
-      "id": "dz-118195184",
-      "deezerId": 118195184,
-      "title": "Cheap Thrills",
-      "artist": "Sia",
-      "artistIds": [
-        "3469"
-      ],
-      "artistNames": [
-        "Sia"
-      ],
-      "answerKey": "3469|cheap thrills",
-      "workKey": "3469|cheap thrills",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/5a86a131864e4bfdda6c45c31fdbee3d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/118195184",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 34,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 5,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Sia"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "sia|cheap thrills"
-      ]
-    },
-    {
-      "id": "dz-8011850",
-      "deezerId": 8011850,
-      "title": "Just the Way You Are",
-      "artist": "Bruno Mars",
-      "artistIds": [
-        "429675"
-      ],
-      "artistNames": [
-        "Bruno Mars"
-      ],
-      "answerKey": "429675|just the way you are",
-      "workKey": "429675|just the way you are",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/5b59dc18e109515420f8237719bd2186/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/8011850",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 35,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 5,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Bruno Mars"
-        },
-        {
-          "id": "modern-pop-stars-more",
-          "position": 5,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Bruno Mars"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "bruno mars|just the way you are"
-      ]
-    },
-    {
-      "id": "dz-8011849",
-      "deezerId": 8011849,
-      "title": "Grenade",
-      "artist": "Bruno Mars",
-      "artistIds": [
-        "429675"
-      ],
-      "artistNames": [
-        "Bruno Mars"
-      ],
-      "answerKey": "429675|grenade",
-      "workKey": "429675|grenade",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/5b59dc18e109515420f8237719bd2186/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/8011849",
-      "genres": [
-        "modern-pop",
-        "nostalgia"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 36,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "nostalgia-2010s",
-          "position": 34,
-          "genres": [
-            "nostalgia"
-          ]
-        },
-        {
-          "id": "modern-pop-stars-more",
-          "position": 6,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Bruno Mars"
-        },
-        {
-          "id": "player-review-nostalgia",
-          "genres": [
-            "nostalgia"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "bruno mars|grenade"
       ]
     },
     {
@@ -39446,82 +37490,6 @@
       ],
       "lookupKeys": [
         "bruno mars|that s what i like"
-      ]
-    },
-    {
-      "id": "dz-89077555",
-      "deezerId": 89077555,
-      "title": "Shake It Off",
-      "artist": "Taylor Swift",
-      "artistIds": [
-        "12246"
-      ],
-      "artistNames": [
-        "Taylor Swift"
-      ],
-      "answerKey": "12246|shake it off",
-      "workKey": "12246|shake it off",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/68b4e986958b17f05b062ffa8d7ae114/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/89077555",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 38,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "taylor swift|shake it off"
-      ]
-    },
-    {
-      "id": "dz-89077547",
-      "deezerId": 89077547,
-      "title": "Blank Space",
-      "artist": "Taylor Swift",
-      "artistIds": [
-        "12246"
-      ],
-      "artistNames": [
-        "Taylor Swift"
-      ],
-      "answerKey": "12246|blank space",
-      "workKey": "12246|blank space",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/68b4e986958b17f05b062ffa8d7ae114/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/89077547",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 39,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "taylor swift|blank space"
       ]
     },
     {
@@ -40090,84 +38058,6 @@
       ]
     },
     {
-      "id": "dz-2603558",
-      "deezerId": 2603558,
-      "title": "Poker Face",
-      "artist": "Lady Gaga",
-      "artistIds": [
-        "75491"
-      ],
-      "artistNames": [
-        "Lady Gaga"
-      ],
-      "answerKey": "75491|poker face",
-      "workKey": "75491|poker face",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/cc24d60a998e1a296f0c22efa8ddffd2/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2603558",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 53,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "lady gaga|poker face"
-      ]
-    },
-    {
-      "id": "dz-4709947",
-      "deezerId": 4709947,
-      "title": "Just Dance",
-      "artist": "Lady Gaga, Colby O'Donis",
-      "artistIds": [
-        "75491",
-        "75438"
-      ],
-      "artistNames": [
-        "Lady Gaga",
-        "Colby O'Donis"
-      ],
-      "answerKey": "75491|just dance",
-      "workKey": "75491|just dance",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/62f368993ddb68c5364cd03221d07ac6/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/4709947",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 54,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "lady gaga|just dance"
-      ]
-    },
-    {
       "id": "dz-1378342592",
       "deezerId": 1378342592,
       "title": "drivers license",
@@ -40711,54 +38601,6 @@
       ]
     },
     {
-      "id": "dz-117797212",
-      "deezerId": 117797212,
-      "title": "We Don't Talk Anymore (feat. Selena Gomez)",
-      "artist": "Charlie Puth, Selena Gomez",
-      "artistIds": [
-        "1362735",
-        "292185"
-      ],
-      "artistNames": [
-        "Charlie Puth",
-        "Selena Gomez"
-      ],
-      "answerKey": "1362735|we don t talk anymore feat selena gomez",
-      "workKey": "1362735|we don t talk anymore feat selena gomez",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/948200588c813c1afd10f29b56e0ce50/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/117797212",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 69,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 1,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Charlie Puth"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "charlie puth|we don t talk anymore feat selena gomez"
-      ]
-    },
-    {
       "id": "dz-70266756",
       "deezerId": 70266756,
       "title": "Wake Me Up",
@@ -40914,141 +38756,6 @@
       ],
       "lookupKeys": [
         "avicii|hey brother"
-      ]
-    },
-    {
-      "id": "dz-138545995",
-      "deezerId": 138545995,
-      "title": "Hello",
-      "artist": "Adele",
-      "artistIds": [
-        "75798"
-      ],
-      "artistNames": [
-        "Adele"
-      ],
-      "answerKey": "75798|hello",
-      "workKey": "75798|hello",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/eaeadce7932a97533fe495881d2fcd7a/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/138545995",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 73,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 4,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Adele"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "adele|hello"
-      ]
-    },
-    {
-      "id": "dz-8086126",
-      "deezerId": 8086126,
-      "title": "Rolling in the Deep",
-      "artist": "Adele",
-      "artistIds": [
-        "75798"
-      ],
-      "artistNames": [
-        "Adele"
-      ],
-      "answerKey": "75798|rolling in the deep",
-      "workKey": "75798|rolling in the deep",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/dc1ce848d830ecc93521be5a78350364/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/8086126",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 74,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "nostalgia-2010s",
-          "position": 10,
-          "genres": []
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 3,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Adele"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "adele|rolling in the deep"
-      ]
-    },
-    {
-      "id": "dz-8086136",
-      "deezerId": 8086136,
-      "title": "Someone Like You",
-      "artist": "Adele",
-      "artistIds": [
-        "75798"
-      ],
-      "artistNames": [
-        "Adele"
-      ],
-      "answerKey": "75798|someone like you",
-      "workKey": "75798|someone like you",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/dc1ce848d830ecc93521be5a78350364/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/8086136",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-top",
-          "position": 75,
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "adele|someone like you"
       ]
     },
     {
@@ -44987,52 +42694,6 @@
       ]
     },
     {
-      "id": "dz-1178682",
-      "deezerId": 1178682,
-      "title": "Stronger",
-      "artist": "Kanye West",
-      "artistIds": [
-        "230"
-      ],
-      "artistNames": [
-        "Kanye West"
-      ],
-      "answerKey": "230|stronger",
-      "workKey": "230|stronger",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/15012d974c6263aec95e52e6d86cba23/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1178682",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-hits",
-          "position": 8,
-          "genres": [
-            "us-hiphop"
-          ]
-        },
-        {
-          "id": "us-hiphop-more",
-          "position": 5,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у Kanye West"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "kanye west|stronger"
-      ]
-    },
-    {
       "id": "dz-7667059",
       "deezerId": 7667059,
       "title": "POWER",
@@ -46869,98 +44530,6 @@
       ]
     },
     {
-      "id": "dz-1141668",
-      "deezerId": 1141668,
-      "title": "In Da Club",
-      "artist": "50 Cent",
-      "artistIds": [
-        "66"
-      ],
-      "artistNames": [
-        "50 Cent"
-      ],
-      "answerKey": "66|in da club",
-      "workKey": "66|in da club",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/8f4dd4d8abf85ceda96b6b4adf217590/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1141668",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-hits",
-          "position": 56,
-          "genres": [
-            "us-hiphop"
-          ]
-        },
-        {
-          "id": "us-hiphop-more",
-          "position": 1,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у 50 Cent"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "50 cent|in da club"
-      ]
-    },
-    {
-      "id": "dz-1141674",
-      "deezerId": 1141674,
-      "title": "P.I.M.P.",
-      "artist": "50 Cent",
-      "artistIds": [
-        "66"
-      ],
-      "artistNames": [
-        "50 Cent"
-      ],
-      "answerKey": "66|p i m p",
-      "workKey": "66|p i m p",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/8f4dd4d8abf85ceda96b6b4adf217590/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1141674",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-hits",
-          "position": 57,
-          "genres": [
-            "us-hiphop"
-          ]
-        },
-        {
-          "id": "us-hiphop-more",
-          "position": 4,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у 50 Cent"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "50 cent|p i m p"
-      ]
-    },
-    {
       "id": "dz-128743581",
       "deezerId": 128743581,
       "title": "Still D.R.E.",
@@ -47102,52 +44671,6 @@
       ],
       "lookupKeys": [
         "dr dre|forgot about dre"
-      ]
-    },
-    {
-      "id": "dz-67461455",
-      "deezerId": 67461455,
-      "title": "Drop It Like It's Hot",
-      "artist": "Snoop Dogg",
-      "artistIds": [
-        "3"
-      ],
-      "artistNames": [
-        "Snoop Dogg"
-      ],
-      "answerKey": "3|drop it like it s hot",
-      "workKey": "3|drop it like it s hot",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/a6a8fcfa8f7e64f72bc3e559aad5c17f/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/67461455",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-hits",
-          "position": 61,
-          "genres": [
-            "us-hiphop"
-          ]
-        },
-        {
-          "id": "us-hiphop-more",
-          "position": 4,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у Snoop Dogg"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "snoop dogg|drop it like it s hot"
       ]
     },
     {
@@ -47384,44 +44907,6 @@
       ],
       "lookupKeys": [
         "the notorious b i g|juicy"
-      ]
-    },
-    {
-      "id": "dz-65163036",
-      "deezerId": 65163036,
-      "title": "California Love",
-      "artist": "2Pac",
-      "artistIds": [
-        "167095"
-      ],
-      "artistNames": [
-        "2Pac"
-      ],
-      "answerKey": "167095|california love",
-      "workKey": "167095|california love",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/008942f8945a26980bbf3a801daf61b0/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/65163036",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-hits",
-          "position": 69,
-          "genres": [
-            "us-hiphop"
-          ]
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "2pac|california love"
       ]
     },
     {
@@ -51471,39 +48956,6 @@
       ]
     },
     {
-      "id": "dz-758401002",
-      "deezerId": 758401002,
-      "title": "Don't Start",
-      "artist": "Bizzy Banks",
-      "artistIds": [
-        "74393902"
-      ],
-      "artistNames": [
-        "Bizzy Banks"
-      ],
-      "answerKey": "74393902|don t start",
-      "workKey": "74393902|don t start",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0b83948676e67c681776459209029067/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/758401002",
-      "genres": [
-        "drill"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "drill-top",
-          "position": 4,
-          "genres": [
-            "drill"
-          ],
-          "period": "популярное у Bizzy Banks"
-        }
-      ],
-      "lookupKeys": [
-        "bizzy banks|don t start"
-      ]
-    },
-    {
       "id": "dz-2072711687",
       "deezerId": 2072711687,
       "title": "2016",
@@ -52310,39 +49762,6 @@
       ],
       "lookupKeys": [
         "chief keef|don t like 1"
-      ]
-    },
-    {
-      "id": "dz-71591823",
-      "deezerId": 71591823,
-      "title": "Say She Luv Me",
-      "artist": "Chief Keef",
-      "artistIds": [
-        "2934901"
-      ],
-      "artistNames": [
-        "Chief Keef"
-      ],
-      "answerKey": "2934901|say she luv me",
-      "workKey": "2934901|say she luv me",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/62e922ee0e9834344f85f0afbe48c5f5/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/71591823",
-      "genres": [
-        "drill"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "drill-top",
-          "position": 5,
-          "genres": [
-            "drill"
-          ],
-          "period": "популярное у Chief Keef"
-        }
-      ],
-      "lookupKeys": [
-        "chief keef|say she luv me"
       ]
     },
     {
@@ -54563,45 +51982,6 @@
       ]
     },
     {
-      "id": "dz-67461451",
-      "deezerId": 67461451,
-      "title": "Nuthin' But A 'G' Thang",
-      "artist": "Snoop Dogg",
-      "artistIds": [
-        "3"
-      ],
-      "artistNames": [
-        "Snoop Dogg"
-      ],
-      "answerKey": "3|nuthin but a g thang",
-      "workKey": "3|nuthin but a g thang",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/a6a8fcfa8f7e64f72bc3e559aad5c17f/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/67461451",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-more",
-          "position": 2,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у Snoop Dogg"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "snoop dogg|nuthin but a g thang"
-      ]
-    },
-    {
       "id": "dz-2182691867",
       "deezerId": 2182691867,
       "title": "Lodi Dodi",
@@ -54841,49 +52221,6 @@
       ],
       "lookupKeys": [
         "lil wayne|she will"
-      ]
-    },
-    {
-      "id": "dz-63565179",
-      "deezerId": 63565179,
-      "title": "Love Me",
-      "artist": "Lil Wayne, Drake, Future",
-      "artistIds": [
-        "74309",
-        "246791",
-        "165930"
-      ],
-      "artistNames": [
-        "Lil Wayne",
-        "Drake",
-        "Future"
-      ],
-      "answerKey": "74309|love me",
-      "workKey": "74309|love me",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/222c5ae1741bb716b9fc1b0f7499f82a/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/63565179",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-more",
-          "position": 3,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у Lil Wayne"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "lil wayne|love me"
       ]
     },
     {
@@ -56511,84 +53848,6 @@
       ]
     },
     {
-      "id": "dz-3099876",
-      "deezerId": 3099876,
-      "title": "It Was A Good Day",
-      "artist": "Ice Cube",
-      "artistIds": [
-        "2353"
-      ],
-      "artistNames": [
-        "Ice Cube"
-      ],
-      "answerKey": "2353|it was a good day",
-      "workKey": "2353|it was a good day",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/b51ef0a0f51e1a47eb8d232950d55a61/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3099876",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-more",
-          "position": 1,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у Ice Cube"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "ice cube|it was a good day"
-      ]
-    },
-    {
-      "id": "dz-3099875",
-      "deezerId": 3099875,
-      "title": "You Know How We Do It",
-      "artist": "Ice Cube",
-      "artistIds": [
-        "2353"
-      ],
-      "artistNames": [
-        "Ice Cube"
-      ],
-      "answerKey": "2353|you know how we do it",
-      "workKey": "2353|you know how we do it",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/b51ef0a0f51e1a47eb8d232950d55a61/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3099875",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-more",
-          "position": 2,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у Ice Cube"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "ice cube|you know how we do it"
-      ]
-    },
-    {
       "id": "dz-15692592",
       "deezerId": 15692592,
       "title": "Why We Thugs",
@@ -57361,45 +54620,6 @@
       ],
       "lookupKeys": [
         "tyga|girl you loud"
-      ]
-    },
-    {
-      "id": "dz-14930115",
-      "deezerId": 14930115,
-      "title": "Rack City",
-      "artist": "Tyga",
-      "artistIds": [
-        "304545"
-      ],
-      "artistNames": [
-        "Tyga"
-      ],
-      "answerKey": "304545|rack city",
-      "workKey": "304545|rack city",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/6daf1fd06757d48e90ffade521ac4e4a/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/14930115",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "us-hiphop-more",
-          "position": 5,
-          "genres": [
-            "us-hiphop"
-          ],
-          "period": "популярное у Tyga"
-        },
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "tyga|rack city"
       ]
     },
     {
@@ -63063,93 +60283,6 @@
       ]
     },
     {
-      "id": "dz-15395452",
-      "deezerId": 15395452,
-      "title": "The One That Got Away",
-      "artist": "Katy Perry, B.o.B",
-      "artistIds": [
-        "144227",
-        "280294"
-      ],
-      "artistNames": [
-        "Katy Perry",
-        "B.o.B"
-      ],
-      "answerKey": "144227|the one that got away",
-      "workKey": "144227|the one that got away",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/8276c6d231d7fb586bde196b7acac4f4/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/15395452",
-      "genres": [
-        "modern-pop",
-        "nostalgia"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 2,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Katy Perry"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        },
-        {
-          "id": "player-review-nostalgia",
-          "genres": [
-            "nostalgia"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "katy perry|the one that got away"
-      ]
-    },
-    {
-      "id": "dz-3169161",
-      "deezerId": 3169161,
-      "title": "I Kissed A Girl",
-      "artist": "Katy Perry",
-      "artistIds": [
-        "144227"
-      ],
-      "artistNames": [
-        "Katy Perry"
-      ],
-      "answerKey": "144227|i kissed a girl",
-      "workKey": "144227|i kissed a girl",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/ef17ef6218f9a5d42b2cbd5d4eeed25f/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3169161",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 3,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Katy Perry"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "katy perry|i kissed a girl"
-      ]
-    },
-    {
       "id": "dz-17135109",
       "deezerId": 17135109,
       "title": "Last Friday Night (T.G.I.F.)",
@@ -63235,45 +60368,6 @@
       ]
     },
     {
-      "id": "dz-4709950",
-      "deezerId": 4709950,
-      "title": "Paparazzi",
-      "artist": "Lady Gaga",
-      "artistIds": [
-        "75491"
-      ],
-      "artistNames": [
-        "Lady Gaga"
-      ],
-      "answerKey": "75491|paparazzi",
-      "workKey": "75491|paparazzi",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/62f368993ddb68c5364cd03221d07ac6/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/4709950",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 3,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Lady Gaga"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "lady gaga|paparazzi"
-      ]
-    },
-    {
       "id": "dz-561856742",
       "deezerId": 561856742,
       "title": "Shallow",
@@ -63312,45 +60406,6 @@
       ],
       "lookupKeys": [
         "lady gaga|shallow"
-      ]
-    },
-    {
-      "id": "dz-11747933",
-      "deezerId": 11747933,
-      "title": "Judas",
-      "artist": "Lady Gaga",
-      "artistIds": [
-        "75491"
-      ],
-      "artistNames": [
-        "Lady Gaga"
-      ],
-      "answerKey": "75491|judas",
-      "workKey": "75491|judas",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0f256c4bebac58a7c4122e0e639303a8/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/11747933",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 5,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Lady Gaga"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "lady gaga|judas"
       ]
     },
     {
@@ -63855,56 +60910,6 @@
       ]
     },
     {
-      "id": "dz-142328215",
-      "deezerId": 142328215,
-      "title": "It Ain't Me",
-      "artist": "Kygo, Selena Gomez",
-      "artistIds": [
-        "4768753",
-        "292185"
-      ],
-      "artistNames": [
-        "Kygo",
-        "Selena Gomez"
-      ],
-      "answerKey": "4768753|it ain t me",
-      "workKey": "4768753|it ain t me",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/e9ec7d8f75708f9a9de5de403cf205c0/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/142328215",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 2,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Selena Gomez"
-        },
-        {
-          "id": "modern-pop-more",
-          "position": 4,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Kygo"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "selena gomez|it ain t me",
-        "kygo|it ain t me"
-      ]
-    },
-    {
       "id": "dz-926219252",
       "deezerId": 926219252,
       "title": "People You Know",
@@ -63941,45 +60946,6 @@
       ],
       "lookupKeys": [
         "selena gomez|people you know"
-      ]
-    },
-    {
-      "id": "dz-109169058",
-      "deezerId": 109169058,
-      "title": "Same Old Love",
-      "artist": "Selena Gomez",
-      "artistIds": [
-        "292185"
-      ],
-      "artistNames": [
-        "Selena Gomez"
-      ],
-      "answerKey": "292185|same old love",
-      "workKey": "292185|same old love",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/51f0d069107589ed8d7f4dd848e3a33b/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/109169058",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 4,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Selena Gomez"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "selena gomez|same old love"
       ]
     },
     {
@@ -64279,47 +61245,6 @@
       ]
     },
     {
-      "id": "dz-61142290",
-      "deezerId": 61142290,
-      "title": "I Need Your Love (feat. Ellie Goulding)",
-      "artist": "Calvin Harris, Ellie Goulding",
-      "artistIds": [
-        "12178",
-        "311820"
-      ],
-      "artistNames": [
-        "Calvin Harris",
-        "Ellie Goulding"
-      ],
-      "answerKey": "12178|i need your love feat ellie goulding",
-      "workKey": "12178|i need your love feat ellie goulding",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/3cd154b7ee332e7fb0dc3e8bd4085f6b/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/61142290",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 5,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Calvin Harris"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "calvin harris|i need your love feat ellie goulding"
-      ]
-    },
-    {
       "id": "dz-62847142",
       "deezerId": 62847142,
       "title": "Titanium (feat. Sia)",
@@ -64389,90 +61314,6 @@
       ],
       "lookupKeys": [
         "david guetta|memories feat kid cudi"
-      ]
-    },
-    {
-      "id": "dz-673165762",
-      "deezerId": 673165762,
-      "title": "Sexy Bitch (feat. Akon)",
-      "artist": "David Guetta, Akon",
-      "artistIds": [
-        "542",
-        "38"
-      ],
-      "artistNames": [
-        "David Guetta",
-        "Akon"
-      ],
-      "answerKey": "542|sexy bitch feat akon",
-      "workKey": "542|sexy bitch feat akon",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/052de888ea3a0a6f30d564850a07967d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/673165762",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 3,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у David Guetta"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "david guetta|sexy bitch feat akon"
-      ]
-    },
-    {
-      "id": "dz-553056592",
-      "deezerId": 553056592,
-      "title": "Say My Name",
-      "artist": "David Guetta, Bebe Rexha, J Balvin",
-      "artistIds": [
-        "542",
-        "4492087",
-        "4860761"
-      ],
-      "artistNames": [
-        "David Guetta",
-        "Bebe Rexha",
-        "J Balvin"
-      ],
-      "answerKey": "542|say my name",
-      "workKey": "542|say my name",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/c292dc8a43814f6617f0e24e62c33489/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/553056592",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 4,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у David Guetta"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "david guetta|say my name"
       ]
     },
     {
@@ -65542,52 +62383,6 @@
       ]
     },
     {
-      "id": "dz-63510362",
-      "deezerId": 63510362,
-      "title": "On Top Of The World",
-      "artist": "Imagine Dragons",
-      "artistIds": [
-        "416239"
-      ],
-      "artistNames": [
-        "Imagine Dragons"
-      ],
-      "answerKey": "416239|on top of the world",
-      "workKey": "416239|on top of the world",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/7e8314f4280cffde363547a495a260bc/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/63510362",
-      "genres": [
-        "modern-pop",
-        "nostalgia"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 5,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Imagine Dragons"
-        },
-        {
-          "id": "player-review-nostalgia",
-          "genres": [
-            "nostalgia"
-          ]
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "imagine dragons|on top of the world"
-      ]
-    },
-    {
       "id": "dz-31346541",
       "deezerId": 31346541,
       "title": "Payphone (Edit)",
@@ -65616,47 +62411,6 @@
       ],
       "lookupKeys": [
         "maroon 5|payphone edit"
-      ]
-    },
-    {
-      "id": "dz-12724819",
-      "deezerId": 12724819,
-      "title": "Moves Like Jagger (Studio Recording From \"The Voice\" Performance)",
-      "artist": "Maroon 5, Christina Aguilera",
-      "artistIds": [
-        "1188",
-        "116"
-      ],
-      "artistNames": [
-        "Maroon 5",
-        "Christina Aguilera"
-      ],
-      "answerKey": "1188|moves like jagger",
-      "workKey": "1188|moves like jagger studio recording from the voice performance",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/86fb42ca017f0266d0885c1bede988bf/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/12724819",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 3,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Maroon 5"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "maroon 5|moves like jagger studio recording from the voice performance"
       ]
     },
     {
@@ -65735,45 +62489,6 @@
       ],
       "lookupKeys": [
         "maroon 5|she will be loved"
-      ]
-    },
-    {
-      "id": "dz-5425214",
-      "deezerId": 5425214,
-      "title": "Secrets",
-      "artist": "OneRepublic",
-      "artistIds": [
-        "74398"
-      ],
-      "artistNames": [
-        "OneRepublic"
-      ],
-      "answerKey": "74398|secrets",
-      "workKey": "74398|secrets",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/8b42c224852884f09af2aa0f44e71282/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/5425214",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 3,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у OneRepublic"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "onerepublic|secrets"
       ]
     },
     {
@@ -66304,45 +63019,6 @@
       ]
     },
     {
-      "id": "dz-79587594",
-      "deezerId": 79587594,
-      "title": "Elastic Heart",
-      "artist": "Sia",
-      "artistIds": [
-        "3469"
-      ],
-      "artistNames": [
-        "Sia"
-      ],
-      "answerKey": "3469|elastic heart",
-      "workKey": "3469|elastic heart",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/4275db12f5e284b3c2f3e20726187b64/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/79587594",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 3,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Sia"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "sia|elastic heart"
-      ]
-    },
-    {
       "id": "dz-403074632",
       "deezerId": 403074632,
       "title": "Dusk Till Dawn (feat. Sia) (Radio Edit)",
@@ -66578,45 +63254,6 @@
       ]
     },
     {
-      "id": "dz-4315389",
-      "deezerId": 4315389,
-      "title": "505",
-      "artist": "Arctic Monkeys",
-      "artistIds": [
-        "1182"
-      ],
-      "artistNames": [
-        "Arctic Monkeys"
-      ],
-      "answerKey": "1182|505",
-      "workKey": "1182|505",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/d7a4f9f1af8736457de34f28d50ef496/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/4315389",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 1,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Arctic Monkeys"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "arctic monkeys|505"
-      ]
-    },
-    {
       "id": "dz-70322139",
       "deezerId": 70322139,
       "title": "Why'd You Only Call Me When You're High?",
@@ -66793,84 +63430,6 @@
       ],
       "lookupKeys": [
         "hozier|northern attitude"
-      ]
-    },
-    {
-      "id": "dz-75812871",
-      "deezerId": 75812871,
-      "title": "Work Song",
-      "artist": "Hozier",
-      "artistIds": [
-        "5062414"
-      ],
-      "artistNames": [
-        "Hozier"
-      ],
-      "answerKey": "5062414|work song",
-      "workKey": "5062414|work song",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/7f98cc30b8dff47e55a68f1d6c7c6c90/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/75812871",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 4,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Hozier"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "hozier|work song"
-      ]
-    },
-    {
-      "id": "dz-84791753",
-      "deezerId": 84791753,
-      "title": "Like Real People Do",
-      "artist": "Hozier",
-      "artistIds": [
-        "5062414"
-      ],
-      "artistNames": [
-        "Hozier"
-      ],
-      "answerKey": "5062414|like real people do",
-      "workKey": "5062414|like real people do",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/8442e9ac0227a07b00c9dfd0ec00032d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/84791753",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 5,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Hozier"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "hozier|like real people do"
       ]
     },
     {
@@ -67163,45 +63722,6 @@
       ]
     },
     {
-      "id": "dz-2553265",
-      "deezerId": 2553265,
-      "title": "Halo",
-      "artist": "Beyoncé",
-      "artistIds": [
-        "145"
-      ],
-      "artistNames": [
-        "Beyoncé"
-      ],
-      "answerKey": "145|halo",
-      "workKey": "145|halo",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/7cf0bdc409e7a7898c745bf0244df312/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2553265",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 1,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Beyoncé"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "beyoncé|halo"
-      ]
-    },
-    {
       "id": "dz-2658723742",
       "deezerId": 2658723742,
       "title": "TEXAS HOLD 'EM",
@@ -67269,45 +63789,6 @@
       ],
       "lookupKeys": [
         "beyoncé|crazy in love feat jaÿ z"
-      ]
-    },
-    {
-      "id": "dz-90428591",
-      "deezerId": 90428591,
-      "title": "Sweet Dreams",
-      "artist": "Beyoncé",
-      "artistIds": [
-        "145"
-      ],
-      "artistNames": [
-        "Beyoncé"
-      ],
-      "answerKey": "145|sweet dreams",
-      "workKey": "145|sweet dreams",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/e6dc031cdfe7a314af2d48d7f8208e65/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/90428591",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-more",
-          "position": 4,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Beyoncé"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "beyoncé|sweet dreams"
       ]
     },
     {
@@ -67990,45 +64471,6 @@
       ]
     },
     {
-      "id": "dz-8011854",
-      "deezerId": 8011854,
-      "title": "Marry You",
-      "artist": "Bruno Mars",
-      "artistIds": [
-        "429675"
-      ],
-      "artistNames": [
-        "Bruno Mars"
-      ],
-      "answerKey": "429675|marry you",
-      "workKey": "429675|marry you",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/5b59dc18e109515420f8237719bd2186/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/8011854",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-stars-more",
-          "position": 7,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Bruno Mars"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "bruno mars|marry you"
-      ]
-    },
-    {
       "id": "dz-62724019",
       "deezerId": 62724019,
       "title": "When I Was Your Man",
@@ -68065,45 +64507,6 @@
       ],
       "lookupKeys": [
         "bruno mars|when i was your man"
-      ]
-    },
-    {
-      "id": "dz-8011855",
-      "deezerId": 8011855,
-      "title": "Talking to the Moon",
-      "artist": "Bruno Mars",
-      "artistIds": [
-        "429675"
-      ],
-      "artistNames": [
-        "Bruno Mars"
-      ],
-      "answerKey": "429675|talking to the moon",
-      "workKey": "429675|talking to the moon",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/5b59dc18e109515420f8237719bd2186/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/8011855",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "modern-pop-stars-more",
-          "position": 9,
-          "genres": [
-            "modern-pop"
-          ],
-          "period": "популярное у Bruno Mars"
-        },
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "bruno mars|talking to the moon"
       ]
     },
     {
@@ -71658,45 +68061,6 @@
       ]
     },
     {
-      "id": "dz-4338791802",
-      "deezerId": 4338791802,
-      "title": "Splat!",
-      "artist": "Deep Purple",
-      "artistIds": [
-        "864"
-      ],
-      "artistNames": [
-        "Deep Purple"
-      ],
-      "answerKey": "864|splat",
-      "workKey": "864|splat",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/99e08824926f7d658abdd40ae6fc31de/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/4338791802",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 4,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Deep Purple"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "deep purple|splat"
-      ]
-    },
-    {
       "id": "dz-116348464",
       "deezerId": 116348464,
       "title": "Here Comes The Sun (Remastered 2009)",
@@ -71972,84 +68336,6 @@
       ]
     },
     {
-      "id": "dz-3807039752",
-      "deezerId": 3807039752,
-      "title": "Rock You Like a Hurricane (Remastered 2015)",
-      "artist": "Scorpions",
-      "artistIds": [
-        "863"
-      ],
-      "artistNames": [
-        "Scorpions"
-      ],
-      "answerKey": "863|rock you like a hurricane",
-      "workKey": "863|rock you like a hurricane",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/b692893d2ffa185fd62cdc8f9260a5d8/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3807039752",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 3,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Scorpions"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "scorpions|rock you like a hurricane"
-      ]
-    },
-    {
-      "id": "dz-4679126",
-      "deezerId": 4679126,
-      "title": "Money For Nothing (Edit)",
-      "artist": "Dire Straits",
-      "artistIds": [
-        "176"
-      ],
-      "artistNames": [
-        "Dire Straits"
-      ],
-      "answerKey": "176|money for nothing",
-      "workKey": "176|money for nothing edit",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/c3ae8d3be626021c0a1fadea222307b3/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/4679126",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 4,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Dire Straits"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "dire straits|money for nothing edit"
-      ]
-    },
-    {
       "id": "dz-426703692",
       "deezerId": 426703692,
       "title": "New Kid in Town (2013 Remaster)",
@@ -72164,84 +68450,6 @@
       ],
       "lookupKeys": [
         "nirvana|heart shaped box"
-      ]
-    },
-    {
-      "id": "dz-122891332",
-      "deezerId": 122891332,
-      "title": "Knockin' On Heaven's Door",
-      "artist": "Guns N' Roses",
-      "artistIds": [
-        "663"
-      ],
-      "artistNames": [
-        "Guns N' Roses"
-      ],
-      "answerKey": "663|knockin on heaven s door",
-      "workKey": "663|knockin on heaven s door",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/6718867788bc8abd9292f421fd49e982/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/122891332",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 2,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Guns N' Roses"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "guns n roses|knockin on heaven s door"
-      ]
-    },
-    {
-      "id": "dz-122891352",
-      "deezerId": 122891352,
-      "title": "Paradise City",
-      "artist": "Guns N' Roses",
-      "artistIds": [
-        "663"
-      ],
-      "artistNames": [
-        "Guns N' Roses"
-      ],
-      "answerKey": "663|paradise city",
-      "workKey": "663|paradise city",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/6718867788bc8abd9292f421fd49e982/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/122891352",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 4,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Guns N' Roses"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "guns n roses|paradise city"
       ]
     },
     {
@@ -72398,45 +68606,6 @@
       ],
       "lookupKeys": [
         "the doors|l a woman"
-      ]
-    },
-    {
-      "id": "dz-883642",
-      "deezerId": 883642,
-      "title": "Proud Mary",
-      "artist": "Creedence Clearwater Revival",
-      "artistIds": [
-        "2468"
-      ],
-      "artistNames": [
-        "Creedence Clearwater Revival"
-      ],
-      "answerKey": "2468|proud mary",
-      "workKey": "2468|proud mary",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/236aacbb246ef0f6ff6a9e494a7fe9ac/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/883642",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 4,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Creedence Clearwater Revival"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "creedence clearwater revival|proud mary"
       ]
     },
     {
@@ -73181,45 +69350,6 @@
       ]
     },
     {
-      "id": "dz-2526491",
-      "deezerId": 2526491,
-      "title": "Amanda",
-      "artist": "Boston",
-      "artistIds": [
-        "3339"
-      ],
-      "artistNames": [
-        "Boston"
-      ],
-      "answerKey": "3339|amanda",
-      "workKey": "3339|amanda",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/7b12c81f74745976668c9481d4c7c68a/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2526491",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 2,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Boston"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "boston|amanda"
-      ]
-    },
-    {
       "id": "dz-84340027",
       "deezerId": 84340027,
       "title": "Peace of Mind",
@@ -73571,45 +69701,6 @@
       ]
     },
     {
-      "id": "dz-69883086",
-      "deezerId": 69883086,
-      "title": "Living Next Door to Alice",
-      "artist": "Smokie",
-      "artistIds": [
-        "12818"
-      ],
-      "artistNames": [
-        "Smokie"
-      ],
-      "answerKey": "12818|living next door to alice",
-      "workKey": "12818|living next door to alice",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/653d686ce9c15c938210c127fc977ad7/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/69883086",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 1,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Smokie"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "smokie|living next door to alice"
-      ]
-    },
-    {
       "id": "dz-96061570",
       "deezerId": 96061570,
       "title": "Lay Back in the Arms of Someone",
@@ -73724,84 +69815,6 @@
       ],
       "lookupKeys": [
         "smokie|needles and pins"
-      ]
-    },
-    {
-      "id": "dz-2319606",
-      "deezerId": 2319606,
-      "title": "In The Army Now",
-      "artist": "Status Quo",
-      "artistIds": [
-        "694"
-      ],
-      "artistNames": [
-        "Status Quo"
-      ],
-      "answerKey": "694|in the army now",
-      "workKey": "694|in the army now",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/4bcf01a2b02902800460f6a1d6e9f718/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2319606",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 1,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Status Quo"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "status quo|in the army now"
-      ]
-    },
-    {
-      "id": "dz-1181897",
-      "deezerId": 1181897,
-      "title": "Whatever You Want",
-      "artist": "Status Quo",
-      "artistIds": [
-        "694"
-      ],
-      "artistNames": [
-        "Status Quo"
-      ],
-      "answerKey": "694|whatever you want",
-      "workKey": "694|whatever you want",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/766c7acca10a3ef6605e6bf6a59e02a9/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1181897",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 2,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Status Quo"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "status quo|whatever you want"
       ]
     },
     {
@@ -73961,45 +69974,6 @@
       ]
     },
     {
-      "id": "dz-1182159",
-      "deezerId": 1182159,
-      "title": "(Everything I Do) I Do It For You",
-      "artist": "Bryan Adams",
-      "artistIds": [
-        "170"
-      ],
-      "artistNames": [
-        "Bryan Adams"
-      ],
-      "answerKey": "170|everything i do i do it for you",
-      "workKey": "170|everything i do i do it for you",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/d7d28861a72ecb30a7676ec38db05907/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1182159",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 3,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Bryan Adams"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "bryan adams|everything i do i do it for you"
-      ]
-    },
-    {
       "id": "dz-88902735",
       "deezerId": 88902735,
       "title": "Run To You",
@@ -74123,47 +70097,6 @@
       ],
       "lookupKeys": [
         "eric clapton|wonderful tonight"
-      ]
-    },
-    {
-      "id": "dz-1140658",
-      "deezerId": 1140658,
-      "title": "It's Probably Me",
-      "artist": "Sting, Eric Clapton",
-      "artistIds": [
-        "368",
-        "192"
-      ],
-      "artistNames": [
-        "Sting",
-        "Eric Clapton"
-      ],
-      "answerKey": "368|it s probably me",
-      "workKey": "368|it s probably me",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/43216748bbeee4aa12f3e2407599a4ea/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1140658",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "dad-rock-more",
-          "position": 4,
-          "genres": [
-            "dad-rock"
-          ],
-          "period": "популярное у Eric Clapton"
-        },
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "eric clapton|it s probably me"
       ]
     },
     {
@@ -80105,53 +76038,6 @@
       ]
     },
     {
-      "id": "dz-2536503011",
-      "deezerId": 2536503011,
-      "title": "MONSTER TRAKK",
-      "artist": "OBLADAET",
-      "artistIds": [
-        "7800506"
-      ],
-      "artistNames": [
-        "OBLADAET"
-      ],
-      "answerKey": "7800506|monster trakk",
-      "workKey": "7800506|monster trakk",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2536503011",
-      "genres": [
-        "ru-rap",
-        "new-wave"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "new-wave-player-picks-20261030",
-          "position": 18,
-          "genres": [
-            "ru-rap",
-            "new-wave"
-          ],
-          "period": "выбор игроков · 30.10.2026"
-        },
-        {
-          "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
-        },
-        {
-          "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "obladaet|monster trakk"
-      ]
-    },
-    {
       "id": "dz-2536503081",
       "deezerId": 2536503081,
       "title": "Бабочки",
@@ -85070,37 +80956,6 @@
       ]
     },
     {
-      "id": "dz-4315382",
-      "deezerId": 4315382,
-      "title": "Fluorescent Adolescent",
-      "artist": "Arctic Monkeys",
-      "artistIds": [
-        "1182"
-      ],
-      "artistNames": [
-        "Arctic Monkeys"
-      ],
-      "answerKey": "1182|fluorescent adolescent",
-      "workKey": "1182|fluorescent adolescent",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/d7a4f9f1af8736457de34f28d50ef496/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/4315382",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "arctic monkeys|fluorescent adolescent"
-      ]
-    },
-    {
       "id": "dz-4315310",
       "deezerId": 4315310,
       "title": "I Bet You Look Good On The Dancefloor",
@@ -85256,37 +81111,6 @@
       ]
     },
     {
-      "id": "dz-8011853",
-      "deezerId": 8011853,
-      "title": "The Lazy Song",
-      "artist": "Bruno Mars",
-      "artistIds": [
-        "429675"
-      ],
-      "artistNames": [
-        "Bruno Mars"
-      ],
-      "answerKey": "429675|the lazy song",
-      "workKey": "429675|the lazy song",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/5b59dc18e109515420f8237719bd2186/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/8011853",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "bruno mars|the lazy song"
-      ]
-    },
-    {
       "id": "dz-62724017",
       "deezerId": 62724017,
       "title": "Treasure",
@@ -85315,37 +81139,6 @@
       ],
       "lookupKeys": [
         "bruno mars|treasure"
-      ]
-    },
-    {
-      "id": "dz-13444256",
-      "deezerId": 13444256,
-      "title": "Viva La Vida",
-      "artist": "Coldplay",
-      "artistIds": [
-        "892"
-      ],
-      "artistNames": [
-        "Coldplay"
-      ],
-      "answerKey": "892|viva la vida",
-      "workKey": "892|viva la vida",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/eede3cd0dc3a5a87c7a5b1085b022e2d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/13444256",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "coldplay|viva la vida"
       ]
     },
     {
@@ -85470,70 +81263,6 @@
       ],
       "lookupKeys": [
         "imagine dragons|wrecked"
-      ]
-    },
-    {
-      "id": "dz-4709938",
-      "deezerId": 4709938,
-      "title": "Alejandro",
-      "artist": "Lady Gaga",
-      "artistIds": [
-        "75491"
-      ],
-      "artistNames": [
-        "Lady Gaga"
-      ],
-      "answerKey": "75491|alejandro",
-      "workKey": "75491|alejandro",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/62f368993ddb68c5364cd03221d07ac6/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/4709938",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "lady gaga|alejandro"
-      ]
-    },
-    {
-      "id": "dz-4709944",
-      "deezerId": 4709944,
-      "title": "Telephone",
-      "artist": "Lady Gaga, Beyoncé",
-      "artistIds": [
-        "75491",
-        "145"
-      ],
-      "artistNames": [
-        "Lady Gaga",
-        "Beyoncé"
-      ],
-      "answerKey": "75491|telephone",
-      "workKey": "75491|telephone",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/62f368993ddb68c5364cd03221d07ac6/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/4709944",
-      "genres": [
-        "modern-pop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "lady gaga|telephone"
       ]
     },
     {
@@ -85753,254 +81482,6 @@
       ],
       "lookupKeys": [
         "deep purple|perfect strangers"
-      ]
-    },
-    {
-      "id": "dz-3436057",
-      "deezerId": 3436057,
-      "title": "Hush (1998 Remaster)",
-      "artist": "Deep Purple",
-      "artistIds": [
-        "864"
-      ],
-      "artistNames": [
-        "Deep Purple"
-      ],
-      "answerKey": "864|hush",
-      "workKey": "864|hush",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/aae4521c80335777b4b850f8753bd851/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3436057",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "deep purple|hush"
-      ]
-    },
-    {
-      "id": "dz-3230175",
-      "deezerId": 3230175,
-      "title": "Black Night (1995 Remaster)",
-      "artist": "Deep Purple",
-      "artistIds": [
-        "864"
-      ],
-      "artistNames": [
-        "Deep Purple"
-      ],
-      "answerKey": "864|black night",
-      "workKey": "864|black night",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/d8aac2249943a90fd5aa6260fc78cf15/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3230175",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "deep purple|black night"
-      ]
-    },
-    {
-      "id": "dz-2514677",
-      "deezerId": 2514677,
-      "title": "Romeo And Juliet",
-      "artist": "Dire Straits",
-      "artistIds": [
-        "176"
-      ],
-      "artistNames": [
-        "Dire Straits"
-      ],
-      "answerKey": "176|romeo and juliet",
-      "workKey": "176|romeo and juliet",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0aeeab7a9ef9dcc03e3c6490f9bf822d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2514677",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "dire straits|romeo and juliet"
-      ]
-    },
-    {
-      "id": "dz-2514680",
-      "deezerId": 2514680,
-      "title": "So Far Away (Full Version)",
-      "artist": "Dire Straits",
-      "artistIds": [
-        "176"
-      ],
-      "artistNames": [
-        "Dire Straits"
-      ],
-      "answerKey": "176|so far away",
-      "workKey": "176|so far away full version",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0aeeab7a9ef9dcc03e3c6490f9bf822d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2514680",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "dire straits|so far away full version"
-      ]
-    },
-    {
-      "id": "dz-2236742",
-      "deezerId": 2236742,
-      "title": "Lady Writer",
-      "artist": "Dire Straits",
-      "artistIds": [
-        "176"
-      ],
-      "artistNames": [
-        "Dire Straits"
-      ],
-      "answerKey": "176|lady writer",
-      "workKey": "176|lady writer",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/e7ee5354d91be62dd1a26a7dd909d91d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2236742",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "dire straits|lady writer"
-      ]
-    },
-    {
-      "id": "dz-3158432",
-      "deezerId": 3158432,
-      "title": "The Number of the Beast (1998 Remaster)",
-      "artist": "Iron Maiden",
-      "artistIds": [
-        "931"
-      ],
-      "artistNames": [
-        "Iron Maiden"
-      ],
-      "answerKey": "931|the number of the beast",
-      "workKey": "931|the number of the beast",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/ca87a7fc5b10f79866925db083d99ef0/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/3158432",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "iron maiden|the number of the beast"
-      ]
-    },
-    {
-      "id": "dz-585608762",
-      "deezerId": 585608762,
-      "title": "Be Quick or Be Dead (2015 Remaster)",
-      "artist": "Iron Maiden",
-      "artistIds": [
-        "931"
-      ],
-      "artistNames": [
-        "Iron Maiden"
-      ],
-      "answerKey": "931|be quick or be dead",
-      "workKey": "931|be quick or be dead",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/f0a2bbd32cdc42b5bf13f3344797bf94/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/585608762",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "iron maiden|be quick or be dead"
-      ]
-    },
-    {
-      "id": "dz-585608782",
-      "deezerId": 585608782,
-      "title": "Afraid to Shoot Strangers (2015 Remaster)",
-      "artist": "Iron Maiden",
-      "artistIds": [
-        "931"
-      ],
-      "artistNames": [
-        "Iron Maiden"
-      ],
-      "answerKey": "931|afraid to shoot strangers",
-      "workKey": "931|afraid to shoot strangers",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/f0a2bbd32cdc42b5bf13f3344797bf94/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/585608782",
-      "genres": [
-        "dad-rock"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "iron maiden|afraid to shoot strangers"
       ]
     },
     {
@@ -86562,39 +82043,6 @@
       ]
     },
     {
-      "id": "dz-1097090192",
-      "deezerId": 1097090192,
-      "title": "Runnin",
-      "artist": "21 Savage, Metro Boomin",
-      "artistIds": [
-        "6853403",
-        "4968870"
-      ],
-      "artistNames": [
-        "21 Savage",
-        "Metro Boomin"
-      ],
-      "answerKey": "6853403|runnin",
-      "workKey": "6853403|runnin",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/c11792c28d745fbed8522fba064f7ebe/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/1097090192",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "21 savage|runnin"
-      ]
-    },
-    {
       "id": "dz-423097602",
       "deezerId": 423097602,
       "title": "Ghostface Killers (feat. Travis Scott)",
@@ -87013,99 +82461,6 @@
       ],
       "lookupKeys": [
         "drake|headlines explicit version"
-      ]
-    },
-    {
-      "id": "dz-2122556317",
-      "deezerId": 2122556317,
-      "title": "Dead Presidents II",
-      "artist": "JAY Z",
-      "artistIds": [
-        "1309"
-      ],
-      "artistNames": [
-        "JAY Z"
-      ],
-      "answerKey": "1309|dead presidents ii",
-      "workKey": "1309|dead presidents ii",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/2d9fcb7cf1dc13f9cba46a03e6c95166/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2122556317",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "jay z|dead presidents ii"
-      ]
-    },
-    {
-      "id": "dz-2950438",
-      "deezerId": 2950438,
-      "title": "Dirt Off Your Shoulder",
-      "artist": "JAY Z",
-      "artistIds": [
-        "1309"
-      ],
-      "artistNames": [
-        "JAY Z"
-      ],
-      "answerKey": "1309|dirt off your shoulder",
-      "workKey": "1309|dirt off your shoulder",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0e59c737cf636f442fe599ec5a7fc78d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2950438",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "jay z|dirt off your shoulder"
-      ]
-    },
-    {
-      "id": "dz-2950441",
-      "deezerId": 2950441,
-      "title": "99 Problems",
-      "artist": "JAY Z",
-      "artistIds": [
-        "1309"
-      ],
-      "artistNames": [
-        "JAY Z"
-      ],
-      "answerKey": "1309|99 problems",
-      "workKey": "1309|99 problems",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/0e59c737cf636f442fe599ec5a7fc78d/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/2950441",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "jay z|99 problems"
       ]
     },
     {
@@ -88791,37 +84146,6 @@
       ],
       "lookupKeys": [
         "travis scott|can t say"
-      ]
-    },
-    {
-      "id": "dz-8035981",
-      "deezerId": 8035981,
-      "title": "Black and Yellow",
-      "artist": "Wiz Khalifa",
-      "artistIds": [
-        "74804"
-      ],
-      "artistNames": [
-        "Wiz Khalifa"
-      ],
-      "answerKey": "74804|black and yellow",
-      "workKey": "74804|black and yellow",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/af7203fbcbf4b3ef09e54d30a97323e1/250x250-000000-80-0-0.jpg",
-      "link": "https://www.deezer.com/track/8035981",
-      "genres": [
-        "us-hiphop"
-      ],
-      "currentGenres": [],
-      "sources": [
-        {
-          "id": "player-review-us-hiphop",
-          "genres": [
-            "us-hiphop"
-          ]
-        }
-      ],
-      "lookupKeys": [
-        "wiz khalifa|black and yellow"
       ]
     },
     {

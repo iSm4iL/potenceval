@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "catalogGeneratedAt": "2026-10-30T14:37:34Z",
+  "catalogGeneratedAt": "2026-11-03T22:11:33.348Z",
   "updatedAt": 0,
   "tracks": {
     "new-wave": {
@@ -433,9 +433,6 @@
         "more": false
       },
       "dz-1084610982": {
-        "more": false
-      },
-      "dz-2536503011": {
         "more": false
       },
       "dz-2536503081": {
@@ -3184,10 +3181,6 @@
         "status": "keep",
         "more": false
       },
-      "dz-2536503011": {
-        "status": "keep",
-        "more": false
-      },
       "dz-2536503081": {
         "status": "keep",
         "more": false
@@ -3603,10 +3596,6 @@
       "dz-3032502771": {
         "more": false
       },
-      "dz-8086126": {
-        "status": "remove",
-        "more": false
-      },
       "dz-140295501": {
         "similar": true,
         "more": false
@@ -3636,10 +3625,6 @@
         "status": "keep",
         "more": false,
         "similar": true
-      },
-      "dz-8011849": {
-        "status": "keep",
-        "more": false
       },
       "dz-92734438": {
         "status": "remove",
@@ -3697,16 +3682,7 @@
         "status": "remove",
         "more": false
       },
-      "dz-84791735": {
-        "status": "remove",
-        "more": false
-      },
       "dz-528330441": {
-        "status": "keep",
-        "more": false,
-        "similar": true
-      },
-      "dz-63510358": {
         "status": "keep",
         "more": false,
         "similar": true
@@ -3815,10 +3791,6 @@
         "status": "remove",
         "more": false
       },
-      "dz-79587580": {
-        "status": "remove",
-        "more": false
-      },
       "dz-145061632": {
         "status": "keep",
         "similar": true,
@@ -3836,27 +3808,11 @@
       }
     },
     "modern-pop": {
-      "dz-138545995": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-8086126": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-8086136": {
-        "status": "keep",
-        "more": false
-      },
       "dz-82715364": {
         "status": "keep",
         "more": false
       },
       "dz-1522223672": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-673165762": {
         "status": "keep",
         "more": false
       },
@@ -3899,11 +3855,6 @@
         "more": false
       },
       "dz-70322142": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
-      "dz-4315389": {
         "status": "keep",
         "similar": true,
         "more": false
@@ -3983,18 +3934,9 @@
         "status": "keep",
         "more": false
       },
-      "dz-111263366": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
       "dz-410107962": {
         "status": "keep",
         "similar": true,
-        "more": false
-      },
-      "dz-553056592": {
-        "status": "keep",
         "more": false
       },
       "dz-525343612": {
@@ -4021,20 +3963,12 @@
         "status": "remove",
         "more": false
       },
-      "dz-2553265": {
-        "status": "keep",
-        "more": false
-      },
       "dz-2658723742": {
         "status": "keep",
         "more": false
       },
       "dz-13166294": {
         "status": "remove",
-        "more": false
-      },
-      "dz-90428591": {
-        "status": "keep",
         "more": false
       },
       "dz-2485118": {
@@ -4073,16 +4007,6 @@
         "status": "keep",
         "more": false
       },
-      "dz-8011850": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
-      "dz-8011849": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
       "dz-136336116": {
         "status": "keep",
         "similar": true,
@@ -4108,17 +4032,7 @@
         "similar": true,
         "more": false
       },
-      "dz-8011854": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
       "dz-62724019": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
-      "dz-8011855": {
         "status": "keep",
         "similar": true,
         "more": false
@@ -4141,10 +4055,6 @@
         "more": false
       },
       "dz-123883254": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-61142290": {
         "status": "keep",
         "more": false
       },
@@ -4180,24 +4090,12 @@
         "status": "remove",
         "more": false
       },
-      "dz-117797212": {
-        "status": "keep",
-        "more": false
-      },
       "dz-117797204": {
         "status": "remove",
         "more": false
       },
       "dz-413468802": {
         "status": "remove",
-        "more": false
-      },
-      "dz-12724819": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-4709947": {
-        "status": "keep",
         "more": false
       },
       "dz-80134624": {
@@ -4363,37 +4261,11 @@
         "status": "keep",
         "more": false
       },
-      "dz-84791735": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-2704610682": {
-        "status": "keep",
-        "more": false
-      },
       "dz-2526400971": {
         "status": "keep",
         "more": false
       },
-      "dz-75812871": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-84791753": {
-        "status": "keep",
-        "more": false
-      },
       "dz-528330441": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
-      "dz-63510358": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
-      "dz-63510361": {
         "status": "keep",
         "similar": true,
         "more": false
@@ -4409,11 +4281,6 @@
         "more": false
       },
       "dz-528330431": {
-        "status": "keep",
-        "similar": true,
-        "more": false
-      },
-      "dz-63510362": {
         "status": "keep",
         "similar": true,
         "more": false
@@ -4478,14 +4345,6 @@
         "status": "keep",
         "more": false
       },
-      "dz-15395452": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-3169161": {
-        "status": "keep",
-        "more": false
-      },
       "dz-17135109": {
         "status": "keep",
         "more": false
@@ -4506,27 +4365,11 @@
         "status": "keep",
         "more": false
       },
-      "dz-142328215": {
-        "status": "keep",
-        "more": false
-      },
       "dz-4601933": {
         "status": "keep",
         "more": false
       },
-      "dz-2603558": {
-        "status": "keep",
-        "more": false
-      },
       "dz-3214169391": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-4709950": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-11747933": {
         "status": "keep",
         "more": false
       },
@@ -4606,19 +4449,7 @@
         "status": "remove",
         "more": false
       },
-      "dz-78527795": {
-        "status": "keep",
-        "more": false
-      },
       "dz-1764283667": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-916829": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-5425214": {
         "status": "keep",
         "more": false
       },
@@ -4695,10 +4526,6 @@
         "status": "keep",
         "more": false
       },
-      "dz-109169058": {
-        "status": "keep",
-        "more": false
-      },
       "dz-113418500": {
         "status": "keep",
         "more": false
@@ -4728,14 +4555,6 @@
         "more": false
       },
       "dz-4304169612": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-89077555": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-89077547": {
         "status": "keep",
         "more": false
       },
@@ -4957,10 +4776,6 @@
         "status": "remove",
         "more": false
       },
-      "dz-1140658": {
-        "status": "keep",
-        "more": false
-      },
       "dz-4952889": {
         "status": "remove",
         "more": false
@@ -5025,50 +4840,6 @@
         "similar": true,
         "more": false
       },
-      "dz-585608872": {
-        "similar": true,
-        "more": false
-      },
-      "dz-3155089": {
-        "similar": true,
-        "more": false
-      },
-      "dz-3158433": {
-        "similar": true,
-        "more": false
-      },
-      "dz-2263033": {
-        "similar": true,
-        "more": false
-      },
-      "dz-2514681": {
-        "similar": true,
-        "more": false
-      },
-      "dz-2514683": {
-        "similar": true,
-        "more": false
-      },
-      "dz-4679126": {
-        "similar": true,
-        "more": false
-      },
-      "dz-3137049": {
-        "similar": true,
-        "more": false
-      },
-      "dz-60840053": {
-        "similar": true,
-        "more": false
-      },
-      "dz-3230170": {
-        "similar": true,
-        "more": false
-      },
-      "dz-4338791802": {
-        "similar": true,
-        "more": false
-      },
       "dz-116348134": {
         "similar": true,
         "status": "keep",
@@ -5116,11 +4887,6 @@
       },
       "dz-65445461": {
         "status": "keep",
-        "more": false
-      },
-      "dz-2594482212": {
-        "status": "keep",
-        "similar": true,
         "more": false
       },
       "dz-7677778": {
@@ -5266,10 +5032,6 @@
         "similar": true,
         "more": false
       },
-      "dz-65163036": {
-        "status": "keep",
-        "more": false
-      },
       "dz-910693": {
         "status": "keep",
         "more": false
@@ -5279,14 +5041,6 @@
         "more": false
       },
       "dz-12901222": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-1141668": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-1141674": {
         "status": "keep",
         "more": false
       },
@@ -5492,10 +5246,6 @@
         "status": "remove",
         "more": false
       },
-      "dz-63565179": {
-        "status": "keep",
-        "more": false
-      },
       "dz-5060528": {
         "status": "keep",
         "similar": true,
@@ -5579,14 +5329,6 @@
         "status": "keep",
         "more": false
       },
-      "dz-3099876": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-3099875": {
-        "status": "keep",
-        "more": false
-      },
       "dz-15692592": {
         "status": "keep",
         "more": false
@@ -5649,11 +5391,6 @@
       },
       "dz-384157591": {
         "status": "keep",
-        "more": false
-      },
-      "dz-1178682": {
-        "status": "keep",
-        "similar": true,
         "more": false
       },
       "dz-7667059": {
@@ -5920,15 +5657,7 @@
         "status": "keep",
         "more": false
       },
-      "dz-67461455": {
-        "status": "keep",
-        "more": false
-      },
       "dz-2182691897": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-67461451": {
         "status": "keep",
         "more": false
       },
@@ -5973,10 +5702,6 @@
         "more": false
       },
       "dz-2386586045": {
-        "status": "keep",
-        "more": false
-      },
-      "dz-14930115": {
         "status": "keep",
         "more": false
       },

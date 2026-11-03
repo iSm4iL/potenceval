@@ -6,6 +6,7 @@ import { artistKey, setArtistChoice } from '../review-model.js';
 const root = new URL('../', import.meta.url);
 const read = path => readFileSync(new URL(path, root), 'utf8');
 const catalog = JSON.parse(read('data/catalog.json')), config = JSON.parse(read('data/sources.json'));
+const excluded = new Set(config.excludeTracks || []);
 const output = new URL('review.html', root);
 let priorTracks = {};
 const baseline = process.argv[2];
@@ -17,8 +18,8 @@ else if (existsSync(output)) {
 const compact = track => ({ id: track.id, deezerId: track.deezerId, title: track.title,
   artistIds: track.artistIds, artistNames: track.artistIds.map((id, i) => config.artistDisplayNames?.[id] || track.artistNames[i]) });
 const data = { generatedAt: catalog.generatedAt, collections: PACKS.map(pack => {
-  const tracks = new Map((priorTracks[pack.id] || []).map(t => [t.id, compact(t)]));
-  for (const t of catalog.tracks.filter(t => t.genres.includes(pack.id))) tracks.set(t.id, compact(t));
+  const tracks = new Map((priorTracks[pack.id] || []).filter(t => !excluded.has(t.deezerId)).map(t => [t.id, compact(t)]));
+  for (const t of catalog.tracks.filter(t => t.genres.includes(pack.id) && !excluded.has(t.deezerId))) tracks.set(t.id, compact(t));
   return { id: pack.id, title: pack.title, tracks: [...tracks.values()], notice:
     'Снятые песни сохранены здесь для пересмотра. «Больше» и «Похожие» у артиста — отдельные пожелания: отметки совместной песни не включают их гостям.' };
 }) };

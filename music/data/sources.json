@@ -7,28 +7,144 @@
     "Райда"
   ],
   "excludeTracks": [
+    624823,
+    677232,
+    859699,
+    883640,
+    883642,
+    883644,
+    883648,
+    916829,
+    1140658,
+    1141668,
+    1141674,
+    1178682,
+    1181897,
+    1182159,
+    2236742,
+    2263033,
+    2319606,
+    2514677,
+    2514680,
+    2514681,
+    2514683,
+    2526491,
+    2553265,
+    2603558,
+    2950438,
+    2950441,
+    3099875,
+    3099876,
+    3137049,
+    3155089,
     3157972,
+    3158432,
+    3158433,
+    3169161,
+    3230170,
+    3230175,
+    3436057,
+    4315382,
+    4315389,
+    4679126,
+    4709938,
+    4709944,
+    4709947,
+    4709950,
+    5169799,
+    5425214,
+    8011849,
+    8011850,
+    8011853,
+    8011854,
+    8011855,
+    8035981,
+    8086126,
     8086130,
     8086135,
+    8086136,
+    11747933,
+    12724819,
+    13444256,
+    13791930,
+    14930115,
+    15395452,
+    60840053,
+    61142290,
+    63510358,
+    63510361,
+    63510362,
+    63565179,
+    65163036,
     66439548,
     66439560,
+    67461451,
+    67461455,
+    68116147,
+    69443939,
+    69883086,
+    71591823,
+    75812871,
+    78527795,
+    79587580,
+    79587594,
+    84791735,
+    84791753,
+    89077547,
+    89077555,
+    90428591,
+    106156874,
+    106156876,
+    109169058,
+    111263366,
+    117797212,
+    118195184,
+    122891330,
+    122891332,
+    122891348,
+    122891352,
+    132196994,
     136408140,
+    138545995,
+    142328215,
+    424565232,
+    505508992,
+    553056592,
+    585608762,
+    585608782,
+    585608872,
+    673165762,
     753641722,
+    758401002,
     847699482,
     1056549262,
+    1097090192,
     1097090202,
     1124841682,
     1124841712,
     1359118712,
+    1483825212,
+    1483825242,
+    1483825282,
+    1975386547,
     1995581857,
     1996104407,
     2030090437,
     2030090447,
     2036010427,
+    2122556317,
     2536502991,
+    2536503011,
+    2594482212,
     2661514912,
+    2704610682,
     2892414082,
-    4292533162
+    3788156042,
+    3788156052,
+    3788156072,
+    3807039752,
+    4292533162,
+    4338791802
   ],
   "newWaveArtists": [
     "madk1d",
@@ -949,38 +1065,6 @@
       ],
       "tracks": [
         {
-          "title": "Enter Sandman (Remastered 2021)",
-          "artists": [
-            "Metallica"
-          ],
-          "url": "https://www.deezer.com/track/1483825212",
-          "position": 1
-        },
-        {
-          "title": "Nothing Else Matters (Remastered 2021)",
-          "artists": [
-            "Metallica"
-          ],
-          "url": "https://www.deezer.com/track/1483825282",
-          "position": 2
-        },
-        {
-          "title": "Master Of Puppets",
-          "artists": [
-            "Metallica"
-          ],
-          "url": "https://www.deezer.com/track/424565232",
-          "position": 3
-        },
-        {
-          "title": "The Unforgiven (Remastered 2021)",
-          "artists": [
-            "Metallica"
-          ],
-          "url": "https://www.deezer.com/track/1483825242",
-          "position": 4
-        },
-        {
           "title": "Duality",
           "artists": [
             "Slipknot"
@@ -1013,14 +1097,6 @@
           "position": 8
         },
         {
-          "title": "Chop Suey!",
-          "artists": [
-            "System of a Down"
-          ],
-          "url": "https://www.deezer.com/track/859699",
-          "position": 9
-        },
-        {
           "title": "Toxicity",
           "artists": [
             "System of a Down"
@@ -1043,14 +1119,6 @@
           ],
           "url": "https://www.deezer.com/track/559789",
           "position": 12
-        },
-        {
-          "title": "Numb",
-          "artists": [
-            "Linkin Park"
-          ],
-          "url": "https://www.deezer.com/track/677232",
-          "position": 13
         },
         {
           "title": "In the End",
@@ -1173,30 +1241,6 @@
           "position": 28
         },
         {
-          "title": "Paranoid (Remastered 2009)",
-          "artists": [
-            "Black Sabbath"
-          ],
-          "url": "https://www.deezer.com/track/3788156052",
-          "position": 29
-        },
-        {
-          "title": "Iron Man (Remastered 2009)",
-          "artists": [
-            "Black Sabbath"
-          ],
-          "url": "https://www.deezer.com/track/3788156072",
-          "position": 30
-        },
-        {
-          "title": "War Pigs (Remastered 2009)",
-          "artists": [
-            "Black Sabbath"
-          ],
-          "url": "https://www.deezer.com/track/3788156042",
-          "position": 31
-        },
-        {
           "title": "Breaking the Law",
           "artists": [
             "Judas Priest"
@@ -1307,38 +1351,6 @@
           ],
           "url": "https://www.deezer.com/track/106746764",
           "position": 45
-        },
-        {
-          "title": "Wrong Side of Heaven",
-          "artists": [
-            "Five Finger Death Punch"
-          ],
-          "url": "https://www.deezer.com/track/69443939",
-          "position": 46
-        },
-        {
-          "title": "Jekyll and Hyde",
-          "artists": [
-            "Five Finger Death Punch"
-          ],
-          "url": "https://www.deezer.com/track/106156874",
-          "position": 47
-        },
-        {
-          "title": "Wash It All Away",
-          "artists": [
-            "Five Finger Death Punch"
-          ],
-          "url": "https://www.deezer.com/track/106156876",
-          "position": 48
-        },
-        {
-          "title": "Ace of Spades",
-          "artists": [
-            "Motörhead"
-          ],
-          "url": "https://www.deezer.com/track/5169799",
-          "position": 49
         },
         {
           "title": "Overkill",
@@ -1477,22 +1489,6 @@
           "position": 66
         },
         {
-          "title": "Square Hammer",
-          "artists": [
-            "Ghost"
-          ],
-          "url": "https://www.deezer.com/track/132196994",
-          "position": 67
-        },
-        {
-          "title": "Dance Macabre",
-          "artists": [
-            "Ghost"
-          ],
-          "url": "https://www.deezer.com/track/505508992",
-          "position": 68
-        },
-        {
           "title": "Stranded",
           "artists": [
             "Gojira"
@@ -1616,30 +1612,6 @@
           "position": 8
         },
         {
-          "title": "Smoke On The Water",
-          "artists": [
-            "Deep Purple"
-          ],
-          "url": "https://www.deezer.com/track/3137049",
-          "position": 9
-        },
-        {
-          "title": "Highway Star (Remastered 2012)",
-          "artists": [
-            "Deep Purple"
-          ],
-          "url": "https://www.deezer.com/track/60840053",
-          "position": 10
-        },
-        {
-          "title": "Child in Time (1995 Remaster)",
-          "artists": [
-            "Deep Purple"
-          ],
-          "url": "https://www.deezer.com/track/3230170",
-          "position": 11
-        },
-        {
           "title": "Let It Be (Remastered 2009)",
           "artists": [
             "The Beatles"
@@ -1728,14 +1700,6 @@
           "position": 22
         },
         {
-          "title": "Paint It Black",
-          "artists": [
-            "The Rolling Stones"
-          ],
-          "url": "https://www.deezer.com/track/2594482212",
-          "position": 23
-        },
-        {
           "title": "(I Can't Get No) Satisfaction (Mono)",
           "artists": [
             "The Rolling Stones"
@@ -1784,14 +1748,6 @@
           "position": 29
         },
         {
-          "title": "I Don't Want To Miss A Thing",
-          "artists": [
-            "Aerosmith"
-          ],
-          "url": "https://www.deezer.com/track/624823",
-          "position": 30
-        },
-        {
           "title": "Crazy",
           "artists": [
             "Aerosmith"
@@ -1824,52 +1780,12 @@
           "position": 34
         },
         {
-          "title": "Sultans Of Swing",
-          "artists": [
-            "Dire Straits"
-          ],
-          "url": "https://www.deezer.com/track/2263033",
-          "position": 35
-        },
-        {
-          "title": "Money For Nothing",
-          "artists": [
-            "Dire Straits"
-          ],
-          "url": "https://www.deezer.com/track/2514681",
-          "position": 36
-        },
-        {
-          "title": "Walk Of Life",
-          "artists": [
-            "Dire Straits"
-          ],
-          "url": "https://www.deezer.com/track/2514683",
-          "position": 37
-        },
-        {
           "title": "Hotel California (2013 Remaster)",
           "artists": [
             "Eagles"
           ],
           "url": "https://www.deezer.com/track/426703682",
           "position": 38
-        },
-        {
-          "title": "Take It Easy (2013 Remaster)",
-          "artists": [
-            "Eagles"
-          ],
-          "url": "https://www.deezer.com/track/68116147",
-          "position": 39
-        },
-        {
-          "title": "Smells Like Teen Spirit",
-          "artists": [
-            "Nirvana"
-          ],
-          "url": "https://www.deezer.com/track/13791930",
-          "position": 40
         },
         {
           "title": "Come As You Are (Remastered 2021)",
@@ -1886,22 +1802,6 @@
           ],
           "url": "https://www.deezer.com/track/529900491",
           "position": 42
-        },
-        {
-          "title": "Sweet Child O' Mine",
-          "artists": [
-            "Guns N' Roses"
-          ],
-          "url": "https://www.deezer.com/track/122891348",
-          "position": 43
-        },
-        {
-          "title": "Welcome to the Jungle",
-          "artists": [
-            "Guns N' Roses"
-          ],
-          "url": "https://www.deezer.com/track/122891330",
-          "position": 44
         },
         {
           "title": "November Rain",
@@ -1958,54 +1858,6 @@
           ],
           "url": "https://www.deezer.com/track/65445466",
           "position": 51
-        },
-        {
-          "title": "Have You Ever Seen The Rain",
-          "artists": [
-            "Creedence Clearwater Revival"
-          ],
-          "url": "https://www.deezer.com/track/883644",
-          "position": 52
-        },
-        {
-          "title": "Fortunate Son",
-          "artists": [
-            "Creedence Clearwater Revival"
-          ],
-          "url": "https://www.deezer.com/track/883648",
-          "position": 53
-        },
-        {
-          "title": "Bad Moon Rising (Remastered 1985)",
-          "artists": [
-            "Creedence Clearwater Revival"
-          ],
-          "url": "https://www.deezer.com/track/883640",
-          "position": 54
-        },
-        {
-          "title": "Fear of the Dark (2015 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "url": "https://www.deezer.com/track/585608872",
-          "position": 55
-        },
-        {
-          "title": "The Trooper (1998 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "url": "https://www.deezer.com/track/3155089",
-          "position": 56
-        },
-        {
-          "title": "Run to the Hills (1998 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "url": "https://www.deezer.com/track/3158433",
-          "position": 57
         },
         {
           "title": "Группа крови",
@@ -2162,14 +2014,6 @@
             "Ани Лорак"
           ],
           "url": "https://www.deezer.com/track/3585223041",
-          "period": "Из списка мамы"
-        },
-        {
-          "title": "SuperSTAR",
-          "artists": [
-            "Loboda"
-          ],
-          "url": "https://www.deezer.com/track/1975386547",
           "period": "Из списка мамы"
         },
         {
@@ -2700,30 +2544,6 @@
           "position": 3
         },
         {
-          "title": "Radioactive",
-          "artists": [
-            "Imagine Dragons"
-          ],
-          "url": "https://www.deezer.com/track/63510358",
-          "position": 4
-        },
-        {
-          "title": "Demons",
-          "artists": [
-            "Imagine Dragons"
-          ],
-          "url": "https://www.deezer.com/track/63510361",
-          "position": 5
-        },
-        {
-          "title": "Glitter & Gold",
-          "artists": [
-            "Barns Courtney"
-          ],
-          "url": "https://www.deezer.com/track/111263366",
-          "position": 6
-        },
-        {
           "title": "Fire",
           "artists": [
             "Barns Courtney"
@@ -2812,28 +2632,12 @@
           "position": 17
         },
         {
-          "title": "Counting Stars",
-          "artists": [
-            "OneRepublic"
-          ],
-          "url": "https://www.deezer.com/track/78527795",
-          "position": 18
-        },
-        {
           "title": "I Ain't Worried",
           "artists": [
             "OneRepublic"
           ],
           "url": "https://www.deezer.com/track/1764283667",
           "position": 19
-        },
-        {
-          "title": "Apologize",
-          "artists": [
-            "OneRepublic"
-          ],
-          "url": "https://www.deezer.com/track/916829",
-          "position": 20
         },
         {
           "title": "Stressed Out",
@@ -2908,22 +2712,6 @@
           "position": 29
         },
         {
-          "title": "Take Me To Church",
-          "artists": [
-            "Hozier"
-          ],
-          "url": "https://www.deezer.com/track/84791735",
-          "position": 30
-        },
-        {
-          "title": "Too Sweet",
-          "artists": [
-            "Hozier"
-          ],
-          "url": "https://www.deezer.com/track/2704610682",
-          "position": 31
-        },
-        {
           "title": "Heat Waves",
           "artists": [
             "Glass Animals"
@@ -2932,60 +2720,12 @@
           "position": 32
         },
         {
-          "title": "Chandelier",
-          "artists": [
-            "Sia"
-          ],
-          "url": "https://www.deezer.com/track/79587580",
-          "position": 33
-        },
-        {
-          "title": "Cheap Thrills",
-          "artists": [
-            "Sia"
-          ],
-          "url": "https://www.deezer.com/track/118195184",
-          "position": 34
-        },
-        {
-          "title": "Just the Way You Are",
-          "artists": [
-            "Bruno Mars"
-          ],
-          "url": "https://www.deezer.com/track/8011850",
-          "position": 35
-        },
-        {
-          "title": "Grenade",
-          "artists": [
-            "Bruno Mars"
-          ],
-          "url": "https://www.deezer.com/track/8011849",
-          "position": 36
-        },
-        {
           "title": "That's What I Like",
           "artists": [
             "Bruno Mars"
           ],
           "url": "https://www.deezer.com/track/136336116",
           "position": 37
-        },
-        {
-          "title": "Shake It Off",
-          "artists": [
-            "Taylor Swift"
-          ],
-          "url": "https://www.deezer.com/track/89077555",
-          "position": 38
-        },
-        {
-          "title": "Blank Space",
-          "artists": [
-            "Taylor Swift"
-          ],
-          "url": "https://www.deezer.com/track/89077547",
-          "position": 39
         },
         {
           "title": "Cruel Summer",
@@ -3090,22 +2830,6 @@
           ],
           "url": "https://www.deezer.com/track/4601933",
           "position": 52
-        },
-        {
-          "title": "Poker Face",
-          "artists": [
-            "Lady Gaga"
-          ],
-          "url": "https://www.deezer.com/track/2603558",
-          "position": 53
-        },
-        {
-          "title": "Just Dance",
-          "artists": [
-            "Lady Gaga"
-          ],
-          "url": "https://www.deezer.com/track/4709947",
-          "position": 54
         },
         {
           "title": "drivers license",
@@ -3220,14 +2944,6 @@
           "position": 68
         },
         {
-          "title": "We Don't Talk Anymore (feat. Selena Gomez)",
-          "artists": [
-            "Charlie Puth"
-          ],
-          "url": "https://www.deezer.com/track/117797212",
-          "position": 69
-        },
-        {
           "title": "Wake Me Up",
           "artists": [
             "Avicii"
@@ -3250,30 +2966,6 @@
           ],
           "url": "https://www.deezer.com/track/70266758",
           "position": 72
-        },
-        {
-          "title": "Hello",
-          "artists": [
-            "Adele"
-          ],
-          "url": "https://www.deezer.com/track/138545995",
-          "position": 73
-        },
-        {
-          "title": "Rolling in the Deep",
-          "artists": [
-            "Adele"
-          ],
-          "url": "https://www.deezer.com/track/8086126",
-          "position": 74
-        },
-        {
-          "title": "Someone Like You",
-          "artists": [
-            "Adele"
-          ],
-          "url": "https://www.deezer.com/track/8086136",
-          "position": 75
         },
         {
           "title": "Stay With Me",
@@ -4529,14 +4221,6 @@
           "position": 7
         },
         {
-          "title": "Stronger",
-          "artists": [
-            "Kanye West"
-          ],
-          "url": "https://www.deezer.com/track/1178682",
-          "position": 8
-        },
-        {
           "title": "POWER",
           "artists": [
             "Kanye West"
@@ -4913,22 +4597,6 @@
           "position": 55
         },
         {
-          "title": "In Da Club",
-          "artists": [
-            "50 Cent"
-          ],
-          "url": "https://www.deezer.com/track/1141668",
-          "position": 56
-        },
-        {
-          "title": "P.I.M.P.",
-          "artists": [
-            "50 Cent"
-          ],
-          "url": "https://www.deezer.com/track/1141674",
-          "position": 57
-        },
-        {
           "title": "Still D.R.E.",
           "artists": [
             "Dr. Dre"
@@ -4951,14 +4619,6 @@
           ],
           "url": "https://www.deezer.com/track/128743593",
           "position": 60
-        },
-        {
-          "title": "Drop It Like It's Hot",
-          "artists": [
-            "Snoop Dogg"
-          ],
-          "url": "https://www.deezer.com/track/67461455",
-          "position": 61
         },
         {
           "title": "Who Am I (What’s My Name)?",
@@ -5015,14 +4675,6 @@
           ],
           "url": "https://www.deezer.com/track/3616649",
           "position": 68
-        },
-        {
-          "title": "California Love",
-          "artists": [
-            "2Pac"
-          ],
-          "url": "https://www.deezer.com/track/65163036",
-          "position": 69
         },
         {
           "title": "Changes",
@@ -7305,13 +6957,6 @@
             "OBLADAET"
           ],
           "url": "https://www.deezer.com/track/354162171"
-        },
-        {
-          "title": "MONSTER TRAKK",
-          "artists": [
-            "OBLADAET"
-          ],
-          "url": "https://www.deezer.com/track/2536503011"
         },
         {
           "title": "Бабочки",
@@ -10479,16 +10124,6 @@
             7800506
           ],
           "url": "https://www.deezer.com/track/1084610982"
-        },
-        {
-          "title": "MONSTER TRAKK",
-          "artists": [
-            "OBLADAET"
-          ],
-          "artistIds": [
-            7800506
-          ],
-          "url": "https://www.deezer.com/track/2536503011"
         },
         {
           "title": "Бабочки",
@@ -15454,16 +15089,6 @@
           "url": "https://www.deezer.com/track/1084610982"
         },
         {
-          "title": "MONSTER TRAKK",
-          "artists": [
-            "OBLADAET"
-          ],
-          "artistIds": [
-            7800506
-          ],
-          "url": "https://www.deezer.com/track/2536503011"
-        },
-        {
           "title": "Бабочки",
           "artists": [
             "OBLADAET"
@@ -16287,16 +15912,6 @@
           "url": "https://www.deezer.com/track/528330441"
         },
         {
-          "title": "Radioactive",
-          "artists": [
-            "Imagine Dragons"
-          ],
-          "artistIds": [
-            416239
-          ],
-          "url": "https://www.deezer.com/track/63510358"
-        },
-        {
           "title": "Shape of You",
           "artists": [
             "Ed Sheeran"
@@ -16325,16 +15940,6 @@
             1182
           ],
           "url": "https://www.deezer.com/track/70322130"
-        },
-        {
-          "title": "Grenade",
-          "artists": [
-            "Bruno Mars"
-          ],
-          "artistIds": [
-            429675
-          ],
-          "url": "https://www.deezer.com/track/8011849"
         },
         {
           "title": "Diamonds",
@@ -16757,16 +16362,6 @@
           "url": "https://www.deezer.com/track/70322134"
         },
         {
-          "title": "Demons",
-          "artists": [
-            "Imagine Dragons"
-          ],
-          "artistIds": [
-            416239
-          ],
-          "url": "https://www.deezer.com/track/63510361"
-        },
-        {
           "title": "Bad Liar",
           "artists": [
             "Imagine Dragons"
@@ -16795,16 +16390,6 @@
             416239
           ],
           "url": "https://www.deezer.com/track/579892872"
-        },
-        {
-          "title": "On Top Of The World",
-          "artists": [
-            "Imagine Dragons"
-          ],
-          "artistIds": [
-            416239
-          ],
-          "url": "https://www.deezer.com/track/63510362"
         },
         {
           "title": "Warriors",
@@ -17410,36 +16995,6 @@
           "url": "https://www.deezer.com/track/528330441"
         },
         {
-          "title": "Radioactive",
-          "artists": [
-            "Imagine Dragons"
-          ],
-          "artistIds": [
-            416239
-          ],
-          "url": "https://www.deezer.com/track/63510358"
-        },
-        {
-          "title": "Demons",
-          "artists": [
-            "Imagine Dragons"
-          ],
-          "artistIds": [
-            416239
-          ],
-          "url": "https://www.deezer.com/track/63510361"
-        },
-        {
-          "title": "Glitter & Gold",
-          "artists": [
-            "Barns Courtney"
-          ],
-          "artistIds": [
-            9074712
-          ],
-          "url": "https://www.deezer.com/track/111263366"
-        },
-        {
           "title": "Fire",
           "artists": [
             "Barns Courtney"
@@ -17540,16 +17095,6 @@
           "url": "https://www.deezer.com/track/80134624"
         },
         {
-          "title": "Counting Stars",
-          "artists": [
-            "OneRepublic"
-          ],
-          "artistIds": [
-            74398
-          ],
-          "url": "https://www.deezer.com/track/78527795"
-        },
-        {
           "title": "I Ain't Worried",
           "artists": [
             "OneRepublic"
@@ -17558,16 +17103,6 @@
             74398
           ],
           "url": "https://www.deezer.com/track/1764283667"
-        },
-        {
-          "title": "Apologize",
-          "artists": [
-            "OneRepublic"
-          ],
-          "artistIds": [
-            74398
-          ],
-          "url": "https://www.deezer.com/track/916829"
         },
         {
           "title": "Stressed Out",
@@ -17660,66 +17195,6 @@
           "url": "https://www.deezer.com/track/66660698"
         },
         {
-          "title": "Take Me To Church",
-          "artists": [
-            "Hozier"
-          ],
-          "artistIds": [
-            5062414
-          ],
-          "url": "https://www.deezer.com/track/84791735"
-        },
-        {
-          "title": "Too Sweet",
-          "artists": [
-            "Hozier"
-          ],
-          "artistIds": [
-            5062414
-          ],
-          "url": "https://www.deezer.com/track/2704610682"
-        },
-        {
-          "title": "Chandelier",
-          "artists": [
-            "Sia"
-          ],
-          "artistIds": [
-            3469
-          ],
-          "url": "https://www.deezer.com/track/79587580"
-        },
-        {
-          "title": "Cheap Thrills",
-          "artists": [
-            "Sia"
-          ],
-          "artistIds": [
-            3469
-          ],
-          "url": "https://www.deezer.com/track/118195184"
-        },
-        {
-          "title": "Just the Way You Are",
-          "artists": [
-            "Bruno Mars"
-          ],
-          "artistIds": [
-            429675
-          ],
-          "url": "https://www.deezer.com/track/8011850"
-        },
-        {
-          "title": "Grenade",
-          "artists": [
-            "Bruno Mars"
-          ],
-          "artistIds": [
-            429675
-          ],
-          "url": "https://www.deezer.com/track/8011849"
-        },
-        {
           "title": "That's What I Like",
           "artists": [
             "Bruno Mars"
@@ -17728,26 +17203,6 @@
             429675
           ],
           "url": "https://www.deezer.com/track/136336116"
-        },
-        {
-          "title": "Shake It Off",
-          "artists": [
-            "Taylor Swift"
-          ],
-          "artistIds": [
-            12246
-          ],
-          "url": "https://www.deezer.com/track/89077555"
-        },
-        {
-          "title": "Blank Space",
-          "artists": [
-            "Taylor Swift"
-          ],
-          "artistIds": [
-            12246
-          ],
-          "url": "https://www.deezer.com/track/89077547"
         },
         {
           "title": "Cruel Summer",
@@ -17850,26 +17305,6 @@
           "url": "https://www.deezer.com/track/4601933"
         },
         {
-          "title": "Poker Face",
-          "artists": [
-            "Lady Gaga"
-          ],
-          "artistIds": [
-            75491
-          ],
-          "url": "https://www.deezer.com/track/2603558"
-        },
-        {
-          "title": "Just Dance",
-          "artists": [
-            "Lady Gaga"
-          ],
-          "artistIds": [
-            75491
-          ],
-          "url": "https://www.deezer.com/track/4709947"
-        },
-        {
           "title": "drivers license",
           "artists": [
             "Olivia Rodrigo"
@@ -17960,16 +17395,6 @@
           "url": "https://www.deezer.com/track/807205422"
         },
         {
-          "title": "We Don't Talk Anymore (feat. Selena Gomez)",
-          "artists": [
-            "Charlie Puth"
-          ],
-          "artistIds": [
-            1362735
-          ],
-          "url": "https://www.deezer.com/track/117797212"
-        },
-        {
           "title": "Wake Me Up",
           "artists": [
             "Avicii"
@@ -17998,36 +17423,6 @@
             293585
           ],
           "url": "https://www.deezer.com/track/70266758"
-        },
-        {
-          "title": "Hello",
-          "artists": [
-            "Adele"
-          ],
-          "artistIds": [
-            75798
-          ],
-          "url": "https://www.deezer.com/track/138545995"
-        },
-        {
-          "title": "Rolling in the Deep",
-          "artists": [
-            "Adele"
-          ],
-          "artistIds": [
-            75798
-          ],
-          "url": "https://www.deezer.com/track/8086126"
-        },
-        {
-          "title": "Someone Like You",
-          "artists": [
-            "Adele"
-          ],
-          "artistIds": [
-            75798
-          ],
-          "url": "https://www.deezer.com/track/8086136"
         },
         {
           "title": "Stay With Me",
@@ -18370,26 +17765,6 @@
           "url": "https://www.deezer.com/track/71645432"
         },
         {
-          "title": "The One That Got Away",
-          "artists": [
-            "Katy Perry"
-          ],
-          "artistIds": [
-            144227
-          ],
-          "url": "https://www.deezer.com/track/15395452"
-        },
-        {
-          "title": "I Kissed A Girl",
-          "artists": [
-            "Katy Perry"
-          ],
-          "artistIds": [
-            144227
-          ],
-          "url": "https://www.deezer.com/track/3169161"
-        },
-        {
           "title": "Last Friday Night (T.G.I.F.)",
           "artists": [
             "Katy Perry"
@@ -18410,16 +17785,6 @@
           "url": "https://www.deezer.com/track/3214169391"
         },
         {
-          "title": "Paparazzi",
-          "artists": [
-            "Lady Gaga"
-          ],
-          "artistIds": [
-            75491
-          ],
-          "url": "https://www.deezer.com/track/4709950"
-        },
-        {
           "title": "Shallow",
           "artists": [
             "Lady Gaga"
@@ -18428,16 +17793,6 @@
             75491
           ],
           "url": "https://www.deezer.com/track/561856742"
-        },
-        {
-          "title": "Judas",
-          "artists": [
-            "Lady Gaga"
-          ],
-          "artistIds": [
-            75491
-          ],
-          "url": "https://www.deezer.com/track/11747933"
         },
         {
           "title": "expectations",
@@ -18520,16 +17875,6 @@
           "url": "https://www.deezer.com/track/1873297197"
         },
         {
-          "title": "It Ain't Me",
-          "artists": [
-            "Kygo"
-          ],
-          "artistIds": [
-            4768753
-          ],
-          "url": "https://www.deezer.com/track/142328215"
-        },
-        {
           "title": "People You Know",
           "artists": [
             "Selena Gomez"
@@ -18538,16 +17883,6 @@
             292185
           ],
           "url": "https://www.deezer.com/track/926219252"
-        },
-        {
-          "title": "Same Old Love",
-          "artists": [
-            "Selena Gomez"
-          ],
-          "artistIds": [
-            292185
-          ],
-          "url": "https://www.deezer.com/track/109169058"
         },
         {
           "title": "Bruises",
@@ -18610,16 +17945,6 @@
           "url": "https://www.deezer.com/track/123883254"
         },
         {
-          "title": "I Need Your Love (feat. Ellie Goulding)",
-          "artists": [
-            "Calvin Harris"
-          ],
-          "artistIds": [
-            12178
-          ],
-          "url": "https://www.deezer.com/track/61142290"
-        },
-        {
           "title": "Titanium (feat. Sia)",
           "artists": [
             "David Guetta"
@@ -18628,26 +17953,6 @@
             542
           ],
           "url": "https://www.deezer.com/track/62847142"
-        },
-        {
-          "title": "Sexy Bitch (feat. Akon)",
-          "artists": [
-            "David Guetta"
-          ],
-          "artistIds": [
-            542
-          ],
-          "url": "https://www.deezer.com/track/673165762"
-        },
-        {
-          "title": "Say My Name",
-          "artists": [
-            "David Guetta"
-          ],
-          "artistIds": [
-            542
-          ],
-          "url": "https://www.deezer.com/track/553056592"
         },
         {
           "title": "Save Me Tonight",
@@ -18860,26 +18165,6 @@
           "url": "https://www.deezer.com/track/528330431"
         },
         {
-          "title": "On Top Of The World",
-          "artists": [
-            "Imagine Dragons"
-          ],
-          "artistIds": [
-            416239
-          ],
-          "url": "https://www.deezer.com/track/63510362"
-        },
-        {
-          "title": "Moves Like Jagger (Studio Recording From \"The Voice\" Performance)",
-          "artists": [
-            "Maroon 5"
-          ],
-          "artistIds": [
-            1188
-          ],
-          "url": "https://www.deezer.com/track/12724819"
-        },
-        {
           "title": "Maps",
           "artists": [
             "Maroon 5"
@@ -18898,16 +18183,6 @@
             1188
           ],
           "url": "https://www.deezer.com/track/1165303"
-        },
-        {
-          "title": "Secrets",
-          "artists": [
-            "OneRepublic"
-          ],
-          "artistIds": [
-            74398
-          ],
-          "url": "https://www.deezer.com/track/5425214"
         },
         {
           "title": "Need Your Love",
@@ -19010,16 +18285,6 @@
           "url": "https://www.deezer.com/track/117708444"
         },
         {
-          "title": "Elastic Heart",
-          "artists": [
-            "Sia"
-          ],
-          "artistIds": [
-            3469
-          ],
-          "url": "https://www.deezer.com/track/79587594"
-        },
-        {
           "title": "Drag Path",
           "artists": [
             "Twenty One Pilots"
@@ -19038,16 +18303,6 @@
             647650
           ],
           "url": "https://www.deezer.com/track/3984403821"
-        },
-        {
-          "title": "505",
-          "artists": [
-            "Arctic Monkeys"
-          ],
-          "artistIds": [
-            1182
-          ],
-          "url": "https://www.deezer.com/track/4315389"
         },
         {
           "title": "Why'd You Only Call Me When You're High?",
@@ -19090,26 +18345,6 @@
           "url": "https://www.deezer.com/track/2526400971"
         },
         {
-          "title": "Work Song",
-          "artists": [
-            "Hozier"
-          ],
-          "artistIds": [
-            5062414
-          ],
-          "url": "https://www.deezer.com/track/75812871"
-        },
-        {
-          "title": "Like Real People Do",
-          "artists": [
-            "Hozier"
-          ],
-          "artistIds": [
-            5062414
-          ],
-          "url": "https://www.deezer.com/track/84791753"
-        },
-        {
           "title": "Ur So F**kInG cOoL",
           "artists": [
             "Tones and I"
@@ -19130,16 +18365,6 @@
           "url": "https://www.deezer.com/track/899198282"
         },
         {
-          "title": "Halo",
-          "artists": [
-            "Beyoncé"
-          ],
-          "artistIds": [
-            145
-          ],
-          "url": "https://www.deezer.com/track/2553265"
-        },
-        {
           "title": "TEXAS HOLD 'EM",
           "artists": [
             "Beyoncé"
@@ -19148,16 +18373,6 @@
             145
           ],
           "url": "https://www.deezer.com/track/2658723742"
-        },
-        {
-          "title": "Sweet Dreams",
-          "artists": [
-            "Beyoncé"
-          ],
-          "artistIds": [
-            145
-          ],
-          "url": "https://www.deezer.com/track/90428591"
         },
         {
           "title": "Single Ladies (Put a Ring on It)",
@@ -19270,16 +18485,6 @@
           "url": "https://www.deezer.com/track/1278960402"
         },
         {
-          "title": "Marry You",
-          "artists": [
-            "Bruno Mars"
-          ],
-          "artistIds": [
-            429675
-          ],
-          "url": "https://www.deezer.com/track/8011854"
-        },
-        {
           "title": "When I Was Your Man",
           "artists": [
             "Bruno Mars"
@@ -19290,16 +18495,6 @@
           "url": "https://www.deezer.com/track/62724019"
         },
         {
-          "title": "Talking to the Moon",
-          "artists": [
-            "Bruno Mars"
-          ],
-          "artistIds": [
-            429675
-          ],
-          "url": "https://www.deezer.com/track/8011855"
-        },
-        {
           "title": "24K Magic",
           "artists": [
             "Bruno Mars"
@@ -19308,16 +18503,6 @@
             429675
           ],
           "url": "https://www.deezer.com/track/136336110"
-        },
-        {
-          "title": "Fluorescent Adolescent",
-          "artists": [
-            "Arctic Monkeys"
-          ],
-          "artistIds": [
-            1182
-          ],
-          "url": "https://www.deezer.com/track/4315382"
         },
         {
           "title": "Snap Out Of It",
@@ -19380,16 +18565,6 @@
           "url": "https://www.deezer.com/track/3867905131"
         },
         {
-          "title": "The Lazy Song",
-          "artists": [
-            "Bruno Mars"
-          ],
-          "artistIds": [
-            429675
-          ],
-          "url": "https://www.deezer.com/track/8011853"
-        },
-        {
           "title": "Treasure",
           "artists": [
             "Bruno Mars"
@@ -19398,16 +18573,6 @@
             429675
           ],
           "url": "https://www.deezer.com/track/62724017"
-        },
-        {
-          "title": "Viva La Vida",
-          "artists": [
-            "Coldplay"
-          ],
-          "artistIds": [
-            892
-          ],
-          "url": "https://www.deezer.com/track/13444256"
         },
         {
           "title": "Hymn for the Weekend",
@@ -19458,26 +18623,6 @@
             416239
           ],
           "url": "https://www.deezer.com/track/1420768152"
-        },
-        {
-          "title": "Alejandro",
-          "artists": [
-            "Lady Gaga"
-          ],
-          "artistIds": [
-            75491
-          ],
-          "url": "https://www.deezer.com/track/4709938"
-        },
-        {
-          "title": "Telephone",
-          "artists": [
-            "Lady Gaga"
-          ],
-          "artistIds": [
-            75491
-          ],
-          "url": "https://www.deezer.com/track/4709944"
         },
         {
           "title": "Always Remember Us This Way",
@@ -19603,16 +18748,6 @@
           "url": "https://www.deezer.com/track/2566497572"
         },
         {
-          "title": "Smells Like Teen Spirit",
-          "artists": [
-            "Nirvana"
-          ],
-          "artistIds": [
-            415
-          ],
-          "url": "https://www.deezer.com/track/13791930"
-        },
-        {
           "title": "Лесник",
           "artists": [
             "Король и Шут"
@@ -19701,36 +18836,6 @@
             860
           ],
           "url": "https://www.deezer.com/track/116914122"
-        },
-        {
-          "title": "Smoke On The Water",
-          "artists": [
-            "Deep Purple"
-          ],
-          "artistIds": [
-            864
-          ],
-          "url": "https://www.deezer.com/track/3137049"
-        },
-        {
-          "title": "Highway Star (Remastered 2012)",
-          "artists": [
-            "Deep Purple"
-          ],
-          "artistIds": [
-            864
-          ],
-          "url": "https://www.deezer.com/track/60840053"
-        },
-        {
-          "title": "Child in Time (1995 Remaster)",
-          "artists": [
-            "Deep Purple"
-          ],
-          "artistIds": [
-            864
-          ],
-          "url": "https://www.deezer.com/track/3230170"
         },
         {
           "title": "Let It Be (Remastered 2009)",
@@ -19843,16 +18948,6 @@
           "url": "https://www.deezer.com/track/92720046"
         },
         {
-          "title": "Paint It Black",
-          "artists": [
-            "The Rolling Stones"
-          ],
-          "artistIds": [
-            267273492
-          ],
-          "url": "https://www.deezer.com/track/2594482212"
-        },
-        {
           "title": "(I Can't Get No) Satisfaction (Mono)",
           "artists": [
             "The Rolling Stones"
@@ -19913,16 +19008,6 @@
           "url": "https://www.deezer.com/track/114295646"
         },
         {
-          "title": "I Don't Want To Miss A Thing",
-          "artists": [
-            "Aerosmith"
-          ],
-          "artistIds": [
-            1005
-          ],
-          "url": "https://www.deezer.com/track/624823"
-        },
-        {
           "title": "Crazy",
           "artists": [
             "Aerosmith"
@@ -19963,36 +19048,6 @@
           "url": "https://www.deezer.com/track/927907"
         },
         {
-          "title": "Sultans Of Swing",
-          "artists": [
-            "Dire Straits"
-          ],
-          "artistIds": [
-            176
-          ],
-          "url": "https://www.deezer.com/track/2263033"
-        },
-        {
-          "title": "Money For Nothing",
-          "artists": [
-            "Dire Straits"
-          ],
-          "artistIds": [
-            176
-          ],
-          "url": "https://www.deezer.com/track/2514681"
-        },
-        {
-          "title": "Walk Of Life",
-          "artists": [
-            "Dire Straits"
-          ],
-          "artistIds": [
-            176
-          ],
-          "url": "https://www.deezer.com/track/2514683"
-        },
-        {
           "title": "Hotel California (2013 Remaster)",
           "artists": [
             "Eagles"
@@ -20001,16 +19056,6 @@
             210
           ],
           "url": "https://www.deezer.com/track/426703682"
-        },
-        {
-          "title": "Take It Easy (2013 Remaster)",
-          "artists": [
-            "Eagles"
-          ],
-          "artistIds": [
-            210
-          ],
-          "url": "https://www.deezer.com/track/68116147"
         },
         {
           "title": "Come As You Are (Remastered 2021)",
@@ -20031,26 +19076,6 @@
             415
           ],
           "url": "https://www.deezer.com/track/529900491"
-        },
-        {
-          "title": "Sweet Child O' Mine",
-          "artists": [
-            "Guns N' Roses"
-          ],
-          "artistIds": [
-            663
-          ],
-          "url": "https://www.deezer.com/track/122891348"
-        },
-        {
-          "title": "Welcome to the Jungle",
-          "artists": [
-            "Guns N' Roses"
-          ],
-          "artistIds": [
-            663
-          ],
-          "url": "https://www.deezer.com/track/122891330"
         },
         {
           "title": "November Rain",
@@ -20121,66 +19146,6 @@
             847
           ],
           "url": "https://www.deezer.com/track/65445466"
-        },
-        {
-          "title": "Have You Ever Seen The Rain",
-          "artists": [
-            "Creedence Clearwater Revival"
-          ],
-          "artistIds": [
-            2468
-          ],
-          "url": "https://www.deezer.com/track/883644"
-        },
-        {
-          "title": "Fortunate Son",
-          "artists": [
-            "Creedence Clearwater Revival"
-          ],
-          "artistIds": [
-            2468
-          ],
-          "url": "https://www.deezer.com/track/883648"
-        },
-        {
-          "title": "Bad Moon Rising (Remastered 1985)",
-          "artists": [
-            "Creedence Clearwater Revival"
-          ],
-          "artistIds": [
-            2468
-          ],
-          "url": "https://www.deezer.com/track/883640"
-        },
-        {
-          "title": "Fear of the Dark (2015 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "artistIds": [
-            931
-          ],
-          "url": "https://www.deezer.com/track/585608872"
-        },
-        {
-          "title": "The Trooper (1998 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "artistIds": [
-            931
-          ],
-          "url": "https://www.deezer.com/track/3155089"
-        },
-        {
-          "title": "Run to the Hills (1998 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "artistIds": [
-            931
-          ],
-          "url": "https://www.deezer.com/track/3158433"
         },
         {
           "title": "Группа крови",
@@ -20283,16 +19248,6 @@
           "url": "https://www.deezer.com/track/116914036"
         },
         {
-          "title": "Splat!",
-          "artists": [
-            "Deep Purple"
-          ],
-          "artistIds": [
-            864
-          ],
-          "url": "https://www.deezer.com/track/4338791802"
-        },
-        {
           "title": "Here Comes The Sun (Remastered 2009)",
           "artists": [
             "The Beatles"
@@ -20363,26 +19318,6 @@
           "url": "https://www.deezer.com/track/114295654"
         },
         {
-          "title": "Rock You Like a Hurricane (Remastered 2015)",
-          "artists": [
-            "Scorpions"
-          ],
-          "artistIds": [
-            863
-          ],
-          "url": "https://www.deezer.com/track/3807039752"
-        },
-        {
-          "title": "Money For Nothing (Edit)",
-          "artists": [
-            "Dire Straits"
-          ],
-          "artistIds": [
-            176
-          ],
-          "url": "https://www.deezer.com/track/4679126"
-        },
-        {
           "title": "New Kid in Town (2013 Remaster)",
           "artists": [
             "Eagles"
@@ -20411,26 +19346,6 @@
             415
           ],
           "url": "https://www.deezer.com/track/70466227"
-        },
-        {
-          "title": "Knockin' On Heaven's Door",
-          "artists": [
-            "Guns N' Roses"
-          ],
-          "artistIds": [
-            663
-          ],
-          "url": "https://www.deezer.com/track/122891332"
-        },
-        {
-          "title": "Paradise City",
-          "artists": [
-            "Guns N' Roses"
-          ],
-          "artistIds": [
-            663
-          ],
-          "url": "https://www.deezer.com/track/122891352"
         },
         {
           "title": "Runaway",
@@ -20471,16 +19386,6 @@
             847
           ],
           "url": "https://www.deezer.com/track/65445461"
-        },
-        {
-          "title": "Proud Mary",
-          "artists": [
-            "Creedence Clearwater Revival"
-          ],
-          "artistIds": [
-            2468
-          ],
-          "url": "https://www.deezer.com/track/883642"
         },
         {
           "title": "I Was Made For Lovin' You",
@@ -20613,16 +19518,6 @@
           "url": "https://www.deezer.com/track/857972"
         },
         {
-          "title": "Amanda",
-          "artists": [
-            "Boston"
-          ],
-          "artistIds": [
-            3339
-          ],
-          "url": "https://www.deezer.com/track/2526491"
-        },
-        {
           "title": "Peace of Mind",
           "artists": [
             "Boston"
@@ -20713,16 +19608,6 @@
           "url": "https://www.deezer.com/track/95733994"
         },
         {
-          "title": "Living Next Door to Alice",
-          "artists": [
-            "Smokie"
-          ],
-          "artistIds": [
-            12818
-          ],
-          "url": "https://www.deezer.com/track/69883086"
-        },
-        {
           "title": "Lay Back in the Arms of Someone",
           "artists": [
             "Smokie"
@@ -20751,26 +19636,6 @@
             12818
           ],
           "url": "https://www.deezer.com/track/96061642"
-        },
-        {
-          "title": "In The Army Now",
-          "artists": [
-            "Status Quo"
-          ],
-          "artistIds": [
-            694
-          ],
-          "url": "https://www.deezer.com/track/2319606"
-        },
-        {
-          "title": "Whatever You Want",
-          "artists": [
-            "Status Quo"
-          ],
-          "artistIds": [
-            694
-          ],
-          "url": "https://www.deezer.com/track/1181897"
         },
         {
           "title": "Rockin' All Over The World",
@@ -20813,16 +19678,6 @@
           "url": "https://www.deezer.com/track/88902737"
         },
         {
-          "title": "(Everything I Do) I Do It For You",
-          "artists": [
-            "Bryan Adams"
-          ],
-          "artistIds": [
-            170
-          ],
-          "url": "https://www.deezer.com/track/1182159"
-        },
-        {
           "title": "Run To You",
           "artists": [
             "Bryan Adams"
@@ -20831,16 +19686,6 @@
             170
           ],
           "url": "https://www.deezer.com/track/88902735"
-        },
-        {
-          "title": "It's Probably Me",
-          "artists": [
-            "Sting"
-          ],
-          "artistIds": [
-            368
-          ],
-          "url": "https://www.deezer.com/track/1140658"
         },
         {
           "title": "Sweet Home Alabama",
@@ -21021,86 +19866,6 @@
             864
           ],
           "url": "https://www.deezer.com/track/709708312"
-        },
-        {
-          "title": "Hush (1998 Remaster)",
-          "artists": [
-            "Deep Purple"
-          ],
-          "artistIds": [
-            864
-          ],
-          "url": "https://www.deezer.com/track/3436057"
-        },
-        {
-          "title": "Black Night (1995 Remaster)",
-          "artists": [
-            "Deep Purple"
-          ],
-          "artistIds": [
-            864
-          ],
-          "url": "https://www.deezer.com/track/3230175"
-        },
-        {
-          "title": "Romeo And Juliet",
-          "artists": [
-            "Dire Straits"
-          ],
-          "artistIds": [
-            176
-          ],
-          "url": "https://www.deezer.com/track/2514677"
-        },
-        {
-          "title": "So Far Away (Full Version)",
-          "artists": [
-            "Dire Straits"
-          ],
-          "artistIds": [
-            176
-          ],
-          "url": "https://www.deezer.com/track/2514680"
-        },
-        {
-          "title": "Lady Writer",
-          "artists": [
-            "Dire Straits"
-          ],
-          "artistIds": [
-            176
-          ],
-          "url": "https://www.deezer.com/track/2236742"
-        },
-        {
-          "title": "The Number of the Beast (1998 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "artistIds": [
-            931
-          ],
-          "url": "https://www.deezer.com/track/3158432"
-        },
-        {
-          "title": "Be Quick or Be Dead (2015 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "artistIds": [
-            931
-          ],
-          "url": "https://www.deezer.com/track/585608762"
-        },
-        {
-          "title": "Afraid to Shoot Strangers (2015 Remaster)",
-          "artists": [
-            "Iron Maiden"
-          ],
-          "artistIds": [
-            931
-          ],
-          "url": "https://www.deezer.com/track/585608782"
         },
         {
           "title": "Black Dog (Remaster)",
@@ -21296,16 +20061,6 @@
       "limit": 500,
       "tracks": [
         {
-          "title": "Numb",
-          "artists": [
-            "Linkin Park"
-          ],
-          "artistIds": [
-            92
-          ],
-          "url": "https://www.deezer.com/track/677232"
-        },
-        {
           "title": "In the End",
           "artists": [
             "Linkin Park"
@@ -21324,46 +20079,6 @@
             464
           ],
           "url": "https://www.deezer.com/track/14381638"
-        },
-        {
-          "title": "Enter Sandman (Remastered 2021)",
-          "artists": [
-            "Metallica"
-          ],
-          "artistIds": [
-            119
-          ],
-          "url": "https://www.deezer.com/track/1483825212"
-        },
-        {
-          "title": "Nothing Else Matters (Remastered 2021)",
-          "artists": [
-            "Metallica"
-          ],
-          "artistIds": [
-            119
-          ],
-          "url": "https://www.deezer.com/track/1483825282"
-        },
-        {
-          "title": "Master Of Puppets",
-          "artists": [
-            "Metallica"
-          ],
-          "artistIds": [
-            119
-          ],
-          "url": "https://www.deezer.com/track/424565232"
-        },
-        {
-          "title": "The Unforgiven (Remastered 2021)",
-          "artists": [
-            "Metallica"
-          ],
-          "artistIds": [
-            119
-          ],
-          "url": "https://www.deezer.com/track/1483825242"
         },
         {
           "title": "Duality",
@@ -21404,16 +20119,6 @@
             117
           ],
           "url": "https://www.deezer.com/track/1195567"
-        },
-        {
-          "title": "Chop Suey!",
-          "artists": [
-            "System of a Down"
-          ],
-          "artistIds": [
-            458
-          ],
-          "url": "https://www.deezer.com/track/859699"
         },
         {
           "title": "Toxicity",
@@ -21576,36 +20281,6 @@
           "url": "https://www.deezer.com/track/14637142"
         },
         {
-          "title": "Paranoid (Remastered 2009)",
-          "artists": [
-            "Black Sabbath"
-          ],
-          "artistIds": [
-            647
-          ],
-          "url": "https://www.deezer.com/track/3788156052"
-        },
-        {
-          "title": "Iron Man (Remastered 2009)",
-          "artists": [
-            "Black Sabbath"
-          ],
-          "artistIds": [
-            647
-          ],
-          "url": "https://www.deezer.com/track/3788156072"
-        },
-        {
-          "title": "War Pigs (Remastered 2009)",
-          "artists": [
-            "Black Sabbath"
-          ],
-          "artistIds": [
-            647
-          ],
-          "url": "https://www.deezer.com/track/3788156042"
-        },
-        {
           "title": "Breaking the Law",
           "artists": [
             "Judas Priest"
@@ -21746,46 +20421,6 @@
           "url": "https://www.deezer.com/track/106746764"
         },
         {
-          "title": "Wrong Side of Heaven",
-          "artists": [
-            "Five Finger Death Punch"
-          ],
-          "artistIds": [
-            158710
-          ],
-          "url": "https://www.deezer.com/track/69443939"
-        },
-        {
-          "title": "Jekyll and Hyde",
-          "artists": [
-            "Five Finger Death Punch"
-          ],
-          "artistIds": [
-            158710
-          ],
-          "url": "https://www.deezer.com/track/106156874"
-        },
-        {
-          "title": "Wash It All Away",
-          "artists": [
-            "Five Finger Death Punch"
-          ],
-          "artistIds": [
-            158710
-          ],
-          "url": "https://www.deezer.com/track/106156876"
-        },
-        {
-          "title": "Ace of Spades",
-          "artists": [
-            "Motörhead"
-          ],
-          "artistIds": [
-            2996
-          ],
-          "url": "https://www.deezer.com/track/5169799"
-        },
-        {
           "title": "Overkill",
           "artists": [
             "Motörhead"
@@ -21914,26 +20549,6 @@
             8506054
           ],
           "url": "https://www.deezer.com/track/1881054427"
-        },
-        {
-          "title": "Square Hammer",
-          "artists": [
-            "Ghost"
-          ],
-          "artistIds": [
-            8506054
-          ],
-          "url": "https://www.deezer.com/track/132196994"
-        },
-        {
-          "title": "Dance Macabre",
-          "artists": [
-            "Ghost"
-          ],
-          "artistIds": [
-            8506054
-          ],
-          "url": "https://www.deezer.com/track/505508992"
         },
         {
           "title": "Stranded",
@@ -22117,16 +20732,6 @@
             4495513
           ],
           "url": "https://www.deezer.com/track/2386586085"
-        },
-        {
-          "title": "Stronger",
-          "artists": [
-            "Kanye West"
-          ],
-          "artistIds": [
-            230
-          ],
-          "url": "https://www.deezer.com/track/1178682"
         },
         {
           "title": "POWER",
@@ -22529,26 +21134,6 @@
           "url": "https://www.deezer.com/track/1109737"
         },
         {
-          "title": "In Da Club",
-          "artists": [
-            "50 Cent"
-          ],
-          "artistIds": [
-            66
-          ],
-          "url": "https://www.deezer.com/track/1141668"
-        },
-        {
-          "title": "P.I.M.P.",
-          "artists": [
-            "50 Cent"
-          ],
-          "artistIds": [
-            66
-          ],
-          "url": "https://www.deezer.com/track/1141674"
-        },
-        {
           "title": "Still D.R.E.",
           "artists": [
             "Dr. Dre"
@@ -22579,16 +21164,6 @@
           "url": "https://www.deezer.com/track/128743593"
         },
         {
-          "title": "Drop It Like It's Hot",
-          "artists": [
-            "Snoop Dogg"
-          ],
-          "artistIds": [
-            3
-          ],
-          "url": "https://www.deezer.com/track/67461455"
-        },
-        {
           "title": "Who Am I (What’s My Name)?",
           "artists": [
             "Snoop Dogg"
@@ -22607,16 +21182,6 @@
             9551192
           ],
           "url": "https://www.deezer.com/track/120026876"
-        },
-        {
-          "title": "California Love",
-          "artists": [
-            "2Pac"
-          ],
-          "artistIds": [
-            167095
-          ],
-          "url": "https://www.deezer.com/track/65163036"
         },
         {
           "title": "Changes",
@@ -22699,16 +21264,6 @@
           "url": "https://www.deezer.com/track/145429546"
         },
         {
-          "title": "Nuthin' But A 'G' Thang",
-          "artists": [
-            "Snoop Dogg"
-          ],
-          "artistIds": [
-            3
-          ],
-          "url": "https://www.deezer.com/track/67461451"
-        },
-        {
           "title": "Lodi Dodi",
           "artists": [
             "Snoop Dogg"
@@ -22767,16 +21322,6 @@
             74309
           ],
           "url": "https://www.deezer.com/track/61356215"
-        },
-        {
-          "title": "Love Me",
-          "artists": [
-            "Lil Wayne"
-          ],
-          "artistIds": [
-            74309
-          ],
-          "url": "https://www.deezer.com/track/63565179"
         },
         {
           "title": "Forever (Album Version Explicit)",
@@ -23039,26 +21584,6 @@
           "url": "https://www.deezer.com/track/12901222"
         },
         {
-          "title": "It Was A Good Day",
-          "artists": [
-            "Ice Cube"
-          ],
-          "artistIds": [
-            2353
-          ],
-          "url": "https://www.deezer.com/track/3099876"
-        },
-        {
-          "title": "You Know How We Do It",
-          "artists": [
-            "Ice Cube"
-          ],
-          "artistIds": [
-            2353
-          ],
-          "url": "https://www.deezer.com/track/3099875"
-        },
-        {
           "title": "Why We Thugs",
           "artists": [
             "Ice Cube"
@@ -23217,16 +21742,6 @@
             102
           ],
           "url": "https://www.deezer.com/track/94727040"
-        },
-        {
-          "title": "Rack City",
-          "artists": [
-            "Tyga"
-          ],
-          "artistIds": [
-            304545
-          ],
-          "url": "https://www.deezer.com/track/14930115"
         },
         {
           "title": "Club Can't Handle Me (feat. David Guetta) (From the Step Up 3D Soundtrack)",
@@ -23469,16 +21984,6 @@
           "url": "https://www.deezer.com/track/3275539181"
         },
         {
-          "title": "Runnin",
-          "artists": [
-            "21 Savage"
-          ],
-          "artistIds": [
-            6853403
-          ],
-          "url": "https://www.deezer.com/track/1097090192"
-        },
-        {
           "title": "Ghostface Killers (feat. Travis Scott)",
           "artists": [
             "21 Savage"
@@ -23617,36 +22122,6 @@
             246791
           ],
           "url": "https://www.deezer.com/track/17347964"
-        },
-        {
-          "title": "Dead Presidents II",
-          "artists": [
-            "JAY Z"
-          ],
-          "artistIds": [
-            1309
-          ],
-          "url": "https://www.deezer.com/track/2122556317"
-        },
-        {
-          "title": "Dirt Off Your Shoulder",
-          "artists": [
-            "JAY Z"
-          ],
-          "artistIds": [
-            1309
-          ],
-          "url": "https://www.deezer.com/track/2950438"
-        },
-        {
-          "title": "99 Problems",
-          "artists": [
-            "JAY Z"
-          ],
-          "artistIds": [
-            1309
-          ],
-          "url": "https://www.deezer.com/track/2950441"
         },
         {
           "title": "All Of The Lights",
@@ -24217,16 +22692,6 @@
             4495513
           ],
           "url": "https://www.deezer.com/track/536421102"
-        },
-        {
-          "title": "Black and Yellow",
-          "artists": [
-            "Wiz Khalifa"
-          ],
-          "artistIds": [
-            74804
-          ],
-          "url": "https://www.deezer.com/track/8035981"
         },
         {
           "title": "Roll Up",
@@ -28227,7 +26692,6 @@
         2536502951,
         4323040842,
         1084610982,
-        2536503011,
         2536503081,
         2536503041,
         381303071,
@@ -28665,41 +27129,42 @@
         "97322012|ладони"
       ],
       "excludedIds": [
-        4028895691,
-        3252782331,
-        4028896351,
-        1390581002,
+        381303081,
         392605542,
-        2645729912,
-        4338431432,
-        2709590552,
-        2330142725,
-        1584978902,
-        3455166151,
-        3546957851,
-        4192400342,
-        2536503021,
-        3339657991,
-        2836034702,
-        2349163215,
-        2836034712,
-        3040331261,
         831917192,
+        1390581002,
+        1584978902,
+        1975794587,
+        2330142725,
+        2349163215,
         2454482545,
-        3401987961,
-        3683532012,
-        3683531982,
-        3683531902,
-        3683531872,
+        2536503011,
+        2536503021,
+        2645729912,
+        2709590552,
+        2836034702,
+        2836034712,
+        2914185721,
+        3040331261,
+        3081208971,
         3092659491,
         3212145011,
+        3252782331,
+        3339657991,
+        3401987961,
+        3455166151,
         3505665361,
-        4159679972,
-        2914185721,
+        3546957851,
+        3683531872,
+        3683531902,
+        3683531982,
+        3683532012,
         3868724221,
-        1975794587,
-        3081208971,
-        381303081
+        4028895691,
+        4028896351,
+        4159679972,
+        4192400342,
+        4338431432
       ],
       "excludedWorkKeys": [
         "10097794|вип",
@@ -29170,7 +27635,6 @@
         3081208971,
         4323040842,
         1084610982,
-        2536503011,
         2536503081,
         2536503041,
         381303071,
@@ -29737,135 +28201,136 @@
         "97322012|ладони"
       ],
       "excludedIds": [
-        4028895691,
-        4159509402,
-        3727374382,
-        4044406651,
-        4233176142,
-        3252782331,
-        4028896351,
-        4279191042,
-        484356612,
-        3679901152,
-        3518487191,
-        614840642,
-        2561802182,
-        1425890342,
+        66577492,
         70147258,
-        3056721471,
-        3312822831,
-        3073043041,
-        566368532,
-        123191414,
-        373804671,
-        2029943727,
-        1103465092,
-        411858882,
-        143980210,
-        3510723601,
-        420315772,
-        3568829331,
-        726418992,
-        3481446921,
-        355458311,
-        515452432,
-        356001461,
-        1147860962,
-        1409912342,
-        2986053291,
-        136530088,
-        614840892,
         78695355,
-        3538391971,
-        746274912,
-        3337631871,
-        755433902,
-        713035792,
-        1463497462,
-        3307338991,
-        888084612,
-        1103465022,
-        4022728411,
-        3294384301,
-        3201365241,
-        802841592,
-        2645729912,
-        4338431432,
-        2709590552,
-        3402227941,
-        2330142725,
-        1584978902,
-        3455166151,
-        3032312801,
-        3546957851,
-        3339657991,
-        3643354112,
-        4123725851,
-        3105145691,
-        2399768915,
-        1996105727,
-        2206141997,
-        2836034702,
-        2349163215,
-        2836034712,
-        3040331261,
-        2593754402,
-        1083395582,
-        2454482545,
-        3401987961,
-        3683532012,
-        3683531982,
-        3683531902,
-        3683531872,
-        3092659491,
-        3238116791,
-        4350931132,
-        3212145011,
-        2345197835,
-        1264562662,
-        1264562752,
-        3019079541,
-        3330628381,
-        3324410651,
-        3330628531,
-        698029632,
-        3019286101,
-        4079463421,
-        4190619142,
-        4222590892,
-        346376661,
-        132745786,
         86202133,
         114392912,
+        123191414,
         124581338,
-        66577492,
-        2386521705,
-        3039447411,
-        143328984,
-        1700701917,
-        2072562377,
-        4249114091,
-        3610861662,
-        3426932311,
-        3607793332,
-        3329567521,
-        2681115572,
-        3610861912,
-        3607782932,
-        3237629481,
+        132745786,
         134043546,
-        1490020352,
-        947834212,
-        1496260532,
-        1099645592,
+        136530088,
+        143328984,
+        143980210,
+        346376661,
+        355458311,
+        356001461,
+        373804671,
+        381303081,
+        411858882,
+        420315772,
+        484356612,
+        515452432,
+        566368532,
         603526252,
+        614840642,
+        614840892,
+        698029632,
+        713035792,
+        726418992,
+        746274912,
+        755433902,
+        802841592,
+        888084612,
+        947834212,
+        1083395582,
+        1099645592,
+        1103465022,
+        1103465092,
         1113964322,
+        1147860962,
+        1264562662,
+        1264562752,
+        1409912342,
+        1425890342,
         1463122942,
-        3505665361,
-        4159679972,
+        1463497462,
+        1490020352,
+        1496260532,
+        1584978902,
+        1700701917,
+        1996105727,
+        2029943727,
+        2072562377,
+        2206141997,
+        2330142725,
+        2345197835,
+        2349163215,
+        2386521705,
+        2399768915,
+        2454482545,
+        2536503011,
+        2561802182,
+        2593754402,
+        2645729912,
+        2681115572,
+        2709590552,
+        2836034702,
+        2836034712,
         2914185721,
+        2986053291,
+        3019079541,
+        3019286101,
+        3032312801,
+        3039447411,
+        3040331261,
+        3056721471,
+        3073043041,
+        3092659491,
+        3105145691,
+        3201365241,
+        3212145011,
+        3237629481,
+        3238116791,
+        3252782331,
+        3294384301,
+        3307338991,
+        3312822831,
+        3324410651,
+        3329567521,
+        3330628381,
+        3330628531,
+        3337631871,
+        3339657991,
+        3401987961,
+        3402227941,
+        3426932311,
+        3455166151,
+        3481446921,
+        3505665361,
+        3510723601,
+        3518487191,
+        3538391971,
+        3546957851,
+        3568829331,
+        3607782932,
+        3607793332,
+        3610861662,
+        3610861912,
+        3643354112,
+        3679901152,
+        3683531872,
+        3683531902,
+        3683531982,
+        3683532012,
+        3727374382,
         3868724221,
-        381303081
+        4022728411,
+        4028895691,
+        4028896351,
+        4044406651,
+        4079463421,
+        4123725851,
+        4159509402,
+        4159679972,
+        4190619142,
+        4222590892,
+        4233176142,
+        4249114091,
+        4279191042,
+        4338431432,
+        4350931132
       ],
       "excludedWorkKeys": [
         "10097794|вип",
@@ -30016,11 +28481,9 @@
         1972390977,
         770836972,
         528330441,
-        63510358,
         139470659,
         99976952,
         70322130,
-        8011849,
         60978718,
         71645431,
         70266756,
@@ -30063,11 +28526,9 @@
         70322140,
         70322141,
         70322134,
-        63510361,
         579893072,
         528330431,
         579892872,
-        63510362,
         109701582,
         71645432,
         17135114,
@@ -30243,33 +28704,38 @@
         "8778868|мамбл"
       ],
       "excludedIds": [
-        123191414,
-        143980210,
-        4079463421,
-        86202133,
-        134043546,
-        84791735,
-        79587580,
-        112662366,
-        351594981,
-        8086126,
-        2494401221,
-        92734438,
-        144389864,
-        129310248,
-        113876568,
-        61424042,
-        76500485,
         4764905,
-        95813354,
+        8011849,
+        8086126,
+        15395452,
+        61424042,
+        63510358,
+        63510361,
+        63510362,
+        76500485,
+        79587580,
+        84791735,
+        86202133,
         90726629,
+        92734438,
+        95813354,
         107471416,
-        871531192,
-        140334365,
-        3700844612,
+        112662366,
+        113876568,
+        123191414,
+        129310248,
+        132281706,
+        134043546,
         136103362,
         136103374,
-        132281706
+        140334365,
+        143980210,
+        144389864,
+        351594981,
+        871531192,
+        2494401221,
+        3700844612,
+        4079463421
       ],
       "excludedWorkKeys": [
         "13204|uptown funk feat bruno mars",
@@ -30310,9 +28776,6 @@
         106506512,
         908604632,
         528330441,
-        63510358,
-        63510361,
-        111263366,
         410107962,
         2525537871,
         655095912,
@@ -30323,9 +28786,7 @@
         142986206,
         1529509472,
         80134624,
-        78527795,
         1764283667,
-        916829,
         99976952,
         99976954,
         126884459,
@@ -30335,15 +28796,7 @@
         70322130,
         70322142,
         66660698,
-        84791735,
-        2704610682,
-        79587580,
-        118195184,
-        8011850,
-        8011849,
         136336116,
-        89077555,
-        89077547,
         737967292,
         629899842,
         629899852,
@@ -30354,8 +28807,6 @@
         3892384211,
         71645436,
         4601933,
-        2603558,
-        4709947,
         1378342592,
         1378342622,
         2440763155,
@@ -30365,13 +28816,9 @@
         90305559,
         582143242,
         807205422,
-        117797212,
         70266756,
         14383880,
         70266758,
-        138545995,
-        8086126,
-        8086136,
         111780376,
         111780380,
         2319265555,
@@ -30406,13 +28853,9 @@
         13529559,
         925118,
         71645432,
-        15395452,
-        3169161,
         17135109,
         3214169391,
-        4709950,
         561856742,
-        11747933,
         4078105041,
         3965376601,
         4078104901,
@@ -30421,19 +28864,14 @@
         504135662,
         2935318981,
         1873297197,
-        142328215,
         926219252,
-        109169058,
         678686642,
         1896602817,
         3497263701,
         659527372,
         88936743,
         123883254,
-        61142290,
         62847142,
-        673165762,
-        553056592,
         3862691491,
         90632837,
         107346368,
@@ -30455,11 +28893,8 @@
         579893072,
         579892872,
         528330431,
-        63510362,
-        12724819,
         100052792,
         1165303,
-        5425214,
         3924276621,
         2292149325,
         2387373015,
@@ -30470,21 +28905,15 @@
         739421502,
         2287764037,
         117708444,
-        79587594,
         3852206111,
         3984403821,
-        4315389,
         70322139,
         70322136,
         70322132,
         2526400971,
-        75812871,
-        84791753,
         971836722,
         899198282,
-        2553265,
         2658723742,
-        90428591,
         2485118,
         391727202,
         1016968502,
@@ -30496,27 +28925,20 @@
         3210598411,
         2338371075,
         1278960402,
-        8011854,
         62724019,
-        8011855,
         136336110,
-        4315382,
         70322140,
         4315310,
         410108042,
         1893113047,
         457273182,
         3867905131,
-        8011853,
         62724017,
-        13444256,
         114811546,
         14299589,
         1682954137,
         109701582,
         1420768152,
-        4709938,
-        4709944,
         561856792,
         3210598391,
         477452252,
@@ -30755,65 +29177,109 @@
         "9635624|wildflower"
       ],
       "excludedIds": [
-        486928932,
-        1040154662,
+        916829,
+        2553265,
+        2603558,
+        3169161,
+        4315382,
+        4315389,
+        4709938,
+        4709944,
+        4709947,
+        4709950,
+        5425214,
+        5594020,
+        8011849,
+        8011850,
+        8011853,
+        8011854,
+        8011855,
+        8086126,
+        8086136,
+        11747933,
+        12724819,
+        13166294,
+        13444256,
+        15395452,
+        31346541,
+        37027901,
+        37027991,
+        61142290,
+        63510358,
+        63510361,
+        63510362,
+        71137166,
+        75812871,
+        78527795,
+        79587580,
+        79587594,
+        84791735,
+        84791753,
+        89077547,
+        89077555,
+        90428591,
+        90726629,
+        109169058,
+        111263366,
+        112662364,
         112662366,
         112662368,
-        112662364,
-        2743578151,
-        2831602002,
-        2105158337,
-        71137166,
+        117797204,
+        117797212,
+        118195184,
+        129310248,
+        138545995,
+        142328215,
         349385251,
+        403074632,
+        413468802,
+        439864512,
+        447098062,
+        447098092,
+        456965032,
+        472400862,
+        486928932,
+        513823092,
+        525343612,
+        530231361,
+        553056592,
+        595074062,
+        666286232,
+        673165762,
+        744266542,
+        829185532,
+        857206512,
+        1040154662,
+        1088873812,
+        1410738172,
+        1633684282,
+        1818665207,
+        1818665227,
+        2055292027,
+        2105158337,
+        2465103545,
+        2615621912,
+        2674548842,
+        2704610682,
         2704682202,
         2728070371,
-        129310248,
-        90726629,
-        37027991,
-        4115973961,
-        3454558661,
-        37027901,
-        3400077541,
-        3529873491,
+        2743578151,
+        2831602002,
         2949737371,
-        4262469891,
-        595074062,
-        3304567421,
-        117797204,
-        413468802,
-        5594020,
-        447098092,
-        447098062,
-        744266542,
-        2674548842,
-        3245608751,
-        3333720471,
-        4081857641,
-        31346541,
-        1410738172,
-        456965032,
-        2055292027,
         3106586641,
-        403074632,
-        439864512,
-        1088873812,
-        525343612,
-        472400862,
-        4348017472,
-        3906852781,
-        857206512,
-        513823092,
-        1818665227,
-        666286232,
-        1818665207,
-        13166294,
-        1633684282,
-        829185532,
-        530231361,
-        2465103545,
+        3245608751,
+        3304567421,
+        3333720471,
+        3400077541,
+        3454558661,
+        3529873491,
         3835170251,
+        3906852781,
+        4081857641,
+        4115973961,
+        4262469891,
         4325035192,
-        2615621912
+        4348017472
       ],
       "excludedWorkKeys": [
         "1176900|espresso",
@@ -30880,7 +29346,6 @@
     "dad-rock": {
       "ids": [
         2566497572,
-        13791930,
         2603529472,
         111628786,
         78671026,
@@ -30890,9 +29355,6 @@
         116914094,
         116914022,
         116914122,
-        3137049,
-        60840053,
-        3230170,
         116348134,
         116348612,
         116348452,
@@ -30904,27 +29366,19 @@
         92720102,
         92719900,
         92720046,
-        2594482212,
         7677778,
         9956063,
         725274,
         725971,
         725261,
         114295646,
-        624823,
         1761381467,
         927900,
         14299463,
         927907,
-        2263033,
-        2514681,
-        2514683,
         426703682,
-        68116147,
         1543592132,
         529900491,
-        122891348,
-        122891330,
         1169683,
         538660022,
         577487252,
@@ -30932,12 +29386,6 @@
         3614129,
         3614124,
         65445466,
-        883644,
-        883648,
-        883640,
-        585608872,
-        3155089,
-        3158433,
         448260732,
         491201782,
         448265892,
@@ -30948,7 +29396,6 @@
         102529050,
         102529062,
         116914036,
-        4338791802,
         116348464,
         4091932171,
         4092324041,
@@ -30956,18 +29403,13 @@
         4125592,
         92720036,
         114295654,
-        3807039752,
-        4679126,
         426703692,
         68094422,
         70466227,
-        122891332,
-        122891352,
         74628075,
         670804,
         3614150,
         65445461,
-        883642,
         2267042,
         2675537,
         2524457,
@@ -30981,7 +29423,6 @@
         1081145,
         79543188,
         857972,
-        2526491,
         84340027,
         84340033,
         857970,
@@ -30991,19 +29432,14 @@
         102384988,
         38056481,
         95733994,
-        69883086,
         96061570,
         75833673,
         96061642,
-        2319606,
-        1181897,
         2718504,
         1144344,
         88902741,
         88902737,
-        1182159,
         88902735,
-        1140658,
         24949681,
         1559695,
         1559717,
@@ -31022,14 +29458,6 @@
         68608541,
         68608427,
         709708312,
-        3436057,
-        3230175,
-        2514677,
-        2514680,
-        2236742,
-        3158432,
-        585608762,
-        585608782,
         88003853,
         78670918,
         78671029,
@@ -31221,57 +29649,95 @@
         "931|the trooper"
       ],
       "excludedIds": [
-        67248535,
+        624823,
+        883640,
+        883642,
+        883644,
+        883648,
+        1140658,
+        1175620,
+        1175626,
+        1181897,
+        1182159,
         2121805,
-        2121813,
         2121812,
+        2121813,
+        2236742,
+        2263033,
+        2319606,
+        2514677,
+        2514680,
+        2514681,
+        2514683,
+        2526491,
+        3137049,
+        3155089,
+        3158432,
+        3158433,
+        3230170,
+        3230175,
+        3436057,
+        4381833,
+        4654895,
+        4679126,
+        4952889,
+        4952963,
+        13791930,
+        34658921,
+        60840053,
+        67248535,
+        67248538,
+        68116147,
+        69883086,
+        70331399,
+        76271105,
+        76271131,
+        102337192,
+        103766740,
+        113437478,
+        122162694,
+        122162698,
+        122162702,
+        122891330,
+        122891332,
+        122891348,
+        122891352,
+        449153872,
+        568408912,
+        585608762,
+        585608782,
+        585608872,
         670997552,
         694980152,
-        3788170382,
         694980162,
-        3788259142,
-        1175620,
-        4654895,
-        1175626,
-        4952889,
-        70331399,
-        4381833,
-        4952963,
-        76271131,
-        76271105,
-        34658921,
-        449153872,
-        2214194427,
-        2201348227,
-        2194036607,
-        2215968877,
-        1706716987,
-        1706691547,
-        1706871237,
-        2974160211,
-        122162702,
-        122162698,
-        122162694,
-        103766740,
         1132438502,
         1132438512,
-        102337192,
         1132438522,
-        1606931392,
-        1766221487,
-        2670275252,
-        1606960262,
-        3273308031,
-        1135071152,
-        3273307991,
         1135071142,
-        1520555562,
-        1520555552,
-        1520555492,
+        1135071152,
         1519736852,
-        67248538,
-        113437478,
-        568408912
+        1520555492,
+        1520555552,
+        1520555562,
+        1606931392,
+        1606960262,
+        1706691547,
+        1706716987,
+        1706871237,
+        1766221487,
+        2194036607,
+        2201348227,
+        2214194427,
+        2215968877,
+        2594482212,
+        2670275252,
+        2974160211,
+        3273307991,
+        3273308031,
+        3788170382,
+        3788259142,
+        3807039752,
+        4338791802
       ],
       "excludedWorkKeys": [
         "14966|как на войне",
@@ -31329,18 +29795,12 @@
     },
     "metal": {
       "ids": [
-        677232,
         676183,
         14381638,
-        1483825212,
-        1483825282,
-        424565232,
-        1483825242,
         3819908,
         1195560,
         3819914,
         1195567,
-        859699,
         15523793,
         15523799,
         559789,
@@ -31357,9 +29817,6 @@
         662879,
         714397,
         14637142,
-        3788156052,
-        3788156072,
-        3788156042,
         557625,
         864761,
         134523750,
@@ -31374,10 +29831,6 @@
         65245760,
         106746752,
         106746764,
-        69443939,
-        106156874,
-        106156876,
-        5169799,
         3801681162,
         679862562,
         679630072,
@@ -31391,8 +29844,6 @@
         80274510,
         80274516,
         1881054427,
-        132196994,
-        505508992,
         126338367,
         126338363,
         1331764082
@@ -31467,10 +29918,25 @@
         "98|my immortal"
       ],
       "excludedIds": [
-        69041058,
+        677232,
+        859699,
+        5169799,
         67248535,
         67248681,
-        2745274851
+        69041058,
+        69443939,
+        106156874,
+        106156876,
+        132196994,
+        424565232,
+        505508992,
+        1483825212,
+        1483825242,
+        1483825282,
+        2745274851,
+        3788156042,
+        3788156052,
+        3788156072
       ],
       "excludedWorkKeys": [
         "4237485|потерянный рай",
@@ -31495,7 +29961,6 @@
         536421002,
         767583072,
         2386586085,
-        1178682,
         7667059,
         130412300,
         1184309,
@@ -31536,15 +30001,11 @@
         1109731,
         916424,
         1109737,
-        1141668,
-        1141674,
         128743581,
         128743595,
         128743593,
-        67461455,
         2182691897,
         120026876,
-        65163036,
         910693,
         456011702,
         2386586045,
@@ -31553,14 +30014,12 @@
         1109739,
         6461440,
         145429546,
-        67461451,
         2182691867,
         2132919007,
         90533119,
         90533115,
         377242021,
         61356215,
-        63565179,
         5060528,
         4198412562,
         373063001,
@@ -31587,8 +30046,6 @@
         1693337757,
         1510293612,
         12901222,
-        3099876,
-        3099875,
         15692592,
         598221342,
         1584428922,
@@ -31605,7 +30062,6 @@
         500084792,
         94727038,
         94727040,
-        14930115,
         6489970,
         65232772,
         97786984,
@@ -31630,7 +30086,6 @@
         127374469,
         142413895,
         3275539181,
-        1097090192,
         423097602,
         423097612,
         128458659,
@@ -31645,9 +30100,6 @@
         533609342,
         4022917821,
         17347964,
-        2122556317,
-        2950438,
-        2950441,
         7667061,
         68350113,
         126772735,
@@ -31705,7 +30157,6 @@
         536421042,
         106713886,
         536421102,
-        8035981,
         10260076,
         10260081,
         62557258,
@@ -31957,51 +30408,66 @@
         "9|so fresh so clean"
       ],
       "excludedIds": [
-        131391760,
-        137726987,
-        825987082,
-        1591188152,
-        622457832,
+        663571,
+        671140,
         884266,
-        496157642,
-        3025966451,
-        3616651,
+        1141668,
+        1141674,
+        1178682,
+        2252311,
+        2514781,
+        2950438,
+        2950441,
+        3099875,
+        3099876,
         3616649,
-        124603270,
+        3616650,
+        3616651,
+        4232298,
+        7521065,
+        7562926,
+        8035981,
+        14930115,
         28852751,
         28852851,
-        1006932902,
-        412843352,
-        1044791832,
-        567564852,
-        1591188092,
-        533802022,
-        3596335342,
-        4368888681,
-        4368888691,
-        3025714351,
-        3025696061,
-        3025696031,
-        3025964301,
-        7521065,
-        4232298,
-        83036400,
-        3616650,
-        671140,
-        663571,
-        2535000521,
-        855687392,
-        1117791832,
+        63565179,
         64014188,
-        7562926,
-        2252311,
+        65163036,
+        67461451,
+        67461455,
         70625532,
-        925151552,
-        2514781,
+        83036400,
+        124603270,
+        131391760,
+        137726987,
+        412843352,
+        496157642,
+        533802022,
+        567564852,
         602456552,
-        4310455552,
+        622457832,
+        825987082,
+        855687392,
+        925151552,
         955030532,
-        1398464922
+        1006932902,
+        1044791832,
+        1097090192,
+        1117791832,
+        1398464922,
+        1591188092,
+        1591188152,
+        2122556317,
+        2535000521,
+        3025696031,
+        3025696061,
+        3025714351,
+        3025964301,
+        3025966451,
+        3596335342,
+        4310455552,
+        4368888681,
+        4368888691
       ],
       "excludedWorkKeys": [
         "105|hey porsche",
@@ -32273,66 +30739,66 @@
         "9822974|sad"
       ],
       "excludedIds": [
+        127880593,
+        127880605,
         397571872,
         414870102,
         442693212,
+        442693262,
+        531856391,
+        531856421,
+        563625982,
         639462052,
-        127880605,
-        127880593,
+        690610892,
+        700713642,
+        700713662,
+        741757222,
+        796292612,
+        867095322,
+        914688312,
+        1228100302,
+        1228100642,
+        1228100782,
+        1228100792,
+        1282329122,
+        1441127362,
+        1441127442,
+        1441127732,
+        1477825822,
+        1477828582,
+        1692469987,
+        1692470157,
+        1692471257,
+        2017812247,
+        2166024007,
+        2188209227,
+        2215328047,
+        2255332147,
+        2255332167,
+        2255598477,
+        2367724605,
+        2479847691,
+        2492328931,
         2493713371,
         2493716331,
+        2495381331,
+        2738170791,
+        2868707392,
+        3277684691,
+        3403092701,
+        3457399811,
+        3457399851,
+        3457399871,
+        3526781451,
+        3526881881,
         3527344531,
         3528333971,
         3528333981,
-        2255332147,
         4053467021,
-        3526881881,
-        442693262,
-        690610892,
-        3277684691,
-        741757222,
-        2367724605,
-        3403092701,
-        1441127362,
-        2017812247,
-        1477828582,
-        1441127442,
-        1441127732,
-        531856421,
-        4259418801,
-        914688312,
-        531856391,
-        867095322,
-        700713662,
-        796292612,
-        4352846422,
-        700713642,
-        2495381331,
-        563625982,
-        3457399811,
-        3457399871,
-        3457399851,
-        1692471257,
-        1692469987,
-        1228100792,
-        1228100782,
-        1228100642,
-        1282329122,
-        1228100302,
-        1692470157,
-        1477825822,
-        2255332167,
-        2255598477,
-        2479847691,
-        2868707392,
-        2738170791,
-        3526781451,
-        2492328931,
-        2215328047,
-        2166024007,
         4129704351,
-        2188209227,
-        4208921682
+        4208921682,
+        4259418801,
+        4352846422
       ],
       "excludedWorkKeys": [
         "10502441|we outside",
@@ -32903,19 +31369,19 @@
         "9280344|the godfather"
       ],
       "excludedIds": [
-        3080403601,
-        4349310532,
         1687459867,
-        2647177822,
-        4317750142,
         1975388177,
+        2644078842,
+        2646614052,
+        2647177822,
         2867333422,
         2929021451,
+        3080403601,
         3317063941,
         3339724661,
-        2646614052,
-        2644078842,
-        4323884262
+        4317750142,
+        4323884262,
+        4349310532
       ],
       "excludedWorkKeys": [
         "111715|зари",

@@ -40,8 +40,9 @@ def parse_review(text):
     return data, state
 
 
-def make_plan(data, state, catalog):
+def make_plan(data, state, catalog, excluded_ids=()):
     canonical = {t["id"]: t for t in catalog["tracks"]}
+    blocked = {"dz-" + str(ident) for ident in excluded_ids}
     result, seen = [], set()
     for collection in data["collections"]:
         scope = collection["id"]
@@ -49,9 +50,9 @@ def make_plan(data, state, catalog):
             raise ValueError("Invalid or duplicate collection")
         seen.add(scope)
         ids = [t["id"] for t in collection["tracks"]]
-        if len(ids) != len(set(ids)) or any(ident not in canonical for ident in ids):
+        if len(ids) != len(set(ids)) or any(ident not in canonical and ident not in blocked for ident in ids):
             raise ValueError("Unknown or duplicate track ID in " + scope)
-        tracks = [canonical[ident] for ident in ids]
+        tracks = [canonical[ident] for ident in ids if ident not in blocked]
         choices = state["tracks"].get(scope, {})
         artist_choices = state["artists"].get(scope, {})
         if any(ident not in ids for ident in choices):
@@ -85,6 +86,7 @@ def make_plan(data, state, catalog):
                              "limit": 6 if wants_more and wants_similar else 4 if wants_more else 3,
                              "referenceIds": [t["deezerId"] for t in (flagged or seeds)]})
         result.append({"id": scope, "title": collection.get("title", scope), "allowedIds": [t["deezerId"] for t in allowed],
+                       "unavailableIds": [int(ident[3:]) for ident in ids if ident in blocked],
                        "removedIds": [t["deezerId"] for t in removed], "removedWorkKeys": sorted({t["workKey"] for t in removed} - {t["workKey"] for t in allowed}),
                        "requests": requests, "skipped": skipped, "newIds": []})
     return result
@@ -94,7 +96,7 @@ def apply_review(path, apply=False):
     catalog_path, config_path = b.ROOT / 'music/data/catalog.json', b.ROOT / 'music/data/sources.json'
     catalog, config = b.load_json(catalog_path, {}), b.load_json(config_path, {})
     data, state = parse_review(Path(path).read_text(encoding='utf-8-sig'))
-    plan = make_plan(data, state, catalog)
+    plan = make_plan(data, state, catalog, excluded_ids=config.get('excludeTracks', []))
     report_path = b.ROOT / 'output/music-review-applied.json'
     b.atomic_json(report_path, {"applied": False, "packs": plan})
     if not apply:
@@ -190,6 +192,9 @@ def apply_review(path, apply=False):
     for source in catalog['sources']:
         source['count'] = sum(any(ref['id'] == source['id'] for ref in t['sources']) for t in catalog['tracks'])
     normalized = copy.deepcopy(state)
+    for choices in normalized['tracks'].values():
+        for ident in config.get('excludeTracks', []):
+            choices.pop('dz-' + str(ident), None)
     normalized.update(intentVersion=2, catalogGeneratedAt=now, updatedAt=0)
     for pack in plan:
         expansion = {key(r['name']): r for r in pack['requests']}

@@ -1,0 +1,2113 @@
+{
+  "checkedAt": "2026-11-03T22:10:36.201Z",
+  "audited": 1961,
+  "removed": [
+    {
+      "id": 1097090192,
+      "title": "21 Savage, Metro Boomin — Runnin",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "too_short",
+      "attempts": [
+        {
+          "status": "too_short",
+          "duration": 0.99275,
+          "peak": 0.28750336170196533,
+          "bytes": 15892,
+          "at": "2026-11-03T22:08:59.158Z"
+        },
+        {
+          "status": "too_short",
+          "duration": 0.99275,
+          "peak": 0.28750336170196533,
+          "bytes": 15892,
+          "at": "2026-11-03T22:10:35.651Z"
+        }
+      ]
+    },
+    {
+      "id": 65163036,
+      "title": "2Pac — California Love",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:46.069Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:34.548Z"
+        }
+      ]
+    },
+    {
+      "id": 1141668,
+      "title": "50 Cent — In Da Club",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:44.882Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:34.089Z"
+        }
+      ]
+    },
+    {
+      "id": 1141674,
+      "title": "50 Cent — P.I.M.P.",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:45.041Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:34.247Z"
+        }
+      ]
+    },
+    {
+      "id": 138545995,
+      "title": "Adele — Hello",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:19.471Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:22.769Z"
+        }
+      ]
+    },
+    {
+      "id": 8086126,
+      "title": "Adele — Rolling in the Deep",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:19.600Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:22.891Z"
+        }
+      ]
+    },
+    {
+      "id": 8086136,
+      "title": "Adele — Someone Like You",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:19.772Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:23.041Z"
+        }
+      ]
+    },
+    {
+      "id": 624823,
+      "title": "Aerosmith — I Don't Want To Miss A Thing",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:07.963Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:27.220Z"
+        }
+      ]
+    },
+    {
+      "id": 4315389,
+      "title": "Arctic Monkeys — 505",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:33.019Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:24.697Z"
+        }
+      ]
+    },
+    {
+      "id": 4315382,
+      "title": "Arctic Monkeys — Fluorescent Adolescent",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:36.257Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:25.702Z"
+        }
+      ]
+    },
+    {
+      "id": 111263366,
+      "title": "Barns Courtney — Glitter & Gold",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:13.034Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:20.949Z"
+        }
+      ]
+    },
+    {
+      "id": 2553265,
+      "title": "Beyoncé — Halo",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:33.877Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:25.129Z"
+        }
+      ]
+    },
+    {
+      "id": 90428591,
+      "title": "Beyoncé — Sweet Dreams",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:34.157Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:25.283Z"
+        }
+      ]
+    },
+    {
+      "id": 758401002,
+      "title": "Bizzy Banks — Don't Start",
+      "collections": [
+        "drill"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:09:53.671Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:36.043Z"
+        }
+      ]
+    },
+    {
+      "id": 3788156072,
+      "title": "Black Sabbath — Iron Man (Remastered 2009)",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:31.682Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:32.836Z"
+        }
+      ]
+    },
+    {
+      "id": 3788156052,
+      "title": "Black Sabbath — Paranoid (Remastered 2009)",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:31.513Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:32.686Z"
+        }
+      ]
+    },
+    {
+      "id": 3788156042,
+      "title": "Black Sabbath — War Pigs (Remastered 2009)",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:31.835Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:32.991Z"
+        }
+      ]
+    },
+    {
+      "id": 2526491,
+      "title": "Boston — Amanda",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:17.816Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:30.104Z"
+        }
+      ]
+    },
+    {
+      "id": 8011849,
+      "title": "Bruno Mars — Grenade",
+      "collections": [
+        "nostalgia",
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:06:49.502Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:20.509Z"
+        }
+      ]
+    },
+    {
+      "id": 8011850,
+      "title": "Bruno Mars — Just the Way You Are",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:16.111Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:21.926Z"
+        }
+      ]
+    },
+    {
+      "id": 8011854,
+      "title": "Bruno Mars — Marry You",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:35.695Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:25.418Z"
+        }
+      ]
+    },
+    {
+      "id": 8011855,
+      "title": "Bruno Mars — Talking to the Moon",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:35.951Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:25.558Z"
+        }
+      ]
+    },
+    {
+      "id": 8011853,
+      "title": "Bruno Mars — The Lazy Song",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:37.295Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:25.829Z"
+        }
+      ]
+    },
+    {
+      "id": 1182159,
+      "title": "Bryan Adams — (Everything I Do) I Do It For You",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:20.762Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:30.539Z"
+        }
+      ]
+    },
+    {
+      "id": 61142290,
+      "title": "Calvin Harris, Ellie Goulding — I Need Your Love (feat. Ellie Goulding)",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:27.522Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:23.868Z"
+        }
+      ]
+    },
+    {
+      "id": 117797212,
+      "title": "Charlie Puth, Selena Gomez — We Don't Talk Anymore (feat. Selena Gomez)",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:19.194Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:22.610Z"
+        }
+      ]
+    },
+    {
+      "id": 71591823,
+      "title": "Chief Keef — Say She Luv Me",
+      "collections": [
+        "drill"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:09:57.200Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:36.191Z"
+        }
+      ]
+    },
+    {
+      "id": 13444256,
+      "title": "Coldplay — Viva La Vida",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:37.553Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:25.970Z"
+        }
+      ]
+    },
+    {
+      "id": 883640,
+      "title": "Creedence Clearwater Revival — Bad Moon Rising (Remastered 1985)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:11.194Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:28.493Z"
+        }
+      ]
+    },
+    {
+      "id": 883648,
+      "title": "Creedence Clearwater Revival — Fortunate Son",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:11.043Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:28.351Z"
+        }
+      ]
+    },
+    {
+      "id": 883644,
+      "title": "Creedence Clearwater Revival — Have You Ever Seen The Rain",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:10.916Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:28.245Z"
+        }
+      ]
+    },
+    {
+      "id": 883642,
+      "title": "Creedence Clearwater Revival — Proud Mary",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:15.812Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:29.755Z"
+        }
+      ]
+    },
+    {
+      "id": 673165762,
+      "title": "David Guetta, Akon — Sexy Bitch (feat. Akon)",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:27.815Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:24.012Z"
+        }
+      ]
+    },
+    {
+      "id": 553056592,
+      "title": "David Guetta, Bebe Rexha, J Balvin — Say My Name",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:27.989Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:24.165Z"
+        }
+      ]
+    },
+    {
+      "id": 3230175,
+      "title": "Deep Purple — Black Night (1995 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:23.899Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:30.869Z"
+        }
+      ]
+    },
+    {
+      "id": 3230170,
+      "title": "Deep Purple — Child in Time (1995 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:05.326Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:26.976Z"
+        }
+      ]
+    },
+    {
+      "id": 60840053,
+      "title": "Deep Purple — Highway Star (Remastered 2012)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:05.153Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:26.811Z"
+        }
+      ]
+    },
+    {
+      "id": 3436057,
+      "title": "Deep Purple — Hush (1998 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:23.789Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:30.770Z"
+        }
+      ]
+    },
+    {
+      "id": 3137049,
+      "title": "Deep Purple — Smoke On The Water",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:05.011Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:26.696Z"
+        }
+      ]
+    },
+    {
+      "id": 4338791802,
+      "title": "Deep Purple — Splat!",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:13.156Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:29.047Z"
+        }
+      ]
+    },
+    {
+      "id": 2236742,
+      "title": "Dire Straits — Lady Writer",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:24.332Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:31.313Z"
+        }
+      ]
+    },
+    {
+      "id": 2514681,
+      "title": "Dire Straits — Money For Nothing",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:08.796Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:27.516Z"
+        }
+      ]
+    },
+    {
+      "id": 4679126,
+      "title": "Dire Straits — Money For Nothing (Edit)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:14.424Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:29.348Z"
+        }
+      ]
+    },
+    {
+      "id": 2514677,
+      "title": "Dire Straits — Romeo And Juliet",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:24.056Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:31.030Z"
+        }
+      ]
+    },
+    {
+      "id": 2514680,
+      "title": "Dire Straits — So Far Away (Full Version)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:24.228Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:31.123Z"
+        }
+      ]
+    },
+    {
+      "id": 2263033,
+      "title": "Dire Straits — Sultans Of Swing",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:08.796Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:27.394Z"
+        }
+      ]
+    },
+    {
+      "id": 2514683,
+      "title": "Dire Straits — Walk Of Life",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:08.980Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:27.686Z"
+        }
+      ]
+    },
+    {
+      "id": 68116147,
+      "title": "Eagles — Take It Easy (2013 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:09.251Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:27.792Z"
+        }
+      ]
+    },
+    {
+      "id": 106156874,
+      "title": "Five Finger Death Punch — Jekyll and Hyde",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:34.031Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:33.293Z"
+        }
+      ]
+    },
+    {
+      "id": 106156876,
+      "title": "Five Finger Death Punch — Wash It All Away",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:34.219Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:33.399Z"
+        }
+      ]
+    },
+    {
+      "id": 69443939,
+      "title": "Five Finger Death Punch — Wrong Side of Heaven",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:33.950Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:33.103Z"
+        }
+      ]
+    },
+    {
+      "id": 505508992,
+      "title": "Ghost — Dance Macabre",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:36.428Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:33.813Z"
+        }
+      ]
+    },
+    {
+      "id": 132196994,
+      "title": "Ghost — Square Hammer",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:36.289Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:33.667Z"
+        }
+      ]
+    },
+    {
+      "id": 122891332,
+      "title": "Guns N' Roses — Knockin' On Heaven's Door",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:14.964Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:29.466Z"
+        }
+      ]
+    },
+    {
+      "id": 122891352,
+      "title": "Guns N' Roses — Paradise City",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:15.092Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:29.618Z"
+        }
+      ]
+    },
+    {
+      "id": 122891348,
+      "title": "Guns N' Roses — Sweet Child O' Mine",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:09.652Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:27.958Z"
+        }
+      ]
+    },
+    {
+      "id": 122891330,
+      "title": "Guns N' Roses — Welcome to the Jungle",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:09.793Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:28.050Z"
+        }
+      ]
+    },
+    {
+      "id": 84791753,
+      "title": "Hozier — Like Real People Do",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:33.473Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:25.012Z"
+        }
+      ]
+    },
+    {
+      "id": 84791735,
+      "title": "Hozier — Take Me To Church",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:15.582Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:21.331Z"
+        }
+      ]
+    },
+    {
+      "id": 2704610682,
+      "title": "Hozier — Too Sweet",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:15.684Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:21.510Z"
+        }
+      ]
+    },
+    {
+      "id": 75812871,
+      "title": "Hozier — Work Song",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:33.340Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:24.864Z"
+        }
+      ]
+    },
+    {
+      "id": 3099876,
+      "title": "Ice Cube — It Was A Good Day",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:52.539Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:34.950Z"
+        }
+      ]
+    },
+    {
+      "id": 3099875,
+      "title": "Ice Cube — You Know How We Do It",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:52.706Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:35.050Z"
+        }
+      ]
+    },
+    {
+      "id": 63510361,
+      "title": "Imagine Dragons — Demons",
+      "collections": [
+        "nostalgia",
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:06:48.612Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:20.388Z"
+        }
+      ]
+    },
+    {
+      "id": 63510362,
+      "title": "Imagine Dragons — On Top Of The World",
+      "collections": [
+        "nostalgia",
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:06:55.698Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:20.773Z"
+        }
+      ]
+    },
+    {
+      "id": 63510358,
+      "title": "Imagine Dragons — Radioactive",
+      "collections": [
+        "nostalgia",
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:06:48.472Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:20.311Z"
+        }
+      ]
+    },
+    {
+      "id": 585608782,
+      "title": "Iron Maiden — Afraid to Shoot Strangers (2015 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:24.788Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:31.711Z"
+        }
+      ]
+    },
+    {
+      "id": 585608762,
+      "title": "Iron Maiden — Be Quick or Be Dead (2015 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:24.618Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:31.574Z"
+        }
+      ]
+    },
+    {
+      "id": 585608872,
+      "title": "Iron Maiden — Fear of the Dark (2015 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:11.339Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:28.623Z"
+        }
+      ]
+    },
+    {
+      "id": 3158433,
+      "title": "Iron Maiden — Run to the Hills (1998 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:11.618Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:28.900Z"
+        }
+      ]
+    },
+    {
+      "id": 3158432,
+      "title": "Iron Maiden — The Number of the Beast (1998 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:24.492Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:31.425Z"
+        }
+      ]
+    },
+    {
+      "id": 3155089,
+      "title": "Iron Maiden — The Trooper (1998 Remaster)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:11.474Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:28.779Z"
+        }
+      ]
+    },
+    {
+      "id": 2950441,
+      "title": "JAY Z — 99 Problems",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:09:01.295Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:35.761Z"
+        }
+      ]
+    },
+    {
+      "id": 2122556317,
+      "title": "JAY Z — Dead Presidents II",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:09:00.993Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:35.485Z"
+        }
+      ]
+    },
+    {
+      "id": 2950438,
+      "title": "JAY Z — Dirt Off Your Shoulder",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:09:01.112Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:35.615Z"
+        }
+      ]
+    },
+    {
+      "id": 1178682,
+      "title": "Kanye West — Stronger",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:39.162Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:33.975Z"
+        }
+      ]
+    },
+    {
+      "id": 3169161,
+      "title": "Katy Perry — I Kissed A Girl",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:24.456Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:23.199Z"
+        }
+      ]
+    },
+    {
+      "id": 15395452,
+      "title": "Katy Perry, B.o.B — The One That Got Away",
+      "collections": [
+        "nostalgia",
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:06:54.987Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:20.659Z"
+        }
+      ]
+    },
+    {
+      "id": 142328215,
+      "title": "Kygo, Selena Gomez — It Ain't Me",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:26.293Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:23.602Z"
+        }
+      ]
+    },
+    {
+      "id": 4709938,
+      "title": "Lady Gaga — Alejandro",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:38.268Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:26.135Z"
+        }
+      ]
+    },
+    {
+      "id": 11747933,
+      "title": "Lady Gaga — Judas",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:25.046Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:23.501Z"
+        }
+      ]
+    },
+    {
+      "id": 4709950,
+      "title": "Lady Gaga — Paparazzi",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:24.747Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:23.335Z"
+        }
+      ]
+    },
+    {
+      "id": 2603558,
+      "title": "Lady Gaga — Poker Face",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:17.649Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:22.380Z"
+        }
+      ]
+    },
+    {
+      "id": 4709944,
+      "title": "Lady Gaga, Beyoncé — Telephone",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:38.408Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:26.231Z"
+        }
+      ]
+    },
+    {
+      "id": 4709947,
+      "title": "Lady Gaga, Colby O'Donis — Just Dance",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:17.775Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:22.482Z"
+        }
+      ]
+    },
+    {
+      "id": 63565179,
+      "title": "Lil Wayne, Drake, Future — Love Me",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:48.531Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:34.780Z"
+        }
+      ]
+    },
+    {
+      "id": 677232,
+      "title": "Linkin Park — Numb",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:27.599Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:31.845Z"
+        }
+      ]
+    },
+    {
+      "id": 1975386547,
+      "title": "Loboda — SuperSTAR",
+      "collections": [
+        "mom-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:40.930Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:26.422Z"
+        }
+      ]
+    },
+    {
+      "id": 12724819,
+      "title": "Maroon 5, Christina Aguilera — Moves Like Jagger (Studio Recording From \"The Voice\" Performance)",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:30.607Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:24.369Z"
+        }
+      ]
+    },
+    {
+      "id": 1483825212,
+      "title": "Metallica — Enter Sandman (Remastered 2021)",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:28.025Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:32.002Z"
+        }
+      ]
+    },
+    {
+      "id": 424565232,
+      "title": "Metallica — Master Of Puppets",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:28.304Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:32.272Z"
+        }
+      ]
+    },
+    {
+      "id": 1483825282,
+      "title": "Metallica — Nothing Else Matters (Remastered 2021)",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:28.178Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:32.117Z"
+        }
+      ]
+    },
+    {
+      "id": 1483825242,
+      "title": "Metallica — The Unforgiven (Remastered 2021)",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:28.485Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:32.411Z"
+        }
+      ]
+    },
+    {
+      "id": 5169799,
+      "title": "Motörhead — Ace of Spades",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:34.323Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:33.563Z"
+        }
+      ]
+    },
+    {
+      "id": 13791930,
+      "title": "Nirvana — Smells Like Teen Spirit",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:03.625Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:26.542Z"
+        }
+      ]
+    },
+    {
+      "id": 2536503011,
+      "title": "OBLADAET — MONSTER TRAKK",
+      "collections": [
+        "new-wave",
+        "ru-rap"
+      ],
+      "reason": "too_short",
+      "attempts": [
+        {
+          "status": "too_short",
+          "duration": 13.009,
+          "peak": 1.3546650409698486,
+          "bytes": 208154,
+          "at": "2026-11-03T22:06:09.496Z"
+        },
+        {
+          "status": "too_short",
+          "duration": 13.009,
+          "peak": 1.3546650409698486,
+          "bytes": 208154,
+          "at": "2026-11-03T22:10:20.617Z"
+        }
+      ]
+    },
+    {
+      "id": 916829,
+      "title": "OneRepublic — Apologize",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:14.724Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:21.229Z"
+        }
+      ]
+    },
+    {
+      "id": 78527795,
+      "title": "OneRepublic — Counting Stars",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:14.449Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:21.058Z"
+        }
+      ]
+    },
+    {
+      "id": 5425214,
+      "title": "OneRepublic — Secrets",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:31.069Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:24.443Z"
+        }
+      ]
+    },
+    {
+      "id": 3807039752,
+      "title": "Scorpions — Rock You Like a Hurricane (Remastered 2015)",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:14.262Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:29.184Z"
+        }
+      ]
+    },
+    {
+      "id": 109169058,
+      "title": "Selena Gomez — Same Old Love",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:26.559Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:23.737Z"
+        }
+      ]
+    },
+    {
+      "id": 79587580,
+      "title": "Sia — Chandelier",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:15.833Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:21.623Z"
+        }
+      ]
+    },
+    {
+      "id": 118195184,
+      "title": "Sia — Cheap Thrills",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:16.012Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:21.772Z"
+        }
+      ]
+    },
+    {
+      "id": 79587594,
+      "title": "Sia — Elastic Heart",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:32.628Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:24.568Z"
+        }
+      ]
+    },
+    {
+      "id": 69883086,
+      "title": "Smokie — Living Next Door to Alice",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:19.281Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:30.044Z"
+        }
+      ]
+    },
+    {
+      "id": 67461455,
+      "title": "Snoop Dogg — Drop It Like It's Hot",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:45.582Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:34.372Z"
+        }
+      ]
+    },
+    {
+      "id": 67461451,
+      "title": "Snoop Dogg — Nuthin' But A 'G' Thang",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:47.536Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:34.654Z"
+        }
+      ]
+    },
+    {
+      "id": 2319606,
+      "title": "Status Quo — In The Army Now",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:19.918Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:30.355Z"
+        }
+      ]
+    },
+    {
+      "id": 1181897,
+      "title": "Status Quo — Whatever You Want",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:20.117Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:30.355Z"
+        }
+      ]
+    },
+    {
+      "id": 1140658,
+      "title": "Sting, Eric Clapton — It's Probably Me",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:21.053Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:30.592Z"
+        }
+      ]
+    },
+    {
+      "id": 859699,
+      "title": "System of a Down — Chop Suey!",
+      "collections": [
+        "metal"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:29.162Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:32.571Z"
+        }
+      ]
+    },
+    {
+      "id": 89077547,
+      "title": "Taylor Swift — Blank Space",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:16.538Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:22.181Z"
+        }
+      ]
+    },
+    {
+      "id": 89077555,
+      "title": "Taylor Swift — Shake It Off",
+      "collections": [
+        "modern-pop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:07:16.410Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:22.084Z"
+        }
+      ]
+    },
+    {
+      "id": 2594482212,
+      "title": "The Rolling Stones — Paint It Black",
+      "collections": [
+        "dad-rock"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:06.983Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:27.065Z"
+        }
+      ]
+    },
+    {
+      "id": 14930115,
+      "title": "Tyga — Rack City",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:08:55.066Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:35.222Z"
+        }
+      ]
+    },
+    {
+      "id": 8035981,
+      "title": "Wiz Khalifa — Black and Yellow",
+      "collections": [
+        "us-hiphop"
+      ],
+      "reason": "no_preview",
+      "attempts": [
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:09:09.574Z"
+        },
+        {
+          "status": "no_preview",
+          "at": "2026-11-03T22:10:35.921Z"
+        }
+      ]
+    }
+  ],
+  "unresolved": []
+}
