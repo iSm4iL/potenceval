@@ -1,79 +1,56 @@
-/* A shared tabletop. Every object is a game; the paper labels stay readable. */
-body.club-gallery{--table-ink:#483520;background:#171410;color:#eadcc4}
-.club-gallery .wrap{max-width:1450px;padding:15px 28px 16px}
-.club-gallery .top{padding-bottom:12px;border-bottom:1px solid #a8844e35}
-.club-gallery .logo{font-size:22px}.club-gallery .logo::before{width:34px;height:34px}
-.club-gallery .room{font-size:12px;background:none;border:0;letter-spacing:0;color:#b2a185;margin-left:auto}
-.club-gallery .lang{background:#2d2419;border-color:#74562f80}.club-gallery .lang button[aria-pressed=true]{background:#b48b50;color:#20160d}
-.club-intro{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 5px 12px}
-.club-intro h1{font:700 43px/1.1 Caveat,cursive;color:#ead3a6;margin:0;letter-spacing:0}
-.club-intro p{margin:0;max-width:365px;font-size:12px;line-height:1.55;color:#b8a483}
-.table-surface{position:relative;isolation:isolate;border:9px solid #58391e;border-radius:11px;background:#624021 url('../music/assets/record-store/walnut.webp') center/850px;box-shadow:inset 0 0 0 2px #a77e49,inset 0 0 70px #190e0870,0 14px 35px #0007}
-.table-grain{position:absolute;z-index:-1;inset:7px;pointer-events:none;border:1px solid #c2a26a40;border-radius:4px;box-shadow:inset 0 0 30px #160e0780}
-.table-layout{position:relative;display:grid;grid-template-columns:repeat(30,minmax(0,1fr));align-items:start;gap:0 5px;padding:13px 14px 26px}
-.table-game{--tilt:-4deg;display:flex;position:relative;flex-direction:column;align-items:center;justify-content:end;grid-column:span 6;min-width:0;padding:0 3px 8px;color:var(--table-ink);text-decoration:none;transform:rotate(var(--tilt));transition:transform .2s;isolation:isolate;outline-offset:5px}
-.table-game.table-main{grid-column:span 10}
-.table-geo{--tilt:2deg}.table-opening{--tilt:-2deg}.table-where{--tilt:5deg}.table-screen{--tilt:-3deg}.table-genie{--tilt:3deg}.table-dice{--tilt:-5deg}.table-aura{--tilt:4deg}
-.table-object{display:block;flex:none;position:relative;z-index:1;width:180px;max-width:100%;height:142px;object-fit:contain;object-position:center bottom;filter:drop-shadow(3px 8px 6px #0006);transition:filter .2s;pointer-events:none}
-.table-main .table-object{width:270px;height:200px}
-.game-note{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:min(100%,205px);min-height:64px;padding:8px 7px;background:#e4d2a7;box-shadow:1px 4px 5px #1c100c7a,inset 0 0 12px #9a784c28;border:1px solid #bda173;color:#4d3924;text-align:center;transform:rotate(1.5deg);margin-top:-9px}
-.table-main .game-note{width:min(100%,290px);min-height:62px;padding:8px 12px}
-.game-note::before{content:'';position:absolute;top:-8px;left:calc(50% - 23px);width:46px;height:15px;background:#d8be8394;transform:rotate(-4deg);box-shadow:0 1px 1px #1e100c15}
-.game-note strong{font:700 25px/1.03 Caveat,cursive;letter-spacing:0;overflow-wrap:normal;word-break:normal}
-.table-main .game-note strong{font-size:30px}
-.game-note small{font:10px/1.35 Onest,sans-serif;color:#7b6140}
-.table-game:hover,.table-game:focus-visible{transform:translateY(-7px) rotate(0);z-index:10;outline:none}
-.table-game:hover .table-object,.table-game:focus-visible .table-object{filter:drop-shadow(4px 14px 9px #0008)}
-.table-game:focus-visible .game-note{outline:3px solid #ffe0a0;outline-offset:4px}
-.game-hint{position:absolute;z-index:12;bottom:calc(100% + 4px);left:50%;width:230px;max-width:75vw;padding:12px 15px;transform:translateX(-50%);border:1px solid #a3834c;border-radius:5px;background:#2b2117;color:#ebd9b7;box-shadow:0 8px 18px #0006;font:12px/1.5 Onest,sans-serif;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s}
-.table-game:hover .game-hint,.table-game:focus-visible .game-hint{opacity:1;visibility:visible}
-.table-corner{position:absolute;bottom:8px;right:20px;font:600 20px Caveat,cursive;letter-spacing:.02em;color:#b58d5580;pointer-events:none}
-.club-note{max-width:850px;font-size:11px;line-height:1.5;color:#ac9674;margin:14px 3px 0}
-.club-gallery .club-footer{margin-top:14px;padding-top:12px;border-color:#a8844e35;font-size:10px;color:#8e7c60}
-@media(min-width:1051px) and (max-height:800px){.club-gallery .wrap{padding-top:12px;padding-bottom:10px}.club-intro{padding:10px 5px}.club-intro h1{font-size:39px}.table-main .table-object{width:250px;height:185px}.table-object{width:167px;height:127px}.table-layout{padding-top:8px;padding-bottom:21px}.game-note{min-height:60px}.club-note{margin-top:11px}.club-gallery .club-footer{margin-top:10px;padding-top:10px}}
-@media(max-width:1050px){.table-layout{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px 8px;padding:18px 15px 26px}.table-game,.table-game.table-main{grid-column:span 1}.table-object,.table-main .table-object{width:190px;height:150px}.table-main .game-note strong{font-size:25px}.table-main .game-note{width:min(100%,205px);min-height:64px;padding:8px 7px}.club-intro p{max-width:310px}.table-game:hover,.table-game:focus-visible{transform:translateY(-4px) rotate(0)}}
-@media(max-width:640px){.club-gallery .wrap{padding:12px 14px 20px}.club-gallery .top{gap:8px}.club-gallery .logo{font-size:17px}.club-gallery .logo::before{width:27px;height:27px}.club-gallery .room{display:none}.club-intro{display:block;padding:17px 3px 16px}.club-intro h1{font-size:39px}.club-intro p{font-size:12px;max-width:33ch;margin-top:5px}.table-surface{border-width:6px;border-radius:8px;background-size:600px}.table-layout{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 5px;padding:17px 8px 28px}.table-object,.table-main .table-object{width:155px;height:132px}.game-note,.table-main .game-note{min-height:70px;width:100%;padding:8px 5px;gap:5px}.game-note strong,.table-main .game-note strong{font-size:24px}.game-note small{font-size:9px;max-width:17ch}.table-game{padding:0 2px 5px}.table-genie{--tilt:-2deg}.table-corner{font-size:17px;right:13px}.club-note{font-size:11px;margin-top:16px}.club-gallery .club-footer{margin-top:15px;gap:8px}}
-@media(hover:none){.game-hint{display:none}.table-game:hover{transform:rotate(var(--tilt))}}
-@media(prefers-reduced-motion:reduce){.table-game,.table-object,.game-hint{transition:none}}
-@media(max-width:640px){.game-hint{display:none}}
-/* The featured games sit on one photographic billiards table. */
-.club-gallery .table-surface{background:#17372b url('assets/home/billiards-table.webp') center/cover no-repeat;border:0;border-radius:12px;box-shadow:0 18px 55px #000a;min-height:380px}
-.club-gallery .table-layout{grid-template-columns:repeat(3,minmax(0,1fr));padding:45px 9% 55px;gap:2%}
-.club-gallery .table-game.table-main{grid-column:auto}.club-gallery .table-main .table-object{width:270px;height:210px}
-.club-gallery .game-note{background:#e1d0a9}.club-gallery .game-note strong{font-family:Georgia,serif;font-size:22px}.club-gallery .club-intro h1{font-family:Georgia,serif;font-size:clamp(32px,3vw,46px);font-weight:400}.club-gallery .club-intro p{font-family:'PT Mono',monospace}
-.club-gallery .table-game:hover,.club-gallery .table-game:focus-visible{transform:translateY(-14px) rotate(0)}
-.more-games{margin:22px 0 0;border-top:1px solid #b8965d55;color:#e9d6b2}.more-games summary{padding:18px 2px;cursor:pointer;font:24px Georgia,serif;list-style:none}.more-games summary span{float:right;color:#c79e60}.more-games summary:focus-visible{outline:2px solid #e6c17c}.more-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding-bottom:20px}.more-list a{display:grid;grid-template-columns:32px 1fr;gap:2px 8px;padding:15px;color:#ecddc3;text-decoration:none;border:1px solid #a484514f;background:#211c16}.more-list a:hover,.more-list a:focus-visible{border-color:#d9b477;background:#30261b}.more-list a span{grid-row:span 2}.more-list small{color:#b8a483;line-height:1.4}
-@media(max-width:640px){.club-gallery .table-layout{grid-template-columns:1fr;gap:14px;padding:32px 15%}.club-gallery .table-main .table-object{height:150px}.club-gallery .table-surface{background-position:center;background-size:auto 100%}.club-gallery .table-main .game-note{width:100%;min-height:55px}.club-gallery .game-note strong{font-size:21px}.more-list{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.club-gallery .table-game{transition:none}}
-.billiards-balls{position:absolute;width:clamp(100px,16%,190px);right:4%;bottom:7%;pointer-events:none;filter:drop-shadow(3px 8px 7px #0009)}
-.club-gallery .table-layout{z-index:1}.club-gallery .table-object{filter:drop-shadow(3px 10px 9px #0009)}
-@media(max-width:640px){.billiards-balls{width:100px;right:2%;bottom:1%}}
+/* Props and the photograph share the same viewport-sized scene. */
+body.club-gallery{background:#132f20}
+.club-gallery .wrap{position:relative;max-width:none;padding:0}
+.club-gallery .top{position:absolute;inset:0 0 auto;z-index:3;gap:8px;padding:clamp(10px,2vw,25px);border:0}
+.club-gallery .logo{font-size:clamp(15px,2.2vw,26px);text-shadow:0 2px 6px #000}
+.club-gallery .logo::before{width:clamp(25px,3vw,39px);height:clamp(25px,3vw,39px);margin:0}
+.club-gallery .logo span{font-size:clamp(10px,1.2vw,14px)}
 
-/* The room is the page, while the game objects remain independent of its crop. */
-body.club-gallery{min-height:100vh;background:#10271e url('assets/home/billiards-table.webp') center center / cover fixed no-repeat}
-body.club-gallery::before{content:'';position:fixed;inset:0;background:linear-gradient(180deg,#100b09d9 0%,#10261c7a 38%,#100b09d9 100%);pointer-events:none;z-index:0}
-.club-gallery .wrap{position:relative;z-index:1;max-width:1550px;min-height:100vh;display:flex;flex-direction:column}
-.club-gallery main{flex:1}.club-gallery .top{border-color:#dcc18c55}.club-intro{padding:clamp(20px,4vh,48px) 5px}
-.club-intro h1,.club-intro p,.club-note,.club-gallery .club-footer{color:#f1e1c2;text-shadow:0 2px 8px #000}
-.club-gallery .table-surface{background:none;border:0;border-radius:0;box-shadow:none;min-height:0}
-.table-grain,.table-corner{display:none}
-.club-gallery .table-layout{padding:clamp(22px,5vh,65px) 3% clamp(35px,6vh,75px);gap:clamp(10px,3vw,50px);align-items:end}
-.club-gallery .table-main .table-object{width:min(100%,330px);height:clamp(160px,19vw,250px)}
-.club-gallery .table-main .game-note{width:min(100%,300px)}
-.billiards-balls{width:clamp(70px,10vw,140px);right:0;bottom:3%}
-.more-games{border-color:#e0c28a75}.more-games summary{color:#f1dfbb;text-shadow:0 2px 8px #000}.more-list a{background:#1d1912dd}
-@media(max-width:700px){
- body.club-gallery{background-attachment:scroll;background-position:center top;background-size:auto 100vh}
- body.club-gallery::before{background:linear-gradient(180deg,#100b09da,#10261d9c 35%,#100b09e8)}
- .club-gallery .wrap{padding:12px 18px 24px}.club-intro{padding:22px 0 12px}.club-intro h1{font-size:clamp(30px,8vw,40px)}
- .club-gallery .table-layout{grid-template-columns:1fr;gap:8px;padding:8px 0 25px}
- .club-gallery .table-game.table-main{display:grid;grid-template-columns:minmax(100px,38%) minmax(0,1fr);align-items:center;gap:8px;transform:none;padding:0;min-height:130px}
- .club-gallery .table-main .table-object{width:100%;height:clamp(115px,31vw,155px);object-position:center}
- .club-gallery .table-main .game-note{width:100%;min-height:62px;margin:0;padding:8px;transform:rotate(-1deg)}
- .club-gallery .game-note strong,.club-gallery .table-main .game-note strong{font-size:clamp(17px,5vw,22px);line-height:1.1;overflow-wrap:normal}
- .club-gallery .game-note small{font-size:11px;max-width:none}.billiards-balls{width:75px;right:0;bottom:0;opacity:.7}
- .more-games{margin-top:8px}.more-games summary{font-size:22px}.club-note{line-height:1.55}
+.table-surface{position:relative;isolation:isolate;height:100svh;min-height:520px;background:url('assets/home/billiards-table.webp') center / cover no-repeat}
+.table-game,.billiard-ball{position:absolute;left:var(--x);top:var(--y);translate:-50% -50%}
+.table-game{z-index:1;display:flex;flex-direction:column;align-items:center;width:min(24%,340px);min-width:0;color:#49321c;text-decoration:none;transform:rotate(var(--tilt));transition:transform .2s}
+.table-music{--x:24%;--y:42%;--tilt:-9deg}
+.table-geo{--x:50%;--y:62%;--tilt:7deg}
+.table-opening{--x:76%;--y:41%;--tilt:-5deg}
+.table-object{width:100%;height:min(23svh,18vw,245px);object-fit:contain;object-position:center bottom;filter:drop-shadow(5px 10px 7px #0009);pointer-events:none;transition:filter .2s}
+.game-note{display:grid;justify-items:center;gap:4px;position:relative;width:fit-content;max-width:100%;padding:9px 14px;background:#e7d4ac;border:1px solid #bba175;box-shadow:2px 5px 8px #0007;text-align:center;transform:rotate(-2deg);margin-top:-7px}
+.game-note strong{font:700 clamp(16px,1.8vw,25px)/1.1 Georgia,serif;text-wrap:balance}
+.game-note small{font:11px/1.35 Onest,sans-serif;color:#624c34}
+.table-game:focus-visible{outline:3px solid #ffe7ac;outline-offset:6px;z-index:2}
+@media(hover:hover){
+ .table-game:hover{z-index:2;transform:translateY(-9px) rotate(calc(var(--tilt) / 2))}
+ .table-game:hover .table-object{filter:drop-shadow(9px 17px 11px #0009)}
 }
-body.club-gallery{background:#10271e}
-body.club-gallery::before{background:linear-gradient(180deg,#100b09d9 0%,#10261c7a 38%,#100b09d9 100%),url('assets/home/billiards-table.webp') center / cover no-repeat}
-@media(max-width:700px){body.club-gallery::before{background:linear-gradient(180deg,#100b09da,#10261d9c 35%,#100b09e8),url('assets/home/billiards-table.webp') center / cover no-repeat}}
+
+.billiard-ball{width:clamp(22px,3vw,49px);aspect-ratio:1;pointer-events:none;border-radius:50%;background:url('assets/home/billiards-balls.webp') no-repeat;background-size:310% 210%;box-shadow:3px 6px 8px #0008}
+.ball-red{--x:15%;--y:70%;background-position:10% 36%}
+.ball-ivory{--x:49%;--y:31%;background-position:88% 5%}
+.ball-blue{--x:83%;--y:68%;background-position:56% 92%}
+
+.more-games summary{position:absolute;z-index:2;right:clamp(12px,3vw,48px);top:calc(max(100svh,520px) - 58px);display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 13px;background:#2c2013;color:#f0dbb2;border:1px solid #bc9257;border-radius:4px;cursor:pointer;font:17px Georgia,serif;list-style:none}
+.more-games summary::-webkit-details-marker{display:none}
+.more-games summary span{font:18px/1 Onest,sans-serif}
+.more-games[open] summary span{rotate:45deg}
+.more-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px;padding:20px clamp(16px,3vw,48px)}
+.more-list a{display:grid;grid-template-columns:26px 1fr;gap:4px 8px;padding:15px;color:#ecddc3;text-decoration:none;border:1px solid #a4845180;background:#211c16}
+.more-list a:is(:hover,:focus-visible){border-color:#d9b477}
+.more-list a span{grid-row:span 2}.more-list small{color:#c9b596;line-height:1.4}
+
+@media(max-width:700px){
+ .club-gallery .top{gap:6px}
+ .table-surface{min-height:660px}
+ .table-game{display:grid;grid-template-columns:45% minmax(0,1fr);gap:5px;width:min(83%,360px)}
+ .table-music{--x:46%;--y:33%;--tilt:-5deg}
+ .table-geo{--x:54%;--y:51%;--tilt:4deg;grid-template-columns:minmax(0,1fr) 45%}
+ .table-geo .table-object{grid-column:2;grid-row:1}
+ .table-geo .game-note{grid-column:1;grid-row:1;justify-self:end}
+ .table-opening{--x:46%;--y:69%;--tilt:-4deg}
+ .table-object{height:clamp(88px,28vw,125px);object-position:center}
+ .game-note{margin:0;padding:8px;min-width:0}
+ .game-note strong{font-size:clamp(16px,4.8vw,21px)}
+ .ball-red{--x:10%;--y:45%}
+ .ball-ivory{--x:83%;--y:28%}
+ .ball-blue{--x:79%;--y:77%}
+ .more-games summary{top:calc(max(100svh,660px) - 58px)}
+}
+@media(prefers-reduced-motion:reduce){.table-game,.table-object{transition:none}.table-game:hover{transform:rotate(var(--tilt))}}
