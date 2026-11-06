@@ -1,11 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { COUNTRIES } from './countries.js';
 import { WALKS } from './walks.js';
 
 test('walks retain the country-to-coordinate-pairs contract', () => {
+  assert.deepEqual(Object.keys(WALKS).sort(), COUNTRIES.map(({ id }) => id).sort());
   for (const [iso, points] of Object.entries(WALKS)) {
     assert.match(iso, /^[A-Z]{2}$/);
-    assert.ok(Array.isArray(points) && points.length > 0, iso);
+    assert.ok(Array.isArray(points) && points.length >= 2, iso);
+    assert.equal(new Set(points.map(point => point.join(','))).size, points.length, iso);
     for (const point of points) {
       assert.equal(point.length, 2, iso);
       const [lat, lng] = point;
@@ -15,11 +18,7 @@ test('walks retain the country-to-coordinate-pairs contract', () => {
   }
 });
 
-test('Namibia starts stay near Windhoek, never the namesake museum in Colombo', () => {
-  for (const [lat, lng] of WALKS.NA) {
-    // Local regression bound, not a general country-boundary or imagery check.
-    assert.ok(lat > -22.7 && lat < -22.4 && lng > 16.9 && lng < 17.3,
-      `NA start outside Windhoek: ${lat},${lng}`);
-  }
-  assert.deepEqual(WALKS.NA[0], [-22.567665, 17.087549]);
+test('Namibia stays in Windhoek and Paris stays away from the Eiffel Tower', () => {
+  assert.ok(WALKS.NA.every(([lat, lng]) => lat > -22.59 && lat < -22.54 && lng > 17.06 && lng < 17.11));
+  assert.ok(WALKS.FR.every(([lat, lng]) => lat > 48.84 && lat < 48.9 && lng > 2.31 && lng < 2.4));
 });

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {streetViewUrl} from './maps.js';
 
-test('street walks require a key and use documented Embed Street View parameters', () => {
+test('embedded street walks require a key and use documented Street View parameters', () => {
   assert.equal(streetViewUrl([60.17,24.95], '', 'ru'), null);
   const url = new URL(streetViewUrl([60.17,24.95], 'test-key', 'en'));
   assert.equal(url.origin + url.pathname, 'https://www.google.com/maps/embed/v1/streetview');

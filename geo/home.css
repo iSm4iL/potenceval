@@ -73,3 +73,33 @@ body[data-game="geo"] .desk button:focus-visible{outline:3px solid #684b2d;outli
   body[data-game="geo"] .setup-row h2{flex:0 0 100px;margin:0}
   body[data-game="geo"] .modes{flex:1}
 }
+
+/* Index cards with a printed selection mark instead of emoji. */
+body[data-game="geo"] .folder-page h2 {
+  font:750 15px/1.25 Onest,sans-serif;
+  color:#4d3828;
+}
+body[data-game="geo"] .pack {
+  position:relative;
+  min-height:65px;
+  align-content:center;
+  padding:9px 12px;
+  border:1px solid #86634775;
+  border-left:4px solid #86634775;
+  background:var(--noise),#f2e2be;
+  background-blend-mode:multiply;
+  color:#3f2e20;
+}
+body[data-game="geo"] .pack.on {
+  background-color:#fff0cb;
+  border-color:#974932;
+  color:#3f2e20;
+}
+body[data-game="geo"] .pack small {color:#624431}
+body[data-game="geo"] .pack b {font-size:14px}
+body[data-game="geo"] .detective-scene {margin-top:16px;max-width:410px}
+body[data-game="geo"] .folder-right #startBtn {border-color:#8b4f2e}
+@media (max-width:430px) {
+  body[data-game="geo"] .pack {padding-inline:7px}
+  body[data-game="geo"] .pack b {font-size:12px}
+}

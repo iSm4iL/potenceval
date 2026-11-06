@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="style.css?v=fit-1">
 <link rel="stylesheet" href="../shared/club.css?v=lang-20261028">
 <link rel="stylesheet" href="club.css?v=clues-20261025">
-<link rel="stylesheet" href="board-ui.css?v=launch-20261030">
-<link rel="stylesheet" href="home.css?v=folder-20261029">
+<link rel="stylesheet" href="board-ui.css?v=original-board-20261107">
+<link rel="stylesheet" href="home.css?v=dossier-20261107">
 </head>
 <body class="club-theme" data-game="geo">
 <div class="wrap geo-wrap">
@@ -37,7 +37,11 @@
     <button class="walk-btn fold" id="walkFold" data-en="Fold away ▾">Свернуть ▾</button>
   </header>
   <div class="walk-view">
-    <iframe id="walkFrame" title="Панорама улицы" data-en-title="Street panorama" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe id="walkFrame" title="Панорама улицы" data-en-title="Street panorama" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+    <div class="walk-external" id="walkExternalPanel" hidden>
+      <p data-en="The panorama opens in Google Maps. The map may show place names.">Панорама откроется в Google Картах. На карте могут быть видны названия мест.</p>
+      <a class="btn primary" id="walkExternal" target="_blank" rel="noopener noreferrer" data-en="Open panorama in Google Maps">Открыть панораму в Google Картах</a>
+    </div>
   </div>
 </dialog>
 <button class="walk-dock" id="walkDock" hidden data-en="👣 Return to street walk ▴">👣 Вернуться на прогулку ▴</button>
@@ -48,6 +52,8 @@
     <li data-en="Identify the country from clues. Start each case with 1,000 points and one free fact.">Узнай страну по подсказкам. На старте — 1 000 очков и бесплатный факт.</li>
     <li data-en="Another fact costs 50; language and food cost 75 each; currency costs 50–175 (rarer costs more); a person and a street walk cost 150 each; directions cost 50 per wrong guess. Rereading an open clue is free.">Ещё факт — 50, язык и кухня — по 75, валюта — от 50 до 175 (редкая дороже), человек и прогулка — по 150. Направление для одной ошибочной версии — 50 очков. Открытые подсказки можно перечитывать бесплатно.</li>
     <li data-en="Choose any order. Unavailable clues cannot be bought. If a street walk does not work, you can refund it; it will then close for this round.">Выбирай любой порядок. Недоступные подсказки не продаются. Если прогулка не работает, её стоимость можно вернуть; в этом раунде она закроется.</li>
+    <li data-en="Made here costs 100 points and shows a company, product or brand that originated here.">«Создано здесь» стоит 100 очков и показывает компанию, продукт или марку, которые появились в этой стране.</li>
+    <li><span data-en="Street coordinates:">Координаты улиц:</span> <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap</a>.</li>
     <li data-en="A wrong guess costs 50 points and gives no free directions or distances. Next to each wrong guess, buy its direction for 50 points. The arrow and an approximate distance are revealed for that guess only.">Ошибка — минус 50, без бесплатных направлений и расстояний. Напротив каждой ошибочной страны можно купить направление за 50: стрелка и примерное расстояние откроются только для этой версии.</li>
     <li data-en="Playing with friends? Award the points to whoever names the country first.">Играешь с друзьями — кто первым назвал страну, тому и очки.</li>
   </ol>
@@ -61,6 +67,6 @@
 </dialog>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script type="module" src="../shared/menu.js?v=ui-20261029"></script>
-<script type="module" src="app.js?v=launch-20261030"></script>
+<script type="module" src="app.js?v=original-board-20261107"></script>
 </body>
 </html>

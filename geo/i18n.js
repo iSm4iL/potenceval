@@ -1,4 +1,4 @@
-import { editorialFacts, editorialPerson, PERSON_ROSTER } from './editorial.js?v=editorial-20261030';
+import { editorialFacts, editorialPerson, PERSON_ROSTER } from './editorial.js?v=clues-20261107';
 import { lang, t } from '../shared/i18n.js?v=ui-20261029';
 import { COUNTRIES as DOSSIERS, PACKS as REGIONS } from './countries.js';
 import { MONEY } from './content.js';

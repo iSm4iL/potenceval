@@ -1,5 +1,9 @@
 # «Угадай страну»: компании и бренды на согласование
 
+Обновление 07.11.2026. В рабочую версию игры добавлена подсказка «Создано здесь» для всех 112 стран. Фактический набор находится в `brands.js`. Если широко известного бренда нет, в наборе используется местная или региональная компания с коротким описанием. Таблицы ниже сохраняют первоначальный подбор.
+
+Источники для дополнительных вариантов: [Bucuria](https://www.bucuria.md/en/history), [Grand Candy](https://grandcandy.am/eng/about-us/), [APU](https://www.apu.mn/news/lemonpress-apu-1trillion), [Al Jazeera](https://network.aljazeera.net/en/about-us), [Siyoma](https://siyoma.tj/novosti/pervoe-mesto-v-konkurse-luchshij-predprinimatel-goroda-dushanbe-v-2023-godu/), [Azersun](https://azersun.com/en/about/tariximiz), [Ak Tam](https://ticaret.gov.tr/blog/ulkelerden-ticari-haberler/turkmenistan/turkmen-firmasi-ak-tam-aktam-bazary-mobil-uygulamasini-gelistirdi), [Snapp](https://www.linkedin.com/company/snapp.ir), [Marjane](https://www.marjane.ma/corporate/marjane-bref), [Kadji](https://www.sa-ucb.com/pages/histoire/histoire.html), [Motibhai](https://www.motibhai.com/overview/).
+
 Уточнение текущего задания, 30.10.2026: будущая подсказка называется **«Создано здесь»**; показываем только текстовое название обычным шрифтом игры. Логотипы и фирменное оформление не используются. Упоминания проверки логотипов ниже — исторические оговорки, а не предложение их подключить. Полный список не считается согласованным без решения пользователя.
 
 Дата проверки: 30 октября 2026 года. Покрытие: **112 стран**, все записи `COUNTRIES` из `geo/countries.js`, в исходном порядке и с исходными кодами. Это редакционный список, а не данные игры. Ничего из него не подключено к runtime и не опубликовано.

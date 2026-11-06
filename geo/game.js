@@ -11,6 +11,7 @@ export const CLUES = [
   { key: 'money', cost: 100, label: t('Валюта', 'Currency') },
   { key: 'person', cost: 150, label: t('Известный человек', 'Famous person') },
   { key: 'walk', cost: 150, label: t('Прогулка', 'Street walk') },
+  { key: 'brand', cost: 100, label: t('Создано здесь', 'Made here') },
 ];
 // free оставлен для совместимости; отсутствующие подсказки блокируются через unavailable.
 export const cluePrice = (r, key) => (r.free.includes(key) ? 0 : r.prices[key] ?? CLUES.find(c => c.key === key).cost);

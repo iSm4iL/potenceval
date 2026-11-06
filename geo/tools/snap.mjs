@@ -1,6 +1,6 @@
 // Прогулка начинается рядом со знаменитым местом. Берём его координаты из английской Википедии и ставим
 // точку на ближайшую дорогу по OpenStreetMap: панорама Google без ключа открывает ближайший к точке снимок,
-// и на дороге это съёмка машины Google, а не чьё-то фото из кафе. Пишет geo/walks.js.
+// и на дороге это съёмка машины Google, а не чьё-то фото из кафе. Пишет отдельный список в geo/tools/.
 // Запуск из корня сайта: node geo/tools/snap.mjs
 import { writeFileSync } from 'node:fs';
 import { COUNTRIES } from '../countries.js';
@@ -53,7 +53,7 @@ for (const c of COUNTRIES.filter(c => c.walk)) {
   console.log(c.id, pts.map((p, i) => Math.round(metres(p, WALKS[c.id][i]))).join(' '));
   await sleep(1500);
 }
-writeFileSync(new URL('../walks.js', import.meta.url), `// Сгенерировано tools/snap.mjs: точки прогулки рядом со знаменитыми местами, на ближайших дорогах.
+writeFileSync(new URL('./walks-landmarks.js', import.meta.url), `// Сгенерировано tools/snap.mjs: точки прогулки рядом со знаменитыми местами, на ближайших дорогах.
 // Координаты мест — Википедия, дороги — © участники OpenStreetMap.
 export const WALKS = ${JSON.stringify(WALKS)};
 `);

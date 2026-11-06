@@ -7,7 +7,8 @@ import { PEOPLE, MONEY } from './content.js';
 import { WORLD, SHAPES } from './atlas.js';
 import { PHOTOS } from './photos.js';
 import { WALKS } from './walks.js';
-import { streetViewUrl } from './maps.js';
+import { streetViewUrl, streetViewLink } from './maps.js';
+import { BRANDS } from './brands.js';
 import { PHOTO_CREDITS } from './media-credits.js';
 import { localizeCountry, localizePack } from './i18n.js';
 import { localizeWorld } from './i18n.js';
@@ -33,7 +34,7 @@ function page(lang) {
   };
   const document = {querySelector:element,querySelectorAll:()=>[],body:element('body'),activeElement:null,addEventListener(){}};
   const context = createContext({
-    ...rules, ...banknotes, PEOPLE, MONEY, WALKS, WORLD_RU:WORLD, SHAPES, PHOTOS, streetViewUrl, PHOTO_CREDITS,
+    ...rules, ...banknotes, PEOPLE, MONEY, WALKS, WORLD_RU:WORLD, SHAPES, PHOTOS, streetViewUrl, streetViewLink, BRANDS, PHOTO_CREDITS,
     COUNTRIES:RAW.map(c=>localizeCountry(c,lang)), PACKS:PACKS.map(p=>localizePack(p,lang)),
     localizeWorld, lang, t, countryCount:n=>`${n} ${t('стран','countries')}`,
     $:element, esc:escapeHTML, LS:{get:k=>storage.get(k),set:(k,v)=>storage.set(k,v)},
@@ -53,13 +54,20 @@ for (const lang of ['ru','en']) {
     assert.ok(!element('#stage').innerHTML.includes('${t('), 'no unevaluated translations');
     assert.equal((element('#stage').innerHTML.match(/data-pack=/g) || []).length, 6);
     run('start()');
-    assert.ok(run("game.round.unavailable.includes('walk')"), 'no key: no purchasable walk');
+    run("game.round=newRound('FR');openClue(game.round,'walk');openWalk()");
+    assert.match(element('#walkExternal').href, /map_action=pano/);
+    assert.equal(element('#walkFrame').hidden, true);
+    run("game.round=newRound('FR');openClue(game.round,'brand');renderMenu()");
+    assert.match(element('#clueMenu').innerHTML, /Lacoste/);
+    assert.equal(run('game.round.score'), 900);
+    run("openClue(game.round,'brand')");
+    assert.equal(run('game.round.score'), 900);
     assert.match(element('#stage').innerHTML, new RegExp(lang === 'en' ? 'Country name…' : 'Название страны…'));
     assert.ok(storage.has(lang === 'ru' ? 'geo.facts.v3' : 'geo.facts.v3.en'));
     for (const c of RAW) {
       ui.context.countryId = c.id;
       run('game.round=newRound(countryId,[],[],{money:currencyPrice(MONEY[countryId],Object.values(MONEY))});roundFacts=byId.get(countryId).facts.slice(0,2);renderRound()');
-      for (const key of ['fact1','fact2','phrase','food','money','person','walk']) {
+      for (const key of ['fact1','fact2','phrase','food','money','person','walk','brand']) {
         ui.context.clueKey = key;
         const html = run('evidenceHTML(clueKey)');
         if (['food','person'].includes(key) && /<img\b/.test(html)) {
