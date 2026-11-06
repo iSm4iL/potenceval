@@ -36,6 +36,18 @@ body.club-gallery{background:#132f20}
 .more-list a:is(:hover,:focus-visible){border-color:#d9b477}
 .more-list a span{grid-row:span 2}.more-list small{color:#c9b596;line-height:1.4}
 
+.gallery-footer{
+ padding:16px clamp(16px,4vw,56px) calc(16px + env(safe-area-inset-bottom));
+ background:#211910;
+}
+.gallery-footer nav{display:flex;flex-wrap:wrap;gap:4px 24px}
+.gallery-footer a{
+ display:flex;align-items:center;min-height:44px;
+ color:#e9d7b8;font-size:14px;text-underline-offset:4px;
+}
+.gallery-footer a:is(:hover,:focus-visible){color:#fff3d8}
+@media(max-width:520px){.gallery-footer nav{flex-direction:column;gap:0}}
+
 @media(max-width:700px){
  .club-gallery .top{gap:6px}
  .table-surface{min-height:660px}
