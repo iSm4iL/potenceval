@@ -49,3 +49,31 @@ body.club-gallery{--table-ink:#483520;background:#171410;color:#eadcc4}
 .club-gallery .table-layout{z-index:1}.club-gallery .table-object{filter:drop-shadow(3px 10px 9px #0009)}
 @media(max-width:640px){.billiards-balls{width:100px;right:2%;bottom:1%}}
 
+/* The room is the page, while the game objects remain independent of its crop. */
+body.club-gallery{min-height:100vh;background:#10271e url('assets/home/billiards-table.webp') center center / cover fixed no-repeat}
+body.club-gallery::before{content:'';position:fixed;inset:0;background:linear-gradient(180deg,#100b09d9 0%,#10261c7a 38%,#100b09d9 100%);pointer-events:none;z-index:0}
+.club-gallery .wrap{position:relative;z-index:1;max-width:1550px;min-height:100vh;display:flex;flex-direction:column}
+.club-gallery main{flex:1}.club-gallery .top{border-color:#dcc18c55}.club-intro{padding:clamp(20px,4vh,48px) 5px}
+.club-intro h1,.club-intro p,.club-note,.club-gallery .club-footer{color:#f1e1c2;text-shadow:0 2px 8px #000}
+.club-gallery .table-surface{background:none;border:0;border-radius:0;box-shadow:none;min-height:0}
+.table-grain,.table-corner{display:none}
+.club-gallery .table-layout{padding:clamp(22px,5vh,65px) 3% clamp(35px,6vh,75px);gap:clamp(10px,3vw,50px);align-items:end}
+.club-gallery .table-main .table-object{width:min(100%,330px);height:clamp(160px,19vw,250px)}
+.club-gallery .table-main .game-note{width:min(100%,300px)}
+.billiards-balls{width:clamp(70px,10vw,140px);right:0;bottom:3%}
+.more-games{border-color:#e0c28a75}.more-games summary{color:#f1dfbb;text-shadow:0 2px 8px #000}.more-list a{background:#1d1912dd}
+@media(max-width:700px){
+ body.club-gallery{background-attachment:scroll;background-position:center top;background-size:auto 100vh}
+ body.club-gallery::before{background:linear-gradient(180deg,#100b09da,#10261d9c 35%,#100b09e8)}
+ .club-gallery .wrap{padding:12px 18px 24px}.club-intro{padding:22px 0 12px}.club-intro h1{font-size:clamp(30px,8vw,40px)}
+ .club-gallery .table-layout{grid-template-columns:1fr;gap:8px;padding:8px 0 25px}
+ .club-gallery .table-game.table-main{display:grid;grid-template-columns:minmax(100px,38%) minmax(0,1fr);align-items:center;gap:8px;transform:none;padding:0;min-height:130px}
+ .club-gallery .table-main .table-object{width:100%;height:clamp(115px,31vw,155px);object-position:center}
+ .club-gallery .table-main .game-note{width:100%;min-height:62px;margin:0;padding:8px;transform:rotate(-1deg)}
+ .club-gallery .game-note strong,.club-gallery .table-main .game-note strong{font-size:clamp(17px,5vw,22px);line-height:1.1;overflow-wrap:normal}
+ .club-gallery .game-note small{font-size:11px;max-width:none}.billiards-balls{width:75px;right:0;bottom:0;opacity:.7}
+ .more-games{margin-top:8px}.more-games summary{font-size:22px}.club-note{line-height:1.55}
+}
+body.club-gallery{background:#10271e}
+body.club-gallery::before{background:linear-gradient(180deg,#100b09d9 0%,#10261c7a 38%,#100b09d9 100%),url('assets/home/billiards-table.webp') center / cover no-repeat}
+@media(max-width:700px){body.club-gallery::before{background:linear-gradient(180deg,#100b09da,#10261d9c 35%,#100b09e8),url('assets/home/billiards-table.webp') center / cover no-repeat}}
