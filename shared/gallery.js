@@ -12,7 +12,8 @@ const details = {
   aura:[t('Четыре школы магии. Волны врагов. Один выживший.','Four schools of magic. Waves of enemies. One survivor.'),t('Один игрок','Single player')],
 };
 const esc = value => value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-document.querySelector('#games').innerHTML = `<div class="table-surface"><div class="table-grain" aria-hidden="true"></div><div class="table-layout">${GAMES.map((game,k)=>{
+document.querySelector('#games').innerHTML = `<div class="table-surface"><div class="table-grain" aria-hidden="true"></div><img class="billiards-balls" src="${new URL("shared/assets/home/billiards-balls.webp",root)}" alt="" aria-hidden="true"><div class="table-layout">${GAMES.slice(0,3).map((game,k)=>{
  const id=game.path.replace('/',''),[description,mode]=details[id];
- return `<a class="table-game table-${id} ${k<3?'table-main':''}" href="${new URL(game.path,root)}" aria-describedby="hint-${id}"><img class="table-object" src="${new URL(`shared/assets/home/table-${id}.webp`,root)}" alt="" ${k<3?'fetchpriority="high"':'loading="lazy"'}><span class="game-note"><strong>${esc(game.name)}</strong><small>${esc(mode)}</small></span><span class="game-hint" id="hint-${id}">${esc(description)}</span></a>`;
-}).join('')}</div><span class="table-corner" aria-hidden="true">potenceval</span></div>`;
+ return `<a class="table-game table-${id} ${k<3?'table-main':''}" href="${new URL(game.path,root)}" aria-describedby="hint-${id}"><img class="table-object" src="${new URL(`shared/assets/home/billiards-${id}.webp`,root)}" alt="" ${k<3?'fetchpriority="high"':'loading="lazy"'}><span class="game-note"><strong>${esc(game.name)}</strong><small>${esc(mode)}</small></span><span class="game-hint" id="hint-${id}">${esc(description)}</span></a>`;
+}).join('')}</div><span class="table-corner" aria-hidden="true">potenceval</span></div><details class="more-games"><summary>${t("Другие игры", "More games")} <span>↗</span></summary><div class="more-list">${GAMES.slice(3).map(game => `<a href="${new URL(game.path,root)}"><span>${esc(game.icon)}</span><strong>${esc(game.name)}</strong><small>${esc(game.desc)}</small></a>`).join('')}</div></details>`;
+
