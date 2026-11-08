@@ -5,10 +5,11 @@ import { createContext, runInContext } from 'node:vm';
 import { COUNTRIES as RAW, PACKS } from './countries.js';
 import { PEOPLE, MONEY } from './content.js';
 import { WORLD, SHAPES } from './atlas.js';
-import { PHOTOS } from './photos.js';
+import { PHOTOS, PERSON_PHOTOS, PERSON_DEPICTIONS } from './photos.js';
 import { WALKS } from './walks.js';
 import { streetViewUrl, streetViewLink } from './maps.js';
 import { BRANDS } from './brands.js';
+import { BRAND_MEDIA } from './brand-media.js';
 import { PHOTO_CREDITS } from './media-credits.js';
 import { localizeCountry, localizePack } from './i18n.js';
 import { localizeWorld } from './i18n.js';
@@ -20,7 +21,7 @@ const escapeHTML = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&a
 function page(lang) {
   const t = (ru, en) => lang === 'en' ? en : ru;
   const rules = runInContext(source('game.js') + '\n({CLUES,START,WRONG,DIRECTION_COST,buyDirection,norm,nameIndex,matchCountry,canOpen,cluePrice,currencyPrice,openClue,refundWalk,guess,guidance,surrender,createGame,award,nextRound,selectFacts,newRound});', createContext({t}));
-  const banknotes = runInContext(source('banknotes.js') + '\n({banknoteHTML,banknoteFor});', createContext({t}));
+  const banknotes = runInContext(source('banknotes.js') + '\n({banknoteHTML,banknoteFor,banknoteKind});', createContext({t}));
   const nodes = new Map(), storage = new Map(), notices = [];
   const element = key => {
     if (!nodes.has(key)) nodes.set(key, {
@@ -28,13 +29,13 @@ function page(lang) {
       classList:{add(){},remove(){},toggle(){}},
       querySelectorAll:() => [], querySelector:s => element(s),
       setAttribute(k,v){this.attributes[k]=String(v);}, getAttribute(k){return this.attributes[k];}, removeAttribute(k){delete this.attributes[k];},
-      addEventListener(){}, focus(){}, scrollIntoView(){}, showModal(){this.open=true;}, close(){this.open=false;},
+      addEventListener(){}, focus(){document.activeElement=this;}, scrollIntoView(){}, showModal(){this.open=true;}, close(){this.open=false;},
     });
     return nodes.get(key);
   };
   const document = {querySelector:element,querySelectorAll:()=>[],body:element('body'),activeElement:null,addEventListener(){}};
   const context = createContext({
-    ...rules, ...banknotes, PEOPLE, MONEY, WALKS, WORLD_RU:WORLD, SHAPES, PHOTOS, streetViewUrl, streetViewLink, BRANDS, PHOTO_CREDITS,
+    ...rules, ...banknotes, PEOPLE, MONEY, WALKS, WORLD_RU:WORLD, SHAPES, PHOTOS, PERSON_PHOTOS, PERSON_DEPICTIONS, streetViewUrl, streetViewLink, BRANDS, BRAND_MEDIA, PHOTO_CREDITS,
     COUNTRIES:RAW.map(c=>localizeCountry(c,lang)), PACKS:PACKS.map(p=>localizePack(p,lang)),
     localizeWorld, lang, t, countryCount:n=>`${n} ${t('стран','countries')}`,
     $:element, esc:escapeHTML, LS:{get:k=>storage.get(k),set:(k,v)=>storage.set(k,v)},
@@ -70,13 +71,20 @@ for (const lang of ['ru','en']) {
       for (const key of ['fact1','fact2','phrase','food','money','person','walk','brand']) {
         ui.context.clueKey = key;
         const html = run('evidenceHTML(clueKey)');
-        if (['food','person'].includes(key) && /<img\b/.test(html)) {
-          assert.match(html, /credits\.html#m\d+/, `${c.id}/${key}: attribution next to photo`);
+        if (['food','person','brand'].includes(key) && /<img\b/.test(html) && !html.includes('assets/food-art/')) {
+          const attribution = key === 'brand' ? /brand-credits\.html#/ : /credits\.html#m\d+/;
+          assert.match(html, attribution, `${c.id}/${key}: attribution next to photo`);
           const src = html.match(/src="([^"]+)"/)[1].replaceAll('&amp;','&');
           ui.context.photoSrc = src;
           run('openViewer(photoSrc)');
-          assert.match(element('#viewerBody').innerHTML, /credits\.html#m\d+/, `${c.id}/${key}: zoom retains attribution`);
+          assert.match(element('#viewerBody').innerHTML, attribution, `${c.id}/${key}: zoom retains attribution`);
         }
+        if(key === 'money') assert.match(html, /<img\b/, `${c.id}: currency has an image`);
+        if(key === 'brand') {
+          assert.match(html, /src="assets\/brand-logos\//, `${c.id}: brand has its logo`);
+          assert.match(html, /brand-mark/, `${c.id}: logo has a legible background`);
+        }
+        if(key === 'food') assert.match(html, /<img\b/, `${c.id}: food has an image`);
         assert.doesNotMatch(html, /undefined|\$\{t\(/, `${c.id}/${key}`);
         // Source-language phrases are clues; their translation and all other visible text are English.
         const visible = html.replace(/<blockquote\b[^>]*>[\s\S]*?<\/blockquote>/g, '').replace(/<[^>]*>/g, '');
@@ -99,6 +107,7 @@ for (const lang of ['ru','en']) {
     run('submit()');
     assert.equal(run('game.round.solved'), true);
     assert.match(element('#resultActions').innerHTML, new RegExp(lang === 'en' ? 'Correct!' : 'Верно!'));
+    assert.equal(run('document.activeElement'), element('.answer-panel h2'));
     run("game.round=newRound('RU');openClue(game.round,'walk');$('#walkRefund').onclick()");
     assert.equal(run('game.round.score'), 1000);
     assert.ok(run("game.round.unavailable.includes('walk')"));

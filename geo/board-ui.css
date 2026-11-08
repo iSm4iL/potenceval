@@ -99,7 +99,6 @@ body[data-game="geo"] .threads{z-index:2}body[data-game="geo"] .evidence-person,
   body[data-game="geo"] .suspect{width:176px}
   .board .evidence-photo{max-height:70px}
   .board .evidence-money .banknote-photo{max-height:75px}
-  body[data-game="geo"] .notebook{max-height:calc(100dvh - 112px);overflow:auto}
   .board-help{margin-top:8px}
 }
 /* Читаемые листки и одинаковые контурные значки вместо символов разных шрифтов. */
@@ -169,7 +168,7 @@ body.club-theme[data-game="geo"] * {
 }
 body[data-game="geo"] .geo-wrap {max-width:1700px;padding-inline:clamp(10px,1.5vw,24px)}
 body[data-game="geo"] .case {
-  grid-template-columns:minmax(0,1fr) clamp(235px,20vw,290px);
+  grid-template-columns:minmax(0,1fr) clamp(270px,22vw,320px);
   gap:clamp(12px,1.6vw,24px);
   margin-top:21px;
   padding-bottom:0;
@@ -194,22 +193,22 @@ body[data-game="geo"] .plaque {
 body[data-game="geo"] .plaque::before,
 body[data-game="geo"] .plaque::after {display:none}
 body[data-game="geo"] .board {
+  --card-height:132px;
   grid-template-columns:repeat(4,minmax(0,1fr));
   grid-template-areas:'fact1 fact1 fact2 brand' 'phrase sus sus person' 'food walk walk money';
   align-items:center;
-  gap:clamp(12px,2vw,28px);
-  padding:clamp(12px,2vw,28px);
-  border:clamp(14px,3vw,48px) solid transparent;
+  gap:clamp(14px,1.4vw,24px);
+  padding:clamp(18px,1.8vw,30px);
+  border:clamp(12px,2vw,30px) solid transparent;
   border-image:url('assets/investigation-board.png') 54 fill / 1 / 0 stretch;
   background:none;
   box-shadow:0 16px 30px #0007;
 }
 body[data-game="geo"] .clue {
-  max-width:175px;
+  max-width:none;
   --stock:#f3dfa1;
   --ink-accent:#6d3728;
 }
-body[data-game="geo"] .clue-fact1 {max-width:310px;justify-self:start}
 body[data-game="geo"] .clue-phrase {--stock:#e9c9ad;--ink-accent:#793d3b}
 body[data-game="geo"] .clue-food {--stock:#eed4a9;--ink-accent:#794522}
 body[data-game="geo"] .clue-money {--stock:#d7dec0;--ink-accent:#365442}
@@ -217,10 +216,19 @@ body[data-game="geo"] .clue-walk {--stock:#d9dfd0;--ink-accent:#3a544f}
 body[data-game="geo"] .clue-person {--stock:#dfd4bf;--ink-accent:#52483d}
 body[data-game="geo"] .clue-brand {grid-area:brand;--stock:#ead8b8;--ink-accent:#69462f}
 .evidence-brand h2 {overflow-wrap:anywhere}
+.brand-mark {width:100%}
+.brand-mark .photo-zoom {
+  width:100%;
+  padding:12px;
+  border-radius:4px;
+  background:var(--brand-mark-bg,#ffffff);
+}
+body[data-game="geo"] .brand-mark .evidence-photo {width:100%;height:112px;object-fit:contain}
+.art-caption {font-size:12px;color:#634a36}
 .walk-external {padding:24px;display:grid;justify-items:center;align-content:center;gap:12px;min-height:200px;text-align:center;color:#fff3df}
-body[data-game="geo"] .clue-inner,
-body[data-game="geo"] .front>*,
-body[data-game="geo"] .back {min-height:104px;height:100%}
+body[data-game="geo"] .board .clue-inner,
+body[data-game="geo"] .board .front>*,
+body[data-game="geo"] .board .back {min-height:var(--card-height);height:100%}
 body[data-game="geo"] .back,
 body[data-game="geo"] .evidence-sheet {
   border:1px solid #61492f80;
@@ -235,26 +243,26 @@ body[data-game="geo"] .back {
   grid-template-columns:auto minmax(0,1fr);
   align-content:center;
   gap:9px;
-  padding:17px 10px 11px;
+  padding:20px 12px 14px;
   text-align:left;
 }
 body[data-game="geo"] .back:hover:not(:disabled) {transform:translateY(-3px);box-shadow:2px 7px 11px #21150f85}
 body[data-game="geo"] .back .back-ic {
-  width:50px;
-  height:50px;
+  width:clamp(34px,3.5vw,42px);
+  height:clamp(34px,3.5vw,42px);
   border:1px solid currentColor;
   border-radius:4px;
   color:var(--ink-accent);
 }
-body[data-game="geo"] .clue-icon {width:36px;height:36px}
-body[data-game="geo"] .back b {display:block;text-align:left;font:750 15px/1.18 Onest,sans-serif}
+body[data-game="geo"] .clue-icon {width:32px;height:32px}
+body[data-game="geo"] .back b {display:block;text-align:left;font:750 clamp(17px,1.6vw,19px)/1.2 Onest,sans-serif;overflow-wrap:anywhere}
 body[data-game="geo"] .back .price {
   display:block;
   margin:5px 0 0;
   padding:0;
   background:none;
   text-align:left;
-  font:650 12px/1.25 Onest,sans-serif;
+  font:650 14px/1.3 Onest,sans-serif;
   color:#624431;
 }
 .clue-index {position:absolute;top:4px;right:7px;color:var(--ink-accent);font:700 10px/1 monospace}
@@ -262,28 +270,25 @@ body[data-game="geo"] .clue .pin,
 body[data-game="geo"] .suspect .pin {top:-5px;opacity:1}
 body[data-game="geo"] .clue .front {height:100%}
 body[data-game="geo"] .evidence-tab {
-  margin:0 0 0 10px;
-  padding:7px 8px 6px 0;
+  margin:0 14px;
+  padding:8px 0;
   border-bottom:1px solid #68473244;
   color:var(--ink-accent);
-  font:750 11px/1.3 Onest,sans-serif;
+  font:750 13px/1.3 Onest,sans-serif;
 }
 body[data-game="geo"] .board .evidence-content {
   min-height:0;
-  padding:8px 12px 12px!important;
+  padding:12px 14px 16px!important;
   background:none;
 }
 body[data-game="geo"] .board .evidence-content .fact-text {
-  font:600 14px/1.45 'Golos Text',sans-serif!important;
-  display:-webkit-box;
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:3;
-  overflow:hidden;
+  font:600 18px/1.45 'Golos Text',sans-serif!important;
 }
-body[data-game="geo"] .board .evidence-content h2 {font-size:14px!important;overflow-wrap:break-word}
+body[data-game="geo"] .board .evidence-content h2 {font-size:19px!important;overflow-wrap:anywhere}
+body[data-game="geo"] .board .evidence-content p {font-size:15px!important;overflow-wrap:anywhere}
 body[data-game="geo"] .board .evidence-content .phrase {
-  font-size:clamp(14px,calc(165px / var(--long-word,12)),22px)!important;
-  overflow-wrap:break-word;
+  font-size:20px!important;
+  overflow-wrap:anywhere;
 }
 body[data-game="geo"] .inspect-note {
   inset:0;
@@ -294,10 +299,11 @@ body[data-game="geo"] .inspect-note {
   background:none;
   pointer-events:none;
 }
-body[data-game="geo"] .board .banknote-photo {max-height:96px}
+body[data-game="geo"] .board .evidence-photo {max-height:132px;object-fit:contain}
+body[data-game="geo"] .board .banknote-photo {max-height:112px}
 body[data-game="geo"] .evidence-money .currency-symbol {color:#365442}
 body[data-game="geo"] .evidence-walk .street-symbol {display:block;color:#3a544f}
-body[data-game="geo"] .evidence-walk .btn {min-height:44px;font-size:12px}
+body[data-game="geo"] .evidence-walk .btn {min-height:44px;font-size:15px;white-space:normal}
 body[data-game="geo"] .suspect {align-self:center;width:min(100%,176px);transform:rotate(2deg)}
 body[data-game="geo"] .suspect-front,
 body[data-game="geo"] .suspect-back {
@@ -326,8 +332,15 @@ body[data-game="geo"] .notebook::before {display:none}
 body[data-game="geo"] .notebook h2 {font:750 22px/1.15 Onest,sans-serif}
 body[data-game="geo"] .notebook .round-score {border-top:1px solid #88664b50;border-bottom:1px solid #88664b50}
 body[data-game="geo"] .notebook .attempts h3,
-body[data-game="geo"] .notebook #totals h3 {font-size:13px;color:#63452e}
-body[data-game="geo"] .give-up {min-height:44px;font-size:12px}
+body[data-game="geo"] .notebook #totals h3 {font-size:15px;color:#63452e}
+body[data-game="geo"] .answer-note,
+body[data-game="geo"] .attempt-head,
+body[data-game="geo"] .ranks li {font-size:14px}
+body[data-game="geo"] .attempts li {font-size:15px}
+body[data-game="geo"] .give-up {min-height:44px;font-size:14px}
+body[data-game="geo"] .guess .field,
+body[data-game="geo"] .guess .btn,
+body[data-game="geo"] .guess .sugg button {min-height:44px;font-size:16px}
 body[data-game="geo"] .viewer {
   border:1px solid #a98156;
   border-top:6px solid #905538;
@@ -336,6 +349,7 @@ body[data-game="geo"] .viewer {
   background-blend-mode:multiply;
 }
 body[data-game="geo"] .evidence-zoom .phrase {overflow-wrap:break-word}
+body[data-game="geo"] .evidence-zoom .evidence-content p {font-size:16px}
 body[data-game="geo"] .final {
   margin:22px auto;
   padding:clamp(18px,4vw,46px);
@@ -346,31 +360,40 @@ body[data-game="geo"] .final {
   background:var(--noise),#3b281d;
   background-blend-mode:multiply;
 }
-@media (min-width:981px) {
-  body[data-game="geo"] .board {aspect-ratio:3/2}
+@media (min-width:1081px) {
   body[data-game="geo"] .notebook {position:sticky;top:14px;max-width:none}
   body[data-game="geo"] .guess {position:relative;inset:auto;grid-template-columns:1fr;padding:0;background:none;box-shadow:none}
   body[data-game="geo"] .guess .sugg {top:calc(100% + 5px);bottom:auto}
 }
-@media (max-width:980px) {
+@media (min-width:1081px) and (max-height:760px) {
+  body[data-game="geo"] .notebook {position:relative;top:auto}
+}
+@media (max-width:1080px) {
   body[data-game="geo"] .case {grid-template-columns:1fr;padding-bottom:84px}
   body[data-game="geo"] .notebook {max-width:none}
 }
-@media (max-width:680px) {
+@media (max-width:760px) {
   body[data-game="geo"] .board {
+    --card-height:104px;
     grid-template-columns:repeat(2,minmax(0,1fr));
-    grid-template-areas:'fact1 fact1' 'fact2 phrase' 'sus person' 'food money' 'walk brand';
-    gap:11px 8px;
-    padding:22px 6px 10px;
+    grid-template-areas:'fact1 fact1' 'fact2 phrase' 'food money' 'person walk' 'brand sus';
+    gap:12px 10px;
+    padding:28px 8px 10px;
+    border-width:7px;
   }
-  body[data-game="geo"] .clue-inner,
-  body[data-game="geo"] .front>*,
-  body[data-game="geo"] .back {min-height:86px}
-  body[data-game="geo"] .back {gap:6px;padding-inline:6px}
+  body[data-game="geo"] .clue,
+  body[data-game="geo"] .suspect {transform:none}
+  body[data-game="geo"] .board .threads {display:none}
+  body[data-game="geo"] .plaque {font-size:12px}
+  body[data-game="geo"] .back {gap:7px;padding:17px 8px 10px}
   body[data-game="geo"] .back .back-ic {width:34px;height:34px}
   body[data-game="geo"] .clue-icon {width:28px;height:28px}
-  body[data-game="geo"] .back .price {font-size:11px!important}
-  body[data-game="geo"] .suspect-front {height:100px}
+  body[data-game="geo"] .board .back b {font-size:16px!important}
+  body[data-game="geo"] .board .back .price {font-size:13px!important}
+  body[data-game="geo"] .board .evidence-content .fact-text {font-size:17px!important}
+  body[data-game="geo"] .board .evidence-content h2 {font-size:17px!important}
+  body[data-game="geo"] .board .evidence-photo {max-height:110px}
+  body[data-game="geo"] .suspect-front {height:var(--card-height)}
   body[data-game="geo"] .suspect-front b {font-size:44px}
   body[data-game="geo"] .suspect-front b::after {width:55px;height:50px;margin:-24px 0 0 -28px}
 }
@@ -380,11 +403,3 @@ body[data-game="geo"] .final {
   body[data-game="geo"] .back .price {text-align:center}
 }
 body[data-game="geo"] .board .threads path {stroke:#861b19;stroke-width:3px}
-body[data-game="geo"] .clue-person .clue-inner,
-body[data-game="geo"] .clue-person .back,
-body[data-game="geo"] .clue-person .evidence-content {min-height:104px}
-@media (max-width:680px) {
-  body[data-game="geo"] .clue-person .clue-inner,
-  body[data-game="geo"] .clue-person .back {min-height:86px}
-  body[data-game="geo"] .clue-person .evidence-content {min-height:0}
-}

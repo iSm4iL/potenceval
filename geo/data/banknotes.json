@@ -110,5 +110,14 @@
     "sourceFile": "TJ.img",
     "asset": "geo/assets/banknotes/TJ.webp",
     "sourceSha256": "02e1407a4f6697704c0b6ef94bed5fb27d824e1a261fc4cb16cd1ec2ea242d27"
+  },
+  {
+    "key": "GB",
+    "url": "https://live.staticflickr.com/65535/48874740572_0063192a55.jpg",
+    "crop": [0.088, 0.163498099, 0.332, 0.794676806],
+    "reviewed": "2026-11-07",
+    "sourceFile": "gb-flickr.jpg",
+    "asset": "geo/assets/banknotes/sterling-detail.webp",
+    "sourceSha256": "33dcf4bafe9d8543b5e749340a4a46268d9d4f24c4e5ea78101c86eda5c127b5"
   }
 ]
