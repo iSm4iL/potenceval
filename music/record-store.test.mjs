@@ -11,7 +11,7 @@ test('shelf arrows expose every collection without wrapping past either end', ()
   const last = shelfPage(PACKS, 99);
   assert.equal(last.page, 1);
   assert.equal(last.pages, 2);
-  assert.deepEqual(last.items.map(p => p.id), ['us-hiphop', 'soundcloud', 'dead-inside', 'drill', 'hookah']);
+  assert.deepEqual(last.items.map(p => p.id), ['us-hiphop', 'soundcloud', 'dead-inside', 'drill', 'hookah', 'street-36']);
   assert.equal(last.previous, true);
   assert.equal(last.next, false);
 });

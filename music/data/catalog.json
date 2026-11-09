@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-03T22:11:33.348Z",
+  "generatedAt": "2026-11-09T07:42:55Z",
   "sources": [
     {
       "id": "apple-ru-chart",
@@ -351,6 +351,36 @@
       "retrievedAt": "2026-10-30T14:37:34Z",
       "status": "fresh",
       "count": 124
+    },
+    {
+      "id": "editorial-20261109-metal",
+      "kind": "verified-tracks",
+      "title": "Редакторская подборка — Рок и метал",
+      "url": "https://www.deezer.com/",
+      "status": "fresh",
+      "updatedAt": "2026-11-09T07:42:55Z",
+      "retrievedAt": "2026-11-09T07:42:55Z",
+      "count": 80
+    },
+    {
+      "id": "editorial-20261109-dad-rock",
+      "kind": "verified-tracks",
+      "title": "Редакторская подборка — Батин рок",
+      "url": "https://www.deezer.com/",
+      "status": "fresh",
+      "updatedAt": "2026-11-09T07:42:55Z",
+      "retrievedAt": "2026-11-09T07:42:55Z",
+      "count": 23
+    },
+    {
+      "id": "editorial-20261109-street-36",
+      "kind": "verified-tracks",
+      "title": "Редакторская подборка — Улица 36",
+      "url": "https://www.deezer.com/",
+      "status": "fresh",
+      "updatedAt": "2026-11-09T07:42:55Z",
+      "retrievedAt": "2026-11-09T07:42:55Z",
+      "count": 72
     }
   ],
   "tracks": [
@@ -3179,7 +3209,8 @@
       "link": "https://www.deezer.com/track/856558962",
       "genres": [
         "ru-rap",
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [
         "ru-rap"
@@ -3226,6 +3257,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -3300,7 +3337,8 @@
       "genres": [
         "ru-rap",
         "hookah",
-        "nostalgia"
+        "nostalgia",
+        "street-36"
       ],
       "currentGenres": [
         "ru-rap"
@@ -3353,6 +3391,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -7399,7 +7443,8 @@
       "genres": [
         "ru-rap",
         "hookah",
-        "nostalgia"
+        "nostalgia",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -7442,6 +7487,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -8237,7 +8288,8 @@
       "genres": [
         "ru-rap",
         "nostalgia",
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -8272,6 +8324,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -10864,7 +10922,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/999d7a903ad55f919aa082e87a4acfa0/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1172771512",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -10879,6 +10938,12 @@
           "id": "player-review-ru-rap",
           "genres": [
             "ru-rap"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -18742,7 +18807,8 @@
       "genres": [
         "ru-rap",
         "new-wave",
-        "dead-inside"
+        "dead-inside",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -18778,6 +18844,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -18852,7 +18924,8 @@
       "genres": [
         "ru-rap",
         "new-wave",
-        "dead-inside"
+        "dead-inside",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -18889,6 +18962,12 @@
           "genres": [
             "dead-inside"
           ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
         }
       ],
       "lookupKeys": [
@@ -18913,7 +18992,8 @@
       "genres": [
         "ru-rap",
         "new-wave",
-        "dead-inside"
+        "dead-inside",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -18942,6 +19022,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -19016,7 +19102,8 @@
       "genres": [
         "ru-rap",
         "new-wave",
-        "dead-inside"
+        "dead-inside",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -19045,6 +19132,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -24436,7 +24529,8 @@
       "link": "https://www.deezer.com/track/4076088951",
       "genres": [
         "ru-rap",
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -24467,6 +24561,12 @@
           "genres": [
             "hookah"
           ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
         }
       ],
       "lookupKeys": [
@@ -24491,7 +24591,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/7ef4ba135acb309784b692364fecb183/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4014467011",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -24507,6 +24608,12 @@
           "id": "player-review-ru-rap",
           "genres": [
             "ru-rap"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -42055,7 +42162,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/518ec5f2246d0ae9643d1d1599406fdc/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/145061632",
       "genres": [
-        "nostalgia"
+        "nostalgia",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -42071,6 +42179,12 @@
           "id": "player-review-nostalgia",
           "genres": [
             "nostalgia"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -42095,7 +42209,8 @@
       "link": "https://www.deezer.com/track/385026441",
       "genres": [
         "nostalgia",
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -42125,6 +42240,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -50569,7 +50690,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/cdb9780a514eef0c92ea89226d1e3f8f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3422937961",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -50585,6 +50707,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -50664,7 +50792,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8737bb9aebd6a505add0ddb2abc2ddb8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4022728331",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -50688,6 +50817,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -50826,7 +50961,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e630359c62223e80d024877d71cd2629/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3692617872",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -50850,6 +50986,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -50884,7 +51026,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8737bb9aebd6a505add0ddb2abc2ddb8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4022728361",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -50908,6 +51051,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -50934,7 +51083,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3cc7939522679521d3b70abf21c39d4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/408907922",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -50950,6 +51100,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -50977,7 +51133,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c8565455a32d2515e09e8c6f8feb3990/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/880446252",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -50993,6 +51150,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -51076,7 +51239,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/efa57402a48160eb9f4d007b849271ce/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/802751642",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -51092,6 +51256,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -51121,7 +51291,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3cc7939522679521d3b70abf21c39d4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/408907912",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -51137,6 +51308,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -78205,7 +78382,8 @@
       "link": "https://www.deezer.com/track/3402100901",
       "genres": [
         "new-wave",
-        "dead-inside"
+        "dead-inside",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -78219,6 +78397,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -79028,7 +79212,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/5157b36056a6d539271378378b9292db/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/897756242",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -79036,6 +79221,12 @@
           "id": "player-review-ru-rap",
           "genres": [
             "ru-rap"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -79059,7 +79250,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a395edfab5d1e54c7f14a12e1e32bebe/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3911642141",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -79067,6 +79259,12 @@
           "id": "player-review-ru-rap",
           "genres": [
             "ru-rap"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -79090,7 +79288,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a395edfab5d1e54c7f14a12e1e32bebe/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3911642041",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -79098,6 +79297,12 @@
           "id": "player-review-ru-rap",
           "genres": [
             "ru-rap"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -79121,7 +79326,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/08b312af07a46ec6154f4ba55ef9b137/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2507053401",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -79129,6 +79335,12 @@
           "id": "player-review-ru-rap",
           "genres": [
             "ru-rap"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -79497,7 +79709,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/56ad1c94ffe7e2fdc140967c8150fe80/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/856558952",
       "genres": [
-        "ru-rap"
+        "ru-rap",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -79505,6 +79718,12 @@
           "id": "player-review-ru-rap",
           "genres": [
             "ru-rap"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -79529,7 +79748,8 @@
       "link": "https://www.deezer.com/track/4006993871",
       "genres": [
         "ru-rap",
-        "nostalgia"
+        "nostalgia",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -79543,6 +79763,12 @@
           "id": "player-review-nostalgia",
           "genres": [
             "nostalgia"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -79567,7 +79793,8 @@
       "link": "https://www.deezer.com/track/4014466991",
       "genres": [
         "ru-rap",
-        "nostalgia"
+        "nostalgia",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -79581,6 +79808,12 @@
           "id": "player-review-nostalgia",
           "genres": [
             "nostalgia"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -80434,7 +80667,8 @@
       "link": "https://www.deezer.com/track/145061630",
       "genres": [
         "nostalgia",
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -80448,6 +80682,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -87491,7 +87731,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3cc7939522679521d3b70abf21c39d4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/408907932",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -87499,6 +87740,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -88439,7 +88686,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/122fe592ca54bd1c2ae16495724d7da8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2330657895",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -88447,6 +88695,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -88480,7 +88734,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8737bb9aebd6a505add0ddb2abc2ddb8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4022728351",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -88488,6 +88743,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -88515,7 +88776,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/0ab303f6b96991423ca90edb8b5d9dcc/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3309655271",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -88523,6 +88785,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -88866,7 +89134,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c7151b0b6db2d85040448e691a6377eb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3266563331",
       "genres": [
-        "hookah"
+        "hookah",
+        "street-36"
       ],
       "currentGenres": [],
       "sources": [
@@ -88874,6 +89143,12 @@
           "id": "player-review-hookah",
           "genres": [
             "hookah"
+          ]
+        },
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
           ]
         }
       ],
@@ -89067,6 +89342,4418 @@
       ],
       "lookupKeys": [
         "xcho|путь"
+      ]
+    },
+    {
+      "id": "dz-6435666",
+      "deezerId": 6435666,
+      "title": "Getting Away With Murder",
+      "artist": "Papa Roach",
+      "artistIds": [
+        "89"
+      ],
+      "artistNames": [
+        "Papa Roach"
+      ],
+      "answerKey": "89|getting away with murder",
+      "workKey": "89|getting away with murder",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/70328b4823ca8bd1975a04c2c21327d7/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/6435666",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "papa roach|getting away with murder"
+      ]
+    },
+    {
+      "id": "dz-3151418551",
+      "deezerId": 3151418551,
+      "title": "Even If It Kills Me",
+      "artist": "Papa Roach",
+      "artistIds": [
+        "89"
+      ],
+      "artistNames": [
+        "Papa Roach"
+      ],
+      "answerKey": "89|even if it kills me",
+      "workKey": "89|even if it kills me",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/82218141fb21342c445fef7148c8035b/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3151418551",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "papa roach|even if it kills me"
+      ]
+    },
+    {
+      "id": "dz-2350077695",
+      "deezerId": 2350077695,
+      "title": "Help",
+      "artist": "Papa Roach",
+      "artistIds": [
+        "89"
+      ],
+      "artistNames": [
+        "Papa Roach"
+      ],
+      "answerKey": "89|help",
+      "workKey": "89|help",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/dd7e516cf1be0cafdc284f58d9a3b527/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2350077695",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "papa roach|help"
+      ]
+    },
+    {
+      "id": "dz-1468946472",
+      "deezerId": 1468946472,
+      "title": "Kill The Noise",
+      "artist": "Papa Roach",
+      "artistIds": [
+        "89"
+      ],
+      "artistNames": [
+        "Papa Roach"
+      ],
+      "answerKey": "89|kill the noise",
+      "workKey": "89|kill the noise",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/1c0e7708ebb72e3d0f2be7c7536ed218/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1468946472",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "papa roach|kill the noise"
+      ]
+    },
+    {
+      "id": "dz-3068802261",
+      "deezerId": 3068802261,
+      "title": "The Emptiness Machine",
+      "artist": "Linkin Park",
+      "artistIds": [
+        "92"
+      ],
+      "artistNames": [
+        "Linkin Park"
+      ],
+      "answerKey": "92|the emptiness machine",
+      "workKey": "92|the emptiness machine",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/1e8ffbd401303b5693226c12ee0b84fb/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3068802261",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "linkin park|the emptiness machine"
+      ]
+    },
+    {
+      "id": "dz-14628995",
+      "deezerId": 14628995,
+      "title": "Somewhere I Belong",
+      "artist": "Linkin Park",
+      "artistIds": [
+        "92"
+      ],
+      "artistNames": [
+        "Linkin Park"
+      ],
+      "answerKey": "92|somewhere i belong",
+      "workKey": "92|somewhere i belong",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/882448ab63952aa16e502c82db2df160/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/14628995",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "linkin park|somewhere i belong"
+      ]
+    },
+    {
+      "id": "dz-37734441",
+      "deezerId": 37734441,
+      "title": "CASTLE OF GLASS",
+      "artist": "Linkin Park",
+      "artistIds": [
+        "92"
+      ],
+      "artistNames": [
+        "Linkin Park"
+      ],
+      "answerKey": "92|castle of glass",
+      "workKey": "92|castle of glass",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0ce480e7723712dee352c68fdfef2599/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/37734441",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "linkin park|castle of glass"
+      ]
+    },
+    {
+      "id": "dz-3275882161",
+      "deezerId": 3275882161,
+      "title": "Up From the Bottom",
+      "artist": "Linkin Park",
+      "artistIds": [
+        "92"
+      ],
+      "artistNames": [
+        "Linkin Park"
+      ],
+      "answerKey": "92|up from the bottom",
+      "workKey": "92|up from the bottom",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/91043dc582be268d9f6aa3c8208f2b6c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3275882161",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "linkin park|up from the bottom"
+      ]
+    },
+    {
+      "id": "dz-1143499",
+      "deezerId": 1143499,
+      "title": "Behind Blue Eyes",
+      "artist": "Limp Bizkit",
+      "artistIds": [
+        "93"
+      ],
+      "artistNames": [
+        "Limp Bizkit"
+      ],
+      "answerKey": "93|behind blue eyes",
+      "workKey": "93|behind blue eyes",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/f17a6d764d4eea95dab085c917e1ce7f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1143499",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "limp bizkit|behind blue eyes"
+      ]
+    },
+    {
+      "id": "dz-1143496",
+      "deezerId": 1143496,
+      "title": "My Way",
+      "artist": "Limp Bizkit",
+      "artistIds": [
+        "93"
+      ],
+      "artistNames": [
+        "Limp Bizkit"
+      ],
+      "answerKey": "93|my way",
+      "workKey": "93|my way",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/f17a6d764d4eea95dab085c917e1ce7f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1143496",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "limp bizkit|my way"
+      ]
+    },
+    {
+      "id": "dz-104011162",
+      "deezerId": 104011162,
+      "title": "My Generation",
+      "artist": "Limp Bizkit",
+      "artistIds": [
+        "93"
+      ],
+      "artistNames": [
+        "Limp Bizkit"
+      ],
+      "answerKey": "93|my generation",
+      "workKey": "93|my generation",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/070e00c8dbd21dc735bc27eb6fef9ae1/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/104011162",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "limp bizkit|my generation"
+      ]
+    },
+    {
+      "id": "dz-104011160",
+      "deezerId": 104011160,
+      "title": "Hot Dog",
+      "artist": "Limp Bizkit",
+      "artistIds": [
+        "93"
+      ],
+      "artistNames": [
+        "Limp Bizkit"
+      ],
+      "answerKey": "93|hot dog",
+      "workKey": "93|hot dog",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/070e00c8dbd21dc735bc27eb6fef9ae1/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/104011160",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "limp bizkit|hot dog"
+      ]
+    },
+    {
+      "id": "dz-4058381481",
+      "deezerId": 4058381481,
+      "title": "Who Will You Follow",
+      "artist": "Evanescence",
+      "artistIds": [
+        "98"
+      ],
+      "artistNames": [
+        "Evanescence"
+      ],
+      "answerKey": "98|who will you follow",
+      "workKey": "98|who will you follow",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/bec9fb296040f23c1852104cc791c48c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4058381481",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "evanescence|who will you follow"
+      ]
+    },
+    {
+      "id": "dz-80274514",
+      "deezerId": 80274514,
+      "title": "Everybody's Fool",
+      "artist": "Evanescence",
+      "artistIds": [
+        "98"
+      ],
+      "artistNames": [
+        "Evanescence"
+      ],
+      "answerKey": "98|everybody s fool",
+      "workKey": "98|everybody s fool",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/56c02d3764f5a078ceecd27b64b7d789/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/80274514",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "evanescence|everybody s fool"
+      ]
+    },
+    {
+      "id": "dz-4366097561",
+      "deezerId": 4366097561,
+      "title": "Lithium (Remastered 2026)",
+      "artist": "Evanescence",
+      "artistIds": [
+        "98"
+      ],
+      "artistNames": [
+        "Evanescence"
+      ],
+      "answerKey": "98|lithium",
+      "workKey": "98|lithium",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/187598da2cb8aecf024657bf27bb1bde/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4366097561",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "evanescence|lithium"
+      ]
+    },
+    {
+      "id": "dz-4058381501",
+      "deezerId": 4058381501,
+      "title": "Afterlife",
+      "artist": "Evanescence",
+      "artistIds": [
+        "98"
+      ],
+      "artistNames": [
+        "Evanescence"
+      ],
+      "answerKey": "98|afterlife",
+      "workKey": "98|afterlife",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/bec9fb296040f23c1852104cc791c48c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4058381501",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "evanescence|afterlife"
+      ]
+    },
+    {
+      "id": "dz-4197811",
+      "deezerId": 4197811,
+      "title": "Wait and Bleed",
+      "artist": "Slipknot",
+      "artistIds": [
+        "117"
+      ],
+      "artistNames": [
+        "Slipknot"
+      ],
+      "answerKey": "117|wait and bleed",
+      "workKey": "117|wait and bleed",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/af615e003023c6f451a5c09bc0b62816/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4197811",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "slipknot|wait and bleed"
+      ]
+    },
+    {
+      "id": "dz-87536143",
+      "deezerId": 87536143,
+      "title": "The Devil in I",
+      "artist": "Slipknot",
+      "artistIds": [
+        "117"
+      ],
+      "artistNames": [
+        "Slipknot"
+      ],
+      "answerKey": "117|the devil in i",
+      "workKey": "117|the devil in i",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4a7b3f4140c426d957a41db4ca408165/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/87536143",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "slipknot|the devil in i"
+      ]
+    },
+    {
+      "id": "dz-727923492",
+      "deezerId": 727923492,
+      "title": "Unsainted",
+      "artist": "Slipknot",
+      "artistIds": [
+        "117"
+      ],
+      "artistNames": [
+        "Slipknot"
+      ],
+      "answerKey": "117|unsainted",
+      "workKey": "117|unsainted",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/fdc2196c15fbf2ee91881a78af4da153/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/727923492",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "slipknot|unsainted"
+      ]
+    },
+    {
+      "id": "dz-3819915",
+      "deezerId": 3819915,
+      "title": "Vermilion, Pt. 2",
+      "artist": "Slipknot",
+      "artistIds": [
+        "117"
+      ],
+      "artistNames": [
+        "Slipknot"
+      ],
+      "answerKey": "117|vermilion pt 2",
+      "workKey": "117|vermilion pt 2",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/35b093d22fe1539003d5d18dd8f309eb/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3819915",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "slipknot|vermilion pt 2"
+      ]
+    },
+    {
+      "id": "dz-2114570",
+      "deezerId": 2114570,
+      "title": "Whiskey In The Jar",
+      "artist": "Metallica",
+      "artistIds": [
+        "119"
+      ],
+      "artistNames": [
+        "Metallica"
+      ],
+      "answerKey": "119|whiskey in the jar",
+      "workKey": "119|whiskey in the jar",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/d6b738c64650ac1d5b73ca476b9198d3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2114570",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "metallica|whiskey in the jar"
+      ]
+    },
+    {
+      "id": "dz-575867572",
+      "deezerId": 575867572,
+      "title": "One",
+      "artist": "Metallica",
+      "artistIds": [
+        "119"
+      ],
+      "artistNames": [
+        "Metallica"
+      ],
+      "answerKey": "119|one",
+      "workKey": "119|one",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ce293de53f905a3ce444062ec5242d53/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/575867572",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "metallica|one"
+      ]
+    },
+    {
+      "id": "dz-136338504",
+      "deezerId": 136338504,
+      "title": "For Whom The Bell Tolls (Remastered)",
+      "artist": "Metallica",
+      "artistIds": [
+        "119"
+      ],
+      "artistNames": [
+        "Metallica"
+      ],
+      "answerKey": "119|for whom the bell tolls",
+      "workKey": "119|for whom the bell tolls",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6d5f397660c6ec7a445f386edac05b9e/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/136338504",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "metallica|for whom the bell tolls"
+      ]
+    },
+    {
+      "id": "dz-1483825222",
+      "deezerId": 1483825222,
+      "title": "Sad But True (Remastered 2021)",
+      "artist": "Metallica",
+      "artistIds": [
+        "119"
+      ],
+      "artistNames": [
+        "Metallica"
+      ],
+      "answerKey": "119|sad but true",
+      "workKey": "119|sad but true",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4f2093c9d25852c8f1937ae5a47b99a6/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1483825222",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "metallica|sad but true"
+      ]
+    },
+    {
+      "id": "dz-6715844",
+      "deezerId": 6715844,
+      "title": "So Far Away",
+      "artist": "Avenged Sevenfold",
+      "artistIds": [
+        "406"
+      ],
+      "artistNames": [
+        "Avenged Sevenfold"
+      ],
+      "answerKey": "406|so far away",
+      "workKey": "406|so far away",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4888c24a2a49758698399ddc2a18f0e9/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/6715844",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "avenged sevenfold|so far away"
+      ]
+    },
+    {
+      "id": "dz-6715842",
+      "deezerId": 6715842,
+      "title": "Buried Alive",
+      "artist": "Avenged Sevenfold",
+      "artistIds": [
+        "406"
+      ],
+      "artistNames": [
+        "Avenged Sevenfold"
+      ],
+      "answerKey": "406|buried alive",
+      "workKey": "406|buried alive",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4888c24a2a49758698399ddc2a18f0e9/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/6715842",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "avenged sevenfold|buried alive"
+      ]
+    },
+    {
+      "id": "dz-3664340",
+      "deezerId": 3664340,
+      "title": "Bat Country",
+      "artist": "Avenged Sevenfold",
+      "artistIds": [
+        "406"
+      ],
+      "artistNames": [
+        "Avenged Sevenfold"
+      ],
+      "answerKey": "406|bat country",
+      "workKey": "406|bat country",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/597bec65c513da909f92ac1b5cef44d6/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3664340",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "avenged sevenfold|bat country"
+      ]
+    },
+    {
+      "id": "dz-6278228",
+      "deezerId": 6278228,
+      "title": "A Little Piece of Heaven",
+      "artist": "Avenged Sevenfold",
+      "artistIds": [
+        "406"
+      ],
+      "artistNames": [
+        "Avenged Sevenfold"
+      ],
+      "answerKey": "406|a little piece of heaven",
+      "workKey": "406|a little piece of heaven",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b1d19308255ab3129a65ea2f3a222a89/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/6278228",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "avenged sevenfold|a little piece of heaven"
+      ]
+    },
+    {
+      "id": "dz-546578",
+      "deezerId": 546578,
+      "title": "Lonely Day",
+      "artist": "System of a Down",
+      "artistIds": [
+        "458"
+      ],
+      "artistNames": [
+        "System of a Down"
+      ],
+      "answerKey": "458|lonely day",
+      "workKey": "458|lonely day",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/047bea0f3708bd88049e675c918f9605/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/546578",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "system of a down|lonely day"
+      ]
+    },
+    {
+      "id": "dz-70177137",
+      "deezerId": 70177137,
+      "title": "I-E-A-I-A-I-O",
+      "artist": "System of a Down",
+      "artistIds": [
+        "458"
+      ],
+      "artistNames": [
+        "System of a Down"
+      ],
+      "answerKey": "458|i e a i a i o",
+      "workKey": "458|i e a i a i o",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c7ebea8ff81c8934916a1b102f52918f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/70177137",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "system of a down|i e a i a i o"
+      ]
+    },
+    {
+      "id": "dz-15523790",
+      "deezerId": 15523790,
+      "title": "ATWA",
+      "artist": "System of a Down",
+      "artistIds": [
+        "458"
+      ],
+      "artistNames": [
+        "System of a Down"
+      ],
+      "answerKey": "458|atwa",
+      "workKey": "458|atwa",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6baa3ad626e859f67bbddae6528fd949/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/15523790",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "system of a down|atwa"
+      ]
+    },
+    {
+      "id": "dz-559725",
+      "deezerId": 559725,
+      "title": "Violent Pornography",
+      "artist": "System of a Down",
+      "artistIds": [
+        "458"
+      ],
+      "artistNames": [
+        "System of a Down"
+      ],
+      "answerKey": "458|violent pornography",
+      "workKey": "458|violent pornography",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4954f43cc6033ddfa0fa3ee5514a26ca/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/559725",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "system of a down|violent pornography"
+      ]
+    },
+    {
+      "id": "dz-630595112",
+      "deezerId": 630595112,
+      "title": "Engel",
+      "artist": "Rammstein",
+      "artistIds": [
+        "464"
+      ],
+      "artistNames": [
+        "Rammstein"
+      ],
+      "answerKey": "464|engel",
+      "workKey": "464|engel",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e24ae59ad933185bd6689d388eb0f256/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/630595112",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "rammstein|engel"
+      ]
+    },
+    {
+      "id": "dz-678687272",
+      "deezerId": 678687272,
+      "title": "Ausländer",
+      "artist": "Rammstein",
+      "artistIds": [
+        "464"
+      ],
+      "artistNames": [
+        "Rammstein"
+      ],
+      "answerKey": "464|ausländer",
+      "workKey": "464|ausländer",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4886636be143303aa0df47cd6d93983e/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/678687272",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "rammstein|ausländer"
+      ]
+    },
+    {
+      "id": "dz-14381639",
+      "deezerId": 14381639,
+      "title": "Ich will",
+      "artist": "Rammstein",
+      "artistIds": [
+        "464"
+      ],
+      "artistNames": [
+        "Rammstein"
+      ],
+      "answerKey": "464|ich will",
+      "workKey": "464|ich will",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6eabee34f76bd01d2562469d41c63c4d/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/14381639",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "rammstein|ich will"
+      ]
+    },
+    {
+      "id": "dz-14381640",
+      "deezerId": 14381640,
+      "title": "Feuer frei!",
+      "artist": "Rammstein",
+      "artistIds": [
+        "464"
+      ],
+      "artistNames": [
+        "Rammstein"
+      ],
+      "answerKey": "464|feuer frei",
+      "workKey": "464|feuer frei",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6eabee34f76bd01d2562469d41c63c4d/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/14381640",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "rammstein|feuer frei"
+      ]
+    },
+    {
+      "id": "dz-141335425",
+      "deezerId": 141335425,
+      "title": "Turbo Lover (Remastered)",
+      "artist": "Judas Priest",
+      "artistIds": [
+        "533"
+      ],
+      "artistNames": [
+        "Judas Priest"
+      ],
+      "answerKey": "533|turbo lover",
+      "workKey": "533|turbo lover",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/aec8d3fcc6e7c097b10d6ebd2e1af0fc/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/141335425",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "judas priest|turbo lover"
+      ]
+    },
+    {
+      "id": "dz-870936",
+      "deezerId": 870936,
+      "title": "Electric Eye",
+      "artist": "Judas Priest",
+      "artistIds": [
+        "533"
+      ],
+      "artistNames": [
+        "Judas Priest"
+      ],
+      "answerKey": "533|electric eye",
+      "workKey": "533|electric eye",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2b5c85ac151387805158bcb8c3c8dfd3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/870936",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "judas priest|electric eye"
+      ]
+    },
+    {
+      "id": "dz-557641",
+      "deezerId": 557641,
+      "title": "Living After Midnight",
+      "artist": "Judas Priest",
+      "artistIds": [
+        "533"
+      ],
+      "artistNames": [
+        "Judas Priest"
+      ],
+      "answerKey": "533|living after midnight",
+      "workKey": "533|living after midnight",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/89de830c50ac44b2ed8ed096e205335e/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/557641",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "judas priest|living after midnight"
+      ]
+    },
+    {
+      "id": "dz-870942",
+      "deezerId": 870942,
+      "title": "You've Got Another Thing Comin'",
+      "artist": "Judas Priest",
+      "artistIds": [
+        "533"
+      ],
+      "artistNames": [
+        "Judas Priest"
+      ],
+      "answerKey": "533|you ve got another thing comin",
+      "workKey": "533|you ve got another thing comin",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2b5c85ac151387805158bcb8c3c8dfd3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/870942",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "judas priest|you ve got another thing comin"
+      ]
+    },
+    {
+      "id": "dz-15375876",
+      "deezerId": 15375876,
+      "title": "Word Up!",
+      "artist": "KoЯn",
+      "artistIds": [
+        "1327"
+      ],
+      "artistNames": [
+        "KoЯn"
+      ],
+      "answerKey": "1327|word up",
+      "workKey": "1327|word up",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/aa04a4c14934efae7e609034fc824fdc/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/15375876",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "koяn|word up"
+      ]
+    },
+    {
+      "id": "dz-134523754",
+      "deezerId": 134523754,
+      "title": "Got the Life",
+      "artist": "KoЯn",
+      "artistIds": [
+        "1327"
+      ],
+      "artistNames": [
+        "KoЯn"
+      ],
+      "answerKey": "1327|got the life",
+      "workKey": "1327|got the life",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/35111a59f5d5ef0bf5a7ba2f3a203b25/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/134523754",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "koяn|got the life"
+      ]
+    },
+    {
+      "id": "dz-13378870",
+      "deezerId": 13378870,
+      "title": "Blind",
+      "artist": "KoЯn",
+      "artistIds": [
+        "1327"
+      ],
+      "artistNames": [
+        "KoЯn"
+      ],
+      "answerKey": "1327|blind",
+      "workKey": "1327|blind",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/31d699a638ac32ba2100a993f5e69dce/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/13378870",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "koяn|blind"
+      ]
+    },
+    {
+      "id": "dz-1549660122",
+      "deezerId": 1549660122,
+      "title": "Twisted Transistor",
+      "artist": "KoЯn",
+      "artistIds": [
+        "1327"
+      ],
+      "artistNames": [
+        "KoЯn"
+      ],
+      "answerKey": "1327|twisted transistor",
+      "workKey": "1327|twisted transistor",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b66637d361addc24950292f91d1aae87/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1549660122",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "koяn|twisted transistor"
+      ]
+    },
+    {
+      "id": "dz-788838",
+      "deezerId": 788838,
+      "title": "Decadence",
+      "artist": "Disturbed",
+      "artistIds": [
+        "2127"
+      ],
+      "artistNames": [
+        "Disturbed"
+      ],
+      "answerKey": "2127|decadence",
+      "workKey": "2127|decadence",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/92bcb3cbf52c1a31dbdea46ceabdc575/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/788838",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "disturbed|decadence"
+      ]
+    },
+    {
+      "id": "dz-788856",
+      "deezerId": 788856,
+      "title": "Land of Confusion",
+      "artist": "Disturbed",
+      "artistIds": [
+        "2127"
+      ],
+      "artistNames": [
+        "Disturbed"
+      ],
+      "answerKey": "2127|land of confusion",
+      "workKey": "2127|land of confusion",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/92bcb3cbf52c1a31dbdea46ceabdc575/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/788856",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "disturbed|land of confusion"
+      ]
+    },
+    {
+      "id": "dz-3233375411",
+      "deezerId": 3233375411,
+      "title": "I Will Not Break",
+      "artist": "Disturbed",
+      "artistIds": [
+        "2127"
+      ],
+      "artistNames": [
+        "Disturbed"
+      ],
+      "answerKey": "2127|i will not break",
+      "workKey": "2127|i will not break",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a79cff5c5a50d4f82ec0fdd5d535e33c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3233375411",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "disturbed|i will not break"
+      ]
+    },
+    {
+      "id": "dz-105765218",
+      "deezerId": 105765218,
+      "title": "The Vengeful One",
+      "artist": "Disturbed",
+      "artistIds": [
+        "2127"
+      ],
+      "artistNames": [
+        "Disturbed"
+      ],
+      "answerKey": "2127|the vengeful one",
+      "workKey": "2127|the vengeful one",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/8d8908dc7e46066241f2f1c07778b4a8/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/105765218",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "disturbed|the vengeful one"
+      ]
+    },
+    {
+      "id": "dz-714426",
+      "deezerId": 714426,
+      "title": "Domination",
+      "artist": "Pantera",
+      "artistIds": [
+        "2969"
+      ],
+      "artistNames": [
+        "Pantera"
+      ],
+      "answerKey": "2969|domination",
+      "workKey": "2969|domination",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b8e78de81ec615be64c9179589439d17/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/714426",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "pantera|domination"
+      ]
+    },
+    {
+      "id": "dz-662883",
+      "deezerId": 662883,
+      "title": "This Love",
+      "artist": "Pantera",
+      "artistIds": [
+        "2969"
+      ],
+      "artistNames": [
+        "Pantera"
+      ],
+      "answerKey": "2969|this love",
+      "workKey": "2969|this love",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ba6c7c231c21930465a4f51a41e3d5a5/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/662883",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "pantera|this love"
+      ]
+    },
+    {
+      "id": "dz-662909",
+      "deezerId": 662909,
+      "title": "I'm Broken",
+      "artist": "Pantera",
+      "artistIds": [
+        "2969"
+      ],
+      "artistNames": [
+        "Pantera"
+      ],
+      "answerKey": "2969|i m broken",
+      "workKey": "2969|i m broken",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/f2dfe56d80439f2871dc13d135fa99a1/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/662909",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "pantera|i m broken"
+      ]
+    },
+    {
+      "id": "dz-671036",
+      "deezerId": 671036,
+      "title": "Floods",
+      "artist": "Pantera",
+      "artistIds": [
+        "2969"
+      ],
+      "artistNames": [
+        "Pantera"
+      ],
+      "answerKey": "2969|floods",
+      "workKey": "2969|floods",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6c5df693c44169ae721268d428a9e451/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/671036",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "pantera|floods"
+      ]
+    },
+    {
+      "id": "dz-2152792",
+      "deezerId": 2152792,
+      "title": "The art of dying",
+      "artist": "Gojira",
+      "artistIds": [
+        "2993"
+      ],
+      "artistNames": [
+        "Gojira"
+      ],
+      "answerKey": "2993|the art of dying",
+      "workKey": "2993|the art of dying",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e9820633ac4d3e5770d98c695d63d1cb/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2152792",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gojira|the art of dying"
+      ]
+    },
+    {
+      "id": "dz-288567",
+      "deezerId": 288567,
+      "title": "Flying Whales",
+      "artist": "Gojira",
+      "artistIds": [
+        "2993"
+      ],
+      "artistNames": [
+        "Gojira"
+      ],
+      "answerKey": "2993|flying whales",
+      "workKey": "2993|flying whales",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/89f33d7ae3e196ccf3f6f0a8f7e497d1/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/288567",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gojira|flying whales"
+      ]
+    },
+    {
+      "id": "dz-36356441",
+      "deezerId": 36356441,
+      "title": "L'enfant sauvage",
+      "artist": "Gojira",
+      "artistIds": [
+        "2993"
+      ],
+      "artistNames": [
+        "Gojira"
+      ],
+      "answerKey": "2993|l enfant sauvage",
+      "workKey": "2993|l enfant sauvage",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/f7de6a1d4a90d769b051fbf903a1f118/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/36356441",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gojira|l enfant sauvage"
+      ]
+    },
+    {
+      "id": "dz-1331764092",
+      "deezerId": 1331764092,
+      "title": "Another World",
+      "artist": "Gojira",
+      "artistIds": [
+        "2993"
+      ],
+      "artistNames": [
+        "Gojira"
+      ],
+      "answerKey": "2993|another world",
+      "workKey": "2993|another world",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/58c0fc2ba2dc8f529a9907be600c2944/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1331764092",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gojira|another world"
+      ]
+    },
+    {
+      "id": "dz-3783038572",
+      "deezerId": 3783038572,
+      "title": "God Was Never on Your Side",
+      "artist": "Motörhead",
+      "artistIds": [
+        "2996"
+      ],
+      "artistNames": [
+        "Motörhead"
+      ],
+      "answerKey": "2996|god was never on your side",
+      "workKey": "2996|god was never on your side",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/46f5dab82a555f110f11dd8ce20c27b5/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3783038572",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "motörhead|god was never on your side"
+      ]
+    },
+    {
+      "id": "dz-3703276242",
+      "deezerId": 3703276242,
+      "title": "Enter Sandman",
+      "artist": "Motörhead",
+      "artistIds": [
+        "2996"
+      ],
+      "artistNames": [
+        "Motörhead"
+      ],
+      "answerKey": "2996|enter sandman",
+      "workKey": "2996|enter sandman",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/bd089c82cb21c5045245e6363ff1abbf/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3703276242",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "motörhead|enter sandman"
+      ]
+    },
+    {
+      "id": "dz-3785905582",
+      "deezerId": 3785905582,
+      "title": "One More Fucking Time",
+      "artist": "Motörhead",
+      "artistIds": [
+        "2996"
+      ],
+      "artistNames": [
+        "Motörhead"
+      ],
+      "answerKey": "2996|one more fucking time",
+      "workKey": "2996|one more fucking time",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/96018d0f25c41191754d678c650adced/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3785905582",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "motörhead|one more fucking time"
+      ]
+    },
+    {
+      "id": "dz-3884561821",
+      "deezerId": 3884561821,
+      "title": "Heroes",
+      "artist": "Motörhead",
+      "artistIds": [
+        "2996"
+      ],
+      "artistNames": [
+        "Motörhead"
+      ],
+      "answerKey": "2996|heroes",
+      "workKey": "2996|heroes",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ef4c23fb585d356be49826013cce5b69/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3884561821",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "motörhead|heroes"
+      ]
+    },
+    {
+      "id": "dz-65724647",
+      "deezerId": 65724647,
+      "title": "South Of Heaven",
+      "artist": "Slayer",
+      "artistIds": [
+        "3048"
+      ],
+      "artistNames": [
+        "Slayer"
+      ],
+      "answerKey": "3048|south of heaven",
+      "workKey": "3048|south of heaven",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c8abbb763d091672f26c0fd0bf449481/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/65724647",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "slayer|south of heaven"
+      ]
+    },
+    {
+      "id": "dz-65707339",
+      "deezerId": 65707339,
+      "title": "Skeletons Of Society (Album Version)",
+      "artist": "Slayer",
+      "artistIds": [
+        "3048"
+      ],
+      "artistNames": [
+        "Slayer"
+      ],
+      "answerKey": "3048|skeletons of society",
+      "workKey": "3048|skeletons of society album version",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/d7f7f64179ad3549bdb94270c4649a63/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/65707339",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "slayer|skeletons of society album version"
+      ]
+    },
+    {
+      "id": "dz-651520622",
+      "deezerId": 651520622,
+      "title": "Repentless",
+      "artist": "Slayer",
+      "artistIds": [
+        "3048"
+      ],
+      "artistNames": [
+        "Slayer"
+      ],
+      "answerKey": "3048|repentless",
+      "workKey": "3048|repentless",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ceee2f7b73cd590d4307d16ba5947140/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/651520622",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "slayer|repentless"
+      ]
+    },
+    {
+      "id": "dz-65707342",
+      "deezerId": 65707342,
+      "title": "Seasons In The Abyss (Album Version)",
+      "artist": "Slayer",
+      "artistIds": [
+        "3048"
+      ],
+      "artistNames": [
+        "Slayer"
+      ],
+      "answerKey": "3048|seasons in the abyss",
+      "workKey": "3048|seasons in the abyss album version",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/d7f7f64179ad3549bdb94270c4649a63/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/65707342",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "slayer|seasons in the abyss album version"
+      ]
+    },
+    {
+      "id": "dz-3788300102",
+      "deezerId": 3788300102,
+      "title": "Tipping Point",
+      "artist": "Megadeth",
+      "artistIds": [
+        "3487"
+      ],
+      "artistNames": [
+        "Megadeth"
+      ],
+      "answerKey": "3487|tipping point",
+      "workKey": "3487|tipping point",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/fbcd14353a18c1f7c98ed750b1ff2e2e/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3788300102",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "megadeth|tipping point"
+      ]
+    },
+    {
+      "id": "dz-3121521",
+      "deezerId": 3121521,
+      "title": "Angry Again",
+      "artist": "Megadeth",
+      "artistIds": [
+        "3487"
+      ],
+      "artistNames": [
+        "Megadeth"
+      ],
+      "answerKey": "3487|angry again",
+      "workKey": "3487|angry again",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6571eb7172a95341b2a14cec9ead1647/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3121521",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "megadeth|angry again"
+      ]
+    },
+    {
+      "id": "dz-3121523",
+      "deezerId": 3121523,
+      "title": "Trust",
+      "artist": "Megadeth",
+      "artistIds": [
+        "3487"
+      ],
+      "artistNames": [
+        "Megadeth"
+      ],
+      "answerKey": "3487|trust",
+      "workKey": "3487|trust",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6571eb7172a95341b2a14cec9ead1647/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3121523",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "megadeth|trust"
+      ]
+    },
+    {
+      "id": "dz-3777029402",
+      "deezerId": 3777029402,
+      "title": "Puppet Parade",
+      "artist": "Megadeth",
+      "artistIds": [
+        "3487"
+      ],
+      "artistNames": [
+        "Megadeth"
+      ],
+      "answerKey": "3487|puppet parade",
+      "workKey": "3487|puppet parade",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/8b2732c04a047c7d3873c5a54734a0e3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3777029402",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "megadeth|puppet parade"
+      ]
+    },
+    {
+      "id": "dz-4352979182",
+      "deezerId": 4352979182,
+      "title": "Berserker",
+      "artist": "Sabaton",
+      "artistIds": [
+        "12022"
+      ],
+      "artistNames": [
+        "Sabaton"
+      ],
+      "answerKey": "12022|berserker",
+      "workKey": "12022|berserker",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/f7ec648a3a0c51f4cd5a6f12df79cc89/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4352979182",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "sabaton|berserker"
+      ]
+    },
+    {
+      "id": "dz-3414190651",
+      "deezerId": 3414190651,
+      "title": "Crossing the Rubicon",
+      "artist": "Sabaton",
+      "artistIds": [
+        "12022"
+      ],
+      "artistNames": [
+        "Sabaton"
+      ],
+      "answerKey": "12022|crossing the rubicon",
+      "workKey": "12022|crossing the rubicon",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/36e1fd2f2e1b5c790223de6c63618d76/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3414190651",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "sabaton|crossing the rubicon"
+      ]
+    },
+    {
+      "id": "dz-3414190661",
+      "deezerId": 3414190661,
+      "title": "I, Emperor",
+      "artist": "Sabaton",
+      "artistIds": [
+        "12022"
+      ],
+      "artistNames": [
+        "Sabaton"
+      ],
+      "answerKey": "12022|i emperor",
+      "workKey": "12022|i emperor",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/36e1fd2f2e1b5c790223de6c63618d76/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3414190661",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "sabaton|i emperor"
+      ]
+    },
+    {
+      "id": "dz-3293080971",
+      "deezerId": 3293080971,
+      "title": "Templars",
+      "artist": "Sabaton",
+      "artistIds": [
+        "12022"
+      ],
+      "artistNames": [
+        "Sabaton"
+      ],
+      "answerKey": "12022|templars",
+      "workKey": "12022|templars",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a7e83a40c3ab2ef697b8376f1d137bee/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3293080971",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "sabaton|templars"
+      ]
+    },
+    {
+      "id": "dz-106746756",
+      "deezerId": 106746756,
+      "title": "Follow You",
+      "artist": "Bring Me the Horizon",
+      "artistIds": [
+        "12874"
+      ],
+      "artistNames": [
+        "Bring Me the Horizon"
+      ],
+      "answerKey": "12874|follow you",
+      "workKey": "12874|follow you",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/dd6af81a0d098fdd32e824fd43f2635d/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/106746756",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "bring me the horizon|follow you"
+      ]
+    },
+    {
+      "id": "dz-2483816211",
+      "deezerId": 2483816211,
+      "title": "DArkSide",
+      "artist": "Bring Me the Horizon",
+      "artistIds": [
+        "12874"
+      ],
+      "artistNames": [
+        "Bring Me the Horizon"
+      ],
+      "answerKey": "12874|darkside",
+      "workKey": "12874|darkside",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/748c6af5d965a11ba355a8f848d94f02/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2483816211",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "bring me the horizon|darkside"
+      ]
+    },
+    {
+      "id": "dz-1122999512",
+      "deezerId": 1122999512,
+      "title": "Parasite Eve",
+      "artist": "Bring Me the Horizon",
+      "artistIds": [
+        "12874"
+      ],
+      "artistNames": [
+        "Bring Me the Horizon"
+      ],
+      "answerKey": "12874|parasite eve",
+      "workKey": "12874|parasite eve",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/1e55355d3418513d0577950b484af017/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1122999512",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "bring me the horizon|parasite eve"
+      ]
+    },
+    {
+      "id": "dz-106746748",
+      "deezerId": 106746748,
+      "title": "Doomed",
+      "artist": "Bring Me the Horizon",
+      "artistIds": [
+        "12874"
+      ],
+      "artistNames": [
+        "Bring Me the Horizon"
+      ],
+      "answerKey": "12874|doomed",
+      "workKey": "12874|doomed",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/dd6af81a0d098fdd32e824fd43f2635d/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/106746748",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "bring me the horizon|doomed"
+      ]
+    },
+    {
+      "id": "dz-3251342421",
+      "deezerId": 3251342421,
+      "title": "Satanized",
+      "artist": "Ghost",
+      "artistIds": [
+        "8506054"
+      ],
+      "artistNames": [
+        "Ghost"
+      ],
+      "answerKey": "8506054|satanized",
+      "workKey": "8506054|satanized",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b023f8b09d5485bb371bd53ff50593a7/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3251342421",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "ghost|satanized"
+      ]
+    },
+    {
+      "id": "dz-2219857687",
+      "deezerId": 2219857687,
+      "title": "Jesus He Knows Me",
+      "artist": "Ghost",
+      "artistIds": [
+        "8506054"
+      ],
+      "artistNames": [
+        "Ghost"
+      ],
+      "answerKey": "8506054|jesus he knows me",
+      "workKey": "8506054|jesus he knows me",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/78085f1a2405f73a73045b267092bb38/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2219857687",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "ghost|jesus he knows me"
+      ]
+    },
+    {
+      "id": "dz-3764134702",
+      "deezerId": 3764134702,
+      "title": "It's A Sin",
+      "artist": "Ghost",
+      "artistIds": [
+        "8506054"
+      ],
+      "artistNames": [
+        "Ghost"
+      ],
+      "answerKey": "8506054|it s a sin",
+      "workKey": "8506054|it s a sin",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b9f794da1b07198eaf0053f30d4c98ee/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3764134702",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "ghost|it s a sin"
+      ]
+    },
+    {
+      "id": "dz-132200960",
+      "deezerId": 132200960,
+      "title": "Cirice",
+      "artist": "Ghost",
+      "artistIds": [
+        "8506054"
+      ],
+      "artistNames": [
+        "Ghost"
+      ],
+      "answerKey": "8506054|cirice",
+      "workKey": "8506054|cirice",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ce0f59f9c7d5b114260f3af50af5dcb9/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/132200960",
+      "genres": [
+        "metal"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-metal",
+          "genres": [
+            "metal"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "ghost|cirice"
+      ]
+    },
+    {
+      "id": "dz-2522288451",
+      "deezerId": 2522288451,
+      "title": "Now And Then",
+      "artist": "The Beatles",
+      "artistIds": [
+        "1"
+      ],
+      "artistNames": [
+        "The Beatles"
+      ],
+      "answerKey": "1|now and then",
+      "workKey": "1|now and then",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/120998ec2b30b9e11c15092b16ff242a/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2522288451",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "the beatles|now and then"
+      ]
+    },
+    {
+      "id": "dz-116348614",
+      "deezerId": 116348614,
+      "title": "Day Tripper (Remastered 2015)",
+      "artist": "The Beatles",
+      "artistIds": [
+        "1"
+      ],
+      "artistNames": [
+        "The Beatles"
+      ],
+      "answerKey": "1|day tripper",
+      "workKey": "1|day tripper",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c65b3bd84e81056e060be144381c06c8/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/116348614",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "the beatles|day tripper"
+      ]
+    },
+    {
+      "id": "dz-9914842",
+      "deezerId": 9914842,
+      "title": "You Can't Always Get What You Want",
+      "artist": "The Rolling Stones",
+      "artistIds": [
+        "11"
+      ],
+      "artistNames": [
+        "The Rolling Stones"
+      ],
+      "answerKey": "11|you can t always get what you want",
+      "workKey": "11|you can t always get what you want",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/966fa939bd79e15d413abf0764f8a3b5/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/9914842",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "the rolling stones|you can t always get what you want"
+      ]
+    },
+    {
+      "id": "dz-14458087",
+      "deezerId": 14458087,
+      "title": "Miss You (Remastered)",
+      "artist": "The Rolling Stones",
+      "artistIds": [
+        "11"
+      ],
+      "artistNames": [
+        "The Rolling Stones"
+      ],
+      "answerKey": "11|miss you",
+      "workKey": "11|miss you",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4daeaee9a15329dc861f62976d0cbb7c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/14458087",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "the rolling stones|miss you"
+      ]
+    },
+    {
+      "id": "dz-92720006",
+      "deezerId": 92720006,
+      "title": "T.N.T.",
+      "artist": "AC/DC",
+      "artistIds": [
+        "115"
+      ],
+      "artistNames": [
+        "AC/DC"
+      ],
+      "answerKey": "115|t n t",
+      "workKey": "115|t n t",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ba5eaf2f3a49768164d0728b7ba64372/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/92720006",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "ac dc|t n t"
+      ]
+    },
+    {
+      "id": "dz-92720048",
+      "deezerId": 92720048,
+      "title": "You Shook Me All Night Long",
+      "artist": "AC/DC",
+      "artistIds": [
+        "115"
+      ],
+      "artistNames": [
+        "AC/DC"
+      ],
+      "answerKey": "115|you shook me all night long",
+      "workKey": "115|you shook me all night long",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/41041b14873956eff0459c8ea2c296a8/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/92720048",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "ac dc|you shook me all night long"
+      ]
+    },
+    {
+      "id": "dz-680516",
+      "deezerId": 680516,
+      "title": "Dani California",
+      "artist": "Red Hot Chili Peppers",
+      "artistIds": [
+        "182"
+      ],
+      "artistNames": [
+        "Red Hot Chili Peppers"
+      ],
+      "answerKey": "182|dani california",
+      "workKey": "182|dani california",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a3a4028b1192c50d82a579439cbfc4af/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/680516",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "red hot chili peppers|dani california"
+      ]
+    },
+    {
+      "id": "dz-725929",
+      "deezerId": 725929,
+      "title": "By the Way",
+      "artist": "Red Hot Chili Peppers",
+      "artistIds": [
+        "182"
+      ],
+      "artistNames": [
+        "Red Hot Chili Peppers"
+      ],
+      "answerKey": "182|by the way",
+      "workKey": "182|by the way",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/49b073f55550d41055e02c493f9a7d39/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/725929",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "red hot chili peppers|by the way"
+      ]
+    },
+    {
+      "id": "dz-4092326601",
+      "deezerId": 4092326601,
+      "title": "Radio Ga Ga",
+      "artist": "Queen",
+      "artistIds": [
+        "412"
+      ],
+      "artistNames": [
+        "Queen"
+      ],
+      "answerKey": "412|radio ga ga",
+      "workKey": "412|radio ga ga",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/9a3d400b9397879df564df1d0a66c69a/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4092326601",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "queen|radio ga ga"
+      ]
+    },
+    {
+      "id": "dz-13791931",
+      "deezerId": 13791931,
+      "title": "In Bloom",
+      "artist": "Nirvana",
+      "artistIds": [
+        "415"
+      ],
+      "artistNames": [
+        "Nirvana"
+      ],
+      "answerKey": "415|in bloom",
+      "workKey": "415|in bloom",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/13791931",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "nirvana|in bloom"
+      ]
+    },
+    {
+      "id": "dz-70466230",
+      "deezerId": 70466230,
+      "title": "Dumb",
+      "artist": "Nirvana",
+      "artistIds": [
+        "415"
+      ],
+      "artistNames": [
+        "Nirvana"
+      ],
+      "answerKey": "415|dumb",
+      "workKey": "415|dumb",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4d0dfaf6d522f5323aebcc85903d92ac/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/70466230",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "nirvana|dumb"
+      ]
+    },
+    {
+      "id": "dz-518458172",
+      "deezerId": 518458172,
+      "title": "Sweet Child O' Mine",
+      "artist": "Guns N' Roses",
+      "artistIds": [
+        "663"
+      ],
+      "artistNames": [
+        "Guns N' Roses"
+      ],
+      "answerKey": "663|sweet child o mine",
+      "workKey": "663|sweet child o mine",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/8bfe7b3b0985d9ff0751090fb2b6f73f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/518458172",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "guns n roses|sweet child o mine"
+      ]
+    },
+    {
+      "id": "dz-505510232",
+      "deezerId": 505510232,
+      "title": "Knockin' On Heaven's Door",
+      "artist": "Guns N' Roses",
+      "artistIds": [
+        "663"
+      ],
+      "artistNames": [
+        "Guns N' Roses"
+      ],
+      "answerKey": "663|knockin on heaven s door",
+      "workKey": "663|knockin on heaven s door",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c32f893b8670d5a3d9b1e70078bbc8fa/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/505510232",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "guns n roses|knockin on heaven s door"
+      ]
+    },
+    {
+      "id": "dz-111628810",
+      "deezerId": 111628810,
+      "title": "The Ocean (Remaster)",
+      "artist": "Led Zeppelin",
+      "artistIds": [
+        "848"
+      ],
+      "artistNames": [
+        "Led Zeppelin"
+      ],
+      "answerKey": "848|the ocean",
+      "workKey": "848|the ocean",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/87df66f7805c5bd5fdf353def5c3425f/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/111628810",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "led zeppelin|the ocean"
+      ]
+    },
+    {
+      "id": "dz-88003855",
+      "deezerId": 88003855,
+      "title": "Rock and Roll (Remaster)",
+      "artist": "Led Zeppelin",
+      "artistIds": [
+        "848"
+      ],
+      "artistNames": [
+        "Led Zeppelin"
+      ],
+      "answerKey": "848|rock and roll",
+      "workKey": "848|rock and roll",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/460a0edd96f743be03b7405eac38c633/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/88003855",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "led zeppelin|rock and roll"
+      ]
+    },
+    {
+      "id": "dz-4361000011",
+      "deezerId": 4361000011,
+      "title": "Sheep (Original Radio Edit)",
+      "artist": "Pink Floyd",
+      "artistIds": [
+        "860"
+      ],
+      "artistNames": [
+        "Pink Floyd"
+      ],
+      "answerKey": "860|sheep",
+      "workKey": "860|sheep original radio edit",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/983f7f31e13206d1b54b22229236259e/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4361000011",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "pink floyd|sheep original radio edit"
+      ]
+    },
+    {
+      "id": "dz-116914112",
+      "deezerId": 116914112,
+      "title": "Hey You",
+      "artist": "Pink Floyd",
+      "artistIds": [
+        "860"
+      ],
+      "artistNames": [
+        "Pink Floyd"
+      ],
+      "answerKey": "860|hey you",
+      "workKey": "860|hey you",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2bea643b92a8fc6b19a23756f718cbd4/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/116914112",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "pink floyd|hey you"
+      ]
+    },
+    {
+      "id": "dz-14299460",
+      "deezerId": 14299460,
+      "title": "Rock You Like a Hurricane (2011)",
+      "artist": "Scorpions",
+      "artistIds": [
+        "863"
+      ],
+      "artistNames": [
+        "Scorpions"
+      ],
+      "answerKey": "863|rock you like a hurricane",
+      "workKey": "863|rock you like a hurricane 2011",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/948018bb2183e9b6b26cbf7e6a3d3c9a/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/14299460",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "scorpions|rock you like a hurricane 2011"
+      ]
+    },
+    {
+      "id": "dz-3785986352",
+      "deezerId": 3785986352,
+      "title": "Always Somewhere (Remastered 2015)",
+      "artist": "Scorpions",
+      "artistIds": [
+        "863"
+      ],
+      "artistNames": [
+        "Scorpions"
+      ],
+      "answerKey": "863|always somewhere",
+      "workKey": "863|always somewhere",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/3aaa175ba4369502ee476a27a9bc4b47/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3785986352",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "scorpions|always somewhere"
+      ]
+    },
+    {
+      "id": "dz-60840057",
+      "deezerId": 60840057,
+      "title": "Smoke On The Water (Remastered 2012)",
+      "artist": "Deep Purple",
+      "artistIds": [
+        "864"
+      ],
+      "artistNames": [
+        "Deep Purple"
+      ],
+      "answerKey": "864|smoke on the water",
+      "workKey": "864|smoke on the water",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/dc8cb2cafee167b6dfec80763407c78b/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/60840057",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "deep purple|smoke on the water"
+      ]
+    },
+    {
+      "id": "dz-3143147",
+      "deezerId": 3143147,
+      "title": "Soldier Of Fortune (2009 Digital Remaster)",
+      "artist": "Deep Purple",
+      "artistIds": [
+        "864"
+      ],
+      "artistNames": [
+        "Deep Purple"
+      ],
+      "answerKey": "864|soldier of fortune",
+      "workKey": "864|soldier of fortune 2009 digital remaster",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/779b71c62da17340d40eb17037145e8b/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3143147",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "deep purple|soldier of fortune 2009 digital remaster"
+      ]
+    },
+    {
+      "id": "dz-1105724",
+      "deezerId": 1105724,
+      "title": "Amazing",
+      "artist": "Aerosmith",
+      "artistIds": [
+        "1005"
+      ],
+      "artistNames": [
+        "Aerosmith"
+      ],
+      "answerKey": "1005|amazing",
+      "workKey": "1005|amazing",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/7ff6fa0aacb3eb335a5ee96b6129c06a/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1105724",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "aerosmith|amazing"
+      ]
+    },
+    {
+      "id": "dz-2061076857",
+      "deezerId": 2061076857,
+      "title": "Sweet Emotion",
+      "artist": "Aerosmith",
+      "artistIds": [
+        "1005"
+      ],
+      "artistNames": [
+        "Aerosmith"
+      ],
+      "answerKey": "1005|sweet emotion",
+      "workKey": "1005|sweet emotion",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0cb25ced2a862fc8d6b67f0ad31322bc/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2061076857",
+      "genres": [
+        "dad-rock"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-dad-rock",
+          "genres": [
+            "dad-rock"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "aerosmith|sweet emotion"
+      ]
+    },
+    {
+      "id": "dz-3899866531",
+      "deezerId": 3899866531,
+      "title": "мегаполис",
+      "artist": "Скриптонит, Даена, Miyagi & Эндшпиль",
+      "artistIds": [
+        "5603958",
+        "89980802",
+        "420554042"
+      ],
+      "artistNames": [
+        "Скриптонит",
+        "Даена",
+        "Miyagi & Эндшпиль"
+      ],
+      "answerKey": "5603958|мегаполис",
+      "workKey": "5603958|мегаполис",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/371f0d54a791a91a39348cd37ec8c0c0/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3899866531",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "скриптонит|мегаполис"
+      ]
+    },
+    {
+      "id": "dz-3976560341",
+      "deezerId": 3976560341,
+      "title": "Сливочное масло",
+      "artist": "Скриптонит",
+      "artistIds": [
+        "5603958"
+      ],
+      "artistNames": [
+        "Скриптонит"
+      ],
+      "answerKey": "5603958|сливочное масло",
+      "workKey": "5603958|сливочное масло",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/1dad4960b439545adcac777e731fa0a3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3976560341",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "скриптонит|сливочное масло"
+      ]
+    },
+    {
+      "id": "dz-4005548891",
+      "deezerId": 4005548891,
+      "title": "Разбалованная",
+      "artist": "Скриптонит, Эндшпиль",
+      "artistIds": [
+        "5603958",
+        "9243866"
+      ],
+      "artistNames": [
+        "Скриптонит",
+        "Эндшпиль"
+      ],
+      "answerKey": "5603958|разбалованная",
+      "workKey": "5603958|разбалованная",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ae681560869df808edb98b3a602118b5/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4005548891",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "скриптонит|разбалованная"
+      ]
+    },
+    {
+      "id": "dz-569641582",
+      "deezerId": 569641582,
+      "title": "Мультибрендовый",
+      "artist": "Скриптонит, 104, T-Fest",
+      "artistIds": [
+        "5603958",
+        "87877422",
+        "11815291"
+      ],
+      "artistNames": [
+        "Скриптонит",
+        "104",
+        "T-Fest"
+      ],
+      "answerKey": "5603958|мультибрендовый",
+      "workKey": "5603958|мультибрендовый",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/eaa2fa2464e8680c2a030c3cfed74603/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/569641582",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "скриптонит|мультибрендовый"
+      ]
+    },
+    {
+      "id": "dz-4005549201",
+      "deezerId": 4005549201,
+      "title": "Осенняя пора",
+      "artist": "Скриптонит, ANDRO, Armich",
+      "artistIds": [
+        "5603958",
+        "111715",
+        "131202302"
+      ],
+      "artistNames": [
+        "Скриптонит",
+        "ANDRO",
+        "Armich"
+      ],
+      "answerKey": "5603958|осенняя пора",
+      "workKey": "5603958|осенняя пора",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2bee320f11713c3995edaf26954b66d5/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4005549201",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "скриптонит|осенняя пора"
+      ]
+    },
+    {
+      "id": "dz-4005562551",
+      "deezerId": 4005562551,
+      "title": "Космос",
+      "artist": "Скриптонит, Charusha",
+      "artistIds": [
+        "5603958",
+        "5817558"
+      ],
+      "artistNames": [
+        "Скриптонит",
+        "Charusha"
+      ],
+      "answerKey": "5603958|космос",
+      "workKey": "5603958|космос",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/59dd8f128e6278825232a581abd436e3/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4005562551",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "скриптонит|космос"
+      ]
+    },
+    {
+      "id": "dz-2717324502",
+      "deezerId": 2717324502,
+      "title": "Ты не верь слезам (LAB с Антоном Беляевым)",
+      "artist": "Gruppa Skryptonite, Therr Maitz",
+      "artistIds": [
+        "49640132",
+        "1583193"
+      ],
+      "artistNames": [
+        "Gruppa Skryptonite",
+        "Therr Maitz"
+      ],
+      "answerKey": "49640132|ты не верь слезам lab с антоном беляевым",
+      "workKey": "49640132|ты не верь слезам lab с антоном беляевым",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/3244354bfa4edb2aae348d40ac37d6bb/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2717324502",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gruppa skryptonite|ты не верь слезам lab с антоном беляевым"
+      ]
+    },
+    {
+      "id": "dz-4006985811",
+      "deezerId": 4006985811,
+      "title": "Берегом",
+      "artist": "Gruppa Skryptonite, ЯАVЬ",
+      "artistIds": [
+        "49640132",
+        "13825825"
+      ],
+      "artistNames": [
+        "Gruppa Skryptonite",
+        "ЯАVЬ"
+      ],
+      "answerKey": "49640132|берегом",
+      "workKey": "49640132|берегом",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/864644125b834ed9210c2b497c74c49e/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4006985811",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gruppa skryptonite|берегом"
+      ]
+    },
+    {
+      "id": "dz-718227342",
+      "deezerId": 718227342,
+      "title": "3x3",
+      "artist": "Gruppa Skryptonite, 104, T-Fest",
+      "artistIds": [
+        "49640132",
+        "11296432",
+        "11815291"
+      ],
+      "artistNames": [
+        "Gruppa Skryptonite",
+        "104",
+        "T-Fest"
+      ],
+      "answerKey": "49640132|3x3",
+      "workKey": "49640132|3x3",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/5465398973dc7fdbb11d9180492777fd/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/718227342",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gruppa skryptonite|3x3"
+      ]
+    },
+    {
+      "id": "dz-659527702",
+      "deezerId": 659527702,
+      "title": "Vsem Plevat'",
+      "artist": "Gruppa Skryptonite",
+      "artistIds": [
+        "49640132"
+      ],
+      "artistNames": [
+        "Gruppa Skryptonite"
+      ],
+      "answerKey": "49640132|vsem plevat",
+      "workKey": "49640132|vsem plevat",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a253eb903c78399866e16b3134f2c5e2/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/659527702",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gruppa skryptonite|vsem plevat"
+      ]
+    },
+    {
+      "id": "dz-1563585802",
+      "deezerId": 1563585802,
+      "title": "Скучаю",
+      "artist": "Gruppa Skryptonite",
+      "artistIds": [
+        "49640132"
+      ],
+      "artistNames": [
+        "Gruppa Skryptonite"
+      ],
+      "answerKey": "49640132|скучаю",
+      "workKey": "49640132|скучаю",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0a287695fea9ba9bb53f87744f82c3e4/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/1563585802",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gruppa skryptonite|скучаю"
+      ]
+    },
+    {
+      "id": "dz-643754742",
+      "deezerId": 643754742,
+      "title": "Podruga",
+      "artist": "Gruppa Skryptonite",
+      "artistIds": [
+        "49640132"
+      ],
+      "artistNames": [
+        "Gruppa Skryptonite"
+      ],
+      "answerKey": "49640132|podruga",
+      "workKey": "49640132|podruga",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/8f35483f797e6eba868475f5049193eb/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/643754742",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "gruppa skryptonite|podruga"
+      ]
+    },
+    {
+      "id": "dz-4135152161",
+      "deezerId": 4135152161,
+      "title": "Мечта",
+      "artist": "JILLZAY, Truwer",
+      "artistIds": [
+        "11296440",
+        "9280344"
+      ],
+      "artistNames": [
+        "JILLZAY",
+        "Truwer"
+      ],
+      "answerKey": "11296440|мечта",
+      "workKey": "11296440|мечта",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/868ed8fc2f9ad3f3e224a25832b46efe/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4135152161",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "jillzay|мечта"
+      ]
+    },
+    {
+      "id": "dz-4135152421",
+      "deezerId": 4135152421,
+      "title": "Аргумент",
+      "artist": "JILLZAY",
+      "artistIds": [
+        "11296440"
+      ],
+      "artistNames": [
+        "JILLZAY"
+      ],
+      "answerKey": "11296440|аргумент",
+      "workKey": "11296440|аргумент",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/48948f151378c7395b2090fd19fe78e9/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4135152421",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "jillzay|аргумент"
+      ]
+    },
+    {
+      "id": "dz-4135152151",
+      "deezerId": 4135152151,
+      "title": "Не пропаганда",
+      "artist": "JILLZAY, Six-O",
+      "artistIds": [
+        "11296440",
+        "5407157"
+      ],
+      "artistNames": [
+        "JILLZAY",
+        "Six-O"
+      ],
+      "answerKey": "11296440|не пропаганда",
+      "workKey": "11296440|не пропаганда",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/868ed8fc2f9ad3f3e224a25832b46efe/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4135152151",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "jillzay|не пропаганда"
+      ]
+    },
+    {
+      "id": "dz-3309655201",
+      "deezerId": 3309655201,
+      "title": "На связи",
+      "artist": "Truwer, Экси, Captown, Niman, Fardi",
+      "artistIds": [
+        "9280344",
+        "118145352",
+        "51390392",
+        "2214821",
+        "12867587"
+      ],
+      "artistNames": [
+        "Truwer",
+        "Экси",
+        "Captown",
+        "Niman",
+        "Fardi"
+      ],
+      "answerKey": "9280344|на связи",
+      "workKey": "9280344|на связи",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0ab303f6b96991423ca90edb8b5d9dcc/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3309655201",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "truwer|на связи"
+      ]
+    },
+    {
+      "id": "dz-3632284972",
+      "deezerId": 3632284972,
+      "title": "Без оглядок",
+      "artist": "Truwer",
+      "artistIds": [
+        "9280344"
+      ],
+      "artistNames": [
+        "Truwer"
+      ],
+      "answerKey": "9280344|без оглядок",
+      "workKey": "9280344|без оглядок",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e4862a59de0635336b15484a6e88bbff/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3632284972",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "truwer|без оглядок"
+      ]
+    },
+    {
+      "id": "dz-3911642111",
+      "deezerId": 3911642111,
+      "title": "Весь в отца",
+      "artist": "Truwer, ATL",
+      "artistIds": [
+        "9280344",
+        "57951752"
+      ],
+      "artistNames": [
+        "Truwer",
+        "ATL"
+      ],
+      "answerKey": "9280344|весь в отца",
+      "workKey": "9280344|весь в отца",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a395edfab5d1e54c7f14a12e1e32bebe/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3911642111",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "truwer|весь в отца"
+      ]
+    },
+    {
+      "id": "dz-3911642121",
+      "deezerId": 3911642121,
+      "title": "Майф",
+      "artist": "Truwer",
+      "artistIds": [
+        "9280344"
+      ],
+      "artistNames": [
+        "Truwer"
+      ],
+      "answerKey": "9280344|майф",
+      "workKey": "9280344|майф",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a395edfab5d1e54c7f14a12e1e32bebe/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3911642121",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "truwer|майф"
+      ]
+    },
+    {
+      "id": "dz-3433296591",
+      "deezerId": 3433296591,
+      "title": "Golden Dragon",
+      "artist": "Truwer",
+      "artistIds": [
+        "9280344"
+      ],
+      "artistNames": [
+        "Truwer"
+      ],
+      "answerKey": "9280344|golden dragon",
+      "workKey": "9280344|golden dragon",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2516c21452f76123656fde5496ba480b/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3433296591",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "truwer|golden dragon"
+      ]
+    },
+    {
+      "id": "dz-3309655301",
+      "deezerId": 3309655301,
+      "title": "Район",
+      "artist": "Truwer, Captown",
+      "artistIds": [
+        "9280344",
+        "51390392"
+      ],
+      "artistNames": [
+        "Truwer",
+        "Captown"
+      ],
+      "answerKey": "9280344|район",
+      "workKey": "9280344|район",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0ab303f6b96991423ca90edb8b5d9dcc/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3309655301",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "truwer|район"
+      ]
+    },
+    {
+      "id": "dz-880446222",
+      "deezerId": 880446222,
+      "title": "BACKWOODS",
+      "artist": "104",
+      "artistIds": [
+        "11296432"
+      ],
+      "artistNames": [
+        "104"
+      ],
+      "answerKey": "11296432|backwoods",
+      "workKey": "11296432|backwoods",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c8565455a32d2515e09e8c6f8feb3990/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/880446222",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "104|backwoods"
+      ]
+    },
+    {
+      "id": "dz-4356393892",
+      "deezerId": 4356393892,
+      "title": "Love Is Blind",
+      "artist": "104",
+      "artistIds": [
+        "11296432"
+      ],
+      "artistNames": [
+        "104"
+      ],
+      "answerKey": "11296432|love is blind",
+      "workKey": "11296432|love is blind",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/70a51ae7a91b74b8eadd3282c69b8b81/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4356393892",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "104|love is blind"
+      ]
+    },
+    {
+      "id": "dz-880446152",
+      "deezerId": 880446152,
+      "title": "ДО ОБЕДА",
+      "artist": "104",
+      "artistIds": [
+        "11296432"
+      ],
+      "artistNames": [
+        "104"
+      ],
+      "answerKey": "11296432|до обеда",
+      "workKey": "11296432|до обеда",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c8565455a32d2515e09e8c6f8feb3990/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/880446152",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "104|до обеда"
+      ]
+    },
+    {
+      "id": "dz-802751632",
+      "deezerId": 802751632,
+      "title": "Проблемы",
+      "artist": "104, Скриптонит, Lucaveros",
+      "artistIds": [
+        "11296432",
+        "5603958",
+        "10388066"
+      ],
+      "artistNames": [
+        "104",
+        "Скриптонит",
+        "Lucaveros"
+      ],
+      "answerKey": "11296432|проблемы",
+      "workKey": "11296432|проблемы",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/efa57402a48160eb9f4d007b849271ce/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/802751632",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "104|проблемы"
+      ]
+    },
+    {
+      "id": "dz-880446302",
+      "deezerId": 880446302,
+      "title": "СНЕГ",
+      "artist": "104, Скриптонит",
+      "artistIds": [
+        "11296432",
+        "5603958"
+      ],
+      "artistNames": [
+        "104",
+        "Скриптонит"
+      ],
+      "answerKey": "11296432|снег",
+      "workKey": "11296432|снег",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c8565455a32d2515e09e8c6f8feb3990/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/880446302",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "104|снег"
+      ]
+    },
+    {
+      "id": "dz-880446262",
+      "deezerId": 880446262,
+      "title": "БЕЛЫЙ ФЛАГ",
+      "artist": "104, Anikv",
+      "artistIds": [
+        "11296432",
+        "15170473"
+      ],
+      "artistNames": [
+        "104",
+        "Anikv"
+      ],
+      "answerKey": "11296432|белый флаг",
+      "workKey": "11296432|белый флаг",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c8565455a32d2515e09e8c6f8feb3990/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/880446262",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "104|белый флаг"
+      ]
+    },
+    {
+      "id": "dz-3444124991",
+      "deezerId": 3444124991,
+      "title": "Прониклась мной",
+      "artist": "T-Fest, Иван Дорн, DJ Insama",
+      "artistIds": [
+        "11815291",
+        "4153472",
+        "7252396"
+      ],
+      "artistNames": [
+        "T-Fest",
+        "Иван Дорн",
+        "DJ Insama"
+      ],
+      "answerKey": "11815291|прониклась мной",
+      "workKey": "11815291|прониклась мной",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/8a043b83279cf77cab65b479ad7043f5/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3444124991",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "t fest|прониклась мной"
+      ]
+    },
+    {
+      "id": "dz-3266563321",
+      "deezerId": 3266563321,
+      "title": "Слова иностранца",
+      "artist": "T-Fest",
+      "artistIds": [
+        "11815291"
+      ],
+      "artistNames": [
+        "T-Fest"
+      ],
+      "answerKey": "11815291|слова иностранца",
+      "workKey": "11815291|слова иностранца",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c7151b0b6db2d85040448e691a6377eb/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3266563321",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "t fest|слова иностранца"
+      ]
+    },
+    {
+      "id": "dz-759557262",
+      "deezerId": 759557262,
+      "title": "Papi",
+      "artist": "T-Fest, Michelle Andrade",
+      "artistIds": [
+        "11815291",
+        "5475037"
+      ],
+      "artistNames": [
+        "T-Fest",
+        "Michelle Andrade"
+      ],
+      "answerKey": "11815291|papi",
+      "workKey": "11815291|papi",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0ec57a754dc1b0e42b0f631d2f4e1ea7/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/759557262",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "t fest|papi"
+      ]
+    },
+    {
+      "id": "dz-798530162",
+      "deezerId": 798530162,
+      "title": "Злой Мишка",
+      "artist": "T-Fest",
+      "artistIds": [
+        "11815291"
+      ],
+      "artistNames": [
+        "T-Fest"
+      ],
+      "answerKey": "11815291|злой мишка",
+      "workKey": "11815291|злой мишка",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/5833d2a2d1e5ce979f3fc55b18d2dd90/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/798530162",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "t fest|злой мишка"
+      ]
+    },
+    {
+      "id": "dz-414737472",
+      "deezerId": 414737472,
+      "title": "Мне лень",
+      "artist": "T-Fest, Truwer",
+      "artistIds": [
+        "11815291",
+        "9280344"
+      ],
+      "artistNames": [
+        "T-Fest",
+        "Truwer"
+      ],
+      "answerKey": "11815291|мне лень",
+      "workKey": "11815291|мне лень",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/09931b9323ede5e0f0e9ffcab4f04efc/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/414737472",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "t fest|мне лень"
+      ]
+    },
+    {
+      "id": "dz-483831052",
+      "deezerId": 483831052,
+      "title": "На волну",
+      "artist": "T-Fest, Truwer",
+      "artistIds": [
+        "11815291",
+        "9280344"
+      ],
+      "artistNames": [
+        "T-Fest",
+        "Truwer"
+      ],
+      "answerKey": "11815291|на волну",
+      "workKey": "11815291|на волну",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/d6e7616e161ca2caa35d9397f8c78021/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/483831052",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "t fest|на волну"
+      ]
+    },
+    {
+      "id": "dz-4022728311",
+      "deezerId": 4022728311,
+      "title": "VROOM",
+      "artist": "Niman, Truwer, Экси, Captown, dj worm, sam omi",
+      "artistIds": [
+        "2214821",
+        "9280344",
+        "118145352",
+        "51390392",
+        "56740132",
+        "222082215"
+      ],
+      "artistNames": [
+        "Niman",
+        "Truwer",
+        "Экси",
+        "Captown",
+        "dj worm",
+        "sam omi"
+      ],
+      "answerKey": "2214821|vroom",
+      "workKey": "2214821|vroom",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/8737bb9aebd6a505add0ddb2abc2ddb8/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4022728311",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "niman|vroom"
+      ]
+    },
+    {
+      "id": "dz-3385353701",
+      "deezerId": 3385353701,
+      "title": "отвратительный король",
+      "artist": "тёмный принц",
+      "artistIds": [
+        "290803481"
+      ],
+      "artistNames": [
+        "тёмный принц"
+      ],
+      "answerKey": "290803481|отвратительный король",
+      "workKey": "290803481|отвратительный король",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c606ad10e5bc70af239460b3e6d87399/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3385353701",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "темный принц|отвратительный король"
+      ]
+    },
+    {
+      "id": "dz-3402100871",
+      "deezerId": 3402100871,
+      "title": "губы",
+      "artist": "тёмный принц",
+      "artistIds": [
+        "290803481"
+      ],
+      "artistNames": [
+        "тёмный принц"
+      ],
+      "answerKey": "290803481|губы",
+      "workKey": "290803481|губы",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/44d9b0ca12109eb52e88be613997e9f0/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3402100871",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "темный принц|губы"
+      ]
+    },
+    {
+      "id": "dz-3104419931",
+      "deezerId": 3104419931,
+      "title": "ПАПА",
+      "artist": "тёмный принц, tewiq, FORTUNA 812",
+      "artistIds": [
+        "290803481",
+        "174528717",
+        "246673262"
+      ],
+      "artistNames": [
+        "тёмный принц",
+        "tewiq",
+        "FORTUNA 812"
+      ],
+      "answerKey": "290803481|папа",
+      "workKey": "290803481|папа",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a8887d52ff8e0be75e71bbcae21ac0c0/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3104419931",
+      "genres": [
+        "street-36"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261109-street-36",
+          "genres": [
+            "street-36"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "темный принц|папа"
       ]
     }
   ],

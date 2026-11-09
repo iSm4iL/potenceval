@@ -13,7 +13,8 @@ export const PACKS = [
   { id: 'soundcloud', title: 'SoundCloud Hits', icon: '☁️', description: t('XXXTentacion, Lil Uzi Vert, Juice WRLD, Lil Peep и другие', "XXXTentacion, Lil Uzi Vert, Juice WRLD, Lil Peep and more") },
   { id: 'dead-inside', title: t('Дед инсайд', "Dead inside"), icon: '🖤', description: t('Baby Cute, CUPSIZE, Boulevard Depo, Lil Peep, ONDA ANDAR, Кишлак, дора и другие', "Baby Cute, CUPSIZE, Boulevard Depo, Lil Peep, ONDA ANDAR, Kishlak, Dora and more") },
   { id: 'drill', title: t('Дрилл', "Drill"), icon: '🥷', description: t('Central Cee, Digga D, Headie One, Pop Smoke, Chief Keef, Fivio Foreign и другие', "Central Cee, Digga D, Headie One, Pop Smoke, Chief Keef, Fivio Foreign and more"), art: 'us-hiphop' },
-  { id: 'hookah', title: t('Кальянный рэп', "Hookah rap"), icon: '💨', description: t('Скриптонит, T-Fest, Truwer, 104, Andy Panda, HammAli & Navai и другие', "Scriptonite, T-Fest, Truwer, 104, Andy Panda, HammAli & Navai and more"), art: 'ru-rap' },
+  { id: 'hookah', title: t('Кальянный рэп', "Hookah rap"), icon: '💨', description: 'HammAli & Navai, JONY, Jah Khalib, Xcho, Rauf & Faik', art: 'ru-rap' },
+  { id: 'street-36', title: t('Улица 36', 'Street 36'), icon: '🌃', description: t('Скриптонит, Truwer, 104, T-Fest, Niman, JILLZAY и тёмный принц', 'Scriptonite, Truwer, 104, T-Fest, Niman, JILLZAY and tyomnyy prints'), art: 'ru-rap' },
 ].map(pack => ({ ...pack, curated: true }));
 
 // Saved games and lobby hosts may have used the other language.
