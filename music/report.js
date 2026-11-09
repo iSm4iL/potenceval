@@ -1,10 +1,7 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
-// Флажок «Проблема с треком»: жалоба уходит push-уведомлением в ntfy.sh (без регистрации).
-// Читать жалобы: приложение ntfy → подписка на тему ниже, или https://ntfy.sh/<тема> в браузере.
-import { $, LS, toast } from '../shared/kit.js';
-import { reportPlaybackError } from '../shared/diagnostics.js';
+import { $ } from '../shared/kit.js';
 
-export const REPORT_TOPIC = 'potenceval-halfsec-reports-b28430b1bd8c';
+const SUPPORT_EMAIL = 'sorcery.aura.game@gmail.com';
 const REASONS = { silent: t('Не играет / тишина', "Won’t play / no sound"), wrong: t('Не подходит к подборке', "Doesn’t fit this collection"), answer: t('Правильный ответ не засчитало', "Correct answer was rejected"), other: t('Другое', "Other") };
 const stage = $('#stage');
 
@@ -27,26 +24,20 @@ function open() {
   const song = track(); if (!song) return;
   const dialog = document.createElement('dialog');
   dialog.className = 'report-dialog';
-  dialog.innerHTML = `<form method="dialog"><h2>${t("Что не так с треком?", "What’s wrong with this track?")}</h2><p>${t("Сообщение уйдёт автору сайта. Ответ не подсказываем: название увидит только он.", "Your report goes to the site owner. Only they will see the song title.")}</p>
+  dialog.innerHTML = `<form method="dialog"><h2>${t("Что не так с треком?", "What’s wrong with this track?")}</h2><p>${t("Откроется черновик письма. Проверьте его и отправьте сами. Если почта не настроена, напишите на", "Your mail app opens a draft for you to review and send. If no mail app is set up, write to")} <a href="mailto:${SUPPORT_EMAIL}">${SUPPORT_EMAIL}</a>.</p>
     ${Object.entries(REASONS).map(([k, v], i) => `<label><input type="radio" name="reason" value="${k}" ${i ? '' : 'checked'}>${v}</label>`).join('')}
     <textarea name="note" maxlength="300" placeholder="${t("Можно пояснить (необязательно)", "Add details (optional)")}"></textarea>
-    <div class="row"><button class="btn ghost" value="cancel">${t("Отмена", "Cancel")}</button><button class="btn primary" value="send">${t("Отправить", "Send")}</button></div></form>`;
+    <div class="row"><button class="btn ghost" value="cancel">${t("Отмена", "Cancel")}</button><button class="btn primary" value="send">${t("Открыть письмо", "Open email")}</button></div></form>`;
   document.body.append(dialog);
   dialog.addEventListener('close', () => { if (dialog.returnValue === 'send') send(song, new FormData(dialog.querySelector('form'))); dialog.remove(); });
   dialog.showModal();
 }
 
-async function send(song, form) {
+function send(song, form) {
   const reason = REASONS[form.get('reason')] || REASONS.other, note = String(form.get('note') || '').trim().slice(0, 300);
   const body = `${reason}\n${song.artist} — ${song.title}\n${t('Подборка:', 'Collection:')} ${song.pack}\nhttps://www.deezer.com/track/${song.id}${note ? `\n\n«${note}»` : ''}`;
-  try {
-    // заголовок — параметром: в HTTP-заголовках кириллица запрещена
-    const url = `https://ntfy.sh/${REPORT_TOPIC}?${new URLSearchParams({ title: `${t("Полсекунды", "Half a Second")}: ${reason}`, tags: 'warning' })}`;
-    const response = await fetch(url, { method: 'POST', body });
-    if (!response.ok) throw new Error(response.status);
-    LS.set('music.reported', [...new Set([...(LS.get('music.reported') || []), song.id])].slice(-200));
-    toast(t('Спасибо! Жалоба отправлена, разберёмся с треком.', "Thanks! Report sent. We’ll check the track."), 3000);
-  } catch { toast(t('Не получилось отправить жалобу. Проверьте интернет и попробуйте ещё раз.', "Could not send the report. Check your connection and try again."), 3500); }
+  const subject = `${t("Полсекунды", "Half a Second")}: ${reason}`;
+  location.href = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.replaceAll('\n', '\r\n'))}`;
 }
 
 function decorate() {
@@ -62,14 +53,5 @@ function decorate() {
   host.append(flag);
 }
 
-// Окно ошибки звука показалось — сообщаем сами, с текстом ошибки, устройством и сетью.
-function watchAudioError() {
-  const box = stage.querySelector('#audioError');
-  if (box && !box.hidden && !box.dataset.reported) {
-    box.dataset.reported = '1';
-    reportPlaybackError(t('Полсекунды', "Half a Second"), track(), stage.querySelector('#audioErrorText')?.textContent || t('ошибка звука', 'audio error'));
-  }
-}
-
-new MutationObserver(() => { decorate(); watchAudioError(); }).observe(stage, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden'] });
+new MutationObserver(decorate).observe(stage, { childList: true, subtree: true });
 decorate();

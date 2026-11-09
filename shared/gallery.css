@@ -14,8 +14,8 @@ body.club-gallery{background:#132f20}
 .table-opening{--x:76%;--y:41%;--tilt:-5deg}
 .table-object{width:100%;height:min(23svh,18vw,245px);object-fit:contain;object-position:center bottom;filter:drop-shadow(5px 10px 7px #0009);pointer-events:none;transition:filter .2s}
 .game-note{display:grid;justify-items:center;gap:4px;position:relative;width:fit-content;max-width:100%;padding:9px 14px;background:#e7d4ac;border:1px solid #bba175;box-shadow:2px 5px 8px #0007;text-align:center;transform:rotate(-2deg);margin-top:-7px}
-.game-note strong{font:700 clamp(16px,1.8vw,25px)/1.1 Georgia,serif;text-wrap:balance}
-.game-note small{font:11px/1.35 Onest,sans-serif;color:#624c34}
+.game-note strong{font:700 clamp(16px,1.8vw,25px)/1.1 Montserrat,sans-serif;text-wrap:balance}
+.game-note small{font:11px/1.35 Montserrat,sans-serif;color:#624c34}
 .table-game:focus-visible{outline:3px solid #ffe7ac;outline-offset:6px;z-index:2}
 @media(hover:hover){
  .table-game:hover{z-index:2;transform:translateY(-9px) rotate(calc(var(--tilt) / 2))}
@@ -27,9 +27,12 @@ body.club-gallery{background:#132f20}
 .ball-ivory{--x:49%;--y:31%;background-position:88% 5%}
 .ball-blue{--x:83%;--y:68%;background-position:56% 92%}
 
-.more-games summary{position:absolute;z-index:2;right:clamp(12px,3vw,48px);top:calc(max(100svh,520px) - 58px);display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 13px;background:#2c2013;color:#f0dbb2;border:1px solid #bc9257;border-radius:4px;cursor:pointer;font:17px Georgia,serif;list-style:none}
+.more-games summary{position:absolute;z-index:2;right:clamp(12px,3vw,48px);top:calc(max(100svh,520px) - 58px);display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 13px;background:#2c2013;color:#f0dbb2;border:1px solid #bc9257;border-radius:4px;cursor:pointer;font:17px Montserrat,sans-serif;list-style:none}
 .more-games summary::-webkit-details-marker{display:none}
-.more-games summary span{font:18px/1 Onest,sans-serif}
+.more-games summary span{font:18px/1 Montserrat,sans-serif}
+.more-games summary{border-radius:10px;background:#2e241b}
+.more-games summary:hover,.more-games[open] summary{background:#413224}
+.more-games summary:focus-visible{outline:2px solid #ffda94;outline-offset:4px}
 .more-games[open] summary span{rotate:45deg}
 .more-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px;padding:20px clamp(16px,3vw,48px)}
 .more-list a{display:grid;grid-template-columns:26px 1fr;gap:4px 8px;padding:15px;color:#ecddc3;text-decoration:none;border:1px solid #a4845180;background:#211c16}

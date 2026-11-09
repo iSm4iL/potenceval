@@ -39,7 +39,10 @@ function selectParty(pool, count, cap, recent) {
     answerCounts.get(t.answerKey) > 1 ? t.answerKey : null,
     workCounts.get(t.workKey) > 1 ? t.workKey : null,
   ])]));
+  // shortcut: bound work on the UI thread; use an asynchronous solver if exhaustive lineup checks become necessary.
+  let remainingBranches = 1024;
   function search(available, chosen, allowance) {
+    if (remainingBranches-- <= 0) return null;
     const needed = count - chosen.length;
     if (!needed) return chosen;
     const eligible = available.filter(t => allowance > 0 || !heard(t));
@@ -63,7 +66,7 @@ function selectParty(pool, count, cap, recent) {
       if (capacity < needed || capacity - withoutArtist < minimumCredits) return null;
     }
     const tried = new Set();
-    for (let i = 0; i <= eligible.length - needed; i++) {
+    for (let i = 0; remainingBranches > 0 && i <= eligible.length - needed; i++) {
       const t = eligible[i], next = [...chosen, t];
       // Equivalent credits and duplicate-key conflicts cannot rescue a failed branch.
       const profile = profiles.get(t.id);
@@ -74,7 +77,8 @@ function selectParty(pool, count, cap, recent) {
     }
     return null;
   }
-  for (let allowance = 0; allowance <= Math.min(count, pool.filter(heard).length); allowance++) {
+  const maxAllowance = Math.min(count, pool.filter(heard).length);
+  for (let allowance = 0; remainingBranches > 0 && allowance <= maxAllowance; allowance++) {
     const result = search(ordered, [], allowance);
     if (result) return result;
   }
@@ -92,7 +96,8 @@ export function createGame(tracks, { rounds = 10, random = Math.random, maxPerAr
     [ids[i], ids[j]] = [ids[j], ids[i]];
   }
   const byId = new Map(unique.map(t => [t.id, t]));
-  const selected = selectParty(ids.map(id => byId.get(id)), rounds, maxPerArtist, recent);
+  const selected = selectParty(ids.map(id => byId.get(id)), rounds, maxPerArtist, recent)
+    || selectParty(unique, rounds, maxPerArtist, []);
   if (!selected) throw new Error(t('Недостаточно разных песен для партии с таким лимитом на исполнителя.', "Not enough different songs for this per-artist limit."));
   const queue = selected.map(t => t.id), selectedIds = new Set(queue);
   const recentWorks = unique.filter(t => recent.includes(t.id) || recent.includes(t.answerKey) || (t.workKey && recent.includes(t.workKey)));

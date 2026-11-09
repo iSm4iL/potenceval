@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Полсекунды — варианты раунда</title>
-<link rel="stylesheet" href="../shared/fonts/fonts.css">
+<link rel="stylesheet" href="../shared/fonts/montserrat.css">
 <link rel="stylesheet" href="../shared/style.css">
 <link rel="stylesheet" href="style.css">
 <style>
@@ -12,7 +12,7 @@
 .switch{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:4px;border-radius:99px;background:#1c1530;border:1px solid var(--line);width:min(100%,520px)}
 .switch .ind{position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px)/4);border-radius:99px;background:var(--paper);box-shadow:0 6px 18px -8px rgba(255,246,230,.6);transition:transform .45s var(--spring)}
 .switch button{position:relative;z-index:1;padding:10px 6px;border-radius:99px;background:transparent;color:var(--muted);font-size:13px;line-height:1;white-space:nowrap;transition:color .3s}
-.switch button b{font-family:'Unbounded';font-size:11px;margin-right:6px;opacity:.6}
+.switch button b{font-family:Montserrat,sans-serif;font-size:11px;margin-right:6px;opacity:.6}
 .switch button.on{color:var(--ink);font-weight:700}
 .switch button:not(.on):hover{color:var(--text)}
 .game-shell.enter{animation:rise .5s var(--ease) both}
@@ -55,7 +55,7 @@
 /* D — музыкальный автомат */
 .jukebox{position:relative;padding:14px 16px 16px;border-radius:26px 26px 18px 18px;background:linear-gradient(180deg,#17120f,#0c0907);border:1px solid #6b5333;box-shadow:inset 0 0 0 4px #120d0a,inset 0 0 0 5px rgba(214,170,98,.35),0 30px 60px -30px #000}
 .jb-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 4px 10px}
-.jb-sign{font-family:'Pacifico',cursive;font-size:24px;color:#f6e7c8;text-shadow:0 0 18px rgba(255,201,74,.35)}
+.jb-sign{font-family:Montserrat,sans-serif;font-size:24px;color:#f6e7c8;text-shadow:0 0 18px rgba(255,201,74,.35)}
 .jb-dome{padding:6px 6px 0;border-radius:999px 999px 10px 10px/220px 220px 10px 10px;background:linear-gradient(90deg,#7a5a2e,#e8c27a 30%,#9b7340 55%,#f1d494 80%,#7a5a2e)}
 .jb-glass{position:relative;height:clamp(190px,30vw,240px);border-radius:999px 999px 6px 6px/214px 214px 6px 6px;overflow:hidden;background:radial-gradient(ellipse at 50% 110%,#3a2615,#0b0806 70%)}
 .jb-glass::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.07) 38%,transparent 46%),linear-gradient(65deg,transparent 60%,rgba(255,255,255,.05) 66%,transparent 72%)}
@@ -75,7 +75,7 @@
 .jukebox:not(.is-playing) .jb-play{animation:jb-call 2.2s ease-in-out infinite}
 @keyframes jb-call{0%,100%{box-shadow:0 0 0 5px #140e0a,0 0 0 7px rgba(232,194,122,.6),0 0 0 7px rgba(255,201,74,.35)}50%{box-shadow:0 0 0 5px #140e0a,0 0 0 7px rgba(232,194,122,.6),0 0 0 22px rgba(255,201,74,0)}}
 .jb-cap{position:absolute;z-index:3;left:0;right:0;bottom:6%;display:flex;justify-content:center;gap:8px;align-items:baseline;color:#f6e7c8;font-size:12px;text-shadow:0 1px 6px #000}
-.jb-cap b{font-family:'Unbounded';font-size:15px;color:#ffdf8a}
+.jb-cap b{font-family:Montserrat,sans-serif;font-size:15px;color:#ffdf8a}
 .jb-keys{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:12px;padding:8px 8px 12px;border-radius:12px;background:linear-gradient(180deg,#2a2018,#120d0a);border:1px solid rgba(214,170,98,.35)}
 .jb-key{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 2px 9px;border-radius:7px 7px 10px 10px;background:linear-gradient(180deg,#f3e6c9,#cdb98f);color:#2a1d14;font-weight:700;font-size:13px;box-shadow:0 5px 0 #6e5a3c,0 7px 10px rgba(0,0,0,.5);transition:transform .12s,box-shadow .12s}
 .jb-key small{font-size:10px;font-weight:500;opacity:.7}
@@ -124,7 +124,7 @@
 .tile{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 4px 16px;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);color:var(--text);transition:transform .15s var(--ease),border-color .2s,background .2s}
 .tile:hover{transform:translateY(-3px);border-color:rgba(255,201,74,.55)}
 .tile .ic{font-size:18px;line-height:1}
-.tile b{font-family:'Unbounded';font-size:18px}
+.tile b{font-family:Montserrat,sans-serif;font-size:18px}
 .tile small{font-size:11px;color:var(--muted)}
 .tile em{font-style:normal;font-size:10px;padding:2px 7px;border-radius:99px;background:rgba(255,255,255,.07);color:var(--muted)}
 .tile.opened{background:rgba(124,92,255,.14);border-color:rgba(160,135,255,.35)}

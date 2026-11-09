@@ -8,7 +8,7 @@ body.club-theme[data-game="dice"] {
 .club-theme[data-game="dice"] .home > .panel { min-width:0; padding:24px; }
 .club-theme[data-game="dice"] .home .joinrow .field { min-width:0; }
 .club-theme[data-game="dice"] .hero { min-width:0; }
-.club-theme[data-game="dice"] .hero h1 { white-space:normal; font:400 clamp(58px,6.5vw,88px)/1 'Marck Script',cursive; color:#edb965; text-shadow:0 2px 0 #52301c,0 0 24px #c9934228; }
+.club-theme[data-game="dice"] .hero h1 { white-space:normal; font:italic 400 clamp(58px,6.5vw,88px)/1 Montserrat,sans-serif; color:#edb965; text-shadow:0 2px 0 #52301c,0 0 24px #c9934228; }
 .club-theme[data-game="dice"] .hero h1 span:last-child { color:inherit; text-shadow:none; }
 .club-theme[data-game="dice"] .hero .sub { font-size:17px; line-height:1.55; max-width:560px; color:#cbb99e; }
 .dice-demo { margin:24px 0 0; }
@@ -30,7 +30,7 @@ body.club-theme[data-game="dice"] {
 .club-theme[data-game="dice"] .die.black.x2 { background:linear-gradient(145deg,#806437,#382814); }
 .club-theme[data-game="dice"] .die.black.x3 { background:linear-gradient(145deg,#6e5540,#35281d); }
 .club-theme[data-game="dice"] .die.black:is(.x2,.x3) i { background:#ffe3a0; }
-.club-theme[data-game="dice"] .die:is(.x2,.x3)::after { content:'×2'; position:absolute; bottom:-4px; right:-4px; border:1px solid #a77d3e; border-radius:3px; padding:1px 3px; font:700 9px/1.2 'Onest',sans-serif; background:#f3cd83; color:#443324; }
+.club-theme[data-game="dice"] .die:is(.x2,.x3)::after { content:'×2'; position:absolute; bottom:-4px; right:-4px; border:1px solid #a77d3e; border-radius:3px; padding:1px 3px; font:700 9px/1.2 Montserrat,sans-serif; background:#f3cd83; color:#443324; }
 .club-theme[data-game="dice"] .die.x3::after { content:'×3'; background:#f7e9cb; }
 .club-theme[data-game="dice"] .die.ghost { opacity:.45; box-shadow:0 0 0 2px #edb965; }
 .club-theme[data-game="dice"] .die.doomed { box-shadow:0 0 0 3px #b7654e,0 0 17px #a74e3e75; }
@@ -59,7 +59,7 @@ body.club-theme[data-game="dice"] {
 .club-theme[data-game="dice"] .turn b { color:#f1d7a6; }
 .club-theme[data-game="dice"] .turn .arrow { color:#edb965; }
 .club-theme[data-game="dice"] .last-call { color:#f1bc80; }
-.club-theme[data-game="dice"] .result h2 { font:400 clamp(40px,7vw,54px)/1.05 'Marck Script',cursive; color:#edb965; }
+.club-theme[data-game="dice"] .result h2 { font:italic 400 clamp(40px,7vw,54px)/1.05 Montserrat,sans-serif; color:#edb965; }
 .club-theme[data-game="dice"] .result p { font-size:14px; color:#cbb796; }
 @media (max-width:1100px) {
   .club-theme[data-game="dice"] .ritual { --d:clamp(23px,2.8vw,30px); gap:14px; padding:24px 14px; }

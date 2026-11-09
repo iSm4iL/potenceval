@@ -1,6 +1,6 @@
 /* «Где я?»: старый глобус на главной, панорама на весь экран и карта путешественника в углу. */
 body.club-theme[data-game="where"] { --pin:#e2574c; --map-frame:#5d4027; }
-.club-theme[data-game="where"] .hero h1 { font:400 clamp(66px,8vw,108px)/1 'Marck Script',cursive; color:#edb965; text-shadow:0 2px 0 #52301c,0 0 24px #c9934228; white-space:nowrap; }
+.club-theme[data-game="where"] .hero h1 { font:italic 400 clamp(66px,8vw,108px)/1 Montserrat,sans-serif; color:#edb965; text-shadow:0 2px 0 #52301c,0 0 24px #c9934228; white-space:nowrap; }
 .club-theme[data-game="where"] .hero .sub { font-size:17px; line-height:1.55; max-width:560px; color:#cbb99e; }
 
 .globe { display:block; width:min(300px,70%); margin:18px auto 0; overflow:visible; filter:drop-shadow(0 18px 22px #0007); }
@@ -11,7 +11,7 @@ body.club-theme[data-game="where"] { --pin:#e2574c; --map-frame:#5d4027; }
 
 .settings { display:flex; flex-wrap:wrap; justify-content:center; gap:18px 30px; margin:26px auto 0; }
 .solo-total { text-align:center; margin:6px 0 10px; }
-.solo-total b { display:block; font:400 clamp(64px,12vw,110px)/1 'Marck Script',cursive; color:#edb965; text-shadow:0 2px 0 #52301c; }
+.solo-total b { display:block; font:italic 400 clamp(64px,12vw,110px)/1 Montserrat,sans-serif; color:#edb965; text-shadow:0 2px 0 #52301c; }
 .solo-total small { color:var(--muted); }
 .trip { list-style:none; max-width:560px; margin:30px auto 0; padding:0; display:flex; flex-direction:column; gap:8px; }
 .trip li { display:flex; align-items:center; gap:12px; padding:11px 14px; border-radius:9px; background:#271c13e8; border:1px solid #8c683c6e; }
@@ -27,7 +27,7 @@ body.in-arena { overflow:hidden; }
 .pano iframe { display:block; width:100%; height:100%; border:0; background:#120d09; }
 .arena.reveal .pano { display:none; }
 /* табличка с адресом у встроенной панорамы выдаёт ответ — закрываем её своей */
-.cover { position:absolute; left:8px; top:8px; z-index:2; display:grid; place-items:center; width:264px; height:72px; padding:0 14px; border-radius:6px; background:linear-gradient(120deg,#f0dfbd,#dfc79f); border:3px solid var(--map-frame); color:#493624; font:400 26px 'Marck Script',cursive; box-shadow:0 8px 18px #0006; pointer-events:auto; }
+.cover { position:absolute; left:8px; top:8px; z-index:2; display:grid; place-items:center; width:264px; height:72px; padding:0 14px; border-radius:6px; background:linear-gradient(120deg,#f0dfbd,#dfc79f); border:3px solid var(--map-frame); color:#493624; font:italic 400 26px Montserrat,sans-serif; box-shadow:0 8px 18px #0006; pointer-events:auto; }
 
 .hud { position:absolute; top:10px; right:10px; z-index:6; display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center; gap:8px; max-width:calc(100% - 300px); pointer-events:none; }
 .hud > * { pointer-events:auto; }
@@ -58,13 +58,13 @@ body.in-arena { overflow:hidden; }
 .arena.reveal .maprow { display:none; }
 
 .pv-pin span { display:grid; place-items:center; width:34px; height:34px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:var(--c); border:3px solid #fff; box-shadow:0 4px 10px #0006; }
-.pv-pin b { transform:rotate(45deg); color:#fff; font:700 14px Onest,sans-serif; }
+.pv-pin b { transform:rotate(45deg); color:#fff; font:700 14px Montserrat,sans-serif; }
 .pv-goal span { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:#edb965; border:3px solid #52301c; color:#52301c; font-size:22px; box-shadow:0 0 0 6px #edb96555,0 6px 14px #0007; animation:goal 1.6s ease-in-out infinite; }
 @keyframes goal { 50% { box-shadow:0 0 0 14px #edb96500,0 6px 14px #0007; } }
 
 .result-card { position:absolute; left:50%; bottom:16px; z-index:6; transform:translateX(-50%); width:min(600px,calc(100% - 32px)); max-height:58%; overflow:auto; padding:20px 22px; border-radius:10px; background:linear-gradient(120deg,#f0dfbd,#dfc79f); border:6px solid var(--map-frame); color:#493624; box-shadow:inset 0 0 0 1px #ba935b,0 18px 40px #0008; }
 .result-card .kicker { color:#8a6a3f; }
-.result-card h2 { margin:2px 0 2px; font:400 clamp(34px,5vw,46px)/1.05 'Marck Script',cursive; color:#3a2a1c; }
+.result-card h2 { margin:2px 0 2px; font:italic 400 clamp(34px,5vw,46px)/1.05 Montserrat,sans-serif; color:#3a2a1c; }
 .result-card .meta { margin:0 0 12px; font-size:13px; color:#756046; }
 .result-card .meta a { color:#8a4b1f; }
 .rows { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
@@ -106,7 +106,7 @@ body.club-theme[data-game="where"]{--club-scene:url('../shared/assets/club/geo.w
 .club-theme[data-game="where"] .expedition-home .panel{position:relative;margin-top:8px;padding:23px;border:1px solid #a38757;border-radius:4px;background:#dfd0ac url('../geo/assets/case-folder.webp') 3% 52%/auto 110%;box-shadow:5px 6px 0 #42301e,10px 13px 28px #0006}
 .club-theme[data-game="where"] .expedition-home .panel .btn{width:100%}
 .club-theme[data-game="where"] .expedition-home .panel .joinrow .btn{width:auto}
-.travel-ticket{font:400 29px/1.1 'Marck Script',cursive;color:#65472a;margin:0 0 23px;padding:0 0 15px;border-bottom:1px dashed #9a80598c}
+.travel-ticket{font:italic 400 29px/1.1 Montserrat,sans-serif;color:#65472a;margin:0 0 23px;padding:0 0 15px;border-bottom:1px dashed #9a80598c}
 .globe-widget{--globe-size:236px;align-self:start;justify-self:center;width:calc(var(--globe-size) + 28px);max-width:100%;margin:4px 0 0}
 .globe-stand{position:relative;width:100%;height:calc(var(--globe-size) + 46px);display:flex;justify-content:center;align-items:flex-start;padding-top:12px}
 .world-globe{flex:none;width:var(--globe-size);height:var(--globe-size);border-radius:50%;border:2px solid #b18d50;background:#386c70;position:relative;z-index:2;box-shadow:9px 15px 23px #0007}
@@ -116,12 +116,12 @@ body.club-theme[data-game="where"]{--club-scene:url('../shared/assets/club/geo.w
 .globe-base{position:absolute;left:calc(50% - 46px);top:calc(var(--globe-size) + 26px);width:92px;height:17px;border-radius:50%;background:linear-gradient(#b49356,#73512d);box-shadow:0 5px 4px #0007;z-index:3}
 .globe-base::before{content:'';position:absolute;width:12px;height:22px;background:#987342;bottom:10px;left:40px;z-index:-1}
 .globe-widget figcaption{display:flex;justify-content:center;padding-top:12px}
-.globe-control{min-height:34px;max-width:100%;padding:7px 13px;border:1px solid #9c7a4e88;border-radius:5px;color:#d9c094;background:#241b12;box-shadow:0 2px 5px #0003;font:12px/1.35 Onest,sans-serif}
+.globe-control{min-height:34px;max-width:100%;padding:7px 13px;border:1px solid #9c7a4e88;border-radius:5px;color:#d9c094;background:#241b12;box-shadow:0 2px 5px #0003;font:12px/1.35 Montserrat,sans-serif}
 .globe-control:hover{background:#3b2b1a;border-color:#d2aa68}
 .globe-control[aria-pressed=true]{color:#f3d49f;border-color:#be975d}
 .field-guide{align-self:center;list-style:none;margin:0;padding:15px 0 0;counter-reset:stops;display:grid;gap:17px}
 .field-guide li{position:relative;padding-left:29px;counter-increment:stops;font-size:13px;line-height:1.45}
-.field-guide li::before{content:counter(stops);position:absolute;left:0;top:0;color:#e3bd7b;font:400 27px/1 'Marck Script',cursive}
+.field-guide li::before{content:counter(stops);position:absolute;left:0;top:0;color:#e3bd7b;font:italic 400 27px/1 Montserrat,sans-serif}
 .field-guide b{display:block;font-size:15px;color:#eed7ae;margin-bottom:4px}
 .field-guide span{color:#bbaa8c}
 .club-theme[data-game="where"] #controls:empty{display:none}

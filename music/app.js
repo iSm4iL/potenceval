@@ -1,13 +1,13 @@
 import { t, lang } from '../shared/i18n.js?v=ui-20261029';
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
-import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=locale-20261029';
+import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=pack-search-20261109';
 import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistOptions, sameArtist } from './catalog.js?v=music-covers-20261109';
 import { createDeezerClient } from './service.js?v=music-fixes-20261030';
 import { AudioPlayer } from './audio.js?v=music-fixes-20261030';
 import { resultPresentation } from './feedback.js?v=locale-20261029';
 import { createCatalogClient } from './collection.js?v=locale-20261029';
-import './report.js?v=locale-20261029';
-import { createMultiplayer } from './multiplayer.js?v=music-covers-20261109';
+import './report.js?v=privacy-20261107';
+import { createMultiplayer } from './multiplayer.js?v=pack-search-20261109';
 
 // shared/i18n handles data-en text; translate attributes without replacing controls.
 if (lang === 'en') for (const attribute of ['aria-label', 'placeholder', 'content']) {
@@ -123,11 +123,11 @@ function rememberPlayed() {
 
 function setAvailableRounds() {
   availableRounds = [5, 10, 20].filter(rounds => {
-    try { createGame(pool, { rounds, maxPerArtist: currentPack().curated ? 2 : Infinity, random: () => 0.5 }); return true; } catch { return false; }
+    try { createGame(pool, { rounds, maxPerArtist: currentPack().curated ? 2 : Infinity, random: () => 0.999999 }); return true; } catch { return false; }
   });
   if (!availableRounds.length) {
     for (let rounds = Math.min(4, pool.length); rounds > 0; rounds--) {
-      try { createGame(pool, { rounds, maxPerArtist: currentPack().curated ? 2 : Infinity }); availableRounds = [rounds]; break; } catch {}
+      try { createGame(pool, { rounds, maxPerArtist: currentPack().curated ? 2 : Infinity, random: () => 0.999999 }); availableRounds = [rounds]; break; } catch {}
     }
   }
   if (!availableRounds.includes(settings.rounds)) settings.rounds = availableRounds.at(-1) || 5;

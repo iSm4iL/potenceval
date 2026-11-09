@@ -14,9 +14,9 @@
 .record-store .friend-room { margin: 6px 0 24px; padding: 22px 26px 16px; border: 1px solid #72502e; border-radius: 12px; background: linear-gradient(120deg, #23190fec, #100d0aee); box-shadow: 0 8px 30px #0004; }
 .friend-room[hidden] { display: none; }
 .friend-room-heading { display: flex; justify-content: space-between; gap: 18px; align-items: center; margin-bottom: 17px; }
-.friend-room-heading h2 { font-family: 'Marck Script', cursive; font-size: 32px; font-weight: 400; margin: 3px 0 0; color: #f0ddbd; overflow-wrap: anywhere; }
+.friend-room-heading h2 { font-family: Montserrat,sans-serif; font-size: 32px; font-weight: 400; margin: 3px 0 0; color: #f0ddbd; overflow-wrap: anywhere; }
 .friend-room-heading .kicker { font-size: 10px; letter-spacing: .14em; color: #c4a479; }
-.friend-room-code { font-family: Onest, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: .12em; color: #f7bd60; }
+.friend-room-code { font-family: Montserrat, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: .12em; color: #f7bd60; }
 .friend-players { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); padding: 0; margin: 0; gap: 9px; }
 .friend-players li { display: flex; align-items: center; gap: 10px; border: 1px solid #5c4329; border-radius: 8px; padding: 11px 12px; background: #ffffff04; min-width: 0; }
 .friend-players li.is-me { border-color: #b78a47; background: #eeb8600c; }
@@ -33,7 +33,7 @@
 .friend-loading-replace { margin-top: 12px; font-size: 12px; }
 .friend-race-line { margin: 12px 0 0; color: #f4c879; font-size: 14px; }
 .friend-lobby { max-width: 680px; margin: 35px auto 50px; text-align: center; padding: 38px; background: #160f0beb; border: 1px solid #70512f; border-radius: 12px; }
-.friend-lobby h1 { font-family: 'Marck Script', cursive; font-size: clamp(36px, 5vw, 52px); font-weight: 400; margin: 12px 0; color: #f4debb; }
+.friend-lobby h1 { font-family: Montserrat,sans-serif; font-size: clamp(36px, 5vw, 52px); font-weight: 400; margin: 12px 0; color: #f4debb; }
 .friend-lobby p { color: #d0ba9b; line-height: 1.7; }
 .friend-lobby .kicker { color: #d4a96b; }
 .friend-lobby .sub { color: #b4a087; font-size: 14px; }

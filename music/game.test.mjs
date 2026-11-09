@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
 import { normalizeDeezer, searchTracks, sameArtist, snapshotTrack, combineSuggestions } from './catalog.js';
 
@@ -10,6 +11,26 @@ const game = (rounds = 5) => createGame(tracks, { rounds, random: () => 0.999 })
 const party = (pool, options = {}) => createGame(pool, { rounds: 3, maxPerArtist: 2, random: () => 0.999, ...options });
 const queued = s => s.queue.map(id => s.tracks.find(t => t.id === id));
 const collab = (n, artists) => ({ ...song(n, artists[0]), artistIds: artists });
+
+test('checking Street 36 round lengths does not block the game', () => {
+  const result = spawnSync(process.execPath, ['--input-type=module', '-e', `
+    import assert from 'node:assert/strict';
+    import { readFileSync } from 'node:fs';
+    import { selectCollection } from './collection.js';
+    import { createGame } from './game.js';
+    const catalog = JSON.parse(readFileSync('data/catalog.json', 'utf8'));
+    const { tracks } = selectCollection(catalog, 'street-36');
+    const options = { maxPerArtist: 2, random: () => 0.5 };
+    assert.equal(createGame(tracks, { ...options, rounds: 10 }).queue.length, 10);
+    try {
+      assert.equal(createGame(tracks, { ...options, rounds: 20 }).queue.length, 20);
+    } catch (error) {
+      assert.match(error.message, /лимитом|per-artist/);
+    }
+  `], { cwd: new URL('.', import.meta.url), timeout: 2000, encoding: 'utf8' });
+  assert.ifError(result.error);
+  assert.equal(result.status, 0, result.stderr);
+});
 
 const artistAnswer = id => ({ kind: 'artist', id: `artist-${id}`, artistId: id, name: `Artist ${id}` });
 test('duplicate contributor IDs and names never shift artist identity pairs', () => {

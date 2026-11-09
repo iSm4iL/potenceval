@@ -4,7 +4,7 @@ import { WORLD as WORLD_RU, SHAPES } from './atlas.js?v=clues-20261025';
 import { PHOTOS, PERSON_PHOTOS, PERSON_DEPICTIONS } from './photos.js?v=brand-photos-20261107';
 import { banknoteHTML, banknoteFor, banknoteKind } from './banknotes.js?v=media-20261107';
 import { WALKS } from './walks.js?v=urban-20261107';
-import { streetViewUrl, streetViewLink } from './maps.js?v=embedded-walk-20261109';
+import { streetViewUrl, streetViewLink } from './maps.js?v=walks-20261109';
 import { BRANDS } from './brands.js';
 import { BRAND_MEDIA } from './brand-media.js?v=logos-20261108';
 import { PHOTO_CREDITS } from './media-credits.js?v=media-20261107';
@@ -297,7 +297,7 @@ $('#walkRefund').onclick=()=>{if(game&&refundWalk(game.round)){resetWalk();activ
 $('#walkOther').onclick=()=>{const spots=spotsOf(game.round.id);if(spots){spot=(spot+1)%spots.length;showWalkPoint(spots[spot]);}};
 function openViewer(src,alt){
   const brand=BRAND_MEDIA[game?.round?.id],background=src===brand?.[0]?(brand[2]||'#ffffff'):null;
-  $('#viewerBody').innerHTML=`<img src="${esc(src)}" alt="${esc(alt||t("Подсказка крупно","Enlarged clue"))}" ${background?`style="background:${esc(background)};padding:16px"`:''}>${photoCredit(src)}`;
+  $('#viewerBody').innerHTML=`<img src="${esc(src)}" alt="${esc(alt||t("Подсказка крупно","Enlarged clue"))}" ${background?`class="viewer-brand-image" style="background:${esc(background)}"`:''}>${photoCredit(src)}`;
   $('#viewerNote').textContent='';if(!$('#viewer').open)$('#viewer').showModal();
 }
 $('#viewerBody').onclick=e=>{if(e.target.closest('[data-walk]')){$('#viewer').close();openWalk();}const img=e.target.closest('[data-zoom]')?.querySelector('img');if(img)openViewer(img.getAttribute('src'),img.alt);};

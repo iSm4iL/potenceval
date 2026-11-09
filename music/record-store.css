@@ -12,7 +12,7 @@ body.record-store { background:#0d0c14; }
 .record-store .blobs { display:none; }
 .record-store .music-wrap { max-width:1840px; padding:12px 24px 16px; }
 .record-store .top { min-height:40px; position:relative; z-index:3; }
-.record-store .logo { font-family:'Onest',sans-serif; gap:7px; font-size:24px; }
+.record-store .logo { font-family:Montserrat,sans-serif; gap:7px; font-size:24px; }
 .record-store .logo::before { content:''; display:block; flex:none; width:38px; height:38px; border:0; background:url('assets/record-store/vinyl-mark.svg') center/contain no-repeat; }
 .record-store .logo b { color:#f6ecd9; }.record-store .logo span { color:var(--gold); }
 .record-store .top-right button { color:#e9dbc8; border-color:#e8c27a38; background:#100f12a1; padding:9px 16px; }
@@ -21,7 +21,7 @@ body.record-store { background:#0d0c14; }
 .store-masthead { text-align:center; margin:-17px 0 12px; pointer-events:none; }
 .store-sign { width:min(600px,65vw); margin:auto; line-height:1; animation:neon-ignite 1.4s linear both; }
 .store-sign svg { width:100%; height:auto; overflow:visible; display:block; }
-.store-sign text { font:110px 'Marck Script',cursive; letter-spacing:-4px; }
+.store-sign text { font:italic 110px Montserrat,sans-serif; letter-spacing:-4px; }
 .neon-halo { fill:none; stroke:#f5a239; stroke-width:5; filter:blur(8px); opacity:.8; }
 .neon-tube { fill:none; stroke:#ed9d3e; stroke-width:2.4; filter:drop-shadow(0 0 3px #ffb449); }
 .neon-core { fill:#ffe6b4; stroke:#ffe4ad; stroke-width:.5; filter:drop-shadow(0 0 2px #f8a43c); }
@@ -44,7 +44,7 @@ body.record-store { background:#0d0c14; }
 .sleeve-cover { display:block; position:absolute; inset:0; overflow:hidden; border:1px solid #e2c69473; background:#241b18; box-shadow:0 4px 7px #000a,inset 0 0 0 1px #fff2; }
 .sleeve-cover::after { content:''; position:absolute; inset:0; border:2px solid #e8d7b726; box-shadow:inset 0 0 22px #170c0755; background:linear-gradient(130deg,#fff1,transparent 30% 80%,#0c08062b); pointer-events:none; }
 .sleeve-cover img { position:absolute; width:100%; height:100%; object-fit:cover; }
-.sleeve-lettering { position:absolute; left:9%; right:7%; top:8%; font-family:'Marck Script',cursive; color:var(--letter-color,#ffe3c4); font-size:clamp(23px,2.75vw,43px); line-height:.95; font-weight:400; text-shadow:0 2px 1px #160a05,0 3px 8px #000,0 0 18px #0009; transform:rotate(-7deg); overflow-wrap:anywhere; }
+.sleeve-lettering { position:absolute; left:9%; right:7%; top:8%; font-family:Montserrat,sans-serif; color:var(--letter-color,#ffe3c4); font-size:clamp(23px,2.75vw,43px); line-height:.95; font-weight:400; text-shadow:0 2px 1px #160a05,0 3px 8px #000,0 0 18px #0009; transform:rotate(-7deg); overflow-wrap:anywhere; }
 .sleeve-mark { position:absolute; bottom:5%; left:8%; font-size:7px; letter-spacing:.06em; color:#fff6d2bd; text-shadow:0 1px 4px #000; }
 .pack-card[data-pack="nostalgia"] .sleeve-lettering,.pack-card[data-pack="soundcloud"] .sleeve-lettering { font-size:clamp(20px,2.15vw,33px); overflow-wrap:normal; }
 .sleeve-disc { position:absolute; width:87%; aspect-ratio:1; border-radius:50%; left:6%; top:0; background:repeating-radial-gradient(circle,#121111 0 2px,#32302a 3px,#101010 4px 6px); box-shadow:0 1px 5px #000; transition:transform .4s var(--ease); z-index:-1; }
@@ -54,7 +54,7 @@ body.record-store { background:#0d0c14; }
 .selected .sleeve-chosen { display:block; }
 .crate-lip { position:relative; z-index:4; display:flex; justify-content:space-between; align-items:center; min-height:91px; margin:-10px -16px 0; padding:12px 23px; border-top:5px solid #c08a4b; border-bottom:7px solid #3d1d10; border-radius:2px; background:linear-gradient(#d59a5b26,#1c090d40),var(--wood); background-size:cover; box-shadow:0 -7px 13px #0007,0 12px 16px #0008,inset 0 1px #f8d5a855; }
 .crate-lip::before,.crate-lip::after { content:''; position:absolute; top:14px; width:5px; height:5px; background:#2f1a13; border-radius:50%; box-shadow:0 42px #2f1a13; }.crate-lip::before{left:9px}.crate-lip::after{right:9px}
-.crate-stamp,.crate-note { font-family:'Marck Script',cursive; font-size:21px; line-height:.9; transform:rotate(-7deg); color:#2d190e; background:#d0ab79; padding:6px 12px; box-shadow:1px 2px 3px #1b0b0870; }
+.crate-stamp,.crate-note { font-family:Montserrat,sans-serif; font-size:21px; line-height:.9; transform:rotate(-7deg); color:#2d190e; background:#d0ab79; padding:6px 12px; box-shadow:1px 2px 3px #1b0b0870; }
 .crate-note { font-size:20px; transform:rotate(4deg); background:transparent; box-shadow:none; color:#edc98ea6; }
 .shelf-navigation { display:flex; align-items:center; gap:17px; }
 .shelf-navigation button { display:grid; place-items:center; width:49px; height:39px; border:1px solid #dfb77988; border-radius:5px; background:linear-gradient(#38291f,#18120e); color:#ffe0a4; font-size:25px; box-shadow:0 3px 0 #24130c,0 5px 7px #0007,inset 0 1px #efd3aa40; }
@@ -73,7 +73,7 @@ body.record-store { background:#0d0c14; }
 .deck-vinyl { position:absolute; width:59.5%; aspect-ratio:1; left:13.5%; top:12.5%; border-radius:50%; box-shadow:0 4px 5px #000b,0 0 0 2px #6a6154; }
 .disc-spinning { position:absolute; inset:0; border-radius:50%; background:repeating-radial-gradient(circle,#121212 0 1px,#2c2a27 1.5px,#101010 2px 3.2px); box-shadow:inset 0 0 0 4px #1a1713,inset 0 0 0 6px #373029; }
 .disc-label { position:absolute; inset:33%; border-radius:50%; overflow:hidden; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff0ce; background:linear-gradient(#1b0d0e3d,#15090740),var(--label-art) center/cover,var(--label-color); border:1px solid #ead4ac8a; box-shadow:0 0 0 1px #20170f; }
-.disc-label span { font-family:'Marck Script',cursive; font-size:clamp(10px,1.4vw,22px); line-height:.95; text-align:center; padding:0 9px; text-shadow:0 1px 4px #000,0 0 7px #000; }
+.disc-label span { font-family:Montserrat,sans-serif; font-size:clamp(10px,1.4vw,22px); line-height:.95; text-align:center; padding:0 9px; text-shadow:0 1px 4px #000,0 0 7px #000; }
 .disc-label small { font-size:5px; margin-top:12%; color:#fff3d3; }
 .disc-reflection { position:absolute; inset:0; border-radius:50%; background:conic-gradient(from -35deg,transparent 0 5%,#fff2 12%,#ffffff06 18%,transparent 24% 49%,#fff1 60%,transparent 69%); pointer-events:none; }
 .disc-spindle { position:absolute; left:50%; top:50%; width:6px; height:6px; transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle at 30% 25%,#fff4da,#c7c6bf 30%,#5a5144 60%,#000); box-shadow:1px 2px 3px #000b; }
@@ -105,7 +105,7 @@ body.record-store { background:#0d0c14; }
 .record-store .music-footer { border-top:1px solid #e0bf8b1c; color:#9c8977; margin-top:20px; padding-top:13px; font-size:10px; }
 .record-store .game-shell { margin:22px auto 0; max-width:1048px; }
 .record-store .round-top { border-bottom:1px solid #d8ae7526; padding-bottom:14px; }
-.record-store .round-top h1 { font-family:'Marck Script',cursive; font-size:34px; font-weight:400; }
+.record-store .round-top h1 { font-family:Montserrat,sans-serif; font-size:34px; font-weight:400; }
 .record-store .round-top p { color:#bcab96; }.record-store .total-score{background:#241d17;border-color:#f2b85b4d;color:var(--gold)}
 .round-controls { display:flex; flex:none; flex-direction:column; align-items:flex-end; gap:10px; }
 .round-controls .jb-tools { justify-content:flex-end; flex-wrap:wrap; }
@@ -115,7 +115,7 @@ body.record-store { background:#0d0c14; }
 .record-store .jukebox { position:relative; width:100%; margin:0 auto; padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
 .record-store .jukebox::before,.record-store .jukebox::after { display:none; }
 .record-store .jb-top { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:0 0 8px; position:relative; z-index:2; }
-.player-caption { font-family:'Marck Script',cursive; font-size:25px; color:#ecd6b6; }
+.player-caption { font-family:Montserrat,sans-serif; font-size:25px; color:#ecd6b6; }
 .record-store .jb-marquee{position:static;transform:none;padding:5px 9px;border-color:#bc924d4d;background:#231a11;color:#cdb28c;font-size:10px;letter-spacing:0;text-transform:none;white-space:nowrap}
 .record-store .jb-marquee b{font-size:12px;color:#f2b85b}
 .record-store .jb-tools .volume { color:#bca388; }.record-store .volume input{accent-color:var(--gold)}
@@ -141,7 +141,7 @@ body.record-store { background:#0d0c14; }
 .record-store .audio-error .btn{background:#5a3828;color:#fff0d4;border:1px solid #c7a07266;font-size:11px}
 .store-answer-panel{position:relative;color:#392b22;background:linear-gradient(110deg,#fff5dc0a,#7b5b2421),#e8d6b4;border:1px solid #d5b58b;border-radius:3px;padding:23px 24px 20px;box-shadow:0 0 0 7px #50331ef0,0 0 0 9px #a0784780,0 15px 24px #0008}
 .store-answer-panel::before,.store-answer-panel::after{content:'';position:absolute;top:8px;width:6px;height:6px;border-radius:50%;background:#604531;box-shadow:0 1px 1px #fff8}.store-answer-panel::before{left:9px}.store-answer-panel::after{right:9px}
-.store-answer-panel>h2{font-family:'Marck Script',cursive;font-size:37px;font-weight:400;line-height:1.1;margin:0 0 15px;color:#392b22}
+.store-answer-panel>h2{font-family:Montserrat,sans-serif;font-size:37px;font-weight:400;line-height:1.1;margin:0 0 15px;color:#392b22}
 .record-store .store-answer-panel .guess-form{margin:0;padding:0;border:0;background:none;border-radius:0;box-shadow:none}
 .store-answer-panel .guess-form>label{display:none}
 .record-store .answer-row{display:flex;flex-direction:column;gap:11px;margin:0}
@@ -164,7 +164,7 @@ body.record-store { background:#0d0c14; }
 .store-answer-panel .history-heading h2{width:100%;gap:16px;margin:0;line-height:1.1}
 .store-answer-panel .history-heading h2 small{flex:none;margin-left:auto;font-variant-numeric:tabular-nums}
 .store-answer-panel .history-heading>span{font-size:9px;line-height:1.3}
-.store-answer-panel .history-heading h2{font-family:'Marck Script',cursive;font-size:26px;color:#493622;font-weight:400}.store-answer-panel .history-heading span,.store-answer-panel .history-heading small{color:#8f775a}
+.store-answer-panel .history-heading h2{font-family:Montserrat,sans-serif;font-size:26px;color:#493622;font-weight:400}.store-answer-panel .history-heading span,.store-answer-panel .history-heading small{color:#8f775a}
 .store-answer-panel .history-empty{color:#998265;font-size:12px;line-height:1.6}
 .record-store .store-answer-panel .attempt{background:#b9543c12;border-color:#b9543c40;color:#af4837;padding:10px;border-radius:5px}.record-store .store-answer-panel .attempt.artist{background:#e3b84a36;border-color:#bc912941;color:#8b651e}.record-store .store-answer-panel .attempt.correct{background:#71855224;border-color:#7185524d;color:#4a6534}
 .store-answer-panel .attempt b{color:#4c3829}.store-answer-panel .attempt small{color:#8a6d55}
@@ -180,11 +180,11 @@ body.record-store { background:#0d0c14; }
 .record-store .result-head.missed{background:#211a16e8;border-color:#d7b37d55}
 .record-store .result-player{background:#201b18;box-shadow:none}.record-store .result-player .vinyl{background:repeating-radial-gradient(circle,#161410 0 2px,#35312c 3px,#121110 4px 6px)}
 .record-store .result-player .play-line{margin:8px 0}.record-store .result-player .record-button{background:var(--gold);color:#30200f}
-.record-store .result-row{background:#231d18d9;border-color:#d6ad7338}.record-store .summary-head h1{font-family:'Marck Script',cursive;font-size:52px}.record-store .summary-head{background:#1a1713b0}
+.record-store .result-row{background:#231d18d9;border-color:#d6ad7338}.record-store .summary-head h1{font-family:Montserrat,sans-serif;font-size:52px}.record-store .summary-head{background:#1a1713b0}
 .record-store .round-layout>.attempt-history{background:#251e18ed;border-color:#d8b17b4d;color:#e6ceac}
-.record-store .round-layout>.attempt-history h2{font-family:'Marck Script',cursive;font-size:27px;font-weight:400}
+.record-store .round-layout>.attempt-history h2{font-family:Montserrat,sans-serif;font-size:27px;font-weight:400}
 .record-store .btn.primary{background:linear-gradient(#ff8770,#ef6d59);color:#fff6e5}
-.record-store .music-dialog{background:#211b17;border-color:#d5aa6c70;color:#f0debf}.record-store .music-dialog h2{font-family:'Marck Script',cursive;font-size:32px;font-weight:400}.record-store .music-dialog .field{background:#15120f;color:#f0debf;border-color:#a87c4344}.record-store .music-dialog .score-rule{background:#73512326;border-color:#a87c4344;color:#d6ba8c}
+.record-store .music-dialog{background:#211b17;border-color:#d5aa6c70;color:#f0debf}.record-store .music-dialog h2{font-family:Montserrat,sans-serif;font-size:32px;font-weight:400}.record-store .music-dialog .field{background:#15120f;color:#f0debf;border-color:#a87c4344}.record-store .music-dialog .score-rule{background:#73512326;border-color:#a87c4344;color:#d6ba8c}
 .record-store .music-dialog .rules-list li::before{background:#67502f;color:#fff0d2}
 .record-store button:focus-visible,.record-store a:focus-visible{outline:3px solid #ffd087;outline-offset:4px}
 @media(max-width:1100px){.record-store .music-wrap{padding:18px 24px}.shop-layout{grid-template-columns:minmax(0,1fr) 290px;gap:20px}.record-crate{padding:20px 17px 0}.sleeve-grid{gap:24px 9px;min-height:360px}.sleeve-lettering{font-size:clamp(22px,2.65vw,31px)}.crate-lip{margin-left:-10px;margin-right:-10px;padding:12px 14px}.crate-stamp{font-size:17px;padding:5px 8px}.crate-note{display:none}.shelf-navigation{gap:12px}.store-masthead{margin:0 0 25px}.store-sign{width:570px}.record-store .round-layout{gap:28px}.store-answer-panel{padding:20px}.store-answer-panel>h2{font-size:31px}.round-turntable{margin:0 auto -25px}.record-store .jb-play{width:62px}.record-store .jb-key{font-size:14px;min-height:57px}}

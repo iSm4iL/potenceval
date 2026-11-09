@@ -421,7 +421,7 @@ async function posterBlob(s, c) {
     if (line) lines.push(line);
     return lines;
   };
-  const F = { title: '800 58px Unbounded', ptext: '400 34px Onest', catch: '500 48px Onest', add: '400 34px Onest' };
+  const F = { title: '800 58px Montserrat', ptext: '400 34px Montserrat', catch: '500 48px Montserrat', add: '400 34px Montserrat' };
   const blocks = [
     ['pill', t('СИЛА', 'POWER'), '#344a3b'],
     ['text', wrap(`${s.power.icon} ${s.power.title}`, F.title), F.title, 70, '#443324'],
@@ -439,13 +439,13 @@ async function posterBlob(s, c) {
   glow.addColorStop(0, 'rgba(237,185,101,.18)'); glow.addColorStop(1, 'rgba(237,185,101,0)');
   ctx.fillStyle = glow; ctx.fillRect(0, 0, Wd, height);
   ctx.textBaseline = 'top';
-  ctx.font = '800 32px Unbounded'; ctx.fillStyle = '#735326'; ctx.fillText('potenceval', P, P);
-  ctx.font = '400 28px Onest'; ctx.fillStyle = '#786044'; ctx.textAlign = 'right'; ctx.fillText(t(`✦ Джинн · раунд ${s.round + 1}`, `✦ Genie · round ${s.round + 1}`), Wd - P, P + 4); ctx.textAlign = 'left';
+  ctx.font = '800 32px Montserrat'; ctx.fillStyle = '#735326'; ctx.fillText('potenceval', P, P);
+  ctx.font = '400 28px Montserrat'; ctx.fillStyle = '#786044'; ctx.textAlign = 'right'; ctx.fillText(t(`✦ Джинн · раунд ${s.round + 1}`, `✦ Genie · round ${s.round + 1}`), Wd - P, P + 4); ctx.textAlign = 'left';
   let y = P + 90;
   for (const b of blocks) {
     if (b[0] === 'gap') { y += b[1]; continue; }
     if (b[0] === 'pill') {
-      ctx.font = '600 24px Unbounded';
+      ctx.font = '600 24px Montserrat';
       const w = ctx.measureText(b[1]).width + 44;
       ctx.fillStyle = b[2]; ctx.beginPath(); ctx.roundRect(P, y, w, 48, 24); ctx.fill();
       ctx.fillStyle = '#f7e8cc'; ctx.fillText(b[1], P + 22, y + 11);
@@ -458,7 +458,7 @@ async function posterBlob(s, c) {
   y += 40;
   ctx.fillStyle = 'rgba(142,109,60,.3)'; ctx.fillRect(P, y, maxW, 2);
   y += 34;
-  ctx.font = '400 30px Onest'; ctx.fillStyle = '#786044';
+  ctx.font = '400 30px Montserrat'; ctx.fillStyle = '#786044';
   ctx.fillText(t('придумал', 'by') + (c.by === GENIE_ID ? ' ✦ ' + t('Джинн', 'Genie') : ': ' + nameOf(s, c.by)), P, y);
   ctx.textAlign = 'right'; ctx.fillText('🔥 ' + c.fire, Wd - P, y); ctx.textAlign = 'left';
   return new Promise(r => cv.toBlob(r, 'image/png'));

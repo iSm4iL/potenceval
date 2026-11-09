@@ -1,7 +1,6 @@
 import { buildSession, buildChoices, createRound, startRound, answerRound, remainingTime, interruptRound } from './game.js?v=lang-20261029';
 import { deezerRequest } from '../music/service.js';
 import { AudioPlayer } from '../music/audio.js';
-import { reportPlaybackError } from '../shared/diagnostics.js';
 import { t, lang } from '../shared/i18n.js?v=ui-20261029';
 import { TITLES_EN } from './titles.en.js';
 
@@ -79,7 +78,6 @@ function showFailure(message) {
   cancelPlayback();
   $('technicalError').hidden = false;
   $('errorText').textContent = message;
-  if (round?.entry) reportPlaybackError(t('Угадай по саундтреку', 'Name That Soundtrack'), { id: round.entry.trackId, title: round.entry.trackTitle, artist: round.entry.artist }, message);
   $('playLabel').textContent = t('Эту пластинку не удалось включить', 'This record wouldn’t play');
   $('roundStatus').textContent = t('Раунд не засчитан. Заменим песню без штрафа.', 'This round won’t count. Replace the song without a penalty.');
   $('listenButton').hidden = true;

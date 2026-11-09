@@ -33,7 +33,7 @@ body[data-game="geo"] .folder-tab {
 body[data-game="geo"] .folder-page h1 {
   max-width:none;
   margin:0;
-  font:800 clamp(35px,4.1vw,62px)/1.04 'Golos Text',sans-serif;
+  font:800 clamp(35px,4.1vw,62px)/1.04 Montserrat,sans-serif;
   letter-spacing:-.035em;
 }
 body[data-game="geo"] .folder-page .lead {margin:14px 0 0;font-size:16px;line-height:1.55;color:#452f20}
@@ -41,7 +41,7 @@ body[data-game="geo"] .stamp-secret {margin:0 0 15px;padding:4px 8px;font-size:1
 body[data-game="geo"] .detective-scene {margin:24px 2px 4px;padding:6px;transform:rotate(-3deg)}
 body[data-game="geo"] .detective-scene img {height:auto;aspect-ratio:1.85;object-fit:cover}
 body[data-game="geo"] .folder-right {color:#fae5c5}
-body[data-game="geo"] .folder-right h2 {margin:0 0 12px;color:inherit;font:750 18px/1.25 'Golos Text',sans-serif}
+body[data-game="geo"] .folder-right h2 {margin:0 0 12px;color:inherit;font:750 18px/1.25 Montserrat,sans-serif}
 body[data-game="geo"] .packs {grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 10px;margin-top:22px}
 body[data-game="geo"] .pack {
   position:relative;
@@ -74,14 +74,14 @@ body[data-game="geo"] .file-tab {
 }
 body[data-game="geo"] .pack:has(:checked) {background-color:#fff0cb;border-color:#b05f42;box-shadow:inset 4px 0 #973e2a,2px 4px 0 #805638}
 body[data-game="geo"] .pack:has(:checked) .file-tab {background:#953e2b;color:#fff3db;border-color:#b05f42}
-body[data-game="geo"] .pack b {margin:0;font:750 16px/1.2 'Golos Text',sans-serif;overflow-wrap:anywhere}
+body[data-game="geo"] .pack b {margin:0;font:750 16px/1.2 Montserrat,sans-serif;overflow-wrap:anywhere}
 body[data-game="geo"] .pack small {font-size:13px;color:#513923}
 body[data-game="geo"] .setup-row {display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;margin-top:24px}
 body[data-game="geo"] .setup-row>div {min-width:0}
 body[data-game="geo"] .setup-row h2 {font-size:15px;margin-bottom:8px}
 body[data-game="geo"] .rounds,body[data-game="geo"] .modes {gap:6px}
 body[data-game="geo"] .rounds button,
-body[data-game="geo"] .modes button {min-width:44px;min-height:44px;padding:8px 11px;border-radius:3px;font:650 15px/1.25 'Golos Text',sans-serif}
+body[data-game="geo"] .modes button {min-width:44px;min-height:44px;padding:8px 11px;border-radius:3px;font:650 15px/1.25 Montserrat,sans-serif}
 body[data-game="geo"] .modes button {flex:1 1 auto}
 body[data-game="geo"] .folder-right #startBtn {width:100%;margin-top:18px;min-height:51px;font-size:17px}
 body[data-game="geo"] .desk button:focus-visible,
