@@ -56,8 +56,8 @@ for (const lang of ['ru','en']) {
     assert.equal((element('#stage').innerHTML.match(/data-pack=/g) || []).length, 6);
     run('start()');
     run("game.round=newRound('FR');openClue(game.round,'walk');openWalk()");
-    assert.match(element('#walkExternal').href, /map_action=pano/);
-    assert.equal(element('#walkFrame').hidden, true);
+    assert.match(element('#walkFrame').getAttribute('src'), /maps\/embed/);
+    assert.equal(element('#walkFrame').hidden, false);
     run("game.round=newRound('FR');openClue(game.round,'brand');renderMenu()");
     assert.match(element('#clueMenu').innerHTML, /Lacoste/);
     assert.equal(run('game.round.score'), 900);

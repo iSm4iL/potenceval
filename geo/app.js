@@ -4,7 +4,7 @@ import { WORLD as WORLD_RU, SHAPES } from './atlas.js?v=clues-20261025';
 import { PHOTOS, PERSON_PHOTOS, PERSON_DEPICTIONS } from './photos.js?v=brand-photos-20261107';
 import { banknoteHTML, banknoteFor, banknoteKind } from './banknotes.js?v=media-20261107';
 import { WALKS } from './walks.js?v=urban-20261107';
-import { streetViewUrl, streetViewLink } from './maps.js?v=walks-20261107';
+import { streetViewUrl, streetViewLink } from './maps.js?v=embedded-walk-20261109';
 import { BRANDS } from './brands.js';
 import { BRAND_MEDIA } from './brand-media.js?v=logos-20261108';
 import { PHOTO_CREDITS } from './media-credits.js?v=media-20261107';
