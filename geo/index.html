@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="style.css?v=montserrat-20261109">
 <link rel="stylesheet" href="../shared/club.css?v=montserrat-20261109">
 <link rel="stylesheet" href="club.css?v=montserrat-20261109">
-<link rel="stylesheet" href="board-ui.css?v=clue-repair-20261109">
+<link rel="stylesheet" href="board-ui.css?v=walk-address-mask-20261111">
 <link rel="stylesheet" href="home.css?v=montserrat-20261109">
 </head>
 <body class="club-theme" data-game="geo">
@@ -37,7 +37,8 @@
     <button class="walk-btn fold" id="walkFold" data-en="Fold away ▾">Свернуть ▾</button>
   </header>
   <div class="walk-view">
-    <iframe id="walkFrame" title="Панорама улицы" data-en-title="Street panorama" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+    <iframe id="walkFrame" title="Панорама улицы" data-en-title="Street panorama" referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen 'none'" hidden></iframe>
+    <div class="walk-address-mask" aria-hidden="true"></div>
     <div class="walk-external" id="walkExternalPanel" hidden>
       <p data-en="The panorama opens in Google Maps. The map may show place names.">Панорама откроется в Google Картах. На карте могут быть видны названия мест.</p>
       <a class="btn primary" id="walkExternal" target="_blank" rel="noopener noreferrer" data-en="Open panorama in Google Maps">Открыть панораму в Google Картах</a>

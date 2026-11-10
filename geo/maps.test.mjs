@@ -16,9 +16,11 @@ test('embedded street walks use the shared panorama or configured Street View AP
   assert.equal(url.searchParams.has('pb'), false);
 });
 
-test('the panorama is not covered and sends the origin for restricted keys', () => {
+test('the address is masked and iframe fullscreen cannot bypass the mask', () => {
   const html = readFileSync(new URL('./index.html',import.meta.url),'utf8');
   assert.doesNotMatch(html, /class="walk-cover"/);
   assert.match(html, /<iframe[^>]*referrerpolicy="strict-origin-when-cross-origin"[^>]*>/);
-  assert.match(html, /<iframe[^>]*allowfullscreen[^>]*>/);
+  assert.match(html, /class="walk-address-mask"/);
+  assert.match(html, /allow="fullscreen 'none'"/);
+  assert.doesNotMatch(html, /<iframe[^>]*allowfullscreen/);
 });

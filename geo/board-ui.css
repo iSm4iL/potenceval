@@ -405,3 +405,7 @@ body[data-game="geo"] .final {
   body[data-game="geo"] .back .price {text-align:center}
 }
 body[data-game="geo"] .board .threads path {stroke:#861b19;stroke-width:3px}
+/* Hide the panorama address panel, preserving bottom attribution. */
+.walk-address-mask{position:absolute;top:0;left:0;width:min(440px,100%);height:108px;z-index:2;background:#302217;border-bottom-right-radius:12px}
+#walkFrame[hidden]+.walk-address-mask{display:none}
+
