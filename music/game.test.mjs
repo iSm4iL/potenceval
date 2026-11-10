@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js';
-import { normalizeDeezer, searchTracks, sameArtist, snapshotTrack, combineSuggestions } from './catalog.js';
+import { normalizeDeezer, searchTracks, sameArtist, snapshotTrack, combineSuggestions, artistOptions, combineArtistSuggestions } from './catalog.js';
 
 const song = (n, artist = 'a') => ({ id: `dz-${n}`, deezerId: n, title: `Song ${n}`, artist: `Artist ${artist}`, artistIds: [artist], artistNames: [`Artist ${artist}`], answerKey: `${artist}|song ${n}`, preview: 'https://cdnt-preview.dzcdn.net/example.mp3', kind: 'online', start: 0 });
 const tracks = Array.from({ length: 12 }, (_, i) => song(i + 1, i < 2 ? 'a' : 'b'));
@@ -33,6 +33,18 @@ test('checking Street 36 round lengths does not block the game', () => {
 });
 
 const artistAnswer = id => ({ kind: 'artist', id: `artist-${id}`, artistId: id, name: `Artist ${id}` });
+test('the two Deezer profiles of ЛСП share one suggestion and answer', () => {
+  const russian = { ...song(1, '8874422'), artistNames: ['ЛСП'] };
+  const latin = { ...song(2, '265301792'), artistNames: ['LSP'] };
+  const options = artistOptions([russian, latin]);
+  assert.deepEqual(options.map(a => a.name), ['ЛСП']);
+  assert.equal(combineArtistSuggestions(options, [{ ...artistAnswer('265301792'), name: 'LSP' }], 'lsp').length, 1);
+  assert.equal(guessArtist(createGame([latin], { rounds: 1, answerMode: 'artist' }), options[0]).results[0].won, true);
+  const saved = createGame([latin], { rounds: 1, answerMode: 'artist' });
+  saved.attempts = [{ ...options[0], step: 0, status: 'wrong' }];
+  saved.step = 1;
+  assert.deepEqual(restoreGame(saved), saved);
+});
 test('duplicate contributor IDs and names never shift artist identity pairs', () => {
   const track = normalizeDeezer({ id: 1, title: 'Song', artist: { id: 2, name: 'Same' },
     contributors: [{ id: 2, name: 'Alias' }, { id: 3, name: 'Same' }, { id: 4, name: 'Guest' }],

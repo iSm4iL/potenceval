@@ -1,7 +1,7 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
 
 export const PACKS = [
-  { id: 'new-wave', title: t('Новая школа', "New school"), icon: '🔥', description: t('madk1d, VILLIAN, MORGENSHTERN, OG Buda и новое поколение', "madk1d, VILLIAN, MORGENSHTERN, OG Buda and the new generation") },
+  { id: 'new-wave', title: t('Новая школа', "New school"), icon: '🔥', description: t('madk1d, VILLIAN, 9mice, OG Buda и новое поколение', "madk1d, VILLIAN, 9mice, OG Buda and the new generation") },
   { id: 'ru-rap', title: t('Русский рэп', "Russian rap"), icon: '🎤', description: t('Знаковые треки разных поколений', "Iconic tracks across generations") },
   { id: 'nostalgia', title: t('Ностальгия 2010-х', "2010s nostalgia"), icon: '📼', description: t('Культовые хиты, под которые взрослели', "The hits we grew up with") },
   { id: 'kpop', title: 'K-pop', icon: '💜', description: t('BTS, BLACKPINK, TWICE, Stray Kids и другие', "BTS, BLACKPINK, TWICE, Stray Kids and more") },
@@ -14,7 +14,8 @@ export const PACKS = [
   { id: 'dead-inside', title: t('Дед инсайд', "Dead inside"), icon: '🖤', description: t('Baby Cute, CUPSIZE, Boulevard Depo, Lil Peep, ONDA ANDAR, Кишлак, дора и другие', "Baby Cute, CUPSIZE, Boulevard Depo, Lil Peep, ONDA ANDAR, Kishlak, Dora and more") },
   { id: 'drill', title: t('Дрилл', "Drill"), icon: '🥷', description: t('Central Cee, Digga D, Headie One, Pop Smoke, Chief Keef, Fivio Foreign и другие', "Central Cee, Digga D, Headie One, Pop Smoke, Chief Keef, Fivio Foreign and more") },
   { id: 'hookah', title: t('Кальянный рэп', "Hookah rap"), icon: '💨', description: 'HammAli & Navai, JONY, Jah Khalib, Xcho, Rauf & Faik' },
-  { id: 'street-36', title: t('Улица 36', 'Street 36'), icon: '🌃', description: t('Скриптонит, Truwer, 104, T-Fest, Niman, JILLZAY и тёмный принц', 'Scriptonite, Truwer, 104, T-Fest, Niman, JILLZAY and tyomnyy prints') },
+  { id: 'street-36', title: t('Улица 36', 'Street 36'), icon: '🌃', description: t('Скриптонит, Асха Принц, Truwer, 104, Gruppa Skryptonite и ATL', 'Scriptonite, A$XV Prince, Truwer, 104, Gruppa Skryptonite and ATL') },
+  { id: 'repeat-hits', title: t('На репите', 'On Repeat'), icon: '🎧', description: 'Barns Courtney, Imagine Dragons, The Weeknd…', art: 'modern-pop' },
 ].map(pack => ({ ...pack, curated: true }));
 
 // Saved games and lobby hosts may have used the other language.
@@ -25,6 +26,9 @@ export function localizedPackTitle(id, fallback = '', mode) {
 }
 
 export const normalize = value => String(value || '').toLocaleLowerCase('ru').replace(/ё/g, 'е').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+
+export const artistIdentity = id => id === '265301792' ? '8874422' : id;
+const displayArtist = (id, name) => artistIdentity(id) === '8874422' ? 'ЛСП' : name;
 
 export function isPreviewUrl(value) {
   try { const url = new URL(value); return url.protocol === 'https:' && url.hostname.endsWith('.dzcdn.net'); }
@@ -38,7 +42,7 @@ export function normalizeDeezer(raw) {
     if (!artist?.id || typeof artist.name !== 'string' || !artist.name.trim() || seenArtists.has(String(artist.id))) continue;
     seenArtists.add(String(artist.id)); artists.push(artist);
   }
-  const artistNames = artists.map(a => a.name);
+  const artistNames = artists.map(a => displayArtist(String(a.id), a.name));
   return {
     id: `dz-${raw.id}`, deezerId: raw.id, title: String(raw.title), artist: [...new Set(artistNames)].join(', '),
     artistIds: [...new Set(artists.map(a => String(a.id)))], artistNames,
@@ -54,9 +58,9 @@ export function snapshotTrack(track) {
   return { id, deezerId, title, artist, answerKey, link, cover, ...(typeof track.workKey === 'string' ? { workKey: track.workKey } : {}), ...(Array.isArray(track.evidence) ? { evidence: track.evidence.map(e => ({ ...e })) } : {}), artistIds: [...(track.artistIds || [])], artistNames: [...(track.artistNames || [artist])] };
 }
 
-export function sameArtist(a, b) {
+export function sameArtist(a, b, identify = artistIdentity) {
   const left = Array.isArray(a.artistIds) ? a.artistIds : [], right = Array.isArray(b.artistIds) ? b.artistIds : [];
-  if (left.length && right.length) return left.some(id => right.includes(id));
+  if (left.length && right.length) return left.some(id => right.some(other => identify(id) === identify(other)));
   const names = new Set((a.artistNames || [a.artist]).map(normalize).filter(Boolean));
   return (b.artistNames || [b.artist]).some(name => names.has(normalize(name)));
 }
@@ -67,6 +71,7 @@ const soundKey = text => normalize(text).replace(/[а-я]/g, c => translit[c]).n
   .replace(/th/g, 't').replace(/ck/g, 'k').replace(/c(?=[eiy])/g, 's').replace(/c/g, 'k').replace(/w/g, 'v').replace(/y/g, 'i').replace(/([a-z])\1+/g, '$1');
 const artistAliases = {
   '9mice': ['nine mice', '9 mice', 'найн майс', 'найнмайс'],
+  лсп: ['lsp'],
   lovv66: ['ловв66', 'лов66', 'ловв 66', 'лов 66'],
   'the beatles': ['битлз', 'битлс'], queen: ['квин', 'куин'],
   'deep purple': ['дип пёрпл', 'дип перпл'], 'guns n roses': ['ганз энд роузес'],
@@ -116,11 +121,17 @@ export function searchTracks(tracks, query) {
     .filter(x => Number.isFinite(x.rank)).sort((a, b) => a.rank - b.rank || a.track.title.localeCompare(b.track.title, 'ru')).slice(0, 8).map(x => x.track);
 }
 
+const artistOption = (id, name) => {
+  const artistId = artistIdentity(id);
+  return { kind: 'artist', id: `artist-${artistId}`, artistId, name: displayArtist(artistId, name) };
+};
+
 export function artistOptions(tracks) {
   const options = new Map();
   for (const track of tracks) for (const [i, artistId] of track.artistIds.entries()) {
     const name = track.artistNames[i];
-    if (name && !options.has(artistId)) options.set(artistId, { kind: 'artist', id: `artist-${artistId}`, artistId, name });
+    const option = artistOption(artistId, name);
+    if (name && !options.has(option.id)) options.set(option.id, option);
   }
   return [...options.values()];
 }
@@ -133,8 +144,9 @@ export function searchArtistOptions(options, query) {
 }
 
 export function combineArtistSuggestions(local, remote, query, excludedIds = []) {
-  const seen = new Set(excludedIds);
-  return [...searchArtistOptions(local.filter(a => !seen.has(a.id)), query), ...searchArtistOptions(remote.filter(a => !seen.has(a.id)), query)].filter(a => {
+  const seen = new Set(excludedIds.map(id => `artist-${artistIdentity(id.slice(7))}`));
+  const eligible = options => options.map(a => artistOption(a.artistId, a.name)).filter(a => !seen.has(a.id));
+  return [...searchArtistOptions(eligible(local), query), ...searchArtistOptions(eligible(remote), query)].filter(a => {
     if (seen.has(a.id)) return false;
     seen.add(a.id); return true;
   }).slice(0, 8);

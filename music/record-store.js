@@ -1,6 +1,6 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
 import { esc } from '../shared/kit.js';
-import { recordArt, shelfPage, selectionPage } from './record-store-model.js?v=locale-20261029';
+import { recordArt, shelfPage, selectionPage } from './record-store-model.js?v=music-editorial-20261110';
 
 const stage = document.querySelector('#stage');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -11,7 +11,7 @@ let restoreFocus = null;
 const sign = () => `<h1 class="store-sign"><span class="visually-hidden">${t("Полсекунды", "Half a Second")}</span><svg viewBox="0 0 800 155" aria-hidden="true"><g class="neon-tubes"><text class="neon-halo" x="400" y="111" text-anchor="middle">${t("Полсекунды", "Half a Second")}</text><text class="neon-tube" x="400" y="111" text-anchor="middle">${t("Полсекунды", "Half a Second")}</text><text class="neon-core" x="400" y="111" text-anchor="middle">${t("Полсекунды", "Half a Second")}</text><path class="neon-underline" d="M171 139 Q405 123 636 128"/></g></svg></h1>`;
 
 function deck(title, artId, home = false) {
-  return `<div class="store-deck${home ? ' home-deck' : ''}" style="--label-art:url('${recordArt(artId)}');--label-color:${colors[artId] || '#f2b85b'}">
+  return `<div class="store-deck${home ? ' home-deck' : ''}" style="--label-color:${colors[artId] || '#f2b85b'}">
     <img class="deck-body" src="assets/record-store/turntable-body.webp" alt="" draggable="false">
     <div class="deck-vinyl" aria-hidden="true"><div class="disc-spinning"><div class="disc-label"><span>${esc(title)}</span><small>${t("Полсекунды", "Half a Second")}</small></div></div><span class="disc-reflection"></span><i class="disc-spindle"></i></div>
     <img class="deck-arm" src="assets/record-store/tonearm.webp" alt="" draggable="false">
@@ -199,5 +199,5 @@ function rotate(now) {
 requestAnimationFrame(rotate);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=pack-search-20261109');
+await import('./app.js?v=music-editorial-20261110');
 decorate();

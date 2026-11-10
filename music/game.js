@@ -1,5 +1,5 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
-import { sameArtist, snapshotTrack } from './catalog.js?v=music-fixes-20261030';
+import { artistIdentity, sameArtist, snapshotTrack } from './catalog.js?v=music-editorial-20261110';
 export const LENGTHS = Object.freeze([0.5, 1, 2, 5, 10, 15]);
 export const POINTS = Object.freeze([1000, 800, 600, 400, 200, 100]);
 // Песню не угадали, но исполнителя назвали — утешительные очки.
@@ -9,9 +9,9 @@ const validTrack = t => t && typeof t.id === 'string' && t.id.length > 0 && Numb
 // Каверы и перепевки: то же название у другого исполнителя тоже засчитываем, иначе оригинал считался бы ошибкой.
 const songTitle = t => typeof t.answerKey === 'string' ? t.answerKey.slice(t.answerKey.indexOf('|') + 1) : '';
 export const sameSong = (a, b) => songTitle(a).length > 0 && songTitle(a) === songTitle(b);
-const classify = (target, track) => target.id === track.id || sameSong(target, track) ? 'correct' : sameArtist(target, track) ? 'artist' : 'wrong';
+const classify = (target, track, identify = artistIdentity) => target.id === track.id || sameSong(target, track) ? 'correct' : sameArtist(target, track, identify) ? 'artist' : 'wrong';
 const validArtist = a => a?.kind === 'artist' && typeof a.artistId === 'string' && a.artistId.length > 0 && a.id === `artist-${a.artistId}` && typeof a.name === 'string' && a.name.trim().length > 0;
-const classifyArtist = (target, a) => target.artistIds.includes(a.artistId) ? 'correct' : 'wrong';
+const classifyArtist = (target, a, identify = artistIdentity) => target.artistIds.some(id => identify(id) === identify(a.artistId)) ? 'correct' : 'wrong';
 
 const validCap = cap => Number.isSafeInteger(cap) && cap > 0;
 const artists = t => [...new Set(t.artistIds)];
@@ -161,7 +161,10 @@ function validAttempts(attempts, target, step, won, answerMode) {
   let previous = -1;
   return attempts.every((a, i) => {
     const valid = answerMode === 'artist' ? validArtist(a) : validTrack(a);
-    if (!valid || !Number.isInteger(a.step) || a.step <= previous || a.step > step || a.status !== (answerMode === 'artist' ? classifyArtist(target, a) : classify(target, a))) return false;
+    if (!valid || !Number.isInteger(a.step) || a.step <= previous || a.step > step) return false;
+    const classifyAttempt = answerMode === 'artist' ? classifyArtist : classify;
+    // Saved attempts can predate the merge of Deezer artist profiles.
+    if (a.status !== classifyAttempt(target, a) && a.status !== classifyAttempt(target, a, id => id)) return false;
     previous = a.step;
     return a.status !== 'correct' || (won && i === attempts.length - 1 && a.step === step);
   }) && (!won || attempts.at(-1)?.status === 'correct');

@@ -1,9 +1,9 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
 import { $, LS, me, esc, toast } from '../shared/kit.js?v=kick-1';
 import { createNet } from '../shared/net.js?v=own-1';
-import { localizedPackTitle } from './catalog.js?v=music-covers-20261109';
-import { createGame } from './game.js?v=pack-search-20261109';
-import { createRoom, reduceRoom, roomView } from './multiplayer-game.js?v=locale-20261029';
+import { localizedPackTitle } from './catalog.js?v=music-editorial-20261110';
+import { createGame } from './game.js?v=music-editorial-20261110';
+import { createRoom, reduceRoom, roomView } from './multiplayer-game.js?v=music-editorial-20261110';
 
 const fmt = n => n.toLocaleString(t('ru-RU', 'en-US'));
 const factor = n => `×${String(n).replace('.', t(',', '.'))}`;

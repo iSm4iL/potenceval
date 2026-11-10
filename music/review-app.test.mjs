@@ -35,8 +35,8 @@ function openReview(html, storage = new Map()) {
 
 test('standalone editor boots with every collection and the requested initial choices', () => {
   const app = openReview(original);
-  assert.equal(app.data.collections.length, 14);
-  assert.equal((app.node('collections').innerHTML.match(/data-collection=/g) || []).length, 14);
+  assert.equal(app.data.collections.length, 15);
+  assert.equal((app.node('collections').innerHTML.match(/data-collection=/g) || []).length, 15);
   const state = JSON.parse([...app.storage.values()][0]);
   assert.equal(state.artists['new-wave']['moneyken'].status, 'keep');
   assert.equal(state.artists['new-wave']['платина'].more, true);
@@ -75,7 +75,7 @@ test('every collection can be selected and JSON export retains track context', a
   }
   app.node('saveJson').onclick();
   const exported = JSON.parse(await app.downloads[0].text());
-  assert.equal(exported.collections.length, 14);
+  assert.equal(exported.collections.length, 15);
   assert.ok(exported.collections[0].tracks.some(t => t.status === 'remove' && t.title && t.artistNames.length));
 });
 

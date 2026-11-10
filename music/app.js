@@ -1,13 +1,13 @@
 import { t, lang } from '../shared/i18n.js?v=ui-20261029';
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
-import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=pack-search-20261109';
-import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistOptions, sameArtist } from './catalog.js?v=music-covers-20261109';
-import { createDeezerClient } from './service.js?v=music-fixes-20261030';
+import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=music-editorial-20261110';
+import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistOptions, sameArtist } from './catalog.js?v=music-editorial-20261110';
+import { createDeezerClient } from './service.js?v=music-editorial-20261110';
 import { AudioPlayer } from './audio.js?v=music-fixes-20261030';
 import { resultPresentation } from './feedback.js?v=locale-20261029';
 import { createCatalogClient } from './collection.js?v=locale-20261029';
 import './report.js?v=privacy-20261107';
-import { createMultiplayer } from './multiplayer.js?v=pack-search-20261109';
+import { createMultiplayer } from './multiplayer.js?v=music-editorial-20261110';
 
 // shared/i18n handles data-en text; translate attributes without replacing controls.
 if (lang === 'en') for (const attribute of ['aria-label', 'placeholder', 'content']) {

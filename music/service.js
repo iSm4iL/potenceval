@@ -1,5 +1,5 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
-import { normalizeDeezer } from './catalog.js?v=music-fixes-20261030';
+import { normalizeDeezer } from './catalog.js?v=music-editorial-20261110';
 
 const API_ORIGIN = 'https://api.deezer.com';
 let callbackSequence = 0;
