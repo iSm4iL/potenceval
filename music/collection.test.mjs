@@ -15,6 +15,11 @@ test('filters genre and attaches evidence without preview URLs', () => {
   assert.equal(selectCollection(catalog, 'classics').tracks.length, 0);
   assert.equal(result.counts.indie, 1);
 });
+test('the mix library omits songs removed from all collections', () => {
+  const removed = { ...track, deezerId: 2, workKey: 'removed', genres: [] };
+  const library = selectCollection({ ...catalog, tracks: [removed, track] }, null);
+  assert.deepEqual(library.tracks.map(t => t.deezerId), [1]);
+});
 test('current mode excludes stale charts and old snapshots, retains historical hits', () => {
   const stale = { ...catalog, sources: [{ ...source, status: 'stale' }] };
   assert.equal(selectCollection(stale, 'indie', 'current', Date.parse(now)).tracks.length, 0);

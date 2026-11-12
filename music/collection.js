@@ -19,7 +19,7 @@ export function selectCollection(data, genre, mode = 'hits', now = Date.now()) {
     const genres = mode === 'current' ? [...new Set((t.sources || []).filter(r => chartIsCurrent(sources.get(r.id) || {}, now)).flatMap(r => r.genres || []))] : t.genres || [];
     seen.add(t.workKey || t.answerKey);
     for (const g of new Set(genres)) counts[g] = (counts[g] || 0) + 1;
-    if (genres.includes(genre)) tracks.push({ id: `dz-${t.deezerId}`, deezerId: t.deezerId, title: t.title, artist: t.artist, artistIds: [...t.artistIds], artistNames: [...t.artistNames], answerKey: t.answerKey, workKey: t.workKey, cover: typeof t.cover === 'string' && t.cover.startsWith('https://cdn-images.dzcdn.net/') ? t.cover : '', link: `https://www.deezer.com/track/${t.deezerId}`, evidence });
+    if (genre === null ? genres.length : genres.includes(genre)) tracks.push({ id: `dz-${t.deezerId}`, deezerId: t.deezerId, title: t.title, artist: t.artist, artistIds: [...t.artistIds], artistNames: [...t.artistNames], answerKey: t.answerKey, workKey: t.workKey, cover: typeof t.cover === 'string' && t.cover.startsWith('https://cdn-images.dzcdn.net/') ? t.cover : '', link: `https://www.deezer.com/track/${t.deezerId}`, evidence });
   }
   return { tracks, counts, loadedAt: Date.now(), generatedAt: data.generatedAt, stale: data.sources.some(s => s.status !== 'fresh') };
 }

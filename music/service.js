@@ -1,5 +1,5 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
-import { normalizeDeezer } from './catalog.js?v=music-editorial-20261110';
+import { artistIdentity, normalizeDeezer } from './catalog.js?v=music-mix-20261112';
 
 const API_ORIGIN = 'https://api.deezer.com';
 let callbackSequence = 0;
@@ -83,6 +83,11 @@ function rows(response) {
   return response.data;
 }
 
+function artistRows(response) {
+  return rows(response).filter(artist => Number.isSafeInteger(Number(artist?.id)) && Number(artist.id) > 0 && typeof artist.name === 'string' && artist.name.trim())
+    .slice(0, 8).map(artist => ({ id: Number(artist.id), name: artist.name, picture: artist.picture_medium || artist.picture || '' }));
+}
+
 function normalizeTracks(rawTracks, limit = 100) {
   const tracks = [], seen = new Set();
   for (const raw of rawTracks) {
@@ -125,7 +130,11 @@ export function createDeezerClient({ request = deezerRequest } = {}) {
       const results = await Promise.all(pack.artists.map(async artist => {
         try {
           const response = await get(`artist/${numericId(artist.id)}/top`, { limit }, signal);
-          return { tracks: rows(response).slice(0, limit) };
+          const tracks = rows(response).slice(0, limit);
+          if (!pack.onlyCredited) return { tracks };
+          const id = artistIdentity(String(artist.id));
+          return { tracks: tracks.filter(track => track && [track.artist, ...(Array.isArray(track.contributors) ? track.contributors : [])]
+            .some(credit => artistIdentity(String(credit?.id)) === id)) };
         } catch (error) {
           if (error?.name === 'AbortError') throw error;
           checkAborted(signal);
@@ -166,11 +175,11 @@ export function createDeezerClient({ request = deezerRequest } = {}) {
     },
 
     async searchArtists(query, { signal } = {}) {
-      const response = await get('search/artist', { q: query, limit: 8 }, signal);
-      return rows(response).slice(0, 8).map(artist => ({
-        id: Number(artist.id), name: artist.name,
-        picture: artist.picture_medium || artist.picture || '',
-      }));
+      return artistRows(await get('search/artist', { q: query, limit: 8 }, signal));
+    },
+
+    async relatedArtists(id, { signal } = {}) {
+      return artistRows(await get(`artist/${numericId(id)}/related`, { limit: 8 }, signal));
     },
   };
 }

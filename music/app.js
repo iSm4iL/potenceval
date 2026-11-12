@@ -1,13 +1,14 @@
 import { t, lang } from '../shared/i18n.js?v=ui-20261029';
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
-import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=music-editorial-20261110';
-import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistOptions, sameArtist } from './catalog.js?v=music-editorial-20261110';
-import { createDeezerClient } from './service.js?v=music-editorial-20261110';
+import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=music-mix-20261112';
+import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistIdentity, artistOptions, searchArtistOptions, sameArtist } from './catalog.js?v=music-mix-20261112';
+import { buildMix, relatedInLibrary } from './mix.js?v=music-mix-20261112';
+import { createDeezerClient } from './service.js?v=music-mix-20261112';
 import { AudioPlayer } from './audio.js?v=music-fixes-20261030';
 import { resultPresentation } from './feedback.js?v=locale-20261029';
-import { createCatalogClient } from './collection.js?v=locale-20261029';
-import './report.js?v=privacy-20261107';
-import { createMultiplayer } from './multiplayer.js?v=music-editorial-20261110';
+import { createCatalogClient } from './collection.js?v=music-mix-20261112';
+import './report.js?v=music-mix-20261112';
+import { createMultiplayer } from './multiplayer.js?v=music-mix-20261112';
 
 // shared/i18n handles data-en text; translate attributes without replacing controls.
 if (lang === 'en') for (const attribute of ['aria-label', 'placeholder', 'content']) {
@@ -16,9 +17,16 @@ if (lang === 'en') for (const attribute of ['aria-label', 'placeholder', 'conten
 
 const stage = $('#stage'), player = new AudioPlayer(), service = createDeezerClient(), catalog = createCatalogClient();
 const stored = LS.get('music.online.settings') || {};
-const settings = { mode: stored.mode === 'current' ? 'current' : 'hits', answerMode: stored.answerMode === 'artist' ? 'artist' : 'track', pack: PACKS.some(p => p.id === stored.pack) ? stored.pack : PACKS[0].id, rounds: [5, 10, 20].includes(stored.rounds) ? stored.rounds : 10, volume: Number.isFinite(stored.volume) && stored.volume >= 0 && stored.volume <= 1 ? stored.volume : 0.7 };
+const savedArtists = LS.get('music.online.mix');
+const validMixArtist = a => Number.isSafeInteger(a?.id) && a.id > 0 && typeof a.name === 'string' && a.name.trim();
+const artistKey = artist => artistIdentity(String(artist.id));
+const makeMixPack = artists => ({ id: 'custom-mix', title: t('Мой набор', 'My mix'), icon: '♫', description: artists.map(a => a.name).join(', '), artists });
+const storedMix = Array.isArray(savedArtists) ? savedArtists.filter(validMixArtist).slice(0, 8) : [];
+let customPack = storedMix.length ? makeMixPack(storedMix) : null;
+const settings = { mode: stored.mode === 'current' ? 'current' : 'hits', answerMode: stored.answerMode === 'artist' ? 'artist' : 'track', pack: PACKS.some(p => p.id === stored.pack) || customPack?.id === stored.pack ? stored.pack : PACKS[0].id, rounds: [5, 10, 20].includes(stored.rounds) ? stored.rounds : 10, volume: Number.isFinite(stored.volume) && stored.volume >= 0 && stored.volume <= 1 ? stored.volume : 0.7 };
 player.setVolume(settings.volume);
-let customPack = null, state = null, savedGame = restoreGame(LS.get('music.online.session'));
+let state = null, savedGame = restoreGame(LS.get('music.online.session'));
+let mixArtists = [], mixLibrary = [];
 let availableRounds = [], genreCounts = {}, pool = [], packInfo = null, packLoading = false, packError = '', packVersion = 0, packController;
 // busy — грузим превью; playing — отрывок звучит (в это время можно писать ответ и остановить звук)
 let screenVersion = 0, audioVersion = 0, audioController, busy = false, ready = false, heard = false, playing = false;
@@ -57,13 +65,25 @@ async function selectPack(pack, refresh = false) {
   if (!refresh && saved && Date.now() - saved.loadedAt < 300000) { pool = saved.tracks; packInfo = saved; genreCounts = saved.counts || genreCounts; packError = pool.length ? '' : emptyPackMessage(pack); setAvailableRounds(); packLoading = false; renderSetup(); return; }
   packLoading = true; renderSetup();
   try {
-    const result = pack.curated ? await catalog.load(pack.id, { mode: settings.mode, signal: controller.signal, refresh }) : await service.loadPack(pack, { signal: controller.signal });
+    const options = { signal: controller.signal, refresh };
+    const result = pack.curated
+      ? await catalog.load(pack.id, { ...options, mode: settings.mode })
+      : await loadMix(pack, options);
     if (version !== packVersion) return;
     if (refresh && pack.curated) cache.clear();
     pool = result.tracks; packInfo = result; genreCounts = result.counts || genreCounts; setAvailableRounds(); cache.set(cacheKey, result);
     if (!pool.length) packError = emptyPackMessage(pack);
   } catch (error) { if (version === packVersion && error.name !== 'AbortError') packError = error.message; }
   finally { if (version === packVersion) { packLoading = false; renderSetup(); } }
+}
+
+async function loadMix(pack, { signal, refresh }) {
+  let library = mixLibrary;
+  try { library = (await catalog.load(null, { signal, refresh })).tracks; }
+  catch (error) { if (signal.aborted) throw error; }
+  signal.throwIfAborted();
+  mixLibrary = library;
+  return buildMix(pack.artists, library, service, signal);
 }
 
 function renderSetup() {
@@ -78,7 +98,7 @@ function renderSetup() {
     <div class="crate-heading"><div><h2>${t("Выбери свою пластинку", "Pick your record")}</h2><p>${t("Какую музыку сегодня угадываем?", "What are we listening to today?")}</p></div><div class="catalog-modes" aria-label="${t("Тип подборки", "Collection type")}"><button data-mode="hits" class="${settings.mode === 'hits' ? 'selected' : ''}" aria-pressed="${settings.mode === 'hits'}">${t("Знакомые хиты", "Familiar hits")}</button><button data-mode="current" class="${settings.mode === 'current' ? 'selected' : ''}" aria-pressed="${settings.mode === 'current'}">${t("Сейчас в чартах", "In the charts")}</button></div></div>
     <div class="pack-list">${cards(packs)}</div>
     <div class="answer-mode-picker"><span>${t("Что угадываем?", "What are we guessing?")}</span><div class="catalog-modes" role="group" aria-label="${t("Режим ответа", "Answer mode")}"><button data-answer-mode="track" class="${settings.answerMode === 'track' ? 'selected' : ''}" aria-pressed="${settings.answerMode === 'track'}">${t("Песню", "Song")}</button><button data-answer-mode="artist" class="${settings.answerMode === 'artist' ? 'selected' : ''}" aria-pressed="${settings.answerMode === 'artist'}">${t("Исполнителя / группу", "Artist / band")}</button></div><small>${settings.answerMode === 'artist' ? t('Достаточно назвать артиста или группу. Название песни знать не нужно.', "Just name the artist or band. No song title needed.") : t('Нужно выбрать песню. Угаданный исполнитель даст подсказку.', "Choose the song. Getting the artist right gives you a hint.")}</small></div>
-    <div class="setup-panel"><div class="setup-choice"><div><span class="choice-label">${t("Твой выбор", "Your pick")}</span><h3>${esc(pack.title)}</h3><p>${pack.curated ? t('Разные исполнители. До двух песен каждого за партию.', "Different artists. Up to two songs each per game.") : t('Популярные песни одного исполнителя.', "Popular songs by one artist.")}</p><button class="lineup-button" id="lineupBtn" aria-haspopup="dialog" ${packLoading || !pool.length ? 'disabled' : ''}><span aria-hidden="true">ⓘ</span> ${t("Исполнители", "Artists")}</button><p class="pack-status ${packError ? 'failed' : ''}" id="packStatus" role="status">${packLoading ? t('Собираем треки…', "Loading tracks…") : packError ? esc(packError) : `${trackCount(pool.length)} ${t("в подборке", "in this collection")}`}</p></div><button class="artist-picker" id="artistPicker">＋ ${t("Свой исполнитель", "Pick an artist")}</button></div>
+    <div class="setup-panel"><div class="setup-choice"><div><span class="choice-label">${t("Твой выбор", "Your pick")}</span><h3>${esc(pack.title)}</h3><p>${pack.curated ? t('Разные исполнители. До двух песен каждого за партию.', "Different artists. Up to two songs each per game.") : t('Песни выбранных исполнителей.', "Songs by your selected artists.")}</p><button class="lineup-button" id="lineupBtn" aria-haspopup="dialog" ${packLoading || !pool.length ? 'disabled' : ''}><span aria-hidden="true">ⓘ</span> ${t("Исполнители", "Artists")}</button><p class="pack-status ${packError ? 'failed' : ''}" id="packStatus" role="status">${packLoading ? t('Собираем треки…', "Loading tracks…") : packError ? esc(packError) : `${trackCount(pool.length)} ${t("в подборке", "in this collection")}`}</p></div><button class="artist-picker" id="artistPicker">＋ ${t("Собрать набор", "Build a mix")}</button></div>
       <div class="setup-actions"><div class="setting-label">${t("Сколько треков сыграем?", "How many tracks?")}<div class="round-options">${choices.map(n => `<button class="round-choice ${settings.rounds === n ? 'selected' : ''}" data-rounds="${n}" aria-pressed="${settings.rounds === n}" ${packLoading || !availableRounds.includes(n) ? 'disabled' : ''}>${n}</button>`).join('')}</div></div><button class="btn primary big" id="startBtn" ${packLoading || packError || !availableRounds.includes(settings.rounds) ? 'disabled' : ''}>${packLoading ? t('Собираем треки…', "Loading tracks…") : t('Начать игру', "Start game")}</button></div>
       <div class="setup-footer"><span>${t("Короткие онлайн-превью Deezer, без подписки.", "Short Deezer previews. No subscription needed.")}</span><button class="library-btn" id="refreshPack">${packError ? t('Попробовать ещё раз', "Try again") : t('Обновить подборку', "Refresh collection")}</button></div>${packInfo?.failures?.length ? `<p class="source-note">${t("Не удалось получить:", "Could not load:")} ${esc(packInfo.failures.join(', '))}. ${t("Остальные исполнители доступны.", "Other artists are available.")}</p>` : ''}</div></section>`;
   stage.querySelectorAll('[data-mode]').forEach(button => button.onclick = () => { settings.mode = button.dataset.mode; genreCounts = {}; selectPack(currentPack()); });
@@ -88,7 +108,7 @@ function renderSetup() {
   const friends = document.createElement('button'); friends.id = 'friendsBtn'; friends.className = 'btn gold big'; friends.textContent = t('♬  Играть с друзьями', "♬  Play with friends"); friends.onclick = () => multiplayer.open();
   $('#startBtn').after(friends);
   $('#startBtn').onclick = startGame; $('#refreshPack').onclick = () => selectPack(currentPack(), true);
-  $('#artistPicker').onclick = () => { $('#artistDialog').showModal(); $('#artistInput').focus(); };
+  $('#artistPicker').onclick = () => openMix();
   $('#lineupBtn').onclick = () => {
     $('#lineupTitle').textContent = `${t("Исполнители", "Artists")}: ${pack.title}`;
     const names = [...new Set(pool.flatMap(track => track.artistNames || [track.artist]))].sort((a, b) => a.localeCompare(b, lang));
@@ -143,11 +163,18 @@ function renderGame(focusAnswer = false) {
   $('#exitBtn').hidden = false;
   if (state.phase === 'summary') { renderSummary(); if (multiplayer.active) multiplayer.decorate(); stage.scrollIntoView({ block: 'start' }); return; }
   const track = trackById(state.queue[state.index]);
-  stage.dataset.reportTrack = JSON.stringify({ id: track.deezerId, title: track.title, artist: track.artist, pack: gamePackTitle(state) }); // для флажка жалобы (report.js)
+  stage.dataset.reportTrack = reportTrack(track, state.attempts);
   if (state.phase === 'reveal') renderReveal(track); else renderRound();
   if (!keepScroll) stage.scrollIntoView({ block: 'start' });
   prepareAudio(track, screenVersion, focusAnswer);
   if (multiplayer.active) multiplayer.decorate();
+}
+
+function reportTrack(track, attempts = []) {
+  return JSON.stringify({
+    id: track.deezerId, title: track.title, artist: track.artist, pack: gamePackTitle(state),
+    attempts: attempts.map(a => a.name || `${a.artist} — ${a.title}`),
+  });
 }
 
 const coachHTML = (n, text) => coach.has(n) ? `<div class="coach" data-coach="${n}"><b>${n}</b><span>${text}</span><button type="button" class="coach-x" aria-label="${t("Скрыть подсказку", "Dismiss tip")}">✕</button></div>` : '';
@@ -438,24 +465,92 @@ function evidenceHTML(track) {
 function renderSummary() {
   const won = state.results.filter(r => r.won), instant = won.filter(r => r.step === 0);
   rememberPlayed();
-  stage.innerHTML = `<section class="game-shell"><div class="summary-head"><span class="kicker">${esc(gamePackTitle(state))}</span><h1>${won.length === state.results.length && won.length ? t('Все песни ваши!', "You got every song!") : t('Вот это послушали', "That was a good listen")}</h1><div class="final-score">${number(state.score)}</div><p class="sub">${t("очков на вашу компанию", "points for your group")}</p><div class="summary-stats"><span>${t("Угадали", "Guessed")} <b>${won.length} ${t("из", "of")} ${state.results.length}</b></span><span>${t("С полсекунды", "In half a second")} <b>${instant.length}</b></span></div></div><div class="result-list">${state.results.map((r, i) => { const track = trackById(r.id); return `<div class="result-row ${r.won ? 'won' : ''}"><span class="result-no">${i + 1}</span><div><b>${esc(track.title)}</b><small>${esc(track.artist)}</small></div><div class="result-value">${r.points ? `+${r.points}` : '—'}<small>${r.won ? `${length(LENGTHS[r.step])} ${t("с", "s")}` : r.points ? t('Исполнитель', "Artist") : t('Не угадали', "Missed")}</small></div></div>`; }).join('') || t('<p class="sub">Превью оказались недоступны. Выбери другую подборку.</p>', "<p class=\"sub\">The previews were unavailable. Choose another collection.</p>")}</div><div class="summary-buttons"><button class="btn primary" id="againBtn">${t("Новая партия", "New game")}</button></div></section>`;
+  stage.innerHTML = `<section class="game-shell"><div class="summary-head"><span class="kicker">${esc(gamePackTitle(state))}</span><h1>${won.length === state.results.length && won.length ? t('Все песни ваши!', "You got every song!") : t('Вот это послушали', "That was a good listen")}</h1><div class="final-score">${number(state.score)}</div><p class="sub">${t("очков на вашу компанию", "points for your group")}</p><div class="summary-stats"><span>${t("Угадали", "Guessed")} <b>${won.length} ${t("из", "of")} ${state.results.length}</b></span><span>${t("С полсекунды", "In half a second")} <b>${instant.length}</b></span></div></div><div class="result-list">${state.results.map((r, i) => { const track = trackById(r.id); return `<div class="result-row ${r.won ? 'won' : ''}"><span class="result-no">${i + 1}</span><div><b>${esc(track.title)}</b><small>${esc(track.artist)}</small><button type="button" class="report-flag" data-track-report="${esc(reportTrack(track, r.attempts))}">${t("Проблема с треком", "Report a track")}</button></div><div class="result-value">${r.points ? `+${r.points}` : '—'}<small>${r.won ? `${length(LENGTHS[r.step])} ${t("с", "s")}` : r.points ? t('Исполнитель', "Artist") : t('Не угадали', "Missed")}</small></div></div>`; }).join('') || t('<p class="sub">Превью оказались недоступны. Выбери другую подборку.</p>', "<p class=\"sub\">The previews were unavailable. Choose another collection.</p>")}</div><div class="summary-buttons"><button class="btn primary" id="againBtn">${t("Новая партия", "New game")}</button></div></section>`;
   $('#againBtn').onclick = leave;
+}
+
+async function openMix() {
+  mixArtists = [...(customPack?.artists || [])];
+  $('#artistInput').value = '';
+  $('#artistDialog').showModal();
+  renderMixSelection();
+  $('#artistInput').focus();
+  $('#artistInput').oninput();
+  try {
+    mixLibrary = (await catalog.load(null)).tracks;
+    if ($('#artistDialog').open) $('#artistInput').oninput();
+  } catch {}
+}
+
+function renderMixSelection() {
+  const host = $('#mixArtists');
+  host.innerHTML = mixArtists.map((artist, i) => `<button type="button" data-remove="${i}" aria-label="${esc(t('Убрать ', 'Remove ') + artist.name)}">${esc(artist.name)} ×</button>`).join('');
+  host.querySelectorAll('button').forEach(button => button.onclick = () => {
+    mixArtists.splice(Number(button.dataset.remove), 1);
+    renderMixSelection();
+    $('#artistInput').focus();
+    $('#artistInput').oninput();
+  });
+  $('#mixSave').disabled = !mixArtists.length;
+}
+
+function renderArtistChoices(artists, label) {
+  const host = $('#artistResults'), status = $('#artistStatus');
+  const seen = new Set(mixArtists.map(artistKey));
+  const options = artists.filter(artist => {
+    const key = artistKey(artist);
+    if (!validMixArtist(artist) || key === '87877422' || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).slice(0, 8);
+  status.textContent = mixArtists.length >= 8 ? t('Выбрано 8 из 8 исполнителей.', '8 of 8 artists selected.') : label;
+  host.innerHTML = options.map((artist, i) => {
+    const id = artistKey(artist);
+    const example = mixLibrary.find(track => artistIdentity(track.artistIds[0]) === id);
+    const detail = example?.title || t('Карточка Deezer № ', 'Deezer profile #') + artist.id;
+    return `<button class="artist-result" type="button" data-artist="${i}" ${mixArtists.length >= 8 ? 'disabled' : ''}><b>${esc(artist.name)}</b><small>${esc(detail)}</small></button>`;
+  }).join('');
+  host.querySelectorAll('button').forEach(button => button.onclick = () => {
+    const { id, name } = options[Number(button.dataset.artist)];
+    mixArtists.push({ id, name });
+    $('#artistInput').value = '';
+    renderMixSelection();
+    $('#artistInput').focus();
+    $('#artistInput').oninput();
+  });
+  return options.length;
 }
 
 $('#artistInput').oninput = () => {
   clearTimeout(artistTimer); artistController?.abort();
-  const query = $('#artistInput').value.trim(); $('#artistResults').innerHTML = '';
-  if (query.length < 2) return;
-  $('#artistResults').textContent = t('Ищем исполнителей…', "Searching for artists…");
+  const query = $('#artistInput').value.trim(), last = mixArtists.at(-1);
+  const fromCatalog = options => options.map(a => ({ id: Number(a.artistId), name: a.name }));
+  const label = query ? t('Результаты поиска', 'Search results') : last ? t('Похожие и соавторы', 'Related artists and collaborators') : t('Исполнители из текущей подборки', 'Artists in the current collection');
+  const local = query
+    ? fromCatalog(searchArtistOptions(artistOptions(mixLibrary), query))
+    : last ? relatedInLibrary(mixLibrary, last.id) : fromCatalog(artistOptions(pool.length ? pool : mixLibrary));
+  const visible = renderArtistChoices(local, label);
+  if (query.length === 1 || (!query && !last) || mixArtists.length >= 8) return;
+  if (!visible) $('#artistStatus').textContent = t('Ищем исполнителей…', 'Searching for artists…');
   artistTimer = setTimeout(async () => {
     const controller = artistController = new AbortController();
     try {
-      const artists = await service.searchArtists(query, { signal: controller.signal });
-      if (controller.signal.aborted || !$('#artistDialog').open || $('#artistInput').value.trim() !== query) return;
-      $('#artistResults').innerHTML = artists.length ? artists.map((a, i) => `<button class="artist-result" data-artist="${i}"><b>${esc(a.name)}</b><small>${t("Топ треков исполнителя", "Artist’s top tracks")}</small></button>`).join('') : t('<p class="sub">Не найдено. Попробуй точное написание имени.</p>', "<p class=\"sub\">No results. Try the exact artist name.</p>");
-      $('#artistResults').querySelectorAll('[data-artist]').forEach(button => button.onclick = () => { const a = artists[Number(button.dataset.artist)]; customPack = { id: `artist-${a.id}`, title: a.name, icon: '♫', description: t('10 верхних треков исполнителя', "Artist’s top 10 tracks"), topLimit: 10, artists: [a] }; $('#artistDialog').close(); selectPack(customPack); });
-    } catch (error) { if (!controller.signal.aborted) $('#artistResults').textContent = error.message; }
+      const artists = query ? await service.searchArtists(query, { signal: controller.signal }) : await service.relatedArtists(last.id, { signal: controller.signal });
+      if (controller.signal.aborted || !$('#artistDialog').open) return;
+      const options = query ? [...local.slice(0, 3), ...artists, ...local.slice(3)] : [...local, ...artists];
+      if (!renderArtistChoices(options, label)) $('#artistStatus').textContent = t('Ничего не найдено. Попробуй другое имя.', 'No results. Try a different name.');
+    } catch {
+      if (!controller.signal.aborted && !visible) $('#artistStatus').textContent = t('Поиск Deezer недоступен. Попробуй другое имя из каталога.', 'Deezer search is unavailable. Try a name from the catalog.');
+    }
   }, 300);
+};
+$('#mixSave').onclick = () => {
+  if (!mixArtists.length) return;
+  customPack = makeMixPack(mixArtists);
+  LS.set('music.online.mix', mixArtists);
+  settings.mode = 'hits';
+  $('#artistDialog').close();
+  selectPack(customPack, true);
 };
 $('#artistDialog').addEventListener('close', () => { clearTimeout(artistTimer); artistController?.abort(); });
 $('#rulesOpen').onclick = () => $('#rulesDialog').showModal(); $('#exitBtn').onclick = leave;

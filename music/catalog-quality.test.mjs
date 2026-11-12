@@ -10,7 +10,9 @@ const people = genre => new Set(selectCollection(data, genre).tracks.flatMap(t =
 
 test('Street 36 centers on Scriptonite and A$XV Prince and keeps guests within the brief', () => {
   const artists = people('street-36');
-  const leads = selectCollection(data, 'street-36').tracks.map(t => t.artistNames[0]);
+  const { tracks } = selectCollection(data, 'street-36');
+  const leads = tracks.map(t => t.artistNames[0]);
+  assert.ok(tracks.every(track => track.artistNames.every((name, i) => name !== '104' || track.artistIds[i] === '11296432')));
   for (const name of ['Скриптонит', 'A$XV Prince']) assert.ok(leads.filter(lead => lead === name).length >= 15);
   for (const name of ['Truwer', '104', 'Gruppa Skryptonite', 'ATL']) assert.ok(artists.has(normalize(name)));
   for (const name of ['тёмный принц', 'Иван Дорн', 'Miyagi', 'Эндшпиль']) assert.ok(!artists.has(normalize(name)));

@@ -76,6 +76,15 @@ test('a single artist requests only the top 10 tracks and skips unavailable prev
   assert.deepEqual(calls[0].params, { limit: 10 });
 });
 
+test('a custom mix skips recordings credited to a different artist with the same name', async () => {
+  const { client } = fixtureRequest({ 'artist/11296432/top': { data: [
+    rawTrack(1, { artist: { id: 87877422, name: '104' } }),
+    rawTrack(2, { artist: { id: 11296432, name: '104' } }),
+  ] } });
+  const result = await client.loadPack({ artists: [{ id: 11296432, name: '104' }], onlyCredited: true });
+  assert.deepEqual(result.tracks.map(track => track.deezerId), [2]);
+});
+
 test('artist packs default to the top five per artist and enforce that limit even if the API overfills it', async () => {
   const artists = [{ id: 10, name: 'A' }, { id: 20, name: 'B' }];
   const responses = Object.fromEntries(artists.map(({ id }) => [

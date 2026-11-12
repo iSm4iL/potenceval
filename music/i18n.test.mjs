@@ -77,7 +77,7 @@ async function renderInterfaceStates() {
     document: { querySelectorAll: () => [], createElement: () => node(Symbol()), body: node('body'), head: node('head') },
     AudioPlayer: class { setVolume() {} }, createDeezerClient: () => ({}), createCatalogClient: () => ({}),
     multiplayer: { active: false, loading: false },
-    setTimeout, clearTimeout, queueMicrotask, URL,
+    setTimeout, clearTimeout, queueMicrotask, URL, URLSearchParams,
     location: { href: 'https://example.com/music/' }, history: { replaceState() {} }, me: { pid: 'p0' },
     MutationObserver: class { observe() {} }, reportPlaybackError() {},
   };
@@ -124,7 +124,10 @@ async function renderInterfaceStates() {
   }
   source = fs.readFileSync('music/report.js', 'utf8').replace(/^import .*\r?\n/gm, '').replace('export const', 'const');
   node('#stage').dataset.reportTrack = JSON.stringify({ id: 1, artist: 'Artist', title: 'Song' });
-  vm.runInContext(source + '\nopen();', vm.createContext({ ...context }));
+  const report = vm.runInContext(source + '\nopen(); issueUrl({ id: 1, title: "Song", artist: "Artist", pack: "Mix", attempts: ["9mice"] }, "credit", "Missing & guest");', vm.createContext({ ...context }));
+  const issue = new URL(report);
+  assert.equal(issue.origin + issue.pathname, 'https://github.com/iSm4iL/potenceval/issues/new');
+  assert.match(issue.searchParams.get('body'), /deezer\.com\/track\/1[\s\S]+9mice[\s\S]+Missing & guest/);
   outputs.push([...nodes.values()].find(n => n.innerHTML.includes('name="reason"')).innerHTML);
   const { recordArt } = await import('./music/record-store-model.js');
   source = fs.readFileSync('music/record-store.js', 'utf8');

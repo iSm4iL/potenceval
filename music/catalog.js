@@ -27,7 +27,8 @@ export function localizedPackTitle(id, fallback = '', mode) {
 
 export const normalize = value => String(value || '').toLocaleLowerCase('ru').replace(/ё/g, 'е').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 
-export const artistIdentity = id => id === '265301792' ? '8874422' : id;
+const artistIdentities = new Map([['265301792', '8874422'], ['268236102', '150616292']]);
+export const artistIdentity = id => artistIdentities.get(id) || id;
 const displayArtist = (id, name) => artistIdentity(id) === '8874422' ? 'ЛСП' : name;
 
 export function isPreviewUrl(value) {
@@ -39,8 +40,11 @@ export function normalizeDeezer(raw) {
   if (!raw || !Number.isSafeInteger(raw.id) || raw.id <= 0 || !raw.title || !raw.artist?.name || !raw.artist.id || !isPreviewUrl(raw.preview)) return null;
   const artists = [], seenArtists = new Set();
   for (const artist of [raw.artist, ...(Array.isArray(raw.contributors) ? raw.contributors : [])]) {
-    if (!artist?.id || typeof artist.name !== 'string' || !artist.name.trim() || seenArtists.has(String(artist.id))) continue;
-    seenArtists.add(String(artist.id)); artists.push(artist);
+    if (!artist?.id || typeof artist.name !== 'string' || !artist.name.trim()) continue;
+    // Deezer assigned the 104 feature on «Мультибрендовый» to the wrong profile.
+    const id = raw.id === 569641582 && artist.id === 87877422 ? 11296432 : artist.id;
+    if (seenArtists.has(String(id))) continue;
+    seenArtists.add(String(id)); artists.push({ id, name: artist.name });
   }
   const artistNames = artists.map(a => displayArtist(String(a.id), a.name));
   return {
@@ -71,6 +75,7 @@ const soundKey = text => normalize(text).replace(/[а-я]/g, c => translit[c]).n
   .replace(/th/g, 't').replace(/ck/g, 'k').replace(/c(?=[eiy])/g, 's').replace(/c/g, 'k').replace(/w/g, 'v').replace(/y/g, 'i').replace(/([a-z])\1+/g, '$1');
 const artistAliases = {
   '9mice': ['nine mice', '9 mice', 'найн майс', 'найнмайс'],
+  '104': ['104-й', 'сто четыре'],
   лсп: ['lsp'],
   lovv66: ['ловв66', 'лов66', 'ловв 66', 'лов 66'],
   'the beatles': ['битлз', 'битлс'], queen: ['квин', 'куин'],

@@ -33,6 +33,21 @@ test('checking Street 36 round lengths does not block the game', () => {
 });
 
 const artistAnswer = id => ({ kind: 'artist', id: `artist-${id}`, artistId: id, name: `Artist ${id}` });
+test('9mice can be guessed across both Deezer profiles', () => {
+  const track = { ...song(1, '268236102'), artistNames: ['9mice'] };
+  const known = { ...song(2, '150616292'), artistNames: ['9mice'] };
+  const options = artistOptions([track, known]);
+  assert.equal(options.length, 1);
+  assert.equal(combineArtistSuggestions(options, [], 'Nine Mice').length, 1);
+  assert.equal(guessArtist(createGame([track], { rounds: 1, answerMode: 'artist' }), options[0]).results[0].won, true);
+});
+
+test('the verified 104 credit is corrected for Multibrand only', () => {
+  const raw = { id: 569641582, title: 'Мультибрендовый', artist: { id: 5603958, name: 'Скриптонит' },
+    contributors: [{ id: 87877422, name: '104' }], preview: 'https://cdnt-preview.dzcdn.net/a.mp3' };
+  assert.deepEqual(normalizeDeezer(raw).artistIds, ['5603958', '11296432']);
+  assert.deepEqual(normalizeDeezer({ ...raw, id: 100 }).artistIds, ['5603958', '87877422']);
+});
 test('the two Deezer profiles of ЛСП share one suggestion and answer', () => {
   const russian = { ...song(1, '8874422'), artistNames: ['ЛСП'] };
   const latin = { ...song(2, '265301792'), artistNames: ['LSP'] };

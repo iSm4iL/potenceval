@@ -1,6 +1,6 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
 import { esc } from '../shared/kit.js';
-import { recordArt, shelfPage, selectionPage } from './record-store-model.js?v=music-editorial-20261110';
+import { recordArt, shelfPage, selectionPage } from './record-store-model.js?v=music-mix-20261112';
 
 const stage = document.querySelector('#stage');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -199,5 +199,5 @@ function rotate(now) {
 requestAnimationFrame(rotate);
 
 new MutationObserver(decorate).observe(stage, { childList: true });
-await import('./app.js?v=music-editorial-20261110');
+await import('./app.js?v=music-mix-20261112');
 decorate();

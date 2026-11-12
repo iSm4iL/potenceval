@@ -54,6 +54,10 @@ def apply_collection_rules(tracks, config):
     allowlists = config.get("collectionTrackAllowlist", {})
     changed = False
     for track in tracks:
+        if track.get("deezerId") == 569641582 and "87877422" in track["artistIds"]:
+            # Deezer credits a different 104 on «Мультибрендовый».
+            track["artistIds"][track["artistIds"].index("87877422")] = "11296432"
+            changed = True
         names = {normalize(a) for a in track["artistNames"]}
         excluded = {genre for genre, banned in bans.items() if names & banned}
         for genre, allowed in allowlists.items():
