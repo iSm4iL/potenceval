@@ -150,6 +150,7 @@ export function searchArtistOptions(options, query) {
 
 export function combineArtistSuggestions(local, remote, query, excludedIds = []) {
   const seen = new Set(excludedIds.map(id => `artist-${artistIdentity(id.slice(7))}`));
+  if (local.some(artist => artist.artistId === '11296432')) seen.add('artist-87877422');
   const eligible = options => options.map(a => artistOption(a.artistId, a.name)).filter(a => !seen.has(a.id));
   return [...searchArtistOptions(eligible(local), query), ...searchArtistOptions(eligible(remote), query)].filter(a => {
     if (seen.has(a.id)) return false;

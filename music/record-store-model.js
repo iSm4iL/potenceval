@@ -1,4 +1,4 @@
-import { PACKS } from './catalog.js?v=music-mix-20261112';
+import { PACKS } from './catalog.js?v=music-mix-20261112-2';
 
 const art = new Map(PACKS.map(pack => [pack.id, pack.art || pack.id]));
 export const recordArt = id => `assets/record-store/cover-${art.get(id) || 'new-wave'}.webp`;

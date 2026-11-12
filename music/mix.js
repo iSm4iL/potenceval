@@ -1,4 +1,4 @@
-import { artistIdentity, artistOptions, normalize } from './catalog.js?v=music-mix-20261112';
+import { artistIdentity, artistOptions, normalize } from './catalog.js?v=music-mix-20261112-2';
 
 const credits = track => track.artistIds.map(artistIdentity);
 const trackKey = track => `${credits(track)[0]}|${normalize(track.answerKey.slice(track.answerKey.indexOf('|') + 1))}`;

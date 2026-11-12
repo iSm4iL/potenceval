@@ -48,6 +48,12 @@ test('the verified 104 credit is corrected for Multibrand only', () => {
   assert.deepEqual(normalizeDeezer(raw).artistIds, ['5603958', '11296432']);
   assert.deepEqual(normalizeDeezer({ ...raw, id: 100 }).artistIds, ['5603958', '87877422']);
 });
+test('the unrelated 104 profile is hidden when the Kazakh rapper is in the answer pool', () => {
+  const rapper = { ...artistAnswer('11296432'), name: '104' };
+  const namesake = { ...artistAnswer('87877422'), name: '104' };
+  assert.deepEqual(combineArtistSuggestions([rapper], [namesake, rapper], '104'), [rapper]);
+  assert.deepEqual(combineArtistSuggestions([], [namesake], '104'), [namesake]);
+});
 test('the two Deezer profiles of ЛСП share one suggestion and answer', () => {
   const russian = { ...song(1, '8874422'), artistNames: ['ЛСП'] };
   const latin = { ...song(2, '265301792'), artistNames: ['LSP'] };

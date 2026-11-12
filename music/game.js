@@ -1,5 +1,5 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
-import { artistIdentity, sameArtist, snapshotTrack } from './catalog.js?v=music-mix-20261112';
+import { artistIdentity, sameArtist, snapshotTrack } from './catalog.js?v=music-mix-20261112-2';
 export const LENGTHS = Object.freeze([0.5, 1, 2, 5, 10, 15]);
 export const POINTS = Object.freeze([1000, 800, 600, 400, 200, 100]);
 // Песню не угадали, но исполнителя назвали — утешительные очки.

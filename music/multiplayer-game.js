@@ -1,5 +1,5 @@
 import { t as translate } from '../shared/i18n.js?v=ui-20261029';
-import { guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=music-mix-20261112';
+import { guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=music-mix-20261112-2';
 
 export const MULTIPLIERS = [1.5, 1.25, 1, .75, .5];
 export const rankMultiplier = rank => MULTIPLIERS[Math.min(rank - 1, MULTIPLIERS.length - 1)];

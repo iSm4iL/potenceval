@@ -1,14 +1,14 @@
 import { t, lang } from '../shared/i18n.js?v=ui-20261029';
 import { $, esc, LS, toast, enter, confetti } from '../shared/kit.js';
-import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=music-mix-20261112';
-import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistIdentity, artistOptions, searchArtistOptions, sameArtist } from './catalog.js?v=music-mix-20261112';
-import { buildMix, relatedInLibrary } from './mix.js?v=music-mix-20261112';
-import { createDeezerClient } from './service.js?v=music-mix-20261112';
+import { LENGTHS, POINTS, ARTIST_BONUS, createGame, guess, guessArtist, skip, openStep, surrender, nextRound, replaceBroken, restoreGame } from './game.js?v=music-mix-20261112-2';
+import { PACKS, localizedPackTitle, combineSuggestions, combineArtistSuggestions, artistIdentity, artistOptions, searchArtistOptions, sameArtist } from './catalog.js?v=music-mix-20261112-2';
+import { buildMix, relatedInLibrary } from './mix.js?v=music-mix-20261112-2';
+import { createDeezerClient } from './service.js?v=music-mix-20261112-2';
 import { AudioPlayer } from './audio.js?v=music-fixes-20261030';
 import { resultPresentation } from './feedback.js?v=locale-20261029';
-import { createCatalogClient } from './collection.js?v=music-mix-20261112';
-import './report.js?v=music-mix-20261112';
-import { createMultiplayer } from './multiplayer.js?v=music-mix-20261112';
+import { createCatalogClient } from './collection.js?v=music-mix-20261112-2';
+import './report.js?v=music-mix-20261112-2';
+import { createMultiplayer } from './multiplayer.js?v=music-mix-20261112-2';
 
 // shared/i18n handles data-en text; translate attributes without replacing controls.
 if (lang === 'en') for (const attribute of ['aria-label', 'placeholder', 'content']) {
