@@ -16,11 +16,13 @@ test('embedded street walks use the shared panorama or configured Street View AP
   assert.equal(url.searchParams.has('pb'), false);
 });
 
-test('the address is masked and iframe fullscreen cannot bypass the mask', () => {
+test('the address is outside the visible panorama and iframe fullscreen cannot reveal it', () => {
   const html = readFileSync(new URL('./index.html',import.meta.url),'utf8');
-  assert.doesNotMatch(html, /class="walk-cover"/);
+  const css = readFileSync(new URL('./board-ui.css',import.meta.url),'utf8');
+  assert.doesNotMatch(html, /class="walk-(?:cover|address-mask)"/);
   assert.match(html, /<iframe[^>]*referrerpolicy="strict-origin-when-cross-origin"[^>]*>/);
-  assert.match(html, /class="walk-address-mask"/);
+  assert.match(css, /\.walk-view\{[^}]*overflow:hidden/);
+  assert.match(css, /#walkFrame\{[^}]*top:-(\d+)px;height:calc\(100% \+ \1px\)/);
   assert.match(html, /allow="fullscreen 'none'"/);
   assert.doesNotMatch(html, /<iframe[^>]*allowfullscreen/);
 });

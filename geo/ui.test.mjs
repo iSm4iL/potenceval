@@ -6,6 +6,7 @@ import { COUNTRIES as RAW, PACKS } from './countries.js';
 import { PEOPLE, MONEY } from './content.js';
 import { WORLD, SHAPES } from './atlas.js';
 import { PHOTOS, PERSON_PHOTOS, PERSON_DEPICTIONS } from './photos.js';
+import { CURRENCY_PHOTOS } from './currency-photos.js';
 import { WALKS } from './walks.js';
 import { streetViewUrl, streetViewLink } from './maps.js';
 import { BRANDS } from './brands.js';
@@ -21,7 +22,7 @@ const escapeHTML = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&a
 function page(lang) {
   const t = (ru, en) => lang === 'en' ? en : ru;
   const rules = runInContext(source('game.js') + '\n({CLUES,START,WRONG,DIRECTION_COST,buyDirection,norm,nameIndex,matchCountry,canOpen,cluePrice,currencyPrice,openClue,refundWalk,guess,guidance,surrender,createGame,award,nextRound,selectFacts,newRound});', createContext({t}));
-  const banknotes = runInContext(source('banknotes.js') + '\n({banknoteHTML,banknoteFor,banknoteKind});', createContext({t}));
+  const banknotes = runInContext(source('banknotes.js') + '\n({banknoteHTML,banknoteFor,banknoteKind});', createContext({t,CURRENCY_PHOTOS}));
   const nodes = new Map(), storage = new Map(), notices = [];
   const element = key => {
     if (!nodes.has(key)) nodes.set(key, {
@@ -71,8 +72,8 @@ for (const lang of ['ru','en']) {
       for (const key of ['fact1','fact2','phrase','food','money','person','walk','brand']) {
         ui.context.clueKey = key;
         const html = run('evidenceHTML(clueKey)');
-        if (['food','person','brand'].includes(key) && /<img\b/.test(html) && !html.includes('assets/food-art/')) {
-          const attribution = key === 'brand' ? /brand-credits\.html#/ : /credits\.html#m\d+/;
+        if (['food','person','brand','money'].includes(key) && /<img\b/.test(html) && !html.includes('assets/food-art/')) {
+          const attribution = key === 'brand' ? /brand-credits\.html#/ : /credits\.html#[\w-]+/;
           assert.match(html, attribution, `${c.id}/${key}: attribution next to photo`);
           const src = html.match(/src="([^"]+)"/)[1].replaceAll('&amp;','&');
           ui.context.photoSrc = src;
@@ -130,3 +131,15 @@ for (const lang of ['ru','en']) {
     assert.equal(ui.run('game.round.wrong.at(-1)?.id || game.round.id'), 'CZ');
   });
 }
+
+test('Kazakhstan alternates its two brand logos between rounds', () => {
+  const {element, run, storage} = page('ru');
+  run('start()');
+  storage.delete('geo.brand.kazakhstan');
+  run("game.round=newRound('KZ');beginRound();openClue(game.round,'brand');renderMenu()");
+  assert.match(element('#clueMenu').innerHTML, /brand-logos\/KZ\.webp/);
+  run("game.round=newRound('KZ');beginRound();openClue(game.round,'brand');renderMenu()");
+  assert.match(element('#clueMenu').innerHTML, /review-KZ-RAKHAT\.png/);
+  run('renderMenu()');
+  assert.match(element('#clueMenu').innerHTML, /review-KZ-RAKHAT\.png/);
+});

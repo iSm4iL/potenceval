@@ -1,5 +1,9 @@
 # Banknote photographs
 
+## Images in the editorial preview, 2026-11-11
+
+The country cards now use local photographs and specimen images. `data/currency-photos.json` identifies the exact source file and author; its generated lookup is `currency-photos.js`. Euro countries share the official ECB specimen, Liechtenstein uses the Swiss franc image and Ecuador uses the US dollar image. Sterling retains its real banknote fragment. Some cards show historical issues and label them accordingly. Full source images can show the issuer’s name, so this clue is often easier than before.
+
 ## Images shown in the game, 2026-11-07
 
 All 53 displayed currency clues have an image. The euro still uses the unchanged ECB file documented below. Sterling uses a 122×166 fragment of the reverse of the Bank of England's £20 polymer banknote. It shows Turner's ship motif and contains no country name, issuer name, emblem, serial number or readable text. The [Bank of England's image listing](https://www.flickr.com/photos/bankofengland/48874740572/in/album-72157662787666013) allows public use subject to the [bank's reproduction conditions](https://www.bankofengland.co.uk/banknotes/using-images-of-banknotes). The crop represents about 15% of the side and qualifies under the bank's condition 5(c) for showing less than half of a side digitally. The image is shown as an unretouched fragment. The manifest records the exact crop and source hash.

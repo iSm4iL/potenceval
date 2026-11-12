@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {banknoteFor,banknoteHTML} from './banknotes.js';
+import {PHOTO_CREDITS} from './media-credits.js';
 import {COUNTRIES} from './countries.js';
 import {MONEY} from './content.js';
 
-test('every currency has an illustration or a reviewed image, shared by identical clues',()=>{
-  const byCurrency=new Map();
+test('every country has a local photograph or specimen of its currency with source credit',()=>{
   for(const c of COUNTRIES){
     const currency=MONEY[c.id];
     const src=banknoteFor(c.id,currency);
@@ -16,19 +16,13 @@ test('every currency has an illustration or a reviewed image, shared by identica
     assert.ok(html.includes(`src="${src}"`));
     assert.match(html,/data-zoom/);
     assert.doesNotMatch(html,/https?:|data-original|wikipedia|\.img|<a\b/);
-    if(src.startsWith('data:image/svg+xml,')){
-      const svg=decodeURIComponent(src.slice(src.indexOf(',')+1));
-      assert.match(svg,/^<svg\b.*<\/svg>$/s);
-      assert.doesNotMatch(svg,/<(?:text|image|script)\b|\bhref=/);
-      assert.match(html,/banknote-illustration/);
-    }else{
-      assert.match(src,/^assets\/banknotes\/(?:EUR-ecb-72dpi\.jpg|sterling-detail\.webp)$/);
-      assert.ok(existsSync(new URL(src,import.meta.url)),c.id);
-    }
-    if(byCurrency.has(currency))assert.equal(src,byCurrency.get(currency),currency);
-    byCurrency.set(currency,src);
+    assert.match(src,/^assets\/banknotes\//);
+    assert.ok(existsSync(new URL(src,import.meta.url)),c.id);
+    assert.ok(PHOTO_CREDITS[src],c.id);
   }
-  assert.equal(new Set(byCurrency.values()).size,byCurrency.size);
+  assert.notEqual(banknoteFor('RU',MONEY.RU),banknoteFor('BY',MONEY.BY));
+  assert.equal(banknoteFor('CH',MONEY.CH),banknoteFor('LI',MONEY.LI));
+  assert.equal(banknoteFor('US',MONEY.US),banknoteFor('EC',MONEY.EC));
   assert.equal(banknoteFor('GB',MONEY.GB),'assets/banknotes/sterling-detail.webp');
 });
 test('the shared euro specimen is the unchanged official ECB file',()=>{

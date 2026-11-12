@@ -1,5 +1,62 @@
 # Редакционный просмотр фактов и личностей
 
+## Подсказки без названий городов, 12 ноября 2026
+
+В биографиях оставлены произведения, достижения и уместный исторический контекст. В игровых карточках компаний заменены названия с городами: Neptun вместо Birra Korça, Legendario вместо Havana Club и Ohlthaver & List вместо Windhoek Lager. Узнаваемые памятники, моря и другие природные ориентиры допустимы.
+
+| Код | Источники изменений |
+| --- | --- |
+| MK | [Древнее озеро и эндемичные виды](https://whc.unesco.org/en/list/99/) |
+| MT | [Доисторические храмы из каменных блоков](https://whc.unesco.org/en/list/132/) |
+| IT | [Раскопки после извержения Везувия](https://whc.unesco.org/en/list/829/) |
+| SM | [Крепостные башни](https://whc.unesco.org/en/list/1245/), [герб](https://en.wikipedia.org/wiki/Coat_of_arms_of_San_Marino) |
+| MC | [Музей океанографии над морем](https://musee.oceano.org/en/the-virtual-visit-of-the-museum/chapter-1-the-temple-of-the-sea/) |
+| DK | [Рунический камень Харальда Синезубого](https://whc.unesco.org/en/list/697/) |
+| LV | [Живая цепь 1989 года](https://media.unesco.org/sites/default/files/webform/mow001/baltic_way.pdf), [модерн](https://whc.unesco.org/en/list/852/) |
+| MA | [Традиции изготовления арганового масла](https://ich.unesco.org/en/RL/argan-practices-and-know-how-concerning-the-argan-tree-00955) |
+| SN | [История ралли](https://www.dakar.com/en/historical), [остров Горе](https://whc.unesco.org/en/list/26/) |
+| JM | [Горные поселения маронов](https://whc.unesco.org/en/list/1356/) |
+| US | [Премия «Оскар»](https://www.oscars.org/oscars) |
+
+Источники компаний: [история Neptun](https://balfin.al/about-us/history/), [история Legendario](https://legendario.com/conocenos/), [история Ohlthaver & List](https://www.ol.na/our-history/).
+
+## Проход по замечаниям, 11 ноября 2026
+
+Актуальный состав — `editorial.js`. Нижний список сохраняет состояние предыдущего прохода. В текущем наборе есть более лёгкие и более сложные улики, а тема и смысл проверяются отдельно от количества строк. Например, факт про съёмки «Властелина колец» не выпадает с карточкой Питера Джексона, а факт про наследие Османской империи — с карточкой Ататюрка.
+
+| Код | Тема и источники новых формулировок |
+| --- | --- |
+| RU | [Дорога жизни](https://en.wikipedia.org/wiki/Road_of_Life), [Янтарная комната](https://www.tzar.ru/en/node/191) |
+| UA | [Carol of the Bells](https://data.carnegiehall.org/events/70215/about), [пещеры Киево-Печерской лавры](https://whc.unesco.org/en/list/527/) |
+| BY | [Хатынь](https://www.memorialmuseums.org/memorialmuseum/state-memorial-khatyn?locale=en), [национальная библиотека](https://en.wikipedia.org/wiki/National_Library_of_Belarus), [Несвижский комплекс](https://whc.unesco.org/en/list/1196/) |
+| MD | [Язык и религия гагаузов](https://www.refworld.org/reference/countryrep/mrgi/2018/65038), [Старый Орхей](https://whc.unesco.org/en/tentativelists/6220/), [традиции первого марта, общие для нескольких стран](https://ich.unesco.org/en/RL/cultural-practices-associated-to-the-1st-of-march-01287) |
+| PL | [Бюро шифров и «Энигма»](https://en.wikipedia.org/wiki/Polish_Cipher_Bureau) |
+| CZ | [Места съёмок «Амадея»](https://filmcommission.gov.cz/en/film/amadeus/), [«Оскары»](https://www.oscars.org/oscars/ceremonies/1985), [линзы Вихтерле](https://www.imc.cas.cz/en/about-imc/institute-history) |
+| SK | [Фуяра](https://ich.unesco.org/fr/RL/la-fujara-et-sa-musique-00099), [деревянные церкви](https://whc.unesco.org/en/list/1273), [ледяная пещера](https://whc.unesco.org/document/159) |
+| HU | [Село Холлокё](https://whc.unesco.org/en/list/401/) |
+| RS | [Студеница](https://whc.unesco.org/en/list/389/) |
+| SI | [Традиции пчеловодства](https://ich.unesco.org/en/RL/beekeeping-in-slovenia-a-way-of-life-01857) |
+| ME | [Порт и укрепления Котора](https://whc.unesco.org/en/list/125/) |
+| AL | [Бутринт](https://whc.unesco.org/en/list/570/), [Гирокастра](https://whc.unesco.org/en/list/569/) |
+| CY | [Территории британских баз](https://www.legislation.gov.uk/ukpga/1960/52/section/2), [церкви с фресками](https://whc.unesco.org/en/list/351/), [медь бронзового века](https://www.metmuseum.org/art/collection/search/248493) |
+| LV | [Модерн в Риге](https://whc.unesco.org/en/list/852/) |
+| GE | [Руставели и «Витязь в тигровой шкуре»](https://en.wikipedia.org/wiki/Shota_Rustaveli) |
+| AD | [Хозяйство горной долины](https://whc.unesco.org/en/list/1160/) |
+| LI | [Роспуск армии](https://en.wikipedia.org/wiki/Military_of_Liechtenstein) |
+| TH | [Сонгкран](https://ich.unesco.org/en/RL/songkran-in-thailand-traditional-thai-new-year-festival-01719) |
+| KH | [Режим реки и озера Тонлесап](https://www.unesco.org/en/articles/call-action-keep-heart-cambodia-beating-and-make-stories-told) |
+| MY | [Два торговых порта](https://whc.unesco.org/en/list/1223/) |
+| SG | [Supertree Grove](https://www.gardensbythebay.com.sg/en/things-to-do/attractions/supertree-grove.html) |
+| DZ | [Римский город Тимгад](https://whc.unesco.org/en/list/194/) |
+| SN | [Остров Горе](https://whc.unesco.org/en/list/26/) |
+| GH | [Торговые крепости](https://whc.unesco.org/en/list/34/) |
+| NA | [Туманы пустыни Намиб](https://whc.unesco.org/en/list/1430/) |
+| CR | [Каменные шары Дикиса](https://whc.unesco.org/en/list/1453/) |
+| PG | [Древнее земледелие на болотах Кук](https://whc.unesco.org/en/list/887/) |
+| NZ | [Та-моко](https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/ta-moko) |
+
+Источники изображений новых людей лежат в `data/clue-photos.json`, включая отдельную ссылку на биографическую статью. Для маленьких стран выбранные политики и артисты могут быть сложнее массово известных актёров и спортсменов. Политические подсказки по возможности описывают исторический факт или срок, чтобы карточка не зависела от действующей должности.
+
 30 октября 2026. Основной runtime — editorial.js через i18n.js; legacy-факты не подмешиваются.
 
 250 разных фактов, каждый на RU и EN. 7 ноября 2026 подборка выросла с 44 до 78 личностей. Строка «—» означает, что для этой страны подсказка пока недоступна.

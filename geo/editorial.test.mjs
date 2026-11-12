@@ -4,6 +4,7 @@ import {COUNTRIES as RAW} from './countries.js';
 import {FACT_PAIRS,PERSON_ROSTER,editorialFacts} from './editorial.js';
 import {localizeCountry} from './i18n.js';
 import {selectFacts} from './game.js';
+import {BRANDS} from './brands.js';
 const ids=RAW.map(c=>c.id).sort();
 const escape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 test('curated runtime is complete, never revives legacy facts or people and has compatible pairs',()=>{
@@ -24,9 +25,18 @@ test('curated runtime is complete, never revives legacy facts or people and has 
   }
  }
 });
-test('footballers are the two explicitly requested worldwide exceptions',()=>{
+
+test('known place-name spoilers are absent from active clue text in both languages',()=>{
+ const spoilers=/Праге|Prague|Будапеште|Budapest|Сараеве|Sarajevo|Скопье|Skopje|Калькутте|Kolkata|Афинах|Athens|Даугавпилс|Daugavpils|Занзибар|Zanzibar|Арекипе|Arequipa|Монтевидео|Montevideo|Windhoek|Havana Club|Birra Korça/iu;
+ for(const raw of RAW)for(const locale of ['ru','en']){
+  const c=localizeCountry(raw,locale);
+  assert.doesNotMatch([...c.facts,...c.person,...BRANDS[c.id]].join(' '),spoilers,c.id);
+ }
+});
+test('footballers remain limited to a small set of internationally recognised players',()=>{
  const players=Object.entries(PERSON_ROSTER).filter(([,p])=>/footballer/i.test(p[3]));
- assert.deepEqual(players.map(([id])=>id).sort(),['AR','PT']);
+ assert.deepEqual(players.map(([id])=>id).sort(),['AR','CM','PT']);
+ assert.deepEqual(Object.keys(PERSON_ROSTER).sort(),ids);
  for(const [id,p] of Object.entries(PERSON_ROSTER)){
   assert(ids.includes(id));assert.equal(p.length,6);assert(p.slice(0,4).every(s=>typeof s==='string'&&s.length>=3));
  }

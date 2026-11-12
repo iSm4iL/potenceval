@@ -1,13 +1,13 @@
 import { $, esc, LS, toast, confetti, A, SPRING, nudge } from '../shared/kit.js';
-import { PACKS, COUNTRIES, t, lang, countryCount, localizeWorld } from './i18n.js?v=clues-20261107';
+import { PACKS, COUNTRIES, t, lang, countryCount, localizeWorld } from './i18n.js?v=clues-20261112';
 import { WORLD as WORLD_RU, SHAPES } from './atlas.js?v=clues-20261025';
-import { PHOTOS, PERSON_PHOTOS, PERSON_DEPICTIONS } from './photos.js?v=brand-photos-20261107';
-import { banknoteHTML, banknoteFor, banknoteKind } from './banknotes.js?v=media-20261107';
+import { PHOTOS, PERSON_PHOTOS, PERSON_DEPICTIONS } from './photos.js?v=clues-20261112';
+import { banknoteHTML, banknoteFor, banknoteKind } from './banknotes.js?v=clues-20261112';
 import { WALKS } from './walks.js?v=urban-20261107';
 import { streetViewUrl, streetViewLink } from './maps.js?v=walks-20261109';
-import { BRANDS } from './brands.js';
-import { BRAND_MEDIA } from './brand-media.js?v=logos-20261108';
-import { PHOTO_CREDITS } from './media-credits.js?v=media-20261107';
+import { BRANDS } from './brands.js?v=clues-20261112';
+import { BRAND_MEDIA } from './brand-media.js?v=clues-20261112';
+import { PHOTO_CREDITS } from './media-credits.js?v=clues-20261112';
 import { MONEY } from './content.js?v=atlas-20261028b';
 import { CLUES, START, WRONG, DIRECTION_COST, buyDirection, norm, nameIndex, matchCountry, canOpen, cluePrice, currencyPrice, openClue, refundWalk, guess, guidance, surrender, createGame, award, nextRound, selectFacts } from './game.js?v=clues-20261107';
 
@@ -120,6 +120,11 @@ function start() {
 function beginRound() {
   resetWalk(); active='fact1'; settled=false;
   const c=byId.get(game.round.id), historyKey=lang==='ru'?'geo.facts.v3':'geo.facts.v3.en', history=LS.get(historyKey) || {};
+  if(c.id==='KZ'){
+    const previous=LS.get('geo.brand.kazakhstan');
+    game.round.brandId=previous==='KZ'?'KZ-RAKHAT':'KZ';
+    LS.set('geo.brand.kazakhstan',game.round.brandId);
+  }
   const facts=c.facts, used=Array.isArray(history[c.id])?history[c.id]:[];
   roundFacts=selectFacts(c.factEntries,used,Math.random,c.personSubjects);
   const unique=[...new Set(facts)];
@@ -179,7 +184,7 @@ const boardObserver=new ResizeObserver(()=>requestAnimationFrame(drawThreads));
 addEventListener('resize',()=>requestAnimationFrame(drawThreads));
 function openEvidence(key){active=key;$('#viewerBody').innerHTML=`<div class="evidence-zoom">${evidenceHTML(key)}</div>`;$('#viewerNote').textContent=CLUES.find(cl=>cl.key===key).label;$('#viewer').showModal();}
 function photoCredit(src){
-  const brand=BRAND_MEDIA[game?.round?.id];
+  const brand=BRAND_MEDIA[game?.round?.brandId || game?.round?.id];
   const id=PHOTO_CREDITS[src]||{
     'assets/banknotes/EUR-ecb-72dpi.jpg':'ecb',
     'assets/banknotes/sterling-detail.webp':'sterling',
@@ -205,7 +210,7 @@ function evidenceHTML(key) {
       const caption={
         specimen:t('Образец банкноты','Banknote specimen'),
         fragment:t('Фрагмент банкноты','Banknote fragment'),
-        illustration:t('Игровая иллюстрация','Game illustration'),
+        historical:t('Исторический выпуск','Historical issue'),
       }[kind];
       body=`${banknoteHTML(c.id,currency)}${photoCredit(banknoteFor(c.id,currency))}<h2>${esc(c.currency)}</h2><small class="art-caption">${caption||''}</small><small class="evidence-note">${t("Часто встречающиеся валюты дешевле, редкие — дороже.","Common currencies cost less; rare ones cost more.")}</small>`;
       break;
@@ -217,9 +222,10 @@ function evidenceHTML(key) {
       break;
     }
     case 'brand': {
-      const [name, ru, en] = BRANDS[c.id];
-      const photo = BRAND_MEDIA[c.id][0];
-      const background = BRAND_MEDIA[c.id][2] || '#ffffff';
+      const brandId = r.brandId || c.id;
+      const [brandName, ru, en, englishName = brandName] = BRANDS[brandId];
+      const name = t(brandName,englishName);
+      const [photo,,background='#ffffff'] = BRAND_MEDIA[brandId];
       body = `<div class="brand-mark" style="--brand-mark-bg:${esc(background)}">${picture(photo,t('Логотип ','Logo ')+name)}</div><h2>${esc(name)}</h2><p>${esc(t(ru,en))}</p>`;
       break;
     }
@@ -296,7 +302,7 @@ $('#walkFold').onclick=foldWalk;dockEl.onclick=openWalk;
 $('#walkRefund').onclick=()=>{if(game&&refundWalk(game.round)){resetWalk();active='fact1';update();toast(t('150 очков возвращены. Прогулка отключена до следующего раунда.','150 points refunded. Street walk is disabled until the next round.'),3000);}};
 $('#walkOther').onclick=()=>{const spots=spotsOf(game.round.id);if(spots){spot=(spot+1)%spots.length;showWalkPoint(spots[spot]);}};
 function openViewer(src,alt){
-  const brand=BRAND_MEDIA[game?.round?.id],background=src===brand?.[0]?(brand[2]||'#ffffff'):null;
+  const brand=BRAND_MEDIA[game?.round?.brandId || game?.round?.id],background=src===brand?.[0]?(brand[2]||'#ffffff'):null;
   $('#viewerBody').innerHTML=`<img src="${esc(src)}" alt="${esc(alt||t("Подсказка крупно","Enlarged clue"))}" ${background?`class="viewer-brand-image" style="background:${esc(background)}"`:''}>${photoCredit(src)}`;
   $('#viewerNote').textContent='';if(!$('#viewer').open)$('#viewer').showModal();
 }

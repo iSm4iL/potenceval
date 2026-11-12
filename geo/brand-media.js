@@ -26,7 +26,7 @@ export const BRAND_MEDIA = {
     "#ffffff"
   ],
   "RS": [
-    "assets/brand-logos/RS.webp",
+    "assets/brand-logos/review-RS.png",
     "brand-credits.html#RS",
     "#ffffff"
   ],
@@ -41,7 +41,7 @@ export const BRAND_MEDIA = {
     "#ffffff"
   ],
   "PT": [
-    "assets/brand-logos/PT.webp",
+    "assets/brand-logos/review-PT.svg",
     "brand-credits.html#PT",
     "#ffffff"
   ],
@@ -96,12 +96,12 @@ export const BRAND_MEDIA = {
     "#ffffff"
   ],
   "LV": [
-    "assets/brand-logos/LV.webp",
+    "assets/brand-logos/review-LV.svg",
     "brand-credits.html#LV",
     "#ffffff"
   ],
   "LT": [
-    "assets/brand-logos/LT.webp",
+    "assets/brand-logos/review-LT.svg",
     "brand-credits.html#LT",
     "#ffffff"
   ],
@@ -356,7 +356,7 @@ export const BRAND_MEDIA = {
     "#ffffff"
   ],
   "CU": [
-    "assets/brand-logos/CU.webp",
+    "assets/brand-logos/city-CU.png",
     "brand-credits.html#CU",
     "#ffffff"
   ],
@@ -451,9 +451,9 @@ export const BRAND_MEDIA = {
     "#ffffff"
   ],
   "NA": [
-    "assets/brand-logos/NA.svg",
+    "assets/brand-logos/city-NA.svg",
     "brand-credits.html#NA",
-    "#25221f"
+    "#302821"
   ],
   "FJ": [
     "assets/brand-logos/FJ.webp",
@@ -481,9 +481,9 @@ export const BRAND_MEDIA = {
     "#ffffff"
   ],
   "AL": [
-    "assets/brand-logos/AL.webp",
+    "assets/brand-logos/city-AL.png",
     "brand-credits.html#AL",
-    "#ffffff"
+    "#302821"
   ],
   "PG": [
     "assets/brand-logos/PG.webp",
@@ -558,6 +558,11 @@ export const BRAND_MEDIA = {
   "CM": [
     "assets/brand-logos/CM.webp",
     "brand-credits.html#CM",
+    "#ffffff"
+  ],
+  "KZ-RAKHAT": [
+    "assets/brand-logos/review-KZ-RAKHAT.png",
+    "brand-credits.html#KZ-RAKHAT",
     "#ffffff"
   ]
 };

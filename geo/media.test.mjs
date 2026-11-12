@@ -20,6 +20,8 @@ test('every brand has a local logo and individual source record',()=>{
   if(photo[0].endsWith('.svg')){
    assert.match(bytes.toString('utf8'),/<svg\b/,id);
    assert.doesNotMatch(bytes.toString('utf8'),/<script\b|\bonload\s*=|javascript:/i,id);
+  }else if(photo[0].endsWith('.png')){
+   assert.equal(bytes.toString('hex',0,8),'89504e470d0a1a0a',id);
   }else{
    assert.equal(bytes.toString('ascii',0,4),'RIFF',id);
    assert.equal(bytes.toString('ascii',8,12),'WEBP',id);
