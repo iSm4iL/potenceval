@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6ef">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="Услуги, мастера и онлайн-запись в студию красоты.">
+  <link rel="icon" href="./assets/icon-192.png">
+  <link rel="apple-touch-icon" href="./assets/icon-512.png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./demo.css">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; connect-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'none'; style-src 'self' 'unsafe-inline'">
+  <title>Демо-кабинет студии</title>
+  <script type="module" src="./app.js"></script>
+</head>
+<body data-demo data-demo-studio>
+  <main id="main"></main>
+
+  <div class="panel-shade" aria-hidden="true" hidden></div>
+  <dialog class="panel" id="panel" aria-labelledby="panel-title">
+    <header class="panel-header">
+      <div><p id="panel-caption" class="panel-caption" hidden></p><h2 id="panel-title" tabindex="-1"></h2></div>
+      <a class="button outline" href="./">К записи</a>
+    </header>
+    <div id="panel-body" class="panel-body"></div>
+  </dialog>
+</body>
+</html>

@@ -127,10 +127,7 @@ export function createDemo(storageKey, now, storage = () => globalThis.localStor
   return {
     request,
     reset() {
-      try { storage().removeItem(storageKey); }
-      catch { /* Storage can be disabled in the browser. */ }
-      memory = fresh();
-      write(memory);
+      write(fresh());
     },
   };
 }

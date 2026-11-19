@@ -24,8 +24,10 @@ const title = $('#panel-title');
 const caption = $('#panel-caption');
 const body = $('#panel-body');
 const storageKey = `salon-demo-v1:${new URL('.', location.href).pathname}`;
+const demoStorageKey = storageKey + ':preview';
 const demo = document.body.hasAttribute('data-demo')
-  ? (await import('./demo.js')).createDemo(storageKey + ':preview', nowAtSalon) : null;
+  ? (await import('./demo.js')).createDemo(demoStorageKey, nowAtSalon) : null;
+const demoStudio = demo && document.body.hasAttribute('data-demo-studio');
 const demoName = 'Анна, тестовый клиент';
 const demoPhone = '+7 (900) 000-00-00';
 
@@ -76,10 +78,11 @@ async function loadCalendar() {
   applyCatalog(settings);
 }
 function applyCatalog(settings) {
-  if (settings.revision <= catalog.revision) return;
+  if (settings.revision === catalog.revision || (!demo && settings.revision < catalog.revision)) return;
   catalog = { ...catalog, ...settings };
   services = settings.services;
   renderBrand();
+  if (demoStudio) return;
   renderPosters();
   renderHomeServices();
   renderServices();
@@ -87,7 +90,7 @@ function applyCatalog(settings) {
 }
 
 function applyStudioCatalog(settings) {
-  if (studioCatalog && settings.revision < studioCatalog.revision) return;
+  if (!demo && studioCatalog && settings.revision < studioCatalog.revision) return;
   studioCatalog = settings;
   const { masterContacts, ...publicCatalog } = settings;
   applyCatalog(publicCatalog);
@@ -135,8 +138,9 @@ function button(label, action, style = 'outline', attributes = '') {
 }
 
 function refreshCount() {
-  const count = visits().filter((visit) => visit.status === 'booked' && isUpcoming(visit)).length;
   const badge = $('#visit-count');
+  if (!badge) return;
+  const count = visits().filter((visit) => visit.status === 'booked' && isUpcoming(visit)).length;
   badge.textContent = count;
   badge.hidden = count === 0;
 }
@@ -150,9 +154,13 @@ function readableInk(hex) {
 
 function renderBrand() {
   const config = brand();
-  document.title = `${config.name} · ${config.descriptor}`;
   document.documentElement.style.setProperty('--accent', config.accent);
   document.documentElement.style.setProperty('--on-accent', readableInk(config.accent));
+  if (demoStudio) {
+    document.title = `${config.name} · Демо-кабинет`;
+    return;
+  }
+  document.title = `${config.name} · ${config.descriptor}`;
   const name = $('[data-brand="name"]');
   name.textContent = config.name;
   name.hidden = Boolean(config.logo);
@@ -347,7 +355,7 @@ function showContacts() {
   </div>
   <img id="studio-photo" class="detail-photo contact-photo" src="${escape(config.hero)}" alt="Интерьер студии" width="1320" height="990">
   <div class="panel-actions contact-tools">${button('На экран «Домой»', 'install', 'quiet', 'aria-label="Добавить на экран «Домой»"')}
-  ${button('Кабинет студии', 'studio', 'quiet')}</div>
+  ${demo ? '' : button('Кабинет студии', 'studio', 'quiet')}</div>
   <p class="muted small">Демо с вымышленными данными</p>`);
 }
 
@@ -695,7 +703,7 @@ function updateStudioCalendar(focus) {
   view.innerHTML = studioCalendar();
   const roster = view.querySelector('.studio-roster');
   if (roster) roster.scrollLeft = scrollLeft;
-  const target = view.querySelector(focus);
+  const target = focus && view.querySelector(focus);
   target?.focus({ preventScroll: true });
   target?.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
 }
@@ -1087,7 +1095,8 @@ async function saveCatalogForm(form) {
 }
 
 async function showStudio(message = '', focus = '') {
-  if (demo && !staffRole) {
+  if (demo && !demoStudio) return;
+  if (demoStudio && !staffRole) {
     staffKey = 'demo';
     staffRole = 'admin';
   }
@@ -1122,11 +1131,12 @@ async function showStudio(message = '', focus = '') {
   const tabButton = ([id, label]) => button(label, 'studio-tab', 'filter', `data-value="${id}" aria-pressed="${studioTab === id}"`);
   const content = studioTab === 'calendar' ? `<div id="studio-calendar" class="stack">${studioCalendar()}</div>` :
     studioTab === 'brand' ? brandForm() : studioTab === 'news' ? newsForm() : studioTab === 'profiles' ? profileForm() : catalogForm();
+  const control = demoStudio ? button('Сбросить демо', 'demo-reset', 'quiet') : button('Выйти', 'studio-logout', 'quiet');
   show('Кабинет студии', `<div class="studio-tabs" role="group" aria-label="Раздел кабинета">
-    <div class="studio-tab-row">${tabs.map(tabButton).join('')}${button('Выйти', 'studio-logout', 'quiet')}</div>
+    <div class="studio-tab-row">${tabs.map(tabButton).join('')}${control}</div>
     <div class="studio-tab-row">${settings.map(tabButton).join('')}</div>
     </div>${message ? `<p class="notice" role="status">${escape(message)}</p>` : ''}${content}`,
-    staffRole === 'owner' ? 'Владелец' : 'Администратор', focus);
+    demoStudio ? 'Демо · Администратор' : staffRole === 'owner' ? 'Владелец' : 'Администратор', focus);
 }
 
 async function prepareImage(file, maxSize, squareIcon = false) {
@@ -1313,7 +1323,7 @@ const actions = {
   install: showInstall,
   studio: () => { studioTab = 'calendar'; showStudio(); },
   'demo-reset': () => {
-    if (!demo || !confirm('Сбросить изменения и пробные записи в этом браузере?')) return;
+    if (!demoStudio || !confirm('Сбросить изменения и пробные записи в этом браузере?')) return;
     demo.reset();
     location.reload();
   },
@@ -1331,8 +1341,7 @@ const actions = {
   'studio-tab': ({ value }) => { studioTab = value; showStudio('', `[data-value="${value}"]`); },
   'studio-logout': () => {
     clearStudioAccess();
-    if (demo) panel.close();
-    else showStudio();
+    showStudio();
   },
   'remove-news': async ({ value }, control) => {
     if (!confirm('Удалить эту публикацию с сайта?')) return;
@@ -1351,12 +1360,12 @@ const actions = {
 document.addEventListener('click', (event) => {
   const control = event.target.closest('[data-action]');
   if (!control || control.disabled) return;
-  const switching = panel.open && bottomNav.contains(control);
+  const switching = panel.open && bottomNav?.contains(control);
   actions[control.dataset.action]?.(control.dataset, control);
   if (panel.open && !panel.contains(control) && control.isConnected) {
     panelOpener = control;
-    bottomNav.querySelector('[aria-expanded="true"]')?.setAttribute('aria-expanded', 'false');
-    if (bottomNav.contains(control)) control.setAttribute('aria-expanded', 'true');
+    bottomNav?.querySelector('[aria-expanded="true"]')?.setAttribute('aria-expanded', 'false');
+    if (bottomNav?.contains(control)) control.setAttribute('aria-expanded', 'true');
   }
   if (switching && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     body.getAnimations().forEach((animation) => animation.cancel());
@@ -1418,6 +1427,7 @@ body.addEventListener('change', ({ target }) => {
 });
 panel.addEventListener('close', () => {
   if (panel.open) return;
+  if (demoStudio) { location.replace('./'); return; }
   shade.hidden = true;
   main.inert = false;
   bottomNav.querySelector('[aria-expanded="true"]')?.setAttribute('aria-expanded', 'false');
@@ -1430,20 +1440,31 @@ panel.addEventListener('close', () => {
   body.replaceChildren();
 });
 window.addEventListener('storage', ({ key }) => {
+  if (demo && key === demoStorageKey) {
+    if (demoStudio && $('#studio-calendar')) {
+      staffVisits = demo.request('studio/visits');
+      applyStudioCatalog(demo.request('studio/catalog'));
+      updateStudioCalendar();
+    } else if (!demoStudio) refreshCalendar().catch(() => {});
+    return;
+  }
   if (key !== storageKey) return;
   renderBrand();
-  renderMasters();
+  if (!demoStudio) renderMasters();
   refreshCount();
 });
 window.addEventListener('beforeinstallprompt', (event) => { event.preventDefault(); installPrompt = event; });
 
 renderBrand();
-renderPosters();
-renderHomeServices();
-refreshCount();
-refreshCalendar().catch(() => {});
-showSharedVisit();
-window.addEventListener('hashchange', showSharedVisit);
+if (demoStudio) showStudio();
+else {
+  renderPosters();
+  renderHomeServices();
+  refreshCount();
+  refreshCalendar().catch(() => {});
+  showSharedVisit();
+  window.addEventListener('hashchange', showSharedVisit);
+}
 if (!demo && 'serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
   navigator.serviceWorker.register('./service-worker.js').catch(() => {});
 }
