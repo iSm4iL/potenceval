@@ -1,6 +1,6 @@
-import { availableSlots, nextDays } from './booking.js';
-import { initialCatalog, validBrand, validCatalog, validNews } from './catalog.js';
-import { serviceDuration, serviceMasters, servicePrice, workingHours } from './salon.js';
+import { availableSlots, nextDays } from './booking.js?v=14b49c6c3395';
+import { initialCatalog, validBrand, validCatalog, validNews } from './catalog.js?v=14b49c6c3395';
+import { serviceDuration, serviceMasters, servicePrice, workingHours } from './salon.js?v=14b49c6c3395';
 
 const sample = { name: 'Анна, тестовый клиент', phone: '+7 (900) 000-00-00' };
 const stamp = (day, time) => new Date(`${day}T${time}:00`);

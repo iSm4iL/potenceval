@@ -1,4 +1,4 @@
-import { salon, news, masters, services, categories, serviceMasters } from './salon.js';
+import { salon, news, masters, services, categories, serviceMasters } from './salon.js?v=14b49c6c3395';
 
 export const defaultBrand = { ...salon, icon: '' };
 export const initialCatalog = { revision: 0, masters, services, brand: defaultBrand, news, masterContacts: {} };

@@ -1,5 +1,5 @@
-import { availableSlots, isValidPhone, nextDays, monthGrid, shiftMonth, minuteLabel, timeMinutes, workloadPercent } from './booking.js';
-import { salon, masters as defaultMasters, categories, services as defaultServices, news, serviceDuration, serviceMasters, servicePrice, workingHours } from './salon.js';
+import { availableSlots, isValidPhone, nextDays, monthGrid, shiftMonth, minuteLabel, timeMinutes, workloadPercent } from './booking.js?v=14b49c6c3395';
+import { salon, masters as defaultMasters, categories, services as defaultServices, news, serviceDuration, serviceMasters, servicePrice, workingHours } from './salon.js?v=14b49c6c3395';
 
 let catalog = { revision: 0, masters: defaultMasters, services: defaultServices, brand: { ...salon, icon: '' }, news };
 let services = catalog.services;
@@ -26,7 +26,7 @@ const body = $('#panel-body');
 const storageKey = `salon-demo-v1:${new URL('.', location.href).pathname}`;
 const demoStorageKey = storageKey + ':preview';
 const demo = document.body.hasAttribute('data-demo')
-  ? (await import('./demo.js')).createDemo(demoStorageKey, nowAtSalon) : null;
+  ? (await import('./demo.js?v=14b49c6c3395')).createDemo(demoStorageKey, nowAtSalon) : null;
 const demoStudio = demo && document.body.hasAttribute('data-demo-studio');
 const demoName = 'Анна, тестовый клиент';
 const demoPhone = '+7 (900) 000-00-00';
