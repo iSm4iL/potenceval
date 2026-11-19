@@ -8,6 +8,37 @@ import { createGame } from './game.js';
 const data = JSON.parse(readFileSync(new URL('./data/catalog.json', import.meta.url), 'utf8'));
 const people = genre => new Set(selectCollection(data, genre).tracks.flatMap(t => t.artistNames.map(normalize)));
 
+test('New School follows the current scene while established rappers stay in Russian rap', () => {
+  const current = selectCollection(data, 'new-wave').tracks;
+  for (const name of ['CUPSIZE', 'madk1d', 'VILLIAN', 'ONDA ANDAR']) {
+    assert.ok(current.filter(track => normalize(track.artistNames[0]) === normalize(name)).length >= 10, name);
+  }
+  for (const name of ['Markul', 'THRILL PILL', 'Kizaru']) {
+    assert.ok(!people('new-wave').has(normalize(name)), name);
+    assert.ok(people('ru-rap').has(normalize(name)), name);
+  }
+});
+
+test('collection rules pin every playable song and preserve the thematic removals', () => {
+  const config = JSON.parse(readFileSync(new URL('./data/sources.json', import.meta.url), 'utf8'));
+  const removed = {
+    'dad-rock': [4168455662],
+    drill: [3413895391, 4316123912, 3823782821, 2267766057],
+    hookah: [856558962, 408907922, 4022728331],
+    'mom-pop': [4028895691],
+    nostalgia: [2599676392],
+  };
+  for (const [genre, ids] of Object.entries(removed)) {
+    const actual = new Set(selectCollection(data, genre).tracks.map(t => t.deezerId));
+    for (const id of ids) assert.ok(!actual.has(id), `${genre}: ${id}`);
+  }
+  for (const [genre, allowed] of Object.entries(config.collectionTrackAllowlist)) {
+    const actual = selectCollection(data, genre).tracks;
+    assert.deepEqual(actual.map(t => t.deezerId).sort((a, b) => a - b), allowed.ids);
+    for (const track of actual) assert.ok(!allowed.excludedIds.includes(track.deezerId));
+  }
+});
+
 test('Street 36 centers on Scriptonite and A$XV Prince and keeps guests within the brief', () => {
   const artists = people('street-36');
   const { tracks } = selectCollection(data, 'street-36');

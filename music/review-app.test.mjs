@@ -38,8 +38,8 @@ test('standalone editor boots with every collection and the requested initial ch
   assert.equal(app.data.collections.length, 15);
   assert.equal((app.node('collections').innerHTML.match(/data-collection=/g) || []).length, 15);
   const state = JSON.parse([...app.storage.values()][0]);
-  assert.equal(state.artists['new-wave']['moneyken'].status, 'keep');
-  assert.equal(state.artists['new-wave']['платина'].more, true);
+  assert.equal(state.artists['new-wave']['moneyken'].status, 'remove');
+  assert.equal(state.artists['new-wave']['платина'].more, false);
   assert.equal(state.intentVersion, 2);
   assert.equal(state.artists['mom-pop'], undefined);
   assert.match(app.node('artists').innerHTML, /data-status="remove"/);
@@ -60,9 +60,9 @@ test('track and artist edits survive HTML export and reopening, with safe commen
   assert.equal(state.tracks['new-wave'][first.id].status, 'keep');
   assert.equal(state.tracks['new-wave'][first.id].similar, true);
   assert.equal(state.tracks['new-wave'][first.id].note, '</script><img src=x onerror=alert(1)>');
-  restored.click('artist', 'moneyken', 'remove');
+  restored.click('artist', 'villian', 'remove');
   const updated = JSON.parse([...restored.storage.values()][0]);
-  for (const t of restored.data.collections[0].tracks.filter(t => t.artistNames.includes('MONEYKEN'))) {
+  for (const t of restored.data.collections[0].tracks.filter(t => t.artistNames.includes('villian'))) {
     assert.equal(updated.tracks['new-wave'][t.id].status, 'remove');
   }
 });

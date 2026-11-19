@@ -1,7 +1,7 @@
 import { t } from '../shared/i18n.js?v=ui-20261029';
 
 export const PACKS = [
-  { id: 'new-wave', title: t('Новая школа', "New school"), icon: '🔥', description: t('madk1d, VILLIAN, 9mice, OG Buda и новое поколение', "madk1d, VILLIAN, 9mice, OG Buda and the new generation") },
+  { id: 'new-wave', title: t('Новая школа', "New school"), icon: '🔥', description: t('CUPSIZE, madk1d, VILLIAN, ONDA ANDAR, 9mice и тёмный принц', "CUPSIZE, madk1d, VILLIAN, ONDA ANDAR, 9mice and tyomnyy prints") },
   { id: 'ru-rap', title: t('Русский рэп', "Russian rap"), icon: '🎤', description: t('Знаковые треки разных поколений', "Iconic tracks across generations") },
   { id: 'nostalgia', title: t('Ностальгия 2010-х', "2010s nostalgia"), icon: '📼', description: t('Культовые хиты, под которые взрослели', "The hits we grew up with") },
   { id: 'kpop', title: 'K-pop', icon: '💜', description: t('BTS, BLACKPINK, TWICE, Stray Kids и другие', "BTS, BLACKPINK, TWICE, Stray Kids and more") },

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-12T01:56:49Z",
+  "generatedAt": "2026-11-19T12:55:35Z",
   "sources": [
     {
       "id": "apple-ru-chart",
@@ -411,6 +411,46 @@
       "retrievedAt": "2026-11-10T11:57:24Z",
       "status": "fresh",
       "count": 12
+    },
+    {
+      "id": "editorial-20261119-new-wave",
+      "title": "Полсекунды — редакторская подборка new-wave",
+      "kind": "verified-tracks",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
+      "updatedAt": "2026-11-19T12:55:35Z",
+      "retrievedAt": "2026-11-19T12:55:35Z",
+      "status": "fresh",
+      "count": 30
+    },
+    {
+      "id": "editorial-20261119-ru-rap",
+      "title": "Полсекунды — редакторская подборка ru-rap",
+      "kind": "verified-tracks",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
+      "updatedAt": "2026-11-19T12:55:35Z",
+      "retrievedAt": "2026-11-19T12:55:35Z",
+      "status": "fresh",
+      "count": 50
+    },
+    {
+      "id": "editorial-20261119-dad-rock",
+      "title": "Полсекунды — редакторская подборка dad-rock",
+      "kind": "verified-tracks",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
+      "updatedAt": "2026-11-19T12:55:35Z",
+      "retrievedAt": "2026-11-19T12:55:35Z",
+      "status": "fresh",
+      "count": 1
+    },
+    {
+      "id": "editorial-20261119-us-hiphop",
+      "title": "Полсекунды — редакторская подборка us-hiphop",
+      "kind": "verified-tracks",
+      "url": "https://github.com/iSm4iL/potenceval/blob/main/music/data/sources.json",
+      "updatedAt": "2026-11-19T12:55:35Z",
+      "retrievedAt": "2026-11-19T12:55:35Z",
+      "status": "fresh",
+      "count": 1
     }
   ],
   "tracks": [
@@ -926,9 +966,7 @@
       "workKey": "129513512|банк",
       "cover": "https://cdn-images.dzcdn.net/images/cover/46b5a90d9a2decbfebd22765ee227c5e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4028895691",
-      "genres": [
-        "mom-pop"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
@@ -946,9 +984,7 @@
         {
           "id": "mom-pop-more",
           "position": 4,
-          "genres": [
-            "mom-pop"
-          ],
+          "genres": [],
           "period": "популярное у Zivert"
         }
       ],
@@ -3235,7 +3271,6 @@
       "link": "https://www.deezer.com/track/856558962",
       "genres": [
         "ru-rap",
-        "hookah",
         "street-36"
       ],
       "currentGenres": [
@@ -3268,9 +3303,7 @@
         {
           "id": "hookah-top",
           "position": 3,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Скриптонит"
         },
         {
@@ -3281,9 +3314,7 @@
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
@@ -3362,7 +3393,6 @@
       "link": "https://www.deezer.com/track/3976560361",
       "genres": [
         "ru-rap",
-        "hookah",
         "nostalgia",
         "street-36"
       ],
@@ -3396,9 +3426,7 @@
         {
           "id": "hookah-top",
           "position": 5,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Скриптонит"
         },
         {
@@ -3415,9 +3443,7 @@
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
@@ -3540,20 +3566,17 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a1e8e1fe6000fdd0a77dc3f18e872d67/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3643354132",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "sources": [
         {
           "id": "apple-ru-chart",
           "position": 96,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "2026-10-28"
         },
@@ -3561,8 +3584,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Big Baby Tape"
         },
@@ -3570,8 +3592,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Toxi$"
         },
@@ -3579,16 +3600,13 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Aarne"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -7469,7 +7487,6 @@
       "link": "https://www.deezer.com/track/4006993971",
       "genres": [
         "ru-rap",
-        "hookah",
         "nostalgia",
         "street-36"
       ],
@@ -7493,9 +7510,7 @@
         {
           "id": "hookah-top",
           "position": 4,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Скриптонит"
         },
         {
@@ -7512,9 +7527,7 @@
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
@@ -8242,7 +8255,6 @@
       "genres": [
         "ru-rap",
         "nostalgia",
-        "hookah",
         "street-36"
       ],
       "currentGenres": [],
@@ -8276,9 +8288,7 @@
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
@@ -9565,8 +9575,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e4acbf457e1df42d0a4c1917c7d31a3e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1497514962",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -9574,15 +9583,12 @@
           "id": "ru-rap-supergame",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ]
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -9824,8 +9830,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/7e9f86809d15c5383f9fae59742a8be5/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/759504952",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -9833,15 +9838,12 @@
           "id": "ru-rap-supergame",
           "position": 14,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ]
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -10041,8 +10043,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/b0f04d5d7cd3039f702de0e618e12134/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1975794537",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -10050,16 +10051,14 @@
           "id": "ru-rap-supergame",
           "position": 23,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ]
         },
         {
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у kizaru"
         },
@@ -10067,16 +10066,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 16,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -10107,8 +10103,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1975430157",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -10116,16 +10111,14 @@
           "id": "ru-rap-supergame",
           "position": 26,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ]
         },
         {
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Big Baby Tape"
         },
@@ -10133,8 +10126,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у kizaru"
         },
@@ -10142,16 +10134,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -10815,34 +10804,34 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/65e580b5e941f0d5e3c544bd250b9af5/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1975781457",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-supergame",
           "position": 67,
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "new-wave-player-picks-20261030",
           "position": 20,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -10867,29 +10856,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d11f2ea4f87329f6e7777ea2f4d7be10/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1463497462",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-supergame",
           "position": 68,
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "ru-rap-artists-top",
           "position": 6,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "популярное у LOVV66"
         },
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -11842,8 +11831,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/323dae988c88cda6b6b90fd7b0bc0f71/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1396680942",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -11851,16 +11839,13 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MORGENSHTERN"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -11889,8 +11874,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c011ffbe3a5a78892f86c21b53c7e01f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1390591922",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -11898,16 +11882,13 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MORGENSHTERN"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -11977,8 +11958,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/ee7efd445ab3a22ea0eb6a86025c7e54/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2446630435",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -11986,16 +11966,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MORGENSHTERN"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -12024,8 +12001,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/b66c0cd85b6815ccd461703525fa3dc1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2030304067",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12033,16 +12009,13 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MORGENSHTERN"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -12107,17 +12080,13 @@
       "workKey": "14801651|известным",
       "cover": "https://cdn-images.dzcdn.net/images/cover/8f26fe93c51f34a9e60d1060d41f3d89/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1804866967",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 8,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у MORGENSHTERN"
         },
         {
@@ -12126,9 +12095,7 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -12261,17 +12228,13 @@
       "workKey": "819827|boom boom",
       "cover": "https://cdn-images.dzcdn.net/images/cover/da92e704d41e80c44e351c260d594b40/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1975387147",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 3,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у PHARAOH"
         },
         {
@@ -12280,9 +12243,7 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -12477,8 +12438,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/505337124ca931cf8085438b2b5aaa2f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2868877762",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12486,8 +12446,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Big Baby Tape"
         },
@@ -12495,8 +12454,7 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Toxi$"
         },
@@ -12504,16 +12462,13 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Aarne"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -12544,8 +12499,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d0272c77824405a5fe4916d70eaf9830/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3140317021",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12553,16 +12507,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Big Baby Tape"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -12593,8 +12544,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/505337124ca931cf8085438b2b5aaa2f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2868877752",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12602,8 +12552,7 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Big Baby Tape"
         },
@@ -12611,16 +12560,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Aarne"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -12735,8 +12681,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1975430257",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12744,8 +12689,7 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Big Baby Tape"
         },
@@ -12753,8 +12697,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у kizaru"
         },
@@ -12762,16 +12705,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -12801,8 +12741,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/34a5130f84afd6662c526da9c04828e7/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2249031297",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -12810,16 +12749,13 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у OG Buda"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -12994,8 +12930,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/34a5130f84afd6662c526da9c04828e7/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2249031157",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13003,16 +12938,13 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у OG Buda"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13043,8 +12975,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/34a5130f84afd6662c526da9c04828e7/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2249031217",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13052,16 +12983,13 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у OG Buda"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13195,8 +13123,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1463122972",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13204,8 +13131,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Платина"
         },
@@ -13213,16 +13139,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 12,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13307,8 +13230,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/ff79f0fddeb393723f023b5158edf5d2/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/781089672",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13316,16 +13238,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Платина"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13356,35 +13275,35 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1463123012",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 6,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "популярное у Платина"
         },
         {
           "id": "new-wave-player-picks-20261030",
           "position": 13,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -13487,8 +13406,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/1e87d64e34fd63f3e3e7738531ace528/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4081655181",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13502,9 +13420,7 @@
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13566,8 +13482,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e0990026e96c55d6a68410e9894195e7/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1071732972",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13575,16 +13490,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MAYOT"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13613,8 +13525,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/73e0b505de4ad2508a2946cf0d7d2594/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3412417041",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13622,16 +13533,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MAYOT"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13662,8 +13570,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/34a5130f84afd6662c526da9c04828e7/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2249031257",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13671,16 +13578,13 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MAYOT"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13711,8 +13615,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/34a5130f84afd6662c526da9c04828e7/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2249031177",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13720,16 +13623,13 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MAYOT"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13758,8 +13658,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e0990026e96c55d6a68410e9894195e7/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1071733082",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13767,16 +13666,13 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у MAYOT"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13806,17 +13702,13 @@
       "workKey": "11138038|два выстрела",
       "cover": "https://cdn-images.dzcdn.net/images/cover/57dae7701d10509d38bb9429b9389d90/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2011403107",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 8,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у MAYOT"
         },
         {
@@ -13825,9 +13717,7 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -13854,8 +13744,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/dcb5ad029c284728baad0707c8766c3c/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1863635497",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13863,8 +13752,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SEEMEE"
         },
@@ -13872,16 +13760,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Yanix"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13913,8 +13798,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/10db4835f0c65ea203d4bd4d39f6eac0/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1071846972",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13922,16 +13806,13 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SEEMEE"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -13962,8 +13843,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/6d23a41a5bc74d7a806b21cc6a82e8c4/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1998270647",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -13971,16 +13851,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SEEMEE"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14181,8 +14058,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/ff6ecca0ec357217051deb28e820e2f0/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2061423757",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14190,16 +14066,13 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SODA LUV"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14265,8 +14138,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/390df237ff4514261836b7a16895a6d8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1591048802",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14274,16 +14146,13 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SODA LUV"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14314,8 +14183,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/094c70a2ecf60b0f273941fc7cc58501/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2704242972",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14323,16 +14191,13 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SODA LUV"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14361,8 +14226,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d212f32a7fe11952d11bd957e1f17b93/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3300352511",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14370,16 +14234,13 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SODA LUV"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14412,8 +14273,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e4141065aa05345c618a10fce62d9c77/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3693795982",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14421,16 +14281,13 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у BUSHIDO ZHO"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14463,8 +14320,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/dcb5ad029c284728baad0707c8766c3c/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1863635437",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14472,8 +14328,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у BUSHIDO ZHO"
         },
@@ -14481,16 +14336,13 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Aarne"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14520,8 +14372,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a8c6c7d8d84e9ccb5fc8c4f95132889d/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2780286761",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14529,16 +14380,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у BUSHIDO ZHO"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14567,8 +14415,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/19c7ba4d602b7a9a6c330be89346b35f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3654761692",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14576,16 +14423,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у BUSHIDO ZHO"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14773,8 +14617,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d08be570ba0ec7e0ccee63f73a4972ed/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2748139771",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14782,8 +14625,7 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у kizaru"
         },
@@ -14791,8 +14633,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ALBLAK 52"
         },
@@ -14800,16 +14641,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 10,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14843,8 +14681,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/92d87a791c5a231221b4a6bf6d726f05/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2516211021",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14852,8 +14689,7 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у kizaru"
         },
@@ -14861,16 +14697,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -14901,8 +14734,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2705c50f4e3c07819be454ec1560a68a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2526210271",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -14910,8 +14742,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у kizaru"
         },
@@ -14919,8 +14750,7 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у FRIENDLY THUG 52 NGG"
         },
@@ -14928,16 +14758,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 12,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -15006,8 +14833,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/449cf119cc9542ffe8e0b931ad1a03ca/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4279190772",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15015,8 +14841,7 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у kizaru"
         },
@@ -15024,16 +14849,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 15,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -15769,8 +15591,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d75aa9f49a1ab0019914d829ddd4155c/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3032335051",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15784,9 +15605,7 @@
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -15817,8 +15636,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/92d87a791c5a231221b4a6bf6d726f05/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2516211111",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15826,8 +15644,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Lil Krystalll"
         },
@@ -15835,16 +15652,13 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Aarne"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -15876,8 +15690,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/fd86eb6a9713f6cc7cfc06a161fd8917/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1884925637",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15885,16 +15698,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Lil Krystalll"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -15968,8 +15778,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/cbb8563e94f62c7b1842ed8b29d60232/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1178217562",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -15977,16 +15786,13 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Lil Krystalll"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -16017,8 +15823,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/7e9f86809d15c5383f9fae59742a8be5/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/759505112",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -16026,16 +15831,13 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Lil Krystalll"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -16066,8 +15868,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/7e9f86809d15c5383f9fae59742a8be5/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/759505062",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -16075,16 +15876,13 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Lil Krystalll"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -16114,17 +15912,13 @@
       "workKey": "14801651|naked",
       "cover": "https://cdn-images.dzcdn.net/images/cover/a36ec08b9862ec16bb6bfbd0f693a6ea/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3476412511",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 8,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у Lil Krystalll"
         },
         {
@@ -16133,9 +15927,7 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -16996,8 +16788,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/66e49aeb00c448e9c0078005bec1c08f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4028935381",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17005,16 +16796,13 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ICEGERGERT"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17137,8 +16925,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/5e92913b8581b35e507de1ea8cd4ad45/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3654761772",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17146,8 +16933,7 @@
           "id": "ru-rap-artists-top",
           "position": 8,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ICEGERGERT"
         },
@@ -17155,16 +16941,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ALBLAK 52"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17194,8 +16977,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2536503001",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17203,8 +16985,7 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у OBLADAET"
         },
@@ -17212,16 +16993,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17250,8 +17028,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e30828fe65163a2a992f8d5cb1c778c6/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4323040832",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17259,8 +17036,7 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у OBLADAET"
         },
@@ -17268,16 +17044,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17306,8 +17079,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e193a766336f921fab3e3889083eb2be/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2536502961",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17315,8 +17087,7 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у OBLADAET"
         },
@@ -17324,16 +17095,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17526,8 +17294,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2705c50f4e3c07819be454ec1560a68a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2526210251",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17535,16 +17302,13 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у FRIENDLY THUG 52 NGG"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17573,8 +17337,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2705c50f4e3c07819be454ec1560a68a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2526210311",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17582,16 +17345,13 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у FRIENDLY THUG 52 NGG"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17620,8 +17380,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2705c50f4e3c07819be454ec1560a68a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2526210281",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17629,16 +17388,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у FRIENDLY THUG 52 NGG"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17667,8 +17423,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2705c50f4e3c07819be454ec1560a68a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2526210191",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17676,16 +17431,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у FRIENDLY THUG 52 NGG"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17747,8 +17499,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2705c50f4e3c07819be454ec1560a68a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2526210201",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17756,8 +17507,7 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у FRIENDLY THUG 52 NGG"
         },
@@ -17765,16 +17515,13 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Yanix"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17841,8 +17588,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/524eda928a8e2df123919f5a46c05c37/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2350505725",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17850,16 +17596,13 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ALBLAK 52"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17888,8 +17631,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/696b33fd78f01ed4d37091ce876cd75d/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3870639891",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17897,16 +17639,13 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ALBLAK 52"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -17980,8 +17719,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/5e92913b8581b35e507de1ea8cd4ad45/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3654761842",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -17989,16 +17727,13 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ALBLAK 52"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -18031,8 +17766,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e15fa8f824b2e2965705c753bbafbe4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2836466182",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -18040,16 +17774,13 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у ALBLAK 52"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -18156,8 +17887,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/7078bb897af037a62c0ebef0cb5dc70f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1379369912",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -18165,8 +17895,7 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Aarne"
         },
@@ -18182,16 +17911,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -18557,22 +18283,24 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2b4e6c6cd80cc308d62d9974bde2435f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4123725851",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 1,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "популярное у LOVV66"
         },
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -18631,22 +18359,24 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/076c4f053adbdb6bd6a1ebae8f42447f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2399768915",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 3,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "популярное у LOVV66"
         },
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -18670,22 +18400,24 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/7e11e931bbb65de23a3ae3438a964eee/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1996105727",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 4,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "популярное у LOVV66"
         },
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -18709,22 +18441,24 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/393dffaca17cd5bc9082d1e1e5c32455/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2206141997",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 5,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "популярное у LOVV66"
         },
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -19281,24 +19015,18 @@
       "workKey": "1544711|uebok gotta run",
       "cover": "https://cdn-images.dzcdn.net/images/cover/828bfd7a1cc907fdcbb23f10059b85ec/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/831917192",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 2,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у INSTASAMKA"
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -19409,22 +19137,24 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/f141fafb62ee09f618069946053c1b0d/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1083395582",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 5,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "популярное у INSTASAMKA"
         },
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -19577,17 +19307,15 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/96d499ccb4665603cb3ecad1158cb62a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4051293501",
       "genres": [
-        "ru-rap",
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 1,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у CUPSIZE"
         },
         {
@@ -19596,14 +19324,18 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -19627,17 +19359,15 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d2d031df18cc0c526ea1b03c5f99a15e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2477349131",
       "genres": [
-        "ru-rap",
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 3,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у CUPSIZE"
         },
         {
@@ -19653,14 +19383,18 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -19684,17 +19418,15 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d2d031df18cc0c526ea1b03c5f99a15e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2477349141",
       "genres": [
-        "ru-rap",
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 6,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у CUPSIZE"
         },
         {
@@ -19710,14 +19442,18 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -19741,17 +19477,15 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/96d499ccb4665603cb3ecad1158cb62a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4051293491",
       "genres": [
-        "ru-rap",
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 7,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у CUPSIZE"
         },
         {
@@ -19767,14 +19501,18 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -19798,17 +19536,15 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/4441b091061a84b4b77a79b7a2c5f332/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2595990322",
       "genres": [
-        "ru-rap",
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 8,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у CUPSIZE"
         },
         {
@@ -19817,14 +19553,18 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -20059,8 +19799,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/da62132c9c4d5f5539e84207836c2b98/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3749030452",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -20068,16 +19807,13 @@
           "id": "ru-rap-artists-top",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Thrill Pill"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -20106,8 +19842,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/ed621189b4d0ade056f51044ffc998dd/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1345498212",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -20115,16 +19850,13 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Thrill Pill"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -20155,8 +19887,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/da62132c9c4d5f5539e84207836c2b98/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3749030472",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -20164,16 +19895,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Thrill Pill"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -20202,8 +19930,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e58258cd2881140b4b5a46b1c1f65841/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/618948152",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -20211,16 +19938,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Thrill Pill"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -20251,8 +19975,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/032f52380267c05675dc66afe27f9361/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1574984802",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -20260,16 +19983,13 @@
           "id": "ru-rap-artists-top",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Thrill Pill"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -20335,8 +20055,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/4dbec720cda5a7d3f2777e1ea08f800b/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3872001631",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -20344,16 +20063,13 @@
           "id": "ru-rap-artists-top",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у Thrill Pill"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -20946,17 +20662,13 @@
       "workKey": "68813|габба банда",
       "cover": "https://cdn-images.dzcdn.net/images/cover/0380068a1156d3cdc0fd355cbf78acc6/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3639767602",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 8,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у Baby Melo"
         },
         {
@@ -20965,9 +20677,7 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -21284,17 +20994,13 @@
       "workKey": "97322012|ладони",
       "cover": "https://cdn-images.dzcdn.net/images/cover/b46f9280dc2df4c2324e16fddf195770/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3668922632",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 1,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у SALUKI"
         },
         {
@@ -21303,9 +21009,7 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -21328,8 +21032,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/fadd41f36a3d8393021d77c2af3edd5e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4166453112",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -21337,16 +21040,13 @@
           "id": "ru-rap-artists-top",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SALUKI"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -21375,8 +21075,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/039ad99301e970b02aa6a27ca45d3582/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1883490957",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -21384,16 +21083,13 @@
           "id": "ru-rap-artists-top",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SALUKI"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -21424,8 +21120,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/135ad2d2e2ac776ca3f8bdba99605ea1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4256265701",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -21433,16 +21128,13 @@
           "id": "ru-rap-artists-top",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SALUKI"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -21516,8 +21208,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/135ad2d2e2ac776ca3f8bdba99605ea1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4256265681",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -21525,16 +21216,13 @@
           "id": "ru-rap-artists-top",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "популярное у SALUKI"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -22421,8 +22109,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/97df6b428fef3cec7508d0bbfd13b5fb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/912448182",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -22438,16 +22125,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 7,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -22476,8 +22160,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/df16556f9a376217df70e8ef341785db/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1523191082",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -22493,16 +22176,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -22531,8 +22211,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d48aab850f8420e3a076b4a3926388f1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3431196461",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -22548,16 +22227,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -22588,8 +22264,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/5ab9252719c883dde962594267cca15e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/790225272",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -22605,16 +22280,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -23317,24 +22989,18 @@
       "workKey": "10155292|кабы не было тебя",
       "cover": "https://cdn-images.dzcdn.net/images/cover/fc7b8bcac416e15a692d0aa53755744d/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2526754531",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 7,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у Feduk"
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -23713,7 +23379,6 @@
       "link": "https://www.deezer.com/track/4076088951",
       "genres": [
         "ru-rap",
-        "hookah",
         "street-36"
       ],
       "currentGenres": [],
@@ -23729,9 +23394,7 @@
         {
           "id": "hookah-top",
           "position": 2,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Скриптонит"
         },
         {
@@ -23742,9 +23405,7 @@
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
@@ -26290,7 +25951,6 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/78767ecac8f74e4b49dbf3655846f364/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1390554042",
       "genres": [
-        "ru-rap",
         "hookah"
       ],
       "currentGenres": [],
@@ -26298,9 +25958,7 @@
         {
           "id": "ru-rap-artists-top",
           "position": 2,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у HammAli & Navai"
         },
         {
@@ -26321,9 +25979,7 @@
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-hookah",
@@ -26949,24 +26605,18 @@
       "workKey": "317282|люди с автоматами",
       "cover": "https://cdn-images.dzcdn.net/images/cover/e277ef23c9df372ec9e78f2dae01eee6/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2218387787",
-      "genres": [
-        "ru-rap"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "ru-rap-artists-top",
           "position": 8,
-          "genres": [
-            "ru-rap"
-          ],
+          "genres": [],
           "period": "популярное у Noize MC"
         },
         {
           "id": "player-review-ru-rap",
-          "genres": [
-            "ru-rap"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -33837,17 +33487,13 @@
       "workKey": "374513001|я не старею я дорожаю",
       "cover": "https://cdn-images.dzcdn.net/images/cover/308bff24156c4449efaf216255b55a41/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4200733762",
-      "genres": [
-        "mom-pop"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "mom-pop-top",
           "position": 11,
-          "genres": [
-            "mom-pop"
-          ],
+          "genres": [],
           "period": "Из списка мамы"
         }
       ],
@@ -34170,17 +33816,13 @@
       "workKey": "389157491|возраст это просто пин код",
       "cover": "https://cdn-images.dzcdn.net/images/cover/8ee99ef0d0ae07799617fac621e8db78/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4173006372",
-      "genres": [
-        "mom-pop"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "mom-pop-top",
           "position": 20,
-          "genres": [
-            "mom-pop"
-          ],
+          "genres": [],
           "period": "Из списка мамы"
         }
       ],
@@ -38431,7 +38073,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3065f9b233ca806a27b116c6a38e9a08/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3563221491",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -38446,6 +38089,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -38469,7 +38118,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d2d031df18cc0c526ea1b03c5f99a15e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2477349151",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -38484,6 +38134,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -38783,7 +38439,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c4711c931c4852f1587df7fb3ee62427/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3578302941",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -38798,6 +38455,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -38821,7 +38484,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3da00c3da3bd1e815579e3474115208b/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3354502651",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -38836,6 +38500,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -38859,7 +38529,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e53d54bb963124234fa20945067a0c17/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3510290181",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -38874,6 +38545,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -38897,7 +38574,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/5c50c4dfa53596bbedb8f39f71b3ecfb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3042498091",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -38912,6 +38590,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -38935,7 +38619,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c6ba91f86480f7d087d6dac3474cfc03/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3842359741",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -38950,6 +38635,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -41005,21 +40696,23 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/b8f63da589fcd34b7b80e7c28f5522ae/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2599676392",
       "genres": [
-        "nostalgia"
+        "dad-rock"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "nostalgia-2010s",
           "position": 62,
-          "genres": [
-            "nostalgia"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-nostalgia",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-dad-rock",
           "genres": [
-            "nostalgia"
+            "dad-rock"
           ]
         }
       ],
@@ -41336,8 +41029,8 @@
       "link": "https://www.deezer.com/track/385026441",
       "genres": [
         "nostalgia",
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -41352,9 +41045,7 @@
         {
           "id": "hookah-top",
           "position": 2,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у T-Fest"
         },
         {
@@ -41365,14 +41056,18 @@
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -45590,17 +45285,13 @@
       "workKey": "11256100|sprinter",
       "cover": "https://cdn-images.dzcdn.net/images/cover/d8cd79f825f1a87ec86443c934556df7/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3553677361",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 1,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Central Cee"
         }
       ],
@@ -45625,17 +45316,13 @@
       "workKey": "12096038|band4band",
       "cover": "https://cdn-images.dzcdn.net/images/cover/8508be30ca355ef44597e9be0f834232/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2816017052",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Central Cee"
         }
       ],
@@ -45691,17 +45378,13 @@
       "workKey": "12096038|let go",
       "cover": "https://cdn-images.dzcdn.net/images/cover/a8d6b2a859e5c17e70b97c6191194eb4/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2040509907",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Central Cee"
         }
       ],
@@ -45726,17 +45409,13 @@
       "workKey": "12096038|guilt trippin",
       "cover": "https://cdn-images.dzcdn.net/images/cover/e0c677508e91031c740d671f9b955f3e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3421133341",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 5,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Central Cee"
         }
       ],
@@ -46226,17 +45905,13 @@
       "workKey": "14613391|time flies",
       "cover": "https://cdn-images.dzcdn.net/images/cover/63fb0d8f079dc7cd979c11353edd277e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3278141751",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 3,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Unknown T"
         }
       ],
@@ -46410,17 +46085,13 @@
       "workKey": "10038604|lira galore",
       "cover": "https://cdn-images.dzcdn.net/images/cover/8e913bb4bc57778b8250b41f7b19d58f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3411638411",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 3,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Russ Millions"
         }
       ],
@@ -46517,17 +46188,13 @@
       "workKey": "121629912|night away dance",
       "cover": "https://cdn-images.dzcdn.net/images/cover/26e5e2874e52ad03e04840b6f60f6ea1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1667682422",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Tion Wayne"
         }
       ],
@@ -46589,17 +46256,13 @@
       "workKey": "8686994|crazy love",
       "cover": "https://cdn-images.dzcdn.net/images/cover/0dd635b2540ae0cbff8542bcd929f0b9/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3293134091",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Tion Wayne"
         }
       ],
@@ -46659,17 +46322,13 @@
       "workKey": "74126422|glock",
       "cover": "https://cdn-images.dzcdn.net/images/cover/fbc6bc83caab4d256d418b770a40d587/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3099622111",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 1,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у K-Trap"
         }
       ],
@@ -46725,17 +46384,13 @@
       "workKey": "12269520|interlude",
       "cover": "https://cdn-images.dzcdn.net/images/cover/4f4cde5c2be16125c3215199948800cd/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3811752082",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у K-Trap"
         }
       ],
@@ -46966,17 +46621,13 @@
       "workKey": "5043274|not like me",
       "cover": "https://cdn-images.dzcdn.net/images/cover/f8ca25b7e65e74986bf70a8f97da67d2/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3134194651",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 1,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skrapz"
         }
       ],
@@ -47003,17 +46654,13 @@
       "workKey": "5043274|cuban links",
       "cover": "https://cdn-images.dzcdn.net/images/cover/f610126b2cf27ca507a93e23c2a6732d/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2674777842",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skrapz"
         }
       ],
@@ -47040,17 +46687,13 @@
       "workKey": "5043274|hustlers anthem",
       "cover": "https://cdn-images.dzcdn.net/images/cover/48a0075d9c1e3096a6b1a8814f056e58/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3134194851",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 3,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skrapz"
         }
       ],
@@ -47110,17 +46753,13 @@
       "workKey": "713451|milan cc2",
       "cover": "https://cdn-images.dzcdn.net/images/cover/9619f6adab3e683e415da07df931e680/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4172345292",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 5,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skrapz"
         }
       ],
@@ -47316,17 +46955,13 @@
       "workKey": "12426600|sexy",
       "cover": "https://cdn-images.dzcdn.net/images/cover/b1621395adb5f1dfb8de25476f809a31/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3933304931",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 1,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Kwengface"
         }
       ],
@@ -47353,17 +46988,13 @@
       "workKey": "13350961|dot dot ipc vip mix",
       "cover": "https://cdn-images.dzcdn.net/images/cover/68ecedfa28682b156ba815cfc7a720e1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3670210822",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 3,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Kwengface"
         }
       ],
@@ -47390,17 +47021,13 @@
       "workKey": "13350961|dot dot feat interplanetary criminal flowdan",
       "cover": "https://cdn-images.dzcdn.net/images/cover/42dbf6e02d4e06c06afe3ddfafa9899a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3594988262",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Kwengface"
         }
       ],
@@ -47598,17 +47225,13 @@
       "workKey": "432022|pandora s box",
       "cover": "https://cdn-images.dzcdn.net/images/cover/c47dcb3d96520d8d0d5609eec12c91c9/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4338906402",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 1,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skepta"
         }
       ],
@@ -47635,17 +47258,13 @@
       "workKey": "76053262|victory lap",
       "cover": "https://cdn-images.dzcdn.net/images/cover/a2d11ecbbf17e4a5f539124ac42ad714/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3413895391",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skepta"
         }
       ],
@@ -47670,17 +47289,13 @@
       "workKey": "264541262|chiltern firehouse",
       "cover": "https://cdn-images.dzcdn.net/images/cover/89ad16b0c78c08c93d8d89d976e3e09e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4351200402",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 3,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skepta"
         }
       ],
@@ -47707,17 +47322,13 @@
       "workKey": "4740325|danger danger",
       "cover": "https://cdn-images.dzcdn.net/images/cover/0e432570ec3593c4a74cc10e85a79a57/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4316123912",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skepta"
         }
       ],
@@ -47743,7 +47354,6 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8848c366508735e513fed3e2c6f2a6d1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3278625271",
       "genres": [
-        "drill",
         "us-hiphop"
       ],
       "currentGenres": [],
@@ -47751,9 +47361,7 @@
         {
           "id": "drill-top",
           "position": 5,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Skepta"
         },
         {
@@ -47824,17 +47432,13 @@
       "workKey": "51464362|headshot",
       "cover": "https://cdn-images.dzcdn.net/images/cover/3353ed8d18d467557f6718e9f711f698/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1296915562",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Fivio Foreign"
         }
       ],
@@ -47944,17 +47548,13 @@
       "workKey": "55158992|what s my name",
       "cover": "https://cdn-images.dzcdn.net/images/cover/6b373910cdbee199bdf238bd4c66d859/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1708648237",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 5,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Fivio Foreign"
         }
       ],
@@ -48185,17 +47785,13 @@
       "workKey": "74393902|adore you feat pnb rock",
       "cover": "https://cdn-images.dzcdn.net/images/cover/e910fc2ddf983492477a74900c6079f6/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1435776432",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 3,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Bizzy Banks"
         }
       ],
@@ -48429,17 +48025,13 @@
       "workKey": "14800995|anxiety feat doechii",
       "cover": "https://cdn-images.dzcdn.net/images/cover/462d14923505947fceaecad6a5f04ea9/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2444401025",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 1,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Sleepy Hallow"
         }
       ],
@@ -48462,17 +48054,13 @@
       "workKey": "14800995|2055",
       "cover": "https://cdn-images.dzcdn.net/images/cover/03f5f82102d4605700e425a15af4feac/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1384697402",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Sleepy Hallow"
         }
       ],
@@ -48497,17 +48085,13 @@
       "workKey": "14800995|die young feat 347aidan",
       "cover": "https://cdn-images.dzcdn.net/images/cover/f798bc102f81e3b1cb972440c1bbd42a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1748486297",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 3,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Sleepy Hallow"
         }
       ],
@@ -48736,17 +48320,13 @@
       "workKey": "58447102|for the night",
       "cover": "https://cdn-images.dzcdn.net/images/cover/e25e149e1fd2f560a571c77555ced4bb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3529770231",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Pop Smoke"
         }
       ],
@@ -48770,7 +48350,6 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/dd80d50c9c2076b23c94ed201c59c57e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3823782821",
       "genres": [
-        "drill",
         "us-hiphop"
       ],
       "currentGenres": [],
@@ -48778,9 +48357,7 @@
         {
           "id": "drill-top",
           "position": 3,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Pop Smoke"
         },
         {
@@ -48811,17 +48388,13 @@
       "workKey": "58447102|mood swings",
       "cover": "https://cdn-images.dzcdn.net/images/cover/e25e149e1fd2f560a571c77555ced4bb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3529770331",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Pop Smoke"
         }
       ],
@@ -49029,17 +48602,13 @@
       "workKey": "3977201|all my life feat j cole",
       "cover": "https://cdn-images.dzcdn.net/images/cover/234da7eca80dce45c8b72b0dd54d5fca/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2267766057",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 1,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Lil Durk"
         }
       ],
@@ -49064,17 +48633,13 @@
       "workKey": "12096038|truth in the lies",
       "cover": "https://cdn-images.dzcdn.net/images/cover/0102e6cf4b7ed92aaee398dae42c7557/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3196387941",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Lil Durk"
         }
       ],
@@ -49134,17 +48699,13 @@
       "workKey": "3977201|broadway girls feat morgan wallen",
       "cover": "https://cdn-images.dzcdn.net/images/cover/65dc1837a8e26d8d1c630b2e693933c0/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1593324851",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Lil Durk"
         }
       ],
@@ -49169,17 +48730,13 @@
       "workKey": "3977201|what happened to virgil feat gunna",
       "cover": "https://cdn-images.dzcdn.net/images/cover/9ea4336becf262a9210398d4a4c96d52/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1680770047",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 5,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Lil Durk"
         }
       ],
@@ -49245,17 +48802,13 @@
       "workKey": "9089666|ptsd",
       "cover": "https://cdn-images.dzcdn.net/images/cover/6c6447c38eec9eceb89388d501b782fc/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1349842512",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 2,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у G Herbo"
         }
       ],
@@ -49317,17 +48870,13 @@
       "workKey": "9089666|intuition",
       "cover": "https://cdn-images.dzcdn.net/images/cover/cc210fd8595d4d4d7e344dd7f3f5855a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1344071692",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у G Herbo"
         }
       ],
@@ -49488,17 +49037,13 @@
       "workKey": "12431462|took her to the o audiomack fine tuned version",
       "cover": "https://cdn-images.dzcdn.net/images/cover/432620eefebed541db574223d658aa3e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3718394412",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 4,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у King Von"
         }
       ],
@@ -49558,17 +49103,13 @@
       "workKey": "11027622|go feat loski russ millions",
       "cover": "https://cdn-images.dzcdn.net/images/cover/8a019a9b10792227549a7d67e6b49af4/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1860044377",
-      "genres": [
-        "drill"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "drill-top",
           "position": 1,
-          "genres": [
-            "drill"
-          ],
+          "genres": [],
           "period": "популярное у Loski"
         }
       ],
@@ -49771,17 +49312,15 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/f1af5bb5a0ba2d8a903a9ae72972a834/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1916427547",
       "genres": [
-        "hookah",
-        "nostalgia"
+        "nostalgia",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 3,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у T-Fest"
         },
         {
@@ -49792,8 +49331,12 @@
         },
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -49817,29 +49360,31 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/cdb9780a514eef0c92ea89226d1e3f8f/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3422937961",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 4,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у T-Fest"
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -49863,17 +49408,15 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/09931b9323ede5e0f0e9ffcab4f04efc/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/414737482",
       "genres": [
-        "hookah",
-        "nostalgia"
+        "nostalgia",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 5,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у T-Fest"
         },
         {
@@ -49884,8 +49427,12 @@
         },
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -49919,37 +49466,37 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8737bb9aebd6a505add0ddb2abc2ddb8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4022728331",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 1,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Truwer"
         },
         {
           "id": "hookah-top",
           "position": 1,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Niman"
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -49980,36 +49527,37 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d75272a14e4fd9f9afb62c3eed88d098/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4332489952",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 2,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Truwer"
         },
         {
           "id": "hookah-top",
           "position": 2,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Niman"
         },
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
       "lookupKeys": [
         "truwer|риски",
-        "niman|риски"
+        "niman|риски",
+        "captown|риски"
       ]
     },
     {
@@ -50034,36 +49582,37 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a53700e554fe1bae2b089ae92e0e32a8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3288028051",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 3,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Truwer"
         },
         {
           "id": "hookah-top",
           "position": 3,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Niman"
         },
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
       "lookupKeys": [
         "truwer|канцлер",
-        "niman|канцлер"
+        "niman|канцлер",
+        "экси|канцлер"
       ]
     },
     {
@@ -50088,37 +49637,37 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e630359c62223e80d024877d71cd2629/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3692617872",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 4,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Truwer"
         },
         {
           "id": "hookah-top",
           "position": 4,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Niman"
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -50153,37 +49702,37 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8737bb9aebd6a505add0ddb2abc2ddb8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4022728361",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 5,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Truwer"
         },
         {
           "id": "hookah-top",
           "position": 5,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у Niman"
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -50210,29 +49759,31 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3cc7939522679521d3b70abf21c39d4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/408907922",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 1,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у 104"
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -50363,29 +49914,31 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/efa57402a48160eb9f4d007b849271ce/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/802751642",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 4,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у 104"
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -50415,29 +49968,31 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3cc7939522679521d3b70abf21c39d4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/408907912",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "hookah-top",
           "position": 5,
-          "genres": [
-            "hookah"
-          ],
+          "genres": [],
           "period": "популярное у 104"
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -51013,8 +50568,7 @@
       "link": "https://www.deezer.com/track/456011702",
       "genres": [
         "us-hiphop",
-        "repeat-hits",
-        "modern-pop"
+        "repeat-hits"
       ],
       "currentGenres": [],
       "sources": [
@@ -51040,9 +50594,7 @@
         },
         {
           "id": "editorial-20261110-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -55855,44 +55407,41 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e4b16c1afe136140bba34368357e8f05/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3210598501",
       "genres": [
-        "soundcloud",
-        "modern-pop",
-        "repeat-hits"
+        "repeat-hits",
+        "us-hiphop"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "soundcloud-more",
           "position": 1,
-          "genres": [
-            "soundcloud"
-          ],
+          "genres": [],
           "period": "популярное у Playboi Carti"
         },
         {
           "id": "modern-pop-stars-more",
           "position": 8,
-          "genres": [
-            "modern-pop"
-          ],
+          "genres": [],
           "period": "популярное у The Weeknd"
         },
         {
           "id": "player-review-modern-pop",
-          "genres": [
-            "modern-pop"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-soundcloud",
-          "genres": [
-            "soundcloud"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261110-repeat-hits",
           "genres": [
             "repeat-hits"
+          ]
+        },
+        {
+          "id": "editorial-20261119-us-hiphop",
+          "genres": [
+            "us-hiphop"
           ]
         }
       ],
@@ -66362,17 +65911,13 @@
       "workKey": "4278923|зима",
       "cover": "https://cdn-images.dzcdn.net/images/cover/68625d80c2864e57340f079fe5514481/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3707287352",
-      "genres": [
-        "mom-pop"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "mom-pop-more",
           "position": 1,
-          "genres": [
-            "mom-pop"
-          ],
+          "genres": [],
           "period": "популярное у АЛСУ"
         }
       ],
@@ -66533,17 +66078,13 @@
       "workKey": "7173436|так хотели",
       "cover": "https://cdn-images.dzcdn.net/images/cover/7be6cf9e7edcb566f868e39ee5c556eb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4365693291",
-      "genres": [
-        "mom-pop"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "mom-pop-more",
           "position": 2,
-          "genres": [
-            "mom-pop"
-          ],
+          "genres": [],
           "period": "популярное у Лолита"
         }
       ],
@@ -66801,17 +66342,13 @@
       "workKey": "1377461|ой наташа",
       "cover": "https://cdn-images.dzcdn.net/images/cover/dbf31221c5d5bab3b6d6b209dc722a21/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2556148472",
-      "genres": [
-        "mom-pop"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "mom-pop-more",
           "position": 3,
-          "genres": [
-            "mom-pop"
-          ],
+          "genres": [],
           "period": "популярное у Наташа Королёва"
         }
       ],
@@ -68158,24 +67695,18 @@
       "workKey": "776|reach for the stars",
       "cover": "https://cdn-images.dzcdn.net/images/cover/541b21fac0ff10bebdeb9296f04e8da0/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4168455662",
-      "genres": [
-        "dad-rock"
-      ],
+      "genres": [],
       "currentGenres": [],
       "sources": [
         {
           "id": "dad-rock-more",
           "position": 4,
-          "genres": [
-            "dad-rock"
-          ],
+          "genres": [],
           "period": "популярное у KISS"
         },
         {
           "id": "player-review-dad-rock",
-          "genres": [
-            "dad-rock"
-          ]
+          "genres": []
         }
       ],
       "lookupKeys": [
@@ -72301,8 +71832,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1463122912",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -72310,16 +71840,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -72348,8 +71875,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1463122902",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -72357,16 +71883,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -72395,8 +71918,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1463122922",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -72404,16 +71926,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 4,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -72442,8 +71961,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/ff79f0fddeb393723f023b5158edf5d2/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/781089772",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -72451,16 +71969,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 5,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -72489,27 +72004,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/2973bbc0bc1a16daf86be495c59505a3/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1463122932",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "new-wave-player-picks-20261030",
           "position": 6,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -73129,8 +72646,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/e7ba53d754924e7f6c57005ba84d78c8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3040331231",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -73138,16 +72654,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -73736,8 +73249,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c3fc0677750fe92e564519ff05384247/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1975430247",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -73745,16 +73257,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 3,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -73900,8 +73409,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/7129283a0f94480d6cbe8173503c1a34/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1974314657",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -73909,16 +73417,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 9,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -73947,8 +73452,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/7129283a0f94480d6cbe8173503c1a34/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1974314677",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -73956,16 +73460,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 11,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -74072,27 +73573,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/4bdc564d64d4cc4c71301b1f94ba163d/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2280819707",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "new-wave-player-picks-20261030",
           "position": 17,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -74154,27 +73657,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/765f15344a3109e72d234ee36ec1b8ab/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3883590671",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "new-wave-player-picks-20261030",
           "position": 19,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -74197,8 +73702,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/bf9f83c0b7f40773d1fba3459d3f3e51/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3432510991",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -74206,16 +73710,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 6,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -74244,27 +73745,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c7c246d3a61d5946f8b2a6956383d0d4/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2930743911",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "new-wave-player-picks-20261030",
           "position": 8,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -74332,27 +73835,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/df16556f9a376217df70e8ef341785db/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1523191152",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "new-wave-player-picks-20261030",
           "position": 10,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -74377,27 +73882,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/df16556f9a376217df70e8ef341785db/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1523191192",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "new-wave-player-picks-20261030",
           "position": 11,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -74685,8 +74192,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a1148e86d0f9f3323a1a5e02a12fa7b8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4365694011",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -74694,16 +74200,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 1,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -74732,8 +74235,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/4390efdf939633e5d300b36650bc0a30/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1287017902",
       "genres": [
-        "ru-rap",
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -74741,16 +74243,13 @@
           "id": "new-wave-player-picks-20261030",
           "position": 2,
           "genres": [
-            "ru-rap",
-            "new-wave"
+            "ru-rap"
           ],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
@@ -74781,27 +74280,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/716e6ffb3dd5fa47f6c7696409f040c1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3255022821",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "new-wave-player-picks-20261030",
           "position": 4,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -74900,27 +74401,29 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d5bbbc054e130e056f7e0c3d04a5167b/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3266650841",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "new-wave-player-picks-20261030",
           "position": 12,
-          "genres": [
-            "new-wave"
-          ],
+          "genres": [],
           "period": "выбор игроков · 30.10.2026"
         },
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -75965,14 +75468,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/dfb5fb252ff96e39994284142e72bf44/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3319651911",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -75996,14 +75503,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/bc408888ae0eb45ad30e25427f219643/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2545831342",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -76029,14 +75540,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/193b789407ae71e436caa6ed75ddbeb5/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1085517622",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-new-wave",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "new-wave"
+            "ru-rap"
           ]
         }
       ],
@@ -76361,19 +75876,23 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/de59fd286f7c207c7db2415b19d3f135/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2693784702",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -76396,19 +75915,23 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/f7c69b09e3793553fb9713432099f95c/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1390592652",
       "genres": [
-        "new-wave"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-new-wave",
-          "genres": [
-            "new-wave"
-          ]
+          "genres": []
         },
         {
           "id": "player-review-ru-rap",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -79136,7 +78659,7 @@
       "link": "https://www.deezer.com/track/601066882",
       "genres": [
         "nostalgia",
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -79148,8 +78671,12 @@
         },
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -79174,8 +78701,8 @@
       "link": "https://www.deezer.com/track/145061630",
       "genres": [
         "nostalgia",
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -79187,14 +78714,18 @@
         },
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -79219,7 +78750,7 @@
       "link": "https://www.deezer.com/track/798530112",
       "genres": [
         "nostalgia",
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
@@ -79231,8 +78762,12 @@
         },
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -84737,7 +84272,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/4441b091061a84b4b77a79b7a2c5f332/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2595990352",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -84745,6 +84281,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -84768,7 +84310,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d2d031df18cc0c526ea1b03c5f99a15e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2477349161",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -84776,6 +84319,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -84799,7 +84348,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/110ba3ccbaf4f29702be2de07343b0fa/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4286026772",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -84807,6 +84357,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -84830,7 +84386,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/96d499ccb4665603cb3ecad1158cb62a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4051293681",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -84838,6 +84395,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -84954,7 +84517,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/1b090b82085285ebb28f173c5ef59eae/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4293401142",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -84962,6 +84526,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -84985,7 +84555,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c6ba91f86480f7d087d6dac3474cfc03/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3842359841",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -84993,6 +84564,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -85016,7 +84593,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c6ba91f86480f7d087d6dac3474cfc03/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3842359811",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -85024,6 +84602,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -85047,7 +84631,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/cbd2679fdcee00a10727d88923b6505d/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3607814602",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -85055,6 +84640,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -85078,7 +84669,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/37b7b9a6133bfd730294ed71415a7189/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3240031071",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -85086,6 +84678,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -85109,7 +84707,8 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/a701cfd32a958b3e560b57886da7ccc1/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3082980091",
       "genres": [
-        "dead-inside"
+        "dead-inside",
+        "new-wave"
       ],
       "currentGenres": [],
       "sources": [
@@ -85117,6 +84716,12 @@
           "id": "player-review-dead-inside",
           "genres": [
             "dead-inside"
+          ]
+        },
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
           ]
         }
       ],
@@ -86289,14 +85894,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/d655ad0c806bf7f2851ca0eae628d06d/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2081650057",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -86322,21 +85931,25 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3cc7939522679521d3b70abf21c39d4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/408907932",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -86360,14 +85973,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/0035f2a5148a1fd4569f1bb06a708636/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4333358922",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -86395,14 +86012,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3cc7939522679521d3b70abf21c39d4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/408907872",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -86428,14 +86049,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/3cc7939522679521d3b70abf21c39d4a/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/408907892",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -86459,14 +86084,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c8565455a32d2515e09e8c6f8feb3990/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/880446182",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -87277,21 +86906,25 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/122fe592ca54bd1c2ae16495724d7da8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2330657895",
       "genres": [
-        "hookah",
-        "street-36"
+        "street-36",
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": [
             "street-36"
+          ]
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
           ]
         }
       ],
@@ -87325,19 +86958,23 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8737bb9aebd6a505add0ddb2abc2ddb8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4022728351",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -87364,19 +87001,23 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/0ab303f6b96991423ca90edb8b5d9dcc/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3309655271",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -87409,14 +87050,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8737bb9aebd6a505add0ddb2abc2ddb8/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/4022728371",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -87440,14 +87085,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/08768d20e10d68558b6c3e3301ee6481/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/2302714155",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -87471,14 +87120,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/0cacf784d128f519a48c9952818eed5e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3966081951",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -87688,14 +87341,18 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/6c87c41d7da2bed4aefabaaa880b426e/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/1247077482",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
+          "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
           "genres": [
-            "hookah"
+            "ru-rap"
           ]
         }
       ],
@@ -87719,19 +87376,23 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/c7151b0b6db2d85040448e691a6377eb/250x250-000000-80-0-0.jpg",
       "link": "https://www.deezer.com/track/3266563331",
       "genres": [
-        "hookah"
+        "ru-rap"
       ],
       "currentGenres": [],
       "sources": [
         {
           "id": "player-review-hookah",
-          "genres": [
-            "hookah"
-          ]
+          "genres": []
         },
         {
           "id": "editorial-20261109-street-36",
           "genres": []
+        },
+        {
+          "id": "editorial-20261119-ru-rap",
+          "genres": [
+            "ru-rap"
+          ]
         }
       ],
       "lookupKeys": [
@@ -94111,6 +93772,262 @@
       ],
       "lookupKeys": [
         "atl|обратно"
+      ]
+    },
+    {
+      "id": "dz-3584392191",
+      "deezerId": 3584392191,
+      "title": "MARTINE ROSE",
+      "artist": "madk1d, GreyRock, tewiq",
+      "artistIds": [
+        "153072532",
+        "76597022",
+        "174528717"
+      ],
+      "artistNames": [
+        "madk1d",
+        "GreyRock",
+        "tewiq"
+      ],
+      "answerKey": "153072532|martine rose",
+      "workKey": "153072532|martine rose",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/36077c3b6c1bee1025923b55ef3bfe0b/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3584392191",
+      "genres": [
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "madk1d|martine rose"
+      ]
+    },
+    {
+      "id": "dz-2882823722",
+      "deezerId": 2882823722,
+      "title": "Барыга",
+      "artist": "madk1d",
+      "artistIds": [
+        "153072532"
+      ],
+      "artistNames": [
+        "madk1d"
+      ],
+      "answerKey": "153072532|барыга",
+      "workKey": "153072532|барыга",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/c8af8305ec22acf8d29139071c68e28c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2882823722",
+      "genres": [
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "madk1d|барыга"
+      ]
+    },
+    {
+      "id": "dz-3294384361",
+      "deezerId": 3294384361,
+      "title": "последним летом",
+      "artist": "madk1d, GRILLYAZH",
+      "artistIds": [
+        "153072532",
+        "165840107"
+      ],
+      "artistNames": [
+        "madk1d",
+        "GRILLYAZH"
+      ],
+      "answerKey": "153072532|последним летом",
+      "workKey": "153072532|последним летом",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/9d710ff7ef2045519a0b1835966e684c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3294384361",
+      "genres": [
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "madk1d|последним летом"
+      ]
+    },
+    {
+      "id": "dz-2816692532",
+      "deezerId": 2816692532,
+      "title": "питер паркер",
+      "artist": "madk1d",
+      "artistIds": [
+        "153072532"
+      ],
+      "artistNames": [
+        "madk1d"
+      ],
+      "answerKey": "153072532|питер паркер",
+      "workKey": "153072532|питер паркер",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/7612f1cf83c810253db0c4e5a07b900a/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/2816692532",
+      "genres": [
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "madk1d|питер паркер"
+      ]
+    },
+    {
+      "id": "dz-4380934701",
+      "deezerId": 4380934701,
+      "title": "101 причина",
+      "artist": "villian, OG Buda",
+      "artistIds": [
+        "573337",
+        "15037981"
+      ],
+      "artistNames": [
+        "villian",
+        "OG Buda"
+      ],
+      "answerKey": "573337|101 причина",
+      "workKey": "573337|101 причина",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a6381f3806948b389468e4cddbc0fbbe/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4380934701",
+      "genres": [
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "villian|101 причина"
+      ]
+    },
+    {
+      "id": "dz-3526437851",
+      "deezerId": 3526437851,
+      "title": "Случайно Наступил На Шприц",
+      "artist": "villian",
+      "artistIds": [
+        "573337"
+      ],
+      "artistNames": [
+        "villian"
+      ],
+      "answerKey": "573337|случайно наступил на шприц",
+      "workKey": "573337|случайно наступил на шприц",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/ff7185aaa3ef9a9938a0ccdc5bcb7466/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3526437851",
+      "genres": [
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "villian|случайно наступил на шприц"
+      ]
+    },
+    {
+      "id": "dz-4174083182",
+      "deezerId": 4174083182,
+      "title": "Мешают Спать",
+      "artist": "villian",
+      "artistIds": [
+        "573337"
+      ],
+      "artistNames": [
+        "villian"
+      ],
+      "answerKey": "573337|мешают спать",
+      "workKey": "573337|мешают спать",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/3fa37637f6647c7350441b08ceeef78c/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/4174083182",
+      "genres": [
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "villian|мешают спать"
+      ]
+    },
+    {
+      "id": "dz-3397367481",
+      "deezerId": 3397367481,
+      "title": "Курение Вредит Вашему Здоровью",
+      "artist": "villian",
+      "artistIds": [
+        "573337"
+      ],
+      "artistNames": [
+        "villian"
+      ],
+      "answerKey": "573337|курение вредит вашему здоровью",
+      "workKey": "573337|курение вредит вашему здоровью",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/9ad822dc14d60d1c126d00ff6b91b1d9/250x250-000000-80-0-0.jpg",
+      "link": "https://www.deezer.com/track/3397367481",
+      "genres": [
+        "new-wave"
+      ],
+      "currentGenres": [],
+      "sources": [
+        {
+          "id": "editorial-20261119-new-wave",
+          "genres": [
+            "new-wave"
+          ]
+        }
+      ],
+      "lookupKeys": [
+        "villian|курение вредит вашему здоровью"
       ]
     }
   ],
