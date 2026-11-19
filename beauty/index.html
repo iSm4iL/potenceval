@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6ef">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="Услуги, мастера и онлайн-запись в студию красоты.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon-192.png">
+  <link rel="apple-touch-icon" href="./assets/icon-512.png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./demo.css">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; connect-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'none'; style-src 'self' 'unsafe-inline'">
+  <title>Форма · Студия красоты</title>
+  <script type="module" src="./app.js"></script>
+</head>
+<body data-demo>
+  <main id="main" tabindex="-1">
+    <a class="skip" href="#main">К содержанию</a>
+    <section class="front" aria-labelledby="studio-heading">
+      <div class="demo-bar" aria-label="Демонстрационные инструменты">
+        <p>Демо салона</p>
+        <button type="button" class="button outline" data-action="studio" aria-haspopup="dialog">Кабинет администратора</button>
+        <button type="button" class="button quiet" data-action="demo-reset">Сбросить</button>
+      </div>
+      <header class="studio-heading">
+        <h1 id="studio-heading">
+          <img class="brand-mark" data-logo alt="" hidden>
+          <span data-brand="name">Форма</span>
+        </h1>
+      </header>
+      <section class="front-agenda" aria-label="Афиша" hidden>
+        <div class="poster-track" id="poster-track"></div>
+        <div class="poster-dots" role="group" aria-label="Слайды афиши" hidden></div>
+      </section>
+      <section class="front-services" aria-labelledby="front-services-heading" hidden>
+        <div class="section-heading">
+          <h2 id="front-services-heading">Услуги</h2>
+          <button class="button quiet" type="button" data-action="services" aria-haspopup="dialog">Весь прайс<span class="forward-icon" aria-hidden="true"></span></button>
+        </div>
+        <div class="home-service-grid"></div>
+      </section>
+      <div class="booking-invitation">
+        <button class="button primary start-booking" type="button" data-action="book" aria-haspopup="dialog">
+          Записаться<span class="forward-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Разделы салона">
+    <button type="button" data-action="services" aria-haspopup="dialog"><span class="nav-icon nav-services" aria-hidden="true"></span>Услуги</button>
+    <button type="button" data-action="masters" aria-haspopup="dialog"><span class="nav-icon nav-masters" aria-hidden="true"></span>Мастера</button>
+    <button type="button" data-action="agenda" aria-haspopup="dialog"><span class="nav-icon nav-agenda" aria-hidden="true"></span>Афиша</button>
+    <button type="button" data-action="visits" aria-haspopup="dialog"><span class="nav-icon nav-visits" aria-hidden="true"></span>Мои записи<span id="visit-count" hidden></span></button>
+    <button type="button" data-action="contacts" aria-haspopup="dialog"><span class="nav-icon nav-contacts" aria-hidden="true"></span>Контакты</button>
+  </nav>
+
+  <div class="panel-shade" aria-hidden="true" hidden></div>
+  <dialog class="panel" id="panel" aria-labelledby="panel-title">
+    <header class="panel-header">
+      <div><p id="panel-caption" class="panel-caption" hidden></p><h2 id="panel-title" tabindex="-1"></h2></div>
+      <button class="button icon outline panel-close" data-action="close-panel" aria-label="Закрыть" type="button">×</button>
+    </header>
+    <div id="panel-body" class="panel-body"></div>
+  </dialog>
+</body>
+</html>
